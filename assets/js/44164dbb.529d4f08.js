@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkchatgpt_shortcut=self.webpackChunkchatgpt_shortcut||[]).push([["38971"],{535002(e){e.exports=JSON.parse('{"id":11592,"title":"JFFirst","description":"https://opennana.com/awesome-prompt-gallery/kung-fu-cooking-master-legend","owner":"JAMESF","upvotes":1,"downvotes":0,"upvoteDifference":1,"updatedAt":"2026-04-13T20:39:06.118Z"}')}}]);

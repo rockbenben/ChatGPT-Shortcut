@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkchatgpt_shortcut=self.webpackChunkchatgpt_shortcut||[]).push([["40455"],{535734(t){t.exports=JSON.parse('{"name":"community-prompt-pages","id":"default"}')}}]);

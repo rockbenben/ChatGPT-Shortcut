@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkchatgpt_shortcut=self.webpackChunkchatgpt_shortcut||[]).push([["66393"],{771439(e){e.exports=JSON.parse('{"id":5749,"title":"clarify prompt","description":"If needed, you can ask me questions to clarify the prompt before you answer.","owner":"none","upvotes":2,"downvotes":0,"upvoteDifference":2,"updatedAt":"2026-04-13T20:38:36.992Z"}')}}]);

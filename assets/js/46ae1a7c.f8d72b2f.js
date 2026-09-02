@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkchatgpt_shortcut=self.webpackChunkchatgpt_shortcut||[]).push([["63712"],{372883(t){t.exports=JSON.parse('{"id":12244,"title":"1st prompt","description":"I am planning a custom product, such as hat, calf, shirt, could you give me\\nsome suggestions?","owner":"lee yat tsun","upvotes":0,"downvotes":0,"updatedAt":"2026-04-23T09:59:07.443Z"}')}}]);

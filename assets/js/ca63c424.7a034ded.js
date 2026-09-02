@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkchatgpt_shortcut=self.webpackChunkchatgpt_shortcut||[]).push([["69722"],{81212(t){t.exports=JSON.parse('{"id":14373,"title":"sale","description":"as a wpc doors factory, i want to sale my doors to construction company ","owner":"rebeccaleung773@gmail.com","upvotes":1,"downvotes":0,"upvoteDifference":1,"updatedAt":"2026-07-20T00:46:01.608Z"}')}}]);
