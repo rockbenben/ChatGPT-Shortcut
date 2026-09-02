@@ -9,6 +9,7 @@ on:
 
 jobs:
   submit-root-sitemap:
+    if: github.repository_owner == 'rockbenben' # fork 无对应 secrets，跳过以免 CI 报错
     runs-on: ubuntu-latest
     steps:
       - name: Submit Root Sitemap
@@ -20,6 +21,7 @@ jobs:
           key: ${{ secrets.INDEXNOW_KEY }}
 
   submit-lang-sitemaps:
+    if: github.repository_owner == 'rockbenben' # fork 无对应 secrets，跳过以免 CI 报错
     # (可选) 让这个任务在主站任务完成后再跑，不加这行则是并行跑(更快)
     # needs: submit-root-sitemap
     runs-on: ubuntu-latest
