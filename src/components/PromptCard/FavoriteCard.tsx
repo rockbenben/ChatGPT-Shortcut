@@ -8,16 +8,14 @@ import { CopyButton } from "@site/src/components/CopyButton";
 import { HeartFilled, UserOutlined, FireOutlined, LikeFilled, HolderOutlined, ExclamationCircleOutlined, StopOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useSortable } from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
+import type { SortableCardProps } from "./types";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
 import { getWeight, formatCompactNumber } from "@site/src/utils/formatters";
 
 interface FavoriteCardProps {
   data: any;
-  sortableId?: string | number;
-  isFiltered?: boolean;
+  sortable?: SortableCardProps;
 
   onRemoveFavorite?: (id: number, isComm?: boolean) => void;
   onOpenModal?: (data: any) => void;
@@ -25,21 +23,12 @@ interface FavoriteCardProps {
   extraActions?: ReactNode;
 }
 
-const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFavorite, onOpenModal, onConvertToPrivate, extraActions }: FavoriteCardProps) => {
+const FavoriteCardComponent = ({ data: user, sortable, onRemoveFavorite, onOpenModal, onConvertToPrivate, extraActions }: FavoriteCardProps) => {
   const { i18n } = useDocusaurusContext();
 
   // Check if prompt is unavailable (unshared by author)
   const isUnavailable = user._unavailable === true;
   const hasCache = !user._noCache;
-
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: sortableId ?? user.id });
-
-  const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
-    opacity: isDragging ? 0.5 : 1,
-    height: "100%",
-  };
 
   const currentLanguage = i18n.currentLocale;
   const itemData = user[currentLanguage] || user["zh-Hans"] || user["en"];
@@ -138,13 +127,13 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
 
   return (
     <BasePromptCard
-      ref={setNodeRef}
-      style={style}
-      {...attributes}
+      ref={sortable?.setNodeRef}
+      style={{ height: "100%", ...sortable?.style }}
+      {...sortable?.attributes}
       title={
         <Flex align="start" style={{ overflow: "hidden" }}>
-          {!isFiltered && (
-            <div {...listeners} style={{ cursor: "grab", marginInlineEnd: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
+          {sortable && (
+            <div {...sortable.listeners} style={{ cursor: "grab", marginInlineEnd: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
               <HolderOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
             </div>
           )}

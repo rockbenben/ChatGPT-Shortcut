@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import { Tag, Button, Flex, Tooltip, Dropdown, Col } from "antd";
 import { TagOutlined } from "@ant-design/icons";
-import PromptCard from "@site/src/components/PromptCard";
+import SortableCard from "./SortableCard";
 import { getWeight } from "@site/src/utils/formatters";
 import type { CustomTag } from "./types";
 
@@ -139,7 +139,7 @@ const SpaceItemRow = React.memo<SpaceItemRowProps>(
 
     return (
       <Col xs={24} sm={12} md={8} lg={6} xl={6}>
-        <PromptCard
+        <SortableCard
           type={item.type === "prompt" ? "user" : "favorite"}
           data={item.data}
           sortableId={item.id}

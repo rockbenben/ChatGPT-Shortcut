@@ -7,12 +7,14 @@ import Translate, { translate } from "@docusaurus/Translate";
 import { AuthContext } from "../AuthContext";
 import { persistAuthToken } from "@site/src/api";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
-import PromptFormModal from "./modal/PromptFormModal";
 import Link from "@docusaurus/Link";
 import { lazyWithRetry } from "@site/src/utils/lazyRetry";
 
 // LoginComponent (520 行 + antd Form/Card/Input) 仅在未登录用户点登录按钮时打开 Modal 才渲染
 const LoginComponent = lazyWithRetry(() => import("./login"));
+// 创建提示词表单（antd Form/Switch/Alert 一整套）只有登录用户点「创建提示词」才用；静态 import 会让
+// 首页初始 chunk 组多背 ~15 KB gz。open 时才挂载：Modal 在组件内部，常驻渲染会立刻拉 chunk。
+const PromptFormModal = lazyWithRetry(() => import("./modal/PromptFormModal"));
 
 // data-auth-ready 必须在 paint 前置位：SPA 从非首页跳进首页时，useEffect（paint 后）会先闪一帧
 // boot 骨架再换按钮。useLayoutEffect 在 commit 后、paint 前跑，首帧即正确。SSR 上退化为 useEffect 避免告警。
@@ -179,15 +181,19 @@ const UserStatus = () => {
         {userAuth ? (
           <>
             {loggedInButtons}
-            <PromptFormModal
-              open={open}
-              mode="add"
-              loading={loading}
-              onSubmit={onFinish}
-              onClose={() => {
-                if (!loading) setOpen(false);
-              }}
-            />
+            {open && (
+              <Suspense fallback={null}>
+                <PromptFormModal
+                  open={open}
+                  mode="add"
+                  loading={loading}
+                  onSubmit={onFinish}
+                  onClose={() => {
+                    if (!loading) setOpen(false);
+                  }}
+                />
+              </Suspense>
+            )}
           </>
         ) : (
           <>
