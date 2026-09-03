@@ -170,6 +170,58 @@ function assertFileBudget(outDir) {
   return n;
 }
 
+/**
+ * 社区静态页的正文有没有真的直出到 HTML。
+ *
+ * 守的是一条「坏了完全没有信号」的不变量：正文由 plugin-community-pages.js 打包成分片
+ * 交给路由，CommunityPromptDetail 再按 URL 里的 id 从分片里挑自己那条（见两处文件头）。
+ * 这个挑选一旦失手（分片键变了、URL 形态变了、组件 prop 改名），页面**照常可用** ——
+ * 只是退回骨架屏 + 客户端拉取，构建 exit 0、typecheck 通过、肉眼打开也正常，
+ * 唯一的损失是搜索引擎和 AI 爬虫拿到的 HTML 里没有正文，而那正是静态化的全部目的。
+ *
+ * 抽样而非全量：真出问题时是全线失手，抽几条足够；分散取样也能抓到「某一片没打进去」。
+ */
+export function assertCommunityBodiesInHtml(outDir) {
+  const idsFile = path.resolve("src/data/communityStaticIds.json");
+  if (!fs.existsSync(idsFile)) return; // main / offline 分支没有静态页，跳过
+  const ids = JSON.parse(fs.readFileSync(idsFile, "utf8")).filter((id) => Number.isInteger(id));
+  if (ids.length === 0) return;
+
+  const SAMPLE = 20;
+  const step = Math.max(1, Math.floor(ids.length / SAMPLE));
+  const sample = [];
+  for (let i = 0; i < ids.length && sample.length < SAMPLE; i += step) sample.push(ids[i]);
+
+  const escapeHtml = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const failures = [];
+  let checked = 0;
+
+  for (const id of sample) {
+    const htmlPath = path.join(outDir, "community-prompt", String(id), "index.html");
+    const dataPath = path.resolve("src/data/community", `${id}.json`);
+    // 选品表比语料/产物新一步时该页本就不存在，不是回归
+    if (!fs.existsSync(htmlPath) || !fs.existsSync(dataPath)) continue;
+    checked++;
+
+    const html = fs.readFileSync(htmlPath, "utf8");
+    const { title } = JSON.parse(fs.readFileSync(dataPath, "utf8"));
+    // 标题是 SSR 时唯一整段连续渲染的正文字段（prompt 正文会被占位符渲染切成多个节点）
+    if (!title || !html.includes(escapeHtml(title))) failures.push(id);
+  }
+
+  if (checked === 0) {
+    throw new Error(`[build] 社区静态页一个都没产出（抽查 ${sample.length} 条），plugin-community-pages 可能没注册路由`);
+  }
+  if (failures.length > 0) {
+    throw new Error(
+      `[build] 社区静态页的正文没进 HTML：${failures.join(", ")}（抽查 ${checked} 条中 ${failures.length} 条）\n` +
+        `    页面还能用，但退回了骨架屏 + 客户端拉取，搜索引擎拿不到正文 —— 静态化白做。\n` +
+        `    多半是分片里挑正文那步失手了，见 src/components/CommunityPromptDetail.tsx 的 STATIC_PATH_ID。`,
+    );
+  }
+  console.log(`[build] 社区静态页正文直出抽查通过（${checked} 条）`);
+}
+
 function main() {
   // 带参（`yarn build --locale pt`）→ 转交单次 build，不分批也不合并 sitemap。
   // 供 Vercel/Cloudflare 只部署部分语言用，见 docs/deploy/standard.md。
@@ -187,6 +239,7 @@ function main() {
   console.log(`[build] ${locales.length} locales → ${chunks.length} chunk(s) of ≤${chunkSize}`);
   buildChunks(chunks);
   mergeSitemaps();
+  assertCommunityBodiesInHtml("build");
   assertFileBudget("build");
   console.log(`\n[build] ✓ all ${locales.length} locales built into build/`);
 }

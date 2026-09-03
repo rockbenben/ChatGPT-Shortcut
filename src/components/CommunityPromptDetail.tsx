@@ -9,10 +9,13 @@ import { primeCacheFromSnapshot, type CommunityPrompt } from "@site/src/utils/sn
 
 interface CommunityPromptDetailProps {
   /**
-   * 构建期注入的正文。只有 src/pages/community-prompt/<id>.tsx（默认 locale 的静态页）
-   * 会传；?id= 的 CSR 壳不传，行为与静态化之前一致。
+   * 构建期注入的正文分片（{ [id]: prompt }），只有 plugin-community-pages.js 注册的
+   * 默认 locale 静态路由会传；?id= 的 CSR 壳不传，行为与静态化之前一致。
+   *
+   * 为什么是一片而不是本页那一条：一条一个模块时，1400 条登记项要塞进每一页都下载的
+   * main.js（约 83 KB gz），见 plugin-community-pages.js 文件头。本页那条靠 URL 里的 id 挑出来。
    */
-  initialPrompt?: CommunityPrompt;
+  promptShard?: Record<string, CommunityPrompt>;
   /**
    * 出了静态页的 id 全集，只有 ?id= 壳会传（src/pages/community-prompt.tsx）。
    * 壳靠它决定 canonical 要不要指向静态页 —— 选品之后「有没有静态页」不再能用
@@ -21,7 +24,19 @@ interface CommunityPromptDetailProps {
   staticIds?: number[];
 }
 
-function CommunityPromptDetailInner({ initialPrompt, staticIds }: CommunityPromptDetailProps) {
+/**
+ * 静态路由的 id 只存在于 URL 里（/community-prompt/<id>）。
+ * 用 pathname 而不是 location.search：pathname 在 SSR 与 CSR 两端一致，
+ * search 不一致会触发 hydration mismatch（React 18+ 丢弃整棵 SSR 树重渲染）。
+ */
+const STATIC_PATH_ID = /\/community-prompt\/(\d+)\/?$/;
+
+interface InnerProps {
+  initialPrompt?: CommunityPrompt;
+  staticIds?: number[];
+}
+
+function CommunityPromptDetailInner({ initialPrompt, staticIds }: InnerProps) {
   const location = useLocation();
   const { message: messageApi } = App.useApp();
   const { userAuth } = useContext(AuthContext);
@@ -156,7 +171,18 @@ function CommunityPromptDetailInner({ initialPrompt, staticIds }: CommunityPromp
   return <CommunityPromptPage prompt={prompt} loading={loading} error={error} onVote={handleVote} hasStaticPage={hasStaticPage} />;
 }
 
-export default function CommunityPromptDetail({ initialPrompt, staticIds }: CommunityPromptDetailProps = {}) {
+export default function CommunityPromptDetail({ promptShard, staticIds }: CommunityPromptDetailProps = {}) {
+  const { pathname } = useLocation();
+
+  // 从整片里挑出本页那条。挑不到就退化成 CSR（骨架屏 + API 拉取）——页面仍然可用，
+  // 但正文不再随 SSR 直出，正是静态化要买的东西。这种退化构建全绿、肉眼也看不出，
+  // 所以由 scripts/buildPhased.mjs 在构建末尾抽查产物 HTML 兜底。
+  const initialPrompt = useMemo(() => {
+    if (!promptShard) return undefined;
+    const matched = STATIC_PATH_ID.exec(pathname);
+    return matched ? promptShard[matched[1]] : undefined;
+  }, [promptShard, pathname]);
+
   // key：useState(initialPrompt) 的初始值只在挂载时取一次。静态页之间客户端跳转
   // （/community-prompt/1 → /2）若路由层复用了组件实例，会先显示上一条正文再等刷新覆盖。
   // 按 id 换 key 强制重挂，不依赖路由层的实现细节。
