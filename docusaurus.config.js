@@ -226,6 +226,13 @@ const config = {
   ],
 
   headTags: [
+    // 提前握手 API 域：prompt 详情页（评论）、社区列表/详情页水合后第一件事就是打
+    // api.newzone.top，而且是跨域带 preflight。Lighthouse 移动端实测首个 XHR 落在 2.9–4.7 s，
+    // DNS + TCP + TLS 那 100–300 ms 可以在解析 HTML 时就付掉。
+    {
+      tagName: "link",
+      attributes: { rel: "preconnect", href: "https://api.newzone.top", crossorigin: "anonymous" },
+    },
     // PWA manifest — 移动安装 + 部分 AI 答案引擎/搜索抓 manifest 识别站点身份
     {
       tagName: "link",

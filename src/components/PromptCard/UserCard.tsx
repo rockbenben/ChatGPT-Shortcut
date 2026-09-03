@@ -6,8 +6,7 @@ import { translate } from "@docusaurus/Translate";
 import { IconAction } from "@site/src/components/IconAction";
 import { CopyButton } from "@site/src/components/CopyButton";
 import { EditOutlined, DeleteOutlined, HolderOutlined, LikeFilled, LockOutlined } from "@ant-design/icons";
-import { useSortable } from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
+import type { SortableCardProps } from "./types";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
 import { formatCompactNumber } from "@site/src/utils/formatters";
@@ -16,25 +15,14 @@ import styles from "./styles.module.css";
 
 interface UserCardProps {
   data: CommunityPrompt;
-  sortableId?: string | number;
-  isFiltered?: boolean;
+  sortable?: SortableCardProps;
   onEdit?: (data: CommunityPrompt) => void;
   onDelete?: (id: number) => void;
   onOpenModal?: (data: any) => void;
   extraActions?: ReactNode;
 }
 
-const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelete, onOpenModal, extraActions }: UserCardProps) => {
-
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: sortableId ?? user.id });
-
-  const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
-    opacity: isDragging ? 0.5 : 1,
-    height: "100%",
-  };
-
+const UserCardComponent = ({ data: user, sortable, onEdit, onDelete, onOpenModal, extraActions }: UserCardProps) => {
 
   const handleEdit = useCallback(
     (e: React.MouseEvent) => {
@@ -69,13 +57,13 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
 
   return (
     <BasePromptCard
-      ref={setNodeRef}
-      style={style}
-      {...attributes}
+      ref={sortable?.setNodeRef}
+      style={{ height: "100%", ...sortable?.style }}
+      {...sortable?.attributes}
       title={
         <Flex align="start" style={{ overflow: "hidden" }}>
-          {!isFiltered && (
-            <div {...listeners} style={{ cursor: "grab", marginInlineEnd: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
+          {sortable && (
+            <div {...sortable.listeners} style={{ cursor: "grab", marginInlineEnd: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
               <HolderOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
             </div>
           )}
