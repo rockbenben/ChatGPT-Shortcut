@@ -1,12 +1,16 @@
-import React, { useContext, useState, useCallback, useMemo } from "react";
+import React, { useContext, useState, useCallback, useMemo, Suspense } from "react";
 import { Button, Dropdown, Space } from "antd";
 import { useViewMode } from "@site/src/contexts/ViewModeContext";
 import { UserOutlined, EditOutlined, SettingOutlined, BookOutlined, HeartOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import { AuthContext } from "../AuthContext";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
-import PromptFormModal from "./modal/PromptFormModal";
 import Link from "@docusaurus/Link";
+import { lazyWithRetry } from "@site/src/utils/lazyRetry";
+
+// 创建提示词表单（antd Form/Switch/Alert 一整套）只有点「添加提示词」才用；静态 import 会让
+// 首页初始 chunk 组多背 ~15 KB gz。open 时才挂载：Modal 在组件内部，常驻渲染会立刻拉 chunk。
+const PromptFormModal = lazyWithRetry(() => import("./modal/PromptFormModal"));
 
 const UserStatus = () => {
   const { userAuth } = useContext(AuthContext);
@@ -54,15 +58,19 @@ const UserStatus = () => {
           <Button icon={<SettingOutlined />} aria-label={translate({ id: "link.myAccount", message: "我的账户" })} />
         </Dropdown>
       </Space>
-      <PromptFormModal
-        open={open}
-        mode="add"
-        loading={loading}
-        onSubmit={onFinish}
-        onClose={() => {
-          if (!loading) setOpen(false);
-        }}
-      />
+      {open && (
+        <Suspense fallback={null}>
+          <PromptFormModal
+            open={open}
+            mode="add"
+            loading={loading}
+            onSubmit={onFinish}
+            onClose={() => {
+              if (!loading) setOpen(false);
+            }}
+          />
+        </Suspense>
+      )}
     </>
   );
 };
