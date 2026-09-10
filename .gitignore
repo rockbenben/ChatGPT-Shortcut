@@ -38,6 +38,8 @@
 .env.test.local
 .env.production.local
 /.claude
+/.agents
+skills-lock.json
 
 npm-debug.log*
 yarn-debug.log*
