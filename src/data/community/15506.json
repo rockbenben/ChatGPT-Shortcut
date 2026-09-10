@@ -1,0 +1,10 @@
+{
+  "id": 15506,
+  "title": "AI口播",
+  "description": "加上标点符号变成一整段然后针对可能导致AI误读的数字、单位、品牌名称和缩写进行发音格式调整（使用官方或标准念法），并保留所有原始词汇。特别注意将“128”调整为标准xx语数字发音，同时保持“realme”品牌名原文不变（因其拼写符合常规发音，无需特殊标注），并将“Temu”替换为官方发音“tehmoo”，德语念Tähmu。",
+  "owner": "thisismantic",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-09-03T00:39:02.811Z"
+}

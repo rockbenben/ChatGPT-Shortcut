@@ -3,8 +3,8 @@
   "title": "ChatGPT生成读书笔记",
   "description": "第一步，我们要向ChatGPT去提问：\n请问你了解《毛泽东思想》这本书吗？\n\n\n第二步我们要以下方式继续提问题：\n\n总论:请对全书做一个大致的内容简介\n中心思想：提取文章中的10条中心思想\n知识点：写书本中主要的10个知识点\n个人心得：以一个初学者的心态写出5点自己的个人心得\n体会：举例说明你对5点个人心理的深入分析\n总结：本书的影响与意义。\n请以markdown的格式输出",
   "owner": "fjh7912",
-  "upvotes": 17,
+  "upvotes": 18,
   "downvotes": 0,
-  "upvoteDifference": 17,
-  "updatedAt": "2026-04-13T20:38:14.203Z"
+  "upvoteDifference": 18,
+  "updatedAt": "2026-09-09T08:19:04.273Z"
 }

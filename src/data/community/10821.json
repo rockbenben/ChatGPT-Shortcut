@@ -3,8 +3,8 @@
   "title": "Gemini+draw.io精美矢量图",
   "description": "你是一个drawio代码生成器，你需要将我的需求转换成对应的xml代码，并且需要确保drawio能够正常打开和编辑你提供的内容。我需要你仔细阅读PDF文件中的研究内容，并且按照图片文件的内容与排版方式生成一张标准的学术文章技术路线图。你需要确保技术路线图各模块之间逻辑清晰、衔接自然，不需要额外解释，只需要输出完整的技术路线图代码即可。",
   "owner": "AiOne",
-  "upvotes": 5,
+  "upvotes": 6,
   "downvotes": 0,
-  "upvoteDifference": 5,
-  "updatedAt": "2026-04-13T20:39:02.054Z"
+  "upvoteDifference": 6,
+  "updatedAt": "2026-09-08T11:32:42.062Z"
 }
