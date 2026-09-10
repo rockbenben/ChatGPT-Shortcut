@@ -43,9 +43,9 @@ Dữ liệu nguồn nằm trong `src/data/prompt.json` — một mảng trong đ
 
 Sau khi chỉnh sửa, chạy `python CodeUpdateHandler.py`. Script này sẽ tách `prompt.json` thành các file `prompt_<locale>.json` riêng theo từng ngôn ngữ và cập nhật trang chủ cũng như các trang prompt tuyển chọn cho mỗi ngôn ngữ.
 
-![Quy trình xử lý dữ liệu: file gốc prompt.json được python CodeUpdateHandler.py xử lý — tách theo ngôn ngữ thành các file prompt riêng cho từng locale, tạo JSON thẻ và trang chi tiết cho mỗi id, kèm chuyển đổi tiếng Trung Giản thể sang Phồn thể bằng OpenCC](/img/docs/data-pipeline.svg)
+![Quy trình xử lý dữ liệu: file gốc prompt.json được python CodeUpdateHandler.py xử lý — tách theo ngôn ngữ thành các file prompt riêng cho từng locale, tạo JSON thẻ cho mỗi id, kèm chuyển đổi tiếng Trung Giản thể sang Phồn thể bằng OpenCC](/img/docs/data-pipeline.svg)
 
-> **Lưu ý**: nên đặt `id` từ 500 trở lên để tránh xung đột ID với prompt hiện có hoặc nội dung cộng đồng. Chạy `python CodeUpdateHandler.py` sẽ tự động tạo dữ liệu thẻ và trang chi tiết cho mỗi prompt (bao gồm cả prompt mới thêm), không cần tạo file trang thủ công; prompt tùy chỉnh mặc định không có phần mô tả meta tuyển chọn và dữ liệu bình luận.
+> **Lưu ý**: nên đặt `id` từ 500 trở lên để tránh xung đột ID với prompt hiện có hoặc nội dung cộng đồng. Chạy `python CodeUpdateHandler.py` sẽ tự động tạo dữ liệu thẻ cho mỗi prompt (bao gồm cả prompt mới thêm), không cần tạo file trang thủ công; prompt tùy chỉnh mặc định không có phần mô tả meta tuyển chọn và dữ liệu bình luận.
 
 ## Backend tùy chỉnh
 

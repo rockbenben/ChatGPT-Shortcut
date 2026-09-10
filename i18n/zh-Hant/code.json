@@ -687,7 +687,7 @@
     "message": "譯文"
   },
   "search.submit": {
-    "message": "搜索"
+    "message": "搜尋"
   },
   "share.copy": {
     "message": "複製"
@@ -1017,7 +1017,7 @@
     "description": "Title for link to heading"
   },
   "theme.common.skipToMainContent": {
-    "message": "跳至主要内容",
+    "message": "跳至主要內容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.contentVisibility.draftBanner.message": {
@@ -1029,7 +1029,7 @@
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "此頁面未列出。搜索引擎不會對其索引，只有擁有直接連結的用戶才能訪問。",
+    "message": "此頁面未列出。搜尋引擎不會對其索引，只有擁有直接連結的使用者才能訪問。",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.unlistedBanner.title": {
@@ -1227,7 +1227,7 @@
     "message": "距「{next}」"
   },
   "validation.agreement.required": {
-    "message": "使用前須同意服務條款和隱私政策"
+    "message": "使用前須同意服務條款和隱私權政策"
   },
   "validation.comment.maxLength": {
     "message": "評論內容不應超過 2000 個字元"

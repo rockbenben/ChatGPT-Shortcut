@@ -25,7 +25,9 @@ yarn start
 yarn build
 ```
 
-> **Yalnızca belirli dilleri derlemek için**: `yarn build --locale <locale>` kullanın (örn. `zh-Hans`, `en`, `ja`… tam locale listesi için `scripts/i18nLocales.mjs` dosyasına bakın). Birden fazlasını zincirleyin: `yarn build --locale zh-Hans && yarn build --locale en`.
+> **Yalnızca belirli dilleri derlemek için**: `yarn build --locale <locale>` kullanın (örn. `zh-Hans`, `en`, `ja`… tam locale listesi için `scripts/i18nLocales.mjs` dosyasına bakın).
+>
+> ⚠ **Tek bir varsayılan olmayan** locale belirtmek o dili sitenin kökü yapar (çıktı doğrudan `build/` içine yazar, URL'lerde `/en/` öneki olmaz). Aynı anda birkaç dil üretmek için tüm locale'leri **tek** komutta sıralayın, varsayılan başta: `yarn build --locale zh-Hans --locale en` (→ `build/` Çince kök olarak artı `build/en/`). 18 dilin tamamı için doğrudan `yarn build` kullanın (otomatik bölme + birleştirilmiş sitemap).
 
 ## Vercel Dağıtımı
 

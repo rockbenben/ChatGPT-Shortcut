@@ -25,7 +25,9 @@ yarn start
 yarn build
 ```
 
-> **Chỉ build một số ngôn ngữ cụ thể**: dùng `yarn build --locale <locale>` (ví dụ: `zh-Hans`, `en`, `ja`… xem danh sách locale đầy đủ trong `scripts/i18nLocales.mjs`). Kết hợp nhiều locale: `yarn build --locale zh-Hans && yarn build --locale en`.
+> **Chỉ build một số ngôn ngữ cụ thể**: dùng `yarn build --locale <locale>` (ví dụ: `zh-Hans`, `en`, `ja`… xem danh sách locale đầy đủ trong `scripts/i18nLocales.mjs`).
+>
+> ⚠ Chỉ liệt kê **một locale không phải mặc định** sẽ biến ngôn ngữ đó thành gốc của site (kết quả nằm thẳng trong `build/`, URL không có tiền tố `/en/`). Muốn xuất nhiều ngôn ngữ cùng lúc, hãy liệt kê mọi locale trong **cùng một** lệnh, đặt mặc định lên trước: `yarn build --locale zh-Hans --locale en` (→ `build/` làm gốc tiếng Trung cộng `build/en/`). Đủ 18 ngôn ngữ thì dùng thẳng `yarn build` (tách tự động + gộp sitemap).
 
 ## Triển khai Vercel
 

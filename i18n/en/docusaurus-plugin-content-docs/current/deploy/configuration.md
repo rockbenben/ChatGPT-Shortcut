@@ -43,9 +43,9 @@ The source data lives in `src/data/prompt.json` — an array where each object s
 
 After editing, run `python CodeUpdateHandler.py`. The script splits `prompt.json` into per-language `prompt_<locale>.json` files and updates each language's homepage and curated prompt pages.
 
-![Data pipeline: the master prompt.json is processed by python CodeUpdateHandler.py — split by language into per-locale prompt files, generating each id's card JSON and detail page, with OpenCC Simplified-to-Traditional conversion](/img/docs/data-pipeline.svg)
+![Data pipeline: the master prompt.json is processed by python CodeUpdateHandler.py — split by language into per-locale prompt files, generating each id's card JSON, with OpenCC Simplified-to-Traditional conversion](/img/docs/data-pipeline.svg)
 
-> **Note**: set `id` to 500 or higher to avoid colliding with existing prompt or community IDs. Running `python CodeUpdateHandler.py` automatically generates the card data and a detail page for every prompt (including new ones), so there's no need to create any page file manually; custom prompts just won't have curated meta descriptions or comment data by default.
+> **Note**: set `id` to 500 or higher to avoid colliding with existing prompt or community IDs. Running `python CodeUpdateHandler.py` automatically generates the card data for every prompt (including new ones), while scripts/genPromptPages.mjs generates the `/community-prompt/<id>` page shells, so nothing needs to be created by hand; custom prompts just won't have curated meta descriptions or comment data by default.
 
 ## Custom backend
 

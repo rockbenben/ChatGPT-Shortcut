@@ -25,7 +25,9 @@ yarn start
 yarn build
 ```
 
-> **特定言語のみビルドする場合**：`yarn build --locale <locale>` を使用します（例：`zh-Hans`、`en`、`ja` など。全ロケール一覧は `scripts/i18nLocales.mjs` を参照）。複数指定する場合は連結できます：`yarn build --locale zh-Hans && yarn build --locale en`。
+> **特定言語のみビルドする場合**：`yarn build --locale <locale>` を使用します（例：`zh-Hans`、`en`、`ja` など。全ロケール一覧は `scripts/i18nLocales.mjs` を参照）
+>
+> ⚠ **デフォルト以外の** locale を 1 つだけ指定すると、その言語がサイトのルートになります（成果物は `/en/` プレフィックスなしで直接 `build/` に入る）。複数言語を一度に出力するには、すべての locale を**同じ**コマンドに、デフォルトを先頭に並べてください：`yarn build --locale zh-Hans --locale en`（→ `build/` が中文ルート、`build/en/` が英文）。18 言語すべては通常の `yarn build` を使ってください（自動で分割ビルド + sitemap 統合）。
 
 ## Vercel デプロイ
 

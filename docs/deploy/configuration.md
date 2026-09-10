@@ -43,9 +43,9 @@ AI Short 开源，可以自由修改网站标题、描述、提示词与后端�
 
 编辑后运行 `python CodeUpdateHandler.py`，脚本会按预设规则拆分 `prompt.json` 生成各语言的 `prompt_<locale>.json`，并同步更新各语言的主页面和精选提示词页面。
 
-![数据流水线：主数据 prompt.json 经 python CodeUpdateHandler.py 按语言拆分，生成各语言的 prompt 文件、各 id 的卡片 JSON 与详情页，并用 OpenCC 做简繁转换](/img/docs/zh/data-pipeline.svg)
+![数据流水线：主数据 prompt.json 经 python CodeUpdateHandler.py 按语言拆分，生成各语言的 prompt 文件、各 id 的卡片 JSON，并用 OpenCC 做简繁转换](/img/docs/zh/data-pipeline.svg)
 
-> **注意**：建议将 `id` 设为 500 以上，避免与现有提示词或社区内容的 ID 冲突。运行 `python CodeUpdateHandler.py` 会自动为每条提示词（含新增的）生成卡片数据和详情页，无需手动创建页面文件；自定义提示词默认没有精选元描述和评论数据。
+> **注意**：建议将 `id` 设为 500 以上，避免与现有提示词或社区内容的 ID 冲突。运行 `python CodeUpdateHandler.py` 会为每条提示词（含新增的）生成卡片数据；详情页外壳由 scripts/genPromptPages.mjs 生成，两者都在 pre 钩子里自动跑，无需手动创建页面文件；自定义提示词默认没有精选元描述和评论数据。
 
 ## 自定义后端
 

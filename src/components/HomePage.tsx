@@ -112,6 +112,9 @@ const ShowcaseFilters: React.FC = React.memo(() => {
           {showTagsOnMobile ? <CaretUpOutlined /> : <CaretDownOutlined />}
         </Button>
         <Flex align="center" gap="small">
+          {/* 「Filters」刻意保持英文、不走 <Translate>：这是与 AI Short 品牌字同源的
+              排版性微标签（11px/uppercase/0.08em 字距），全语言统一字形才压得住这套
+              calm-editorial 视觉系统。i18n 检查若再报为缺失，属预期，勿"修"。 */}
           <span
             className="hideOnSmallScreen"
             style={{
@@ -421,6 +424,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
             <div id="favorites-section" className={styles.showcaseFavorite}>
               <div className="container">
                 <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+                  {/* 「Favorites」同 Filters：英文品牌化区块标题，全语言统一，i18n 缺失属预期 */}
                   <Title level={2} className="hideOnSmallScreen" style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", display: "inline-flex", alignItems: "center", gap: 10 }}>
                     <HeartFilled aria-hidden style={{ color: "var(--site-color-svg-icon-favorite)", fontSize: 18 }} />
                     Favorites
@@ -453,6 +457,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
           )}
           <div className="container margin-top--md">
             <div className="hideOnSmallScreen" style={{ paddingBottom: 12, marginBottom: 16, borderBottom: "1px solid var(--site-color-hairline)" }}>
+              {/* 「All Prompts」同 Filters / Favorites，英文区块标题，刻意不译 */}
               <Title level={2} style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em" }}>
                 All Prompts
               </Title>

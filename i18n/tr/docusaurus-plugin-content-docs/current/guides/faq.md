@@ -110,7 +110,7 @@ Köşeli parantezdeki yer tutucuları **doldurduğunuz somut içerikler ve AI'ı
 
 Şunu da belirtmek gerekir: Kopyalama sırasında arka uca **anonim bir sayım olayı** gönderilir (POST `/cards/<id>/copy`); bu yalnızca her promptun popülerliğini ölçmek için kullanılır (kartın üzerinde gösterilen "kopyalama sayısı"). **Yalnızca kart ID'si iletilir; doldurduğunuz içerik iletilmez**, kişisel bilgi içermez ve kullanıcı kimliğiyle ilişkilendirilmez.
 
-**Hesabınıza giriş yaptıktan sonra** koleksiyon listeleriniz, özel promptlarınız ve topluluk katkılarınız cihazlar arası senkronizasyon için arka uca aktarılır; istediğiniz zaman JSON olarak dışa aktarabilir ve tüm verilerinizi tek tıkla silebilirsiniz.
+**Hesabınıza giriş yaptıktan sonra** koleksiyon listeleriniz, özel promptlarınız ve topluluk katkılarınız cihazlar arası senkronizasyon için arka uca aktarılır; istediğiniz zaman JSON olarak dışa aktarabilirsiniz.
 
 ## İlgili Belgeler
 

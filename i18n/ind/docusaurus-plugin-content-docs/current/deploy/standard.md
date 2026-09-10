@@ -25,7 +25,9 @@ yarn start
 yarn build
 ```
 
-> **Build bahasa tertentu saja**: gunakan `yarn build --locale <locale>` (mis. `zh-Hans`, `en`, `ja`… lihat daftar locale lengkap di `scripts/i18nLocales.mjs`). Gabungkan beberapa: `yarn build --locale zh-Hans && yarn build --locale en`.
+> **Build bahasa tertentu saja**: gunakan `yarn build --locale <locale>` (mis. `zh-Hans`, `en`, `ja`… lihat daftar locale lengkap di `scripts/i18nLocales.mjs`).
+>
+> ⚠ Menyebutkan **satu locale non-default** saja menjadikan bahasa itu root situs (hasilnya masuk langsung ke `build/`, URL tanpa prefiks `/en/`). Untuk beberapa bahasa sekaligus, daftar semua locale dalam **satu** perintah dengan yang default di depan: `yarn build --locale zh-Hans --locale en` (→ `build/` sebagai root Tionghoa plus `build/en/`). Untuk seluruh 18 bahasa cukup pakai `yarn build` (dipecah otomatis + sitemap digabung).
 
 ## Deployment Vercel
 

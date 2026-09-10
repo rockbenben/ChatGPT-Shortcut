@@ -25,7 +25,9 @@ yarn start
 yarn build
 ```
 
-> **특정 언어만 빌드하려면**: `yarn build --locale <locale>`을 사용하세요 (예: `zh-Hans`, `en`, `ja`… 전체 로케일 목록은 `scripts/i18nLocales.mjs`를 참조). 여러 언어를 연결할 수 있습니다: `yarn build --locale zh-Hans && yarn build --locale en`.
+> **특정 언어만 빌드하려면**: `yarn build --locale <locale>`을 사용하세요 (예: `zh-Hans`, `en`, `ja`… 전체 로케일 목록은 `scripts/i18nLocales.mjs`를 참조)
+>
+> ⚠ **기본값이 아닌** locale 하나만 지정하면 그 언어가 사이트 루트가 됩니다(결과물이 `/en/` 접두사 없이 바로 `build/`에 들어갑니다). 여러 언어를 한 번에 만들려면 모든 locale을 **하나의** 명령에 나열하고 기본 언어를 앞에 두세요: `yarn build --locale zh-Hans --locale en` (→ `build/`는 중국어 루트, `build/en/`는 영어). 18개 언어 전체는 그냥 `yarn build`를 사용하세요(자동 분할 빌드 + sitemap 병합).
 
 ## Vercel 배포
 
