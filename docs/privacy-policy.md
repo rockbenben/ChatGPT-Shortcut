@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# AiShort Privacy Policy
+# AI Short Privacy Policy
 
 Last updated May 25, 2023
 
@@ -29,7 +29,7 @@ We do not process sensitive information.
 
 Single-Sign Ons – If you sign up to our website aishort.top through Google, you authorize us to collect your authentication information, such as your username and encrypted access credentials, and other personal data available through the third party application account, including the following personal data:
 
-Google – You can sign up and log in to AiShort using your Google account. When you sign up using Google, Google will ask your permission to share certain information from your Google account with aishort.top. This includes your Google email address and avatar (optional). This information is collected by Google and is provided to us under the terms of Google’s privacy policy. You can regulate the information that we receive from Google using your Google activity controls. If you signed up using Google by mistake, you can delete your account from the Account page within your Settings at any time, or you can contact us by emailing us at qingwhat@gmail.com.
+Google – You can sign up and log in to AI Short using your Google account. When you sign up using Google, Google will ask your permission to share certain information from your Google account with aishort.top. This includes your Google email address and avatar (optional). This information is collected by Google and is provided to us under the terms of Google’s privacy policy. You can regulate the information that we receive from Google using your Google activity controls. If you signed up using Google by mistake, you can delete your account from the Account page within your Settings at any time, or you can contact us by emailing us at qingwhat@gmail.com.
 
 ## How We Use Your Personal Data
 
@@ -46,8 +46,8 @@ We use your personal data to:
 We do not sell your personal data to external parties.
 
 - Through Your Profile – Any personal data that you choose to disclose in your public profile on aishort.top will be accessible by other users of the website, who may view your profile information, view or and comment on any of your public prompts.
-- Third Party Applications – If you choose to connect your AiShort account to other apps or social networks such as Facebook and Twitter, you may be sharing certain personal data with these apps or networks. Materials that you share with social media networks will appear on your timeline (or similar functions) as well as in feeds that may be viewed by the public or by certain followers, subject to the terms and conditions of such social media networks.
-- Compliance with Laws – We may disclose your personal data to courts, law enforcement agencies, and governmental authorities (i) to comply with our legal obligations, (ii) to comply with legal process and to respond to claims asserted against aishort.top, (iii) to respond to verified requests relating to a criminal investigation or alleged or suspected illegal activity or any other activity that may expose us, you, or any other of our users to legal liability, (iv) to enforce and administer our Terms of Use and other agreements with users, or (v) to protect the rights, property or personal safety of aishort.top, its employees, and members of the public.
+- Third Party Applications – If you choose to connect your AI Short account to other apps or social networks such as Facebook and Twitter, you may be sharing certain personal data with these apps or networks. Materials that you share with social media networks will appear on your timeline (or similar functions) as well as in feeds that may be viewed by the public or by certain followers, subject to the terms and conditions of such social media networks.
+- Compliance with Laws – We may disclose your personal data to courts, law enforcement agencies, and governmental authorities (i) to comply with our legal obligations, (ii) to comply with legal process and to respond to claims asserted against aishort.top, (iii) to respond to verified requests relating to a criminal investigation or alleged or suspected illegal activity or any other activity that may expose us, you, or any other of our users to legal liability, (iv) to enforce and administer our Terms of Use and other agreements with users, or (v) to protect the rights, property or personal safety of AI Short, its employees, and members of the public.
 
 ## Information Security
 

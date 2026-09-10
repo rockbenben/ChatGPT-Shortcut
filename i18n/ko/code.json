@@ -1021,7 +1021,7 @@
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "이 페이지는 초안입니다. 개발 환경에서만 표시되며,本番 빌드에서는 제외됩니다.",
+    "message": "이 페이지는 초안입니다. 개발 환경에서만 표시되며, 프로덕션 빌드에서는 제외됩니다.",
     "description": "The draft content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
@@ -1227,7 +1227,7 @@
     "message": "「{next}」까지"
   },
   "validation.agreement.required": {
-    "message": "사용하기 전에 서비스 약관 및 개인 정보 보호 정책에 동의해야 합니다"
+    "message": "사용하기 전에 서비스 이용약관 및 개인정보처리방침에 동의해야 합니다"
   },
   "validation.comment.maxLength": {
     "message": "댓글 내용은 2000자를 초과할 수 없습니다"
