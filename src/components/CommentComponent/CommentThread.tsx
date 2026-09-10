@@ -44,7 +44,7 @@ const CommentThread: React.FC<CommentThreadProps> = ({ comment, logoUrl, replyin
       author={comment.author?.name}
       avatar={
         comment.author?.name ? (
-          <BoringAvatar size={40} name={comment.author.name} variant="beam" colors={avatarColors} />
+          <BoringAvatar title size={40} name={comment.author.name} variant="beam" colors={avatarColors} />
         ) : (
           // 官方账号回复用站点 logo 作头像（身份最强标识），替代随机 BoringAvatar
           <div
