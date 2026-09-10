@@ -1,6 +1,14 @@
 {
   "copyright": {
-    "message": "Copyright © 2026 AiShort (ChatGPT Shortcut) · কমিউনিটি অবদান। মতামত লেখকদের নিজস্ব।",
+    "message": "Copyright © 2026 AI Short (ChatGPT Shortcut) · কমিউনিটি অবদান। মতামত লেখকদের নিজস্ব।",
     "description": "The footer copyright"
+  },
+  "link.item.label.隐私政策": {
+    "message": "গোপনীয়তা নীতি",
+    "description": "The label of footer link with label=隐私政策 linking to /docs/privacy-policy"
+  },
+  "link.item.label.服务条款": {
+    "message": "পরিষেবার শর্তাবলী",
+    "description": "The label of footer link with label=服务条款 linking to /docs/terms-of-service"
   }
 }

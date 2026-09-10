@@ -903,3 +903,74 @@ html[data-auth-boot="in"]:not([data-auth-ready]) .userstatus-live { display: non
 .ant-form-item .ant-form-item-explain-error {
   color: var(--site-color-error-text);
 }
+
+/* 页脚整体优化：精致克制、上下居中、copyright 在上、政策链接在下 */
+.footer {
+  background-color: var(--ifm-footer-background-color);
+  border-top: 1px solid var(--site-color-hairline);
+  padding: 24px 0 20px;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.footer__bottom {
+  order: 1;
+  margin: 0;
+}
+
+.footer__copyright {
+  margin-top: 0 !important;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--site-color-text-tertiary);
+  letter-spacing: 0.01em;
+}
+
+.footer__links {
+  order: 2;
+  margin: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__link-item {
+  font-size: 12px;
+  line-height: 1.5 !important;
+  color: var(--site-color-text-tertiary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: underline;
+}
+
+.footer__link-separator {
+  margin: 0 8px;
+  color: var(--site-color-text-tertiary);
+  opacity: 0.4;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 18px 16px 14px;
+  }
+  .footer__copyright {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+  .footer__link-item,
+  .footer__link-separator {
+    font-size: 11px;
+  }
+}

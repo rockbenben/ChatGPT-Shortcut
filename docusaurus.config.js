@@ -394,7 +394,17 @@ const config = {
         ],
       },
       footer: {
-        copyright: `Copyright © ${new Date().getFullYear()} AiShort (ChatGPT Shortcut) · 用户内容仅代表作者本人`,
+        links: [
+          {
+            label: "隐私政策",
+            to: "/docs/privacy-policy",
+          },
+          {
+            label: "服务条款",
+            to: "/docs/terms-of-service",
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} AI Short (ChatGPT Shortcut) · 用户内容仅代表作者本人`,
       },
       prism: {
         theme: prismThemes.github,

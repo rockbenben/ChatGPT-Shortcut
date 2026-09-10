@@ -1,6 +1,14 @@
 {
   "copyright": {
-    "message": "Copyright © 2026 AiShort (ChatGPT Shortcut) · Contenuti della community. Le opinioni appartengono agli autori.",
+    "message": "Copyright © 2026 AI Short (ChatGPT Shortcut) · Contenuti della community. Le opinioni appartengono agli autori.",
     "description": "The footer copyright"
+  },
+  "link.item.label.隐私政策": {
+    "message": "Informativa sulla privacy",
+    "description": "The label of footer link with label=隐私政策 linking to /docs/privacy-policy"
+  },
+  "link.item.label.服务条款": {
+    "message": "Termini di servizio",
+    "description": "The label of footer link with label=服务条款 linking to /docs/terms-of-service"
   }
 }
