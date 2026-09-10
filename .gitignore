@@ -45,3 +45,6 @@ CHANGELOG.md
 
 /extension
 .gstack/
+/.claude
+/.agents
+skills-lock.json
