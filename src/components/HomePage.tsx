@@ -422,15 +422,15 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
             <div id="favorites-section" className={styles.showcaseFavorite}>
               <div className="container">
                 <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-                  <Title level={3} className="hideOnSmallScreen" style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", display: "inline-flex", alignItems: "center", gap: 10 }}>
+                  <Title level={2} className="hideOnSmallScreen" style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", display: "inline-flex", alignItems: "center", gap: 10 }}>
                     <HeartFilled aria-hidden style={{ color: "var(--site-color-svg-icon-favorite)", fontSize: 18 }} />
                     Favorites
                   </Title>
                   <SearchBar />
                 </div>
                 <Row gutter={[16, 16]}>
-                  {favoritePrompts.map((user) => (
-                    <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                  {favoritePrompts.map((user, index) => (
+                    <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6} className={index >= 4 ? styles.cardDeferred : undefined}>
                       <PromptCard
                         type="data"
                         data={user}
@@ -461,6 +461,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
             <Row gutter={[16, 16]}>
               {otherPrompts.map((user, index) => {
                 const isNew = index >= prevOtherCountRef.current;
+                const isBelowFold = index >= 4;
                 return (
                   <React.Fragment key={user.id}>
                     <Col
@@ -469,7 +470,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
                       md={8}
                       lg={6}
                       xl={6}
-                      className={isNew ? styles.cardEnter : undefined}
+                      className={clsx(isNew && styles.cardEnter, isBelowFold && styles.cardDeferred)}
                       style={isNew ? { animationDelay: `${(index - prevOtherCountRef.current) * 0.05}s` } : undefined}>
                       <PromptCard
                         type="data"
@@ -522,7 +523,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
 
               return (
                 <React.Fragment key={user.id}>
-                  <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+                  <Col xs={24} sm={12} md={8} lg={6} xl={6} className={index >= 4 ? styles.cardDeferred : undefined}>
                     <PromptCard
                       type={isUserPrompt ? "user" : "community"}
                       data={user}
@@ -545,7 +546,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
             })}
             {filteredCards.map((user, index) => (
               <React.Fragment key={user.id}>
-                <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+                <Col xs={24} sm={12} md={8} lg={6} xl={6} className={(filteredCommus.length + index) >= 4 ? styles.cardDeferred : undefined}>
                   <PromptCard
                     type="data"
                     data={user}

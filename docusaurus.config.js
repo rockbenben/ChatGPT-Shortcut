@@ -254,6 +254,7 @@ const config = {
         defer: "true",
         src: "https://s.newzone.top/tracker.js",
         "data-website-id": "680f4413-ce21-4754-a7d5-45e180e8cf69",
+        fetchpriority: "low",
       },
     },
     // 提前握手 API 域：prompt 详情页（评论）、社区列表/详情页水合后第一件事就是打
@@ -279,8 +280,12 @@ const config = {
       tagName: "meta",
       attributes: { name: "theme-color", content: "#14171a" },
     },
-    // Apple Mobile Web App 全屏模式（PWA 安装到 iOS 主屏后用全屏 webview 启动）
-    // 现代 iOS 16+ 会读 manifest 的 display: standalone，但保留这个 tag 兼容老版本
+    // Apple / 标准 Mobile Web App 全屏模式（PWA 安装到主屏后用全屏 webview 启动）
+    // 现代 iOS 16+ 会读 manifest 的 display: standalone，保留两个 tag 兼容不同浏览器并消除废弃警告
+    {
+      tagName: "meta",
+      attributes: { name: "mobile-web-app-capable", content: "yes" },
+    },
     {
       tagName: "meta",
       attributes: { name: "apple-mobile-web-app-capable", content: "yes" },
