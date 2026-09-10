@@ -64,6 +64,8 @@
   color: var(--ifm-color-content) !important;
   text-decoration: none;
   transition: color 0.12s var(--site-motion-emphasized);
+  /* WCAG 2.2 target-size (>=24px): 垂直内边距扩大点击热区，保持 display:inline 避免破坏 line-clamp */
+  padding: 3px 0;
 }
 
 .showcaseCard:hover a.showcaseCardLink:hover {

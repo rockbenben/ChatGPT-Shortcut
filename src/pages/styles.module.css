@@ -157,3 +157,9 @@
   .cardEnter { animation-duration: 0.06s; }
 }
 
+/* Defer rendering calculations for off-screen cards (Modern Web Guidance) */
+.cardDeferred {
+  content-visibility: auto;
+  contain-intrinsic-size: auto none auto 220px;
+}
+
