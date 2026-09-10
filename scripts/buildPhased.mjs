@@ -205,8 +205,9 @@ export function assertCommunityBodiesInHtml(outDir) {
 
     const html = fs.readFileSync(htmlPath, "utf8");
     const { title } = JSON.parse(fs.readFileSync(dataPath, "utf8"));
-    // 标题是 SSR 时唯一整段连续渲染的正文字段（prompt 正文会被占位符渲染切成多个节点）
-    if (!title || !html.includes(escapeHtml(title))) failures.push(id);
+    // 标题是 SSR 时唯一整段连续渲染的正文字段（prompt 正文会被占位符渲染切成多个节点）。
+    // React 19 / HTML5 文本节点不转义 >，允许原样或转义形式匹配
+    if (!title || (!html.includes(escapeHtml(title)) && !html.includes(title))) failures.push(id);
   }
 
   if (checked === 0) {
