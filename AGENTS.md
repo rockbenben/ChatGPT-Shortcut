@@ -14,8 +14,9 @@ Live site: https://www.aishort.top
 yarn start          # Dev server (default locale zh-Hans)
 yarn dev            # Alias for start (has its own predev hook — do not add aliases without one)
 yarn build          # Production build — all 18 locales, memory-safe (6×3 phased)
-yarn typecheck      # Runs the generators + self-checks (clipboard, chunk fallback), then tsc
+yarn typecheck      # Runs the generators + self-checks (clipboard, chunk reload, antd style wiring), then tsc
 yarn gen:snapshot   # Fetch the real community snapshot (dev hooks only write an empty stub)
+yarn gen:community  # Incremental fetch of the full community corpus into src/data/community/ (speedup branch only)
 yarn serve          # Serve built site locally
 yarn clear          # Clear Docusaurus cache
 ```
@@ -32,14 +33,17 @@ the snapshot falls back to an empty stub so a fresh clone runs dev/typecheck wit
 There are deliberately **no per-artifact `gen:` commands** — the hooks always produce them, and a
 manual command would imply they need hand-maintaining (`antd.dark.css` went stale for exactly that
 reason). To force one, call the script directly: `node scripts/genAntdCss.mjs --force`,
-`node scripts/genPromptPages.mjs`. `gen:snapshot` is the one exception: the dev hooks
-*deliberately* write only a stub, so it is the only way to get real data locally.
+`node scripts/genPromptPages.mjs`. Two commands are the exception — `gen:snapshot` and
+`gen:community` — because the dev hooks *deliberately* write only a stub / skip the network, so
+those are the only way to get real community data locally.
 
 There is no linter, formatter, or test framework configured. `yarn typecheck` is the primary
-quality gate — it runs `tsc` **plus** the assert-based self-checks
-(`scripts/checkClipboardFallback.mjs` for the clipboard fallback chain,
-`scripts/checkChunkReloadGuard.mjs` for the chunk-failure fallback; both guard logic whose failure
-mode is invisible to the compiler — add new ones to the `pretypecheck` chain). CI runs it before building, because the Docusaurus
+quality gate — it runs `tsc` **plus** the assert-based self-checks (the `checks` script:
+`scripts/checkClipboardFallback.mjs` for the clipboard fallback chain,
+`scripts/checkChunkReloadGuard.mjs` for the chunk-failure fallback,
+`scripts/checkAntdStyleWiring.mjs` for the build-time antd style extraction; all three guard logic
+whose failure mode is invisible to the compiler — add new ones to `checks`, which `pretypecheck`
+invokes). CI runs it before building, because the Docusaurus
 build strips types with swc and does **not** type-check: code with a TS error still builds with
 exit code 0.
 
@@ -58,7 +62,7 @@ exit code 0.
 - **Axios** for API calls with JWT auth interceptors
 
 ### Key Contexts
-- **`AuthContext`** (`src/components/AuthContext.tsx`) — User auth state with Stale-While-Revalidate pattern: loads cached user from `lscache`, refreshes silently in background. Mounted **once** at `src/theme/Root.tsx` (not per-page) so SPA navigations don't re-trigger `/myspace`. `enrichMySpaceData` (in `src/utils/myspaceUtils.ts`) is the shared shape-builder used by `fetchUser`. Exposes `syncMySpaceState(patch)` — the **single entry point** for any client-side mutation to update `userAuth` state + `lscache-user_auth` + `lscache-myspace` in lockstep (used by useFavorite delta reconcile, MySpace drag/tag mutations). Adds `ensureAuthReady`-style waits in callers for the rare pending-window race.
+- **`AuthContext`** (`src/components/AuthContext.tsx`) — User auth state with Stale-While-Revalidate pattern: loads cached user from `lscache`, refreshes silently in background. Mounted **once** at `src/theme/Root.tsx` (not per-page) so SPA navigations don't re-trigger `/myspace`. `enrichMySpaceData` (in `src/utils/myspaceUtils.ts`) is the shared shape-builder used by `fetchUser`. Exposes `syncMySpaceState(patch)` — the **single entry point** for any client-side mutation to update `userAuth` state + `lscache-user_auth` + `lscache-myspace` in lockstep (used by useFavorite delta reconcile, MySpace drag/tag mutations). Adds `ensureAuthReady`-style waits in callers for the rare pending-window race. **`userAuthRef` is the single source of truth and React state is only its projection** — every write goes through `applyAuth`, so the two can't diverge. Read it with the exposed `getUserAuth()`, **never** with your own `const ref = useRef(userAuth); ref.current = userAuth` mirror: that's a render-time snapshot which `startTransition`-published updates lag behind, so computing items from it after `await refreshUserAuth()` writes stale data over fresh. Logout goes through `clearAuth()` (clears session caches + drops to logged-out; in-flight `/myspace` is voided by the token comparison in `fetchOnce`). There is deliberately **no public `setUserAuth`** — the raw setter bypasses the ref and is how the old race bugs got in; the three controlled channels are `clearAuth` / `syncMySpaceState` / internal `applyAuth`.
 - **`ViewModeContext`** (`src/contexts/ViewModeContext.tsx`) — Toggles between "collection" (personal space) and "explore" (public browsing) modes
 
 ### API Layer (`src/api/`)
@@ -73,7 +77,9 @@ Modular barrel-exported API client against Strapi backend:
 - **Low-frequency local state changes** (MySpace drag, tag manager save, item-tag toggle): API call + local manual sync via `syncMySpaceState`. **No GET /myspace round-trip** — we know what we sent and server doesn't reorder, so we mirror the change locally. Documented trade-off: cross-device drift until next cold load.
 - **Complex/multi-entity mutations** (prompt CRUD via `useUserPrompt`, bulk import): API call + `refreshUserAuth()` for a full `/myspace` re-fetch. Justified because prompt operations have server-side lifecycle hooks that modify fields client can't predict.
 
-Legacy `createFavorite`/`updateFavorite` (full-array PUT) are retained for backward-compat; bulk import has been migrated to `patchFavorites`. **Every new mutation should route through `syncMySpaceState`** — never write `lscache-user_auth` or `lscache-myspace` directly from outside AuthContext.
+Legacy `createFavorite`/`updateFavorite` (full-array PUT) have been **deleted** — every favorite
+write now goes through `patchFavorites` (including bulk import). **Every new mutation should route
+through `syncMySpaceState`** — never write `lscache-user_auth` or `lscache-myspace` directly from outside AuthContext.
 
 ### Caching (`src/utils/cache.js`)
 Uses `lscache` (localStorage with TTL). Prefixed keys: `cc` (copy counts), `cl_` (comm lists), `pc_` (prompt cards), `pm_` (commu prompts), `pu_` (user prompts), `sr_` (search), `cm_` (comments), `up` (user profile), `myspace`. ETag-based conditional requests for API cache validation.
