@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="264" viewBox="0 0 900 264" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', monospace" role="img" aria-label="构建时数据流水线：主数据 src/data/prompt.json（全部 18 种语言）由 python CodeUpdateHandler.py 处理，按语言拆分、生成各 id 的卡片 JSON 与详情页，并用 OpenCC 做简体到繁体转换。">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="286" viewBox="0 0 900 286" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', monospace" role="img" aria-label="构建时数据流水线：主数据 src/data/prompt.json（全部 18 种语言）由 python CodeUpdateHandler.py 处理，按语言拆分生成各语言的 prompt 文件与各 id 的卡片 JSON，并用 OpenCC 做简体到繁体转换；提示词详情页薄壳由 scripts/genPromptPages.mjs 在构建前生成，不入仓库。">
   <defs>
     <linearGradient id="eng" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#23312d"/><stop offset="1" stop-color="#1a2023"/>
@@ -11,7 +11,7 @@
     </marker>
   </defs>
 
-  <rect x="0.5" y="0.5" width="899" height="263" rx="16" fill="#14171a" stroke="#397e6a" stroke-opacity="0.22"/>
+  <rect x="0.5" y="0.5" width="899" height="285" rx="16" fill="#14171a" stroke="#397e6a" stroke-opacity="0.22"/>
   <rect x="300" y="40" width="270" height="200" fill="url(#g2)"/>
   <text x="40" y="46" fill="#7cc0a8" font-size="13.5" letter-spacing="1" font-weight="600">数据流水线&#8201;&#183;&#8201;构建时</text>
   <text x="860" y="46" text-anchor="end" fill="#6b7670" font-size="12">一个主文件&#8201;&#8594;&#8201;多种生成产物</text>
@@ -38,7 +38,7 @@
     <line x1="334" y1="132" x2="540" y2="132" stroke="#397e6a" stroke-opacity="0.3"/>
     <g font-size="11" fill="#aeb6b1">
       <text x="334" y="153"><tspan fill="#5fa890">&#9656;</tspan>&#160; 按语言拆分主数据</text>
-      <text x="334" y="174"><tspan fill="#5fa890">&#9656;</tspan>&#160; 生成卡片 + 详情页</text>
+      <text x="334" y="174"><tspan fill="#5fa890">&#9656;</tspan>&#160; 生成卡片 JSON</text>
       <text x="334" y="195"><tspan fill="#5fa890">&#9656;</tspan>&#160; OpenCC：简体 &#8594; 繁体</text>
     </g>
   </g>
@@ -54,6 +54,9 @@
       <text x="620" y="160"><tspan fill="#7cc0a8">&#9642;</tspan>&#160; src/pages/prompt/&lt;id&gt;.tsx</text>
       <text x="620" y="184"><tspan fill="#7cc0a8">&#9642;</tspan>&#160; 各语言主页数据</text>
     </g>
-    <text x="620" y="206" fill="#6b7670" font-size="10">提交进仓库，作为静态资源分发</text>
+    <text x="620" y="206" fill="#6b7670" font-size="10">语言文件与卡片入库分发</text>
   </g>
+
+  <!-- footnote：详情页薄壳由另一个脚本生成、且不入库（框底 222 / 画布 286，独占一行不挤压任何现有文字） -->
+  <text x="60" y="258" fill="#6b7670" font-size="10">注：src/pages/prompt/&#215;N.tsx 详情页薄壳由 scripts/genPromptPages.mjs 在构建前生成、不入仓库（卡片 JSON 与语言文件才入库）。</text>
 </svg>
