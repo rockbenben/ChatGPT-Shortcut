@@ -43,9 +43,9 @@ Die Quelldaten befinden sich in `src/data/prompt.json` — ein Array, bei dem je
 
 Nach dem Bearbeiten führen Sie `python CodeUpdateHandler.py` aus. Das Skript teilt `prompt.json` in sprachspezifische `prompt_<locale>.json`-Dateien auf und aktualisiert die Startseite und die kuratierten Prompt-Seiten jeder Sprache.
 
-![Datenpipeline: Die zentrale prompt.json wird von python CodeUpdateHandler.py verarbeitet — nach Sprache in sprachspezifische Prompt-Dateien aufgeteilt, wobei für jede ID die Karten-JSON und die Detailseite generiert werden, mit OpenCC-Konvertierung von vereinfachtem zu traditionellem Chinesisch.](/img/docs/data-pipeline.svg)
+![Datenpipeline: Die zentrale prompt.json wird von python CodeUpdateHandler.py verarbeitet — nach Sprache in sprachspezifische Prompt-Dateien aufgeteilt, wobei für jede ID die Karten-JSON generiert werden, mit OpenCC-Konvertierung von vereinfachtem zu traditionellem Chinesisch.](/img/docs/data-pipeline.svg)
 
-> **Hinweis**: Setzen Sie `id` auf 500 oder höher, um ID-Kollisionen mit bestehenden Prompts oder Community-Inhalten zu vermeiden. Beim Ausführen von `python CodeUpdateHandler.py` werden für jeden Prompt (auch die neu hinzugefügten) automatisch die Kartendaten und die Detailseite generiert — Sie müssen keine Seitendateien manuell anlegen; benutzerdefinierte Prompts haben standardmäßig lediglich keine kuratierte Meta-Beschreibung und keine Kommentardaten.
+> **Hinweis**: Setzen Sie `id` auf 500 oder höher, um ID-Kollisionen mit bestehenden Prompts oder Community-Inhalten zu vermeiden. Beim Ausführen von `python CodeUpdateHandler.py` werden für jeden Prompt (auch die neu hinzugefügten) automatisch die Kartendaten generiert — die Seiten-Hüllen erzeugt scripts/genPromptPages.mjs — Sie müssen keine Seitendateien manuell anlegen; benutzerdefinierte Prompts haben standardmäßig lediglich keine kuratierte Meta-Beschreibung und keine Kommentardaten.
 
 ## Benutzerdefiniertes Backend
 

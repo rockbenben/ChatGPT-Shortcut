@@ -108,7 +108,7 @@ Không. Prompt của AiShort được đóng gói dưới dạng JSON tĩnh tron
 
 Cần làm rõ: khi sao chép, hệ thống sẽ gửi **sự kiện đếm ẩn danh** về backend (POST `/cards/<id>/copy`), chỉ dùng để thống kê độ phổ biến của từng prompt (chính là "số lần sao chép" hiển thị trên thẻ). **Chỉ truyền ID của thẻ, không bao gồm** nội dung bạn điền, không bao gồm thông tin cá nhân, không liên kết tới danh tính người dùng.
 
-**Sau khi đăng nhập tài khoản**, danh sách bộ sưu tập, prompt tùy chỉnh, và bài đóng góp cho cộng đồng mới được đồng bộ về backend để hỗ trợ đồng bộ đa thiết bị, và luôn hỗ trợ xuất JSON cũng như xóa toàn bộ dữ liệu chỉ với một cú nhấp bất kỳ lúc nào.
+**Sau khi đăng nhập tài khoản**, danh sách bộ sưu tập, prompt tùy chỉnh, và bài đóng góp cho cộng đồng mới được đồng bộ về backend để hỗ trợ đồng bộ đa thiết bị, và luôn hỗ trợ xuất JSON bất kỳ lúc nào.
 
 ## Tài liệu Liên quan
 

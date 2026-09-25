@@ -25,7 +25,9 @@ yarn start
 yarn build
 ```
 
-> **Build เฉพาะบางภาษา**: ใช้ `yarn build --locale <locale>` (เช่น `zh-Hans`, `en`, `ja`… ดูรายการ locale ทั้งหมดใน `scripts/i18nLocales.mjs`) เชื่อมหลายคำสั่ง: `yarn build --locale zh-Hans && yarn build --locale en`
+> **Build เฉพาะบางภาษา**: ใช้ `yarn build --locale <locale>` (เช่น `zh-Hans`, `en`, `ja`… ดูรายการ locale ทั้งหมดใน `scripts/i18nLocales.mjs`)
+>
+> ⚠ ระบุ locale **เดียวที่ไม่ใช่ค่าเริ่มต้น** จะทำให้ภาษานั้นเป็น root ของไซต์ (ผลผลิตไปอยู่ที่ `build/` ตรง ๆ, URL ไม่มีคำนำหน้า `/en/`) หากต้องการหลายภาษาพร้อมกัน ให้ระบุ locale ทั้งหมดใน**คำสั่งเดียว** โดยวางค่าเริ่มต้นไว้ก่อน: `yarn build --locale zh-Hans --locale en` (→ `build/` เป็น root ภาษาจีน บวกกับ `build/en/`) สำหรับครบ 18 ภาษา ใช้ `yarn build` ตามปกติ (แบ่งอัตโนมัติ + รวม sitemap)
 
 ## การติดตั้ง Vercel
 

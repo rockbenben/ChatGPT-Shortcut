@@ -25,7 +25,9 @@ yarn start
 yarn build
 ```
 
-> **Build specific languages only**: use `yarn build --locale <locale>` (e.g. `zh-Hans`, `en`, `ja`… see the full locale list in `scripts/i18nLocales.mjs`). Chain multiple: `yarn build --locale zh-Hans && yarn build --locale en`.
+> **Build specific languages only**: use `yarn build --locale <locale>` (e.g. `zh-Hans`, `en`, `ja`… see the full locale list in `scripts/i18nLocales.mjs`).
+>
+> ⚠ Listing a **single non-default** locale makes that language the site root (output lands directly in `build/`, URLs with no `/en/` prefix). To emit several languages at once, list every locale in **one** command with the default first: `yarn build --locale zh-Hans --locale en` (→ `build/` as the Chinese root plus `build/en/`). For all 18 languages just use `yarn build` (chunked automatically + merged sitemap).
 
 ## Vercel Deployment
 

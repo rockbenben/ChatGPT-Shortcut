@@ -105,7 +105,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // 有缓存或 pending 占位时不显示骨架；仅在未知状态（既无 token 又无缓存）或强制刷新时才可能开启
   const [authLoading, setAuthLoading] = useState(false);
 
-  // 共享 in-flight fetch promise：避免 ensureAuthReady / mount effect / 跨标签事件并发触发时
+  // 共享 in-flight fetch promise：避免 ensureAuthReady / mount effect 并发触发时
   // 多次 /myspace round-trip 互踩（last-write-wins 可能覆盖掉刚 reconcile 的 state）。
   // 仅对非 forceRefresh 复用；用户主动刷新（forceRefresh=true）始终单独跑，保留 UI loading 反馈。
   const inFlightFetchRef = useRef<Promise<void> | null>(null);
@@ -113,8 +113,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // mutation 代际计数：每次 syncMySpaceState（客户端 mutation 的唯一本地同步入口）递增。
   // 后台 GET /myspace 在飞期间若 gen 变化，说明本地已发生更新，GET 不应覆盖（见 fetchOnce 竞态保护）。
   const mutationGenRef = useRef(0);
-  // 本标签最后一次写 user_auth 快照的时间戳，用于跨标签 storage 事件的比较（见下方 onStorage）。
-  // 用挂载时读到的缓存快照播种，避免把已经加载过的同一份快照再套用一次。
 
   // 登录态的**权威**当前值。注意这里刻意没有 `userAuthRef.current = userAuth` 那样的
   // 渲染期镜像——镜像会在 React 19 并发渲染下被一次仍带旧 state 的渲染退回去，
@@ -365,7 +363,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
    * 统一更新 myspace 相关 state：
    *   - userAuth React state（触发依赖此 context 的组件 re-render）
    *   - lscache-user_auth（跨标签同步 + 下次 mount 的初始 state）
-   *   - lscache-myspace（prompts.ts:92 等 raw cache reader 读它）
+   *   - lscache-myspace（fetchPromptsInner 里 getCache("myspace") 等 raw cache reader 读它，
+   *     用于判定哪些收藏的社区条目需要做 check-updates 校验）
    *
    * 所有"mutation 后本地同步"路径都通过此 helper，避免漏写其中一层导致 drift。
    * ETag 不动：下次 getMySpace 仍会 mismatch → 200 全量；接受这次浪费换取代码一致。

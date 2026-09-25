@@ -43,9 +43,9 @@ Les données source se trouvent dans `src/data/prompt.json` — un tableau où c
 
 Après modification, exécutez `python CodeUpdateHandler.py`. Le script divise `prompt.json` en fichiers `prompt_<locale>.json` par langue et met à jour la page d'accueil ainsi que les pages de prompts en vedette de chaque langue.
 
-![Pipeline de données : le fichier maître prompt.json traité par python CodeUpdateHandler.py — divisé par langue en fichiers de prompts par locale, générant le JSON de carte et la page de détail de chaque id, avec conversion OpenCC du chinois simplifié vers le traditionnel](/img/docs/data-pipeline.svg)
+![Pipeline de données : le fichier maître prompt.json traité par python CodeUpdateHandler.py — divisé par langue en fichiers de prompts par locale, générant le JSON de carte de chaque id, avec conversion OpenCC du chinois simplifié vers le traditionnel](/img/docs/data-pipeline.svg)
 
-> **Remarque** : définissez `id` à 500 ou plus afin d'éviter tout conflit d'ID avec les prompts existants ou les contenus de la communauté. L'exécution de `python CodeUpdateHandler.py` génère automatiquement les données de carte et la page de détail de chaque prompt (y compris les nouveaux), sans qu'il soit nécessaire de créer manuellement un fichier de page ; par défaut, les prompts personnalisés n'ont simplement pas de méta-description en vedette ni de données de commentaires.
+> **Remarque** : définissez `id` à 500 ou plus afin d'éviter tout conflit d'ID avec les prompts existants ou les contenus de la communauté. L'exécution de `python CodeUpdateHandler.py` génère automatiquement les données de carte de chaque prompt (y compris les nouveaux), tandis que scripts/genPromptPages.mjs génère les coquilles de page, sans création manuelle de fichier ; par défaut, les prompts personnalisés n'ont simplement pas de méta-description en vedette ni de données de commentaires.
 
 ## Backend personnalisé
 

@@ -25,7 +25,9 @@ yarn start
 yarn build
 ```
 
-> **只构建部分语言**：用 `yarn build --locale <locale>`（如 `zh-Hans`、`en`、`ja`……完整 locale 列表见 `scripts/i18nLocales.mjs`）。多语言可串联：`yarn build --locale zh-Hans && yarn build --locale en`。
+> **只构建部分语言**：用 `yarn build --locale <locale>`（如 `zh-Hans`、`en`、`ja`……完整 locale 列表见 `scripts/i18nLocales.mjs`）。
+>
+> ⚠ 只列**一个非默认** locale 时，该语言就是站点根（产物直接落 `build/`、URL 不带 `/en/` 前缀）。要一次产出多门语言，把 locale 全部列在**同一条**命令里、默认语言在前：`yarn build --locale zh-Hans --locale en`（→ `build/` 中文根 + `build/en/`）。全部 18 种语言直接用 `yarn build`（自动分块 + 合并 sitemap）。
 
 ## Vercel 部署
 

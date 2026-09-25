@@ -348,7 +348,7 @@
     "message": "เข้าสู่ระบบด้วย Google"
   },
   "login.google.error": {
-    "message": "เกิดข้อผิดพลาดในการเข้าสู่ระบบ Google กรุณาลองใหม่ภายหลัง（{error}）"
+    "message": "เกิดข้อผิดพลาดในการเข้าสู่ระบบ Google ({error}) กรุณาลองใหม่ภายหลัง"
   },
   "login.google.failed": {
     "message": "เข้าสู่ระบบ Google ไม่สำเร็จ"

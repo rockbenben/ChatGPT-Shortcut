@@ -24,7 +24,8 @@ import { isChunkError, isChunkErrorText, reloadOnce } from "@site/src/utils/chun
  * 已挂载后本模块不再兜的两类，是**有意放弃**、别当成漏网补回来：
  *  · 数据 chunk（prompt_{lang}.json、antd/emoji 语言包）在已挂载页面上 404：window 层
  *    分不清它和 hover 预载（同为 webpack script 注入），跟着刷会复活「扫过链接就整页重载」。
- *    实害有限：homepage.ts 有 lscache 三级缓存 + en→zh-Hans 回退，冷数据下一次冷加载自愈。
+ *    实害有限：homepage.ts 只有会话级内存 + import chunk 两级缓存（lscache 已刻意移除，
+ *    见其头注释）+ en→zh-Hans 回退，冷数据下一次冷加载自愈。
  *  · 首屏全局 stylesheet 404：CSS 请求早于本模块的监听注册，error 事件大概率根本收不到
  *    （改前的版本同样收不到，不是本次退化）；SPA 切换的路由 CSS 失败走 Docusaurus 自己的
  *    preload().catch → reload，有人管。

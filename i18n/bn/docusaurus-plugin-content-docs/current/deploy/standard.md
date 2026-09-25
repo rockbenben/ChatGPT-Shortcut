@@ -25,7 +25,9 @@ yarn start
 yarn build
 ```
 
-> **শুধুমাত্র নির্দিষ্ট ভাষা বিল্ড করুন**: `yarn build --locale <locale>` ব্যবহার করুন (যেমন `zh-Hans`, `en`, `ja`… সম্পূর্ণ locale তালিকার জন্য `scripts/i18nLocales.mjs` দেখুন)। একাধিক চেইন করুন: `yarn build --locale zh-Hans && yarn build --locale en`।
+> **শুধুমাত্র নির্দিষ্ট ভাষা বিল্ড করুন**: `yarn build --locale <locale>` ব্যবহার করুন (যেমন `zh-Hans`, `en`, `ja`… সম্পূর্ণ locale তালিকার জন্য `scripts/i18nLocales.mjs` দেখুন)।
+>
+> ⚠ **একটি নন-ডিফল্ট** locale উল্লেখ করলে সেই ভাষাই সাইটের রুট হয়ে যায় (আউটপুট সরাসরি `build/`-এ পড়ে, URL-এ `/en/` প্রিফিক্স থাকে না)। একসাথে একাধিক ভাষা পেতে সব locale **একটি** কমান্ডে সাজান, ডিফল্ট আগে রেখে: `yarn build --locale zh-Hans --locale en` (→ `build/` চাইনিজ রুট হিসেবে ও `build/en/`)। ১৮টি ভাষার জন্য সরাসরি `yarn build` ব্যবহার করুন (স্বয়ংক্রিয় ভাগ + merged sitemap)।
 
 ## Vercel ডিপ্লয়মেন্ট
 

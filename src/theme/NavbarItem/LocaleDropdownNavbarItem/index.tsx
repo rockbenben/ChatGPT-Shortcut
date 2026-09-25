@@ -130,7 +130,10 @@ export default function LocaleDropdownNavbarItem({
 
   const dropdownLabel = mobile
     ? translate({
-        message: "Languages",
+        // 源文取中文：默认语言 zh-Hans 没有 code.json，渲染的就是这里的内联值。
+        // 上游 Docusaurus 用英文 "Languages"，但其余 17 门 locale 都已译成本地语言
+        // （Sprachen / 言語 / chooses…），只有默认语言掉在英文上，与整站不一致。
+        message: "选择语言",
         id: "theme.navbar.mobileLanguageDropdown.label",
         description: "The label for the mobile language switcher dropdown",
       })

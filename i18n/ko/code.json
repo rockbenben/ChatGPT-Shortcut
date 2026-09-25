@@ -348,7 +348,7 @@
     "message": "Google로 로그인"
   },
   "login.google.error": {
-    "message": "Google 로그인 중 오류가 발생했습니다. 나중에 다시 시도해 주세요（{error}）"
+    "message": "Google 로그인 중 오류가 발생했습니다 ({error}). 나중에 다시 시도해 주세요."
   },
   "login.google.failed": {
     "message": "Google 로그인 실패"

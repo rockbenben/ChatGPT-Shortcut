@@ -43,9 +43,9 @@ Data sumber berada di `src/data/prompt.json` — sebuah array di mana setiap obj
 
 Setelah mengedit, jalankan `python CodeUpdateHandler.py`. Script ini memecah `prompt.json` menjadi file `prompt_<locale>.json` per bahasa dan memperbarui halaman utama serta halaman prompt pilihan setiap bahasa.
 
-![Alur data: master prompt.json diproses oleh python CodeUpdateHandler.py — dipecah per bahasa menjadi file prompt per-locale, menghasilkan JSON kartu dan halaman detail untuk setiap id, dengan konversi OpenCC dari Tionghoa Sederhana ke Tradisional](/img/docs/data-pipeline.svg)
+![Alur data: master prompt.json diproses oleh python CodeUpdateHandler.py — dipecah per bahasa menjadi file prompt per-locale, menghasilkan JSON kartu untuk setiap id, dengan konversi OpenCC dari Tionghoa Sederhana ke Tradisional](/img/docs/data-pipeline.svg)
 
-> **Catatan**: disarankan mengatur `id` ke 500 atau lebih tinggi untuk menghindari benturan ID dengan prompt yang sudah ada atau konten komunitas. Menjalankan `python CodeUpdateHandler.py` akan otomatis menghasilkan data kartu dan halaman detail untuk setiap prompt (termasuk yang baru), tanpa perlu membuat file halaman secara manual; prompt kustom secara default tidak memiliki meta deskripsi pilihan dan data komentar.
+> **Catatan**: disarankan mengatur `id` ke 500 atau lebih tinggi untuk menghindari benturan ID dengan prompt yang sudah ada atau konten komunitas. Menjalankan `python CodeUpdateHandler.py` akan otomatis menghasilkan data kartu untuk setiap prompt (termasuk yang baru), sedangkan scripts/genPromptPages.mjs menghasilkan cangkang halaman, tanpa perlu membuat file manual; prompt kustom secara default tidak memiliki meta deskripsi pilihan dan data komentar.
 
 ## Backend kustom
 

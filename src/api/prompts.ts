@@ -332,11 +332,13 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
   // In-flight dedup（与 getPrompts 同一模式）：真正并发的调用共享同一个 Promise。
   // cacheKey 已含 page/size/sort/搜索词，直接用作 dedup key。
   return dedupe(cacheKey, async () => {
-    // 发请求**前**先写一个短时效的 lastFetch。这一行同时提供两件事：
-    //  - **并发闸门**：第二个并发/紧随其后的调用在上面的节流判断处直接吃缓存，不重复打后端；
-    //  - **失败抑制**：请求失败时标记留着，FAILED_FETCH_TTL_MIN 分钟内的重试直接吃缓存，
+    // 发请求**前**先写 lastFetch 标记（TTL = FAILED_FETCH_TTL_MIN，刻意取满 1 小时，
+    // 见常量注释的「优先保护后端」取舍）。这一行同时提供两件事：
+    //  - **节流后续调用**：紧随其后的调用在上面的节流判断处直接吃缓存，不重复打后端
+    //    （真正同时并发的调用由外层 dedupe 合并，不靠这个标记）；
+    //  - **失败抑制**：请求失败时标记留着，FAILED_FETCH_TTL_MIN 内的重试直接吃缓存，
     //    不会对着已经挂掉的 Strapi 反复重试。
-    // 成功后会用完整 TTL 覆盖，恢复正常的 1 小时轮询节流。
+    // 成功后会用完整 TTL 覆盖（时间戳相同、语义变为「上次成功」）。
     //
     // 不要改成模块级的熔断器/退避状态机：这一行已经覆盖了并发与失败两种情况，
     // 而状态机需要额外处理探测、恢复、慢失败等分支，收益不抵复杂度。
@@ -396,7 +398,7 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
         return cachedData;
       }
 
-      // 不清 lastFetch：上面写的短时效标记正是失败抑制窗口，留着它。
+      // 不清 lastFetch：上面写的失败抑制标记留着，撑住 FAILED_FETCH_TTL_MIN 的退避窗口。
       // 仍然 rethrow：吞掉错误会让 community-prompts.tsx 把任意旧缓存当成新鲜结果渲染，
       // 分页 total 与服务端不符、投票数是旧的，用户却完全看不出失败了。
       console.error(`Error fetching commPrompts:`, error);
