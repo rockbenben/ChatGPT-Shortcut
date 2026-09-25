@@ -108,7 +108,7 @@ Le **contenu que vous saisissez dans les espaces réservés entre crochets et le
 
 Précision : au moment de la copie, un **événement de comptage anonyme** est envoyé au backend (POST `/cards/<id>/copy`), uniquement pour mesurer la popularité de chaque prompt (le compteur de « copies » affiché sur la carte). **Seul l'ID de la carte est transmis**, sans le contenu que vous avez saisi, sans information personnelle, sans lien avec votre identité.
 
-**Après connexion**, votre liste de favoris, vos prompts personnalisés et vos contributions à la communauté sont synchronisés vers le backend pour le multi-appareils, avec export JSON et suppression totale possibles à tout moment.
+**Après connexion**, votre liste de favoris, vos prompts personnalisés et vos contributions à la communauté sont synchronisés vers le backend pour le multi-appareils, avec un export JSON possible à tout moment.
 
 ## Documentation associée
 

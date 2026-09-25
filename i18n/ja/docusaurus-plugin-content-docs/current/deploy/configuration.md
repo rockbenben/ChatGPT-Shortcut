@@ -43,9 +43,9 @@ AI Short はオープンソースです。サイトタイトル・説明・プ�
 
 編集後、`python CodeUpdateHandler.py` を実行してください。このスクリプトは `prompt.json` を言語ごとの `prompt_<locale>.json` ファイルに分割し、各言語のホームページおよびキュレーテッドプロンプトページを更新します。
 
-![データパイプライン：マスターの prompt.json を python CodeUpdateHandler.py で処理し、言語ごとの prompt ファイルに分割して各 id のカード JSON と詳細ページを生成、OpenCC による簡体字から繁体字への変換も行う](/img/docs/data-pipeline.svg)
+![データパイプライン：マスターの prompt.json を python CodeUpdateHandler.py で処理し、言語ごとの prompt ファイルに分割して各 id のカード JSON を生成、OpenCC による簡体字から繁体字への変換も行う](/img/docs/data-pipeline.svg)
 
-> **注意**：既存のプロンプトやコミュニティコンテンツとの ID 衝突を避けるため、`id` は 500 以上に設定してください。`python CodeUpdateHandler.py` を実行すると、新しく追加したものを含むすべてのプロンプトについてカードデータと詳細ページが自動生成され、手動でページファイルを作成する必要はありません。カスタムプロンプトはデフォルトでは厳選メタディスクリプションとコメントデータを持ちません。
+> **注意**：既存のプロンプトやコミュニティコンテンツとの ID 衝突を避けるため、`id` は 500 以上に設定してください。`python CodeUpdateHandler.py` を実行すると、新しく追加したものを含むすべてのプロンプトについてカードデータが自動生成され、詳細ページのシェルは scripts/genPromptPages.mjs が生成するため、手動でページファイルを作成する必要はありません。カスタムプロンプトはデフォルトでは厳選メタディスクリプションとコメントデータを持ちません。
 
 ## カスタムバックエンド
 

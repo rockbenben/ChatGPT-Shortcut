@@ -108,7 +108,7 @@ The **specifics you fill into the `[placeholders]` and the AI's replies** are tr
 
 One clarification: when you copy, the site sends an **anonymous count event** to the backend (POST `/cards/<id>/copy`) purely for tracking each prompt's popularity (the "copy count" shown on cards). **It only sends the card ID — no placeholder content, no personal information, and no user-identity association.**
 
-**Once you're logged in**, your favorites list, custom prompts, and community submissions are synced to the backend for cross-device sync. You can export everything as JSON anytime, or delete all your data with one click.
+**Once you're logged in**, your favorites list, custom prompts, and community submissions are synced to the backend for cross-device sync. You can export everything as JSON anytime.
 
 ## Related Documentation
 

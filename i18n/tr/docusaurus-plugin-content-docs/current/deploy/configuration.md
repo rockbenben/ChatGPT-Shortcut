@@ -43,9 +43,9 @@ Kaynak veriler `src/data/prompt.json` dosyasında bulunur — her nesne tüm dil
 
 Düzenledikten sonra `python CodeUpdateHandler.py` komutunu çalıştırın. Script, `prompt.json` dosyasını dile göre `prompt_<locale>.json` dosyalarına böler ve her dilin ana sayfasını ve öne çıkan prompt sayfalarını günceller.
 
-![Veri hattı: ana prompt.json dosyası python CodeUpdateHandler.py ile işlenir — dile göre dil bazlı prompt dosyalarına bölünür, her id için kart JSON'u ve detay sayfası oluşturulur ve OpenCC ile Basitleştirilmiş Çince'den Geleneksel Çince'ye dönüştürme yapılır](/img/docs/data-pipeline.svg)
+![Veri hattı: ana prompt.json dosyası python CodeUpdateHandler.py ile işlenir — dile göre dil bazlı prompt dosyalarına bölünür, her id için kart JSON'u oluşturulur ve OpenCC ile Basitleştirilmiş Çince'den Geleneksel Çince'ye dönüştürme yapılır](/img/docs/data-pipeline.svg)
 
-> **Not**: Mevcut promptların veya topluluk içeriğinin ID'leriyle çakışmaması için `id` değerini 500 veya üstüne ayarlamanız önerilir. `python CodeUpdateHandler.py` komutunu çalıştırmak, her prompt için (yeni eklenenler dahil) kart verisini ve detay sayfasını otomatik olarak oluşturur; sayfa dosyasını elle oluşturmanıza gerek yoktur. Özel promptların yalnızca varsayılan olarak özenle hazırlanmış meta açıklaması ve yorum verisi bulunmaz.
+> **Not**: Mevcut promptların veya topluluk içeriğinin ID'leriyle çakışmaması için `id` değerini 500 veya üstüne ayarlamanız önerilir. `python CodeUpdateHandler.py` komutunu çalıştırmak, her prompt için (yeni eklenenler dahil) kart verisini otomatik olarak oluşturur; sayfa dosyasını elle oluşturmanıza gerek yoktur. Özel promptların yalnızca varsayılan olarak özenle hazırlanmış meta açıklaması ve yorum verisi bulunmaz.
 
 ## Özel backend
 

@@ -348,7 +348,7 @@
     "message": "Sign in with Google"
   },
   "login.google.error": {
-    "message": "Couldn't sign in with Google. Try again in a moment."
+    "message": "Couldn't sign in with Google ({error}). Try again in a moment."
   },
   "login.google.failed": {
     "message": "Google sign-in failed"

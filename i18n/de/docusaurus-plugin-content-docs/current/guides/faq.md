@@ -108,7 +108,7 @@ Die **Inhalte, die Sie in die Platzhalter in eckigen Klammern eintragen, sowie d
 
 Eine Einschränkung: Beim Kopieren wird ein **anonymes Zählereignis** an das Backend gesendet (POST `/cards/<id>/copy`), das ausschließlich der Statistik zur Beliebtheit der einzelnen Prompts dient (die auf der Karte angezeigte „Anzahl der Kopiervorgänge"). **Übertragen wird nur die Karten-ID, keine** von Ihnen eingegebenen Inhalte, keine personenbezogenen Daten und keine Verknüpfung mit einer Benutzeridentität.
 
-**Nach der Anmeldung** werden Ihre Favoritenliste, benutzerdefinierten Prompts und Community-Beiträge zur geräteübergreifenden Synchronisation in das Backend übernommen — jederzeit als JSON exportierbar und mit einem Klick vollständig löschbar.
+**Nach der Anmeldung** werden Ihre Favoritenliste, benutzerdefinierten Prompts und Community-Beiträge zur geräteübergreifenden Synchronisation in das Backend übernommen — jederzeit als JSON exportierbar.
 
 ## Verwandte Dokumentation
 

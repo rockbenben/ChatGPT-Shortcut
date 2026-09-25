@@ -43,9 +43,9 @@ Os dados de origem estão em `src/data/prompt.json` — um array onde cada objet
 
 Após editar, execute `python CodeUpdateHandler.py`. O script divide o `prompt.json` em arquivos `prompt_<locale>.json` por idioma e atualiza a página inicial e as páginas de prompts em destaque de cada idioma.
 
-![Pipeline de dados: o prompt.json mestre é processado pelo python CodeUpdateHandler.py — dividido por idioma em arquivos de prompt por localidade, gerando o JSON do cartão e a página de detalhes de cada id, com conversão de Chinês Simplificado para Tradicional via OpenCC](/img/docs/data-pipeline.svg)
+![Pipeline de dados: o prompt.json mestre é processado pelo python CodeUpdateHandler.py — dividido por idioma em arquivos de prompt por localidade, gerando o JSON do cartão de cada id, com conversão de Chinês Simplificado para Tradicional via OpenCC](/img/docs/data-pipeline.svg)
 
-> **Nota**: recomenda-se definir o `id` como 500 ou superior, para evitar conflitos de ID com prompts existentes ou conteúdo da comunidade. Executar `python CodeUpdateHandler.py` gera automaticamente os dados do cartão e a página de detalhes de cada prompt (incluindo os novos), sem necessidade de criar arquivos de página manualmente; prompts personalizados, por padrão, apenas não têm meta descrição selecionada nem dados de comentários.
+> **Nota**: recomenda-se definir o `id` como 500 ou superior, para evitar conflitos de ID com prompts existentes ou conteúdo da comunidade. Executar `python CodeUpdateHandler.py` gera automaticamente os dados do cartão de cada prompt (incluindo os novos), enquanto scripts/genPromptPages.mjs gera os esqueletos de página, sem criação manual; prompts personalizados, por padrão, apenas não têm meta descrição selecionada nem dados de comentários.
 
 ## Backend personalizado
 

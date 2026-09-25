@@ -43,9 +43,9 @@ AI Short는 오픈 소스입니다 — 사이트 제목, 설명, 프롬프트 �
 
 편집 후 `python CodeUpdateHandler.py`를 실행하세요. 이 스크립트는 `prompt.json`을 언어별 `prompt_<locale>.json` 파일로 분할하고 각 언어의 홈페이지와 추천 프롬프트 페이지를 업데이트합니다.
 
-![데이터 파이프라인: 마스터 prompt.json을 python CodeUpdateHandler.py로 처리하여 언어별로 분할해 로케일별 프롬프트 파일을 만들고, 각 id의 카드 JSON과 상세 페이지를 생성하며, OpenCC로 간체에서 번체 중국어로 변환합니다](/img/docs/data-pipeline.svg)
+![데이터 파이프라인: 마스터 prompt.json을 python CodeUpdateHandler.py로 처리하여 언어별로 분할해 로케일별 프롬프트 파일을 만들고, 각 id의 카드 JSON을 생성하며, OpenCC로 간체에서 번체 중국어로 변환합니다](/img/docs/data-pipeline.svg)
 
-> **주의**: 기존 프롬프트나 커뮤니티 콘텐츠와 ID가 충돌하지 않도록 `id`는 500 이상으로 설정하세요. `python CodeUpdateHandler.py`를 실행하면 모든 프롬프트(새로 추가한 것 포함)에 대해 카드 데이터와 상세 페이지가 자동으로 생성되므로 페이지 파일을 수동으로 만들 필요가 없습니다. 다만 커스텀 프롬프트는 기본적으로 추천 메타 설명과 댓글 데이터가 없습니다.
+> **주의**: 기존 프롬프트나 커뮤니티 콘텐츠와 ID가 충돌하지 않도록 `id`는 500 이상으로 설정하세요. `python CodeUpdateHandler.py`를 실행하면 모든 프롬프트(새로 추가한 것 포함)에 대해 카드 데이터가 자동으로 생성되며, 상세 페이지 셸은 scripts/genPromptPages.mjs가 생성하므로 페이지 파일을 수동으로 만들 필요가 없습니다. 다만 커스텀 프롬프트는 기본적으로 추천 메타 설명과 댓글 데이터가 없습니다.
 
 ## 커스텀 백엔드
 

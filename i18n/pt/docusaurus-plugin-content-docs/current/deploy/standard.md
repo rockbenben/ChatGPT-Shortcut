@@ -25,7 +25,9 @@ yarn start
 yarn build
 ```
 
-> **Build apenas de idiomas específicos**: use `yarn build --locale <locale>` (ex.: `zh-Hans`, `en`, `ja`… veja a lista completa de locales em `scripts/i18nLocales.mjs`). Encadeie múltiplos: `yarn build --locale zh-Hans && yarn build --locale en`.
+> **Build apenas de idiomas específicos**: use `yarn build --locale <locale>` (ex.: `zh-Hans`, `en`, `ja`… veja a lista completa de locales em `scripts/i18nLocales.mjs`).
+>
+> ⚠ Informar um **único locale não padrão** torna esse idioma a raiz do site (a saída vai direto para `build/`, URLs sem prefixo `/en/`). Para vários idiomas de uma vez, liste todos os locales em **um único** comando, começando pelo padrão: `yarn build --locale zh-Hans --locale en` (→ `build/` como raiz em chinês mais `build/en/`). Para os 18 idiomas, use simplesmente `yarn build` (divisão automática + sitemap mesclado).
 
 ## Implantação Vercel
 

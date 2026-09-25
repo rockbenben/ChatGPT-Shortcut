@@ -108,7 +108,7 @@ O **conteúdo que você preenche nos placeholders e a resposta que a IA devolve*
 
 Um esclarecimento: ao copiar, um **evento anônimo de contagem** é enviado ao backend (POST `/cards/<id>/copy`), usado apenas para estatísticas de popularidade de cada prompt (o "número de cópias" exibido no cartão). **Apenas o ID do cartão é enviado — não inclui** o conteúdo que você preencheu, não inclui dados pessoais e não é vinculado à sua identidade.
 
-**Após fazer login**, sua lista de favoritos, prompts personalizados e contribuições à comunidade são sincronizados com o backend para uso entre dispositivos, com suporte para exportação em JSON a qualquer momento e remoção completa de todos os dados com um clique.
+**Após fazer login**, sua lista de favoritos, prompts personalizados e contribuições à comunidade são sincronizados com o backend para uso entre dispositivos, com suporte para exportação em JSON a qualquer momento.
 
 ## Documentação Relacionada
 

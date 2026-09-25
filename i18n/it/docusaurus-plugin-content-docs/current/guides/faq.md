@@ -110,7 +110,7 @@ Quello che **inserisci nei segnaposto tra parentesi quadre e le risposte che l'I
 
 Una precisazione: al momento della copia viene inviato al backend un **evento anonimo di conteggio** (POST `/cards/<id>/copy`), usato solo per misurare la popolarità di ciascun prompt (il «numero di copie» mostrato sulla card). **Viene trasmesso solo l'ID della card**: niente contenuto da te inserito, niente dati personali, nessun collegamento all'identità utente.
 
-**Dopo il login**, l'elenco preferiti, i prompt personalizzati e i contributi alla community vengono sincronizzati sul backend per consentire la sincronizzazione tra dispositivi; in qualsiasi momento puoi esportare tutto in JSON o cancellare tutti i tuoi dati con un clic.
+**Dopo il login**, l'elenco preferiti, i prompt personalizzati e i contributi alla community vengono sincronizzati sul backend per consentire la sincronizzazione tra dispositivi; in qualsiasi momento puoi esportare tutto in JSON.
 
 ## Documentazione Correlata
 

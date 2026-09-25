@@ -108,7 +108,7 @@ No. Los prompts de AiShort se empaquetan en el sitio como JSON estático, y **la
 
 A tener en cuenta: al copiar se envía al backend un **evento de conteo anónimo** (POST `/cards/<id>/copy`), usado únicamente para registrar la popularidad de cada prompt (el número de copias que aparece en la tarjeta). **Solo se envía el ID de la tarjeta**, no incluye el contenido que rellenes, no incluye información personal y no se asocia a tu identidad.
 
-**Tras iniciar sesión**, la lista de favoritos, los prompts personalizados y las contribuciones a la comunidad sí se sincronizan con el backend para la sincronización entre dispositivos, con exportación a JSON y eliminación total de los datos disponibles en cualquier momento.
+**Tras iniciar sesión**, la lista de favoritos, los prompts personalizados y las contribuciones a la comunidad sí se sincronizan con el backend para la sincronización entre dispositivos, con exportación a JSON disponible en cualquier momento.
 
 ## Documentación Relacionada
 

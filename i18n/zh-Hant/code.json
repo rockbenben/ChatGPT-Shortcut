@@ -687,7 +687,7 @@
     "message": "譯文"
   },
   "search.submit": {
-    "message": "搜索"
+    "message": "搜尋"
   },
   "share.copy": {
     "message": "複製"
@@ -1017,7 +1017,7 @@
     "description": "Title for link to heading"
   },
   "theme.common.skipToMainContent": {
-    "message": "跳至主要内容",
+    "message": "跳至主要內容",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.contentVisibility.draftBanner.message": {

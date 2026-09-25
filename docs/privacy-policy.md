@@ -29,7 +29,7 @@ We do not process sensitive information.
 
 Single-Sign Ons – If you sign up to our website aishort.top through Google, you authorize us to collect your authentication information, such as your username and encrypted access credentials, and other personal data available through the third party application account, including the following personal data:
 
-Google – You can sign up and log in to AI Short using your Google account. When you sign up using Google, Google will ask your permission to share certain information from your Google account with aishort.top. This includes your Google email address and avatar (optional). This information is collected by Google and is provided to us under the terms of Google’s privacy policy. You can regulate the information that we receive from Google using your Google activity controls. If you signed up using Google by mistake, you can delete your account from the Account page within your Settings at any time, or you can contact us by emailing us at qingwhat@gmail.com.
+Google – You can sign up and log in to AI Short using your Google account. When you sign up using Google, Google will ask your permission to share certain information from your Google account with aishort.top. This includes your Google email address and avatar (optional). This information is collected by Google and is provided to us under the terms of Google’s privacy policy. You can regulate the information that we receive from Google using your Google activity controls. If you signed up using Google by mistake, you can contact us at qingwhat@gmail.com at any time to have your account and its data deleted.
 
 ## How We Use Your Personal Data
 

@@ -108,7 +108,7 @@ Tidak. Prompt AiShort dikemas sebagai aset statis JSON di dalam situs, dan **aks
 
 Yang perlu diketahui: saat menyalin, browser mengirim **event hitungan anonim** ke backend (POST `/cards/<id>/copy`) hanya untuk menghitung popularitas tiap prompt (angka "jumlah salinan" di kartu). **Yang dikirim hanya ID kartu, tidak termasuk** konten yang Anda isikan, tanpa informasi pribadi, dan tidak terkait dengan identitas pengguna.
 
-**Setelah Anda login**, daftar koleksi, prompt kustom, dan kontribusi komunitas barulah disinkronkan ke backend untuk sinkronisasi lintas perangkat — dan kapan saja Anda bisa mengekspornya sebagai JSON atau menghapus seluruh data dengan satu klik.
+**Setelah Anda login**, daftar koleksi, prompt kustom, dan kontribusi komunitas barulah disinkronkan ke backend untuk sinkronisasi lintas perangkat — dan kapan saja Anda bisa mengekspornya sebagai JSON.
 
 ## Dokumentasi Terkait
 
