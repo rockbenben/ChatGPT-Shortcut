@@ -22,10 +22,10 @@ interface MySpaceStatePatch {
 export const AuthContext = createContext<{
   userAuth: any;
   refreshUserAuth: (forceRefresh?: boolean) => Promise<void>;
-  setUserAuth: (userAuth: any) => void;
-  /** 本地登出：递增 auth 世代作废在飞请求 + 清会话缓存 + 降为登出态。
-   *  手动登出必须走它而不是 setUserAuth(null)——后者不动世代号，
-   *  在飞的 GET /myspace 回来仍会把登录态写回去。 */
+  /** 登出/失效时降登录态的唯一入口：清会话缓存 + 置 null。
+   *  在飞的 GET /myspace 由写回前的 token 比对作废（见 fetchOnce）：
+   *  各登出路径（UserStatus 手动 / 401 拦截器 / 本地过期）都先清 token，
+   *  响应回来时与发起时刻的 token 必然失配。 */
   clearAuth: () => void;
   /** 读当前 userAuth 的权威即时值。
    *  消费方**不要**自己 `const ref = useRef(userAuth); ref.current = userAuth`——那是渲染期快照，
@@ -39,7 +39,6 @@ export const AuthContext = createContext<{
 }>({
   userAuth: null,
   refreshUserAuth: async () => {},
-  setUserAuth: () => {},
   clearAuth: () => {},
   getUserAuth: () => null,
   syncMySpaceState: () => {},
@@ -47,8 +46,14 @@ export const AuthContext = createContext<{
 });
 
 function withTimeout<T>(promise: Promise<T>, ms: number, label = "operation"): Promise<T> {
-  const timeout = new Promise<never>((_, reject) => setTimeout(() => reject(new Error(`[AuthProvider] ${label} timed out after ${ms}ms`)), ms));
-  return Promise.race([promise, timeout]);
+  let timer: ReturnType<typeof setTimeout>;
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`[AuthProvider] ${label} timed out after ${ms}ms`)), ms);
+  });
+  // race 结束后弃用的 timeout 仍挂着未触发的句柄（每次 SWR 刷新攒一个，最长 12s）。
+  // 只是占位的 timer entry、不耗 CPU，但 settle 后 clearTimeout 让句柄即时回收，
+  // 也让 devtools 的定时器列表只反映真实在等效的超时。
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
 }
 
 function delay(ms: number): Promise<void> {
@@ -138,7 +143,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   );
 
   /**
-   * 本地登出：清 state + 清会话缓存。在飞的 fetchUser 写回前会自查 token，无需额外协议。
+   * 本地登出：清会话缓存 + 降为登出态。在飞的 fetchUser 写回前会比对 token（见 fetchOnce），
+   * 各登出路径都已先清 token，失配的旧响应会被丢弃——无需额外的世代作废协议。
    * 供三条「token 已失效」路径共用：本地过期、服务端吊销（AUTH_EXPIRED_EVENT）、
    * 另一标签登出。不发任何请求，也不碰 token（调用方已清或本就没有）。
    */
@@ -194,6 +200,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         // 另一个账号的。这份属于旧 token 的响应绝不能写回去：前者会让登录态连同 30 天
         // TTL 的缓存快照一起复活，后者会把 A 的数据写进 B 的会话（串号）。
         // getMySpace() 已把响应连同 ETag 落进 lscache，只丢弃返回值不够，必须连缓存一起清。
+        // 已知残余窗口（有意不堵）：比对的若是「还有 token 吗」而不是「同一串 token 吗」，
+        // 换号就会被放行；现在只剩一种情况认不出来 —— 在飞的这发等到**字节完全相同**的
+        // token 被重新写回时才通过。UI 手动登出的那个标签自己 reload、请求随之作废；
+        // 跨标签登出/换号都不 reload，但重新登录必然换发新 JWT（Strapi 的 iat 精确到秒，
+        // 只有同秒重发才可能撞成同一串）。真撞上，下一次 SWR 刷新即自愈；
+        // 为它引入请求级 abort 协议不划算。
         const tokenNow = readValidToken();
         if (tokenNow !== tokenAtStart) {
           if (!tokenNow) {
@@ -407,16 +419,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const value = useMemo(
     () => ({
       userAuth,
-      // 对外只给受控 setter：直接暴露 useState 的 setUserAuth 会绕过 ref，
-      // 让 ref 与 state 脱节（正是之前一连串竞态的根源）。
-      setUserAuth: applyAuth,
+      // 不再对外暴露 setUserAuth：全部合法写入（登出/mutation/跨标签采纳）已有
+      // clearAuth / syncMySpaceState / applyAuth 三条受控通道，裸 setter 只会留 footgun。
       clearAuth,
       getUserAuth,
       refreshUserAuth: fetchUser,
       syncMySpaceState,
       authLoading,
     }),
-    [userAuth, applyAuth, clearAuth, getUserAuth, fetchUser, syncMySpaceState, authLoading],
+    [userAuth, clearAuth, getUserAuth, fetchUser, syncMySpaceState, authLoading],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

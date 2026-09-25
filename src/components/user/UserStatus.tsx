@@ -55,8 +55,9 @@ const UserStatus = () => {
     if (ExecutionEnvironment.canUseDOM) {
       persistAuthToken(null);
     }
-    // 走 clearAuth 而非 setUserAuth(null)：它会递增 auth 世代号作废在飞的 GET /myspace，
-    // 否则那份已授权的响应回来还会把登录态连同 30 天 TTL 的缓存写回去。清缓存也由它负责。
+    // 走 clearAuth（纯本地：清会话缓存 + 降登录态）；在飞的 GET /myspace 由写回前的
+    // token 比对作废——上面已 persistAuthToken(null)，旧响应回来时 token 失配，不会把
+    // 登录态连同 30 天 TTL 的缓存快照写回去。
     clearAuth();
     window.location.reload();
   }, [clearAuth]);
