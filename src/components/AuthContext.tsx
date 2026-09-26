@@ -5,9 +5,10 @@ import { enrichMySpaceData } from "@site/src/utils/myspaceUtils";
 /**
  * 离线版的 AuthContext —— 没有账号、没有网络，数据全部来自 localStorage。
  *
- * 接口面与在线版逐个对齐（userAuth / refreshUserAuth / setUserAuth / clearAuth /
+ * 接口面与在线版逐个对齐（userAuth / refreshUserAuth / clearAuth /
  * getUserAuth / syncMySpaceState / authLoading）：MySpace 及其 myspace/* 模块、useFavorite、
  * useUserPrompt 全部照原样复用，两条线的组件代码不分叉。
+ * 不对外暴露裸 setter：登录态只经 applyAuth 一处写入（登出走 clearAuth）。
  *
  * userAuth.data 也用 enrichMySpaceData 生成，与在线版同一个函数、同一套推导
  * （loves / commLoves / userprompts 都从 items 派生），避免两边形状悄悄漂移。
@@ -23,7 +24,6 @@ interface MySpaceStatePatch {
 export const AuthContext = createContext<{
   userAuth: any;
   refreshUserAuth: (forceRefresh?: boolean) => Promise<void>;
-  setUserAuth: (userAuth: any) => void;
   clearAuth: () => void;
   getUserAuth: () => any;
   syncMySpaceState: (patch: MySpaceStatePatch) => void;
@@ -31,7 +31,6 @@ export const AuthContext = createContext<{
 }>({
   userAuth: null,
   refreshUserAuth: async () => {},
-  setUserAuth: () => {},
   clearAuth: () => {},
   getUserAuth: () => null,
   syncMySpaceState: () => {},
@@ -114,8 +113,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   );
 
   const value = useMemo(
-    () => ({ userAuth, refreshUserAuth, setUserAuth: applyAuth, clearAuth, getUserAuth, syncMySpaceState, authLoading }),
-    [userAuth, refreshUserAuth, applyAuth, clearAuth, getUserAuth, syncMySpaceState, authLoading],
+    () => ({ userAuth, refreshUserAuth, clearAuth, getUserAuth, syncMySpaceState, authLoading }),
+    [userAuth, refreshUserAuth, clearAuth, getUserAuth, syncMySpaceState, authLoading],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

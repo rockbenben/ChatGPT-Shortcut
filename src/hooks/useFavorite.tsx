@@ -22,9 +22,9 @@ export const useFavorite = (): UseFavoriteReturn => {
 
   // 读 userAuth 一律走 context 的 getUserAuth()，不再自己 useRef(userAuth) 存渲染期快照。
   // 两个原因：① 回调保持稳定引用，避免每次后台 SWR 刷新都重建、级联 re-render 所有卡片；
-  // ② 渲染期快照在 `await refreshUserAuth()` 之后仍是旧值（setUserAuth 走 startTransition，
-  //    promise resolve 时尚未 commit），applyOptimistic 拿它算出的整份 items 写回去
-  //    会把刚拉到的数据整个覆盖掉——转为私有后新建的提示词就是这样消失的。
+  // ② 渲染期快照在 `await refreshUserAuth()` 之后仍是旧值（state 更新要等 commit，
+  //    promise resolve 时尚未落地），applyOptimistic 拿它算出的整份 items 写回去
+  //    会把刚拉到的数据整个覆盖掉——新建的提示词就是这样消失的。
 
   // 收藏 PATCH 的单调序号：快速切换同一收藏会发出多个 patchFavorites，其响应可能乱序到达。
   // applyDeltaResponse 用 delta.loves（该请求时刻的权威列表）覆盖本地，旧响应后到会盖掉新状态
