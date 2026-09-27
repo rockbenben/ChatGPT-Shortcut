@@ -36,11 +36,11 @@
     "description": "Navbar item with label Discord"
   },
   "item.label.QQ 群": {
-    "message": "QQ Группа",
+    "message": "QQ-группа",
     "description": "Navbar item with label QQ 群"
   },
   "item.label.AI 工具箱": {
-    "message": "Набор ИИ-инструментов",
+    "message": "Каталог ИИ-инструментов",
     "description": "Navbar item with label AI 工具箱"
   },
   "item.label.AI 绘图提示词": {
@@ -54,5 +54,9 @@
   "item.label.AI 思想家圆桌": {
     "message": "ИИ-круглый стол мыслителей",
     "description": "Navbar item with label AI 思想家圆桌"
+  },
+  "item.label.365 开源项目": {
+    "message": "365 Open Source",
+    "description": "Navbar item with label 365 开源项目"
   }
 }

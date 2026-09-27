@@ -351,6 +351,11 @@ const config = {
                 href: "https://talk.newzone.top/",
               },
               {
+                // href 由 src/theme/NavbarItem/Hub365NavbarItem 按当前 locale 拼 ?lang=
+                type: "custom-hub365",
+                label: "365 开源项目",
+              },
+              {
                 label: "浏览器插件",
                 to: "/docs/extension",
               },

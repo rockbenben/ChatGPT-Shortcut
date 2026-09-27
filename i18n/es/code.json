@@ -27,7 +27,7 @@
     "message": "Copiar"
   },
   "action.copyPrompt": {
-    "message": "Copiar Prompt"
+    "message": "Copiar prompt"
   },
   "action.delete": {
     "message": "Eliminar"
@@ -48,7 +48,7 @@
     "message": "Iniciar sesión"
   },
   "action.loginInstead": {
-    "message": "Iniciar sesión directamente"
+    "message": "Iniciar sesión en su lugar"
   },
   "action.register": {
     "message": "Registrarse"
@@ -87,7 +87,7 @@
     "message": "Ver detalles"
   },
   "button.clearAllCache": {
-    "message": "Borrar Todo el Caché"
+    "message": "Borrar toda la caché"
   },
   "button.clearCache": {
     "message": "Borrar caché"
@@ -99,7 +99,7 @@
     "message": "Confirmar borrado"
   },
   "button.export": {
-    "message": "Exportar Datos"
+    "message": "Exportar datos"
   },
   "button.exportPrompts": {
     "message": "Exportar prompts"
@@ -147,13 +147,13 @@
     "message": "Volver a la lista"
   },
   "community.description": {
-    "message": "Descubre prompts IA compartidos por la comunidad en AiShort. Explora plantillas, intercambia consejos de optimización y contribuye tus propios prompts."
+    "message": "Descubre prompts de IA compartidos por la comunidad en AiShort. Explora plantillas, intercambia consejos de optimización y contribuye tus propios prompts."
   },
   "community.fetchError": {
     "message": "Error al obtener los datos"
   },
   "community.heading": {
-    "message": "Comunidad de Prompts IA"
+    "message": "Comunidad de prompts de IA"
   },
   "community.loading": {
     "message": "Cargando..."
@@ -168,10 +168,10 @@
     "message": "Prompts de la comunidad"
   },
   "community.tagline": {
-    "message": "Prompts de IA compartidos por usuarios. Ordena por más recientes o más votados, busca y filtra; tras iniciar sesión, dale like y guárdalos."
+    "message": "Prompts de IA compartidos por usuarios. Ordena por más recientes o más votados, busca y filtra; tras iniciar sesión, dale «Me gusta» y guárdalos en favoritos."
   },
   "community.title": {
-    "message": "Comunidad de Prompts IA | Descubre y Comparte"
+    "message": "Comunidad de prompts de IA | Descubre y comparte"
   },
   "description.clearCache.short": {
     "message": "Actualizar datos de caché local"
@@ -186,19 +186,19 @@
     "message": "Preguntas frecuentes"
   },
   "faq.scenario.a": {
-    "message": "Funciona bien para tareas relacionadas con el título y la descripción de esta página. Si el primer intento no es ideal, añade más contexto en el marcador, o agrega restricciones como «responde paso a paso» o «da ejemplos»."
+    "message": "Funciona bien para tareas relacionadas con el título y la descripción de esta página. Si el primer intento no es ideal, añade más contexto en el marcador de posición, o agrega restricciones como «responde paso a paso» o «da ejemplos»."
   },
   "faq.scenario.q": {
     "message": "¿Para qué escenarios es adecuado este prompt?"
   },
   "faq.tips.a": {
-    "message": "Primero, haz el [marcador] más específico (añade estilo, longitud, dominio). Segundo, responde a salidas insatisfactorias con «hazlo más X». Tercero, compara los resultados entre Claude / ChatGPT / Gemini y otros modelos."
+    "message": "Primero, haz el [marcador de posición] más específico (añade estilo, longitud, dominio). Segundo, responde a salidas insatisfactorias con «hazlo más X». Tercero, compara los resultados entre Claude / ChatGPT / Gemini y otros modelos."
   },
   "faq.tips.q": {
     "message": "¿Cómo puedo mejorar la calidad del resultado?"
   },
   "faq.usage.a": {
-    "message": "Copia el prompt, sustituye el [marcador] entre corchetes con tu propio contenido, y pégalo en ChatGPT, Claude, Gemini, DeepSeek, Qwen o cualquier IA conversacional que entienda lenguaje natural."
+    "message": "Copia el prompt, sustituye el marcador de posición entre corchetes con tu propio contenido, y pégalo en ChatGPT, Claude, Gemini, DeepSeek, Qwen o cualquier IA conversacional que entienda lenguaje natural."
   },
   "faq.usage.q": {
     "message": "¿Cómo uso este prompt?"
@@ -207,31 +207,31 @@
     "message": "¡Tus comentarios son importantes para nosotros!"
   },
   "feedback.newIssue": {
-    "message": "Nueva issue"
+    "message": "Nueva incidencia"
   },
   "feedback.responseTime": {
-    "message": "Respuesta normalmente en 24h"
+    "message": "Respuesta normalmente en 24 h"
   },
   "feedback.spec_label": {
-    "message": "Canal Abierto"
+    "message": "Canal abierto"
   },
   "feedback.subtitle": {
-    "message": "Reportes de bugs, solicitudes de funciones, dudas de uso—toda voz es bienvenida"
+    "message": "Reportes de bugs, solicitudes de funciones, dudas de uso: todas las opiniones son bienvenidas"
   },
   "feedback.title": {
     "message": "Comentarios y sugerencias"
   },
   "feedback.type.bug": {
-    "message": "Reportes de Bugs"
+    "message": "Reportar errores"
   },
   "feedback.type.help": {
-    "message": "Ayuda de Uso"
+    "message": "Ayuda de uso"
   },
   "feedback.type.suggestion": {
     "message": "Sugerencias"
   },
   "feedback.welcome": {
-    "message": "Comentarios y Sugerencias"
+    "message": "Comentarios y sugerencias"
   },
   "filter.operator.all.tip": {
     "message": "Mostrar prompts que coincidan con todas las etiquetas seleccionadas"
@@ -243,13 +243,13 @@
     "message": "{tools} y más"
   },
   "homepage.description": {
-    "message": "Plantillas de prompts IA para escritura, código y traducción. Copia con un clic en ChatGPT, Claude, Gemini o DeepSeek para resultados precisos."
+    "message": "Plantillas de prompts de IA para escritura, código y traducción. Copia con un clic en ChatGPT, Claude, Gemini o DeepSeek para resultados precisos."
   },
   "homepage.slogan": {
     "message": "Prompts de IA seleccionados, listos con un clic"
   },
   "homepage.title": {
-    "message": "Biblioteca de Prompts IA para ChatGPT, Claude y Gemini"
+    "message": "Biblioteca de prompts de IA para ChatGPT, Claude y Gemini"
   },
   "howto.step1.name": {
     "message": "Copia el prompt"
@@ -258,10 +258,10 @@
     "message": "Copia la plantilla del prompt al portapapeles."
   },
   "howto.step2.name": {
-    "message": "Personaliza los marcadores"
+    "message": "Personaliza los marcadores de posición"
   },
   "howto.step2.text": {
-    "message": "Reemplaza las secciones [marcador] con tu contenido específico."
+    "message": "Reemplaza las secciones [marcador de posición] con tu contenido específico."
   },
   "howto.step3.name": {
     "message": "Envía a la IA"
@@ -330,7 +330,7 @@
     "message": "Crear prompt"
   },
   "link.communityPrompts": {
-    "message": "Prompts de la Comunidad"
+    "message": "Prompts de la comunidad"
   },
   "link.home": {
     "message": "Inicio"
@@ -348,7 +348,7 @@
     "message": "Iniciar sesión con Google"
   },
   "login.google.error": {
-    "message": "Error al iniciar sesión con Google, inténtelo de nuevo más tarde ({error})"
+    "message": "Error al iniciar sesión con Google, inténtalo de nuevo más tarde ({error})"
   },
   "login.google.failed": {
     "message": "Error en el inicio de sesión con Google"
@@ -411,7 +411,7 @@
     "message": "No puedes marcar como favorito tu propio prompt"
   },
   "message.convertToPrivate.error": {
-    "message": "Error al convertir, inténtelo de nuevo más tarde"
+    "message": "Error al convertir, inténtalo de nuevo más tarde"
   },
   "message.convertToPrivate.favoriteKept": {
     "message": "Prompt privado creado, pero no se pudo quitar el favorito original. Elimínalo manualmente para evitar duplicados."
@@ -501,10 +501,10 @@
     "message": "Nada aquí aún — crea un prompt o marca alguno como favorito"
   },
   "message.orderSaved": {
-    "message": "Disposición guardada"
+    "message": "Orden guardado"
   },
   "message.orderSaveFailed": {
-    "message": "Error al guardar la disposición, por favor inténtalo de nuevo más tarde"
+    "message": "Error al guardar el orden, por favor inténtalo de nuevo más tarde"
   },
   "message.postComment.error": {
     "message": "No se pudo enviar el comentario. Inténtalo de nuevo más tarde."
@@ -555,31 +555,31 @@
     "message": "Prompt actualizado"
   },
   "modal.clearCache.title": {
-    "message": "¿Borrar Caché?"
+    "message": "¿Borrar la caché?"
   },
   "modal.clearCache.warning": {
-    "message": "Borrar recargará todos los datos."
+    "message": "Al borrar se recargarán todos los datos."
   },
   "modal.editPrompt.title": {
-    "message": "Editar Prompt"
+    "message": "Editar prompt"
   },
   "modal.forgotPassword.title": {
-    "message": "¿Olvidó su contraseña?"
+    "message": "¿Olvidaste tu contraseña?"
   },
   "myCollection.header.subtitle": {
     "message": "Administra tus prompts creados, favoritos y etiquetas personalizadas"
   },
   "myCollection.header.title": {
-    "message": "Mi Colección"
+    "message": "Mi colección"
   },
   "myCollection.stats.favorites": {
     "message": "Favoritos"
   },
   "myCollection.stats.prompts": {
-    "message": "Mis Prompts"
+    "message": "Mis prompts"
   },
   "myCollection.stats.tags": {
-    "message": "Etiquetas Personalizadas"
+    "message": "Etiquetas personalizadas"
   },
   "myCollection.stats.total": {
     "message": "Total"
@@ -600,7 +600,7 @@
     "message": "Prompts"
   },
   "myspace.manageTags": {
-    "message": "Administrar Etiquetas"
+    "message": "Administrar etiquetas"
   },
   "myspace.tagManager.empty": {
     "message": "No hay etiquetas personalizadas"
@@ -609,13 +609,13 @@
     "message": "Nombre de la etiqueta"
   },
   "myspace.tagManager.title": {
-    "message": "Administrar Etiquetas Personalizadas"
+    "message": "Administrar etiquetas personalizadas"
   },
   "nav.explore": {
     "message": "Explorar"
   },
   "nav.myCollection": {
-    "message": "Mi Colección"
+    "message": "Mi colección"
   },
   "noResults.description": {
     "message": "Prueba otra palabra clave o limpia los filtros de etiquetas"
@@ -648,7 +648,7 @@
     "message": "Fuente del prompt, versiones en otros idiomas o notas complementarias (opcional)"
   },
   "placeholder.promptRemark": {
-    "message": "Describa brevemente el uso de este prompt (opcional)"
+    "message": "Describe brevemente el uso de este prompt (opcional)"
   },
   "placeholder.promptTitle": {
     "message": "Nombra tu prompt"
@@ -669,7 +669,7 @@
     "message": "caracteres"
   },
   "prompt.content": {
-    "message": "Contenido del Prompt"
+    "message": "Contenido del prompt"
   },
   "prompt.private": {
     "message": "Privado"
@@ -678,10 +678,10 @@
     "message": "Fuente"
   },
   "prompt.tokenDanger": {
-    "message": "El prompt es muy largo y puede ser difícil de compartir o reutilizar. Considere dividirlo."
+    "message": "El prompt es muy largo y puede ser difícil de compartir o reutilizar. Considera dividirlo."
   },
   "prompt.tokenWarning": {
-    "message": "El prompt es bastante largo; considere acortarlo o dividirlo."
+    "message": "El prompt es bastante largo; considera acortarlo o dividirlo."
   },
   "prompt.translation": {
     "message": "Traducción"
@@ -913,7 +913,7 @@
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
+    "message": "Este autor aún no ha escrito ninguna publicación.",
     "description": "The text for authors with 0 blog post"
   },
   "theme.blog.author.pageTitle": {
@@ -921,11 +921,11 @@
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
+    "message": "Autores",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View all authors",
+    "message": "Ver todos los autores",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.paginator.navAriaLabel": {
@@ -953,27 +953,27 @@
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.post.plurals": {
-    "message": "One post|{count} posts",
+    "message": "Una publicación|{count} publicaciones",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
+    "message": "1 min de lectura|{readingTime} min de lectura",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
-    "message": "Read more",
+    "message": "Leer más",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
+    "message": "Leer más sobre {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
+    "message": "Navegación de publicaciones recientes del blog",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} tagged with \"{tagName}\"",
+    "message": "{nPosts} etiquetadas con \"{tagName}\"",
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
@@ -1089,7 +1089,7 @@
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} con \"{tagName}\"",
+    "message": "{nDocsTagged} etiquetados con \"{tagName}\"",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
@@ -1180,7 +1180,7 @@
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.NotFound.title": {
-    "message": "Página No Encontrada",
+    "message": "Página no encontrada",
     "description": "The title of the 404 page"
   },
   "theme.tags.tagsListLabel": {
@@ -1188,7 +1188,7 @@
     "description": "The label alongside a tag list"
   },
   "theme.tags.tagsPageLink": {
-    "message": "Ver Todas las Etiquetas",
+    "message": "Ver todas las etiquetas",
     "description": "The label of the link targeting the tag list page"
   },
   "theme.tags.tagsPageTitle": {
@@ -1200,7 +1200,7 @@
     "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
-    "message": "Gestión de Datos"
+    "message": "Gestión de datos"
   },
   "title.security": {
     "message": "Configuración de seguridad"
@@ -1215,19 +1215,19 @@
     "message": "El autor ha dejado de compartir, no hay caché local disponible"
   },
   "userPage.level.maxReached": {
-    "message": "MAX REACHED"
+    "message": "NIVEL MÁXIMO"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared"
+    "message": "compartidos"
   },
   "userPage.level.specLabel": {
-    "message": "LEVEL"
+    "message": "NIVEL"
   },
   "userPage.level.toNext": {
     "message": "hasta {next}"
   },
   "validation.agreement.required": {
-    "message": "Debes aceptar los términos de servicio y la política de privacidad antes de usar"
+    "message": "Debes aceptar los términos de servicio y la política de privacidad para continuar"
   },
   "validation.comment.maxLength": {
     "message": "El contenido del comentario no debe exceder los 2000 caracteres"

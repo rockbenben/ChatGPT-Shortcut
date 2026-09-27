@@ -8,7 +8,7 @@
     "description": "The description for the blog used in SEO"
   },
   "sidebar.title": {
-    "message": "Posting terbaru",
+    "message": "Artikel terbaru",
     "description": "The label for the left sidebar"
   }
 }

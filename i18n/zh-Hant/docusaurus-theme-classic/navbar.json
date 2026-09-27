@@ -20,7 +20,7 @@
     "description": "Navbar item with label 应用工具"
   },
   "item.label.反馈建议": {
-    "message": "反饋建議",
+    "message": "回饋建議",
     "description": "Navbar item with label 反馈建议"
   },
   "item.label.支持": {
@@ -48,11 +48,15 @@
     "description": "Navbar item with label AI 绘图提示词"
   },
   "item.label.浏览器插件": {
-    "message": "瀏覽器外掛",
+    "message": "瀏覽器擴充功能",
     "description": "Navbar item with label 浏览器插件"
   },
   "item.label.AI 思想家圆桌": {
     "message": "AI 思想家圓桌",
     "description": "Navbar item with label AI 思想家圆桌"
+  },
+  "item.label.365 开源项目": {
+    "message": "365 開源項目",
+    "description": "Navbar item with label 365 开源项目"
   }
 }

@@ -1,10 +1,10 @@
 {
   "title": {
-    "message": "Blog",
+    "message": "Блог",
     "description": "The title for the blog used in SEO"
   },
   "description": {
-    "message": "Blog",
+    "message": "Блог",
     "description": "The description for the blog used in SEO"
   },
   "sidebar.title": {

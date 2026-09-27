@@ -102,13 +102,13 @@
     "message": "تصدير البيانات"
   },
   "button.exportPrompts": {
-    "message": "تصدير التوجيهات"
+    "message": "تصدير الموجهات"
   },
   "button.import": {
     "message": "استيراد البيانات"
   },
   "button.importPrompts": {
-    "message": "استيراد التوجيهات"
+    "message": "استيراد الموجهات"
   },
   "button.login": {
     "message": "تسجيل الدخول"
@@ -120,7 +120,7 @@
     "message": "إعادة تعيين كلمة المرور"
   },
   "button.signInFree": {
-    "message": "تسجيل الدخول مجاناً"
+    "message": "تسجيل الدخول مجانًا"
   },
   "comment.add": {
     "message": "إرسال تعليق"
@@ -156,16 +156,16 @@
     "message": "مجتمع موجّهات الذكاء الاصطناعي"
   },
   "community.loading": {
-    "message": "جاري التحميل..."
+    "message": "جارٍ التحميل..."
   },
   "community.notFound": {
-    "message": "التوجيه غير موجود"
+    "message": "الموجه غير موجود"
   },
   "community.notFoundDesc": {
-    "message": "ربما تم حذف هذا التوجيه أو جعله خاصًا"
+    "message": "ربما تم حذف هذا الموجه أو جعله خاصًا"
   },
   "community.seoSuffix": {
-    "message": "توجيهات المجتمع"
+    "message": "موجهات المجتمع"
   },
   "community.tagline": {
     "message": "موجّهات ذكاء اصطناعي ساهم بها المستخدمون. رتّب حسب الأحدث أو الأكثر إعجابًا، مع البحث والتصفية؛ بعد تسجيل الدخول، يمكنك الإعجاب والحفظ."
@@ -180,28 +180,28 @@
     "message": "تصدير كملف JSON للنسخ الاحتياطي"
   },
   "description.importPrompts.short": {
-    "message": "استيراد التوجيهات والمفضلة من ملف JSON"
+    "message": "استيراد الموجهات والمفضلة من ملف JSON"
   },
   "faq.heading": {
     "message": "الأسئلة الشائعة"
   },
   "faq.scenario.a": {
-    "message": "مناسب للمهام المتعلقة بعنوان هذه الصفحة ووصفها. إذا لم تكن المحاولة الأولى مثالية، أضف مزيداً من السياق داخل العنصر النائب، أو أضف قيوداً مثل «أجب خطوة بخطوة» أو «اضرب أمثلة»."
+    "message": "مناسب للمهام المتعلقة بعنوان هذه الصفحة ووصفها. إذا لم تكن المحاولة الأولى مثالية، أضف مزيدًا من السياق داخل العنصر النائب، أو أضف قيودًا مثل «أجب خطوة بخطوة» أو «اضرب أمثلة»."
   },
   "faq.scenario.q": {
-    "message": "ما السيناريوهات التي يناسبها هذا الطلب؟"
+    "message": "ما السيناريوهات التي يناسبها هذا الموجه؟"
   },
   "faq.tips.a": {
-    "message": "أولاً، اجعل [العنصر النائب] أكثر تحديداً (أضف الأسلوب والطول والمجال). ثانياً، ردّ على المخرجات غير المُرضية بعبارة «اجعلها أكثر X». ثالثاً، قارن النتائج بين نماذج مثل Claude و ChatGPT و Gemini."
+    "message": "أولًا، اجعل [العنصر النائب] أكثر تحديداً (أضف الأسلوب والطول والمجال). ثانيًا، ردّ على المخرجات غير المُرضية بعبارة «اجعلها أكثر X». ثالثًا، قارن النتائج بين نماذج مثل Claude و ChatGPT و Gemini."
   },
   "faq.tips.q": {
-    "message": "كيف يمكنني تحسين جودة الإخراج؟"
+    "message": "كيف يمكنني تحسين جودة المخرجات؟"
   },
   "faq.usage.a": {
-    "message": "انسخ الطلب، واستبدل [العنصر النائب] بين المعقوفين بمدخلاتك الخاصة، ثم الصقه في ChatGPT أو Claude أو Gemini أو DeepSeek أو Qwen أو أي واجهة ذكاء اصطناعي محادثية تدعم اللغة الطبيعية، وأرسله."
+    "message": "انسخ الموجه، واستبدل [العنصر النائب] بين المعقوفين بمدخلاتك الخاصة، ثم الصقه في ChatGPT أو Claude أو Gemini أو DeepSeek أو Qwen أو أي واجهة ذكاء اصطناعي محادثية تدعم اللغة الطبيعية، وأرسله."
   },
   "faq.usage.q": {
-    "message": "كيف أستخدم هذا الطلب؟"
+    "message": "كيف أستخدم هذا الموجه؟"
   },
   "feedback.description": {
     "message": "ملاحظاتك مهمة بالنسبة لنا!"
@@ -219,7 +219,7 @@
     "message": "تقارير الأخطاء، طلبات الميزات، أسئلة الاستخدام — كل صوت مرحب به"
   },
   "feedback.title": {
-    "message": "التعليقات والاقتراحات"
+    "message": "الملاحظات والاقتراحات"
   },
   "feedback.type.bug": {
     "message": "تقارير الأخطاء"
@@ -252,10 +252,10 @@
     "message": "مكتبة موجهات الذكاء الاصطناعي | قوالب ChatGPT و Claude و Gemini"
   },
   "howto.step1.name": {
-    "message": "انسخ الطلب"
+    "message": "انسخ الموجه"
   },
   "howto.step1.text": {
-    "message": "انسخ قالب الطلب إلى الحافظة."
+    "message": "انسخ قالب الموجه إلى الحافظة."
   },
   "howto.step2.name": {
     "message": "خصّص العناصر النائبة"
@@ -282,7 +282,7 @@
     "message": "موافق"
   },
   "label.promptContent": {
-    "message": "محتوى التوجيه"
+    "message": "محتوى الموجه"
   },
   "label.promptNotes": {
     "message": "ملاحظات"
@@ -291,7 +291,7 @@
     "message": "الاستخدام"
   },
   "label.promptTitle": {
-    "message": "اسم التوجيه"
+    "message": "اسم الموجه"
   },
   "label.sharePrompt": {
     "message": "المشاركة في صفحة المجتمع — سيتمكن الآخرون من عرضه وحفظه"
@@ -300,10 +300,10 @@
     "message": "برونزي"
   },
   "level.diamond": {
-    "message": "ماس"
+    "message": "ألماسي"
   },
   "level.emerald": {
-    "message": "زمرد"
+    "message": "زمردي"
   },
   "level.gold": {
     "message": "ذهبي"
@@ -354,7 +354,7 @@
     "message": "فشل تسجيل الدخول عبر Google"
   },
   "login.google.redirecting": {
-    "message": "جارٍ التحويل إلى تسجيل دخول Google..."
+    "message": "جارٍ التحويل إلى تسجيل الدخول عبر Google..."
   },
   "login.login.prompt": {
     "message": "لديك حساب بالفعل؟"
@@ -375,10 +375,10 @@
     "message": "سيتم إرسال رابط إعادة التعيين إلى بريدك الإلكتروني"
   },
   "login.subtitle.register": {
-    "message": "اكتشف وشارك وأنشئ توجيهات مذهلة"
+    "message": "اكتشف وشارك وأنشئ موجهات مذهلة"
   },
   "login.subtitle.welcome": {
-    "message": "سجل الدخول لاستكشاف المزيد من التوجيهات المميزة"
+    "message": "سجل الدخول لاستكشاف المزيد من الموجهات المميزة"
   },
   "login.title.forgotPassword": {
     "message": "استرجاع كلمة المرور"
@@ -396,10 +396,10 @@
     "message": "تمت الإضافة إلى المفضلة"
   },
   "message.addPrompt.error": {
-    "message": "فشل إرسال التوجيه، يرجى المحاولة مرة أخرى لاحقًا"
+    "message": "فشل إرسال الموجه، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.addPrompt.success": {
-    "message": "تم إرسال التوجيه"
+    "message": "تم إرسال الموجه"
   },
   "message.cache.cleared": {
     "message": "تم مسح ذاكرة التخزين المؤقت"
@@ -408,7 +408,7 @@
     "message": "فشل مسح ذاكرة التخزين المؤقت، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.cannotFavorOwn": {
-    "message": "لا يمكنك تفضيل موجهك الخاص"
+    "message": "لا يمكنك إضافة موجهك الخاص إلى المفضلة"
   },
   "message.convertToPrivate.error": {
     "message": "فشل التحويل، يرجى المحاولة مرة أخرى لاحقًا"
@@ -417,22 +417,22 @@
     "message": "تم إنشاء موجّه خاص، لكن تعذّرت إزالة المفضلة الأصلية. يرجى حذفها يدويًا لتجنّب التكرار."
   },
   "message.convertToPrivate.success": {
-    "message": "تم التحويل إلى موجه خاصة"
+    "message": "تم التحويل إلى موجه خاص"
   },
   "message.copied": {
     "message": "تم النسخ"
   },
   "message.deletePrompt.confirm.content": {
-    "message": "هل أنت متأكد أنك تريد حذف هذا التوجيه؟"
+    "message": "هل أنت متأكد أنك تريد حذف هذا الموجه؟"
   },
   "message.deletePrompt.confirm.title": {
     "message": "تأكيد الحذف"
   },
   "message.deletePrompt.error": {
-    "message": "فشل حذف التوجيه، يرجى المحاولة مرة أخرى لاحقًا"
+    "message": "فشل حذف الموجه، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.deletePrompt.success": {
-    "message": "تم حذف التوجيه"
+    "message": "تم حذف الموجه"
   },
   "message.error": {
     "message": "حدث خطأ أثناء المعالجة"
@@ -453,7 +453,7 @@
     "message": "لا توجد موجهات للتصدير. أنشئ بعضها أو أضفها إلى المفضلة أولاً."
   },
   "message.export.success": {
-    "message": "تم تصدير التوجيهات"
+    "message": "تم تصدير الموجهات"
   },
   "message.forgotPassword.info": {
     "message": "إذا نسيت كلمة المرور الحالية، يمكنك إعادة تعيينها عبر البريد الإلكتروني. سنرسل بريدًا إلكترونيًا يحتوي على رابط إعادة التعيين إلى عنوان بريدك الإلكتروني المسجل."
@@ -471,7 +471,7 @@
     "message": "خطأ في تحليل JSON"
   },
   "message.import.partial": {
-    "message": "استيراد جزئي"
+    "message": "تم استيراد بعض العناصر"
   },
   "message.import.success": {
     "message": "تم الاستيراد"
@@ -492,7 +492,7 @@
     "message": "لا توجد تعليقات بعد، كن أول من يعلق"
   },
   "message.noFavorites": {
-    "message": "لا توجد مفضلة بعد، اكتشف الموجهات التي تعجبك"
+    "message": "لا توجد عناصر مفضلة بعد، اكتشف الموجهات التي تعجبك"
   },
   "message.noPrompts": {
     "message": "لا توجد موجهات بعد، أنشئ واحدة"
@@ -510,10 +510,10 @@
     "message": "فشل إرسال التعليق. يرجى المحاولة مرة أخرى لاحقًا."
   },
   "message.removeFavorite.confirm.content": {
-    "message": "هل أنت متأكد أنك تريد إزالة هذا التوجيه من المفضلة؟"
+    "message": "هل أنت متأكد أنك تريد إزالة هذا الموجه من المفضلة؟"
   },
   "message.removeFavorite.confirm.title": {
-    "message": "إزالة المفضلة"
+    "message": "إزالة من المفضلة"
   },
   "message.removeFavorite.error": {
     "message": "فشل الإزالة من المفضلة، يرجى المحاولة مرة أخرى لاحقًا"
@@ -549,10 +549,10 @@
     "message": "فشل تحديث الوسوم، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.updatePrompt.error": {
-    "message": "فشل تحديث التوجيه، يرجى المحاولة مرة أخرى لاحقًا"
+    "message": "فشل تحديث الموجه، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.updatePrompt.success": {
-    "message": "تم تحديث التوجيه"
+    "message": "تم تحديث الموجه"
   },
   "modal.clearCache.title": {
     "message": "مسح ذاكرة التخزين المؤقت؟"
@@ -561,7 +561,7 @@
     "message": "سيؤدي المسح إلى إعادة تحميل جميع البيانات."
   },
   "modal.editPrompt.title": {
-    "message": "تعديل التوجيه"
+    "message": "تعديل الموجه"
   },
   "modal.forgotPassword.title": {
     "message": "نسيت كلمة المرور"
@@ -588,7 +588,7 @@
     "message": "تعيين الوسوم"
   },
   "myspace.fallbackHint": {
-    "message": "لم يتم العثور على نتائج مطابقة. موصى به:"
+    "message": "لم يتم العثور على نتائج مطابقة. النتائج المقترحة:"
   },
   "myspace.filter.all": {
     "message": "الكل"
@@ -597,7 +597,7 @@
     "message": "المفضلة"
   },
   "myspace.filter.prompts": {
-    "message": "طلبات"
+    "message": "موجهاتي"
   },
   "myspace.manageTags": {
     "message": "إدارة الوسوم"
@@ -642,16 +642,16 @@
     "message": "كلمة المرور"
   },
   "placeholder.promptContent": {
-    "message": "أدخل محتوى التوجيه التفصيلي هنا..."
+    "message": "أدخل محتوى الموجه التفصيلي هنا..."
   },
   "placeholder.promptNotes": {
-    "message": "مصدر التوجيه، إصدارات بلغات أخرى أو ملاحظات تكميلية (اختياري)"
+    "message": "مصدر الموجه، إصدارات بلغات أخرى أو ملاحظات تكميلية (اختياري)"
   },
   "placeholder.promptRemark": {
     "message": "صف بإيجاز كيفية استخدام هذا الموجه (اختياري)"
   },
   "placeholder.promptTitle": {
-    "message": "قم بتسمية توجيهك"
+    "message": "اكتب اسمًا لموجهك"
   },
   "placeholder.resetPassword.code": {
     "message": "رمز إعادة التعيين"
@@ -693,7 +693,7 @@
     "message": "نسخ"
   },
   "share.native": {
-    "message": "النظام"
+    "message": "مشاركة النظام"
   },
   "share.shareTo": {
     "message": "مشاركة عبر"
@@ -864,7 +864,7 @@
     "message": "لم يتم العثور على نتائج، جرّب كلمات مفتاحية أخرى"
   },
   "sidebar.related": {
-    "message": "طلبات ذات صلة"
+    "message": "موجهات ذات صلة"
   },
   "sort.mostUpvoted": {
     "message": "الأكثر تصويتًا"
@@ -901,7 +901,7 @@
     "description": "The ARIA label for close button of announcement bar"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "إنتقل للأعلى",
+    "message": "انتقل إلى الأعلى",
     "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
@@ -913,7 +913,7 @@
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
+    "message": "لم ينشر هذا المؤلف أي مقالات بعد.",
     "description": "The text for authors with 0 blog post"
   },
   "theme.blog.author.pageTitle": {
@@ -921,11 +921,11 @@
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
+    "message": "المؤلفون",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View all authors",
+    "message": "عرض جميع المؤلفين",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.paginator.navAriaLabel": {
@@ -933,11 +933,11 @@
     "description": "The ARIA label for the blog pagination"
   },
   "theme.blog.paginator.newerEntries": {
-    "message": "أحدث الإدخالات",
+    "message": "المقالات الأحدث",
     "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
   "theme.blog.paginator.olderEntries": {
-    "message": "أقدم الإدخالات",
+    "message": "المقالات الأقدم",
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.blog.post.paginator.navAriaLabel": {
@@ -945,35 +945,35 @@
     "description": "The ARIA label for the blog posts pagination"
   },
   "theme.blog.post.paginator.newerPost": {
-    "message": "أحدث المقالات",
+    "message": "المقال الأحدث",
     "description": "The blog post button label to navigate to the newer/previous post"
   },
   "theme.blog.post.paginator.olderPost": {
-    "message": "أقدم المقالات",
+    "message": "المقال الأقدم",
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.post.plurals": {
-    "message": "One post|{count} posts",
+    "message": "مقال واحد|{count} مقالات",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
+    "message": "دقيقة واحدة للقراءة|{readingTime} دقائق للقراءة",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
-    "message": "Read more",
+    "message": "اقرأ المزيد",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
+    "message": "اقرأ المزيد عن {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
+    "message": "التنقل بين أحدث مقالات المدونة",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} tagged with \"{tagName}\"",
+    "message": "{nPosts} مقالات بوسم \"{tagName}\"",
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
@@ -989,7 +989,7 @@
     "description": "The ARIA label for copy code blocks button"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "تبديل ميزة التفاف النص",
+    "message": "التبديل بين التفاف النص",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
@@ -1013,7 +1013,7 @@
     "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
-    "message": "إرتباط مُبـاشر بالعنوان {heading}",
+    "message": "ارتباط مباشر بالعنوان {heading}",
     "description": "Title for link to heading"
   },
   "theme.common.skipToMainContent": {
@@ -1029,7 +1029,7 @@
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "هذه الصفحة غير مدرجة. لن تقوم محركات البحث بفهرستها، ولن يتمكن من الوصول إليها سوى المستخدمين الذين لديهم رابط مباشر.",
+    "message": "هذه الصفحة غير مدرجة. لن تفهرسها محركات البحث، ولن يتمكن من الوصول إليها سوى المستخدمين الذين لديهم رابط مباشر.",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.unlistedBanner.title": {
@@ -1041,15 +1041,15 @@
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "التنقل التفصيلي",
+    "message": "مسار التنقل",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "{count} مواد",
+    "message": "{count} عناصر",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
-    "message": "صفحة التوثيق",
+    "message": "التنقل بين الوثائق",
     "description": "The ARIA label for the docs pagination"
   },
   "theme.docs.paginator.next": {
@@ -1085,7 +1085,7 @@
     "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "تبديل شريط التنقل",
+    "message": "إظهار شريط التنقل أو إخفاؤه",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.tagDocListPageTitle": {
@@ -1100,7 +1100,7 @@
     "message": "الإصدار: {versionLabel}"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "احدث إصدار",
+    "message": "أحدث إصدار",
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
@@ -1112,7 +1112,7 @@
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "هذه الوثائق لم يتم طرحها بَعـد للإصدار {siteTitle} {versionLabel}.",
+    "message": "هذه الوثائق لم يتم طرحها بعد للإصدار {siteTitle} {versionLabel}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
@@ -1160,7 +1160,7 @@
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← العودة إلى القائمة الرئيسية",
+    "message": "→ العودة إلى القائمة الرئيسية",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
@@ -1192,7 +1192,7 @@
     "description": "The label of the link targeting the tag list page"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "العلامات",
+    "message": "الوسوم",
     "description": "The title of the tag list page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
@@ -1218,7 +1218,7 @@
     "message": "MAX REACHED"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared"
+    "message": "مشاركة"
   },
   "userPage.level.specLabel": {
     "message": "LEVEL"
@@ -1257,10 +1257,10 @@
     "message": "يرجى إدخال كلمة المرور"
   },
   "validation.promptContent.required": {
-    "message": "يرجى إدخال محتوى التوجيه"
+    "message": "يرجى إدخال محتوى الموجه"
   },
   "validation.promptTitle.required": {
-    "message": "يرجى إدخال عنوان التوجيه"
+    "message": "يرجى إدخال عنوان الموجه"
   },
   "validation.replyRequired": {
     "message": "يرجى إدخال محتوى الرد"

@@ -54,5 +54,9 @@
   "item.label.AI 思想家圆桌": {
     "message": "AI 思想家ラウンドテーブル",
     "description": "Navbar item with label AI 思想家圆桌"
+  },
+  "item.label.365 开源项目": {
+    "message": "365 OSS プロジェクト",
+    "description": "Navbar item with label 365 开源项目"
   }
 }
