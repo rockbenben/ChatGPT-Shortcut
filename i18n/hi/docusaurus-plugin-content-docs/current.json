@@ -1,6 +1,6 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "अगला",
     "description": "The label for version current"
   },
   "sidebar.docs.category.Policies": {
@@ -16,7 +16,7 @@
     "description": "The label for category '浏览器插件' in sidebar 'docs'"
   },
   "sidebar.docs.category.项目部署": {
-    "message": "तैनाती",
+    "message": "डिप्लॉयमेंट",
     "description": "The label for category '项目部署' in sidebar 'docs'"
   }
 }

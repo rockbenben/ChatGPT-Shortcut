@@ -4,7 +4,7 @@
     "description": "The title in the navbar"
   },
   "logo.alt": {
-    "message": "ChatGPT Shortcuts",
+    "message": "ChatGPT शॉर्टकट्स",
     "description": "The alt text of navbar logo"
   },
   "item.label.使用说明": {
@@ -16,7 +16,7 @@
     "description": "Navbar item with label 社区提示词"
   },
   "item.label.应用工具": {
-    "message": "उपकरण",
+    "message": "टूल्स",
     "description": "Navbar item with label 应用工具"
   },
   "item.label.反馈建议": {
@@ -54,5 +54,9 @@
   "item.label.AI 思想家圆桌": {
     "message": "AI विचारक गोलमेज़",
     "description": "Navbar item with label AI 思想家圆桌"
+  },
+  "item.label.365 开源项目": {
+    "message": "365 ओपन सोर्स",
+    "description": "Navbar item with label 365 开源项目"
   }
 }

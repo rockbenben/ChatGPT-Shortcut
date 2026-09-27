@@ -102,13 +102,13 @@
     "message": "ส่งออกข้อมูล"
   },
   "button.exportPrompts": {
-    "message": "ส่งออก พรอมต์"
+    "message": "ส่งออกพรอมต์"
   },
   "button.import": {
     "message": "นำเข้าข้อมูล"
   },
   "button.importPrompts": {
-    "message": "นำเข้า พรอมต์"
+    "message": "นำเข้าพรอมต์"
   },
   "button.login": {
     "message": "เข้าสู่ระบบ"
@@ -147,13 +147,13 @@
     "message": "กลับไปยังรายการ"
   },
   "community.description": {
-    "message": "ต้องการพรอมพ์ AI ที่ผ่านการทดสอบแล้ว? เข้าร่วมชุมชน AiShort เพื่อค้นพบเทมเพลตพรอมพ์ที่ใช้งานได้จริง"
+    "message": "ต้องการพรอมต์ AI ที่ผ่านการทดสอบแล้ว? เข้าร่วมชุมชน AiShort เพื่อค้นพบเทมเพลตพรอมต์ที่ใช้งานได้จริง"
   },
   "community.fetchError": {
     "message": "ดึงข้อมูลไม่สำเร็จ"
   },
   "community.heading": {
-    "message": "ชุมชน Prompt AI"
+    "message": "ชุมชนพรอมต์ AI"
   },
   "community.loading": {
     "message": "กำลังโหลด..."
@@ -168,10 +168,10 @@
     "message": "พรอมต์ชุมชน"
   },
   "community.tagline": {
-    "message": "prompt AI ที่ผู้ใช้แบ่งปัน เรียงตามล่าสุดหรือยอดถูกใจสูงสุด รองรับการค้นหาและกรอง เข้าสู่ระบบเพื่อกดถูกใจและบันทึก"
+    "message": "พรอมต์ AI ที่ผู้ใช้แบ่งปัน เรียงตามล่าสุดหรือยอดถูกใจสูงสุด รองรับการค้นหาและกรอง เข้าสู่ระบบเพื่อกดถูกใจและบันทึก"
   },
   "community.title": {
-    "message": "ชุมชนพรอมพ์ AI | ค้นพบและแบ่งปันพรอมพ์พรีเมียม"
+    "message": "ชุมชนพรอมต์ AI | ค้นพบและแบ่งปันพรอมต์พรีเมียม"
   },
   "description.clearCache.short": {
     "message": "รีเฟรชข้อมูลแคชในเครื่อง"
@@ -180,7 +180,7 @@
     "message": "ส่งออกเป็นไฟล์ JSON สำหรับสำรองข้อมูล"
   },
   "description.importPrompts.short": {
-    "message": "นำเข้า พรอมต์ และรายการโปรดจากไฟล์ JSON"
+    "message": "นำเข้าพรอมต์และรายการโปรดจากไฟล์ JSON"
   },
   "faq.heading": {
     "message": "คำถามที่พบบ่อย"
@@ -213,10 +213,10 @@
     "message": "มักตอบภายใน 24 ชั่วโมง"
   },
   "feedback.spec_label": {
-    "message": "ช่องเปิด"
+    "message": "ข้อเสนอแนะสาธารณะ"
   },
   "feedback.subtitle": {
-    "message": "รายงานบั๊ก ข้อเสนอแนะฟีเจอร์ คำถามการใช้งาน—ทุกเสียงได้รับการต้อนรับ"
+    "message": "รายงานบั๊ก ข้อเสนอแนะฟีเจอร์ คำถามการใช้งาน—ยินดีต้อนรับทุกข้อความ"
   },
   "feedback.title": {
     "message": "ข้อเสนอแนะและคำแนะนำ"
@@ -240,16 +240,16 @@
     "message": "แสดงพรอมต์ที่ตรงกับแท็กที่เลือกอย่างน้อยหนึ่งรายการ"
   },
   "hero.supportedAiTools": {
-    "message": "{tools} และอื่นๆ"
+    "message": "{tools} และอื่น ๆ"
   },
   "homepage.description": {
-    "message": "หงุดหงิดกับคำตอบ AI ที่ไม่เกี่ยวข้อง? AiShort มีเทมเพลตพรอมพ์สำหรับการเขียน การเขียนโค้ด และการแปล!"
+    "message": "หงุดหงิดกับคำตอบ AI ที่ไม่เกี่ยวข้อง? AiShort มีเทมเพลตพรอมต์สำหรับการเขียน การเขียนโค้ด และการแปล!"
   },
   "homepage.slogan": {
-    "message": "พรอมต์ AI ที่คัดสรร พร้อมใช้ด้วยคลิกเดียว"
+    "message": "พรอมต์ AI ที่คัดสรรแล้ว พร้อมใช้ในคลิกเดียว"
   },
   "homepage.title": {
-    "message": "ไลบรารีพรอมพ์ AI สำหรับ ChatGPT, Claude, Gemini"
+    "message": "ไลบรารีพรอมต์ AI สำหรับ ChatGPT, Claude, Gemini"
   },
   "howto.step1.name": {
     "message": "คัดลอกพรอมต์"
@@ -282,7 +282,7 @@
     "message": "ยอมรับ"
   },
   "label.promptContent": {
-    "message": "เนื้อหา พรอมต์"
+    "message": "เนื้อหาพรอมต์"
   },
   "label.promptNotes": {
     "message": "หมายเหตุ"
@@ -291,7 +291,7 @@
     "message": "หน้าที่/การใช้งาน"
   },
   "label.promptTitle": {
-    "message": "ชื่อ พรอมต์"
+    "message": "ชื่อพรอมต์"
   },
   "label.sharePrompt": {
     "message": "แชร์ไปยังหน้าชุมชน ผู้อื่นสามารถดูและบันทึกได้"
@@ -330,7 +330,7 @@
     "message": "สร้างพรอมต์"
   },
   "link.communityPrompts": {
-    "message": "พรอมต์ ชุมชน"
+    "message": "พรอมต์ชุมชน"
   },
   "link.home": {
     "message": "หน้าแรก"
@@ -375,10 +375,10 @@
     "message": "ลิงก์รีเซ็ตจะถูกส่งไปยังอีเมลของคุณ"
   },
   "login.subtitle.register": {
-    "message": "ค้นพบ แบ่งปัน และสร้างพรอมพ์ที่น่าทึ่ง"
+    "message": "ค้นพบ แบ่งปัน และสร้างพรอมต์ที่น่าทึ่ง"
   },
   "login.subtitle.welcome": {
-    "message": "เข้าสู่ระบบเพื่อสำรวจพรอมพ์พรีเมียมเพิ่มเติม"
+    "message": "เข้าสู่ระบบเพื่อสำรวจพรอมต์พรีเมียมเพิ่มเติม"
   },
   "login.title.forgotPassword": {
     "message": "ลืมรหัสผ่าน"
@@ -387,7 +387,7 @@
     "message": "เข้าร่วมชุมชน"
   },
   "login.title.welcome": {
-    "message": "ยินดีต้อนรับกลับ"
+    "message": "ยินดีต้อนรับกลับมา"
   },
   "message.addFavorite.error": {
     "message": "ไม่สามารถเพิ่มในรายการโปรดได้ โปรดลองอีกครั้ง"
@@ -396,13 +396,13 @@
     "message": "เพิ่มในรายการโปรดแล้ว"
   },
   "message.addPrompt.error": {
-    "message": "ไม่สามารถส่งพรอมพ์ได้ โปรดลองอีกครั้ง"
+    "message": "ไม่สามารถส่งพรอมต์ได้ โปรดลองอีกครั้ง"
   },
   "message.addPrompt.success": {
     "message": "ส่งพรอมต์แล้ว"
   },
   "message.cache.cleared": {
-    "message": "ล้างแคชแล้ว ข้อมูลได้รีเฟรชแล้ว"
+    "message": "ล้างแคชแล้ว รีเฟรชข้อมูลใหม่แล้ว"
   },
   "message.cache.clearError": {
     "message": "ล้างแคชล้มเหลว โปรดลองอีกครั้ง"
@@ -417,19 +417,19 @@
     "message": "สร้างพรอมต์ส่วนตัวแล้ว แต่ไม่สามารถลบรายการโปรดเดิมได้ กรุณาลบด้วยตนเองเพื่อไม่ให้ซ้ำ"
   },
   "message.convertToPrivate.success": {
-    "message": "แปลงเป็น พรอมต์ ส่วนตัวแล้ว"
+    "message": "แปลงเป็นพรอมต์ส่วนตัวแล้ว"
   },
   "message.copied": {
     "message": "คัดลอกแล้ว"
   },
   "message.deletePrompt.confirm.content": {
-    "message": "คุณแน่ใจหรือไม่ว่าต้องการลบพรอมพ์นี้?"
+    "message": "คุณแน่ใจหรือไม่ว่าต้องการลบพรอมต์นี้?"
   },
   "message.deletePrompt.confirm.title": {
     "message": "ยืนยันการลบ"
   },
   "message.deletePrompt.error": {
-    "message": "ไม่สามารถลบพรอมพ์ได้ โปรดลองอีกครั้ง"
+    "message": "ไม่สามารถลบพรอมต์ได้ โปรดลองอีกครั้ง"
   },
   "message.deletePrompt.success": {
     "message": "ลบพรอมต์แล้ว"
@@ -450,7 +450,7 @@
     "message": "ส่งออกล้มเหลว กรุณาลองอีกครั้ง"
   },
   "message.export.noPrompts": {
-    "message": "ไม่มีพรอมต์ที่จะส่งออก สร้างหรือเพิ่มเป็นรายการโปรดก่อน"
+    "message": "ไม่มีพรอมต์ให้ส่งออก สร้างหรือเพิ่มเป็นรายการโปรดก่อน"
   },
   "message.export.success": {
     "message": "ส่งออกพรอมต์แล้ว"
@@ -492,10 +492,10 @@
     "message": "ยังไม่มีความคิดเห็น เป็นคนแรกที่แสดงความคิดเห็นกันเถอะ"
   },
   "message.noFavorites": {
-    "message": "ยังไม่มีรายการโปรด ไปค้นหา พรอมต์ ที่ชอบกันเถอะ"
+    "message": "ยังไม่มีรายการโปรด ไปค้นหาพรอมต์ที่ชอบกันเถอะ"
   },
   "message.noPrompts": {
-    "message": "ยังไม่มี พรอมต์ ไปสร้างกันเถอะ"
+    "message": "ยังไม่มีพรอมต์ ไปสร้างกันเถอะ"
   },
   "message.noSpaceItems": {
     "message": "ยังไม่มีอะไร — สร้างพรอมต์หรือทำเครื่องหมายเป็นรายการโปรด"
@@ -510,7 +510,7 @@
     "message": "ส่งความคิดเห็นไม่สำเร็จ โปรดลองอีกครั้งในภายหลัง"
   },
   "message.removeFavorite.confirm.content": {
-    "message": "คุณแน่ใจหรือไม่ว่าต้องการลบพรอมพ์นี้ออกจากรายการโปรด?"
+    "message": "คุณแน่ใจหรือไม่ว่าต้องการลบพรอมต์นี้ออกจากรายการโปรด?"
   },
   "message.removeFavorite.confirm.title": {
     "message": "ลบรายการโปรด"
@@ -549,7 +549,7 @@
     "message": "อัปเดตแท็กล้มเหลว โปรดลองอีกครั้ง"
   },
   "message.updatePrompt.error": {
-    "message": "ไม่สามารถอัปเดตพรอมพ์ได้ โปรดลองอีกครั้ง"
+    "message": "ไม่สามารถอัปเดตพรอมต์ได้ โปรดลองอีกครั้ง"
   },
   "message.updatePrompt.success": {
     "message": "อัปเดตพรอมต์แล้ว"
@@ -561,13 +561,13 @@
     "message": "หลังจากล้าง ข้อมูลทั้งหมดจะถูกโหลดใหม่"
   },
   "modal.editPrompt.title": {
-    "message": "แก้ไข พรอมต์"
+    "message": "แก้ไขพรอมต์"
   },
   "modal.forgotPassword.title": {
     "message": "ลืมรหัสผ่าน"
   },
   "myCollection.header.subtitle": {
-    "message": "จัดการ พรอมต์ ที่สร้าง รายการโปรด และแท็กที่กำหนดเอง"
+    "message": "จัดการพรอมต์ที่สร้าง รายการโปรด และแท็กที่กำหนดเอง"
   },
   "myCollection.header.title": {
     "message": "คอลเลกชันของฉัน"
@@ -576,7 +576,7 @@
     "message": "รายการโปรด"
   },
   "myCollection.stats.prompts": {
-    "message": "พรอมต์ ของฉัน"
+    "message": "พรอมต์ของฉัน"
   },
   "myCollection.stats.tags": {
     "message": "แท็กที่กำหนดเอง"
@@ -642,16 +642,16 @@
     "message": "รหัสผ่าน"
   },
   "placeholder.promptContent": {
-    "message": "พิมพ์เนื้อหา พรอมต์ โดยละเอียดที่นี่..."
+    "message": "พิมพ์เนื้อหาพรอมต์โดยละเอียดที่นี่..."
   },
   "placeholder.promptNotes": {
-    "message": "แหล่งที่มาของ พรอมต์, เวอร์ชันภาษาอื่น หรือหมายเหตุเพิ่มเติม (ไม่บังคับ)"
+    "message": "แหล่งที่มาของพรอมต์, เวอร์ชันภาษาอื่น หรือหมายเหตุเพิ่มเติม (ไม่บังคับ)"
   },
   "placeholder.promptRemark": {
-    "message": "อธิบายสั้นๆ เกี่ยวกับหน้าที่ของ พรอมต์ (ไม่บังคับ)"
+    "message": "อธิบายสั้นๆ เกี่ยวกับหน้าที่ของพรอมต์ (ไม่บังคับ)"
   },
   "placeholder.promptTitle": {
-    "message": "ตั้งชื่อให้ พรอมต์ ของคุณ"
+    "message": "ตั้งชื่อให้พรอมต์ของคุณ"
   },
   "placeholder.resetPassword.code": {
     "message": "รหัสรีเซ็ต"
@@ -678,10 +678,10 @@
     "message": "แหล่งที่มา"
   },
   "prompt.tokenDanger": {
-    "message": "พรอมต์ ยาวมาก อาจไม่สะดวกในการแชร์และนำกลับมาใช้ใหม่ แนะนำให้แบ่ง"
+    "message": "พรอมต์ยาวมาก อาจไม่สะดวกในการแชร์และนำกลับมาใช้ใหม่ แนะนำให้แบ่ง"
   },
   "prompt.tokenWarning": {
-    "message": "พรอมต์ ค่อนข้างยาว แนะนำให้ย่อหรือแบ่ง"
+    "message": "พรอมต์ค่อนข้างยาว แนะนำให้ย่อหรือแบ่ง"
   },
   "prompt.translation": {
     "message": "คำแปล"
@@ -711,7 +711,7 @@
     "message": "วิชาการ/ครู"
   },
   "showcase.tag.ai.description": {
-    "message": "พรอมพ์และสถานการณ์การใช้งานที่เกี่ยวข้องกับ AI"
+    "message": "พรอมต์และสถานการณ์การใช้งานที่เกี่ยวข้องกับ AI"
   },
   "showcase.tag.ai.label": {
     "message": "AI"
@@ -741,7 +741,7 @@
     "message": "หน้าที่องค์กร"
   },
   "showcase.tag.contribute.description": {
-    "message": "พรอมพ์พรีเมียมที่แบ่งปันโดยผู้ใช้ชุมชน"
+    "message": "พรอมต์พรีเมียมที่แบ่งปันโดยผู้ใช้ชุมชน"
   },
   "showcase.tag.contribute.label": {
     "message": "แบ่งปันโดยผู้ใช้"
@@ -953,7 +953,7 @@
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.post.plurals": {
-    "message": "หนึ่งโพสต์|{count} โพสต์",
+    "message": "1 โพสต์|{count} โพสต์",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readingTime.plurals": {
@@ -1089,11 +1089,11 @@
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} กับ \"{tagName}\"",
+    "message": "{nDocsTagged} ที่ติดแท็ก \"{tagName}\"",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "หนึ่งเอกสารถูกติดแท็ก|{count} เอกสารถูกติดแท็ก",
+    "message": "1 เอกสารถูกติดแท็ก|{count} เอกสารถูกติดแท็ก",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.versionBadge.label": {
@@ -1176,7 +1176,7 @@
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "กรุณาติดต่อเจ้าของเว็บไซต์ที่ลิงก์คุณไปยัง URL ต้นทางและแจ้งให้พวกเขาทราบว่าลิงก์ของพวกเขาเสีย",
+    "message": "กรุณาติดต่อเจ้าของเว็บไซต์ที่ลิงก์มายังหน้านี้ แล้วแจ้งทราบว่าลิงก์เสีย",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.NotFound.title": {
@@ -1209,10 +1209,10 @@
     "message": "ข้อมูลผู้ใช้"
   },
   "unavailable.unshared": {
-    "message": "ผู้แต่งต้นฉบับได้ยกเลิกการแชร์"
+    "message": "ผู้เขียนต้นฉบับได้ยกเลิกการแชร์"
   },
   "unavailable.unsharedNoCache": {
-    "message": "ผู้แต่งต้นฉบับได้ยกเลิกการแชร์และไม่มีแคชในเครื่อง"
+    "message": "ผู้เขียนต้นฉบับได้ยกเลิกการแชร์และไม่มีแคชในเครื่อง"
   },
   "userPage.level.maxReached": {
     "message": "MAX REACHED"
@@ -1257,10 +1257,10 @@
     "message": "กรุณากรอกรหัสผ่าน"
   },
   "validation.promptContent.required": {
-    "message": "กรุณากรอกเนื้อหา พรอมต์"
+    "message": "กรุณากรอกเนื้อหาพรอมต์"
   },
   "validation.promptTitle.required": {
-    "message": "กรุณากรอกหัวข้อ พรอมต์"
+    "message": "กรุณากรอกหัวข้อพรอมต์"
   },
   "validation.replyRequired": {
     "message": "กรุณากรอกเนื้อหาตอบกลับ"

@@ -8,11 +8,11 @@
     "description": "The alt text of navbar logo"
   },
   "item.label.使用说明": {
-    "message": "Docs",
+    "message": "Dokumentation",
     "description": "Navbar item with label 使用说明"
   },
   "item.label.社区提示词": {
-    "message": "Community Prompts",
+    "message": "Community-Prompts",
     "description": "Navbar item with label 社区提示词"
   },
   "item.label.应用工具": {
@@ -36,7 +36,7 @@
     "description": "Navbar item with label Discord"
   },
   "item.label.QQ 群": {
-    "message": "QQ Gruppe",
+    "message": "QQ-Gruppe",
     "description": "Navbar item with label QQ 群"
   },
   "item.label.AI 工具箱": {
@@ -54,5 +54,9 @@
   "item.label.AI 思想家圆桌": {
     "message": "KI-Denkerrunde",
     "description": "Navbar item with label AI 思想家圆桌"
+  },
+  "item.label.365 开源项目": {
+    "message": "365 Open Source",
+    "description": "Navbar item with label 365 开源项目"
   }
 }

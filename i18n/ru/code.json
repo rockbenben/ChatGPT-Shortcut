@@ -39,7 +39,7 @@
     "message": "Изменить"
   },
   "action.forgotPassword": {
-    "message": "Забыли пароль"
+    "message": "Забыли пароль?"
   },
   "action.hideTags": {
     "message": "Скрыть теги"
@@ -147,13 +147,13 @@
     "message": "Вернуться к списку"
   },
   "community.description": {
-    "message": "Нужны проверенные ИИ-промпты? Присоединяйтесь к сообществу AiShort, чтобы находить практичные шаблоны и делиться техниками."
+    "message": "Нужны проверенные ИИ-промпты? Присоединяйтесь к сообществу AiShort, чтобы находить практичные шаблоны и делиться приёмами."
   },
   "community.fetchError": {
     "message": "Не удалось получить данные"
   },
   "community.heading": {
-    "message": "Сообщество промптов ИИ"
+    "message": "Сообщество ИИ-промптов"
   },
   "community.loading": {
     "message": "Загрузка..."
@@ -171,7 +171,7 @@
     "message": "Промпты ИИ, которыми делятся пользователи. Сортировка по новизне или популярности, поиск и фильтры; после входа можно ставить лайк и сохранять."
   },
   "community.title": {
-    "message": "Сообщество ИИ-промптов | Открывайте и делитесь"
+    "message": "Сообщество ИИ-промптов | Находите и делитесь ими"
   },
   "description.clearCache.short": {
     "message": "Обновить локальный кэш"
@@ -192,7 +192,7 @@
     "message": "Для каких задач подходит этот промпт?"
   },
   "faq.tips.a": {
-    "message": "Во-первых, сделайте [плейсхолдер] более конкретным (стиль, длина, тематика). Во-вторых, отвечайте «сделай это более X» на неудачные ответы. В-третьих, сравнивайте результаты разных моделей: Claude / ChatGPT / Gemini."
+    "message": "Во-первых, сделайте [плейсхолдер] более конкретным (стиль, длина, тематика). Во-вторых, на неудачный ответ отвечайте «сделай это более X». В-третьих, сравнивайте результаты разных моделей: Claude / ChatGPT / Gemini."
   },
   "faq.tips.q": {
     "message": "Как повысить качество ответа?"
@@ -216,7 +216,7 @@
     "message": "Открытый канал"
   },
   "feedback.subtitle": {
-    "message": "Сообщения об ошибках, предложения функций, вопросы использования — все голоса приветствуются"
+    "message": "Сообщения об ошибках, предложения функций, вопросы использования — любые отзывы приветствуются"
   },
   "feedback.title": {
     "message": "Отзывы и предложения"
@@ -246,7 +246,7 @@
     "message": "Надоели нерелевантные ответы ИИ? AiShort предлагает практичные шаблоны для письма, кода и перевода. Копируйте одним кликом и удвойте эффективность!"
   },
   "homepage.slogan": {
-    "message": "Отборные AI-промпты — копируйте и используйте в один клик"
+    "message": "Отборные ИИ-промпты — копируйте и используйте в один клик"
   },
   "homepage.title": {
     "message": "Библиотека ИИ-промптов для ChatGPT, Claude, Gemini"
@@ -336,13 +336,13 @@
     "message": "Главная"
   },
   "link.myAccount": {
-    "message": "Мой Аккаунт"
+    "message": "Мой аккаунт"
   },
   "link.privacy": {
     "message": "Политика конфиденциальности"
   },
   "link.terms": {
-    "message": "Условия обслуживания"
+    "message": "Условия использования"
   },
   "login.google.button": {
     "message": "Войти через Google"
@@ -366,7 +366,7 @@
     "message": "Вход по паролю"
   },
   "login.passwordless.info": {
-    "message": "Ссылка для входа будет отправлена на вашу почту, нажмите для входа"
+    "message": "Ссылка для входа будет отправлена на вашу почту, — откройте её, чтобы войти"
   },
   "login.register.prompt": {
     "message": "Еще нет аккаунта?"
@@ -375,7 +375,7 @@
     "message": "Ссылка для сброса будет отправлена на вашу почту"
   },
   "login.subtitle.register": {
-    "message": "Находите, делитесь и создавайте потрясающие промпты"
+    "message": "Находите промпты, делитесь ими и создавайте свои"
   },
   "login.subtitle.welcome": {
     "message": "Войдите, чтобы открыть больше премиум-промптов"
@@ -411,7 +411,7 @@
     "message": "Нельзя добавить собственный промпт в избранное"
   },
   "message.convertToPrivate.error": {
-    "message": "Не удалось преобразовать, попробуйте еще раз позже"
+    "message": "Не удалось сделать промпт приватным, попробуйте позже"
   },
   "message.convertToPrivate.favoriteKept": {
     "message": "Приватный промпт создан, но исходное избранное не удалось удалить. Удалите его вручную, чтобы избежать дублирования."
@@ -471,7 +471,7 @@
     "message": "Ошибка разбора JSON"
   },
   "message.import.partial": {
-    "message": "Частичный импорт"
+    "message": "Импортированы не все данные"
   },
   "message.import.success": {
     "message": "Импортировано"
@@ -498,7 +498,7 @@
     "message": "Промптов пока нет — создайте первый"
   },
   "message.noSpaceItems": {
-    "message": "Пока пусто — создай промпт или добавь в избранное"
+    "message": "Пока пусто — создайте промпт или добавьте в избранное"
   },
   "message.orderSaved": {
     "message": "Расположение сохранено"
@@ -558,7 +558,7 @@
     "message": "Очистить кэш?"
   },
   "modal.clearCache.warning": {
-    "message": "Очистка приведет к перезагрузке всех данных."
+    "message": "После очистки все данные будут загружены заново."
   },
   "modal.editPrompt.title": {
     "message": "Редактировать промпт"
@@ -660,7 +660,7 @@
     "message": "Имя пользователя"
   },
   "placeholder.usernameOrEmail": {
-    "message": "Имя пользователя/Email"
+    "message": "Имя пользователя или email"
   },
   "prompt.authorNote": {
     "message": "Примечание автора"
@@ -669,19 +669,19 @@
     "message": "символов"
   },
   "prompt.content": {
-    "message": "Содержание подсказки"
+    "message": "Содержание промпта"
   },
   "prompt.private": {
-    "message": "Частный"
+    "message": "Приватный"
   },
   "prompt.source": {
     "message": "Источник"
   },
   "prompt.tokenDanger": {
-    "message": "Промпт очень длинный, что может затруднить его передачу и повторное использование. Рекомендуется разбить."
+    "message": "Промпт очень длинный, что может затруднить его передачу и повторное использование. Рекомендуется разбить его на части."
   },
   "prompt.tokenWarning": {
-    "message": "Промпт довольно длинный; рассмотрите возможность его сокращения или разделения."
+    "message": "Промпт довольно длинный; возможно, его стоит сократить или разделить."
   },
   "prompt.translation": {
     "message": "Перевод"
@@ -696,7 +696,7 @@
     "message": "Система"
   },
   "share.shareTo": {
-    "message": "Поделиться в"
+    "message": "Поделиться ссылкой"
   },
   "share.shareOn": {
     "message": "Поделиться в {channel}"
@@ -708,7 +708,7 @@
     "message": "Академические исследования, педагогический дизайн, планирование учебных программ и другая поддержка работы учителей"
   },
   "showcase.tag.academic.label": {
-    "message": "Академическое/Учителя"
+    "message": "Наука/Учителя"
   },
   "showcase.tag.ai.description": {
     "message": "Промпты и сценарии применения, связанные с искусственным интеллектом"
@@ -720,7 +720,7 @@
     "message": "Генерация романов, статей, пресс-релизов, сценариев, исследовательских отчетов и других типов текстов"
   },
   "showcase.tag.article.label": {
-    "message": "Статья/Отчет"
+    "message": "Статья/Отчёт"
   },
   "showcase.tag.code.description": {
     "message": "Предложения по программированию, примеры кода, решения для отладки и техническое руководство"
@@ -789,7 +789,7 @@
     "message": "Энциклопедия жизни"
   },
   "showcase.tag.living.description": {
-    "message": "Фитнес-инструкции, советы по питанию, кулинарные техники, макияж и стиль, и другие бытовые услуги"
+    "message": "Фитнес-программы, советы по питанию, кулинарные приёмы, макияж и стиль и другие бытовые темы"
   },
   "showcase.tag.living.label": {
     "message": "Качество жизни"
@@ -858,7 +858,7 @@
     "message": "Исправление грамматики, оптимизация стиля, повышение качества текста"
   },
   "showcase.tag.write.label": {
-    "message": "Помощь в письме"
+    "message": "Помощь с текстами"
   },
   "showcase.usersList.noResult": {
     "message": "Результатов не найдено, попробуйте другие ключевые слова"
@@ -913,7 +913,7 @@
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
+    "message": "Этот автор ещё не написал ни одной публикации.",
     "description": "The text for authors with 0 blog post"
   },
   "theme.blog.author.pageTitle": {
@@ -921,11 +921,11 @@
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
+    "message": "Авторы",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View all authors",
+    "message": "Показать всех авторов",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.paginator.navAriaLabel": {
@@ -933,11 +933,11 @@
     "description": "The ARIA label for the blog pagination"
   },
   "theme.blog.paginator.newerEntries": {
-    "message": "Следующие записи",
+    "message": "Записи новее",
     "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
   "theme.blog.paginator.olderEntries": {
-    "message": "Предыдущие записи",
+    "message": "Записи старше",
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.blog.post.paginator.navAriaLabel": {
@@ -945,35 +945,35 @@
     "description": "The ARIA label for the blog posts pagination"
   },
   "theme.blog.post.paginator.newerPost": {
-    "message": "Следующий пост",
+    "message": "Пост новее",
     "description": "The blog post button label to navigate to the newer/previous post"
   },
   "theme.blog.post.paginator.olderPost": {
-    "message": "Предыдущий пост",
+    "message": "Пост старше",
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.post.plurals": {
-    "message": "One post|{count} posts",
+    "message": "Один пост|{count} поста|{count} постов",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
+    "message": "Одна минута чтения|{readingTime} минуты чтения|{readingTime} минут чтения",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
-    "message": "Read more",
+    "message": "Читать далее",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
+    "message": "Подробнее о «{title}»",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
+    "message": "Навигация по последним записям блога",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} tagged with \"{tagName}\"",
+    "message": "{nPosts} с тегом «{tagName}»",
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
@@ -993,7 +993,7 @@
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
-    "message": "Переключение между темным и светлым режимом (сейчас используется {mode})",
+    "message": "Переключение между тёмным и светлым режимом (сейчас используется {mode})",
     "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
@@ -1029,7 +1029,7 @@
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "Эта страница не указана в списке. Поисковые системы не будут её индексировать, и доступ к ней будут иметь только пользователи, у которых есть прямая ссылка.",
+    "message": "Эта страница скрыта из общего списка. Поисковые системы не будут её индексировать, и доступ к ней будут иметь только пользователи, у которых есть прямая ссылка.",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.unlistedBanner.title": {
@@ -1049,7 +1049,7 @@
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
-    "message": "Страница документа",
+    "message": "Навигация по страницам документации",
     "description": "The ARIA label for the docs pagination"
   },
   "theme.docs.paginator.next": {
@@ -1089,7 +1089,7 @@
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} с тегом \"{tagName}\"",
+    "message": "{nDocsTagged} с тегом «{tagName}»",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
@@ -1112,7 +1112,7 @@
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "Это документация для будущей версии {siteTitle} {versionLabel}.",
+    "message": "Это ещё не опубликованная документация {siteTitle} версии {versionLabel}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
@@ -1144,7 +1144,7 @@
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "Последнее обновление{atDate}{byUser}",
+    "message": "Последнее обновление: {atDate} {byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
@@ -1209,16 +1209,16 @@
     "message": "Информация о пользователе"
   },
   "unavailable.unshared": {
-    "message": "Автор прекратил делиться"
+    "message": "Автор отменил публикацию"
   },
   "unavailable.unsharedNoCache": {
-    "message": "Автор прекратил делиться, и нет локального кэша"
+    "message": "Автор отменил публикацию, а локального кэша нет"
   },
   "userPage.level.maxReached": {
     "message": "MAX REACHED"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared"
+    "message": "опубликовано"
   },
   "userPage.level.specLabel": {
     "message": "LEVEL"
@@ -1227,7 +1227,7 @@
     "message": "до {next}"
   },
   "validation.agreement.required": {
-    "message": "Перед использованием необходимо согласиться с условиями обслуживания и политикой конфиденциальности"
+    "message": "Перед использованием необходимо принять условия использования и политику конфиденциальности"
   },
   "validation.comment.maxLength": {
     "message": "Содержание комментария не должно превышать 2000 символов"
@@ -1242,7 +1242,7 @@
     "message": "Пожалуйста, введите текущий пароль"
   },
   "validation.email.invalid": {
-    "message": "Пожалуйста, введите действительный адрес электронной почты"
+    "message": "Пожалуйста, введите корректный адрес электронной почты"
   },
   "validation.email.required": {
     "message": "Пожалуйста, введите электронную почту"
@@ -1305,7 +1305,7 @@
     "message": "Ссылка для входа могла истечь или уже была использована. Вернитесь на главную и войдите снова."
   },
   "auth.callback.idle": {
-    "message": "Здесь нет ожидающего входа"
+    "message": "Здесь нет незавершённого входа"
   },
   "auth.callback.idleHint": {
     "message": "Эта страница нужна только для перенаправления при входе — добавлять её в закладки не нужно."
@@ -1326,13 +1326,13 @@
     "message": "Не удалось обновить имя пользователя. Повторите попытку чуть позже."
   },
   "message.requestTimeout": {
-    "message": "Время запроса истекло. Повторите попытку."
+    "message": "Превышено время ожидания запроса. Повторите попытку."
   },
   "message.tooManyRequests": {
     "message": "Слишком много попыток. Повторите чуть позже."
   },
   "account.signInRequired": {
-    "message": "Войдите, чтобы открыть аккаунт"
+    "message": "Войдите, чтобы перейти в аккаунт"
   },
   "account.signInRequiredHint": {
     "message": "Возвращаем вас на главную — или нажмите кнопку ниже."

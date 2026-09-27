@@ -216,7 +216,7 @@
     "message": "Saluran Terbuka"
   },
   "feedback.subtitle": {
-    "message": "Laporan bug, permintaan fitur, pertanyaan penggunaan—semua suara diterima"
+    "message": "Laporan bug, permintaan fitur, pertanyaan penggunaan—semua masukan diterima"
   },
   "feedback.title": {
     "message": "Umpan Balik dan Saran"
@@ -249,7 +249,7 @@
     "message": "Prompt AI pilihan, siap pakai dengan satu klik"
   },
   "homepage.title": {
-    "message": "Perpustakaan Prompt AI untuk ChatGPT, Claude, dan Gemini"
+    "message": "Koleksi Prompt AI untuk ChatGPT, Claude, dan Gemini"
   },
   "howto.step1.name": {
     "message": "Salin prompt"
@@ -348,7 +348,7 @@
     "message": "Masuk dengan Google"
   },
   "login.google.error": {
-    "message": "Kesalahan saat login Google, silakan coba lagi nanti ({error})"
+    "message": "Terjadi kesalahan saat login Google, silakan coba lagi nanti ({error})"
   },
   "login.google.failed": {
     "message": "Login Google gagal"
@@ -408,7 +408,7 @@
     "message": "Gagal menghapus cache, silakan coba lagi nanti"
   },
   "message.cannotFavorOwn": {
-    "message": "Tidak dapat memfavoritkan prompt Anda sendiri"
+    "message": "Tidak dapat menambahkan prompt Anda sendiri ke favorit"
   },
   "message.convertToPrivate.error": {
     "message": "Konversi gagal, silakan coba lagi nanti"
@@ -417,7 +417,7 @@
     "message": "Prompt privat dibuat, tetapi favorit asli tidak dapat dihapus. Hapus secara manual untuk menghindari duplikasi."
   },
   "message.convertToPrivate.success": {
-    "message": "Dikonversi ke Prompt pribadi"
+    "message": "Dikonversi ke prompt pribadi"
   },
   "message.copied": {
     "message": "Disalin"
@@ -450,7 +450,7 @@
     "message": "Ekspor gagal, silakan coba lagi nanti"
   },
   "message.export.noPrompts": {
-    "message": "Tidak ada prompt untuk diekspor. Buat atau favoritkan beberapa terlebih dahulu."
+    "message": "Tidak ada prompt untuk diekspor. Buat atau tambahkan ke favorit terlebih dahulu."
   },
   "message.export.success": {
     "message": "Prompt diekspor"
@@ -468,7 +468,7 @@
     "message": "Semua isi berkas sudah ada, tidak ada yang perlu diimpor"
   },
   "message.import.parseError": {
-    "message": "Parsing JSON gagal, silakan periksa format file"
+    "message": "Gagal mengurai JSON, silakan periksa format file"
   },
   "message.import.partial": {
     "message": "Sebagian prompt diimpor"
@@ -492,10 +492,10 @@
     "message": "Belum ada komentar, jadilah yang pertama berkomentar"
   },
   "message.noFavorites": {
-    "message": "Belum ada favorit, temukan Prompt yang Anda suka"
+    "message": "Belum ada favorit, temukan prompt yang Anda suka"
   },
   "message.noPrompts": {
-    "message": "Belum ada Prompt, buat satu"
+    "message": "Belum ada prompt, buat satu"
   },
   "message.noSpaceItems": {
     "message": "Belum ada — buat prompt atau tandai favorit"
@@ -531,7 +531,7 @@
     "message": "Email reset kata sandi telah dikirim"
   },
   "message.success.login": {
-    "message": "Sudah masuk"
+    "message": "Berhasil masuk"
   },
   "message.success.passwordChanged": {
     "message": "Kata sandi diubah"
@@ -555,7 +555,7 @@
     "message": "Prompt diperbarui"
   },
   "modal.clearCache.title": {
-    "message": "Konfirmasi Hapus Cache?"
+    "message": "Hapus Cache?"
   },
   "modal.clearCache.warning": {
     "message": "Setelah dihapus, semua data akan dimuat ulang."
@@ -678,10 +678,10 @@
     "message": "Sumber"
   },
   "prompt.tokenDanger": {
-    "message": "Prompt sangat panjang dan mungkin sulit untuk dibagikan atau digunakan kembali. Pertimbangkan untuk membaginya."
+    "message": "Prompt sangat panjang dan mungkin sulit untuk dibagikan atau digunakan kembali. Sebaiknya pecah menjadi beberapa bagian."
   },
   "prompt.tokenWarning": {
-    "message": "Prompt cukup panjang, disarankan untuk mempersingkat atau membagi"
+    "message": "Prompt cukup panjang, sebaiknya dipersingkat atau dipecah"
   },
   "prompt.translation": {
     "message": "Terjemahan"
@@ -913,7 +913,7 @@
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.author.noPosts": {
-    "message": "Penulis ini belum menulis posting.",
+    "message": "Penulis ini belum menulis artikel apa pun.",
     "description": "The text for authors with 0 blog post"
   },
   "theme.blog.author.pageTitle": {
@@ -945,15 +945,15 @@
     "description": "The ARIA label for the blog posts pagination"
   },
   "theme.blog.post.paginator.newerPost": {
-    "message": "Posting lebih baru",
+    "message": "Artikel lebih baru",
     "description": "The blog post button label to navigate to the newer/previous post"
   },
   "theme.blog.post.paginator.olderPost": {
-    "message": "Posting lebih lama",
+    "message": "Artikel lebih lama",
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.post.plurals": {
-    "message": "Satu posting|{count} posting",
+    "message": "Satu artikel|{count} artikel",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readingTime.plurals": {
@@ -1144,7 +1144,7 @@
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "Terakhir diperbarui{atDate}{byUser}",
+    "message": "Terakhir diperbarui {atDate} {byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
@@ -1172,7 +1172,7 @@
     "description": "The ARIA label for the main navigation"
   },
   "theme.NotFound.p1": {
-    "message": "Kami tidak dapat menemukan apa yang Anda cari.",
+    "message": "Kami tidak dapat menemukan halaman yang Anda cari.",
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
@@ -1218,7 +1218,7 @@
     "message": "MAX REACHED"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared"
+    "message": "dibagikan"
   },
   "userPage.level.specLabel": {
     "message": "LEVEL"
@@ -1227,7 +1227,7 @@
     "message": "menuju {next}"
   },
   "validation.agreement.required": {
-    "message": "Anda harus menyetujui Ketentuan Layanan dan Kebijakan Privasi sebelum menggunakan"
+    "message": "Anda harus menyetujui Ketentuan Layanan dan Kebijakan Privasi sebelum melanjutkan"
   },
   "validation.comment.maxLength": {
     "message": "Konten komentar tidak boleh melebihi 2000 karakter"
@@ -1275,7 +1275,7 @@
     "message": "Gagal menandai tidak suka. Silakan coba lagi."
   },
   "vote.downvote.success": {
-    "message": "Menandai tidak suka"
+    "message": "Berhasil menandai tidak suka"
   },
   "vote.loginRequired": {
     "message": "Silakan masuk untuk memberikan suara."
@@ -1287,7 +1287,7 @@
     "message": "Gagal menyukai. Silakan coba lagi."
   },
   "vote.upvote.success": {
-    "message": "Menyukai prompt ini"
+    "message": "Berhasil menyukai prompt ini"
   },
   "auth.callback.title": {
     "message": "Menyelesaikan masuk"
@@ -1296,7 +1296,7 @@
     "message": "Sedang masuk…"
   },
   "auth.callback.workingHint": {
-    "message": "Jangan tutup halaman ini, kamu akan kembali ke beranda sebentar lagi."
+    "message": "Jangan tutup halaman ini, Anda akan kembali ke beranda sebentar lagi."
   },
   "auth.callback.failed": {
     "message": "Proses masuk belum selesai"
@@ -1314,7 +1314,7 @@
     "message": "Kembali ke beranda untuk masuk"
   },
   "myspace.tagManager.emptyHint": {
-    "message": "Ketik nama di atas, pilih warna, dan tag pertamamu siap."
+    "message": "Ketik nama di atas, pilih warna, dan tag pertama Anda siap."
   },
   "validation.username.empty": {
     "message": "Nama pengguna tidak boleh kosong"
@@ -1326,16 +1326,16 @@
     "message": "Nama pengguna gagal diperbarui. Coba lagi sebentar."
   },
   "message.requestTimeout": {
-    "message": "Permintaan kehabisan waktu. Coba lagi."
+    "message": "Waktu permintaan habis. Coba lagi."
   },
   "message.tooManyRequests": {
     "message": "Terlalu sering mencoba. Coba lagi sebentar."
   },
   "account.signInRequired": {
-    "message": "Masuk untuk melihat akunmu"
+    "message": "Masuk untuk melihat akun Anda"
   },
   "account.signInRequiredHint": {
-    "message": "Kamu sedang diarahkan ke beranda — atau pakai tombol di bawah."
+    "message": "Anda sedang diarahkan ke beranda — atau gunakan tombol di bawah."
   },
   "myspace.tagManager.color": {
     "message": "Warna tag"

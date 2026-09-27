@@ -195,7 +195,7 @@
     "message": "पहला: [प्लेसहोल्डर] को अधिक विशिष्ट बनाएं (शैली, लंबाई, क्षेत्र जोड़ें)। दूसरा: असंतोषजनक उत्तर पर “इसे और X बनाओ” पूछें। तीसरा: Claude / ChatGPT / Gemini जैसे मॉडलों पर तुलना करें।"
   },
   "faq.tips.q": {
-    "message": "मैं आउटपुट की गुणवत्ता कैसे बढ़ा सकता हूँ?"
+    "message": "आउटपुट की क्वालिटी कैसे बेहतर बनाएं?"
   },
   "faq.usage.a": {
     "message": "प्रॉम्प्ट कॉपी करें, वर्ग कोष्ठक [प्लेसहोल्डर] को अपने इनपुट से बदलें, फिर ChatGPT, Claude, Gemini, DeepSeek, Qwen या किसी भी बातचीत सक्षम AI इंटरफ़ेस में पेस्ट करके भेज दें।"
@@ -213,10 +213,10 @@
     "message": "आमतौर पर 24 घंटे में जवाब"
   },
   "feedback.spec_label": {
-    "message": "खुला चैनल"
+    "message": "पब्लिक चैनल"
   },
   "feedback.subtitle": {
-    "message": "बग रिपोर्ट, फीचर सुझाव, उपयोग संबंधी प्रश्न—हर आवाज़ का स्वागत है"
+    "message": "बग रिपोर्ट, फीचर सुझाव, उपयोग संबंधी प्रश्न — हर सुझाव का स्वागत है"
   },
   "feedback.title": {
     "message": "प्रतिक्रिया और सुझाव"
@@ -240,10 +240,10 @@
     "message": "किसी भी चयनित टैग से मेल खाने वाले प्रॉम्प्ट दिखाएँ"
   },
   "hero.supportedAiTools": {
-    "message": "{tools} व अधिक"
+    "message": "{tools} और भी ज़्यादा"
   },
   "homepage.description": {
-    "message": "AI के अप्रासंगिक जवाबों से परेशान? AiShort लेखन, कोडिंग और अनुवाद के लिए व्यावहारिक टेम्पलेट प्रदान करता है। एक क्लिक में कॉपी करें और दक्षता दोगुनी करें!"
+    "message": "AI के बेहूदे जवाबों से परेशान? AiShort लेखन, कोडिंग और अनुवाद के लिए व्यावहारिक टेम्पलेट प्रदान करता है। एक क्लिक में कॉपी करें और दक्षता दोगुनी करें!"
   },
   "homepage.slogan": {
     "message": "चुनिंदा AI प्रॉम्प्ट, एक क्लिक में उपयोग के लिए तैयार"
@@ -309,7 +309,7 @@
     "message": "स्वर्ण"
   },
   "level.newcomer": {
-    "message": "नौसिखिया खोजकर्ता"
+    "message": "नौसिखिया"
   },
   "level.platinum": {
     "message": "प्लैटिनम"
@@ -324,13 +324,13 @@
     "message": "चाँदी"
   },
   "level.stardust": {
-    "message": "तारा-धूल"
+    "message": "स्टारडस्ट"
   },
   "link.addprompt": {
     "message": "प्रॉम्प्ट बनाएँ"
   },
   "link.communityPrompts": {
-    "message": "सामुदायिक प्रॉन्प्ट्स"
+    "message": "सामुदायिक प्रॉम्प्ट्स"
   },
   "link.home": {
     "message": "होम"
@@ -354,7 +354,7 @@
     "message": "Google लॉगिन विफल"
   },
   "login.google.redirecting": {
-    "message": "Google साइन-इन पर पुनर्निर्देशित हो रहा है..."
+    "message": "Google साइन-इन पर ले जाया जा रहा है..."
   },
   "login.login.prompt": {
     "message": "पहले से ही एक खाता है?"
@@ -378,7 +378,7 @@
     "message": "अद्भुत प्रॉम्प्ट्स खोजें, साझा करें और बनाएं"
   },
   "login.subtitle.welcome": {
-    "message": "अधिक प्रीमियम प्रॉम्प्ट्स का पता लगाने के लिए लॉगिन करें"
+    "message": "और प्रीमियम प्रॉम्प्ट्स देखने के लिए लॉगिन करें"
   },
   "login.title.forgotPassword": {
     "message": "पासवर्ड पुनर्प्राप्त करें"
@@ -435,7 +435,7 @@
     "message": "प्रॉम्प्ट हटाया गया"
   },
   "message.error": {
-    "message": "प्रसंस्करण के दौरान एक त्रुटि हुई"
+    "message": "प्रोसेसिंग के दौरान त्रुटि हुई"
   },
   "message.error.forgotPassword": {
     "message": "पासवर्ड रीसेट ईमेल भेजने में विफल, कृपया बाद में पुनः प्रयास करें"
@@ -489,7 +489,7 @@
     "message": "लॉगआउट की पुष्टि करें"
   },
   "message.noComments": {
-    "message": "अभी तक कोई टिप्पणी नहीं, पहले टिप्पणीकर्ता बनें"
+    "message": "अभी तक कोई टिप्पणी नहीं, पहली टिप्पणी आप करें"
   },
   "message.noFavorites": {
     "message": "अभी तक कोई पसंदीदा नहीं, पसंद के प्रॉम्प्ट खोजें"
@@ -501,10 +501,10 @@
     "message": "अभी कुछ नहीं — एक प्रॉम्प्ट बनाएँ या किसी को पसंदीदा बनाएँ"
   },
   "message.orderSaved": {
-    "message": "व्यवस्था सहेजी गई"
+    "message": "क्रम सहेजा गया"
   },
   "message.orderSaveFailed": {
-    "message": "व्यवस्था सहेजने में विफल, कृपया बाद में पुनः प्रयास करें"
+    "message": "क्रम सहेजने में विफल, कृपया बाद में पुनः प्रयास करें"
   },
   "message.postComment.error": {
     "message": "टिप्पणी भेजने में विफल। कृपया बाद में पुनः प्रयास करें।"
@@ -567,7 +567,7 @@
     "message": "पासवर्ड भूल गए"
   },
   "myCollection.header.subtitle": {
-    "message": "अपने बनाए गए प्रॉन्प्ट्स, पसंदीदा और कस्टम टैग प्रबंधित करें"
+    "message": "अपने बनाए गए प्रॉम्प्ट्स, पसंदीदा और कस्टम टैग प्रबंधित करें"
   },
   "myCollection.header.title": {
     "message": "मेरा संग्रह"
@@ -576,7 +576,7 @@
     "message": "पसंदीदा"
   },
   "myCollection.stats.prompts": {
-    "message": "मेरे प्रॉन्प्ट्स"
+    "message": "मेरे प्रॉम्प्ट्स"
   },
   "myCollection.stats.tags": {
     "message": "कस्टम टैग"
@@ -585,10 +585,10 @@
     "message": "कुल"
   },
   "myspace.assignTag": {
-    "message": "टैग असाइन करें"
+    "message": "टैग लगाएँ"
   },
   "myspace.fallbackHint": {
-    "message": "कोई मिलान नहीं मिला। आपके लिए अनुशंसित:"
+    "message": "कोई मिलान नहीं मिला। आपके लिए सुझाए गए:"
   },
   "myspace.filter.all": {
     "message": "सभी"
@@ -612,7 +612,7 @@
     "message": "कस्टम टैग प्रबंधित करें"
   },
   "nav.explore": {
-    "message": "अन्वेषण"
+    "message": "एक्सप्लोर"
   },
   "nav.myCollection": {
     "message": "मेरा संग्रह"
@@ -624,7 +624,7 @@
     "message": "कोई मेल खाता प्रॉम्प्ट नहीं मिला"
   },
   "placeholder.comment": {
-    "message": "यहाँ टिप्पणी दर्ज करें... मार्कडाउन और एचटीएमएल सिंटैक्स समर्थित"
+    "message": "यहाँ टिप्पणी दर्ज करें... मार्कडाउन और HTML सिंटैक्स समर्थित"
   },
   "placeholder.confirmPassword": {
     "message": "नया पासवर्ड पुष्टि करें"
@@ -693,7 +693,7 @@
     "message": "कॉपी"
   },
   "share.native": {
-    "message": "सिस्टम"
+    "message": "सिस्टम शेयर"
   },
   "share.shareTo": {
     "message": "शेयर करें"
@@ -762,7 +762,7 @@
     "message": "टेक्स्ट गेम, रोल-प्लेइंग और इंटरैक्टिव मनोरंजन"
   },
   "showcase.tag.games.label": {
-    "message": "मजेदार खेल"
+    "message": "गेम"
   },
   "showcase.tag.interesting.description": {
     "message": "मजेदार सामान्य ज्ञान, लोकप्रिय विज्ञान सामग्री और मजेदार प्रश्नोत्तर"
@@ -786,13 +786,13 @@
     "message": "दैनिक जीवन में व्यावहारिक ज्ञान और समस्या समाधान"
   },
   "showcase.tag.life.label": {
-    "message": "जीवन विश्वकोश"
+    "message": "लाइफ हैक्स"
   },
   "showcase.tag.living.description": {
     "message": "फिटनेस मार्गदर्शन, पोषण सलाह, खाना पकाने की तकनीक, मेकअप स्टाइलिंग और अन्य जीवन सेवाएं"
   },
   "showcase.tag.living.label": {
-    "message": "जीवन की गुणवत्ता"
+    "message": "जीवनशैली"
   },
   "showcase.tag.mind.description": {
     "message": "रचनात्मकता, आलोचनात्मक सोच और तार्किक तर्क क्षमता को उत्तेजित करें"
@@ -897,7 +897,7 @@
     "description": "The default label used for the Warning admonition (:::warning)"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "बंद करे",
+    "message": "बंद करें",
     "description": "The ARIA label for close button of announcement bar"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
@@ -905,15 +905,15 @@
     "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
-    "message": "Archive",
+    "message": "संग्रह",
     "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.archive.title": {
-    "message": "Archive",
+    "message": "संग्रह",
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
+    "message": "इस लेखक ने अभी तक कोई पोस्ट नहीं लिखी है।",
     "description": "The text for authors with 0 blog post"
   },
   "theme.blog.author.pageTitle": {
@@ -921,11 +921,11 @@
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
+    "message": "लेखक",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View all authors",
+    "message": "सभी लेखक देखें",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.paginator.navAriaLabel": {
@@ -933,11 +933,11 @@
     "description": "The ARIA label for the blog pagination"
   },
   "theme.blog.paginator.newerEntries": {
-    "message": "नए एंट्रीज़",
+    "message": "नई पोस्ट",
     "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
   "theme.blog.paginator.olderEntries": {
-    "message": "पुराने एंट्रीज़",
+    "message": "पुरानी पोस्ट",
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.blog.post.paginator.navAriaLabel": {
@@ -945,11 +945,11 @@
     "description": "The ARIA label for the blog posts pagination"
   },
   "theme.blog.post.paginator.newerPost": {
-    "message": "नए पोस्ट",
+    "message": "नई पोस्ट",
     "description": "The blog post button label to navigate to the newer/previous post"
   },
   "theme.blog.post.paginator.olderPost": {
-    "message": "पुराने पोस्ट",
+    "message": "पुरानी पोस्ट",
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.post.plurals": {
@@ -961,19 +961,19 @@
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
-    "message": "Read more",
+    "message": "और पढ़ें",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
+    "message": "{title} के बारे में और पढ़ें",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
+    "message": "ब्लॉग की हाल की पोस्ट नेविगेशन",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} tagged with \"{tagName}\"",
+    "message": "\"{tagName}\" टैग वाले {nPosts}",
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
@@ -981,7 +981,7 @@
     "description": "The copied button label on code blocks"
   },
   "theme.CodeBlock.copy": {
-    "message": "नकल करें",
+    "message": "कॉपी करें",
     "description": "The copy button label on code blocks"
   },
   "theme.CodeBlock.copyButtonAriaLabel": {
@@ -1009,7 +1009,7 @@
     "description": "The name for the system color mode"
   },
   "theme.common.editThisPage": {
-    "message": "इस पेज को बदलें",
+    "message": "इस पेज को संपादित करें",
     "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
@@ -1045,7 +1045,7 @@
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 item|{count} items",
+    "message": "1 आइटम|{count} आइटम",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
@@ -1057,7 +1057,7 @@
     "description": "The label used to navigate to the next doc"
   },
   "theme.docs.paginator.previous": {
-    "message": "पिछ्ला",
+    "message": "पिछला",
     "description": "The label used to navigate to the previous doc"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
@@ -1089,11 +1089,11 @@
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "\"{tagName}\" के साथ {nDocsTagged}",
+    "message": "\"{tagName}\" टैग वाले {nDocsTagged}",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "One doc tagged|{count} docs tagged",
+    "message": "एक डॉक टैग किए गए|{count} डॉक टैग किए गए",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.versionBadge.label": {
@@ -1108,11 +1108,11 @@
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "यह {siteTitle} {versionLabel} के लिए डॉक्यूमेंटेशन है, जिसे अब सक्रिय रूप से नहीं बनाए रखा गया है।",
+    "message": "यह {siteTitle} {versionLabel} के लिए डॉक्यूमेंटेशन है, जिसका अब सक्रिय रखरखाव नहीं होता।",
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "यह {siteTitle} {versionLabel} वर्जन के लिए प्रकाशित डॉक्यूमेंटेशन है।",
+    "message": "यह {siteTitle} {versionLabel} वर्जन का अप्रकाशित डॉक्यूमेंटेशन है।",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
@@ -1144,7 +1144,7 @@
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "आखरी अपडेट{atDate}{byUser}",
+    "message": "आखिरी अपडेट {atDate} {byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
@@ -1218,16 +1218,16 @@
     "message": "MAX REACHED"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared"
+    "message": "साझा"
   },
   "userPage.level.specLabel": {
     "message": "LEVEL"
   },
   "userPage.level.toNext": {
-    "message": "「{next}」तक"
+    "message": "{next} तक"
   },
   "validation.agreement.required": {
-    "message": "उपयोग करने से पहले आपको सेवा की शर्तों और गोपनीयता नीति से सहमत होना होगा"
+    "message": "कृपया आगे बढ़ने से पहले सेवा की शर्तों और गोपनीयता नीति से सहमत हों"
   },
   "validation.comment.maxLength": {
     "message": "टिप्पणी सामग्री 2000 वर्णों से अधिक नहीं होनी चाहिए"

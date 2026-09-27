@@ -12,7 +12,7 @@
     "message": "Hủy"
   },
   "action.changePassword": {
-    "message": "Đổi Mật khẩu"
+    "message": "Đổi mật khẩu"
   },
   "action.clearFilters": {
     "message": "Xóa bộ lọc ({count})"
@@ -39,10 +39,10 @@
     "message": "Chỉnh sửa"
   },
   "action.forgotPassword": {
-    "message": "Quên Mật khẩu"
+    "message": "Quên mật khẩu"
   },
   "action.hideTags": {
-    "message": "Ẩn Thẻ"
+    "message": "Ẩn thẻ"
   },
   "action.login": {
     "message": "Đăng nhập"
@@ -75,7 +75,7 @@
     "message": "Chia sẻ"
   },
   "action.showTags": {
-    "message": "Hiện Thẻ"
+    "message": "Hiện thẻ"
   },
   "action.updatePrompt": {
     "message": "Lưu"
@@ -84,7 +84,7 @@
     "message": "Thích"
   },
   "action.viewDetails": {
-    "message": "Xem Chi tiết"
+    "message": "Xem chi tiết"
   },
   "button.clearAllCache": {
     "message": "Xóa Tất cả Cache"
@@ -99,7 +99,7 @@
     "message": "Xác nhận xóa"
   },
   "button.export": {
-    "message": "Xuất Dữ liệu"
+    "message": "Xuất dữ liệu"
   },
   "button.exportPrompts": {
     "message": "Xuất Prompt"
@@ -117,13 +117,13 @@
     "message": "Đăng xuất"
   },
   "button.resetPassword": {
-    "message": "Đặt lại Mật khẩu"
+    "message": "Đặt lại mật khẩu"
   },
   "button.signInFree": {
     "message": "Đăng nhập miễn phí"
   },
   "comment.add": {
-    "message": "Gửi Bình luận"
+    "message": "Gửi bình luận"
   },
   "comments.aiReplying": {
     "message": "AI đang trả lời"
@@ -168,7 +168,7 @@
     "message": "Prompt cộng đồng"
   },
   "community.tagline": {
-    "message": "Các prompt AI do người dùng đóng góp và chia sẻ. Sắp xếp theo mới nhất hoặc được thích nhất, hỗ trợ tìm kiếm và lọc; đăng nhập để thích và lưu."
+    "message": "Các prompt AI do người dùng đóng góp và chia sẻ. Sắp xếp theo mới nhất hoặc nhiều lượt thích nhất, hỗ trợ tìm kiếm và lọc. Đăng nhập để thích và lưu."
   },
   "community.title": {
     "message": "Cộng đồng Prompt AI"
@@ -192,7 +192,7 @@
     "message": "Prompt này phù hợp với tình huống nào?"
   },
   "faq.tips.a": {
-    "message": "Thứ nhất, viết [chỗ giữ chỗ] cụ thể hơn (thêm phong cách, độ dài, lĩnh vực). Thứ hai, trả lời kết quả chưa ưng ý bằng “làm nó X hơn”. Thứ ba, so sánh giữa Claude / ChatGPT / Gemini và các mô hình khác."
+    "message": "Thứ nhất, viết [chỗ giữ chỗ] cụ thể hơn (thêm phong cách, độ dài, lĩnh vực). Thứ hai, mô tả lại kết quả chưa ưng ý bằng “chỉnh theo hướng X hơn”. Thứ ba, so sánh giữa Claude / ChatGPT / Gemini và các mô hình khác."
   },
   "faq.tips.q": {
     "message": "Làm sao để cải thiện chất lượng đầu ra?"
@@ -216,7 +216,7 @@
     "message": "Kênh mở"
   },
   "feedback.subtitle": {
-    "message": "Báo lỗi, đề xuất tính năng, câu hỏi sử dụng—chào đón mọi ý kiến"
+    "message": "Báo lỗi, đề xuất tính năng, câu hỏi sử dụng — mọi ý kiến đều được chào đón"
   },
   "feedback.title": {
     "message": "Phản hồi & Góp ý"
@@ -231,7 +231,7 @@
     "message": "Đề xuất tính năng"
   },
   "feedback.welcome": {
-    "message": "Phản hồi & Gợi ý"
+    "message": "Phản hồi & Góp ý"
   },
   "filter.operator.all.tip": {
     "message": "Hiển thị prompt khớp với tất cả tag được chọn"
@@ -240,10 +240,10 @@
     "message": "Hiển thị prompt khớp với bất kỳ tag nào được chọn"
   },
   "hero.supportedAiTools": {
-    "message": "{tools} và hơn nữa"
+    "message": "{tools} và hơn thế nữa"
   },
   "homepage.description": {
-    "message": "Các mẫu prompt AI tuyển chọn cho viết, lập trình và dịch thuật. Sao chép một cú nhấp vào ChatGPT, Claude hoặc Gemini để có đầu ra chính xác."
+    "message": "Các mẫu prompt AI tuyển chọn cho viết, lập trình và dịch thuật. Sao chép chỉ với một cú nhấp để dán vào ChatGPT, Claude hoặc Gemini để có đầu ra chính xác."
   },
   "homepage.slogan": {
     "message": "Prompt AI chọn lọc, sẵn sàng sử dụng chỉ với một cú nhấp"
@@ -303,7 +303,7 @@
     "message": "Kim cương"
   },
   "level.emerald": {
-    "message": "Lục bảo"
+    "message": "Ngọc lục bảo"
   },
   "level.gold": {
     "message": "Vàng"
@@ -339,10 +339,10 @@
     "message": "Tài khoản của tôi"
   },
   "link.privacy": {
-    "message": "Chính sách Bảo mật"
+    "message": "Chính sách bảo mật"
   },
   "link.terms": {
-    "message": "Điều khoản Dịch vụ"
+    "message": "Điều khoản dịch vụ"
   },
   "login.google.button": {
     "message": "Đăng nhập bằng Google"
@@ -360,10 +360,10 @@
     "message": "Đã có tài khoản?"
   },
   "login.method.code": {
-    "message": "Đăng nhập không Mật khẩu"
+    "message": "Đăng nhập không cần mật khẩu"
   },
   "login.method.password": {
-    "message": "Đăng nhập Mật khẩu"
+    "message": "Đăng nhập bằng mật khẩu"
   },
   "login.passwordless.info": {
     "message": "Liên kết đăng nhập sẽ được gửi đến email của bạn, nhấp để đăng nhập"
@@ -384,10 +384,10 @@
     "message": "Lấy lại Mật khẩu"
   },
   "login.title.register": {
-    "message": "Tham gia Cộng đồng"
+    "message": "Tham gia cộng đồng"
   },
   "login.title.welcome": {
-    "message": "Chào mừng Trở lại"
+    "message": "Chào mừng bạn quay lại"
   },
   "message.addFavorite.error": {
     "message": "Không thể thêm vào yêu thích, vui lòng thử lại sau"
@@ -414,7 +414,7 @@
     "message": "Không thể chuyển đổi, vui lòng thử lại sau"
   },
   "message.convertToPrivate.favoriteKept": {
-    "message": "Đã tạo prompt riêng tư, nhưng không thể xoá mục yêu thích gốc. Vui lòng xoá thủ công để tránh trùng lặp."
+    "message": "Đã tạo prompt riêng tư, nhưng không thể xóa mục yêu thích gốc. Vui lòng xóa thủ công để tránh trùng lặp."
   },
   "message.convertToPrivate.success": {
     "message": "Đã chuyển thành prompt riêng tư"
@@ -426,7 +426,7 @@
     "message": "Bạn có chắc muốn xóa prompt này?"
   },
   "message.deletePrompt.confirm.title": {
-    "message": "Xác nhận Xóa"
+    "message": "Xác nhận xóa"
   },
   "message.deletePrompt.error": {
     "message": "Không thể xóa prompt, vui lòng thử lại sau"
@@ -450,7 +450,7 @@
     "message": "Xuất thất bại, vui lòng thử lại sau"
   },
   "message.export.noPrompts": {
-    "message": "Không có prompt để xuất. Tạo hoặc yêu thích một số trước."
+    "message": "Không có prompt để xuất. Hãy tạo prompt mới hoặc thêm vào yêu thích trước."
   },
   "message.export.success": {
     "message": "Đã xuất prompt"
@@ -486,7 +486,7 @@
     "message": "Bạn có chắc muốn đăng xuất?"
   },
   "message.logout.confirm.title": {
-    "message": "Xác nhận Đăng xuất"
+    "message": "Xác nhận đăng xuất"
   },
   "message.noComments": {
     "message": "Chưa có bình luận nào, hãy là người đầu tiên bình luận"
@@ -513,7 +513,7 @@
     "message": "Bạn có chắc muốn xóa prompt này khỏi yêu thích?"
   },
   "message.removeFavorite.confirm.title": {
-    "message": "Xóa Yêu thích"
+    "message": "Xóa yêu thích"
   },
   "message.removeFavorite.error": {
     "message": "Không thể xóa khỏi yêu thích, vui lòng thử lại sau"
@@ -564,7 +564,7 @@
     "message": "Chỉnh sửa Prompt"
   },
   "modal.forgotPassword.title": {
-    "message": "Quên Mật khẩu"
+    "message": "Quên mật khẩu"
   },
   "myCollection.header.subtitle": {
     "message": "Quản lý các prompt bạn tạo, yêu thích và thẻ tùy chỉnh"
@@ -585,7 +585,7 @@
     "message": "Tổng"
   },
   "myspace.assignTag": {
-    "message": "Gán Thẻ"
+    "message": "Gán thẻ"
   },
   "myspace.fallbackHint": {
     "message": "Không tìm thấy kết quả phù hợp. Gợi ý cho bạn:"
@@ -600,16 +600,16 @@
     "message": "Prompt"
   },
   "myspace.manageTags": {
-    "message": "Quản lý Thẻ"
+    "message": "Quản lý thẻ"
   },
   "myspace.tagManager.empty": {
     "message": "Không có thẻ tùy chỉnh"
   },
   "myspace.tagManager.namePlaceholder": {
-    "message": "Tên Thẻ"
+    "message": "Tên thẻ"
   },
   "myspace.tagManager.title": {
-    "message": "Quản lý Thẻ Tùy chỉnh"
+    "message": "Quản lý thẻ tùy chỉnh"
   },
   "nav.explore": {
     "message": "Khám phá"
@@ -681,7 +681,7 @@
     "message": "Prompt rất dài, có thể khó chia sẻ và tái sử dụng. Hãy cân nhắc chia nhỏ."
   },
   "prompt.tokenWarning": {
-    "message": "Prompt khá dài; cân nhắc rút ngắn hoặc chia nhỏ."
+    "message": "Prompt khá dài, hãy cân nhắc rút ngắn hoặc chia nhỏ."
   },
   "prompt.translation": {
     "message": "Bản dịch"
@@ -747,7 +747,7 @@
     "message": "Người dùng chia sẻ"
   },
   "showcase.tag.doctor.description": {
-    "message": "Tư vấn sức khỏe, phổ cập bệnh tật và lời khuyên y tế"
+    "message": "Tư vấn sức khỏe, kiến thức phòng chống bệnh tật và lời khuyên y tế"
   },
   "showcase.tag.doctor.label": {
     "message": "Y tế Sức khỏe"
@@ -762,7 +762,7 @@
     "message": "Trò chơi văn bản, nhập vai và giải trí tương tác"
   },
   "showcase.tag.games.label": {
-    "message": "Trò chơi Vui"
+    "message": "Trò chơi/Giải trí"
   },
   "showcase.tag.interesting.description": {
     "message": "Kiến thức thú vị, nội dung khoa học phổ cập và hỏi đáp vui"
@@ -1021,7 +1021,7 @@
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "Trang này là bản nháp. Nó sẽ chỉ hiển thị trong môi trường phát triển và sẽ bị loại trừ khỏi bản build sản xuất.",
+    "message": "Trang này là bản nháp, chỉ hiển thị trong môi trường phát triển và sẽ bị loại trừ khỏi bản build sản xuất.",
     "description": "The draft content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
@@ -1029,11 +1029,11 @@
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "Trang này không được niêm yết. Công cụ tìm kiếm sẽ không lập chỉ mục trang này và chỉ người dùng có liên kết trực tiếp mới có thể truy cập.",
+    "message": "Trang này không được công khai. Công cụ tìm kiếm sẽ không lập chỉ mục trang này và chỉ người dùng có liên kết trực tiếp mới có thể truy cập.",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.unlistedBanner.title": {
-    "message": "Trang không niêm yết",
+    "message": "Trang không công khai",
     "description": "The unlisted content banner title"
   },
   "theme.docs.breadcrumbs.home": {
@@ -1108,7 +1108,7 @@
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "Đây là tài liệu cho {siteTitle} {versionLabel}, không còn được bảo trì tích cực.",
+    "message": "Đây là tài liệu cho {siteTitle} {versionLabel}, không còn được bảo trì thường xuyên.",
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
@@ -1168,7 +1168,7 @@
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Chính",
+    "message": "Điều hướng chính",
     "description": "The ARIA label for the main navigation"
   },
   "theme.NotFound.p1": {
@@ -1176,11 +1176,11 @@
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "Vui lòng liên hệ chủ sở hữu của trang web đã liên kết bạn đến URL gốc và cho họ biết liên kết của họ bị hỏng.",
+    "message": "Vui lòng liên hệ quản trị trang đã dẫn bạn đến đây và báo cho họ biết liên kết đã hỏng.",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.NotFound.title": {
-    "message": "Không tìm thấy Trang",
+    "message": "Không tìm thấy trang",
     "description": "The title of the 404 page"
   },
   "theme.tags.tagsListLabel": {
@@ -1200,13 +1200,13 @@
     "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
-    "message": "Quản lý Dữ liệu"
+    "message": "Quản lý dữ liệu"
   },
   "title.security": {
-    "message": "Cài đặt Bảo mật"
+    "message": "Cài đặt bảo mật"
   },
   "title.userInfo": {
-    "message": "Thông tin Người dùng"
+    "message": "Thông tin người dùng"
   },
   "unavailable.unshared": {
     "message": "Tác giả đã ngừng chia sẻ"
@@ -1218,7 +1218,7 @@
     "message": "MAX REACHED"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared"
+    "message": "đã chia sẻ"
   },
   "userPage.level.specLabel": {
     "message": "LEVEL"
@@ -1269,7 +1269,7 @@
     "message": "Vui lòng nhập tên người dùng hoặc email đã đăng ký"
   },
   "vote.downvote.alreadyVoted": {
-    "message": "Bạn đã không thích prompt này trong phiên này."
+    "message": "Bạn đã bỏ thích prompt này."
   },
   "vote.downvote.failed": {
     "message": "Không thể bỏ thích. Vui lòng thử lại."
@@ -1278,7 +1278,7 @@
     "message": "Đã không thích prompt này"
   },
   "vote.loginRequired": {
-    "message": "Vui lòng đăng nhập để bình chọn."
+    "message": "Vui lòng đăng nhập để bỏ phiếu."
   },
   "vote.upvote.alreadyVoted": {
     "message": "Bạn đã thích prompt này trong phiên này."
@@ -1308,7 +1308,7 @@
     "message": "Không có đăng nhập nào cần xử lý ở đây"
   },
   "auth.callback.idleHint": {
-    "message": "Trang này chỉ dùng để chuyển hướng đăng nhập, không cần đánh dấu."
+    "message": "Trang này chỉ dùng để chuyển hướng đăng nhập, không cần lưu trang này."
   },
   "auth.callback.backHome": {
     "message": "Về trang chủ để đăng nhập"

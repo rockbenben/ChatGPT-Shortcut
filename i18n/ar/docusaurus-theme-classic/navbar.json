@@ -54,5 +54,9 @@
   "item.label.AI 思想家圆桌": {
     "message": "طاولة المفكرين بالذكاء الاصطناعي",
     "description": "Navbar item with label AI 思想家圆桌"
+  },
+  "item.label.365 开源项目": {
+    "message": "مشاريع 365 مفتوحة المصدر",
+    "description": "Navbar item with label 365 开源项目"
   }
 }

@@ -21,7 +21,7 @@
     "message": "閉じる"
   },
   "action.convertToPrivate": {
-    "message": "プライベートに変換"
+    "message": "非公開にする"
   },
   "action.copy": {
     "message": "コピー"
@@ -96,16 +96,16 @@
     "message": "確認"
   },
   "button.confirmClear": {
-    "message": "クリアを確認"
+    "message": "クリアする"
   },
   "button.export": {
-    "message": "データをエクスポート"
+    "message": "エクスポート"
   },
   "button.exportPrompts": {
     "message": "プロンプトをエクスポート"
   },
   "button.import": {
-    "message": "データをインポート"
+    "message": "インポート"
   },
   "button.importPrompts": {
     "message": "プロンプトをインポート"
@@ -144,10 +144,10 @@
     "message": "お気に入り"
   },
   "community.backToList": {
-    "message": "リストに戻る"
+    "message": "一覧に戻る"
   },
   "community.description": {
-    "message": "もっと実用的なAIプロンプトが欲しい？AiShortコミュニティで高品質なテンプレートを発見し、最適化のコツを交換しましょう。"
+    "message": "もっと実用的なAIプロンプトが欲しい？AiShortコミュニティで高品質なテンプレートを発見し、最適化のコツを共有しましょう。"
   },
   "community.fetchError": {
     "message": "データの取得に失敗しました"
@@ -156,7 +156,7 @@
     "message": "AI プロンプトコミュニティ"
   },
   "community.loading": {
-    "message": "読み込み中..."
+    "message": "読み込み中…"
   },
   "community.notFound": {
     "message": "プロンプトが見つかりません"
@@ -192,7 +192,7 @@
     "message": "このプロンプトはどのような場面で使えますか？"
   },
   "faq.tips.a": {
-    "message": "一つ目は [プレースホルダー] をより具体的にすること（スタイル・長さ・分野などを追記）。二つ目は不満足な回答に「もっと X にして」と追質問すること。三つ目は Claude / ChatGPT / Gemini など別モデルで比較することです。"
+    "message": "一つ目は [プレースホルダー] をより具体的にすること（スタイル・長さ・分野などを追記）。二つ目は期待と違う回答には「もっと X にして」と追質問すること。三つ目は Claude / ChatGPT / Gemini など別モデルで比較することです。"
   },
   "faq.tips.q": {
     "message": "出力の品質を上げるにはどうすればいいですか？"
@@ -204,7 +204,7 @@
     "message": "このプロンプトはどう使いますか？"
   },
   "feedback.description": {
-    "message": "あなたのフィードバックは私たちにとって重要です！"
+    "message": "ご意見・ご要望をお聞かせください"
   },
   "feedback.newIssue": {
     "message": "新規 Issue"
@@ -213,10 +213,10 @@
     "message": "通常 24時間以内に返信"
   },
   "feedback.spec_label": {
-    "message": "オープンチャンネル"
+    "message": "フィードバック窓口"
   },
   "feedback.subtitle": {
-    "message": "バグ報告、機能提案、使い方の質問——どんな声も歓迎します"
+    "message": "バグ報告、機能提案、使い方の質問など、どんなご意見も歓迎です"
   },
   "feedback.title": {
     "message": "フィードバックと提案"
@@ -309,7 +309,7 @@
     "message": "ゴールド"
   },
   "level.newcomer": {
-    "message": "初心者の探検家"
+    "message": "見習い探検家"
   },
   "level.platinum": {
     "message": "プラチナ"
@@ -375,7 +375,7 @@
     "message": "リセットリンクがメールに送信されます"
   },
   "login.subtitle.register": {
-    "message": "素晴らしいプロンプトを発見、共有、作成しましょう"
+    "message": "プロンプトを見つけ、共有し、作成しましょう"
   },
   "login.subtitle.welcome": {
     "message": "ログインして、より多くのプレミアムプロンプトを探索しましょう"
@@ -417,7 +417,7 @@
     "message": "プライベートプロンプトを作成しましたが、元のお気に入りを削除できませんでした。重複を避けるため手動で削除してください。"
   },
   "message.convertToPrivate.success": {
-    "message": "プライベートプロンプトに変換されました"
+    "message": "プライベートプロンプトに変換しました"
   },
   "message.copied": {
     "message": "コピーしました"
@@ -459,16 +459,16 @@
     "message": "現在のパスワードをお忘れの場合は、メールでリセットできます。登録されたメールアドレスにリセットリンクを含むメールを送信します。"
   },
   "message.import.failed": {
-    "message": "インポート失敗"
+    "message": "インポートに失敗しました"
   },
   "message.import.invalid": {
-    "message": "無効なデータ形式"
+    "message": "データ形式が正しくありません"
   },
   "message.import.nothing": {
     "message": "このファイルの内容はすべて既にあります。取り込むものはありません"
   },
   "message.import.parseError": {
-    "message": "JSON解析エラー"
+    "message": "JSON の解析に失敗しました"
   },
   "message.import.partial": {
     "message": "一部のプロンプトをインポートしました"
@@ -498,13 +498,13 @@
     "message": "まだプロンプトがありません。作成しましょう"
   },
   "message.noSpaceItems": {
-    "message": "コンテンツがありません — プロンプトを作成するか、お気に入り登録しましょう"
+    "message": "コンテンツがありません。 プロンプトを作成するか、お気に入り登録しましょう"
   },
   "message.orderSaved": {
-    "message": "配置を保存しました"
+    "message": "並び順を保存しました"
   },
   "message.orderSaveFailed": {
-    "message": "配置の保存に失敗しました。後でもう一度お試しください"
+    "message": "並び順の保存に失敗しました。後でもう一度お試しください"
   },
   "message.postComment.error": {
     "message": "コメントの送信に失敗しました。しばらくしてからもう一度お試しください。"
@@ -612,7 +612,7 @@
     "message": "カスタムタグの管理"
   },
   "nav.explore": {
-    "message": "見つける"
+    "message": "探す"
   },
   "nav.myCollection": {
     "message": "マイコレクション"
@@ -675,7 +675,7 @@
     "message": "非公開"
   },
   "prompt.source": {
-    "message": "ソース"
+    "message": "出典"
   },
   "prompt.tokenDanger": {
     "message": "プロンプトが非常に長く、共有や再利用に不便です。分割をご検討ください。"
@@ -693,7 +693,7 @@
     "message": "コピー"
   },
   "share.native": {
-    "message": "システム"
+    "message": "システムで共有"
   },
   "share.shareTo": {
     "message": "共有先"
@@ -750,7 +750,7 @@
     "message": "健康相談、病気の教育、医療アドバイス"
   },
   "showcase.tag.doctor.label": {
-    "message": "医療健康"
+    "message": "医療・健康"
   },
   "showcase.tag.finance.description": {
     "message": "投資管理、財務分析、ファイナンシャルプランニングのアドバイス"
@@ -774,7 +774,7 @@
     "message": "コマンドラインターミナルとさまざまなプログラミング言語インタプリタをシミュレートする"
   },
   "showcase.tag.interpreter.label": {
-    "message": "ターミナル／インタプリタ"
+    "message": "ターミナル/インタプリタ"
   },
   "showcase.tag.language.description": {
     "message": "多言語翻訳、語学学習、テキスト変換、言語認識"
@@ -881,7 +881,7 @@
     "description": "The default label used for the Danger admonition (:::danger)"
   },
   "theme.admonition.info": {
-    "message": "備考",
+    "message": "情報",
     "description": "The default label used for the Info admonition (:::info)"
   },
   "theme.admonition.note": {
@@ -913,7 +913,7 @@
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
+    "message": "この執筆者はまだ記事を書いていません。",
     "description": "The text for authors with 0 blog post"
   },
   "theme.blog.author.pageTitle": {
@@ -921,11 +921,11 @@
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
+    "message": "執筆者一覧",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View all authors",
+    "message": "すべての執筆者を見る",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.paginator.navAriaLabel": {
@@ -953,27 +953,27 @@
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.post.plurals": {
-    "message": "One post|{count} posts",
+    "message": "1件の記事|{count}件の記事",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
+    "message": "1分で読了|{readingTime}分で読了",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
-    "message": "Read more",
+    "message": "続きを読む",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
+    "message": "{title}について続きを読む",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
+    "message": "最近の記事のナビゲーション",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} tagged with \"{tagName}\"",
+    "message": "「{tagName}」タグの記事 {nPosts} 件",
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
@@ -1104,11 +1104,11 @@
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "最新のドキュメントは{latestVersionLink} ({versionLabel}) を見てください",
+    "message": "最新のドキュメントは{latestVersionLink} ({versionLabel}) をご覧ください。",
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "これはバージョン{versionLabel}の{siteTitle}のドキュメントで現在はメンテナンスされていません",
+    "message": "これはバージョン{versionLabel}の{siteTitle}のドキュメントで、現在はメンテナンスされていません。",
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
@@ -1144,7 +1144,7 @@
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "{atDate}{byUser}最終更新",
+    "message": "{byUser}{atDate}最終更新",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
@@ -1168,7 +1168,7 @@
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "メイン",
+    "message": "メインナビゲーション",
     "description": "The ARIA label for the main navigation"
   },
   "theme.NotFound.p1": {
@@ -1196,7 +1196,7 @@
     "description": "The title of the tag list page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "このページについて",
+    "message": "このページの目次",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
@@ -1218,7 +1218,7 @@
     "message": "MAX REACHED"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared"
+    "message": "共有済み"
   },
   "userPage.level.specLabel": {
     "message": "LEVEL"
@@ -1227,7 +1227,7 @@
     "message": "「{next}」まで"
   },
   "validation.agreement.required": {
-    "message": "使用する前に利用規約とプライバシーポリシーに同意する必要があります"
+    "message": "利用規約とプライバシーポリシーに同意してください"
   },
   "validation.comment.maxLength": {
     "message": "コメントの内容は2000文字を超えてはいけません"
@@ -1269,7 +1269,7 @@
     "message": "ユーザー名または登録メールアドレスを入力してください"
   },
   "vote.downvote.alreadyVoted": {
-    "message": "このセッションで既にこのプロンプトを低評価しました。"
+    "message": "このプロンプトはすでに低評価済みです。"
   },
   "vote.downvote.failed": {
     "message": "低評価に失敗しました。もう一度お試しください。"
@@ -1281,7 +1281,7 @@
     "message": "投票するにはログインしてください。"
   },
   "vote.upvote.alreadyVoted": {
-    "message": "このセッションで既にこのプロンプトを高評価しました。"
+    "message": "このプロンプトはすでに高評価済みです。"
   },
   "vote.upvote.failed": {
     "message": "高評価に失敗しました。もう一度お試しください。"

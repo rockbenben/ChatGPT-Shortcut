@@ -21,7 +21,7 @@
     "message": "Chiudi"
   },
   "action.convertToPrivate": {
-    "message": "Converti in Privato"
+    "message": "Converti in privato"
   },
   "action.copy": {
     "message": "Copia"
@@ -51,7 +51,7 @@
     "message": "Accedi direttamente"
   },
   "action.register": {
-    "message": "Iscriviti"
+    "message": "Registrati"
   },
   "action.registerNow": {
     "message": "Registrati ora"
@@ -87,7 +87,7 @@
     "message": "Visualizza dettagli"
   },
   "button.clearAllCache": {
-    "message": "Pulisci Tutta la Cache"
+    "message": "Svuota tutta la cache"
   },
   "button.clearCache": {
     "message": "Svuota cache"
@@ -99,7 +99,7 @@
     "message": "Conferma pulizia"
   },
   "button.export": {
-    "message": "Esporta Dati"
+    "message": "Esporta dati"
   },
   "button.exportPrompts": {
     "message": "Esporta prompt"
@@ -165,10 +165,10 @@
     "message": "Questo prompt potrebbe essere stato eliminato o impostato come privato"
   },
   "community.seoSuffix": {
-    "message": "Prompt della comunità"
+    "message": "Prompt della community"
   },
   "community.tagline": {
-    "message": "Prompt IA condivisi dagli utenti. Ordina per più recenti o più apprezzati, cerca e filtra; dopo il login puoi mettere like e salvare."
+    "message": "Prompt IA condivisi dagli utenti. Ordina per più recenti o più apprezzati, cerca e filtra; dopo l'accesso puoi mettere «Mi piace» e salvare."
   },
   "community.title": {
     "message": "Community Prompt IA | Scopri e Condividi"
@@ -216,7 +216,7 @@
     "message": "Canale Aperto"
   },
   "feedback.subtitle": {
-    "message": "Segnalazioni bug, richieste di funzionalità, domande d'uso—ogni voce è benvenuta"
+    "message": "Segnalazioni bug, richieste di funzionalità, domande d'uso — ogni contributo è benvenuto"
   },
   "feedback.title": {
     "message": "Feedback e suggerimenti"
@@ -450,7 +450,7 @@
     "message": "Esportazione fallita, riprova più tardi"
   },
   "message.export.noPrompts": {
-    "message": "Nessun prompt da esportare. Creane uno o aggiungine ai preferiti prima."
+    "message": "Nessun prompt da esportare. Creane uno o aggiungi qualche preferito prima di esportare."
   },
   "message.export.success": {
     "message": "Prompt esportati"
@@ -480,7 +480,7 @@
     "message": "Impossibile caricare i dati, riprova più tardi"
   },
   "message.loginRequired": {
-    "message": "Effettua prima il login"
+    "message": "Effettua prima l'accesso"
   },
   "message.logout.confirm.content": {
     "message": "Sei sicuro di volerti disconnettere?"
@@ -492,13 +492,13 @@
     "message": "Ancora nessun commento, sii il primo a commentare"
   },
   "message.noFavorites": {
-    "message": "Nessun preferito ancora, scopri i prompt che ti piacciono"
+    "message": "Ancora nessun preferito, scopri i prompt che ti piacciono"
   },
   "message.noPrompts": {
-    "message": "Nessun prompt ancora, creane uno"
+    "message": "Ancora nessun prompt: creane uno"
   },
   "message.noSpaceItems": {
-    "message": "Niente qui ancora — crea un prompt o aggiungi ai preferiti"
+    "message": "Ancora niente qui: crea un prompt o aggiungine ai preferiti"
   },
   "message.orderSaved": {
     "message": "Disposizione salvata"
@@ -555,7 +555,7 @@
     "message": "Prompt aggiornato"
   },
   "modal.clearCache.title": {
-    "message": "Pulire Cache?"
+    "message": "Pulire la cache?"
   },
   "modal.clearCache.warning": {
     "message": "La pulizia ricaricherà tutti i dati."
@@ -564,7 +564,7 @@
     "message": "Modifica Prompt"
   },
   "modal.forgotPassword.title": {
-    "message": "Password Dimenticata"
+    "message": "Password dimenticata"
   },
   "myCollection.header.subtitle": {
     "message": "Gestisci i tuoi prompt creati, preferiti e tag personalizzati"
@@ -576,7 +576,7 @@
     "message": "Preferiti"
   },
   "myCollection.stats.prompts": {
-    "message": "Miei Prompt"
+    "message": "I miei prompt"
   },
   "myCollection.stats.tags": {
     "message": "Tag Personalizzati"
@@ -633,7 +633,7 @@
     "message": "Password attuale"
   },
   "placeholder.email": {
-    "message": "E-mail"
+    "message": "Email"
   },
   "placeholder.newPassword": {
     "message": "Nuova password"
@@ -901,7 +901,7 @@
     "description": "The ARIA label for close button of announcement bar"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Torna indietro all'inizio",
+    "message": "Torna all'inizio",
     "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
@@ -913,7 +913,7 @@
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
+    "message": "Questo autore non ha ancora scritto nessun articolo.",
     "description": "The text for authors with 0 blog post"
   },
   "theme.blog.author.pageTitle": {
@@ -921,11 +921,11 @@
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
+    "message": "Autori",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View all authors",
+    "message": "Vedi tutti gli autori",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.paginator.navAriaLabel": {
@@ -953,27 +953,27 @@
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.post.plurals": {
-    "message": "One post|{count} posts",
+    "message": "1 post|{count} post",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
+    "message": "1 minuto di lettura|{readingTime} minuti di lettura",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
-    "message": "Read more",
+    "message": "Leggi di più",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
+    "message": "Leggi di più su {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
+    "message": "Navigazione ai post recenti del blog",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} tagged with \"{tagName}\"",
+    "message": "{nPosts} con tag \"{tagName}\"",
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
@@ -993,7 +993,7 @@
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
-    "message": "Passa dalla modalità scura a quella chiara (currently {mode})",
+    "message": "Passa dalla modalità scura a quella chiara (modalità attuale: {mode})",
     "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
@@ -1001,7 +1001,7 @@
     "description": "The name for the dark color mode"
   },
   "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "modalità luce",
+    "message": "Modalità chiara",
     "description": "The name for the light color mode"
   },
   "theme.colorToggle.ariaLabel.mode.system": {
@@ -1112,7 +1112,7 @@
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "Questa è documentazione inedita per {siteTitle} versione {versionLabel}.",
+    "message": "Questa è una documentazione inedita per {siteTitle}, versione {versionLabel}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
@@ -1124,7 +1124,7 @@
     "description": "The ARIA label to expand the sidebar category"
   },
   "theme.ErrorPageContent.title": {
-    "message": "Questa pagina è andata in crash.",
+    "message": "Si è verificato un errore in questa pagina.",
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.ErrorPageContent.tryAgain": {
@@ -1184,11 +1184,11 @@
     "description": "The title of the 404 page"
   },
   "theme.tags.tagsListLabel": {
-    "message": "Etichette:",
+    "message": "Tag:",
     "description": "The label alongside a tag list"
   },
   "theme.tags.tagsPageLink": {
-    "message": "Guarda tutte le etichette",
+    "message": "Vedi tutti i tag",
     "description": "The label of the link targeting the tag list page"
   },
   "theme.tags.tagsPageTitle": {
@@ -1215,19 +1215,19 @@
     "message": "L'autore ha smesso di condividere, nessuna cache locale"
   },
   "userPage.level.maxReached": {
-    "message": "MAX REACHED"
+    "message": "LIVELLO MASSIMO RAGGIUNTO"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared"
+    "message": "condiviso"
   },
   "userPage.level.specLabel": {
-    "message": "LEVEL"
+    "message": "LIVELLO"
   },
   "userPage.level.toNext": {
     "message": "fino a {next}"
   },
   "validation.agreement.required": {
-    "message": "Devi accettare i termini di servizio e la politica sulla privacy prima di utilizzare"
+    "message": "Devi accettare i termini di servizio e l'informativa sulla privacy prima di continuare"
   },
   "validation.comment.maxLength": {
     "message": "Il contenuto del commento non deve superare i 2000 caratteri"

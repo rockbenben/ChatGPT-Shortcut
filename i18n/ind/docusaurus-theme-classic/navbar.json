@@ -8,7 +8,7 @@
     "description": "The alt text of navbar logo"
   },
   "item.label.使用说明": {
-    "message": "Dokumen",
+    "message": "Dokumentasi",
     "description": "Navbar item with label 使用说明"
   },
   "item.label.社区提示词": {
@@ -40,7 +40,7 @@
     "description": "Navbar item with label QQ 群"
   },
   "item.label.AI 工具箱": {
-    "message": "Kotak Alat AI",
+    "message": "Kumpulan Alat AI",
     "description": "Navbar item with label AI 工具箱"
   },
   "item.label.AI 绘图提示词": {
@@ -48,11 +48,15 @@
     "description": "Navbar item with label AI 绘图提示词"
   },
   "item.label.浏览器插件": {
-    "message": "Ekstensi Peramban",
+    "message": "Ekstensi Browser",
     "description": "Navbar item with label 浏览器插件"
   },
   "item.label.AI 思想家圆桌": {
     "message": "Meja Bundar Pemikir AI",
     "description": "Navbar item with label AI 思想家圆桌"
+  },
+  "item.label.365 开源项目": {
+    "message": "365 Open Source",
+    "description": "Navbar item with label 365 开源项目"
   }
 }

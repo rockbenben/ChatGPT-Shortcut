@@ -8,7 +8,7 @@
     "description": "The alt text of navbar logo"
   },
   "item.label.使用说明": {
-    "message": "Docs",
+    "message": "Documentation",
     "description": "Navbar item with label 使用说明"
   },
   "item.label.社区提示词": {
@@ -54,5 +54,9 @@
   "item.label.AI 思想家圆桌": {
     "message": "Table ronde des penseurs IA",
     "description": "Navbar item with label AI 思想家圆桌"
+  },
+  "item.label.365 开源项目": {
+    "message": "365 Open Source",
+    "description": "Navbar item with label 365 开源项目"
   }
 }

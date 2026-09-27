@@ -4,7 +4,7 @@
     "description": "The title in the navbar"
   },
   "logo.alt": {
-    "message": "ChatGPT Shortcuts",
+    "message": "ChatGPT Kısayolları",
     "description": "The alt text of navbar logo"
   },
   "item.label.使用说明": {
@@ -54,5 +54,9 @@
   "item.label.AI 思想家圆桌": {
     "message": "AI Düşünürler Yuvarlak Masası",
     "description": "Navbar item with label AI 思想家圆桌"
+  },
+  "item.label.365 开源项目": {
+    "message": "365 Açık Kaynak",
+    "description": "Navbar item with label 365 开源项目"
   }
 }
