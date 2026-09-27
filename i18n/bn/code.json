@@ -90,13 +90,13 @@
     "message": "সমস্ত ক্যাশ সাফ করুন"
   },
   "button.clearCache": {
-    "message": "ক্যাশে সাফ করুন"
+    "message": "ক্যাশ সাফ করুন"
   },
   "button.confirm": {
     "message": "নিশ্চিত করুন"
   },
   "button.confirmClear": {
-    "message": "পরিষ্কার নিশ্চিত করুন"
+    "message": "সাফ করা নিশ্চিত করুন"
   },
   "button.export": {
     "message": "ডেটা রপ্তানি করুন"
@@ -105,7 +105,7 @@
     "message": "প্রম্পট রপ্তানি করুন"
   },
   "button.import": {
-    "message": "ডেটা আমদানি"
+    "message": "ডেটা আমদানি করুন"
   },
   "button.importPrompts": {
     "message": "প্রম্পট আমদানি করুন"
@@ -186,7 +186,7 @@
     "message": "সাধারণ প্রশ্ন"
   },
   "faq.scenario.a": {
-    "message": "এই পৃষ্ঠার শিরোনাম ও বিবরণের সঙ্গে সম্পর্কিত কাজের জন্য উপযুক্ত। প্রথম চেষ্টায় ফলাফল সন্তোষজনক না হলে প্লেসহোল্ডারে আরও প্রসঙ্গ যোগ করুন, অথবা “ধাপে ধাপে উত্তর দিন” “উদাহরণ দিন” এর মতো শর্ত যোগ করুন।"
+    "message": "এই পৃষ্ঠার শিরোনাম ও বিবরণের সঙ্গে সম্পর্কিত কাজের জন্য উপযুক্ত। প্রথম চেষ্টায় ফলাফল সন্তোষজনক না হলে প্লেসহোল্ডারে আরও প্রসঙ্গ যোগ করুন, অথবা “ধাপে ধাপে উত্তর দিন” বা “উদাহরণ দিন”—এমন শর্ত যোগ করুন।"
   },
   "faq.scenario.q": {
     "message": "এই প্রম্পট কোন পরিস্থিতিতে ব্যবহার উপযোগী?"
@@ -210,7 +210,7 @@
     "message": "নতুন Issue"
   },
   "feedback.responseTime": {
-    "message": "সাধারণত 24 ঘণ্টার মধ্যে উত্তর"
+    "message": "সাধারণত ২৪ ঘণ্টার মধ্যে উত্তর"
   },
   "feedback.spec_label": {
     "message": "উন্মুক্ত চ্যানেল"
@@ -402,19 +402,19 @@
     "message": "প্রম্পট জমা দেওয়া হয়েছে"
   },
   "message.cache.cleared": {
-    "message": "ক্যাশে সাফ করা হয়েছে"
+    "message": "ক্যাশ সাফ করা হয়েছে"
   },
   "message.cache.clearError": {
     "message": "ক্যাশ সাফ করতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
   "message.cannotFavorOwn": {
-    "message": "নিজের প্রম্পট প্রিয় তালিকায় যোগ করা যাবে না"
+    "message": "নিজের প্রম্পট পছন্দের তালিকায় যোগ করা যাবে না"
   },
   "message.convertToPrivate.error": {
     "message": "রূপান্তর করতে ব্যর্থ হয়েছে, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
   "message.convertToPrivate.favoriteKept": {
-    "message": "ব্যক্তিগত প্রম্পট তৈরি হয়েছে, কিন্তু মূল পছন্দসই সরানো যায়নি। পুনরাবৃত্তি এড়াতে এটি নিজে মুছে ফেলুন।"
+    "message": "ব্যক্তিগত প্রম্পট তৈরি হয়েছে, কিন্তু মূল পছন্দসই সরানো যায়নি। ডুপ্লিকেট এড়াতে এটি নিজে মুছে ফেলুন।"
   },
   "message.convertToPrivate.success": {
     "message": "ব্যক্তিগত প্রম্পটে রূপান্তর করা হয়েছে"
@@ -435,7 +435,7 @@
     "message": "প্রম্পট মুছে ফেলা হয়েছে"
   },
   "message.error": {
-    "message": "প্রক্রিয়াকরণের সময় একটি ত্রুটি ঘটেছে"
+    "message": "প্রসেস করার সময় একটি ত্রুটি দেখা দিয়েছে"
   },
   "message.error.forgotPassword": {
     "message": "পাসওয়ার্ড রিসেট ইমেল পাঠাতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
@@ -450,13 +450,13 @@
     "message": "রপ্তানি ব্যর্থ হয়েছে, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
   "message.export.noPrompts": {
-    "message": "রপ্তানি করার মতো কোনো প্রম্পট নেই। প্রথমে কিছু তৈরি করুন বা প্রিয়তে যোগ করুন।"
+    "message": "রপ্তানি করার মতো কোনো প্রম্পট নেই। প্রথমে কিছু তৈরি করুন বা পছন্দে যোগ করুন।"
   },
   "message.export.success": {
     "message": "প্রম্পট রপ্তানি করা হয়েছে"
   },
   "message.forgotPassword.info": {
-    "message": "আপনি যদি আপনার বর্তমান পাসওয়ার্ড ভুলে যান, তবে আপনি ইমেলের মাধ্যমে এটি রিসেট করতে পারেন। আমরা আপনার নিবন্ধিত ইমেল ঠিকানায় একটি রিসেট লিঙ্ক সহ একটি ইমেল পাঠাব।"
+    "message": "আপনি যদি আপনার বর্তমান পাসওয়ার্ড ভুলে যান, তবে আপনি ইমেলের মাধ্যমে এটি রিসেট করতে পারেন। আমরা আপনার নিবন্ধিত ইমেল ঠিকানায় একটি রিসেট লিঙ্ক সহ একটি ইমেল পাঠাবো।"
   },
   "message.import.failed": {
     "message": "আমদানি ব্যর্থ"
@@ -492,7 +492,7 @@
     "message": "এখনও কোনো মন্তব্য নেই, প্রথম মন্তব্যকারী হোন"
   },
   "message.noFavorites": {
-    "message": "এখনও কোনো পছন্দের নেই, আপনার পছন্দের প্রম্পট খুঁজুন"
+    "message": "এখনও কোনো পছন্দ নেই, আপনার পছন্দের প্রম্পট খুঁজুন"
   },
   "message.noPrompts": {
     "message": "এখনও কোনো প্রম্পট নেই, একটি তৈরি করুন"
@@ -531,7 +531,7 @@
     "message": "পাসওয়ার্ড রিসেট ইমেল পাঠানো হয়েছে"
   },
   "message.success.login": {
-    "message": "লগ ইন করা হয়েছে"
+    "message": "লগইন করা হয়েছে"
   },
   "message.success.passwordChanged": {
     "message": "পাসওয়ার্ড পরিবর্তন করা হয়েছে"
@@ -567,13 +567,13 @@
     "message": "পাসওয়ার্ড ভুলে গেছেন"
   },
   "myCollection.header.subtitle": {
-    "message": "আপনার তৈরি প্রম্পট, প্রিয় এবং কাস্টম ট্যাগ পরিচালনা করুন"
+    "message": "আপনার তৈরি প্রম্পট, পছন্দ এবং কাস্টম ট্যাগ পরিচালনা করুন"
   },
   "myCollection.header.title": {
     "message": "আমার সংগ্রহ"
   },
   "myCollection.stats.favorites": {
-    "message": "প্রিয়"
+    "message": "পছন্দ"
   },
   "myCollection.stats.prompts": {
     "message": "আমার প্রম্পট"
@@ -588,13 +588,13 @@
     "message": "ট্যাগ বরাদ্দ করুন"
   },
   "myspace.fallbackHint": {
-    "message": "কোনো মিলে যাওয়া ফলাফল নেই। আপনার জন্য সুপারিশ:"
+    "message": "কোনো ফলাফল মেলেনি। আপনার জন্য সুপারিশ:"
   },
   "myspace.filter.all": {
     "message": "সব"
   },
   "myspace.filter.favorites": {
-    "message": "প্রিয়"
+    "message": "পছন্দ"
   },
   "myspace.filter.prompts": {
     "message": "প্রম্পটসমূহ"
@@ -624,7 +624,7 @@
     "message": "মিলিত প্রম্পট পাওয়া যায়নি"
   },
   "placeholder.comment": {
-    "message": "এখানে মন্তব্য লিখুন... মার্কডাউন এবং এইচটিএমএল সিনট্যাক্স সমর্থিত"
+    "message": "এখানে মন্তব্য লিখুন... মার্কডাউন এবং HTML সিনট্যাক্স সমর্থিত"
   },
   "placeholder.confirmPassword": {
     "message": "নতুন পাসওয়ার্ড নিশ্চিত করুন"
@@ -678,10 +678,10 @@
     "message": "উৎস"
   },
   "prompt.tokenDanger": {
-    "message": "প্রম্পটটি খুব দীর্ঘ, যা শেয়ার এবং পুনরায় ব্যবহার করতে অসুবিধাজনক হতে পারে। ভাগ করার কথা বিবেচনা করুন।"
+    "message": "প্রম্পটটি খুব দীর্ঘ, যা শেয়ার এবং পুনরায় ব্যবহার করতে অসুবিধাজনক হতে পারে। শেয়ার করার কথা বিবেচনা করুন।"
   },
   "prompt.tokenWarning": {
-    "message": "প্রম্পটটি বেশ দীর্ঘ; এটি ছোট বা ভাগ করার কথা বিবেচনা করুন।"
+    "message": "প্রম্পটটি বেশ দীর্ঘ; এটি ছোট করার বা শেয়ার করার কথা বিবেচনা করুন।"
   },
   "prompt.translation": {
     "message": "অনুবাদ"
@@ -762,7 +762,7 @@
     "message": "টেক্সট গেম, রোল-প্লেয়িং এবং ইন্টারেক্টিভ বিনোদন"
   },
   "showcase.tag.games.label": {
-    "message": "মজার গেমস"
+    "message": "মজার খেলা"
   },
   "showcase.tag.interesting.description": {
     "message": "মজার ট্রিভিয়া, জনপ্রিয় বিজ্ঞান বিষয়বস্তু এবং মজার প্রশ্নোত্তর"
@@ -905,15 +905,15 @@
     "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
-    "message": "Archive",
+    "message": "সংরক্ষণাগার",
     "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.archive.title": {
-    "message": "Archive",
+    "message": "সংরক্ষণাগার",
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
+    "message": "এই লেখক এখনও কোনো পোস্ট লেখেননি।",
     "description": "The text for authors with 0 blog post"
   },
   "theme.blog.author.pageTitle": {
@@ -921,11 +921,11 @@
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
+    "message": "লেখকগণ",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View all authors",
+    "message": "সব লেখক দেখুন",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.paginator.navAriaLabel": {
@@ -953,27 +953,27 @@
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.post.plurals": {
-    "message": "One post|{count} posts",
+    "message": "একটি পোস্ট|{count}টি পোস্ট",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
+    "message": "এক মিনিট পড়া|{readingTime} মিনিট পড়া",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
-    "message": "Read more",
+    "message": "আরও পড়ুন",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
+    "message": "{title} সম্পর্কে আরও পড়ুন",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
+    "message": "ব্লগের সাম্প্রতিক পোস্ট নেভিগেশন",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} tagged with \"{tagName}\"",
+    "message": "\"{tagName}\" ট্যাগসহ {nPosts}টি পোস্ট",
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
@@ -1009,11 +1009,11 @@
     "description": "The name for the system color mode"
   },
   "theme.common.editThisPage": {
-    "message": "এই পেজটি এডিট করুন",
+    "message": "এই পৃষ্ঠাটি সম্পাদনা করুন",
     "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
-    "message": "{heading} এর সঙ্গে সরাসরি লিংকড",
+    "message": "{heading}-এর সরাসরি লিঙ্ক",
     "description": "Title for link to heading"
   },
   "theme.common.skipToMainContent": {
@@ -1045,7 +1045,7 @@
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 item|{count} items",
+    "message": "১টি আইটেম|{count}টি আইটেম",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
@@ -1093,7 +1093,7 @@
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "One doc tagged|{count} docs tagged",
+    "message": "একটি ডক ট্যাগযুক্ত|{count} ডক ট্যাগযুক্ত",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.versionBadge.label": {
@@ -1144,7 +1144,7 @@
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "সর্বশেষ সংষ্করণ{atDate}{byUser}",
+    "message": "সর্বশেষ সংস্করণ {atDate} {byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
@@ -1176,7 +1176,7 @@
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "অনুগ্রহ করে আপনাকে মূল URL-এ লিঙ্ক করা সাইটের মালিকের সাথে যোগাযোগ করুন এবং তাদের জানাতে দিন যে তাদের লিঙ্কটি ভেঙে গেছে।",
+    "message": "অনুগ্রহ করে যে সাইটের লিঙ্ক থেকে এসেছেন তার মালিকের সাথে যোগাযোগ করুন এবং লিঙ্কটি ভাঙা আছে জানাতে বলুন।",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.NotFound.title": {
@@ -1184,11 +1184,11 @@
     "description": "The title of the 404 page"
   },
   "theme.tags.tagsListLabel": {
-    "message": "ট্যাগ্স:",
+    "message": "ট্যাগ:",
     "description": "The label alongside a tag list"
   },
   "theme.tags.tagsPageLink": {
-    "message": "সমস্ত ট্যাগ্স দেখুন",
+    "message": "সব ট্যাগ দেখুন",
     "description": "The label of the link targeting the tag list page"
   },
   "theme.tags.tagsPageTitle": {
@@ -1314,7 +1314,7 @@
     "message": "সাইন ইন করতে হোম পেজে ফিরুন"
   },
   "myspace.tagManager.emptyHint": {
-    "message": "উপরে একটি নাম লিখুন, রং বেছে নিন — আপনার প্রথম ট্যাগ তৈরি।"
+    "message": "উপরে একটি নাম লিখুন, রং বেছে নিন — আপনার প্রথম ট্যাগ তৈরি করুন।"
   },
   "validation.username.empty": {
     "message": "ব্যবহারকারীর নাম খালি রাখা যাবে না"

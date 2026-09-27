@@ -39,19 +39,19 @@
     "message": "Editar"
   },
   "action.forgotPassword": {
-    "message": "Esqueceu a senha"
+    "message": "Esqueceu a senha?"
   },
   "action.hideTags": {
-    "message": "Ocultar etiquetas"
+    "message": "Ocultar tags"
   },
   "action.login": {
     "message": "Entrar"
   },
   "action.loginInstead": {
-    "message": "Fazer login direto"
+    "message": "Fazer login diretamente"
   },
   "action.register": {
-    "message": "Registrar"
+    "message": "Cadastre-se"
   },
   "action.registerNow": {
     "message": "Cadastre-se agora"
@@ -75,7 +75,7 @@
     "message": "Compartilhar"
   },
   "action.showTags": {
-    "message": "Mostrar etiquetas"
+    "message": "Mostrar tags"
   },
   "action.updatePrompt": {
     "message": "Salvar"
@@ -147,13 +147,13 @@
     "message": "Voltar à lista"
   },
   "community.description": {
-    "message": "Precisa de mais prompts IA testados? Junte-se à comunidade AiShort para descobrir modelos práticos e compartilhar técnicas de otimização."
+    "message": "Precisa de mais prompts de IA testados? Junte-se à comunidade AiShort para descobrir modelos práticos e compartilhar técnicas de otimização."
   },
   "community.fetchError": {
     "message": "Falha ao obter dados"
   },
   "community.heading": {
-    "message": "Comunidade de Prompts IA"
+    "message": "Comunidade de Prompts de IA"
   },
   "community.loading": {
     "message": "Carregando..."
@@ -171,7 +171,7 @@
     "message": "Prompts de IA compartilhados por usuários. Ordene por mais recentes ou mais curtidos, busque e filtre; após login, curta e salve."
   },
   "community.title": {
-    "message": "Comunidade de Prompts IA | Descubra e Compartilhe"
+    "message": "Comunidade de Prompts de IA | Descubra e Compartilhe"
   },
   "description.clearCache.short": {
     "message": "Atualizar dados do cache local"
@@ -186,13 +186,13 @@
     "message": "Perguntas frequentes"
   },
   "faq.scenario.a": {
-    "message": "Funciona bem para tarefas relacionadas ao título e à descrição desta página. Se a primeira tentativa não for ideal, acrescente mais contexto no marcador, ou restrições como «responda passo a passo» ou «dê exemplos»."
+    "message": "Funciona bem para tarefas relacionadas ao título e à descrição desta página. Se a primeira tentativa não for ideal, acrescente mais contexto no marcador, ou restrições como “responda passo a passo” ou “dê exemplos”."
   },
   "faq.scenario.q": {
     "message": "Para quais cenários este prompt é adequado?"
   },
   "faq.tips.a": {
-    "message": "Primeiro, torne o [marcador] mais específico (adicione estilo, comprimento, domínio). Segundo, responda a saídas insatisfatórias com «deixe mais X». Terceiro, compare resultados entre Claude / ChatGPT / Gemini e modelos similares."
+    "message": "Primeiro, torne o [marcador] mais específico (adicione estilo, comprimento, domínio). Segundo, responda a saídas insatisfatórias com “deixe mais X”. Terceiro, compare resultados entre Claude / ChatGPT / Gemini e modelos similares."
   },
   "faq.tips.q": {
     "message": "Como posso melhorar a qualidade da resposta?"
@@ -216,7 +216,7 @@
     "message": "Canal Aberto"
   },
   "feedback.subtitle": {
-    "message": "Reportes de bugs, sugestões de recursos, dúvidas de uso—toda voz é bem-vinda"
+    "message": "Reportes de bugs, sugestões de recursos, dúvidas de uso — toda voz é bem-vinda"
   },
   "feedback.title": {
     "message": "Feedback e Sugestões"
@@ -243,13 +243,13 @@
     "message": "{tools} e mais"
   },
   "homepage.description": {
-    "message": "Frustrado com respostas IA irrelevantes? AiShort oferece modelos práticos para escrita, código e tradução. Copie com um clique e duplique sua eficiência!"
+    "message": "Frustrado com respostas de IA irrelevantes? AiShort oferece modelos práticos para escrita, código e tradução. Copie com um clique e duplique sua eficiência!"
   },
   "homepage.slogan": {
     "message": "Prompts de IA selecionados, prontos com um clique"
   },
   "homepage.title": {
-    "message": "Biblioteca de Prompts IA para ChatGPT, Claude e Gemini"
+    "message": "Biblioteca de Prompts de IA para ChatGPT, Claude e Gemini"
   },
   "howto.step1.name": {
     "message": "Copie o prompt"
@@ -501,10 +501,10 @@
     "message": "Nada aqui ainda — crie um prompt ou favorite algum"
   },
   "message.orderSaved": {
-    "message": "Disposição salva"
+    "message": "Ordenação salva"
   },
   "message.orderSaveFailed": {
-    "message": "Falha ao salvar disposição, tente novamente mais tarde"
+    "message": "Falha ao salvar a ordenação, tente novamente mais tarde"
   },
   "message.postComment.error": {
     "message": "Falha ao enviar o comentário. Tente novamente mais tarde."
@@ -531,7 +531,7 @@
     "message": "E-mail de redefinição de senha enviado"
   },
   "message.success.login": {
-    "message": "Conectado"
+    "message": "Login realizado com sucesso"
   },
   "message.success.passwordChanged": {
     "message": "Senha alterada"
@@ -564,7 +564,7 @@
     "message": "Editar Prompt"
   },
   "modal.forgotPassword.title": {
-    "message": "Esqueceu a senha"
+    "message": "Esqueceu a senha?"
   },
   "myCollection.header.subtitle": {
     "message": "Gerencie seus prompts criados, favoritos e tags personalizadas"
@@ -913,7 +913,7 @@
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
+    "message": "Este autor ainda não escreveu nenhuma publicação.",
     "description": "The text for authors with 0 blog post"
   },
   "theme.blog.author.pageTitle": {
@@ -921,11 +921,11 @@
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
+    "message": "Autores",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View all authors",
+    "message": "Ver todos os autores",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.paginator.navAriaLabel": {
@@ -953,27 +953,27 @@
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.post.plurals": {
-    "message": "One post|{count} posts",
+    "message": "Uma publicação|{count} publicações",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
+    "message": "1 min de leitura|{readingTime} min de leitura",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
-    "message": "Read more",
+    "message": "Leia mais",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
+    "message": "Leia mais sobre {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
+    "message": "Navegação das publicações recentes do blog",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} tagged with \"{tagName}\"",
+    "message": "{nPosts} publicações com a tag \"{tagName}\"",
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
@@ -1041,7 +1041,7 @@
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Trilha",
+    "message": "Trilha de navegação",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
@@ -1124,7 +1124,7 @@
     "description": "The ARIA label to expand the sidebar category"
   },
   "theme.ErrorPageContent.title": {
-    "message": "Esta página deu erro.",
+    "message": "Esta página apresentou um erro.",
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.ErrorPageContent.tryAgain": {
@@ -1168,7 +1168,7 @@
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Página principal",
+    "message": "Navegação principal",
     "description": "The ARIA label for the main navigation"
   },
   "theme.NotFound.p1": {
@@ -1184,11 +1184,11 @@
     "description": "The title of the 404 page"
   },
   "theme.tags.tagsListLabel": {
-    "message": "Etiquetas:",
+    "message": "Tags:",
     "description": "The label alongside a tag list"
   },
   "theme.tags.tagsPageLink": {
-    "message": "Ver todas as etiquetas",
+    "message": "Ver todas as tags",
     "description": "The label of the link targeting the tag list page"
   },
   "theme.tags.tagsPageTitle": {
@@ -1218,7 +1218,7 @@
     "message": "MAX REACHED"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared"
+    "message": "compartilhados"
   },
   "userPage.level.specLabel": {
     "message": "LEVEL"
@@ -1314,7 +1314,7 @@
     "message": "Voltar ao início para entrar"
   },
   "myspace.tagManager.emptyHint": {
-    "message": "Digite um nome acima, escolha uma cor e sua primeira etiqueta estará pronta."
+    "message": "Digite um nome acima, escolha uma cor e sua primeira tag estará pronta."
   },
   "validation.username.empty": {
     "message": "O nome de usuário não pode ficar vazio"
@@ -1338,7 +1338,7 @@
     "message": "Levando você para a página inicial — ou use o botão abaixo."
   },
   "myspace.tagManager.color": {
-    "message": "Cor da etiqueta"
+    "message": "Cor da tag"
   },
   "comments.gif.searchPlaceholder": {
     "message": "Buscar GIFs"

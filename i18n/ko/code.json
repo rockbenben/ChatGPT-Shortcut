@@ -39,7 +39,7 @@
     "message": "편집"
   },
   "action.forgotPassword": {
-    "message": "비밀번호를 잊으셨나요"
+    "message": "비밀번호를 잊으셨나요?"
   },
   "action.hideTags": {
     "message": "태그 숨기기"
@@ -51,7 +51,7 @@
     "message": "직접 로그인"
   },
   "action.register": {
-    "message": "등록"
+    "message": "가입"
   },
   "action.registerNow": {
     "message": "지금 가입하기"
@@ -138,7 +138,7 @@
     "message": "GIF 삽입"
   },
   "comments.heading": {
-    "message": "토론"
+    "message": "댓글"
   },
   "common.favorites": {
     "message": "즐겨찾기"
@@ -168,13 +168,13 @@
     "message": "커뮤니티 프롬프트"
   },
   "community.tagline": {
-    "message": "사용자가 공유한 AI 프롬프트. 최신순 또는 좋아요순으로 정렬, 검색·필터 지원, 로그인 후 좋아요와 즐겨찾기 가능."
+    "message": "사용자가 공유한 AI 프롬프트. 최신순 또는 추천순으로 정렬, 검색·필터 지원, 로그인 후 좋아요와 즐겨찾기 가능."
   },
   "community.title": {
     "message": "AI 프롬프트 커뮤니티 | 발견 및 공유"
   },
   "description.clearCache.short": {
-    "message": "로컬 캐시 데이터 새로 고침"
+    "message": "로컬 캐시 데이터 새로고침"
   },
   "description.exportPrompts.short": {
     "message": "백업을 위해 JSON 파일로 내보내기"
@@ -186,7 +186,7 @@
     "message": "자주 묻는 질문"
   },
   "faq.scenario.a": {
-    "message": "이 페이지의 제목 및 설명과 관련된 작업에 적합합니다. 첫 시도에서 결과가 만족스럽지 않다면 플레이스홀더에 더 많은 맥락을 추가하거나 “단계별로 답변” “예시를 들어” 같은 제약을 덧붙이세요."
+    "message": "이 페이지의 제목 및 설명과 관련된 작업에 적합합니다. 첫 시도에서 결과가 만족스럽지 않다면 플레이스홀더에 더 많은 맥락을 추가하거나 '단계별로 답변', '예시를 들어' 같은 제약을 덧붙이세요."
   },
   "faq.scenario.q": {
     "message": "이 프롬프트는 어떤 상황에 적합합니까?"
@@ -204,7 +204,7 @@
     "message": "이 프롬프트는 어떻게 사용합니까?"
   },
   "feedback.description": {
-    "message": "귀하의 피드백은 우리에게 중요합니다!"
+    "message": "보내주신 의견은 서비스 개선에 큰 도움이 됩니다"
   },
   "feedback.newIssue": {
     "message": "새 Issue"
@@ -216,7 +216,7 @@
     "message": "공개 채널"
   },
   "feedback.subtitle": {
-    "message": "버그 신고, 기능 제안, 사용 문의—모든 목소리를 환영합니다"
+    "message": "버그 신고, 기능 제안, 사용 문의등 모든 의견을 환영합니다"
   },
   "feedback.title": {
     "message": "피드백 및 제안"
@@ -270,10 +270,10 @@
     "message": "ChatGPT, Claude, Gemini, DeepSeek 등 대화형 AI 인터페이스에 붙여넣고 실행하세요."
   },
   "input.newPassword": {
-    "message": "새 비밀번호를 입력하십시오"
+    "message": "새 비밀번호를 입력해 주세요"
   },
   "input.resetPassword.code": {
-    "message": "재설정 코드를 입력하십시오"
+    "message": "재설정 코드를 입력해 주세요"
   },
   "input.search.placeholder": {
     "message": "작문, 번역…"
@@ -294,7 +294,7 @@
     "message": "프롬프트 이름"
   },
   "label.sharePrompt": {
-    "message": "커뮤니티 페이지에 공유 — 다른 사용자가 보고 즐겨찾기할 수 있습니다"
+    "message": "커뮤니티 페이지에 공유 (다른 사용자가 보고 즐겨찾기할 수 있습니다"
   },
   "level.bronze": {
     "message": "브론즈"
@@ -366,7 +366,7 @@
     "message": "비밀번호 로그인"
   },
   "login.passwordless.info": {
-    "message": "로그인 링크가 이메일로 전송됩니다. 클릭하여 로그인하십시오"
+    "message": "로그인 링크가 이메일로 전송됩니다. 링크를 눌러 로그인해 주세요"
   },
   "login.register.prompt": {
     "message": "계정이 없으신가요?"
@@ -375,7 +375,7 @@
     "message": "재설정 링크가 이메일로 전송됩니다"
   },
   "login.subtitle.register": {
-    "message": "멋진 프롬프트 발견, 공유 및 생성"
+    "message": "멋진 프롬프트를 찾고, 공유하고, 만들어 보세요"
   },
   "login.subtitle.welcome": {
     "message": "로그인하여 더 많은 프리미엄 프롬프트 탐색"
@@ -390,25 +390,25 @@
     "message": "환영합니다"
   },
   "message.addFavorite.error": {
-    "message": "즐겨찾기 추가 실패, 나중에 다시 시도하십시오."
+    "message": "즐겨찾기 추가 실패, 나중에 다시 시도해 주세요."
   },
   "message.addFavorite.success": {
     "message": "즐겨찾기에 추가됨"
   },
   "message.addPrompt.error": {
-    "message": "프롬프트 제출 실패, 나중에 다시 시도하십시오."
+    "message": "프롬프트 제출 실패, 나중에 다시 시도해 주세요."
   },
   "message.addPrompt.success": {
-    "message": "프롬프트가 제출되었습니다"
+    "message": "프롬프트가 작성되었습니다"
   },
   "message.cache.cleared": {
     "message": "캐시가 지워졌습니다"
   },
   "message.cache.clearError": {
-    "message": "캐시 지우기 실패, 나중에 다시 시도하십시오."
+    "message": "캐시 지우기 실패, 나중에 다시 시도해 주세요."
   },
   "message.cannotFavorOwn": {
-    "message": "본인의 프롬프트는 즐겨찾기에 추가할 수 없습니다"
+    "message": "내가 작성한 프롬프트는 즐겨찾기에 추가할 수 없습니다"
   },
   "message.convertToPrivate.error": {
     "message": "변환에 실패했습니다. 나중에 다시 시도해 주세요"
@@ -429,7 +429,7 @@
     "message": "삭제 확인"
   },
   "message.deletePrompt.error": {
-    "message": "프롬프트 삭제 실패, 나중에 다시 시도하십시오."
+    "message": "프롬프트 삭제 실패, 나중에 다시 시도해 주세요."
   },
   "message.deletePrompt.success": {
     "message": "프롬프트가 삭제되었습니다"
@@ -438,19 +438,19 @@
     "message": "처리 중 오류가 발생했습니다"
   },
   "message.error.forgotPassword": {
-    "message": "비밀번호 재설정 이메일 전송 실패, 나중에 다시 시도하십시오."
+    "message": "비밀번호 재설정 이메일 전송 실패, 나중에 다시 시도해 주세요."
   },
   "message.error.passwordChangeFailed": {
-    "message": "비밀번호 변경 실패, 나중에 다시 시도하십시오."
+    "message": "비밀번호 변경 실패, 나중에 다시 시도해 주세요."
   },
   "message.error.passwordlessLink": {
-    "message": "전송 실패, 이메일 또는 사용자 이름을 확인하십시오"
+    "message": "전송 실패, 이메일 또는 사용자 이름을 확인해 주세요"
   },
   "message.export.error": {
-    "message": "내보내기 실패, 나중에 다시 시도하십시오."
+    "message": "내보내기 실패, 나중에 다시 시도해 주세요."
   },
   "message.export.noPrompts": {
-    "message": "내보낼 프롬프트가 없습니다. 먼저 프롬프트를 만들거나 즐겨찾기에 추가하세요."
+    "message": "내보낼 프롬프트가 없습니다. 먼저 프롬프트를 작성하거나 즐겨찾기에 추가해 주세요."
   },
   "message.export.success": {
     "message": "프롬프트를 내보냈습니다"
@@ -465,7 +465,7 @@
     "message": "잘못된 데이터 형식"
   },
   "message.import.nothing": {
-    "message": "파일의 내용이 모두 이미 있습니다. 가져올 항목이 없습니다"
+    "message": "파일의 모든 항목이 이미 저장되어 있습니다. 가져올 항목이 없습니다"
   },
   "message.import.parseError": {
     "message": "JSON 파싱 오류"
@@ -498,13 +498,13 @@
     "message": "아직 프롬프트가 없습니다. 하나 만들어 보세요"
   },
   "message.noSpaceItems": {
-    "message": "콘텐츠가 없습니다 — 프롬프트를 만들거나 즐겨찾기에 추가해보세요"
+    "message": "콘텐츠가 없습니다. 프롬프트를 만들거나 즐겨찾기에 추가해보세요"
   },
   "message.orderSaved": {
-    "message": "배열이 저장되었습니다"
+    "message": "정렬 순서가 저장되었습니다"
   },
   "message.orderSaveFailed": {
-    "message": "배열 저장 실패, 나중에 다시 시도하십시오."
+    "message": "정렬 순서 저장 실패, 나중에 다시 시도하십시오."
   },
   "message.postComment.error": {
     "message": "댓글 전송에 실패했습니다. 잠시 후 다시 시도해 주세요."
@@ -516,13 +516,13 @@
     "message": "즐겨찾기 제거"
   },
   "message.removeFavorite.error": {
-    "message": "즐겨찾기 제거 실패, 나중에 다시 시도하십시오."
+    "message": "즐겨찾기 제거 실패, 나중에 다시 시도해 주세요."
   },
   "message.removeFavorite.success": {
     "message": "즐겨찾기에서 제거됨"
   },
   "message.resetPassword.error": {
-    "message": "비밀번호 재설정 실패, 나중에 다시 시도하십시오."
+    "message": "비밀번호 재설정 실패, 나중에 다시 시도해 주세요."
   },
   "message.resetPassword.success": {
     "message": "비밀번호가 재설정되었습니다"
@@ -546,10 +546,10 @@
     "message": "태그가 업데이트되었습니다"
   },
   "message.tagsUpdateFailed": {
-    "message": "태그 업데이트 실패, 나중에 다시 시도하십시오."
+    "message": "태그 업데이트 실패, 나중에 다시 시도해 주세요."
   },
   "message.updatePrompt.error": {
-    "message": "프롬프트 업데이트 실패, 나중에 다시 시도하십시오."
+    "message": "프롬프트 업데이트 실패, 나중에 다시 시도해 주세요."
   },
   "message.updatePrompt.success": {
     "message": "프롬프트가 업데이트되었습니다"
@@ -582,13 +582,13 @@
     "message": "사용자 지정 태그"
   },
   "myCollection.stats.total": {
-    "message": "총계"
+    "message": "합계"
   },
   "myspace.assignTag": {
     "message": "태그 할당"
   },
   "myspace.fallbackHint": {
-    "message": "일치하는 결과가 없습니다. 추천："
+    "message": "일치하는 결과가 없습니다. 추천:"
   },
   "myspace.filter.all": {
     "message": "전체"
@@ -651,7 +651,7 @@
     "message": "프롬프트의 용도를 간략하게 설명하세요 (선택 사항)"
   },
   "placeholder.promptTitle": {
-    "message": "프롬프트에 이름 지정"
+    "message": "프롬프트 제목 입력"
   },
   "placeholder.resetPassword.code": {
     "message": "재설정 코드"
@@ -705,40 +705,40 @@
     "message": "커뮤니티 둘러보기"
   },
   "showcase.tag.academic.description": {
-    "message": "학술 연구, 교수 설계, 커리큘럼 계획 등 교사 업무 지원"
+    "message": "학술 연구, 수업 설계, 커리큘럼 계획 등 교사 업무 지원"
   },
   "showcase.tag.academic.label": {
     "message": "학술/교사"
   },
   "showcase.tag.ai.description": {
-    "message": "인공 지능 관련 프롬프트 및 응용 시나리오"
+    "message": "인공지능 관련 프롬프트 및 응용 시나리오"
   },
   "showcase.tag.ai.label": {
     "message": "AI"
   },
   "showcase.tag.article.description": {
-    "message": "소설, 논문, 보도 자료, 대본, 연구 보고서 등 다양한 유형의 기사 생성"
+    "message": "소설, 논문, 보도 자료, 대본, 연구 보고서 등 다양한 유형의 글 생성"
   },
   "showcase.tag.article.label": {
     "message": "기사/보고서"
   },
   "showcase.tag.code.description": {
-    "message": "프로그래밍 제안, 코드 예제, 디버깅 솔루션 및 기술 지침 제공"
+    "message": "코딩 도움, 코드 예제, 디버깅 솔루션 및 기술 지침 제공"
   },
   "showcase.tag.code.label": {
     "message": "IT/프로그래밍"
   },
   "showcase.tag.comments.description": {
-    "message": "전문적인 리뷰, 작품 평가 및 감상 분석"
+    "message": "전문적인 리뷰, 작품 평가 및 작품 감상"
   },
   "showcase.tag.comments.label": {
     "message": "비평/평가"
   },
   "showcase.tag.company.description": {
-    "message": "기업 경영, 인사, 마케팅 및 기타 기능적 역할"
+    "message": "기업 경영, 인사, 마케팅 및 기타 실무 업무"
   },
   "showcase.tag.company.label": {
-    "message": "기업 기능"
+    "message": "기업/사무"
   },
   "showcase.tag.contribute.description": {
     "message": "커뮤니티 사용자가 공유한 고품질 프롬프트"
@@ -750,22 +750,22 @@
     "message": "건강 상담, 질병 교육 및 의료 조언"
   },
   "showcase.tag.doctor.label": {
-    "message": "의료 건강"
+    "message": "의료/건강"
   },
   "showcase.tag.finance.description": {
-    "message": "투자 관리, 재무 분석 및 재무 계획 조언"
+    "message": "투자 관리, 재무 분석 및 재무 계획 상담"
   },
   "showcase.tag.finance.label": {
-    "message": "재무 고문"
+    "message": "재무 상담"
   },
   "showcase.tag.games.description": {
     "message": "텍스트 게임, 롤플레잉 및 인터랙티브 엔터테인먼트"
   },
   "showcase.tag.games.label": {
-    "message": "재미있는 게임"
+    "message": "게임"
   },
   "showcase.tag.interesting.description": {
-    "message": "재미있는 상식, 대중 과학 콘텐츠 및 재미있는 Q&A"
+    "message": "재미있는 상식, 과학 상식 콘텐츠 및 재미있는 Q&A"
   },
   "showcase.tag.interesting.label": {
     "message": "재미있는 상식"
@@ -792,10 +792,10 @@
     "message": "피트니스 지도, 영양 조언, 요리 기술, 메이크업 스타일링 등 생활 서비스"
   },
   "showcase.tag.living.label": {
-    "message": "삶의 질"
+    "message": "라이프스타일"
   },
   "showcase.tag.mind.description": {
-    "message": "창의성, 비판적 사고 및 논리적 추론 능력 자극"
+    "message": "창의성, 비판적 사고 및 논리적 추론 능력 향상"
   },
   "showcase.tag.mind.label": {
     "message": "사고 훈련"
@@ -804,7 +804,7 @@
     "message": "음악 창작, 음악 이론 학습 및 작품 감상"
   },
   "showcase.tag.music.label": {
-    "message": "음악 예술"
+    "message": "음악/예술"
   },
   "showcase.tag.pedagogy.description": {
     "message": "학습 지도, 숙제 도움, 시험 준비 등 학생 관련 콘텐츠"
@@ -819,10 +819,10 @@
     "message": "철학/종교"
   },
   "showcase.tag.professional.description": {
-    "message": "변호사, 회계사, 컨설턴트 등 전문 분야 고문"
+    "message": "변호사, 회계사, 컨설턴트 등 전문 분야 상담"
   },
   "showcase.tag.professional.label": {
-    "message": "전문 고문"
+    "message": "전문 상담"
   },
   "showcase.tag.seo.description": {
     "message": "검색 엔진 최적화, 키워드 확장 및 콘텐츠 마케팅"
@@ -831,13 +831,13 @@
     "message": "SEO"
   },
   "showcase.tag.social.description": {
-    "message": "심리 상담, 감정 분석, 사회적 기술 및 대인 커뮤니케이션"
+    "message": "심리 상담, 감정 분석, 소통 능력 및 대인 커뮤니케이션"
   },
   "showcase.tag.social.label": {
     "message": "심리/사교"
   },
   "showcase.tag.speech.description": {
-    "message": "토론 기술, 연설문 작성 및 수사학 훈련"
+    "message": "토론 기술, 연설문 작성 및 화법 훈련"
   },
   "showcase.tag.speech.label": {
     "message": "토론/연설"
@@ -855,7 +855,7 @@
     "message": "생산성 도구"
   },
   "showcase.tag.write.description": {
-    "message": "기사 문법 수정, 표현 스타일 최적화, 글쓰기 품질 향상"
+    "message": "글의 문법 교정, 표현 스타일 최적화, 글쓰기 품질 향상"
   },
   "showcase.tag.write.label": {
     "message": "글쓰기 보조"
@@ -913,7 +913,7 @@
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
+    "message": "이 작성자가 아직 게시물을 작성하지 않았습니다.",
     "description": "The text for authors with 0 blog post"
   },
   "theme.blog.author.pageTitle": {
@@ -921,11 +921,11 @@
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
+    "message": "작성자",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View all authors",
+    "message": "작성자 전체 보기",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.paginator.navAriaLabel": {
@@ -953,27 +953,27 @@
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.post.plurals": {
-    "message": "One post|{count} posts",
+    "message": "1개의 게시물|{count}개의 게시물",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
+    "message": "1분 소요|{readingTime}분 소요",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
-    "message": "Read more",
+    "message": "더 읽기",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
+    "message": "{title} 전체 글 보기",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
+    "message": "블로그 최근 게시물 탐색",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} tagged with \"{tagName}\"",
+    "message": "\"{tagName}\" 태그가 지정된 게시물 {nPosts}개",
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
@@ -993,15 +993,15 @@
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
-    "message": "어두운 모드와 밝은 모드 전환하기 (현재 {mode})",
+    "message": "다크 모드와 라이트 모드 전환하기 (현재 {mode})",
     "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "어두운 모드",
+    "message": "다크 모드",
     "description": "The name for the dark color mode"
   },
   "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "밝은 모드",
+    "message": "라이트 모드",
     "description": "The name for the light color mode"
   },
   "theme.colorToggle.ariaLabel.mode.system": {
@@ -1218,55 +1218,55 @@
     "message": "MAX REACHED"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared"
+    "message": "공유"
   },
   "userPage.level.specLabel": {
     "message": "LEVEL"
   },
   "userPage.level.toNext": {
-    "message": "「{next}」까지"
+    "message": "{next}까지"
   },
   "validation.agreement.required": {
-    "message": "사용하기 전에 서비스 이용약관 및 개인정보처리방침에 동의해야 합니다"
+    "message": "사용하기 전에 서비스 이용약관 및 개인정보처리방침에 동의해 주세요"
   },
   "validation.comment.maxLength": {
     "message": "댓글 내용은 2000자를 초과할 수 없습니다"
   },
   "validation.comment.required": {
-    "message": "댓글 내용을 입력하십시오"
+    "message": "댓글 내용을 입력해 주세요"
   },
   "validation.confirmPassword.required": {
-    "message": "새 비밀번호를 확인하십시오"
+    "message": "새 비밀번호를 확인해 주세요"
   },
   "validation.currentPassword.required": {
-    "message": "현재 비밀번호를 입력하십시오"
+    "message": "현재 비밀번호를 입력해 주세요"
   },
   "validation.email.invalid": {
-    "message": "유효한 이메일 주소를 입력하십시오"
+    "message": "유효한 이메일 주소를 입력해 주세요"
   },
   "validation.email.required": {
-    "message": "이메일을 입력하십시오"
+    "message": "이메일을 입력해 주세요"
   },
   "validation.password.length": {
-    "message": "비밀번호는 최소 6자 이상이어야 합니다."
+    "message": "비밀번호는 최소 6자 이상이어야 해요"
   },
   "validation.password.match": {
     "message": "두 비밀번호가 일치하지 않습니다"
   },
   "validation.password.required": {
-    "message": "비밀번호를 입력하십시오"
+    "message": "비밀번호를 입력해 주세요"
   },
   "validation.promptContent.required": {
-    "message": "프롬프트 내용을 입력하십시오"
+    "message": "프롬프트 내용을 입력해 주세요"
   },
   "validation.promptTitle.required": {
-    "message": "프롬프트 제목을 입력하십시오"
+    "message": "프롬프트 제목을 입력해 주세요"
   },
   "validation.replyRequired": {
-    "message": "답글 내용을 입력하십시오"
+    "message": "답글 내용을 입력해 주세요"
   },
   "validation.username.required": {
-    "message": "사용자 이름 또는 등록 이메일을 입력하십시오"
+    "message": "사용자 이름 또는 가입 이메일을 입력하십시오"
   },
   "vote.downvote.alreadyVoted": {
     "message": "이 세션에서 이미 이 프롬프트를 비추천했습니다."

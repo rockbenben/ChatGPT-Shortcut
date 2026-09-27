@@ -21,7 +21,7 @@
     "message": "Schließen"
   },
   "action.convertToPrivate": {
-    "message": "In Privat umwandeln"
+    "message": "In privat umwandeln"
   },
   "action.copy": {
     "message": "Kopieren"
@@ -57,7 +57,7 @@
     "message": "Jetzt registrieren"
   },
   "action.removeFavorite": {
-    "message": "Aus Favoriten entfernen"
+    "message": "Aus den Favoriten entfernen"
   },
   "action.reply": {
     "message": "Antworten"
@@ -69,7 +69,7 @@
     "message": "Anmeldelink erhalten"
   },
   "action.sendResetEmail": {
-    "message": "Reset-E-Mail senden"
+    "message": "E-Mail zum Zurücksetzen senden"
   },
   "action.share": {
     "message": "Teilen"
@@ -87,7 +87,7 @@
     "message": "Details anzeigen"
   },
   "button.clearAllCache": {
-    "message": "Allen Cache leeren"
+    "message": "Gesamten Cache leeren"
   },
   "button.clearCache": {
     "message": "Cache leeren"
@@ -147,7 +147,7 @@
     "message": "Zurück zur Liste"
   },
   "community.description": {
-    "message": "Brauchen Sie mehr bewährte KI-Prompts? Treten Sie der AiShort-Community bei, um praktische Vorlagen zu entdecken und Optimierungstechniken zu teilen."
+    "message": "Sie brauchen mehr bewährte KI-Prompts? Treten Sie der AiShort-Community bei, um praktische Vorlagen zu entdecken und Optimierungstechniken zu teilen."
   },
   "community.fetchError": {
     "message": "Daten konnten nicht abgerufen werden"
@@ -168,7 +168,7 @@
     "message": "Community-Prompts"
   },
   "community.tagline": {
-    "message": "Von Nutzern geteilte KI-Prompts. Sortieren nach neuesten oder beliebtesten, suchen und filtern; nach Anmeldung liken und speichern."
+    "message": "Von Nutzern geteilte KI-Prompts. Sortieren nach neuesten oder beliebtesten, suchen und filtern; nach Anmeldung bewerten und speichern."
   },
   "community.title": {
     "message": "KI-Prompt-Community | Entdecken & Teilen"
@@ -177,28 +177,28 @@
     "message": "Lokalen Cache aktualisieren"
   },
   "description.exportPrompts.short": {
-    "message": "Als JSON-Datei für Backup exportieren"
+    "message": "Als JSON-Datei für ein Backup exportieren"
   },
   "description.importPrompts.short": {
-    "message": "Prompts und Favoriten aus JSON-Datei importieren"
+    "message": "Prompts und Favoriten aus einer JSON-Datei importieren"
   },
   "faq.heading": {
     "message": "FAQ"
   },
   "faq.scenario.a": {
-    "message": "Geeignet für Aufgaben, die mit dem Titel und der Beschreibung dieser Seite zusammenhängen. Falls der erste Versuch nicht überzeugt, füge mehr Kontext in den Platzhalter ein oder ergänze Anweisungen wie »antworte Schritt für Schritt« oder »gib Beispiele«."
+    "message": "Geeignet für Aufgaben, die mit dem Titel und der Beschreibung dieser Seite zusammenhängen. Falls der erste Versuch nicht überzeugt, fügen Sie mehr Kontext in den Platzhalter ein oder ergänzen Sie Anweisungen wie »antworte Schritt für Schritt« oder »gib Beispiele«."
   },
   "faq.scenario.q": {
     "message": "Für welche Szenarien eignet sich dieser Prompt?"
   },
   "faq.tips.a": {
-    "message": "Erstens: Mach den [Platzhalter] konkreter (Stil, Länge, Fachgebiet ergänzen). Zweitens: Antworte auf unbefriedigende Ausgaben mit »mach es noch X«. Drittens: Vergleiche die Ergebnisse verschiedener Modelle wie Claude / ChatGPT / Gemini."
+    "message": "Erstens: Machen Sie den [Platzhalter] konkreter (Stil, Länge, Fachgebiet ergänzen). Zweitens: Antworten Sie auf unbefriedigende Ausgaben mit »mach es noch X«. Drittens: Vergleichen Sie die Ergebnisse verschiedener Modelle wie Claude / ChatGPT / Gemini."
   },
   "faq.tips.q": {
     "message": "Wie kann ich die Qualität der Antwort verbessern?"
   },
   "faq.usage.a": {
-    "message": "Kopiere den Prompt, ersetze den [Platzhalter] in eckigen Klammern durch deinen eigenen Text und füge ihn in ChatGPT, Claude, Gemini, DeepSeek, Qwen oder eine andere KI ein, die natürliche Sprache versteht."
+    "message": "Kopieren Sie den Prompt, ersetzen Sie den [Platzhalter] in eckigen Klammern durch Ihren eigenen Text und fügen Sie ihn in ChatGPT, Claude, Gemini, DeepSeek, Qwen oder eine andere KI ein, die natürliche Sprache versteht."
   },
   "faq.usage.q": {
     "message": "Wie verwende ich diesen Prompt?"
@@ -216,7 +216,7 @@
     "message": "Offener Kanal"
   },
   "feedback.subtitle": {
-    "message": "Bug-Reports, Feature-Wünsche, Nutzungsfragen—jede Stimme willkommen"
+    "message": "Bug-Reports, Feature-Wünsche, Nutzungsfragen – jede Stimme ist willkommen"
   },
   "feedback.title": {
     "message": "Feedback & Vorschläge"
@@ -243,7 +243,7 @@
     "message": "{tools} und mehr"
   },
   "homepage.description": {
-    "message": "Frustriert über irrelevante KI-Antworten? AiShort bietet praktische Vorlagen für Schreiben, Programmieren und Übersetzen. Ein-Klick-Kopie für doppelte Effizienz!"
+    "message": "Frustriert über irrelevante KI-Antworten? AiShort bietet praktische Vorlagen für Schreiben, Programmieren und Übersetzen. Mit einem Klick kopieren – für doppelte Effizienz!"
   },
   "homepage.slogan": {
     "message": "Kuratierte KI-Prompts, mit einem Klick einsatzbereit"
@@ -255,19 +255,19 @@
     "message": "Prompt kopieren"
   },
   "howto.step1.text": {
-    "message": "Kopiere die Prompt-Vorlage in die Zwischenablage."
+    "message": "Kopieren Sie die Prompt-Vorlage in die Zwischenablage."
   },
   "howto.step2.name": {
     "message": "Platzhalter anpassen"
   },
   "howto.step2.text": {
-    "message": "Ersetze die [Platzhalter]-Abschnitte durch deinen konkreten Inhalt."
+    "message": "Ersetzen Sie die [Platzhalter]-Abschnitte durch Ihren konkreten Inhalt."
   },
   "howto.step3.name": {
     "message": "An die KI senden"
   },
   "howto.step3.text": {
-    "message": "Füge in ChatGPT, Claude, Gemini, DeepSeek oder eine andere KI-Oberfläche ein und führe sie aus."
+    "message": "Fügen Sie in ChatGPT, Claude, Gemini, DeepSeek oder eine andere KI-Oberfläche ein und führen Sie ihn aus."
   },
   "input.newPassword": {
     "message": "Bitte geben Sie ein neues Passwort ein"
@@ -309,7 +309,7 @@
     "message": "Gold"
   },
   "level.newcomer": {
-    "message": "Neuling-Forscher"
+    "message": "Neuling"
   },
   "level.platinum": {
     "message": "Platin"
@@ -390,10 +390,10 @@
     "message": "Willkommen zurück"
   },
   "message.addFavorite.error": {
-    "message": "Hinzufügen zu Favoriten fehlgeschlagen, bitte versuchen Sie es später erneut"
+    "message": "Hinzufügen zu den Favoriten fehlgeschlagen, bitte versuchen Sie es später erneut"
   },
   "message.addFavorite.success": {
-    "message": "Zu Favoriten hinzugefügt"
+    "message": "Zu den Favoriten hinzugefügt"
   },
   "message.addPrompt.error": {
     "message": "Prompt-Einreichung fehlgeschlagen, bitte versuchen Sie es später erneut"
@@ -408,7 +408,7 @@
     "message": "Cache leeren fehlgeschlagen, bitte versuchen Sie es später erneut"
   },
   "message.cannotFavorOwn": {
-    "message": "Eigene Prompts können nicht zu Favoriten hinzugefügt werden"
+    "message": "Eigene Prompts können nicht zu den Favoriten hinzugefügt werden"
   },
   "message.convertToPrivate.error": {
     "message": "Umwandlung fehlgeschlagen, bitte später erneut versuchen"
@@ -489,16 +489,16 @@
     "message": "Abmelden bestätigen"
   },
   "message.noComments": {
-    "message": "Noch keine Kommentare, sei der Erste, der kommentiert"
+    "message": "Noch keine Kommentare, Seien Sie der Erste, der kommentiert"
   },
   "message.noFavorites": {
-    "message": "Noch keine Favoriten, entdecken Sie Prompts die Ihnen gefallen"
+    "message": "Noch keine Favoriten, entdecken Sie Prompts, die Ihnen gefallen"
   },
   "message.noPrompts": {
     "message": "Noch keine Prompts, erstellen Sie einen"
   },
   "message.noSpaceItems": {
-    "message": "Noch nichts hier — erstelle einen Prompt oder favorisiere welche"
+    "message": "Noch nichts hier — erstellen Sie einen Prompt oder favorisieren Sie welche"
   },
   "message.orderSaved": {
     "message": "Anordnung gespeichert"
@@ -507,7 +507,7 @@
     "message": "Speichern der Anordnung fehlgeschlagen, bitte versuchen Sie es später erneut"
   },
   "message.postComment.error": {
-    "message": "Kommentar konnte nicht gesendet werden. Bitte versuche es später erneut."
+    "message": "Kommentar konnte nicht gesendet werden. Bitte versuchen Sie es später erneut."
   },
   "message.removeFavorite.confirm.content": {
     "message": "Sind Sie sicher, dass Sie diesen Prompt aus den Favoriten entfernen möchten?"
@@ -516,10 +516,10 @@
     "message": "Favorit entfernen"
   },
   "message.removeFavorite.error": {
-    "message": "Entfernen aus Favoriten fehlgeschlagen, bitte versuchen Sie es später erneut"
+    "message": "Entfernen aus den Favoriten fehlgeschlagen, bitte versuchen Sie es später erneut"
   },
   "message.removeFavorite.success": {
-    "message": "Aus Favoriten entfernt"
+    "message": "Aus den Favoriten entfernt"
   },
   "message.resetPassword.error": {
     "message": "Passwort-Zurücksetzen fehlgeschlagen, bitte versuchen Sie es später erneut"
@@ -537,7 +537,7 @@
     "message": "Passwort geändert"
   },
   "message.success.passwordlessLink": {
-    "message": "Link zur passwortlosen Anmeldung wurde an Ihre E-Mail gesendet"
+    "message": "Der Link zur passwortlosen Anmeldung wurde an Ihre E-Mail-Adresse gesendet"
   },
   "message.success.register": {
     "message": "Konto erstellt"
@@ -558,7 +558,7 @@
     "message": "Cache leeren?"
   },
   "modal.clearCache.warning": {
-    "message": "Das Leeren lädt alle Daten neu."
+    "message": "Nach dem Leeren werden alle Daten neu geladen."
   },
   "modal.editPrompt.title": {
     "message": "Prompt bearbeiten"
@@ -618,7 +618,7 @@
     "message": "Meine Sammlung"
   },
   "noResults.description": {
-    "message": "Versuche ein anderes Stichwort oder entferne die Tag-Filter"
+    "message": "Versuchen Sie ein anderes Stichwort oder entfernen Sie die Tag-Filter"
   },
   "noResults.title": {
     "message": "Keine passenden Prompts gefunden"
@@ -786,7 +786,7 @@
     "message": "Praktisches Wissen und Problemlösungen für den Alltag"
   },
   "showcase.tag.life.label": {
-    "message": "Lebenslexikon"
+    "message": "Alltagswissen"
   },
   "showcase.tag.living.description": {
     "message": "Fitnessanleitung, Ernährungsberatung, Kochtipps, Make-up-Styling und andere Lebensdienstleistungen"
@@ -798,7 +798,7 @@
     "message": "Kreativität, kritisches Denken und logisches Schlussfolgern anregen"
   },
   "showcase.tag.mind.label": {
-    "message": "Denkttraining"
+    "message": "Denktraining"
   },
   "showcase.tag.music.description": {
     "message": "Musikkomposition, Musiktheorie lernen und Werkbetrachtung"
@@ -913,7 +913,7 @@
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
+    "message": "Dieser Autor hat noch keine Beiträge verfasst.",
     "description": "The text for authors with 0 blog post"
   },
   "theme.blog.author.pageTitle": {
@@ -921,11 +921,11 @@
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
+    "message": "Autoren",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View all authors",
+    "message": "Alle Autoren ansehen",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.paginator.navAriaLabel": {
@@ -941,39 +941,39 @@
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.blog.post.paginator.navAriaLabel": {
-    "message": "Blog Post Seiten Navigation",
+    "message": "Navigation der Blogbeitragsseite",
     "description": "The ARIA label for the blog posts pagination"
   },
   "theme.blog.post.paginator.newerPost": {
-    "message": "Neuer Post",
+    "message": "Neuerer Beitrag",
     "description": "The blog post button label to navigate to the newer/previous post"
   },
   "theme.blog.post.paginator.olderPost": {
-    "message": "Älterer Post",
+    "message": "Älterer Beitrag",
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.post.plurals": {
-    "message": "One post|{count} posts",
+    "message": "1 Beitrag|{count} Beiträge",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
+    "message": "1 Min. Lesezeit|{readingTime} Min. Lesezeit",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
-    "message": "Read more",
+    "message": "Weiterlesen",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
+    "message": "Mehr über {title} lesen",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
+    "message": "Navigation der neuesten Blogbeiträge",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} tagged with \"{tagName}\"",
+    "message": "{nPosts} verschlagwortet mit \"{tagName}\"",
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
@@ -1049,7 +1049,7 @@
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
-    "message": "Dokumentation Seiten",
+    "message": "Dokumentationsseiten",
     "description": "The ARIA label for the docs pagination"
   },
   "theme.docs.paginator.next": {
@@ -1093,14 +1093,14 @@
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "Ein doc getaggt|{count} docs getaggt",
+    "message": "Ein Dokument getaggt|{count} Dokumente getaggt",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.versionBadge.label": {
     "message": "Version: {versionLabel}"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "letzte Version",
+    "message": "aktuellste Version",
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
@@ -1168,7 +1168,7 @@
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Hauptseite",
+    "message": "Hauptnavigation",
     "description": "The ARIA label for the main navigation"
   },
   "theme.NotFound.p1": {
@@ -1209,16 +1209,16 @@
     "message": "Benutzerinfo"
   },
   "unavailable.unshared": {
-    "message": "Autor hat das Teilen beendet"
+    "message": "Der Autor hat die Freigabe aufgehoben"
   },
   "unavailable.unsharedNoCache": {
-    "message": "Autor hat das Teilen beendet und kein lokaler Cache verfügbar"
+    "message": "Der Autor hat die Freigabe aufgehoben, und es ist kein lokaler Cache verfügbar"
   },
   "userPage.level.maxReached": {
     "message": "MAX REACHED"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared"
+    "message": "geteilt"
   },
   "userPage.level.specLabel": {
     "message": "LEVEL"
@@ -1230,7 +1230,7 @@
     "message": "Sie müssen den Nutzungsbedingungen und der Datenschutzrichtlinie vor der Nutzung zustimmen"
   },
   "validation.comment.maxLength": {
-    "message": "Der Kommentar darf 2000 Zeichen nicht überschreiten"
+    "message": "Der Kommentar darf 2.000 Zeichen nicht überschreiten"
   },
   "validation.comment.required": {
     "message": "Bitte geben Sie einen Kommentar ein"
@@ -1266,7 +1266,7 @@
     "message": "Bitte geben Sie eine Antwort ein"
   },
   "validation.username.required": {
-    "message": "Bitte geben Sie Benutzername oder registrierte E-Mail ein"
+    "message": "Bitte geben Sie Ihren Benutzernamen oder Ihre registrierte E-Mail-Adresse ein"
   },
   "vote.downvote.alreadyVoted": {
     "message": "Sie haben diesen Prompt in dieser Sitzung bereits mit „Gefällt mir nicht“ bewertet."
@@ -1296,13 +1296,13 @@
     "message": "Anmeldung läuft…"
   },
   "auth.callback.workingHint": {
-    "message": "Lass diese Seite offen – du wirst gleich zur Startseite zurückgeleitet."
+    "message": "Lassen Sie diese Seite offen – Sie werden gleich zur Startseite zurückgeleitet."
   },
   "auth.callback.failed": {
     "message": "Anmeldung nicht abgeschlossen"
   },
   "auth.callback.failedHint": {
-    "message": "Der Anmeldelink ist möglicherweise abgelaufen oder wurde bereits verwendet. Geh zurück zur Startseite und melde dich erneut an."
+    "message": "Der Anmeldelink ist möglicherweise abgelaufen oder wurde bereits verwendet. Gehen Sie zurück zur Startseite und melden Sie sich erneut an."
   },
   "auth.callback.idle": {
     "message": "Hier ist keine Anmeldung offen"
@@ -1314,7 +1314,7 @@
     "message": "Zur Startseite und anmelden"
   },
   "myspace.tagManager.emptyHint": {
-    "message": "Oben einen Namen eingeben, eine Farbe wählen – fertig ist dein erster Tag."
+    "message": "Geben Sie oben einen Namen ein, wählen Sie eine Farbe – fertig ist Ihr erster Tag."
   },
   "validation.username.empty": {
     "message": "Der Benutzername darf nicht leer sein"
@@ -1323,19 +1323,19 @@
     "message": "Benutzername aktualisiert"
   },
   "message.username.updateError": {
-    "message": "Der Benutzername konnte nicht aktualisiert werden. Versuch es gleich noch einmal."
+    "message": "Der Benutzername konnte nicht aktualisiert werden. Versuchen Sie es gleich noch einmal."
   },
   "message.requestTimeout": {
-    "message": "Zeitüberschreitung der Anfrage. Versuch es erneut."
+    "message": "Zeitüberschreitung der Anfrage. Versuchen Sie es erneut."
   },
   "message.tooManyRequests": {
-    "message": "Zu viele Versuche. Versuch es gleich noch einmal."
+    "message": "Zu viele Versuche. Versuchen Sie es gleich noch einmal."
   },
   "account.signInRequired": {
-    "message": "Melde dich an, um dein Konto zu sehen"
+    "message": "Melden Sie sich an, um Ihr Konto zu sehen"
   },
   "account.signInRequiredHint": {
-    "message": "Du wirst zur Startseite geleitet – oder nutze den Button unten."
+    "message": "Sie werden zur Startseite geleitet – oder nutzen Sie den Button unten."
   },
   "myspace.tagManager.color": {
     "message": "Tag-Farbe"

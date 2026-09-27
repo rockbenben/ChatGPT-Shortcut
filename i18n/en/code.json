@@ -177,7 +177,7 @@
     "message": "Refresh local cache data"
   },
   "description.exportPrompts.short": {
-    "message": "Export as a JSON file for backup"
+    "message": "Export your prompts as a JSON backup file"
   },
   "description.importPrompts.short": {
     "message": "Import prompts and favorites from a JSON file"
@@ -213,10 +213,10 @@
     "message": "Replies usually within 24h"
   },
   "feedback.spec_label": {
-    "message": "Open channel"
+    "message": "Feedback channels"
   },
   "feedback.subtitle": {
-    "message": "Bug reports, feature requests, usage questions — every voice welcome"
+    "message": "Bug reports, feature requests, usage questions — we'd love to hear from you"
   },
   "feedback.title": {
     "message": "Feedback & suggestions"
@@ -246,7 +246,7 @@
     "message": "Curated AI prompt templates for writing, coding, and translation. One-click copy to ChatGPT, Claude, Gemini, or DeepSeek for precise, ready-to-use output."
   },
   "homepage.slogan": {
-    "message": "Curated AI prompts. One-click ready to use."
+    "message": "Curated AI prompts, ready to copy and use."
   },
   "homepage.title": {
     "message": "AI Prompt Library for ChatGPT, Claude, Gemini & DeepSeek"
@@ -258,7 +258,7 @@
     "message": "Copy the prompt template to your clipboard."
   },
   "howto.step2.name": {
-    "message": "Customize placeholders"
+    "message": "Customize the placeholders"
   },
   "howto.step2.text": {
     "message": "Replace the [placeholder] sections with your specific content."
@@ -309,7 +309,7 @@
     "message": "Gold"
   },
   "level.newcomer": {
-    "message": "Novice Explorer"
+    "message": "Newcomer"
   },
   "level.platinum": {
     "message": "Platinum"
@@ -408,7 +408,7 @@
     "message": "Couldn't clear the cache. Try again in a moment."
   },
   "message.cannotFavorOwn": {
-    "message": "Cannot favorite your own prompt"
+    "message": "You can't favorite your own prompt"
   },
   "message.convertToPrivate.error": {
     "message": "Couldn't convert the prompt. Try again in a moment."
@@ -456,7 +456,7 @@
     "message": "Prompts exported"
   },
   "message.forgotPassword.info": {
-    "message": "If you have forgotten your current password, you can reset it via email. We will send an email with a reset link to your registered email address."
+    "message": "Forgot your password? We'll email you a reset link."
   },
   "message.import.failed": {
     "message": "Couldn't import the file."
@@ -624,7 +624,7 @@
     "message": "No matching prompts found"
   },
   "placeholder.comment": {
-    "message": "Enter comment here… Markdown and HTML syntax supported"
+    "message": "Write a comment… Markdown and HTML supported"
   },
   "placeholder.confirmPassword": {
     "message": "Confirm new password"
@@ -678,10 +678,10 @@
     "message": "Source"
   },
   "prompt.tokenDanger": {
-    "message": "Prompt is very long and may be hard to share or reuse. Consider splitting."
+    "message": "The prompt is very long and may be hard to share or reuse. Consider splitting it up."
   },
   "prompt.tokenWarning": {
-    "message": "Prompt is quite long; consider shortening or splitting."
+    "message": "The prompt is quite long; consider shortening it or splitting it up."
   },
   "prompt.translation": {
     "message": "Translation"
@@ -696,7 +696,7 @@
     "message": "System"
   },
   "share.shareTo": {
-    "message": "Share to"
+    "message": "Share via"
   },
   "share.shareOn": {
     "message": "Share on {channel}"
@@ -729,7 +729,7 @@
     "message": "IT/Programming"
   },
   "showcase.tag.comments.description": {
-    "message": "Professional reviews, work evaluation, and appreciation analysis"
+    "message": "Professional reviews, work evaluation, and detailed critiques"
   },
   "showcase.tag.comments.label": {
     "message": "Review/Appraisal"
@@ -747,7 +747,7 @@
     "message": "User Shared"
   },
   "showcase.tag.doctor.description": {
-    "message": "Health consultation, disease popularization, and medical advice"
+    "message": "Health consultation, medical information, and medical advice"
   },
   "showcase.tag.doctor.label": {
     "message": "Medical Health"
@@ -765,7 +765,7 @@
     "message": "Fun Games"
   },
   "showcase.tag.interesting.description": {
-    "message": "Interesting trivia, popular science content, and fun Q&A"
+    "message": "Trivia, science explainers, and fun Q&amp;A"
   },
   "showcase.tag.interesting.label": {
     "message": "Fun Trivia"
@@ -786,7 +786,7 @@
     "message": "Practical knowledge and problem-solving for daily life"
   },
   "showcase.tag.life.label": {
-    "message": "Life Encyclopedia"
+    "message": "Everyday Life"
   },
   "showcase.tag.living.description": {
     "message": "Fitness guidance, nutritional advice, cooking tips, beauty styling, and other lifestyle services"
@@ -801,7 +801,7 @@
     "message": "Mind Training"
   },
   "showcase.tag.music.description": {
-    "message": "Music creation, music theory learning, and work appreciation"
+    "message": "Music creation, music theory, and songwriting feedback"
   },
   "showcase.tag.music.label": {
     "message": "Music & Arts"
@@ -813,7 +813,7 @@
     "message": "Education/Student"
   },
   "showcase.tag.philosophy.description": {
-    "message": "Philosophical thinking, religious culture, and life wisdom exploration"
+    "message": "Philosophical thinking, religious culture, and life wisdom"
   },
   "showcase.tag.philosophy.label": {
     "message": "Philosophy/Religion"
@@ -855,19 +855,19 @@
     "message": "Productivity Tools"
   },
   "showcase.tag.write.description": {
-    "message": "Polish article grammar, optimize expression style, and improve writing quality"
+    "message": "Polish article grammar, refine your tone and style, and improve writing quality"
   },
   "showcase.tag.write.label": {
     "message": "Writing Aid"
   },
   "showcase.usersList.noResult": {
-    "message": "No results found, try other keywords"
+    "message": "No results found. Try different keywords."
   },
   "sidebar.related": {
-    "message": "Related Prompts"
+    "message": "Related prompts"
   },
   "sort.mostUpvoted": {
-    "message": "Most upvoted"
+    "message": "Most liked"
   },
   "sort.newest": {
     "message": "Newest"
@@ -1260,7 +1260,7 @@
     "message": "Enter the prompt content"
   },
   "validation.promptTitle.required": {
-    "message": "Enter the prompt title"
+    "message": "Enter the prompt name"
   },
   "validation.replyRequired": {
     "message": "Enter a reply"
@@ -1269,7 +1269,7 @@
     "message": "Enter your username or registered email"
   },
   "vote.downvote.alreadyVoted": {
-    "message": "You already disliked this prompt in this session."
+    "message": "You've already disliked this prompt."
   },
   "vote.downvote.failed": {
     "message": "Couldn't dislike this prompt. Try again."
@@ -1281,7 +1281,7 @@
     "message": "Sign in to vote."
   },
   "vote.upvote.alreadyVoted": {
-    "message": "You already liked this prompt in this session."
+    "message": "You've already liked this prompt."
   },
   "vote.upvote.failed": {
     "message": "Couldn't like this prompt. Try again."

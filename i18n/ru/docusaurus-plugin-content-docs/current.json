@@ -1,10 +1,10 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "Новая версия",
     "description": "The label for version current"
   },
   "sidebar.docs.category.Policies": {
-    "message": "Политики",
+    "message": "Правовые документы",
     "description": "The label for category 'Policies' in sidebar 'docs'"
   },
   "sidebar.docs.category.使用指南": {
@@ -12,7 +12,7 @@
     "description": "The label for category '使用指南' in sidebar 'docs'"
   },
   "sidebar.docs.category.浏览器插件": {
-    "message": "Расширение Браузера",
+    "message": "Расширение браузера",
     "description": "The label for category '浏览器插件' in sidebar 'docs'"
   },
   "sidebar.docs.category.项目部署": {

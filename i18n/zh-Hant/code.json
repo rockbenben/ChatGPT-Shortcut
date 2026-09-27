@@ -21,7 +21,7 @@
     "message": "關閉"
   },
   "action.convertToPrivate": {
-    "message": "轉為私有"
+    "message": "轉為私密"
   },
   "action.copy": {
     "message": "複製"
@@ -66,10 +66,10 @@
     "message": "儲存"
   },
   "action.sendLink": {
-    "message": "獲取登入連結"
+    "message": "取得登入連結"
   },
   "action.sendResetEmail": {
-    "message": "發送重置郵件"
+    "message": "發送重設郵件"
   },
   "action.share": {
     "message": "分享"
@@ -117,7 +117,7 @@
     "message": "登出"
   },
   "button.resetPassword": {
-    "message": "重置密碼"
+    "message": "重設密碼"
   },
   "button.signInFree": {
     "message": "免費登入"
@@ -159,10 +159,10 @@
     "message": "載入中…"
   },
   "community.notFound": {
-    "message": "提示詞未找到"
+    "message": "找不到提示詞"
   },
   "community.notFoundDesc": {
-    "message": "該提示詞可能已被刪除或設為私有"
+    "message": "該提示詞可能已被刪除或設為私密"
   },
   "community.seoSuffix": {
     "message": "社群提示詞"
@@ -204,10 +204,10 @@
     "message": "如何使用這個提示詞？"
   },
   "feedback.description": {
-    "message": "你的反饋對我們很重要！"
+    "message": "你的回饋對我們很重要！"
   },
   "feedback.newIssue": {
-    "message": "新建 Issue"
+    "message": "新增 Issue"
   },
   "feedback.responseTime": {
     "message": "通常 24 小時內回覆"
@@ -216,10 +216,10 @@
     "message": "公開回饋"
   },
   "feedback.subtitle": {
-    "message": "Bug 回報、功能建議、使用問題——任何聲音都歡迎"
+    "message": "Bug 回報、功能建議、使用問題——任何意見都歡迎"
   },
   "feedback.title": {
-    "message": "反饋與建議"
+    "message": "回饋與建議"
   },
   "feedback.type.bug": {
     "message": "Bug 回報"
@@ -234,10 +234,10 @@
     "message": "回饋與建議"
   },
   "filter.operator.all.tip": {
-    "message": "必須同時命中所有標籤"
+    "message": "必須同時符合所有標籤"
   },
   "filter.operator.any.tip": {
-    "message": "命中任一標籤即顯示"
+    "message": "符合任一標籤即顯示"
   },
   "hero.supportedAiTools": {
     "message": "{tools} 等"
@@ -273,7 +273,7 @@
     "message": "請輸入新密碼"
   },
   "input.resetPassword.code": {
-    "message": "請輸入重置代碼"
+    "message": "請輸入重設代碼"
   },
   "input.search.placeholder": {
     "message": "寫作、翻譯…"
@@ -309,7 +309,7 @@
     "message": "黃金"
   },
   "level.newcomer": {
-    "message": "萌新探索者"
+    "message": "新手探索者"
   },
   "level.platinum": {
     "message": "鉑金"
@@ -360,7 +360,7 @@
     "message": "已有帳號？"
   },
   "login.method.code": {
-    "message": "免密登入"
+    "message": "免密碼登入"
   },
   "login.method.password": {
     "message": "密碼登入"
@@ -372,7 +372,7 @@
     "message": "還沒有帳號？"
   },
   "login.subtitle.forgotPassword": {
-    "message": "重置連結將發送至你的電子信箱"
+    "message": "重設連結將發送至你的電子信箱"
   },
   "login.subtitle.register": {
     "message": "發現、分享和創造精彩提示詞"
@@ -414,10 +414,10 @@
     "message": "轉換失敗，請稍後重試"
   },
   "message.convertToPrivate.favoriteKept": {
-    "message": "已建立私有提示詞，但原收藏未能移除，請手動刪除以免重複"
+    "message": "已建立私密提示詞，但原收藏未能移除，請手動刪除以免重複"
   },
   "message.convertToPrivate.success": {
-    "message": "已轉為私有提示詞"
+    "message": "已轉為私密提示詞"
   },
   "message.copied": {
     "message": "已複製"
@@ -435,10 +435,10 @@
     "message": "提示詞已刪除"
   },
   "message.error": {
-    "message": "處理錯誤時發生錯誤"
+    "message": "處理時發生錯誤，請稍後再試"
   },
   "message.error.forgotPassword": {
-    "message": "發送密碼重置郵件失敗，請稍後重試"
+    "message": "發送密碼重設郵件失敗，請稍後重試"
   },
   "message.error.passwordChangeFailed": {
     "message": "密碼修改失敗，請稍後重試"
@@ -456,7 +456,7 @@
     "message": "提示詞已匯出"
   },
   "message.forgotPassword.info": {
-    "message": "我們會向你的註冊電子信箱發送一封包含重置連結的郵件"
+    "message": "我們會向你的註冊電子信箱發送一封包含重設連結的郵件"
   },
   "message.import.failed": {
     "message": "匯入失敗"
@@ -522,13 +522,13 @@
     "message": "已取消收藏"
   },
   "message.resetPassword.error": {
-    "message": "密碼重置失敗，請稍後重試"
+    "message": "密碼重設失敗，請稍後重試"
   },
   "message.resetPassword.success": {
-    "message": "密碼已重置"
+    "message": "密碼已重設"
   },
   "message.success.forgotPassword": {
-    "message": "密碼重置郵件已發送"
+    "message": "密碼重設郵件已發送"
   },
   "message.success.login": {
     "message": "已登入"
@@ -588,7 +588,7 @@
     "message": "分配標籤"
   },
   "myspace.fallbackHint": {
-    "message": "未找到匹配結果，為你推薦："
+    "message": "找不到相符結果，為你推薦："
   },
   "myspace.filter.all": {
     "message": "全部"
@@ -630,7 +630,7 @@
     "message": "確認新密碼"
   },
   "placeholder.currentPassword": {
-    "message": "當前密碼"
+    "message": "目前密碼"
   },
   "placeholder.email": {
     "message": "電子信箱"
@@ -654,7 +654,7 @@
     "message": "給你的提示詞起個名字"
   },
   "placeholder.resetPassword.code": {
-    "message": "重置代碼"
+    "message": "重設代碼"
   },
   "placeholder.username": {
     "message": "使用者名稱"
@@ -678,7 +678,7 @@
     "message": "來源"
   },
   "prompt.tokenDanger": {
-    "message": "提示詞很長，不便於分享和複用，建議拆分"
+    "message": "提示詞很長，不便於分享與重複使用，建議拆分"
   },
   "prompt.tokenWarning": {
     "message": "提示詞較長，建議精簡或拆分"
@@ -774,7 +774,7 @@
     "message": "模擬命令列終端機和各類程式語言直譯器"
   },
   "showcase.tag.interpreter.label": {
-    "message": "終端機／直譯器"
+    "message": "終端機/直譯器"
   },
   "showcase.tag.language.description": {
     "message": "多語言翻譯、語言學習、文本轉換和語言識別"
@@ -825,7 +825,7 @@
     "message": "專業顧問"
   },
   "showcase.tag.seo.description": {
-    "message": "搜尋引擎最佳化、關鍵詞拓展和內容行銷"
+    "message": "搜尋引擎最佳化、關鍵字拓展和內容行銷"
   },
   "showcase.tag.seo.label": {
     "message": "SEO"
@@ -861,7 +861,7 @@
     "message": "寫作輔助"
   },
   "showcase.usersList.noResult": {
-    "message": "未找到相關結果，試試其他關鍵詞"
+    "message": "找不到相關結果，試試其他關鍵字"
   },
   "sidebar.related": {
     "message": "相關提示詞"
@@ -993,7 +993,7 @@
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
-    "message": "切換淺色/深色模式（當前為{mode}）",
+    "message": "切換淺色/深色模式（目前為{mode}）",
     "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
@@ -1029,7 +1029,7 @@
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "此頁面未列出。搜尋引擎不會對其索引，只有擁有直接連結的使用者才能訪問。",
+    "message": "此頁面未列出。搜尋引擎不會對其索引，只有擁有直接連結的使用者才能開啟。",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.unlistedBanner.title": {
@@ -1049,7 +1049,7 @@
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
-    "message": "文件選項卡",
+    "message": "文件頁面導覽",
     "description": "The ARIA label for the docs pagination"
   },
   "theme.docs.paginator.next": {
@@ -1116,11 +1116,11 @@
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "收起側邊欄分類 '{label}'",
+    "message": "收起側邊欄分類「{label}」",
     "description": "The ARIA label to collapse the sidebar category"
   },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "展開側邊欄分類 '{label}'",
+    "message": "展開側邊欄分類「{label}」",
     "description": "The ARIA label to expand the sidebar category"
   },
   "theme.ErrorPageContent.title": {
@@ -1239,7 +1239,7 @@
     "message": "請確認新密碼"
   },
   "validation.currentPassword.required": {
-    "message": "請輸入當前密碼"
+    "message": "請輸入目前密碼"
   },
   "validation.email.invalid": {
     "message": "請輸入有效的電子信箱地址"

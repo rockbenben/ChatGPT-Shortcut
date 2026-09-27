@@ -6,7 +6,7 @@
     "message": "Prompt Oluştur"
   },
   "action.backToLogin": {
-    "message": "Girişe Dön"
+    "message": "Giriş Ekranına Dön"
   },
   "action.cancel": {
     "message": "İptal"
@@ -33,7 +33,7 @@
     "message": "Sil"
   },
   "action.downvote": {
-    "message": "Beğenme"
+    "message": "Olumsuz"
   },
   "action.edit": {
     "message": "Düzenle"
@@ -57,7 +57,7 @@
     "message": "Hemen Kayıt Ol"
   },
   "action.removeFavorite": {
-    "message": "Favorilerden kaldır"
+    "message": "Favorilerden Çıkar"
   },
   "action.reply": {
     "message": "Yanıtla"
@@ -126,7 +126,7 @@
     "message": "Yorum Gönder"
   },
   "comments.aiReplying": {
-    "message": "YZ yanıtlıyor"
+    "message": "AI yanıtlıyor"
   },
   "comments.emoji.label": {
     "message": "Emoji ekle"
@@ -168,7 +168,7 @@
     "message": "Topluluk Promptları"
   },
   "community.tagline": {
-    "message": "Kullanıcıların paylaştığı AI promptları. En yeni veya en çok beğenilenlere göre sırala, ara ve filtrele; giriş yaptıktan sonra beğen ve kaydet."
+    "message": "Kullanıcıların paylaştığı AI promptları. En yeni veya en çok beğenilenlere göre sıralayın, arayın ve filtreleyin; giriş yaptıktan sonra beğenin ve kaydedin."
   },
   "community.title": {
     "message": "AI Prompt Topluluğu"
@@ -180,7 +180,7 @@
     "message": "Yedekleme için JSON dosyası olarak dışa aktar"
   },
   "description.importPrompts.short": {
-    "message": "JSON dosyasından Prompt ve favorileri içe aktar"
+    "message": "JSON dosyasından prompt ve favorileri içe aktar"
   },
   "faq.heading": {
     "message": "Sıkça Sorulan Sorular"
@@ -192,13 +192,13 @@
     "message": "Bu prompt hangi senaryolarda kullanılmalıdır?"
   },
   "faq.tips.a": {
-    "message": "Birincisi, [yer tutucu]yu daha belirgin yap (stil, uzunluk, alan ekle). İkincisi, memnun olmadığın çıktılara “daha X yap” diye yanıt ver. Üçüncüsü, Claude / ChatGPT / Gemini gibi farklı modelleri karşılaştır."
+    "message": "Birincisi, [yer tutucu]yu daha belirgin yapın (stil, uzunluk, alan ekleyin). İkincisi, memnun olmadığınız çıktılara “daha X yapın” diye yanıt verin. Üçüncüsü, Claude / ChatGPT / Gemini gibi farklı modelleri karşılaştırın."
   },
   "faq.tips.q": {
     "message": "Çıktı kalitesini nasıl artırabilirim?"
   },
   "faq.usage.a": {
-    "message": "Prompt’u kopyala, köşeli parantez içindeki [yer tutucu]yu kendi metninle değiştir, sonra ChatGPT, Claude, Gemini, DeepSeek, Qwen veya doğal dili destekleyen herhangi bir sohbet AI’sına yapıştırıp gönder."
+    "message": "Promptu kopyalayın, köşeli parantez içindeki [yer tutucu]yu kendi metninizle değiştirin, sonra ChatGPT, Claude, Gemini, DeepSeek, Qwen veya doğal dili destekleyen herhangi bir sohbet AI’sına yapıştırıp gönderin."
   },
   "faq.usage.q": {
     "message": "Bu prompt nasıl kullanılır?"
@@ -207,7 +207,7 @@
     "message": "Geri bildiriminiz bizim için çok önemli!"
   },
   "feedback.newIssue": {
-    "message": "Yeni Issue"
+    "message": "Yeni Sorun"
   },
   "feedback.responseTime": {
     "message": "Genellikle 24 saat içinde yanıt"
@@ -216,7 +216,7 @@
     "message": "Açık Kanal"
   },
   "feedback.subtitle": {
-    "message": "Hata raporları, özellik istekleri, kullanım soruları—her ses memnuniyetle karşılanır"
+    "message": "Hata raporları, özellik istekleri, kullanım soruları — her görüş memnuniyetle karşılanır"
   },
   "feedback.title": {
     "message": "Geri Bildirim ve Öneriler"
@@ -246,13 +246,13 @@
     "message": "AI'ın alakasız cevaplarından bıktınız mı? AiShort, yazma, kodlama ve çeviri için pratik prompt şablonları sunar!"
   },
   "homepage.slogan": {
-    "message": "Seçilmiş AI promptları, tek tıkla kullanıma hazır"
+    "message": "Özenle seçilmiş AI promptları, tek tıkla kullanıma hazır"
   },
   "homepage.title": {
     "message": "ChatGPT, Claude ve Gemini için AI Prompt Kütüphanesi"
   },
   "howto.step1.name": {
-    "message": "Prompt’u kopyala"
+    "message": "Promptu kopyala"
   },
   "howto.step1.text": {
     "message": "Prompt şablonunu panoya kopyala."
@@ -354,7 +354,7 @@
     "message": "Google ile giriş başarısız"
   },
   "login.google.redirecting": {
-    "message": "Google oturum açmaya yönlendiriliyor..."
+    "message": "Google ile oturum açmaya yönlendiriliyorsunuz..."
   },
   "login.login.prompt": {
     "message": "Zaten hesabınız var mı?"
@@ -417,7 +417,7 @@
     "message": "Özel prompt oluşturuldu, ancak orijinal favori kaldırılamadı. Yinelenmeyi önlemek için elle silin."
   },
   "message.convertToPrivate.success": {
-    "message": "Özel Prompt'a dönüştürüldü"
+    "message": "Özel prompta dönüştürüldü"
   },
   "message.copied": {
     "message": "Kopyalandı"
@@ -468,7 +468,7 @@
     "message": "Dosyadaki her şey zaten mevcut, içe aktarılacak bir şey yok"
   },
   "message.import.parseError": {
-    "message": "JSON ayrıştırma başarısız, lütfen dosya formatını kontrol edin"
+    "message": "JSON ayrıştırılamadı, lütfen dosya formatını kontrol edin"
   },
   "message.import.partial": {
     "message": "Bazı promptlar içe aktarıldı"
@@ -492,10 +492,10 @@
     "message": "Henüz yorum yok, ilk yorumu yapan siz olun"
   },
   "message.noFavorites": {
-    "message": "Henüz favori yok, beğendiğiniz Promptları keşfedin"
+    "message": "Henüz favori yok, beğendiğiniz promptları keşfedin"
   },
   "message.noPrompts": {
-    "message": "Henüz Prompt yok, bir tane oluşturun"
+    "message": "Henüz prompt yok, bir tane oluşturun"
   },
   "message.noSpaceItems": {
     "message": "Henüz bir şey yok — bir prompt oluştur veya favorilere ekle"
@@ -555,13 +555,13 @@
     "message": "Prompt güncellendi"
   },
   "modal.clearCache.title": {
-    "message": "Önbelleği Temizlemeyi Onayla?"
+    "message": "Önbelleği temizlemek istediğinize emin misiniz?"
   },
   "modal.clearCache.warning": {
     "message": "Temizledikten sonra, tüm veriler yeniden yüklenecektir."
   },
   "modal.editPrompt.title": {
-    "message": "Prompt'u düzenle"
+    "message": "Promptu düzenle"
   },
   "modal.forgotPassword.title": {
     "message": "Şifremi Unuttum"
@@ -648,10 +648,10 @@
     "message": "Prompt kaynağı, diğer dil sürümleri veya ek notlar (isteğe bağlı)"
   },
   "placeholder.promptRemark": {
-    "message": "Prompt'un işlevini kısaca açıklayın (isteğe bağlı)"
+    "message": "Promptun işlevini kısaca açıklayın (isteğe bağlı)"
   },
   "placeholder.promptTitle": {
-    "message": "Prompt'unuza bir isim verin"
+    "message": "Promptunuza bir isim verin"
   },
   "placeholder.resetPassword.code": {
     "message": "Sıfırlama kodu"
@@ -693,10 +693,10 @@
     "message": "Kopyala"
   },
   "share.native": {
-    "message": "Sistem"
+    "message": "Sistem ile Paylaş"
   },
   "share.shareTo": {
-    "message": "Şuraya paylaş"
+    "message": "Şununla paylaş"
   },
   "share.shareOn": {
     "message": "{channel} üzerinden paylaş"
@@ -729,7 +729,7 @@
     "message": "BT/Programlama"
   },
   "showcase.tag.comments.description": {
-    "message": "Profesyonel incelemeler, eser değerlendirmesi ve takdir analizi"
+    "message": "Profesyonel incelemeler, eser değerlendirmesi ve tahlil"
   },
   "showcase.tag.comments.label": {
     "message": "İnceleme/Değerlendirme"
@@ -747,7 +747,7 @@
     "message": "Kullanıcı Paylaşımı"
   },
   "showcase.tag.doctor.description": {
-    "message": "Sağlık danışmanlığı, hastalık bilgilendirme ve tıbbi tavsiyeler"
+    "message": "Sağlık danışmanlığı, hastalıklar hakkında bilgilendirme ve tıbbi tavsiyeler"
   },
   "showcase.tag.doctor.label": {
     "message": "Sağlık"
@@ -786,7 +786,7 @@
     "message": "Günlük yaşamda pratik bilgi ve problem çözme"
   },
   "showcase.tag.life.label": {
-    "message": "Yaşam Ansiklopedisi"
+    "message": "Yaşam Rehberi"
   },
   "showcase.tag.living.description": {
     "message": "Fitness rehberliği, beslenme tavsiyeleri, yemek ipuçları ve diğer yaşam tarzı hizmetleri"
@@ -801,7 +801,7 @@
     "message": "Zihin Eğitimi"
   },
   "showcase.tag.music.description": {
-    "message": "Müzik yaratımı, müzik teorisi öğrenimi ve eser takdiri"
+    "message": "Müzik yaratımı, müzik teorisi öğrenimi ve eser tahlili"
   },
   "showcase.tag.music.label": {
     "message": "Müzik ve Sanat"
@@ -840,7 +840,7 @@
     "message": "Tartışma becerileri, konuşma yazımı ve hitabet eğitimi"
   },
   "showcase.tag.speech.label": {
-    "message": "Tartışma/Konuşma"
+    "message": "Münazara/Konuşma"
   },
   "showcase.tag.text.description": {
     "message": "Metin işleme, kelime analizi ve dille ilgili görevler"
@@ -933,11 +933,11 @@
     "description": "The ARIA label for the blog pagination"
   },
   "theme.blog.paginator.newerEntries": {
-    "message": "Daha yeni girdiler",
+    "message": "Daha yeni yazılar",
     "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
   "theme.blog.paginator.olderEntries": {
-    "message": "Daha eski girdiler",
+    "message": "Daha eski yazılar",
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.blog.post.paginator.navAriaLabel": {
@@ -989,15 +989,15 @@
     "description": "The ARIA label for copy code blocks button"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Sözcük kaydırmayı değiştir",
+    "message": "Kelime kaydırmayı değiştir",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
-    "message": "Karanlık ve açık mod arasında geçiş yap (şu anda {mode})",
+    "message": "Koyu ve açık mod arasında geçiş yap (şu anda {mode})",
     "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "karanlık mod",
+    "message": "koyu mod",
     "description": "The name for the dark color mode"
   },
   "theme.colorToggle.ariaLabel.mode.light": {
@@ -1041,7 +1041,7 @@
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Ekmek kırıntıları",
+    "message": "İçerik yolu",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
@@ -1104,7 +1104,7 @@
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "Güncel dokümantasyon için {latestVersionLink} ({versionLabel}) bakın.",
+    "message": "Güncel dokümantasyon için {latestVersionLink} ({versionLabel}) sürümüne bakın.",
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
@@ -1124,7 +1124,7 @@
     "description": "The ARIA label to expand the sidebar category"
   },
   "theme.ErrorPageContent.title": {
-    "message": "Bu sayfa çöktü.",
+    "message": "Bu sayfada bir hata oluştu.",
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.ErrorPageContent.tryAgain": {
@@ -1144,7 +1144,7 @@
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "Son güncelleme{atDate}{byUser}",
+    "message": "Son güncelleme {atDate} {byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
@@ -1224,13 +1224,13 @@
     "message": "LEVEL"
   },
   "userPage.level.toNext": {
-    "message": "{next}'e kadar"
+    "message": "{next} puana kadar"
   },
   "validation.agreement.required": {
     "message": "Kullanmadan önce Hizmet Şartları ve Gizlilik Politikasını kabul etmelisiniz"
   },
   "validation.comment.maxLength": {
-    "message": "Yorum içeriği 2000 karakteri geçmemelidir"
+    "message": "Yorum en fazla 2.000 karakter olabilir"
   },
   "validation.comment.required": {
     "message": "Lütfen yorum içeriği girin"
@@ -1269,7 +1269,7 @@
     "message": "Lütfen kullanıcı adı veya kayıtlı e-posta girin"
   },
   "vote.downvote.alreadyVoted": {
-    "message": "Bu oturumda bu promptu zaten beğenmediniz."
+    "message": "Bu oturumda bu prompta zaten olumsuz oy verdiniz."
   },
   "vote.downvote.failed": {
     "message": "Beğenmeme kaydedilemedi. Lütfen tekrar deneyin."

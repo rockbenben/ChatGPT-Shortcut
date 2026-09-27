@@ -27,7 +27,7 @@
     "message": "Copier"
   },
   "action.copyPrompt": {
-    "message": "Copier le Prompt"
+    "message": "Copier le prompt"
   },
   "action.delete": {
     "message": "Supprimer"
@@ -87,7 +87,7 @@
     "message": "Voir les détails"
   },
   "button.clearAllCache": {
-    "message": "Effacer Tout le Cache"
+    "message": "Effacer tout le cache"
   },
   "button.clearCache": {
     "message": "Vider le cache"
@@ -99,7 +99,7 @@
     "message": "Confirmer l'effacement"
   },
   "button.export": {
-    "message": "Exporter les Données"
+    "message": "Exporter les données"
   },
   "button.exportPrompts": {
     "message": "Exporter les prompts"
@@ -156,7 +156,7 @@
     "message": "Communauté de prompts IA"
   },
   "community.loading": {
-    "message": "Chargement..."
+    "message": "Chargement…"
   },
   "community.notFound": {
     "message": "Prompt non trouvé"
@@ -171,7 +171,7 @@
     "message": "Prompts IA partagés par les utilisateurs. Triez par plus récents ou plus appréciés, recherchez et filtrez ; connectez-vous pour aimer et enregistrer."
   },
   "community.title": {
-    "message": "Communauté de Prompts IA | Découvrez et Partagez"
+    "message": "Communauté de prompts IA | Découvrez et partagez"
   },
   "description.clearCache.short": {
     "message": "Actualiser les données du cache local"
@@ -207,16 +207,16 @@
     "message": "Vos commentaires sont importants pour nous !"
   },
   "feedback.newIssue": {
-    "message": "Nouvelle issue"
+    "message": "Nouveau signalement"
   },
   "feedback.responseTime": {
-    "message": "Réponse généralement sous 24h"
+    "message": "Réponse généralement sous 24 h"
   },
   "feedback.spec_label": {
-    "message": "Canal Ouvert"
+    "message": "Canal ouvert"
   },
   "feedback.subtitle": {
-    "message": "Rapports de bugs, demandes de fonctionnalités, questions d'utilisation—chaque voix est bienvenue"
+    "message": "Rapports de bugs, demandes de fonctionnalités, questions d'utilisation : chaque retour est le bienvenu"
   },
   "feedback.title": {
     "message": "Commentaires et suggestions"
@@ -270,10 +270,10 @@
     "message": "Collez dans ChatGPT, Claude, Gemini, DeepSeek ou une autre IA conversationnelle et exécutez."
   },
   "input.newPassword": {
-    "message": "Veuillez entrer un nouveau mot de passe"
+    "message": "Veuillez saisir un nouveau mot de passe"
   },
   "input.resetPassword.code": {
-    "message": "Veuillez entrer votre code de réinitialisation"
+    "message": "Veuillez saisir votre code de réinitialisation"
   },
   "input.search.placeholder": {
     "message": "écriture, traduction…"
@@ -330,7 +330,7 @@
     "message": "Créer un prompt"
   },
   "link.communityPrompts": {
-    "message": "Prompts Communautaires"
+    "message": "Prompts communautaires"
   },
   "link.home": {
     "message": "Accueil"
@@ -354,7 +354,7 @@
     "message": "Échec de la connexion Google"
   },
   "login.google.redirecting": {
-    "message": "Redirection vers la connexion Google..."
+    "message": "Redirection vers la connexion Google…"
   },
   "login.login.prompt": {
     "message": "Déjà un compte ?"
@@ -450,7 +450,7 @@
     "message": "Échec de l'exportation, veuillez réessayer plus tard"
   },
   "message.export.noPrompts": {
-    "message": "Aucun prompt à exporter. Créez-en un ou ajoutez-en à vos favoris d'abord."
+    "message": "Aucun prompt à exporter. Commencez par en créer un ou en ajouter à vos favoris."
   },
   "message.export.success": {
     "message": "Prompts exportés"
@@ -555,13 +555,13 @@
     "message": "Prompt mis à jour"
   },
   "modal.clearCache.title": {
-    "message": "Effacer le Cache ?"
+    "message": "Effacer le cache ?"
   },
   "modal.clearCache.warning": {
     "message": "L'effacement rechargera toutes les données."
   },
   "modal.editPrompt.title": {
-    "message": "Modifier le Prompt"
+    "message": "Modifier le prompt"
   },
   "modal.forgotPassword.title": {
     "message": "Mot de passe oublié"
@@ -579,7 +579,7 @@
     "message": "Mes Prompts"
   },
   "myCollection.stats.tags": {
-    "message": "Étiquettes Personnalisées"
+    "message": "Étiquettes personnalisées"
   },
   "myCollection.stats.total": {
     "message": "Total"
@@ -600,7 +600,7 @@
     "message": "Prompts"
   },
   "myspace.manageTags": {
-    "message": "Gérer les Étiquettes"
+    "message": "Gérer les étiquettes"
   },
   "myspace.tagManager.empty": {
     "message": "Aucune étiquette personnalisée"
@@ -609,7 +609,7 @@
     "message": "Nom de l'étiquette"
   },
   "myspace.tagManager.title": {
-    "message": "Gérer les Étiquettes Personnalisées"
+    "message": "Gérer les étiquettes personnalisées"
   },
   "nav.explore": {
     "message": "Explorer"
@@ -624,7 +624,7 @@
     "message": "Aucun prompt correspondant trouvé"
   },
   "placeholder.comment": {
-    "message": "Entrez votre commentaire ici... Markdown et syntaxe HTML pris en charge"
+    "message": "Saisissez votre commentaire ici… Markdown et syntaxe HTML pris en charge"
   },
   "placeholder.confirmPassword": {
     "message": "Confirmer le nouveau mot de passe"
@@ -642,7 +642,7 @@
     "message": "Mot de passe"
   },
   "placeholder.promptContent": {
-    "message": "Entrez le contenu détaillé du prompt ici..."
+    "message": "Saisissez le contenu détaillé du prompt ici…"
   },
   "placeholder.promptNotes": {
     "message": "Source du prompt, versions dans d'autres langues ou remarques complémentaires (optionnel)"
@@ -660,7 +660,7 @@
     "message": "Nom d'utilisateur"
   },
   "placeholder.usernameOrEmail": {
-    "message": "Nom d'utilisateur/Email"
+    "message": "Nom d'utilisateur ou adresse e-mail"
   },
   "prompt.authorNote": {
     "message": "Note de l'auteur"
@@ -913,7 +913,7 @@
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
+    "message": "Cet auteur n'a pas encore écrit d'article.",
     "description": "The text for authors with 0 blog post"
   },
   "theme.blog.author.pageTitle": {
@@ -921,11 +921,11 @@
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
+    "message": "Auteurs",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View all authors",
+    "message": "Voir tous les auteurs",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.paginator.navAriaLabel": {
@@ -933,11 +933,11 @@
     "description": "The ARIA label for the blog pagination"
   },
   "theme.blog.paginator.newerEntries": {
-    "message": "Nouvelles entrées",
+    "message": "Articles plus récents",
     "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
   "theme.blog.paginator.olderEntries": {
-    "message": "Anciennes entrées",
+    "message": "Articles plus anciens",
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.blog.post.paginator.navAriaLabel": {
@@ -953,27 +953,27 @@
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.post.plurals": {
-    "message": "One post|{count} posts",
+    "message": "1 article|{count} articles",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
+    "message": "1 min de lecture|{readingTime} min de lecture",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
-    "message": "Read more",
+    "message": "Lire la suite",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
+    "message": "Lire la suite de l'article « {title} »",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
+    "message": "Navigation des articles récents du blog",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} tagged with \"{tagName}\"",
+    "message": "{nPosts} article(s) portant le tag « {tagName} »",
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
@@ -1089,7 +1089,7 @@
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} avec \"{tagName}\"",
+    "message": "{nDocsTagged} avec « {tagName} »",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
@@ -1192,7 +1192,7 @@
     "description": "The label of the link targeting the tag list page"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "Balises",
+    "message": "Tags",
     "description": "The title of the tag list page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
@@ -1200,7 +1200,7 @@
     "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
-    "message": "Gestion des Données"
+    "message": "Gestion des données"
   },
   "title.security": {
     "message": "Paramètres de sécurité"
@@ -1209,31 +1209,31 @@
     "message": "Informations utilisateur"
   },
   "unavailable.unshared": {
-    "message": "L'auteur a arrêté le partage"
+    "message": "L'auteur a cessé de partager"
   },
   "unavailable.unsharedNoCache": {
-    "message": "L'auteur a arrêté le partage, aucun cache local disponible"
+    "message": "L'auteur a cessé de partager ; aucune copie locale disponible"
   },
   "userPage.level.maxReached": {
     "message": "MAX REACHED"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared"
+    "message": "partagé"
   },
   "userPage.level.specLabel": {
     "message": "LEVEL"
   },
   "userPage.level.toNext": {
-    "message": "jusqu'à {next}"
+    "message": "prochain palier : {next}"
   },
   "validation.agreement.required": {
     "message": "Vous devez accepter les conditions d'utilisation et la politique de confidentialité avant d'utiliser"
   },
   "validation.comment.maxLength": {
-    "message": "Le contenu du commentaire ne doit pas dépasser 2000 caractères"
+    "message": "Le contenu du commentaire ne doit pas dépasser 2 000 caractères"
   },
   "validation.comment.required": {
-    "message": "Veuillez entrer le contenu du commentaire"
+    "message": "Veuillez saisir le contenu du commentaire"
   },
   "validation.confirmPassword.required": {
     "message": "Veuillez confirmer votre nouveau mot de passe"
@@ -1245,7 +1245,7 @@
     "message": "Veuillez entrer une adresse email valide"
   },
   "validation.email.required": {
-    "message": "Veuillez entrer votre email"
+    "message": "Veuillez saisir votre adresse e-mail"
   },
   "validation.password.length": {
     "message": "Le mot de passe doit contenir au moins 6 caractères"
@@ -1254,7 +1254,7 @@
     "message": "Les deux mots de passe ne correspondent pas"
   },
   "validation.password.required": {
-    "message": "Veuillez entrer un mot de passe"
+    "message": "Veuillez saisir un mot de passe"
   },
   "validation.promptContent.required": {
     "message": "Veuillez entrer le contenu du prompt"
