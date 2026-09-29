@@ -1,6 +1,6 @@
 # AiShort
 
-> Frustrado com respostas IA irrelevantes? AiShort oferece modelos práticos para escrita, código e tradução. Copie com um clique e duplique sua eficiência!
+> Frustrado com respostas de IA irrelevantes? AiShort oferece modelos práticos para escrita, código e tradução. Copie com um clique e duplique sua eficiência!
 
 ## Documentação
 

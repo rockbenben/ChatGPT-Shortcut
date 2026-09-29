@@ -1,6 +1,6 @@
 # AiShort
 
-> Frustriert über irrelevante KI-Antworten? AiShort bietet praktische Vorlagen für Schreiben, Programmieren und Übersetzen. Ein-Klick-Kopie für doppelte Effizienz!
+> Frustriert über irrelevante KI-Antworten? AiShort bietet praktische Vorlagen für Schreiben, Programmieren und Übersetzen. Mit einem Klick kopieren – für doppelte Effizienz!
 
 ## Dokumentation
 

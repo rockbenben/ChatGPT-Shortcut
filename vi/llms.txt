@@ -1,6 +1,6 @@
 # AiShort
 
-> Các mẫu prompt AI tuyển chọn cho viết, lập trình và dịch thuật. Sao chép một cú nhấp vào ChatGPT, Claude hoặc Gemini để có đầu ra chính xác.
+> Các mẫu prompt AI tuyển chọn cho viết, lập trình và dịch thuật. Sao chép chỉ với một cú nhấp để dán vào ChatGPT, Claude hoặc Gemini để có đầu ra chính xác.
 
 ## Tài liệu
 

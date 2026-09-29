@@ -1,6 +1,6 @@
 # AiShort
 
-> Plantillas de prompts IA para escritura, código y traducción. Copia con un clic en ChatGPT, Claude, Gemini o DeepSeek para resultados precisos.
+> Plantillas de prompts de IA para escritura, código y traducción. Copia con un clic en ChatGPT, Claude, Gemini o DeepSeek para resultados precisos.
 
 ## Documentación
 
