@@ -50797,5 +50797,187 @@
         ]
       }
     }
+  },
+  "280": {
+    "zh-Hans": [
+      {
+        "q": "它会生成音频吗？",
+        "a": "不会。它只准备适合朗读的文字，语音生成由你自行选择的其他工具完成。"
+      },
+      {
+        "q": "长原文会被自动缩写吗？",
+        "a": "默认不缩写，只在明确要求时缩写。材料过长时应标明处理范围和续接位置；不能把局部输出称为全文。"
+      }
+    ],
+    "en": [
+      {
+        "q": "Does it generate audio?",
+        "a": "No. It prepares a written listening script; use a separate tool of your choice to generate speech."
+      },
+      {
+        "q": "Will it automatically shorten a long source?",
+        "a": "No shortening by default. Shorten only when explicitly requested; for oversized texts, state the scope and continuation point."
+      }
+    ],
+    "ja": [
+      {
+        "q": "音声を生成しますか？",
+        "a": "いいえ。文字の原稿を用意するだけです。音声の生成には別の任意のツールを使ってください。"
+      },
+      {
+        "q": "長い原文を自動で短くしますか？",
+        "a": "原則として短縮しません。明示的な依頼がある場合だけ短縮し、長すぎる場合は処理範囲と続きの位置を示します。"
+      }
+    ],
+    "ko": [
+      {
+        "q": "음성을 생성하나요?",
+        "a": "아니요. 글로 된 듣기 원고만 준비합니다. 음성 생성에는 별도로 선택한 도구를 사용하세요."
+      },
+      {
+        "q": "긴 원문을 자동으로 줄이나요?",
+        "a": "기본적으로 줄이지 않습니다. 명시적으로 요청할 때만 줄이며, 너무 긴 경우 처리 범위와 이어서 시작할 위치를 밝힙니다."
+      }
+    ],
+    "es": [
+      {
+        "q": "¿Genera audio?",
+        "a": "No. Prepara un guion escrito; elige otra herramienta para generar la voz."
+      },
+      {
+        "q": "¿Acorta automáticamente un original largo?",
+        "a": "No por defecto. Solo lo acorta si lo pides expresamente; si es demasiado largo, debe indicar el alcance y dónde continuar."
+      }
+    ],
+    "fr": [
+      {
+        "q": "Génère-t-il du son ?",
+        "a": "Non. Il prépare un texte à écouter ; choisissez un autre outil pour générer la voix."
+      },
+      {
+        "q": "Raccourcit-il automatiquement les longs textes ?",
+        "a": "Non par défaut. Seulement sur demande explicite ; un texte trop long exige de préciser la partie traitée et le point de reprise."
+      }
+    ],
+    "de": [
+      {
+        "q": "Erzeugt es Audio?",
+        "a": "Nein. Es erstellt ein schriftliches Hörskript; die Spracherzeugung übernimmt ein separat gewähltes Werkzeug."
+      },
+      {
+        "q": "Werden lange Quellen automatisch gekürzt?",
+        "a": "Standardmäßig nicht. Nur auf ausdrücklichen Wunsch kürzen; bei überlangen Texten Umfang und Fortsetzungsstelle nennen."
+      }
+    ],
+    "it": [
+      {
+        "q": "Genera audio?",
+        "a": "No. Prepara un copione scritto; scegli uno strumento separato per generare la voce."
+      },
+      {
+        "q": "Accorcia automaticamente testi lunghi?",
+        "a": "Non per impostazione predefinita. Solo su richiesta esplicita; per testi troppo lunghi indica l'ambito e il punto di ripresa."
+      }
+    ],
+    "ru": [
+      {
+        "q": "Он создаёт аудио?",
+        "a": "Нет. Он готовит письменный сценарий; для синтеза речи выберите отдельный инструмент."
+      },
+      {
+        "q": "Длинный источник автоматически сокращается?",
+        "a": "По умолчанию нет. Только по явной просьбе; для слишком длинного текста следует указать обработанную часть и место продолжения."
+      }
+    ],
+    "pt": [
+      {
+        "q": "Gera áudio?",
+        "a": "Não. Prepara um roteiro escrito; escolha uma ferramenta separada para gerar a voz."
+      },
+      {
+        "q": "Encurta automaticamente uma fonte longa?",
+        "a": "Não por padrão. Só mediante pedido explícito; em textos extensos, informe o alcance e onde continuar."
+      }
+    ],
+    "hi": [
+      {
+        "q": "क्या यह ऑडियो बनाता है?",
+        "a": "नहीं, यह केवल सुनने योग्य लिखित पाठ तैयार करता है; ऑडियो बनाने के लिए आप कोई अन्य टूल चुनेंगे।"
+      },
+      {
+        "q": "क्या लंबे मूल लेख को अपने-आप संक्षिप्त किया जाएगा?",
+        "a": "डिफ़ॉल्ट रूप से संक्षिप्त नहीं किया जाएगा; केवल आपके स्पष्ट अनुरोध पर ऐसा होगा। यदि लेख एक बार में पूरा संसाधित करने के लिए बहुत लंबा है, तो संसाधित हिस्से की सीमा और आगे जारी करने का स्थान बताना चाहिए।"
+      }
+    ],
+    "ar": [
+      {
+        "q": "هل يُنشئ ملفات صوتية؟",
+        "a": "لا، فهو يُعدّ نصًا للقراءة بصوت عالٍ فقط؛ وتتولى إنشاء الصوت أداة أخرى تختارها."
+      },
+      {
+        "q": "هل يختصر النص الأصلي الطويل تلقائيًا؟",
+        "a": "لا يختصر افتراضيًا؛ ولا يفعل ذلك إلا إذا طلبتَ صراحةً. وإذا كان النص أطول من أن يُعالج دفعةً واحدة، فيجب بيان نطاق المعالجة وموضع استئناف العمل."
+      }
+    ],
+    "bn": [
+      {
+        "q": "এটি কি অডিও তৈরি করে?",
+        "a": "না, এটি শুধু শ্রুতিপাঠের জন্য লেখা প্রস্তুত করে; অডিও তৈরি করবে আপনার বেছে নেওয়া অন্য একটি টুল।"
+      },
+      {
+        "q": "দীর্ঘ মূল লেখা কি স্বয়ংক্রিয়ভাবে সংক্ষিপ্ত করা হবে?",
+        "a": "ডিফল্টভাবে সংক্ষিপ্ত করা হবে না; আপনি স্পষ্টভাবে চাইলে তবেই করা হবে। একবারে পুরোটা প্রক্রিয়াকরণ করা না গেলে, কাজের পরিসর ও আবার শুরু করার স্থান জানাতে হবে।"
+      }
+    ],
+    "vi": [
+      {
+        "q": "Nó có tạo âm thanh không?",
+        "a": "Không, nó chỉ chuẩn bị bản đọc dưới dạng văn bản; việc tạo giọng đọc do một công cụ khác mà bạn chọn thực hiện."
+      },
+      {
+        "q": "Nguyên bản dài có bị tự động rút gọn không?",
+        "a": "Theo mặc định là không; chỉ rút gọn khi bạn yêu cầu rõ ràng. Nếu quá dài để xử lý toàn bộ trong một lần, cần nêu phạm vi đã xử lý và vị trí để tiếp tục."
+      }
+    ],
+    "th": [
+      {
+        "q": "สร้างเสียงได้หรือไม่?",
+        "a": "ไม่ได้ เตรียมเฉพาะบทอ่านที่เป็นข้อความเท่านั้น ส่วนการสร้างเสียงให้ใช้เครื่องมืออื่นที่คุณเลือก"
+      },
+      {
+        "q": "ต้นฉบับยาวจะถูกย่อโดยอัตโนมัติหรือไม่?",
+        "a": "ค่าเริ่มต้นจะไม่ย่อ จะย่อเฉพาะเมื่อคุณร้องขออย่างชัดเจน หากยาวเกินกว่าจะดำเนินการทั้งหมดในครั้งเดียว ควรระบุขอบเขตที่ดำเนินการและตำแหน่งที่จะเริ่มต่อ"
+      }
+    ],
+    "tr": [
+      {
+        "q": "Ses üretir mi?",
+        "a": "Hayır, yalnızca sesli okumaya uygun yazılı metin hazırlar; ses üretimini seçtiğiniz başka bir araç yapar."
+      },
+      {
+        "q": "Uzun kaynak metin otomatik olarak kısaltılır mı?",
+        "a": "Varsayılan olarak kısaltılmaz; yalnızca açıkça isterseniz kısaltılır. Metin tek seferde işlenemeyecek kadar uzunsa işlenen kapsam ve devam edilecek nokta belirtilmelidir."
+      }
+    ],
+    "ind": [
+      {
+        "q": "Apakah ini menghasilkan audio?",
+        "a": "Tidak. Ini hanya menyiapkan naskah tertulis untuk dibacakan; pembuatan suara dilakukan oleh alat lain yang Anda pilih."
+      },
+      {
+        "q": "Apakah teks sumber yang panjang akan diringkas secara otomatis?",
+        "a": "Tidak diringkas secara bawaan; peringkasan hanya dilakukan jika Anda memintanya secara tegas. Jika teks terlalu panjang untuk diolah sekaligus, cakupan pengolahan dan titik untuk melanjutkan harus dijelaskan."
+      }
+    ],
+    "zh-Hant": [
+      {
+        "q": "它會生成音頻嗎？",
+        "a": "不會。它只准備適合朗讀的文字，語音生成由你自行選擇的其他工具完成。"
+      },
+      {
+        "q": "長原文會被自動縮寫嗎？",
+        "a": "默認不縮寫，只在明確要求時縮寫。材料過長時應標明處理範圍和續接位置；不能把局部輸出稱爲全文。"
+      }
+    ]
   }
 }
