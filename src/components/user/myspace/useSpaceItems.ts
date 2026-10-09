@@ -16,6 +16,12 @@ let _spaceItemsCache: {
   ref: CacheRef;
 } | null = null;
 
+// 共享的空标签数组（装的是标签 id）。缺席时不能每次重建都发一个 fresh []：
+// 下面 setSpaceItems 的引用守卫要逐项比 `p.customTags === n.customTags`，fresh [] 让这一项
+// 永不成立，守卫就白写了（N 行照旧全重渲）。顺带省下每项一个数组分配。
+// 冻结只是防止有人就地 push 这份共享常量。
+const EMPTY_TAGS: readonly string[] = Object.freeze([]);
+
 interface UseSpaceItemsParams {
   userAuth: any;
   currentLanguage: string;
@@ -145,18 +151,45 @@ export function useSpaceItems({ userAuth, currentLanguage, onDataLoaded, message
               source: item.source,
               sourceId: item.id,
               data: detailData,
-              customTags: item.tags || [],
+              customTags: item.tags || EMPTY_TAGS,
             };
           })
           .filter(Boolean);
 
         if (isMounted) {
-          setSpaceItems(allItems);
+          // 只有内容真变了才换引用。
+          //
+          // 收藏一次会让 userAuth.data.items 里那一项的 updatedAt 变，于是 hash 失配、
+          // 走不进上面「完全相同」的短路分支；若此时无条件 setSpaceItems(allItems)，
+          // 整份数组（每一项都是新对象字面量）都会换掉，SpaceItemRow 的 React.memo
+          // 对【全部 N 行】失效 —— 一次收藏重渲整张列表，与实际只变了 1 条无关。
+          //
+          // isSilentRefresh 压住的是骨架屏，不是重建；这里补的是后者。
+          // 逐项比 id/type/source/sourceId/data 引用/customTags：这 6 项就是上面构造对象的全部
+          // 字段，所以"全部相等 → 返回 prev"不可能藏住真实变化。detailData 来自 getPrompts 的
+          // 内存缓存层（cache.js 的 memCache 命中返回原引用），内容没变时就是同一引用。
+          const isSameItems = (other: any[]) =>
+            other.length === allItems.length &&
+            other.every(
+              (p, i) =>
+                p.id === allItems[i].id &&
+                p.type === allItems[i].type &&
+                p.source === allItems[i].source &&
+                p.sourceId === allItems[i].sourceId &&
+                p.data === allItems[i].data &&
+                p.customTags === allItems[i].customTags,
+            );
+
+          // 状态这一遍必须用 functional updater：并发的标签编辑只活在 live state 里，
+          // 换成拿闭包快照比较会把它覆盖掉。
+          setSpaceItems((prev) => (isSameItems(prev) ? prev : allItems)); // 引用不变 → memo 全部命中，不触发额外渲染
           const newRef = { userId: currentUserId, hash: currentHash, structuralHash };
           lastLoadedRef.current = newRef;
 
-          // 更新模块级缓存，供下次挂载时即时显示
-          _spaceItemsCache = { items: allItems, tags: tagsArray || [], ref: newRef };
+          // 更新模块级缓存，供下次挂载时即时显示。判据与状态那一遍共用，让缓存尽量存 state 里
+          // 的那一份引用，而不是留一份"内容相同、指针不同"的孤儿；这里用闭包快照只做指针选型，
+          // 不成立就退回 allItems，写坏 state 的风险为零。
+          _spaceItemsCache = { items: isSameItems(spaceItems) ? spaceItems : allItems, tags: tagsArray || [], ref: newRef };
 
           if (onDataLoaded) {
             const actualPrompts = allItems.filter((item) => item.type === "prompt").length;

@@ -380,7 +380,10 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
   // 此时若保留 voteDeltas 再叠加，会把同一票算两次（投票→改筛选使该卡重现→显示 +2）。
   // 投票本身不改 filteredCommus 引用，故此 reset 不会清掉刚做的乐观更新。
   useEffect(() => {
-    setVoteDeltas({});
+    // 已经空的时候不要再写一个新对象：Object.is 对 {} 恒不成立，每次都写都会强推一次渲染。
+    // 这条 effect 只应在 filteredCommus 真正换引用时触发——SearchBar 侧已改为非筛选态
+    // 保持引用，所以"点一次收藏"不会再无谓地走到这里；剩下的都是筛选结果真的变了。
+    setVoteDeltas((prev) => (Object.keys(prev).length === 0 ? prev : {}));
   }, [filteredCommus]);
 
   // 预计算投票数据，避免渲染时重复创建对象

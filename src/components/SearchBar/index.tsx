@@ -80,10 +80,16 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
     let cancelled = false;
     async function fetchAndFilterUsers() {
       if (selectedTags.length === 0 && !searchName) {
+        // 保持引用：非筛选态下这些数组必须是空，但**不能每次都写新的 []**。
+        // 依赖里有 favorites.loves/commLoves，而收藏乐观更新（applyOptimistic）每次都
+        // 构造新数组 → 未开筛选时点一次 ❤️ 也会走到这里。写新引用会让 filteredCommus
+        // 换掉，HomePage 里依赖它的 setVoteDeltas({}) 再引一次渲染（对象字面量，
+        // Object.is 恒不成立）——一次点击白白多两轮渲染 + 整表协调。
+        // 返回 prev 本身即可让 React 按引用相等跳过这次更新。
         startTransition(() => {
           if (!cancelled) {
-            setFilteredCards([]);
-            setFilteredCommus([]);
+            setFilteredCards((prev) => (prev.length === 0 ? prev : []));
+            setFilteredCommus((prev) => (prev.length === 0 ? prev : []));
           }
         });
         return;
