@@ -434,17 +434,24 @@ export async function voteOnUserPrompt(promptId: number, action: "upvote" | "dow
 }
 
 /**
- * Fetch all copy counts
+ * Fetch all copy counts — 返回 { [cardId]: count }。
+ *
+ * 失败语义照 myspace.ts 的既定范式：**有缓存降级返回缓存，无缓存抛出**。
+ * 不要吞错返回 {} —— {} 是 truthy，调用方无法区分「后端挂了」和「这些卡片真的没人复制过」，
+ * 复制数是展示型数据，一旦被渲染成 0 就是错数字而不是错误提示。
+ * 接入方需自行 catch 并降级（例如不显示计数）；本函数目前没有调用点，别把「不会抛」当成前提。
  */
-export async function fetchAllCopyCounts() {
+export async function fetchAllCopyCounts(): Promise<Record<number, number>> {
+  const cacheKey = CACHE_PREFIX.COPY_COUNTS;
+  const cachedData = getCache(cacheKey) as Record<number, number> | null;
+
+  // 显式判空而非 `if (cachedData)`：服务端返回空数组时 reduce 出的是 {}，
+  // 而 {} 是 truthy，用 truthy 判空会让这个"空结果"被当成有效缓存一直复用、永不刷新。
+  if (cachedData && Object.keys(cachedData).length > 0) {
+    return cachedData;
+  }
+
   try {
-    const cacheKey = CACHE_PREFIX.COPY_COUNTS;
-    const cachedData = getCache(cacheKey);
-
-    if (cachedData) {
-      return cachedData;
-    }
-
     const response = await apiClient.get(`/cards/allcounts`);
     const counts = response.data.reduce((acc: Record<number, number>, item: { card_id: number; count: number }) => {
       acc[item.card_id] = item.count;
@@ -455,7 +462,9 @@ export async function fetchAllCopyCounts() {
     return counts;
   } catch (error) {
     console.error("Error fetching all copy counts:", error);
-    return {};
+    // 缓存读取已提到 try 之外，这里必然是网络/后端失败；不写空对象进缓存，
+    // 否则一次抖动会把「0 复制」固化 10 天（COPY_COUNTS TTL）且不重试。
+    throw error;
   }
 }
 
