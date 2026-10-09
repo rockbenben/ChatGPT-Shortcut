@@ -1,0 +1,10 @@
+{
+  "id": 16036,
+  "title": "自我介绍发言稿",
+  "description": "instruction: 帮我写一个自我介绍发言稿，context: 我要在大一第一堂课做自我介绍 ，Input data: 我的名字叫 xxx, 今年 x 岁，喜欢唱歌，性格开朗，喜欢交朋友， output indicator：以 word 形式输出，篇幅在 600 字左右。",
+  "owner": "D1212",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-09-28T03:15:09.639Z"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 16009,
+  "title": "识别扫描",
+  "description": "我想做齐博cms的域名资产扫描，我有域名包。需要让AI帮我写个脚本，如果域名没有带http或https协议的，就帮我带上。屏蔽https报错，优化脚本。速度提到最高。超高并发。保证正确率。我是16核32G的windows服务器配置。",
+  "remark": "扫描",
+  "owner": "cy715520",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-09-23T01:16:33.975Z"
+}

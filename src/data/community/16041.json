@@ -1,0 +1,10 @@
+{
+  "id": 16041,
+  "title": "ICIO框架提示词",
+  "description": "instruction：帮我写一个自我介绍发言稿，context：我要在大一第一堂课做自我介绍，Input data：我的名字叫xxx，今年xx岁，喜欢摄影，性格开朗，日常喜欢拍照和追剧，output indicator：以 word 形式输出，篇幅在 500 字左右\n",
+  "owner": "iu3o3",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-09-28T03:14:14.808Z"
+}

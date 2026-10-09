@@ -1,0 +1,10 @@
+{
+  "id": 16028,
+  "title": "html",
+  "description": "请按长期规则更新同一个 `reports/ablation_module_map.html`。\n\n本次实验：{名称}\n基线及代码版本：{填写}\n变体：{填写}\n预期改变的模块：{填写}\n实际部署目录：{填写}\n\n先沿真实执行入口核对代码，再把本次基线图、各变体图和差异结论加入现有 HTML。保留此前所有实验图。完成页面检查后，再继续本次消融实验任务。",
+  "owner": "skywal303",
+  "upvotes": 1,
+  "downvotes": 1,
+  "upvoteDifference": 0,
+  "updatedAt": "2026-09-24T00:26:17.261Z"
+}

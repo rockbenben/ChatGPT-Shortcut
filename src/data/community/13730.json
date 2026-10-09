@@ -5,8 +5,8 @@
   "remark": "对抗性挑刺——只报能复现、正常流程能触发的真 bug",
   "notes": "把项目代码当成别人的提交来 review。切换成最挑剔的审查者,专门找边界情况、异常输入、空值/类型错误、并发和资源释放问题。列出每一个潜在 bug 并给出修复方案,然后再来一轮,直到挑不出问题为止。",
   "owner": "test",
-  "upvotes": 1,
+  "upvotes": 2,
   "downvotes": 0,
-  "upvoteDifference": 1,
-  "updatedAt": "2026-06-08T11:20:35.878Z"
+  "upvoteDifference": 2,
+  "updatedAt": "2026-09-16T08:53:53.989Z"
 }

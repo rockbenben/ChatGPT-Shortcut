@@ -1,0 +1,11 @@
+{
+  "id": 16661,
+  "title": "اوامر مهمة",
+  "description": "firebase.cmd login --reauth\nfirebase.cmd deploy --only hosting\n\nتشغيل المشروع محليا\nnpm run preview\nرابط التشغيل\nhttp://localhost:4173/",
+  "remark": "اوامر مهمة",
+  "owner": "mixdream3030",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-10-09T00:30:35.173Z"
+}
