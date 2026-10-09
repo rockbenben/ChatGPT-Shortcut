@@ -20,8 +20,12 @@ if (ExecutionEnvironment.canUseDOM) {
 
 /**
  * Handle API errors uniformly
+ *
+ * `: never` 是刻意的：下方拦截器产生 rejection 完全依赖本函数抛出异常，
+ * 而 (error) => void 的签名让类型系统对此一无所知。标注后 tsc 会拒绝任何可达终点，
+ * 连 `if (!error?.response) return;` 这种最常见的早退也会直接编译报错。
  */
-const handleApiError = (error: any) => {
+const handleApiError = (error: any): never => {
   if (error?.response?.status === 401) {
     persistAuthToken(null);
     // 清除所有与该会话绑定的缓存（同步，无 dynamic import）
