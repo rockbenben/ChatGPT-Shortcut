@@ -36,11 +36,40 @@ const dataDir = path.join(root, "src", "data", "community");
 const trafficPath = path.join(root, "src", "data", "communityTraffic.json");
 const outPath = path.join(root, "src", "data", "communityStaticIds.json");
 
-function readJson(file, fallback) {
+// 抛错而非 process.exit：本模块会被 scripts/generate.mjs 在同一进程里调用，
+// 直接退出会连带杀掉后续生成器。退出码由调用方统一决定。
+const die = (msg) => {
+  throw new Error(msg);
+};
+
+/**
+ * 读 JSON 并解析。
+ *
+ * allowMissing=true 时【仅】"文件不存在"返回 fallback，"文件存在但解析失败"仍然抛错。
+ *
+ * 这条区分是必须的：communityTraffic.json 是【入库的】人工取数文件（.gitignore 里写明
+ * "必须入库，重新生成需要人工去 Search Console 后台导出"，不是派生物）。若把损坏也当成
+ * "没有数据"，一个逗号就能让全部有真实搜索流量的社区页被挤出静态页、改由赞数补足：
+ *   - 退出码 0，CI 全绿，部署成功，sitemap 正常生成
+ *   - 日志会打印 "0 有流量" —— 数字本身很扎眼，但没人盯构建日志里的这个数
+ *   - 真正的损失是上线后 SEO 静默退化，只有 Search Console 数据能发现
+ * 文件不存在则是合法状态（首次拉取快照前还没有流量数据），那才是可以静默降级的。
+ *
+ * 反过来说，对【产物】 communityStaticIds.json 不适用这条：它每次都由输入完整重算，
+ * 损坏时正确的恢复方式是重写而不是报错。见 run() 里的落盘判断。
+ */
+function readJson(file, fallback, allowMissing = false) {
+  let raw;
   try {
-    return JSON.parse(fs.readFileSync(file, "utf8"));
-  } catch {
-    return fallback;
+    raw = fs.readFileSync(file, "utf8");
+  } catch (e) {
+    if (allowMissing && e.code === "ENOENT") return fallback;
+    die(`[community-select] 读取失败 ${file}: ${e.message}`);
+  }
+  try {
+    return JSON.parse(raw);
+  } catch (e) {
+    die(`[community-select] JSON 解析失败 ${file}: ${e.message}`);
   }
 }
 
@@ -56,14 +85,14 @@ export function run() {
   const corpus = new Map();
   for (const file of fs.readdirSync(dataDir)) {
     if (!/^\d+\.json$/.test(file)) continue;
-    const item = readJson(path.join(dataDir, file), null);
+    const item = readJson(path.join(dataDir, file), null, true);
     if (item && Number.isInteger(item.id)) corpus.set(item.id, item);
   }
 
   // 1) 有搜索流量的先进 —— 不看赞数。净踩与否是 sitemap 的收录取舍
   //    （见 scripts/sitemapCommunityItems.mjs），不该决定要不要预渲染：
   //    一个被踩过的页面同样有 LCP 问题，而它有流量就说明真有人在看。
-  const traffic = readJson(trafficPath, []).filter((id) => corpus.has(id));
+  const traffic = readJson(trafficPath, [], true).filter((id) => corpus.has(id));
   const selected = new Set(traffic);
 
   // 2) 剩余名额按赞数补足。这里才用赞数：没有流量数据时它是仅有的质量信号，
@@ -78,8 +107,15 @@ export function run() {
 
   const ids = [...selected].sort((a, b) => a - b);
   const next = JSON.stringify(ids) + "\n";
-  // 只在变化时落盘：否则每次构建都动这个文件，dev server 的 watcher 会跟着抖
-  if (readJson(outPath, null) === null || fs.readFileSync(outPath, "utf8") !== next) {
+  // 只在变化时落盘：否则每次构建都动这个文件，dev server 的 watcher 会跟着抖。
+  //
+  // 产物损坏时【重写而不是报错】，与输入的 fail-fast 策略相反，这是有意的：
+  // 产物每次都由上面的选品逻辑完整重算，重写就是它的正确恢复方式；而报错会让
+  // "构建失败 → 手工删文件"成为唯一出路。触发场景还特别现实——fs.writeFileSync 不是
+  // 原子的，写入途中断电/被杀就会留下截断文件，此时 fail-fast 反而把一次瞬时中断
+  // 变成需要人工介入才能恢复的构建阻塞。
+  // 所以这里只做"文件是否存在"的检查，不经过 readJson 的解析。
+  if (!fs.existsSync(outPath) || fs.readFileSync(outPath, "utf8") !== next) {
     fs.writeFileSync(outPath, next, "utf-8");
   }
 
