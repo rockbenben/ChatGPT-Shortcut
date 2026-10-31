@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Modal, Typography, Space, Button, Tooltip, Flex, Statistic } from "antd";
 import { LinkOutlined, InfoCircleOutlined, FireFilled, LikeFilled, UserOutlined, LockOutlined, CloseOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
@@ -6,6 +6,7 @@ import Link from "@docusaurus/Link";
 import { CopyButton } from "@site/src/components/CopyButton";
 import { PromptCardTag } from "./PromptCard/PromptCardTag";
 import { formatCompactNumber } from "@site/src/utils/formatters";
+import { renderPromptWithPlaceholders } from "@site/src/utils/promptRender";
 
 import { TagType } from "@site/src/data/tags";
 
@@ -37,6 +38,10 @@ const Eyebrow = ({ children }: { children: React.ReactNode }) => (
 );
 
 const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, onCancel, data }) => {
+  // 占位符高亮：prompt 正文可能上千字符，每次重渲染都要重跑一遍正则拆分 + 重建节点。
+  // useMemo 必须写在下面的 early return 之前 —— hook 数量不能随 data 有无而变。
+  const renderedPrompt = useMemo(() => renderPromptWithPlaceholders(data?.prompt || ""), [data?.prompt]);
+
   if (!data) return null;
 
   const isDataCard = !data.owner;
@@ -163,6 +168,9 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
                 {/* 复制是 modal 的英雄动作，与详情页同配重（primary）；此前 outlined small 层级偏弱 */}
                 <CopyButton text={data.prompt} trackingId={isDataCard ? data.id : undefined} variant="primary" size="middle" />
               </Flex>
+              <Typography.Text style={{ display: "block", marginBottom: 10, fontSize: 12, color: "var(--site-color-text-tertiary)" }}>
+                <Translate id="howto.step2.text">用你的具体内容替换方括号 [占位符] 部分。</Translate>
+              </Typography.Text>
               <div
                 style={{
                   flex: 1,
@@ -187,7 +195,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
                     wordBreak: "break-word",
                     margin: 0,
                   }}>
-                  {data.prompt}
+                  {renderedPrompt}
                 </Typography.Paragraph>
               </div>
             </div>

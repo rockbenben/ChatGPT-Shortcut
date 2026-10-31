@@ -101,10 +101,10 @@ const UserStatus = () => {
     () => (
       <Space wrap size="middle">
         <Button icon={viewMode === "collection" ? <BookOutlined /> : <HeartOutlined />} onClick={() => setViewMode(viewMode === "collection" ? "explore" : "collection")}>
-          <span className="hideOnSmallScreen">{viewMode === "collection" ? <Translate id="nav.explore">提示词库</Translate> : <Translate id="nav.myCollection">我的收藏</Translate>}</span>
+          <span>{viewMode === "collection" ? <Translate id="nav.explore">提示词库</Translate> : <Translate id="nav.myCollection">我的收藏</Translate>}</span>
         </Button>
         <Button icon={<EditOutlined />} onClick={() => setOpen(true)}>
-          <span className="hideOnSmallScreen">
+          <span>
             <Translate id="link.addprompt">创建提示词</Translate>
           </span>
         </Button>
@@ -132,14 +132,16 @@ const UserStatus = () => {
             </Link>
           </Space>
         </div>
-        {/* Mobile: default size, share 仅 icon 节省空间 */}
+        {/* Mobile: keep the community label visible; Space wrap handles narrow screens */}
         <div className="showOnSmallScreen">
           <Space wrap size="middle">
             <Button type="primary" icon={<LoginOutlined />} onClick={() => setOpen(true)}>
               <Translate id="button.signInFree">免费登录</Translate>
             </Button>
             <Link to="/community-prompts">
-              <Button icon={<ShareAltOutlined />} aria-label={translate({ id: "showcase.header.button", message: "浏览社区分享" })} />
+              <Button icon={<ShareAltOutlined />}>
+                <Translate id="showcase.header.button">浏览社区分享</Translate>
+              </Button>
             </Link>
           </Space>
         </div>
@@ -160,7 +162,8 @@ const UserStatus = () => {
         <Space wrap size="middle">
           {/* antd 6 弃用 size="default"（v7 将移除），等价值为 "medium" */}
           <Skeleton.Button active size="medium" style={{ width: 80 }} />
-          <Skeleton.Button active size="medium" style={{ width: 32 }} />
+          {/* 占位宽度要跟「浏览社区分享」这颗带文字的按钮走；icon-only 时代的 32px 会让 boot 占位比真实内容窄一大截 */}
+          <Skeleton.Button active size="medium" style={{ width: 120 }} />
         </Space>
       </div>
     </>

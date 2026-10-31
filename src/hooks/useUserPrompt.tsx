@@ -26,7 +26,10 @@ export const useUserPrompt = (): UseUserPromptReturn => {
         // 强制刷新，确保获取最新数据
         await refreshUserAuth();
 
-        message.success(<Translate id="message.addPrompt.success">提示词已提交</Translate>);
+        // 文案说「最前面」而不是「最底部」：服务端把新建的提示词插到 /myspace items
+        // 的**最前面**（实测：连续新建两条，第二条排在第一条前面；用户自定义拖拽顺序
+        // 之后新建的仍排最前）。写「最底部」会让用户去列表末尾找，白跑一趟。
+        message.success(<Translate id="message.addPrompt.success">提示词已提交，在「我的收藏」最前面</Translate>);
 
         // 调用成功回调（用于导航）
         if (onSuccess) {
