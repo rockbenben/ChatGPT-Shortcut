@@ -4,8 +4,8 @@ import { translate } from "@docusaurus/Translate";
 // 不通过 translate()——品牌名在所有语言保持一致
 export const SITE_NAME = "AiShort";
 
-export const DEFAULT_FAVORITE_IDS = [2, 209, 251];
-export const DEFAULT_IDS = [2, 185, 209, 251, 197, 109, 20, 1];
+export const DEFAULT_FAVORITE_IDS = [2, 209, 197];
+export const DEFAULT_IDS = [2, 209, 197, 109, 20, 1, 204, 8];
 export const ALL_IDS = [
   2, 185, 209, 251, 197, 109, 20, 1, 199, 90, 180, 232, 204, 4, 218, 41, 11, 234, 206, 196, 9, 17, 256, 8, 7, 173, 219, 210, 155, 214, 212, 56, 5, 224, 177, 220, 10, 15, 187, 266, 122, 159, 217, 80,
   94, 277, 242, 21, 238, 19, 205, 181, 171, 200, 139, 14, 13, 191, 142, 91, 49, 190, 95, 63, 132, 158, 222, 48, 221, 75, 6, 267, 16, 141, 176, 253, 18, 120, 264, 89, 182, 195, 3, 255, 152, 93, 82, 73,
@@ -13,7 +13,7 @@ export const ALL_IDS = [
   87, 157, 147, 151, 57, 175, 193, 211, 97, 261, 46, 72, 179, 74, 130, 254, 178, 150, 134, 198, 167, 66, 92, 273, 101, 88, 106, 137, 269, 203, 47, 230, 67, 39, 96, 172, 271, 235, 140, 38, 123, 144,
   240, 51, 37, 100, 274, 245, 22, 71, 78, 64, 201, 85, 248, 213, 62, 70, 58, 45, 186, 252, 99, 29, 226, 272, 207, 208, 76, 170, 133, 54, 246, 28, 86, 31, 36, 135, 153, 229, 143, 25, 168, 146, 183,
   263, 43, 154, 118, 26, 53, 111, 260, 244, 59, 247, 169, 52, 102, 30, 81, 119, 79, 166, 124, 65, 131, 27, 231, 129, 61, 148, 55, 68, 114, 107, 223, 84, 161, 110, 69, 44, 115, 136, 128, 116, 32, 164,
-  108, 60, 149, 276, 278, 165, 121, 249, 34, 117, 83, 113, 227, 33, 268, 174, 225, 104, 156, 105, 127, 279,
+  108, 60, 149, 276, 278, 165, 121, 249, 34, 117, 83, 113, 227, 33, 268, 174, 225, 104, 156, 105, 127, 279, 280,
 ];
 
 export const SLOGAN = translate({
@@ -30,22 +30,21 @@ export const SUPPORTED_AI_TOOLS = ["ChatGPT", "DeepSeek", "Claude", "Gemini"];
 export const TITLE = translate({
   id: "homepage.title",
   // 不要以 "AiShort -" 开头：Docusaurus 会自动追加 " | AiShort"（siteTitle），写了就品牌重复。
-  // 关键词式标题：模型名匹配 "ChatGPT提示词/DeepSeek提示词" 等头部中文查询；DeepSeek 为中文用户第二主力必列。
+  // 关键词式标题：模型名匹配 "ChatGPT 提示词/DeepSeek 提示词" 等头部中文查询；DeepSeek 为中文用户第二主力必列。
   message: "AI 提示词库 | ChatGPT、DeepSeek 提示词模板，一键复制",
 });
 export const DESCRIPTION = translate({
   id: "homepage.description",
-  message: "AI总是答非所问？AiShort收录论文写作、编程、翻译等场景的实用提示词模板，一键复制即可让AI精准理解指令，工作效率翻倍！",
+  message: "AI 总是答非所问？AiShort 收录论文写作、编程、翻译等场景的实用提示词模板，一键复制即可让 AI 精准理解指令，工作效率翻倍！",
 });
 
 // community-prompts
 export const COMMU_TITLE = translate({
   id: "community.title",
   // 不要以 "- AiShort..." 结尾：Docusaurus 会自动追加 " | AiShort"（siteTitle），写了就品牌重复
-  message: "AI提示词社区 | 发现与分享优质提示词",
+  message: "AI 提示词社区 | 发现与分享优质提示词",
 });
 export const COMMU_DESCRIPTION = translate({
   id: "community.description",
-  message: "想要更多实战验证的AI提示词？加入AiShort社区，发现用户分享的实用模板，交流优化技巧，共建高质量提示词资源库。",
+  message: "想要更多实战验证的 AI 提示词？加入 AiShort 社区，发现用户分享的实用模板，交流优化技巧，共建高质量提示词资源库。",
 });
-

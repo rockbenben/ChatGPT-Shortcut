@@ -44,7 +44,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(root, "src", "css", "antd.dark.css");
 const SRC = path.join(root, "src");
 
-// src/pages/prompt/ 是 genPromptPages.mjs 产出的 5022 个薄壳（gitignore，可能不存在）。
+// src/pages/prompt/ 是 genPromptPages.mjs 产出的薄壳（gitignore，可能不存在）。
 // 它们由模板生成、不会引入模板之外的 antd 组件，扫了纯属浪费。
 const SKIP_DIRS = new Set([path.join(SRC, "pages", "prompt")]);
 

@@ -7,7 +7,7 @@
  *
  * 为什么每条一个文件：src/pages/community-prompt/<id>.tsx 各自静态 import 自己那份，
  * webpack 按页拆包；合成一个大 JSON 会让每个详情页都拖上 6MB 全量数据。
- * 与 src/data/cards/ 同一套理由（那边是 5022 个 (id × locale) 文件）。
+ * 与 src/data/cards/ 同一套理由（那边是每 (id × locale) 一个文件）。
  *
  * 为什么入库而不是 gitignore：文件里的 updatedAt 就是增量比对的输入，和 src/data/cards/
  * 一样是**带状态的输入**，不是纯派生物。gitignore 掉的话每次 CI fresh clone 都要
