@@ -12,6 +12,11 @@ export interface CardData {
   description: string;
   remark?: string;
   tags?: string[];
+  // count / weight = 热度的两个来源。必须显式声明：getWeight 的入参是「全可选」的弱类型，
+  // TS 要求实参至少有一个同名属性，否则报 TS2559（has no properties in common）——
+  // 下面的索引签名 [key: string]: any 不满足弱类型检查。别当成冗余声明删掉。
+  count?: number;
+  weight?: number;
   [key: string]: any;
 }
 

@@ -1,6 +1,6 @@
 import React, { Suspense, useContext, useCallback, useMemo, useState } from "react";
-import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, App, Breadcrumb, Popover } from "antd";
-import { HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined, FileSearchOutlined } from "@ant-design/icons";
+import { Card, Typography, Space, Flex, Row, Col, Button, Modal, Skeleton, Breadcrumb, Popover } from "antd";
+import { HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined, FileSearchOutlined, WarningOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
@@ -20,11 +20,18 @@ const AdComponent = lazyOptional(() => import("@site/src/components/AdComponent"
 // 见 PromptPage 同名注释：静态 import 会把 Pagination + Form + react-markdown
 // 全链拖进 eager common chunk，每个页面都要下载。
 const Comments = lazyWithRetry(() => import("./Comments"));
+// 与社区列表页（pages/community-prompts.tsx）同一份登录表单，同样只在未登录用户点
+// 点赞/收藏时才挂载并拉 chunk。
+const LoginComponent = lazyWithRetry(() => import("./user/login"));
 
 interface CommunityPromptPageProps {
   prompt: CommunityPrompt | null;
   loading?: boolean;
   error?: Error | null;
+  /** 内容确实不存在（作者取消分享 / 已删除 / 无效 id）——与「加载失败」区分开 */
+  notFound?: boolean;
+  /** 加载失败时点「重试」触发重新拉取 */
+  onRetry?: () => void;
   onVote?: (id: number, action: "upvote" | "downvote") => void;
   /** 该条是否有构建期静态页（由 CommunityPromptDetail 算好传入），决定 canonical 形态 */
   hasStaticPage?: boolean;
@@ -45,11 +52,11 @@ const monoNum: React.CSSProperties = { fontVariantNumeric: "tabular-nums" };
 const Eyebrow = ({ children }: { children: React.ReactNode }) => <span className="comp-sheet-eyebrow">{children}</span>;
 const Dot = () => <span style={{ opacity: 0.5 }}>·</span>;
 
-function CommunityPromptPage({ prompt, loading, error, onVote, hasStaticPage }: CommunityPromptPageProps) {
-  const { userAuth } = useContext(AuthContext);
-  const { message: messageApi } = App.useApp();
+function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote, hasStaticPage }: CommunityPromptPageProps) {
+  const { userAuth, getUserAuth } = useContext(AuthContext);
   const { siteConfig, i18n } = useDocusaurusContext();
   const { toggleFavorite } = useFavorite();
+  const [loginOpen, setLoginOpen] = useState(false);
 
   // schema.org / 数字格式化都要 BCP-47：读 localeConfigs.htmlLang（覆盖 ind→id 这种历史命名）
   const bcp47Locale = toBcp47(i18n.currentLocale, i18n.localeConfigs);
@@ -73,27 +80,32 @@ function CommunityPromptPage({ prompt, loading, error, onVote, hasStaticPage }: 
   const renderedPrompt = useMemo(() => renderPromptWithPlaceholders(prompt?.description || ""), [prompt?.description]);
 
   const handleToggleFavorite = useCallback(() => {
-    if (!userAuth) {
-      messageApi.warning(translate({ id: "message.loginRequired", message: "请先登录" }));
+    // 读权威值而不是渲染态：applyAuth 经 startTransition 发布，state 会滞后一帧，
+    // 后台 SWR 刷新落地的瞬间用 userAuth 判登录会把已登录用户弹进登录框。
+    // 同 pages/community-prompts.tsx 的 vote() 写法，也与下面 isFavorite 只能用于展示同理。
+    if (!getUserAuth()) {
+      // 只 toast 是个死胡同：该页除评论框外没有登录入口，导航栏也没有，/user 会把未登录
+      // 用户弹回首页。列表页早就是弹登录框，这里与它对齐。
+      setLoginOpen(true);
       return;
     }
     if (prompt?.id) {
       // 是否已收藏由 useFavorite 内部用权威值判定，这里不能读渲染期的 isFavorite
       toggleFavorite(prompt.id, true);
     }
-  }, [userAuth, prompt?.id, toggleFavorite, messageApi]);
+  }, [getUserAuth, prompt?.id, toggleFavorite]);
 
   const handleVote = useCallback(
     (action: "upvote" | "downvote") => {
-      if (!userAuth) {
-        messageApi.warning(translate({ id: "message.loginRequired", message: "请先登录" }));
+      if (!getUserAuth()) {
+        setLoginOpen(true);
         return;
       }
       if (prompt?.id && onVote) {
         onVote(prompt.id, action);
       }
     },
-    [userAuth, prompt?.id, onVote, messageApi],
+    [getUserAuth, prompt?.id, onVote],
   );
 
   // Loading state — 与正常态共用 Card 容器，零跳变
@@ -134,8 +146,31 @@ function CommunityPromptPage({ prompt, loading, error, onVote, hasStaticPage }: 
     );
   }
 
-  // Error state
-  if (error || !prompt) {
+  // 加载失败态：内容可能真实存在（网络抖动 / 服务故障），不能冒充「未找到」，
+  // 也不能注入 noindex —— 那会把一次临时故障变成永久性的收录排除。
+  if (error) {
+    return (
+      <Layout title={translate({ id: "community.fetchError", message: "获取数据失败" })}>
+        <Row justify="center" style={{ marginTop: 24, marginBottom: 24 }}>
+          <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
+            <EmptyState
+              icon={<WarningOutlined />}
+              title={<Translate id="community.fetchError">获取数据失败</Translate>}
+              description={<Translate id="community.fetchErrorDesc">网络或服务暂时不可用，请稍后重试</Translate>}
+              action={
+                <Button type="primary" onClick={onRetry}>
+                  <Translate id="action.retry">重试</Translate>
+                </Button>
+              }
+            />
+          </Col>
+        </Row>
+      </Layout>
+    );
+  }
+
+  // 未找到态：内容确实不存在（无效 id / 已删除 / 取消分享）
+  if (notFound || !prompt) {
     return (
       <Layout title={translate({ id: "community.notFound", message: "提示词未找到" })}>
         <Head>
@@ -354,6 +389,13 @@ function CommunityPromptPage({ prompt, loading, error, onVote, hasStaticPage }: 
           </Flex>
         </Col>
       </Row>
+      {loginOpen && (
+        <Modal open={loginOpen} footer={null} onCancel={() => setLoginOpen(false)}>
+          <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
+            <LoginComponent />
+          </Suspense>
+        </Modal>
+      )}
     </Layout>
   );
 }

@@ -36,16 +36,27 @@ interface InnerProps {
   staticIds?: number[];
 }
 
+/**
+ * 本轮请求的结论：pending（还没拿到）/ ready（拿到了）/ notFound（确实不存在）/ error（拉取失败）。
+ * 区分 notFound 与 error 是必须的：两者都叫「提示词未找到」，会把一次网络抖动说成
+ * 内容被删了，还会让 noindex 误伤真实存在的页面。
+ */
+type LoadState = {
+  /** 这份结论归属的 id；没有 id 时是 "none" */
+  key: string;
+  status: "pending" | "ready" | "notFound" | "error";
+  /** 仅 status === "error" 时有意义 */
+  error?: Error;
+};
+
 function CommunityPromptDetailInner({ initialPrompt, staticIds }: InnerProps) {
   const location = useLocation();
   const { message: messageApi } = App.useApp();
-  const { userAuth } = useContext(AuthContext);
-
-  // 静态页（src/pages/community-prompt/<id>.tsx，构建期生成）把正文当 prop 传进来：
-  // SSR 与 CSR 的初始值同为这份 JSON，不存在 mismatch，正文直接进 HTML → LCP 元素到位。
-  const [prompt, setPrompt] = useState<CommunityPrompt | null>(initialPrompt ?? null);
-  const [loading, setLoading] = useState(!initialPrompt);
-  const [error, setError] = useState<Error | null>(null);
+  // 判登录用权威即时值 getUserAuth()，不用渲染期的 userAuth：
+  // applyAuth 经 startTransition 发布，state 会滞后一帧。CommunityPromptPage 里的
+  // 外层守卫已经改读 getUserAuth()，这里若还用 userAuth，两层会在那一帧里不一致 ——
+  // 外层放行、内层却拦下，登录用户收到一句「请先登录」且投票被静默丢弃。
+  const { getUserAuth } = useContext(AuthContext);
 
   // URL 解析放 useMemo 只是缓存解析结果；它不会被塞进 useState 初始值
   // （SSR location.search='' vs CSR '?id=...' 不一致会触发 hydration mismatch）
@@ -57,6 +68,32 @@ function CommunityPromptDetailInner({ initialPrompt, staticIds }: InnerProps) {
     const id = parseInt(idParam, 10);
     return Number.isInteger(id) && id > 0 ? id : null;
   }, [location.search, initialPrompt]);
+
+  // 本轮请求的结论归属的 id。渲染期拿它和当前 promptKey 比，才知道结论还能不能认。
+  const promptKey = promptId == null ? "none" : String(promptId);
+
+  // 静态页（src/pages/community-prompt/<id>.tsx，构建期生成）把正文当 prop 传进来：
+  // SSR 与 CSR 的初始值同为这份 JSON，不存在 mismatch，正文直接进 HTML → LCP 元素到位。
+  const [prompt, setPrompt] = useState<CommunityPrompt | null>(initialPrompt ?? null);
+  // 结论状态。带 key（归属的 id）而不是裸布尔，是为了让上一个 id 的结论不会泄进
+  // 下一个 id 的首帧：?id= 壳跨 id 跳转时组件实例会被复用（外层 key 恒为 "query"），
+  // 而 effect 跑在 paint 之后。那一帧会渲染「提示词未找到」并注入 noindex ——
+  // 把一次本该成功的跳转变成一次「未找到」，还可能让搜索引擎永久排除真实页面。
+  const [loadState, setLoadState] = useState<LoadState>(() => ({
+    key: promptKey,
+    status: initialPrompt ? "ready" : "pending",
+  }));
+  // 手动重试：改这个计数器触发上面的 effect 重跑
+  const [retryNonce, setRetryNonce] = useState(0);
+
+  // 渲染期推导：结论只对「当初发请求的那个 id」成立，别的 id 一律按 pending 处理。
+  const state: LoadState = loadState.key === promptKey ? loadState : { key: promptKey, status: "pending" };
+  const loading = state.status === "pending";
+  const notFound = state.status === "notFound";
+  const error = state.status === "error" ? state.error ?? null : null;
+  // 正文也按 id 校验一次：换 id 时 effect 还没跑，state 里可能还留着上一条的内容，
+  // 拿它冒充当前这条就是显示别人的提示词。
+  const shownPrompt = prompt && String(prompt.id) === promptKey ? prompt : null;
 
   // 列表页进来时已 prime 过（snapshotPrime 内部 module-level flag 保证整 SPA session 只跑一次）；
   // 直接命中详情页（搜索引擎/外链）也 prime 一次让后续 getSingleCommPrompt 走 cache 命中
@@ -71,14 +108,15 @@ function CommunityPromptDetailInner({ initialPrompt, staticIds }: InnerProps) {
 
   useEffect(() => {
     if (!promptId) {
-      setError(new Error("Invalid prompt ID"));
-      setLoading(false);
+      setLoadState({ key: promptKey, status: "notFound" });
       return;
     }
 
     if (!isRefreshOnly) {
-      setLoading(true);
-      setError(null);
+      // 已经是「同一个 id 的 pending」就别再写一遍，避免多一轮渲染。
+      // 换了 id 时 prev.key 对不上 → 写成新的 pending（渲染期推导出的结果一样，
+      // 但把 key 更新掉，后面的 ready/notFound 才知道自己属于哪个 id）。
+      setLoadState((prev) => (prev.key === promptKey && prev.status === "pending" ? prev : { key: promptKey, status: "pending" }));
     }
 
     let cancelled = false;
@@ -95,22 +133,23 @@ function CommunityPromptDetailInner({ initialPrompt, staticIds }: InnerProps) {
         // 由下次构建的 prune 清掉。
         if (data && !data._unavailable) {
           setPrompt(data);
+          setLoadState({ key: promptKey, status: "ready" });
         } else if (data?._unavailable || !isRefreshOnly) {
+          // 内容确实不存在（不是加载失败）
           setPrompt(null);
-          setError(new Error("Prompt not found"));
+          setLoadState({ key: promptKey, status: "notFound" });
         }
       } catch (err) {
         if (cancelled || isRefreshOnly) return;
-        setError(err instanceof Error ? err : new Error("Failed to fetch prompt"));
-      } finally {
-        if (!cancelled) setLoading(false);
+        // 加载失败，不是「内容不存在」：走独立的失败态（可重试），不要冒充未找到
+        setLoadState({ key: promptKey, status: "error", error: err instanceof Error ? err : new Error("Failed to fetch prompt") });
       }
     })();
 
     return () => {
       cancelled = true;
     };
-  }, [promptId, isRefreshOnly]);
+  }, [promptId, promptKey, isRefreshOnly, retryNonce]);
 
   // 本页对应的 URL 是否有静态页：静态页自己当然有；?id= 壳查选品表。
   const staticIdSet = useMemo(() => (staticIds ? new Set(staticIds) : null), [staticIds]);
@@ -121,7 +160,7 @@ function CommunityPromptDetailInner({ initialPrompt, staticIds }: InnerProps) {
 
   const handleVote = useCallback(
     async (id: number, action: "upvote" | "downvote") => {
-      if (!userAuth) {
+      if (!getUserAuth()) {
         messageApi.warning(voteLoginRequiredText());
         return;
       }
@@ -135,7 +174,8 @@ function CommunityPromptDetailInner({ initialPrompt, staticIds }: InnerProps) {
 
       // 用 updater form 写 setPrompt：await 后再读闭包里的 prompt 可能已是旧值
       // （详情页 getSingleCommPrompt SWR 刷新会替换 state）
-      const originalPrompt = prompt;
+      // 回滚基线取 shownPrompt：state 里可能还留着上一条的内容，拿它回滚会写回别人的票数。
+      const originalPrompt = shownPrompt;
       setPrompt((prev) =>
         prev && prev.id === id
           ? {
@@ -165,10 +205,10 @@ function CommunityPromptDetailInner({ initialPrompt, staticIds }: InnerProps) {
         messageApi.error(errorMessage);
       }
     },
-    [prompt, messageApi, userAuth],
+    [shownPrompt, messageApi, getUserAuth],
   );
 
-  return <CommunityPromptPage prompt={prompt} loading={loading} error={error} onVote={handleVote} hasStaticPage={hasStaticPage} />;
+  return <CommunityPromptPage prompt={shownPrompt} loading={loading} error={error} notFound={notFound} onRetry={() => setRetryNonce((n) => n + 1)} onVote={handleVote} hasStaticPage={hasStaticPage} />;
 }
 
 export default function CommunityPromptDetail({ promptShard, staticIds }: CommunityPromptDetailProps = {}) {

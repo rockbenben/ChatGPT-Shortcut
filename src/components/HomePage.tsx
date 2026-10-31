@@ -19,10 +19,11 @@ import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 
 import { App, Button, Typography, Flex, Row, Col, Card, Tooltip } from "antd";
-import { FilterOutlined, CaretDownOutlined, CaretUpOutlined, AppstoreOutlined, HeartOutlined, HeartFilled, EditOutlined, TagOutlined, CloseOutlined } from "@ant-design/icons";
+import { FilterOutlined, CaretDownOutlined, CaretUpOutlined, AppstoreOutlined, HeartOutlined, HeartFilled, EditOutlined, TagOutlined, CloseOutlined, WarningOutlined, StarFilled } from "@ant-design/icons";
 
 import ShowcaseTagSelect from "@site/src/components/ShowcaseTagSelect";
 import ShowcaseFilterToggle from "@site/src/components/ShowcaseFilterToggle";
+import { EmptyState } from "@site/src/components/EmptyState";
 
 import UserStatus from "@site/src/components/user/UserStatus";
 import SearchBar, { useFilteredPrompts, useClearFilters } from "@site/src/components/SearchBar";
@@ -87,6 +88,12 @@ const ShowcaseHeader: React.FC = () => (
         </Translate>
       </div>
     </div>
+    {/* slogan 单独一行给移动端：桌面那一行在 hideOnSmallScreen 块里（连同 h1、工具行一起藏），
+        移动端整块藏掉后就没有 tagline 了。此前这句只补在 UserStatus 的「未登录」分支里，
+        登录态移动端依然没有——同一位置两种登录态长得不一样。挪到这里两种登录态共用同一句。 */}
+    <p className="showOnSmallScreen" style={{ fontSize: 14, maxWidth: 320, margin: "0 auto 12px", lineHeight: 1.5, color: "var(--ifm-color-content-secondary)" }}>
+      {SLOGAN}
+    </p>
     <UserStatus />
   </section>
 );
@@ -169,6 +176,17 @@ interface HomeData {
 interface ShowcaseCardsProps extends HomeData {
   onOpenModal: (data: any) => void;
 }
+
+/**
+ * 占位符说明：卡片正文里的 [xxx] 是待替换的占位符（卡片列表不做高亮，高亮只在详情弹窗与详情页）。
+ * 挂在搜索框正下方 = 紧贴它描述的那一列表顶部；早前它挂在筛选行与搜索框之间，两头都不靠，
+ * 读起来像句多余的副标题。
+ */
+const PlaceholderHint: React.FC = () => (
+  <Typography.Text style={{ display: "block", marginBottom: 12, fontSize: 12, color: "var(--site-color-text-tertiary)" }}>
+    <Translate id="howto.step2.text">用你的具体内容替换方括号 [占位符] 部分。</Translate>
+  </Typography.Text>
+);
 
 const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, defaultFavorData, defaultOtherData }) => {
   const { userAuth, getUserAuth, authLoading } = useContext(AuthContext);
@@ -333,7 +351,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
     initializeData();
   }, [initializeData]);
 
-  const { filteredCommus, filteredCards, isFiltered } = useFilteredPrompts();
+  const { filteredCommus, filteredCards, isFiltered, isSearching, searchFailed, retry: retrySearch } = useFilteredPrompts();
 
   // Intersection Observer for auto-loading more cards
   const loadMoreTriggerRef = useRef<HTMLDivElement>(null);
@@ -409,11 +427,28 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
   if (isFiltered && filteredCards.length === 0 && filteredCommus.length === 0) {
     return (
       <section className="margin-top--sm margin-bottom--sm">
-        <div className="container padding-vert--md text--center">
+        <div className="container padding-vert--md">
           <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
             <SearchBar />
           </div>
-          <NoResults />
+          {isSearching ? (
+            <PromptCardSkeleton count={8} />
+          ) : searchFailed ? (
+            // 搜索失败 ≠ 没有匹配项：分开渲染，别让「没找到」顶替失败。
+            // 必须给一条出路：重新提交同一个搜索词是 no-op（SearchBar 不 push 历史），
+            // 没有重试按钮的话，失败态就是死路，用户只能刷新整页。
+            <EmptyState
+              icon={<WarningOutlined />}
+              title={<Translate id="message.loadFailed">加载数据失败，请稍后重试</Translate>}
+              action={
+                <Button type="primary" onClick={retrySearch}>
+                  <Translate id="action.retry">重试</Translate>
+                </Button>
+              }
+            />
+          ) : (
+            <NoResults />
+          )}
         </div>
       </section>
     );
@@ -428,13 +463,19 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
             <div id="favorites-section" className={styles.showcaseFavorite}>
               <div className="container">
                 <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-                  {/* 「Favorites」同 Filters：英文品牌化区块标题，全语言统一，i18n 缺失属预期 */}
+                  {/* 未登录时这里是编辑精选（DEFAULT_FAVORITE_IDS），不是用户的收藏；英文区块标题沿用品牌样式。 */}
                   <Title level={2} className="hideOnSmallScreen" style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", display: "inline-flex", alignItems: "center", gap: 10 }}>
-                    <HeartFilled aria-hidden style={{ color: "var(--site-color-svg-icon-favorite)", fontSize: 18 }} />
-                    Favorites
+                    {/* 图标要跟标题走：未登录时这块是编辑精选，配爱心会让「Featured」继续读成收藏列表 */}
+                    {isLoggedIn ? (
+                      <HeartFilled aria-hidden style={{ color: "var(--site-color-svg-icon-favorite)", fontSize: 18 }} />
+                    ) : (
+                      <StarFilled aria-hidden style={{ color: "var(--ifm-color-primary)", fontSize: 18 }} />
+                    )}
+                    {isLoggedIn ? "Favorites" : "Featured"}
                   </Title>
                   <SearchBar />
                 </div>
+                <PlaceholderHint />
                 <Row gutter={[16, 16]}>
                   {favoritePrompts.map((user, index) => (
                     <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6} className={index >= 4 ? styles.cardDeferred : undefined}>
@@ -457,6 +498,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
               <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
                 <SearchBar />
               </div>
+              <PlaceholderHint />
             </div>
           )}
           <div className="container margin-top--md">
@@ -524,7 +566,13 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
           <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
             <SearchBar />
           </div>
-          <Row gutter={[16, 16]}>
+          {isSearching ? (
+            // 搜索中：上一轮的结果还留在 filteredCards/filteredCommus 里，直接渲染就是
+            // 把上一次查询的卡片摆到新查询下面（与 community-prompts 的 contentQueryKey
+            // 同一原则）。用骨架屏占位，等新一轮结果到了再换回卡片。
+            <PromptCardSkeleton count={8} />
+          ) : (
+            <Row gutter={[16, 16]}>
             {filteredCommusWithDeltas.map((user, index) => {
               const isUserPrompt = userPromptIdSet.has(user.id);
               const isFavorite = commFavoriteIdSet.has(user.id);
@@ -575,6 +623,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
               </React.Fragment>
             ))}
           </Row>
+          )}
         </div>
       )}
     </section>
@@ -640,6 +689,9 @@ const PageHeader: React.FC<{
   const levelInfo = getLevelInfo(sharedCount);
 
   return (
+    /* 移动端整块隐藏：标题 + 副标题 + 等级徽章 + 4 项统计在窄屏会占掉大半首屏，
+       列表本身才是内容。此前 87c9d753 把这个 class 拿掉、只留标题、把徽章和统计
+       重新藏起来 —— 移动端就只剩一个没有任何信息的空标题。现已改回整块隐藏。 */
     <div style={{ marginBottom: 24 }} className="hideOnSmallScreen">
       {/* Title and Level Badge Row */}
       <Flex justify="space-between" align="center" style={{ marginBottom: 16 }}>
