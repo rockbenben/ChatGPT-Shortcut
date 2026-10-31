@@ -80,7 +80,7 @@ export function run() {
   }
 
   // ── 稳态快路径 ──
-  // 逐个读 5022 个文件比对约占 470ms，而它们是同一模板的确定性产物：
+  // 逐个读全部文件比对约占 470ms（实测 5k 量级），而它们是同一模板的确定性产物：
   // 只要「模板 + id 全集 + locale 全集」没变，且每个目录的文件名集合正好等于期望集合，
   // 内容就不可能变（这些文件已 gitignore，只由本脚本产出）。
   // 于是把指纹写进 .stamp，稳态只需 18 次 readdir + 1 次读 stamp。
@@ -128,7 +128,7 @@ export function run() {
         // 先做零分配的直接比较（稳态命中）；不等再做行尾归一。
         // 行尾归一是给**历史遗留文件**兜底：CodeUpdateHandler.py 曾经也生成这些薄壳，
         // 在 Windows 上写的是 CRLF。已有这批文件的开发机若只逐字节比，会被判定全部不一致
-        // 而一次性重写 5022 个文件，抖动 dev server 的 watcher。
+        // 而一次性重写全部文件，抖动 dev server 的 watcher。
         // 该 Python 段已删除，本脚本是唯一写入方，所以这条分支只在首次迁移时命中。
         if (current === source || current.replace(/\r\n/g, "\n") === source) continue;
       }

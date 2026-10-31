@@ -225,7 +225,7 @@ function PromptPage({ prompt, currentLanguage }) {
           paddingInline 必须等于内层 gutter 的一半：antd 的 Row gutter 是「负 margin +
           子 Col 正 padding」实现的，父级没有这 12px 抵消时 Row 会左右各溢出 12px。
           窄屏 Col 全部 xs=24 占满，右侧那 12px 直接变成整页横向滚动（360/375/390 实测都中招，
-          414 以上才因别的约束躲开）——5022 个 prompt 页全部受影响，且 CLS 报 0、构建全绿。 */}
+          414 以上才因别的约束躲开）——每个 prompt 页都受影响，且 CLS 报 0、构建全绿。 */}
       {/* 唯一没有 <main> 的页面模板 —— 首页/社区列表/反馈/我的账户都有。缺 main 时
           landmark 导航里没有主内容区，跳转链接也只能落到 Docusaurus 的兜底 div 上。
           外层 Row 自带 marginTop/marginBottom，所以不套其他页那个 margin-vert--md。 */}
