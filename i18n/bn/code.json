@@ -62,6 +62,9 @@
   "action.reply": {
     "message": "উত্তর দিন"
   },
+  "action.retry": {
+    "message": "আবার চেষ্টা করুন"
+  },
   "action.save": {
     "message": "সংরক্ষণ"
   },
@@ -151,6 +154,9 @@
   },
   "community.fetchError": {
     "message": "ডেটা আনতে ব্যর্থ"
+  },
+  "community.fetchErrorDesc": {
+    "message": "নেটওয়ার্ক বা পরিষেবা সাময়িকভাবে অনুপলব্ধ। একটু পরে আবার চেষ্টা করুন।"
   },
   "community.heading": {
     "message": "AI প্রম্পট সম্প্রদায়"
@@ -296,6 +302,15 @@
   "label.sharePrompt": {
     "message": "কমিউনিটি পেজে শেয়ার করুন — অন্যরা এটি দেখতে ও সংরক্ষণ করতে পারবে"
   },
+  "label.shareStatePublic": {
+    "message": "প্রকাশ্য: অন্যরা কমিউনিটি পৃষ্ঠায় এটি দেখতে ও পছন্দসমূহ-এ যোগ করতে পারবেন (ব্যক্তিগত করতে সম্পাদনা চাপুন)"
+  },
+  "label.shareStatePublicNoEdit": {
+    "message": "প্রকাশ্য: অন্যরা কমিউনিটি পৃষ্ঠায় এটি দেখতে ও পছন্দসমূহ-এ যোগ করতে পারবেন"
+  },
+  "label.shareStatePrivate": {
+    "message": "শুধু আপনি দেখতে পাবেন"
+  },
   "level.bronze": {
     "message": "ব্রোঞ্জ"
   },
@@ -399,7 +414,7 @@
     "message": "প্রম্পট জমা দিতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
   "message.addPrompt.success": {
-    "message": "প্রম্পট জমা দেওয়া হয়েছে"
+    "message": "প্রম্পট জমা হয়েছে — একদম আমার সংগ্রহ-এর উপরে এটি পাবেন"
   },
   "message.cache.cleared": {
     "message": "ক্যাশ সাফ করা হয়েছে"
@@ -478,9 +493,6 @@
   },
   "message.loadFailed": {
     "message": "ডেটা লোড করতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
-  },
-  "message.loginRequired": {
-    "message": "অনুগ্রহ করে প্রথমে লগইন করুন"
   },
   "message.logout.confirm.content": {
     "message": "আপনি কি নিশ্চিত যে আপনি লগআউট করতে চান?"

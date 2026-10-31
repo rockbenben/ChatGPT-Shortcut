@@ -62,6 +62,9 @@
   "action.reply": {
     "message": "Responder"
   },
+  "action.retry": {
+    "message": "Tentar novamente"
+  },
   "action.save": {
     "message": "Salvar"
   },
@@ -151,6 +154,9 @@
   },
   "community.fetchError": {
     "message": "Falha ao obter dados"
+  },
+  "community.fetchErrorDesc": {
+    "message": "A rede ou o serviço está temporariamente indisponível. Tente novamente em instantes."
   },
   "community.heading": {
     "message": "Comunidade de Prompts de IA"
@@ -296,6 +302,15 @@
   "label.sharePrompt": {
     "message": "Compartilhar na página da comunidade — outras pessoas poderão ver e favoritar"
   },
+  "label.shareStatePublic": {
+    "message": "Público: outras pessoas podem ver e favoritar na página da comunidade (use Editar para tornar privado)"
+  },
+  "label.shareStatePublicNoEdit": {
+    "message": "Público: outras pessoas podem ver e favoritar na página da comunidade"
+  },
+  "label.shareStatePrivate": {
+    "message": "Visível apenas para você"
+  },
   "level.bronze": {
     "message": "Bronze"
   },
@@ -399,7 +414,7 @@
     "message": "Falha ao enviar o prompt, tente novamente mais tarde"
   },
   "message.addPrompt.success": {
-    "message": "Prompt enviado"
+    "message": "Prompt enviado — você o encontrará no início da Minha Coleção"
   },
   "message.cache.cleared": {
     "message": "Cache limpo"
@@ -478,9 +493,6 @@
   },
   "message.loadFailed": {
     "message": "Falha ao carregar dados, tente novamente mais tarde"
-  },
-  "message.loginRequired": {
-    "message": "Por favor, faça login primeiro"
   },
   "message.logout.confirm.content": {
     "message": "Tem certeza de que deseja sair?"

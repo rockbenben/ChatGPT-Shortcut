@@ -62,6 +62,9 @@
   "action.reply": {
     "message": "返信"
   },
+  "action.retry": {
+    "message": "再試行"
+  },
   "action.save": {
     "message": "保存"
   },
@@ -151,6 +154,9 @@
   },
   "community.fetchError": {
     "message": "データの取得に失敗しました"
+  },
+  "community.fetchErrorDesc": {
+    "message": "ネットワークまたはサービスが一時的に利用できません。しばらくしてから再試行してください。"
   },
   "community.heading": {
     "message": "AI プロンプトコミュニティ"
@@ -296,6 +302,15 @@
   "label.sharePrompt": {
     "message": "コミュニティページで共有する（他のユーザーが閲覧・お気に入り登録できます）"
   },
+  "label.shareStatePublic": {
+    "message": "公開中：コミュニティページで他のユーザーが閲覧・お気に入り登録できます（「編集」で非公開にできます）"
+  },
+  "label.shareStatePublicNoEdit": {
+    "message": "公開中：コミュニティページで他のユーザーが閲覧・お気に入り登録できます"
+  },
+  "label.shareStatePrivate": {
+    "message": "自分だけに表示されています"
+  },
   "level.bronze": {
     "message": "ブロンズ"
   },
@@ -399,7 +414,7 @@
     "message": "プロンプトの送信に失敗しました。後でもう一度お試しください"
   },
   "message.addPrompt.success": {
-    "message": "プロンプトを送信しました"
+    "message": "プロンプトを送信しました。マイコレクションの一番上に表示されます"
   },
   "message.cache.cleared": {
     "message": "キャッシュをクリアしました"
@@ -478,9 +493,6 @@
   },
   "message.loadFailed": {
     "message": "データの読み込みに失敗しました。後でもう一度お試しください"
-  },
-  "message.loginRequired": {
-    "message": "先にログインしてください"
   },
   "message.logout.confirm.content": {
     "message": "本当にログアウトしますか？"

@@ -62,6 +62,9 @@
   "action.reply": {
     "message": "Reply"
   },
+  "action.retry": {
+    "message": "Try again"
+  },
   "action.save": {
     "message": "Save"
   },
@@ -151,6 +154,9 @@
   },
   "community.fetchError": {
     "message": "Couldn't load the data. Try again in a moment."
+  },
+  "community.fetchErrorDesc": {
+    "message": "The network or service is temporarily unavailable. Please try again."
   },
   "community.heading": {
     "message": "AI prompt community"
@@ -296,6 +302,15 @@
   "label.sharePrompt": {
     "message": "Share on the community page — others can browse and favorite it"
   },
+  "label.shareStatePublic": {
+    "message": "Public: others can view and favorite it on the community page (use Edit to make it private)"
+  },
+  "label.shareStatePublicNoEdit": {
+    "message": "Public: others can view and favorite it on the community page"
+  },
+  "label.shareStatePrivate": {
+    "message": "Only visible to you"
+  },
   "level.bronze": {
     "message": "Bronze"
   },
@@ -399,7 +414,7 @@
     "message": "Couldn't submit the prompt. Try again in a moment."
   },
   "message.addPrompt.success": {
-    "message": "Prompt submitted"
+    "message": "Prompt submitted — you'll find it at the top of My collection"
   },
   "message.cache.cleared": {
     "message": "Cache cleared"
@@ -478,9 +493,6 @@
   },
   "message.loadFailed": {
     "message": "Couldn't load the data. Try again in a moment."
-  },
-  "message.loginRequired": {
-    "message": "Sign in first"
   },
   "message.logout.confirm.content": {
     "message": "Are you sure you want to sign out?"
