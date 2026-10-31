@@ -1,4 +1,4 @@
-import React, { useContext, useState, useCallback, useMemo, Suspense } from "react";
+import React, { useContext, useState, useCallback, Suspense } from "react";
 import { Button, Dropdown, Space } from "antd";
 import { useViewMode } from "@site/src/contexts/ViewModeContext";
 import { UserOutlined, EditOutlined, SettingOutlined, BookOutlined, HeartOutlined } from "@ant-design/icons";
@@ -47,11 +47,11 @@ const UserStatus = () => {
     <>
       <Space wrap size="small">
         <Button icon={viewMode === "collection" ? <BookOutlined /> : <HeartOutlined />} onClick={() => setViewMode(viewMode === "collection" ? "explore" : "collection")}>
-          <span className="hideOnSmallScreen">{viewMode === "collection" ? <Translate id="nav.explore">提示词库</Translate> : <Translate id="nav.myCollection">我的收藏</Translate>}</span>
+          <span>{viewMode === "collection" ? <Translate id="nav.explore">提示词库</Translate> : <Translate id="nav.myCollection">我的收藏</Translate>}</span>
         </Button>
         <Button icon={<EditOutlined />} onClick={() => setOpen(true)}>
-          <span className="hideOnSmallScreen">
-            <Translate id="link.addprompt">添加提示词</Translate>
+          <span>
+            <Translate id="link.addprompt">创建提示词</Translate>
           </span>
         </Button>
         <Dropdown menu={{ items: menuItems }} placement="bottomRight">
