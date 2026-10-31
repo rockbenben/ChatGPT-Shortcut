@@ -37,9 +37,6 @@
 .env.development.local
 .env.test.local
 .env.production.local
-/.claude
-/.agents
-skills-lock.json
 
 npm-debug.log*
 yarn-debug.log*
@@ -49,4 +46,8 @@ CHANGELOG.md
 .superpowers
 
 /extension
+/.claude
+/.agents
+skills-lock.json
+.qoder*
 .gstack/
