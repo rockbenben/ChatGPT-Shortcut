@@ -85,6 +85,7 @@ export async function getCommPrompts(
   _sortField?: string,
   _sortOrder?: string,
   _searchTerm?: string,
+  _options?: { force?: boolean },
 ): Promise<[any[], { pagination: { page: number; pageSize: number; pageCount: number; total: number } }]> {
   // 返回类型显式写成元组而不是让 TS 推成联合数组：调用方按 result[0] / result[1] 解构，
   // 推断成 (any[] | {pagination})[] 会让每个解构点都报「属性不存在」。

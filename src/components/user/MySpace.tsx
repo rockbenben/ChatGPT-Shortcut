@@ -1,8 +1,8 @@
 import React, { useContext, useState, useCallback, useMemo, useRef } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate from "@docusaurus/Translate";
-import { App, Row, Col } from "antd";
-import { SearchOutlined, EditOutlined, AppstoreOutlined, HeartOutlined } from "@ant-design/icons";
+import { App, Button, Row, Col } from "antd";
+import { SearchOutlined, EditOutlined, AppstoreOutlined, HeartOutlined, WarningOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
 import PromptCard from "@site/src/components/PromptCard";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent } from "@dnd-kit/core";
@@ -13,6 +13,7 @@ import { getWeight } from "@site/src/utils/formatters";
 import { updateMySpaceOrder, updateCustomTags } from "@site/src/api";
 import { SUPPORTED_LANGUAGES } from "@site/src/api/homepage";
 import { AuthContext } from "../AuthContext";
+import { useViewMode } from "@site/src/contexts/ViewModeContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import PromptFormModal from "./modal/PromptFormModal";
@@ -36,6 +37,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const currentLanguage = i18n.currentLocale;
   const { userAuth, getUserAuth, syncMySpaceState, authLoading } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
+  const { setViewMode } = useViewMode();
 
   const { removeFavorite, confirmRemoveFavorite, toggleFavorite } = useFavorite();
   const { addPrompt: addUserPrompt, updatePrompt: updateUserPrompt, confirmRemovePrompt } = useUserPrompt();
@@ -50,7 +52,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const [editingPrompt, setEditingPrompt] = useState<any>(null);
 
   // 数据加载 + 模块级缓存（跨挂载即时显示）
-  const { spaceItems, setSpaceItems, customTags, setCustomTags, dataProcessing, syncSpaceCache } = useSpaceItems({ userAuth, currentLanguage, onDataLoaded, messageApi });
+  const { spaceItems, setSpaceItems, customTags, setCustomTags, dataProcessing, syncSpaceCache, fetchFailed, retry } = useSpaceItems({ userAuth, currentLanguage, onDataLoaded, messageApi });
 
   // 标签分配编辑会话（dropdown 关闭即提交）
   const { openTagDropdownItemId, setOpenTagDropdownItemId, dropdownEditRef, saveTagAssignment, handleToggleTag, spaceItemsRef } = useTagAssignment({
@@ -335,7 +337,24 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
           <Row gutter={[16, 16]}>
             {filteredItems.length === 0 ? (
               <>
-                {fallbackCards.length > 0 ? (
+                {fetchFailed && spaceItems.length === 0 ? (
+                  // 加载失败 ≠ 用户什么都没存：分开渲染，别让「暂无内容」顶替失败。
+                  // 但屏幕上已有内容时失败标记不该接管：那种情况是「后台刷新失败」，
+                  // 用户此刻在做的筛选没匹配到（或只匹配到推荐位）是事实，
+                  // 显示「加载数据失败」会把一次正常的空筛选说成故障。
+                  <Col xs={24}>
+                    <EmptyState
+                      compact
+                      icon={<WarningOutlined />}
+                      title={<Translate id="message.loadFailed">加载数据失败，请稍后重试</Translate>}
+                      action={
+                        <Button type="primary" onClick={retry}>
+                          <Translate id="action.retry">重试</Translate>
+                        </Button>
+                      }
+                    />
+                  </Col>
+                ) : fallbackCards.length > 0 ? (
                   <>
                     <Col xs={24}>
                       <EmptyState compact icon={<SearchOutlined />} title={<Translate id="myspace.fallbackHint">未找到匹配结果，为你推荐：</Translate>} />
@@ -374,9 +393,25 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
                     ) : filter === "prompt" ? (
                       <EmptyState icon={<EditOutlined />} title={<Translate id="message.noPrompts">暂无提示词，去创建一个吧</Translate>} />
                     ) : filter === "all" ? (
-                      <EmptyState icon={<AppstoreOutlined />} title={<Translate id="message.noSpaceItems">暂无内容，去创建提示词或收藏喜欢的吧</Translate>} />
+                      <EmptyState
+                        icon={<AppstoreOutlined />}
+                        title={<Translate id="message.noSpaceItems">暂无内容，去创建提示词或收藏喜欢的吧</Translate>}
+                        action={
+                          <Button onClick={() => setViewMode("explore")}>
+                            <Translate id="nav.explore">提示词库</Translate>
+                          </Button>
+                        }
+                      />
                     ) : (
-                      <EmptyState icon={<HeartOutlined />} title={<Translate id="message.noFavorites">暂无收藏，去发现喜欢的提示词吧</Translate>} />
+                      <EmptyState
+                        icon={<HeartOutlined />}
+                        title={<Translate id="message.noFavorites">暂无收藏，去发现喜欢的提示词吧</Translate>}
+                        action={
+                          <Button onClick={() => setViewMode("explore")}>
+                            <Translate id="nav.explore">提示词库</Translate>
+                          </Button>
+                        }
+                      />
                     )}
                   </Col>
                 )}
