@@ -11437,5 +11437,46 @@
       "tr": "AI İş Akışı Danışmanı",
       "ind": "Penasihat Alur Kerja AI"
     }
+  },
+  {
+    "id": 280,
+    "description": {
+      "zh": "把已有长文改成适合连续朗读的听稿，保留数字、来源、条件与不确定性。默认不缩写，来源备注与正文分开。",
+      "en": "Turn an existing report, reading note or AI draft into a spoken script while preserving numbers, attribution and uncertainty. Keep source notes separate.",
+      "ja": "既存の報告書、読書メモ、AI原稿を聞ける文章へ。数値、出典、不確実性を残し、参考資料を別にします。",
+      "ko": "기존 보고서, 독서 메모, AI 초안을 듣기 좋은 원고로 바꿉니다. 숫자, 출처, 불확실성을 보존하고 참고 자료를 분리합니다.",
+      "es": "Convierte informes, notas de lectura o borradores de IA en guiones para escuchar, conservando cifras, fuentes e incertidumbre. Separa las referencias.",
+      "fr": "Transformez un rapport, des notes de lecture ou un brouillon IA en texte à écouter, sans perdre chiffres, attributions et incertitudes. Références séparées.",
+      "de": "Berichte, Lesenotizen und KI-Entwürfe zu Hörskripten machen: Zahlen, Quellen und Unsicherheit erhalten, Referenzen getrennt ablegen.",
+      "it": "Trasforma rapporti, appunti di lettura o bozze IA in copioni da ascoltare, conservando dati, attribuzioni e incertezza. Riferimenti separati.",
+      "ru": "Преобразуйте отчёт, заметки о чтении или черновик ИИ в текст для прослушивания, сохранив числа, атрибуцию и неопределённость. Источники отдельно.",
+      "pt": "Transforme relatórios, notas de leitura ou rascunhos de IA em roteiros para ouvir, preservando números, fontes e incerteza. Referências separadas.",
+      "hi": "किसी मौजूदा लंबे लेख को सहजता से सुनने योग्य पाठ में बदलें और उसकी सभी सारभूत जानकारियाँ तथा स्रोतों का उल्लेख सुरक्षित रखें। केवल स्पष्ट अनुरोध पर संक्षिप्त करें और संसाधित हिस्से की सीमा व जाँच के लिए शेष विषय बताएँ।",
+      "ar": "أعد صياغة نص طويل موجود ليصبح طبيعيًا عند الاستماع، مع الاحتفاظ بالمعلومات الجوهرية ونسبتها إلى مصادرها. لا يُختصر النص إلا بطلب صريح، وتُبيَّن حدود المعالجة والمسائل التي تحتاج إلى التحقق.",
+      "bn": "বিদ্যমান দীর্ঘ লেখাকে স্বাভাবিকভাবে শোনা যায় এমন পাঠ্যে রূপান্তর করুন, মূল তথ্য ও উৎসের পরিচয় অক্ষুণ্ণ রেখে। কেবল স্পষ্ট অনুরোধে সংক্ষিপ্ত করুন এবং প্রক্রিয়াকরণের সীমা ও যাচাই বাকি থাকা বিষয়গুলো উল্লেখ করুন।",
+      "vi": "Chuyển văn bản dài có sẵn thành bản đọc tự nhiên khi nghe, đồng thời giữ đầy đủ thông tin có nội dung thực chất và việc ghi rõ nguồn. Chỉ rút gọn khi có yêu cầu rõ ràng, đồng thời nêu phạm vi đã xử lý và các điểm còn cần kiểm tra.",
+      "th": "ปรับข้อความยาวที่มีอยู่ให้เป็นบทอ่านที่ฟังได้อย่างเป็นธรรมชาติ โดยคงข้อมูลสำคัญและการระบุแหล่งที่มาไว้ครบถ้วน ย่อเฉพาะเมื่อร้องขออย่างชัดเจน พร้อมระบุขอบเขตที่ดำเนินการและประเด็นที่ยังต้องตรวจสอบ",
+      "tr": "Mevcut uzun metni, tüm esaslı bilgileri ve kaynak atıflarını koruyarak doğal biçimde dinlenebilen bir metne dönüştürün. Yalnızca açıkça istendiğinde kısaltın; işlenen kapsamı ve kontrol edilmesi gereken noktaları belirtin.",
+      "ind": "Ubah teks panjang yang sudah ada menjadi naskah yang alami saat didengarkan sambil mempertahankan seluruh informasi substantif dan atribusi sumbernya. Ringkas hanya jika diminta secara tegas, serta jelaskan cakupan pengolahan dan hal yang masih perlu diperiksa."
+    },
+    "title": {
+      "zh": "长文保真听稿改写",
+      "en": "Source-preserving listening script",
+      "ja": "情報を保つ長文の読み上げ原稿",
+      "ko": "정보를 보존하는 긴 글 듣기 원고",
+      "es": "Guion para escuchar sin perder información",
+      "fr": "Texte à écouter fidèle aux sources",
+      "de": "Langtexte als quellentreues Hörskript",
+      "it": "Testi lunghi da ascoltare senza perdere dati",
+      "ru": "Текст для прослушивания с сохранением фактов",
+      "pt": "Roteiro para ouvir sem perder informações",
+      "hi": "लंबे लेख का मूल के प्रति निष्ठावान, सुनने योग्य पुनर्लेखन",
+      "ar": "تحويل النصوص الطويلة إلى نص للقراءة بصوت عالٍ مع الحفاظ على الأصل",
+      "bn": "মূল তথ্য অক্ষুণ্ণ রেখে দীর্ঘ লেখা শ্রুতিপাঠের উপযোগী করা",
+      "vi": "Viết lại văn bản dài thành bản đọc dễ nghe, trung thành với nguyên bản",
+      "th": "เรียบเรียงบทความยาวเป็นบทอ่านที่ฟังได้ลื่นไหลและคงสาระต้นฉบับ",
+      "tr": "Uzun metni aslına sadık, sesli okumaya uygun bir metne dönüştürme",
+      "ind": "Menulis ulang teks panjang menjadi naskah baca yang setia pada sumber"
+    }
   }
 ]

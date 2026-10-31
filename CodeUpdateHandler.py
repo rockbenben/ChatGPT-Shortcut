@@ -1,16 +1,56 @@
+import importlib
 import json
 import os
+import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-# Try to import opencc for Traditional Chinese conversion
-try:
-    import opencc
+OPENCC_PACKAGE = 'opencc-python-reimplemented'
+
+
+def _load_opencc():
+    try:
+        import opencc
+        return opencc
+    except ImportError:
+        return None
+
+
+def _install_opencc():
+    """缺依赖时自动装一次；离线或无 pip 时返回 False，由调用方降级。"""
+    print(f"OpenCC not found, installing {OPENCC_PACKAGE} ...")
+    try:
+        proc = subprocess.run(
+            [sys.executable, '-m', 'pip', 'install', '--quiet', OPENCC_PACKAGE],
+            capture_output=True,
+            text=True,
+            timeout=180,
+        )
+    except (OSError, subprocess.SubprocessError) as e:
+        print(f"Warning: OpenCC auto-install failed: {e}")
+        return False
+    if proc.returncode != 0:
+        detail = (proc.stderr or proc.stdout or '').strip()[-500:]
+        print(f"Warning: OpenCC auto-install failed (exit {proc.returncode}): {detail}")
+        return False
+    importlib.invalidate_caches()
+    return True
+
+
+# 简繁转换是 zh-Hant 内容的唯一来源（prompt.json 只提供简体 zh 字段）。
+# 缺依赖时先尝试自动安装；装不上也不中断 —— 有的派生项目并不需要 zh-Hant，
+# 不该被一个可选依赖卡死。降级代价是 zh-Hant 产物为简体，所以警告要写明白。
+opencc = _load_opencc()
+if opencc is None and _install_opencc():
+    opencc = _load_opencc()
+
+if opencc is not None:
     converter = opencc.OpenCC('s2t')
     print("OpenCC loaded successfully.")
-except ImportError:
+else:
     converter = None
-    print("Warning: opencc-python-reimplemented not found. Traditional Chinese conversion will be skipped (content will remain Simplified).")
+    print("Warning: OpenCC unavailable, zh-Hant output will remain Simplified Chinese.")
 
 # 给每张卡片注入 (id, lang) 维度的 datePublished / dateModified。
 # Card 本身充当 manifest：脚本读旧 card 内容 → 与新内容（去掉 date 字段）比对
@@ -112,8 +152,8 @@ for item in data:
         max_id = item['id']
 
 # ID 数组
-favor_ids = [2, 209, 251]
-other_ids = [185, 197, 109, 20, 1]
+favor_ids = [2, 209, 197]
+other_ids = [109, 20, 1, 204, 8]
 
 # 过滤出指定 ID 的数据项
 favor_data = [item for item in data if item['id'] in favor_ids]
@@ -126,16 +166,13 @@ def get_lang_content(item, target_lang):
     elif target_lang == 'zh-Hant':
         content = item.get('zh')
         if content:
-            if converter:
-                # Deep copy and convert strings
-                converted = {}
-                for k, v in content.items():
-                    if isinstance(v, str):
-                        converted[k] = converter.convert(v)
-                    else:
-                        converted[k] = v
-                return converted
-            return content # Fallback if no converter
+            if converter is None:
+                return content
+            # 逐字段转换，返回新 dict：prompt.json 里的原对象不能被就地改写
+            converted = {}
+            for k, v in content.items():
+                converted[k] = converter.convert(v) if isinstance(v, str) else v
+            return converted
         return None
     return item.get(target_lang)
 
@@ -147,7 +184,7 @@ def get_meta_content(item_id, field, target_lang):
         return meta_dict.get('zh', "")
     elif target_lang == 'zh-Hant':
         content = meta_dict.get('zh', "")
-        if content and converter:
+        if converter is not None and content:
             return converter.convert(content)
         return content
     return meta_dict.get(target_lang, "")
