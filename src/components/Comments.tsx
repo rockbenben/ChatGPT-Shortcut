@@ -2,8 +2,8 @@ import React, { useEffect, useState, useCallback, memo, useRef, Suspense } from 
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { App, Modal, Pagination, Skeleton } from "antd";
-import { MessageOutlined } from "@ant-design/icons";
+import { App, Modal, Pagination, Skeleton, Button } from "antd";
+import { MessageOutlined, WarningOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
 import { useColorMode } from "@docusaurus/theme-common";
 import { CommentSkeleton } from "@site/src/components/CommentComponent/CommentSkeleton";
@@ -39,8 +39,31 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
   const currentPageRef = useRef(currentPage);
   const [totalCommentsCount, setTotalCommentsCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  // 请求失败标记：失败时页面要显示「加载失败 + 重试」，不能退化成
+  // EmptyState 的「暂无评论 / 成为第一个评论者吧」——那是谎报
+  //（评论没加载出来 ≠ 这个页面一条评论都没有）。
+  const [fetchFailed, setFetchFailed] = useState(false);
   // emoji/GIF 面板全局互斥：跨主评论框与回复框最多一个打开。owner 为 "main" 或回复对象评论 id
   const [activePanel, setActivePanel] = useState<{ owner: "main" | number; type: PanelType } | null>(null);
+
+  // 评论内容/总数只对「当前提示词」成立。?id= 壳跨提示词跳转时组件实例被复用：
+  // 失败分支刻意保留总数（那是给「同一提示词翻页」用的），换提示词后第一次 fetch 失败
+  // 就会让 B 页显示 A 的「讨论 · N」和 A 的分页器。身份一变，在渲染期（paint 之前）
+  // 直接归零、清空列表并回到骨架屏——不用 effect，否则那一帧仍会拿 A 的内容冒充 B。
+  const listIdentity = `${pageId}|${type}`;
+  const [listIdentityState, setListIdentityState] = useState(listIdentity);
+  if (listIdentityState !== listIdentity) {
+    setListIdentityState(listIdentity);
+    setComments([]);
+    setTotalCommentsCount(0);
+    setIsLoading(true);
+    // 页码和回复对象也是「这一条提示词的」状态：带着第 3 页跳到 B，B 会去拉第 3 页，
+    // 超出页数时拿到空页却渲染「暂无评论」；replyingTo 还是 A 的评论 id，
+    // 继续提交会拿 A 的评论 id 去回复 B 的页面。身份一变全部回到初始态。
+    setCurrentPage(1);
+    setReplyingTo(null);
+    setActivePanel(null);
+  }
 
   // 把 count 暴露给外层，让 PromptPage / CommunityPromptPage 的 eyebrow 显示「讨论 · N」
   useEffect(() => {
@@ -57,27 +80,59 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
     currentPageRef.current = currentPage;
   }, [currentPage]);
 
+  // 当前「提示词 + 页码」的身份，渲染期就更新（passive effect 之前）。
+  // 异步回调回来时用它判断「这份响应还属于当前这一页吗」。
+  // 只靠 fetchSeqRef 挡不住一个竞态窗口：pageId 变了但新 effect 还没跑时
+  // （passive effect 跑在 paint 之后），旧提示词的响应仍会通过 seq 检查，
+  // 把别的提示词的评论写进当前页 —— 那是拿别人的内容冒充本页。
+  const pageKeyRef = useRef("");
+  pageKeyRef.current = `${pageId}|${type}|${currentPage}`;
+
   const applyPollData = useCallback((nested: any[], total: number) => {
     setComments(nested);
     setTotalCommentsCount(total);
+    // 轮询已经拿到数据了，失败态必须一起清掉：
+    // 否则 AI 回复到了，页面却还盖着「加载数据失败」的面板。
+    setFetchFailed(false);
   }, []);
-  const { aiPolling, pollAttempt, pollForAIReply } = usePollForAIReply({ pageId, type, pageSize, currentPageRef, onData: applyPollData });
+  const { aiPolling, pollAttempt, pollForAIReply } = usePollForAIReply({ pageId, type, pageSize, currentPageRef, pageKeyRef, onData: applyPollData });
 
   // 防乱序竞态：快速翻页/切换排序时多个 getComments 并发在飞，
   // 慢的旧请求若后到会用上一页数据覆盖当前页（pagination 显示 N 页、列表却是 M 页）。
   // 用单调递增的 seq 标记每次调用，await 回来后只让"最新一次"写 state。
   const fetchSeqRef = useRef(0);
+
   const fetchComments = useCallback(async () => {
+    const requestKey = `${pageId}|${type}|${currentPage}`;
     const seq = ++fetchSeqRef.current;
     setIsLoading(true);
     try {
       const response = await getComments(pageId, currentPage, pageSize, type);
-      if (fetchSeqRef.current !== seq) return; // 已被更新的请求取代，丢弃陈旧结果
-      if (response) {
-        const nestedComments = nestComments(response.data);
-        setComments(nestedComments);
-        setTotalCommentsCount(response.meta.pagination.total);
+      // 两个守卫缺一不可：seq 挡「更新的请求已经发出」，pageKey 挡「页面已经换了」
+      if (fetchSeqRef.current !== seq || pageKeyRef.current !== requestKey) return; // 已被更新的请求取代，丢弃陈旧结果
+      if (!response) {
+        // 空响应 ≠ 没有评论。304 且本地无缓存时 api 层会返回 undefined，
+        // 那是「没拿到数据」，不是「这个页面一条评论都没有」。
+        // 不单独处理的话就会落回 EmptyState 的「暂无评论」——正是这次要消灭的谎报。
+        throw new Error("Empty comments response");
       }
+      const nestedComments = nestComments(response.data);
+      setComments(nestedComments);
+      setTotalCommentsCount(response.meta.pagination.total);
+      setFetchFailed(false);
+    } catch (error) {
+      // 必须 catch：getComments 失败会抛出。没有 catch 时这个 promise 变成
+      // unhandled rejection（控制台报错），而且 isLoading 已经置 false，
+      // comments 仍是空数组 → 渲染成「暂无评论」，用户以为真的没有评论。
+      if (fetchSeqRef.current !== seq || pageKeyRef.current !== requestKey) return;
+      console.error("Failed to fetch comments:", error);
+      setFetchFailed(true);
+      // 旧一页的评论还留在 state 里：换页失败时它们属于上一个页码，
+      // 留着展示等于拿不相干的内容冒充本页。失败即清空，让错误态接管。
+      setComments([]);
+      // totalCommentsCount 保留上一次成功拿到的值，不要清零：
+      // 它同时喂给分页器和外层 eyebrow 的「讨论 · N」。清零会让分页器整个消失，
+      // 用户除了「重试」这一页再没有别的出路（换页也换不了，因为页码条没了）。
     } finally {
       if (fetchSeqRef.current === seq) setIsLoading(false);
     }
@@ -236,6 +291,18 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
         {/* Internal "{N} 评论" header 已移除：count 通过 onCountChange 暴露给外层 eyebrow «讨论 · N» */}
         {isLoading ? (
           <CommentSkeleton count={10} />
+        ) : fetchFailed ? (
+          // 加载失败 ≠ 没有评论：分开渲染，别让「暂无评论」顶替失败
+          <EmptyState
+            compact
+            icon={<WarningOutlined />}
+            title={<Translate id="message.loadFailed">加载数据失败，请稍后重试</Translate>}
+            action={
+              <Button type="primary" onClick={() => void fetchComments()}>
+                <Translate id="action.retry">重试</Translate>
+              </Button>
+            }
+          />
         ) : comments.length === 0 ? (
           <EmptyState
             compact

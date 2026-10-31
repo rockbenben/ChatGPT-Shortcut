@@ -295,7 +295,7 @@ const FAILED_FETCH_TTL_MIN = 60;
 /**
  * Get community prompts with pagination
  */
-export async function getCommPrompts(page: number, pageSize: number, sortField: string, sortOrder: string, searchTerm?: string) {
+export async function getCommPrompts(page: number, pageSize: number, sortField: string, sortOrder: string, searchTerm?: string, options?: { force?: boolean }) {
   const trimmedSearchTerm = typeof searchTerm === "string" ? searchTerm.trim() : "";
   const limitedSearchTerm = trimmedSearchTerm.length > 100 ? trimmedSearchTerm.substring(0, 100) : trimmedSearchTerm;
   const encodedSearchKey = trimmedSearchTerm ? encodeURIComponent(limitedSearchTerm) : "noTerm";
@@ -315,7 +315,11 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
   const now = Date.now();
   const ONE_HOUR = 60 * 60 * 1000;
 
-  if (cachedData && lastFetchTime && now - lastFetchTime < ONE_HOUR) {
+  // options.force：显式重试要绕过下面这段节流。
+  // 请求失败时 lastFetch 标记会按 FAILED_FETCH_TTL_MIN（60 分钟）留着，这段时间内的
+  // 调用直接吃缓存、不重发请求 —— 对「别再打后端」是对的，对用户点的「重试」是错的：
+  // 按钮必须真发一次请求，否则失败态会被缓存数据「顶掉」成一次假成功。
+  if (!options?.force && cachedData && lastFetchTime && now - lastFetchTime < ONE_HOUR) {
     // Within 1 hour, return cached data directly
     return cachedData;
   }

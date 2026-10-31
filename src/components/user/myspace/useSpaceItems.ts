@@ -52,9 +52,19 @@ export function useSpaceItems({ userAuth, currentLanguage, onDataLoaded, message
   const [spaceItems, setSpaceItems] = useState<any[]>(initialCacheRef.current.items);
   const [customTags, setCustomTags] = useState<CustomTag[]>(initialCacheRef.current.tags);
   const [dataProcessing, setDataProcessing] = useState(false);
+  // 详情拉取失败标记：失败时 MySpace 要显示「加载失败 + 重试」，
+  // 不能退化成「暂无内容，去创建提示词或收藏喜欢的吧」——那是谎报
+  //（提示词没加载出来 ≠ 用户真的什么都没存）。
+  const [fetchFailed, setFetchFailed] = useState(false);
+  // 手动重试：改这个计数器触发上面的数据 effect 重跑
+  const [retryNonce, setRetryNonce] = useState(0);
 
   // 跟踪已加载的用户数据，避免重复加载
   const lastLoadedRef = useRef<CacheRef | null>(initialCacheRef.current.ref);
+  // 失败过的那一版数据哈希。同一个哈希失败过就不能再走「完全相同：跳过」短路，
+  // 否则「重试」按钮点了也只是原地短路返回：请求永远不再发，错误态永远消不掉。
+  // （典型触发：加载成功后 items 变动导致刷新失败，用户把改动撤回 → 哈希回到上次成功的值。）
+  const failedHashRef = useRef<string | null>(null);
 
   // 把当前本地 spaceItems/customTags 镜像进模块级缓存。
   // 标签 mutation（toggle 提交 / 管理标签保存）只改 item.tags 与 definitions，不改
@@ -88,8 +98,16 @@ export function useSpaceItems({ userAuth, currentLanguage, onDataLoaded, message
     }
 
     // 完全相同（含 updatedAt）：跳过
-    if (lastLoadedRef.current?.userId === currentUserId && lastLoadedRef.current?.hash === currentHash && spaceItems.length > 0) {
+    // 但失败过的哈希不享受这个豁免——失败时 lastLoadedRef 仍指向上一次成功的版本，
+    // 用户把改动撤回后哈希会与它相同，这时若照旧短路，重试就永远不会重发请求。
+    if (lastLoadedRef.current?.userId === currentUserId && lastLoadedRef.current?.hash === currentHash && failedHashRef.current !== currentHash && spaceItems.length > 0) {
       setDataProcessing(false);
+      // 走到这里说明「屏幕上的这份数据就是当前这份数据的最新版」，是一次成功结论，
+      // 把失败标记一起清掉。否则上一次失败留下的标记会永远挂着：失败标记一立，
+      // 过滤到空列表时页面就一直显示「加载数据失败」，而点重试又会落进这条短路，
+      // 变成一条永远走不出去的死路。
+      setFetchFailed(false);
+      failedHashRef.current = null;
       return;
     }
 
@@ -201,10 +219,18 @@ export function useSpaceItems({ userAuth, currentLanguage, onDataLoaded, message
               totalTags: (tagsArray || []).length,
             });
           }
+          // 拉到了就清掉失败标记
+          setFetchFailed(false);
+          failedHashRef.current = null;
         }
       } catch (error) {
         console.error("Failed to fetch MySpace data:", error);
         if (isMounted) {
+          // 记下失败的是哪一版数据：哈希回到这个值时不能再走「完全相同：跳过」短路，
+          // 否则重试按钮点了也不会重发请求（见 failedHashRef 处的说明）。
+          failedHashRef.current = currentHash;
+          // 标记失败：MySpace 据此渲染「加载失败 + 重试」，而不是「暂无内容」
+          setFetchFailed(true);
           messageApi.error(translate({ id: "message.loadFailed", message: "加载数据失败，请稍后重试" }));
         }
       } finally {
@@ -219,7 +245,7 @@ export function useSpaceItems({ userAuth, currentLanguage, onDataLoaded, message
     return () => {
       isMounted = false;
     };
-  }, [userAuth, currentLanguage, onDataLoaded, messageApi]);
+  }, [userAuth, currentLanguage, onDataLoaded, messageApi, retryNonce]);
 
-  return { spaceItems, setSpaceItems, customTags, setCustomTags, dataProcessing, syncSpaceCache };
+  return { spaceItems, setSpaceItems, customTags, setCustomTags, dataProcessing, syncSpaceCache, fetchFailed, retry: () => setRetryNonce((n) => n + 1) };
 }

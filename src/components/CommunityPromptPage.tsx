@@ -1,6 +1,6 @@
 import React, { Suspense, useContext, useCallback, useMemo, useState } from "react";
-import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, App, Breadcrumb, Popover } from "antd";
-import { HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined, FileSearchOutlined } from "@ant-design/icons";
+import { Card, Typography, Space, Flex, Row, Col, Button, Modal, Skeleton, Breadcrumb, Popover } from "antd";
+import { HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined, FileSearchOutlined, WarningOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
@@ -19,11 +19,18 @@ const ShareButtons = lazyOptional(() => import("./ShareButtons"));
 // 见 PromptPage 同名注释：静态 import 会把 Pagination + Form + react-markdown
 // 全链拖进 eager common chunk，每个页面都要下载。
 const Comments = lazyWithRetry(() => import("./Comments"));
+// 与社区列表页（pages/community-prompts.tsx）同一份登录表单，同样只在未登录用户点
+// 点赞/收藏时才挂载并拉 chunk。
+const LoginComponent = lazyWithRetry(() => import("./user/login"));
 
 interface CommunityPromptPageProps {
   prompt: CommunityPrompt | null;
   loading?: boolean;
   error?: Error | null;
+  /** 内容确实不存在（作者取消分享 / 已删除 / 无效 id）——与「加载失败」区分开 */
+  notFound?: boolean;
+  /** 加载失败时点「重试」触发重新拉取 */
+  onRetry?: () => void;
   onVote?: (id: number, action: "upvote" | "downvote") => void;
 }
 
@@ -42,11 +49,11 @@ const monoNum: React.CSSProperties = { fontVariantNumeric: "tabular-nums" };
 const Eyebrow = ({ children }: { children: React.ReactNode }) => <span className="comp-sheet-eyebrow">{children}</span>;
 const Dot = () => <span style={{ opacity: 0.5 }}>·</span>;
 
-function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPromptPageProps) {
-  const { userAuth } = useContext(AuthContext);
-  const { message: messageApi } = App.useApp();
+function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote }: CommunityPromptPageProps) {
+  const { userAuth, getUserAuth } = useContext(AuthContext);
   const { siteConfig, i18n } = useDocusaurusContext();
   const { toggleFavorite } = useFavorite();
+  const [loginOpen, setLoginOpen] = useState(false);
 
   // schema.org / 数字格式化都要 BCP-47：读 localeConfigs.htmlLang（覆盖 ind→id 这种历史命名）
   const bcp47Locale = toBcp47(i18n.currentLocale, i18n.localeConfigs);
@@ -70,58 +77,52 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   const renderedPrompt = useMemo(() => renderPromptWithPlaceholders(prompt?.description || ""), [prompt?.description]);
 
   const handleToggleFavorite = useCallback(() => {
-    if (!userAuth) {
-      messageApi.warning(translate({ id: "message.loginRequired", message: "请先登录" }));
+    // 读权威值而不是渲染态：applyAuth 经 startTransition 发布，state 会滞后一帧，
+    // 后台 SWR 刷新落地的瞬间用 userAuth 判登录会把已登录用户弹进登录框。
+    // 同 pages/community-prompts.tsx 的 vote() 写法，也与下面 isFavorite 只能用于展示同理。
+    if (!getUserAuth()) {
+      // 只 toast 是个死胡同：该页除评论框外没有登录入口，导航栏也没有，/user 会把未登录
+      // 用户弹回首页。列表页早就是弹登录框，这里与它对齐。
+      setLoginOpen(true);
       return;
     }
     if (prompt?.id) {
       // 是否已收藏由 useFavorite 内部用权威值判定，这里不能读渲染期的 isFavorite
       toggleFavorite(prompt.id, true);
     }
-  }, [userAuth, prompt?.id, toggleFavorite, messageApi]);
+  }, [getUserAuth, prompt?.id, toggleFavorite]);
 
   const handleVote = useCallback(
     (action: "upvote" | "downvote") => {
-      if (!userAuth) {
-        messageApi.warning(translate({ id: "message.loginRequired", message: "请先登录" }));
+      if (!getUserAuth()) {
+        setLoginOpen(true);
         return;
       }
       if (prompt?.id && onVote) {
         onVote(prompt.id, action);
       }
     },
-    [userAuth, prompt?.id, onVote, messageApi],
+    [getUserAuth, prompt?.id, onVote],
   );
 
   // Loading state — 与正常态共用 Card 容器，零跳变
   if (loading) {
     return (
-      <Layout title={translate({ id: "community.loading", message: "加载中…" })}>
-        <Row justify="center" style={{ marginTop: 16, marginBottom: 24 }}>
+      <Layout title={translate({ id: "community.loading", message: "加载中..." })}>
+        <Row justify="center" style={{ marginTop: 24, marginBottom: 24 }}>
           <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
-            <div style={{ height: 22, marginBottom: 12 }} aria-hidden="true" />
-            <Card variant="outlined" style={sheetCardStyle} styles={{ body: sheetCardBodyStyle }} aria-busy="true">
-              <Flex vertical gap={24}>
-                <Flex vertical gap={10}>
-                  <Skeleton.Input active size="large" style={{ width: "min(80%, 360px)", height: 30 }} />
-                  <Skeleton.Input active size="small" style={{ width: 240, height: 14 }} />
+            <Card variant="outlined" style={sheetCardStyle} styles={{ body: sheetCardBodyStyle }}>
+              <Flex vertical gap={20}>
+                {/* 骨架屏：顶栏 meta + 标题 + 占位正文，各高度与真实元素一致 */}
+                <Flex justify="space-between" align="center">
+                  <Skeleton.Input active size="small" style={{ width: 120 }} />
+                  <Skeleton.Input active size="small" style={{ width: 80 }} />
                 </Flex>
-                <Skeleton active title={false} paragraph={{ rows: 1, width: ["72%"] }} />
-                <Flex vertical gap={14}>
-                  <Flex justify="space-between" align="center" wrap gap={12}>
-                    <Skeleton.Input active size="small" style={{ width: 80, height: 14 }} />
-                    <Skeleton.Button active size="large" style={{ width: 140 }} />
-                  </Flex>
-                  <div className="comp-sheet-code">
-                    <Skeleton active title={false} paragraph={{ rows: 6, width: ["100%", "94%", "100%", "86%", "100%", "68%"] }} />
-                  </div>
-                </Flex>
-                <Flex justify="space-between" align="center" wrap gap={8}>
-                  <Space size="small">
-                    <Skeleton.Button active style={{ width: 120, height: 36 }} />
-                    <Skeleton.Button active style={{ width: 90, height: 36 }} />
-                  </Space>
-                  <Skeleton.Button active style={{ width: 90, height: 36 }} />
+                <Skeleton.Input active style={{ width: "60%", height: 32 }} />
+                <Skeleton active paragraph={{ rows: 6 }} />
+                <Flex justify="space-between" align="center" style={{ paddingTop: 8 }}>
+                  <Skeleton.Button active size="small" style={{ width: 140 }} />
+                  <Skeleton.Button active size="small" style={{ width: 64 }} />
                 </Flex>
               </Flex>
             </Card>
@@ -131,14 +132,37 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
     );
   }
 
-  // Error state
-  if (error || !prompt) {
+  // 加载失败态：内容可能真实存在（网络抖动 / 服务故障），不能冒充「未找到」，
+  // 也不能注入 noindex —— 那会把一次临时故障变成永久性的收录排除。
+  if (error) {
+    return (
+      <Layout title={translate({ id: "community.fetchError", message: "获取数据失败" })}>
+        <Row justify="center" style={{ marginTop: 24, marginBottom: 24 }}>
+          <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
+            <EmptyState
+              icon={<WarningOutlined />}
+              title={<Translate id="community.fetchError">获取数据失败</Translate>}
+              description={<Translate id="community.fetchErrorDesc">网络或服务暂时不可用，请稍后重试</Translate>}
+              action={
+                <Button type="primary" onClick={onRetry}>
+                  <Translate id="action.retry">重试</Translate>
+                </Button>
+              }
+            />
+          </Col>
+        </Row>
+      </Layout>
+    );
+  }
+
+  // 未找到态：内容确实不存在（无效 id / 已删除 / 取消分享）
+  if (notFound || !prompt) {
     return (
       <Layout title={translate({ id: "community.notFound", message: "提示词未找到" })}>
         <Head>
           {/* CSR 注入：仅裸路径 / 无效 id / 已删除 prompt 渲染到这里。
-              noindex 不能写在静态壳（src/pages/community-prompt.tsx）——
-              那会连带所有 ?id= URL 一起被排除收录且阻止 Google 渲染 JS。
+              noindex 不能放在静态壳（src/pages/community-prompt.tsx）——
+              那会连带所有 ?id= URL 一起被排除收录并阻止 Google 渲染 JS。
               Google 渲染后读到这里的 noindex，会把无效 URL 排除；
               有效 ?id= 走下方正常分支，靠 per-id canonical/og 被收录。 */}
           <meta name="robots" content="noindex" />
@@ -148,7 +172,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
             <EmptyState
               icon={<FileSearchOutlined />}
               title={<Translate id="community.notFound">提示词未找到</Translate>}
-              description={<Translate id="community.notFoundDesc">该提示词可能已被删除或设为私有</Translate>}
+              description={<Translate id="community.notFoundDesc">该提示词可能已被删除或设为私密</Translate>}
               action={
                 <Link to="/community-prompts">
                   <Button type="primary">
@@ -166,7 +190,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   const seoTitle = `${prompt.title} - ${translate({ id: "community.seoSuffix", message: "社区提示词" })}`;
   const seoDescription = prompt.remark || prompt.description?.substring(0, 160) || "";
 
-  // Canonical 按 locale 自指：UGC 正文虽不随 locale 翻译，但 UI 框架是翻译的——
+  // Canonical 每 locale 自指：UGC 正文虽不随 locale 翻译，但 UI 框架是翻译的——
   // 若全部 canonical 合并到根路径，Google 只收录中文界面版，英文搜索用户
   // 点进来满屏中文导航/按钮。权衡：接受跨 locale 的正文重复（Google 会自行聚类挑选），
   // 换取各语言用户落地到本地化界面。与 sitemap 的 per-locale 注入保持一致。
@@ -177,8 +201,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
     <Layout title={seoTitle} description={seoDescription}>
       <Head>
         {/* CSR-only：Docusaurus 默认对 SPA 路由 /community-prompt 只能发静态 canonical/og;
-            JS 执行后用真实 ?id= 与 prompt 标题覆盖（Googlebot 执行 JS 会读到）。
-            twitter: 与 og: 同时提供，因为 X 官方文档说 fallback「类似但不完全相同」 */}
+            这里在客户端水合后用真实 id 覆盖，让搜索引擎收录带参数的详情页 */}
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={seoTitle} />
@@ -205,34 +228,40 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                   </Link>
                 ),
               },
-              { title: prompt.title },
+              {
+                title: prompt.title,
+              },
             ]}
-            style={{ marginBottom: 12, paddingLeft: 8, paddingRight: 8 }}
+            style={{ marginBottom: 12, fontSize: 13 }}
           />
 
           <Card variant="outlined" style={sheetCardStyle} styles={{ body: sheetCardBodyStyle }}>
             <Flex vertical gap={24}>
-              {/* HERO: title + meta line（owner · chars · tokens 用 Space split 串起来） */}
-              <Flex vertical gap={10}>
-                <Typography.Title level={1} className="comp-sheet-title">
-                  {prompt.title}
-                </Typography.Title>
-                <Space separator={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
+              {/* TOP META ROW: eyebrow (id + author) + reading metrics */}
+              <Flex justify="space-between" align="center" wrap gap={8}>
+                <Eyebrow>
+                  <span>#{prompt.id}</span>
                   {prompt.owner && (
-                    <span>
-                      <UserOutlined style={{ marginInlineEnd: 4 }} />
-                      {prompt.owner}
-                    </span>
+                    <>
+                      <Dot />
+                      <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
+                        <UserOutlined />
+                        {prompt.owner}
+                      </span>
+                    </>
                   )}
-                  {/* 显式传页面 locale：裸 toLocaleString() 跟的是宿主 locale，会和界面语言错配 */}
-                  <span style={monoNum}>
-                    {charCount.toLocaleString(bcp47Locale)} <Translate id="prompt.charsLabel">字符</Translate>
-                  </span>
-                  <span style={monoNum}>≈ {tokenCount.toLocaleString(bcp47Locale)} tokens</span>
-                </Space>
+                </Eyebrow>
+                <Eyebrow>
+                  <span style={monoNum}>{charCount.toLocaleString(bcp47Locale)}</span> <Translate id="prompt.chars">字</Translate>
+                  <Dot />
+                  <span style={monoNum}>~{tokenCount.toLocaleString(bcp47Locale)}</span> tokens
+                </Eyebrow>
               </Flex>
 
-              {/* REMARK: sage 左竖线引语 */}
+              {/* TITLE: clamp 字体大小，居左自流 */}
+              <h1 className="comp-sheet-title">{prompt.title}</h1>
+
+              {/* REMARK: 带背景的左竖线引语 */}
               {prompt.remark && <blockquote className="comp-sheet-remark">{prompt.remark}</blockquote>}
 
               {/* PROMPT BODY: 上下 hairline，无外框 */}
@@ -336,6 +365,13 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
           </Flex>
         </Col>
       </Row>
+      {loginOpen && (
+        <Modal open={loginOpen} footer={null} onCancel={() => setLoginOpen(false)}>
+          <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
+            <LoginComponent />
+          </Suspense>
+        </Modal>
+      )}
     </Layout>
   );
 }
