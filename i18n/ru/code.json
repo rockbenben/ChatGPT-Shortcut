@@ -62,6 +62,9 @@
   "action.reply": {
     "message": "Ответить"
   },
+  "action.retry": {
+    "message": "Повторить"
+  },
   "action.save": {
     "message": "Сохранить"
   },
@@ -151,6 +154,9 @@
   },
   "community.fetchError": {
     "message": "Не удалось получить данные"
+  },
+  "community.fetchErrorDesc": {
+    "message": "Сеть или сервис временно недоступны. Попробуйте ещё раз через мгновение."
   },
   "community.heading": {
     "message": "Сообщество ИИ-промптов"
@@ -296,6 +302,15 @@
   "label.sharePrompt": {
     "message": "Опубликовать на странице сообщества — другие смогут увидеть и добавить в избранное"
   },
+  "label.shareStatePublic": {
+    "message": "Публично: другие могут просматривать и добавлять в Избранное на странице сообщества (нажмите Изменить, чтобы сделать приватным)"
+  },
+  "label.shareStatePublicNoEdit": {
+    "message": "Публично: другие могут просматривать и добавлять в Избранное на странице сообщества"
+  },
+  "label.shareStatePrivate": {
+    "message": "Видно только вам"
+  },
   "level.bronze": {
     "message": "Бронза"
   },
@@ -399,7 +414,7 @@
     "message": "Не удалось отправить промпт, попробуйте позже"
   },
   "message.addPrompt.success": {
-    "message": "Промпт отправлен"
+    "message": "Промпт отправлен — вы найдёте его в самом верху раздела «Моя коллекция»"
   },
   "message.cache.cleared": {
     "message": "Кэш очищен"
@@ -478,9 +493,6 @@
   },
   "message.loadFailed": {
     "message": "Не удалось загрузить данные, попробуйте позже"
-  },
-  "message.loginRequired": {
-    "message": "Пожалуйста, сначала войдите"
   },
   "message.logout.confirm.content": {
     "message": "Вы уверены, что хотите выйти?"

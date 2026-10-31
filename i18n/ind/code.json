@@ -62,6 +62,9 @@
   "action.reply": {
     "message": "Balas"
   },
+  "action.retry": {
+    "message": "Coba lagi"
+  },
   "action.save": {
     "message": "Simpan"
   },
@@ -151,6 +154,9 @@
   },
   "community.fetchError": {
     "message": "Gagal mengambil data"
+  },
+  "community.fetchErrorDesc": {
+    "message": "Jaringan atau layanan tidak tersedia untuk sementara. Silakan coba lagi nanti."
   },
   "community.heading": {
     "message": "Komunitas Prompt AI"
@@ -296,6 +302,15 @@
   "label.sharePrompt": {
     "message": "Bagikan ke halaman komunitas — orang lain bisa melihat dan menyimpannya"
   },
+  "label.shareStatePublic": {
+    "message": "Terbit: orang lain dapat melihat dan menambahkannya ke Favorit di halaman komunitas (gunakan Ubah agar jadi privat)"
+  },
+  "label.shareStatePublicNoEdit": {
+    "message": "Terbit: orang lain dapat melihat dan menambahkannya ke Favorit di halaman komunitas"
+  },
+  "label.shareStatePrivate": {
+    "message": "Hanya terlihat oleh Anda"
+  },
   "level.bronze": {
     "message": "Perunggu"
   },
@@ -399,7 +414,7 @@
     "message": "Gagal mengirim prompt, silakan coba lagi nanti"
   },
   "message.addPrompt.success": {
-    "message": "Prompt dikirim"
+    "message": "Prompt terkirim — ada di bagian paling atas Koleksi Saya"
   },
   "message.cache.cleared": {
     "message": "Cache dihapus, data disegarkan"
@@ -478,9 +493,6 @@
   },
   "message.loadFailed": {
     "message": "Gagal memuat data, silakan coba lagi nanti"
-  },
-  "message.loginRequired": {
-    "message": "Silakan login terlebih dahulu"
   },
   "message.logout.confirm.content": {
     "message": "Apakah Anda yakin ingin keluar?"

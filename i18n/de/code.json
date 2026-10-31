@@ -62,6 +62,9 @@
   "action.reply": {
     "message": "Antworten"
   },
+  "action.retry": {
+    "message": "Erneut versuchen"
+  },
   "action.save": {
     "message": "Speichern"
   },
@@ -151,6 +154,9 @@
   },
   "community.fetchError": {
     "message": "Daten konnten nicht abgerufen werden"
+  },
+  "community.fetchErrorDesc": {
+    "message": "Das Netzwerk oder der Dienst ist vorübergehend nicht verfügbar. Bitte versuche es gleich noch einmal."
   },
   "community.heading": {
     "message": "KI-Prompt-Community"
@@ -296,6 +302,15 @@
   "label.sharePrompt": {
     "message": "Auf der Community-Seite teilen – andere können ihn ansehen und speichern"
   },
+  "label.shareStatePublic": {
+    "message": "Öffentlich: Andere können ihn auf der Community-Seite ansehen und zu Favoriten hinzufügen (mit „Bearbeiten“ auf privat setzen)"
+  },
+  "label.shareStatePublicNoEdit": {
+    "message": "Öffentlich: Andere können ihn auf der Community-Seite ansehen und zu Favoriten hinzufügen"
+  },
+  "label.shareStatePrivate": {
+    "message": "Nur für Sie sichtbar"
+  },
   "level.bronze": {
     "message": "Bronze"
   },
@@ -399,7 +414,7 @@
     "message": "Prompt-Einreichung fehlgeschlagen, bitte versuchen Sie es später erneut"
   },
   "message.addPrompt.success": {
-    "message": "Prompt eingereicht"
+    "message": "Prompt übermittelt — Sie finden ihn ganz oben in „Meine Sammlung“"
   },
   "message.cache.cleared": {
     "message": "Cache geleert"
@@ -478,9 +493,6 @@
   },
   "message.loadFailed": {
     "message": "Daten konnten nicht geladen werden, bitte versuchen Sie es später erneut"
-  },
-  "message.loginRequired": {
-    "message": "Bitte zuerst anmelden"
   },
   "message.logout.confirm.content": {
     "message": "Sind Sie sicher, dass Sie sich abmelden möchten?"

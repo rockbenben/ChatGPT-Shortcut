@@ -62,6 +62,9 @@
   "action.reply": {
     "message": "Répondre"
   },
+  "action.retry": {
+    "message": "Réessayer"
+  },
   "action.save": {
     "message": "Enregistrer"
   },
@@ -151,6 +154,9 @@
   },
   "community.fetchError": {
     "message": "Échec de la récupération des données"
+  },
+  "community.fetchErrorDesc": {
+    "message": "Le réseau ou le service est temporairement indisponible. Veuillez réessayer dans un instant."
   },
   "community.heading": {
     "message": "Communauté de prompts IA"
@@ -296,6 +302,15 @@
   "label.sharePrompt": {
     "message": "Partager sur la page communauté : les autres pourront le voir et l'ajouter aux favoris"
   },
+  "label.shareStatePublic": {
+    "message": "Publique : les autres peuvent le consulter et l'ajouter aux Favoris sur la page communautaire (utilisez Modifier pour le rendre privé)"
+  },
+  "label.shareStatePublicNoEdit": {
+    "message": "Publique : les autres peuvent le consulter et l'ajouter aux Favoris sur la page communautaire"
+  },
+  "label.shareStatePrivate": {
+    "message": "Visible uniquement par vous"
+  },
   "level.bronze": {
     "message": "Bronze"
   },
@@ -399,7 +414,7 @@
     "message": "Échec de la soumission du prompt, veuillez réessayer plus tard"
   },
   "message.addPrompt.success": {
-    "message": "Prompt soumis"
+    "message": "Prompt envoyé — vous le trouverez en haut de Ma Collection"
   },
   "message.cache.cleared": {
     "message": "Cache vidé"
@@ -478,9 +493,6 @@
   },
   "message.loadFailed": {
     "message": "Échec du chargement des données, veuillez réessayer plus tard"
-  },
-  "message.loginRequired": {
-    "message": "Veuillez d'abord vous connecter"
   },
   "message.logout.confirm.content": {
     "message": "Êtes-vous sûr de vouloir vous déconnecter ?"

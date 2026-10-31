@@ -62,6 +62,9 @@
   "action.reply": {
     "message": "Rispondi"
   },
+  "action.retry": {
+    "message": "Riprova"
+  },
   "action.save": {
     "message": "Salva"
   },
@@ -151,6 +154,9 @@
   },
   "community.fetchError": {
     "message": "Impossibile recuperare i dati"
+  },
+  "community.fetchErrorDesc": {
+    "message": "La rete o il servizio non è temporaneamente disponibile. Riprova tra poco."
   },
   "community.heading": {
     "message": "Community di prompt IA"
@@ -296,6 +302,15 @@
   "label.sharePrompt": {
     "message": "Condividi nella pagina della community: gli altri potranno vederlo e salvarlo"
   },
+  "label.shareStatePublic": {
+    "message": "Pubblico: altri possono vederlo e aggiungerlo ai Preferiti nella pagina della community (usa Modifica per renderlo privato)"
+  },
+  "label.shareStatePublicNoEdit": {
+    "message": "Pubblico: altri possono vederlo e aggiungerlo ai Preferiti nella pagina della community"
+  },
+  "label.shareStatePrivate": {
+    "message": "Visibile solo a te"
+  },
   "level.bronze": {
     "message": "Bronzo"
   },
@@ -399,7 +414,7 @@
     "message": "Impossibile inviare il prompt, riprova più tardi"
   },
   "message.addPrompt.success": {
-    "message": "Prompt inviato"
+    "message": "Prompt inviato — lo troverai in cima a La Mia Collezione"
   },
   "message.cache.cleared": {
     "message": "Cache svuotata"
@@ -478,9 +493,6 @@
   },
   "message.loadFailed": {
     "message": "Impossibile caricare i dati, riprova più tardi"
-  },
-  "message.loginRequired": {
-    "message": "Effettua prima l'accesso"
   },
   "message.logout.confirm.content": {
     "message": "Sei sicuro di volerti disconnettere?"
