@@ -9,6 +9,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { CopyButton } from "@site/src/components/CopyButton";
 import { getWeight, formatCompactNumber } from "@site/src/utils/formatters";
 import { SITE_NAME } from "@site/src/data/constants";
+import { Tags, type TagType } from "@site/src/data/tags";
 import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
 import { toBcp47 } from "@site/src/utils/i18n";
 import { toJsonLd } from "@site/src/utils/jsonLd";
@@ -267,7 +268,7 @@ function PromptPage({ prompt, currentLanguage }) {
                           <Space size={4} wrap style={{ paddingTop: 6 }}>
                             {tags.map((tag) => (
                               <Link key={tag} to={`/?tags=${tag}&view=explore`} className="prompt-tag-link">
-                                #{tag}
+                                #{Tags[tag as TagType]?.label ?? tag}
                               </Link>
                             ))}
                           </Space>
