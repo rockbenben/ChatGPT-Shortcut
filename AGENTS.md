@@ -1,12 +1,96 @@
 # AGENTS.md
 
-This file provides guidance to coding agents (Claude Code, Codex, ...) when working with code in this repository.
+This file provides guidance to coding agents (Claude Code, Codex, Antigravity, ...) when working with code in this repository.
 
 ## Project Overview
 
-AiShort (ChatGPT Shortcut) is an AI prompt management platform built on **Docusaurus 3.10.2** with **React 19** and **Ant Design 6**. Users browse, search, create, and share AI prompts across 18 languages. The backend is a Strapi instance at `https://api.newzone.top/api`.
+AiShort (ChatGPT Shortcut) is an AI prompt management platform built on **Docusaurus 3.10.2** with **React 19** and **Ant Design 6**. Users browse, search, create, and share AI prompts across 18 languages. The backend is a Strapi instance at `https://api.newzone.top/api` (for online branches).
 
 Live site: https://www.aishort.top
+
+---
+
+## Branch Strategy & Multi-Branch Maintenance (`speed`, `main`, `offline`)
+
+The repository is maintained across three primary branches with distinct architectural boundaries. When porting features or resolving conflicts during cherry-pick/merge, **always respect these boundaries**:
+
+### 1. High-Level Branch Matrix
+
+| Dimension | `speed` (`speedup/data-retrieval`) | `main` | `offline` |
+| :--- | :--- | :--- | :--- |
+| **Role & Deployment** | Production online deployment branch (auto-deploys to GitHub Pages `gh-pages`). | Canonical open-source baseline on GitHub. Clean of ads and tracking. | Standalone offline / self-hosted Docker edition. No remote backend. |
+| **Ad Components** | **Present**: Uses `AdComponent` (`src/components/AdComponent.js`) via `lazyOptional` in HomePage, CommunityPromptPage, PromptPage, and community-prompts. | **Forbidden**: Completely stripped out. Never introduce `AdComponent` or ad scripts into `main`. | **Forbidden**: Completely stripped out. |
+| **Community Prompts Architecture** | **Full SSG Sharded Prerendering**: Includes `src/data/community/` (1400+ JSONs), `communityTraffic.json`. Uses `plugin-community-pages.js` with 16-prompt shards (`promptShard`, `staticIds`) to prerender `/community-prompt/<id>`. | **Pure Dynamic CSR**: No `src/data/community/`, no static route plugin, no shards. Detail pages dynamically load via `/community-prompt?id=<id>` querying Strapi API. | **Local / Disabled**: No remote community fetch. Detail page loads local prompts via `loadPrompts()`; community listing page shows `<OnlineOnlyNotice>`. |
+| **Backend & Auth** | Remote Strapi API with JWT auth and SWR session caching. | Remote Strapi API with JWT auth and SWR session caching. | **No Remote API**: `src/api/auth.ts`, `client.ts`, `comments.ts`, `config.ts` removed. Uses `src/api/localStore.ts` purely in `localStorage`. |
+| **Comments & Polling** | **Present**: `Comments.tsx`, `usePollForAIReply.ts` using Strapi comment endpoints. | **Present**: Identical to `speed`. | **Forbidden / Deleted**: No remote comments or AI comment polling. `Comments.tsx` and `usePollForAIReply.ts` are deleted. |
+| **User Status & Modals** | Dual-state (logged-in dropdown / logged-out button) with login/logout modals & session reset. | Dual-state (identical to `speed`). | **Single Local State**: Direct buttons for collection toggle and prompt creation. No login/logout modals, no remote session reset. |
+| **Tracking / Tags** | GTM (`GTM-MX524GTT`) + Umami tracker script (`tracker.js`) + `static/ads.txt`. | None. Clean open-source baseline. | None. Docker-ready build. |
+| **Build Generators** | Runs all generators including `genCommunityData.mjs`, `genCommunitySelection.mjs`, `genCommunitySnapshot.mjs`. | Runs `genAntdCss.mjs`, `genPromptPages.mjs`, `genCommunitySnapshot.mjs` (skips community corpus fetchers). | Runs `genAntdCss.mjs`, `genPromptPages.mjs` (skips absent snapshot/community scripts). |
+
+---
+
+### 2. File-by-File Differences Reference
+
+When porting or cherry-picking, refer to this exact file-level difference table:
+
+| File Path | `speed` (`speedup/data-retrieval`) | `main` | `offline` |
+| :--- | :--- | :--- | :--- |
+| `src/components/AdComponent.js` | **Exists** and is used. | **Deleted / Forbidden**. | **Deleted / Forbidden**. |
+| `static/ads.txt` | **Exists**. | **Deleted**. | **Deleted**. |
+| `docusaurus.config.js` | Has GTM, Umami `tracker.js`, and `plugin-community-pages.js`. | Clean: No GTM, no Umami, no `plugin-community-pages.js`. | Clean: No GTM, no Umami, no community plugins. Docker-ready. |
+| `src/components/Comments.tsx` | **Exists** (remote Strapi comments & voting). | **Exists** (identical to `speed`). | **Deleted**: No comments feature. |
+| `src/hooks/CommentComponent/usePollForAIReply.ts` | **Exists** (polls for AI reply). | **Exists** (identical to `speed`). | **Deleted**. |
+| `src/components/CommunityPromptDetail.tsx` | **Exists with SSG shards**: accepts `promptShard`, `staticIds`, handles static SSR rendering. | **Exists as pure dynamic CSR**: prop-free component (`export default function CommunityPromptDetail() { return <CommunityPromptDetailInner />; }`). | **Deleted**: `src/pages/community-prompt.tsx` renders local prompt data directly. |
+| `src/components/CommunityPromptPage.tsx` | Contains `<AdComponent />`, SSG canonical logic, full `Comments` and `LoginComponent`. | **No `<AdComponent />`**, dynamic CSR canonical, full `Comments` and `LoginComponent`. | **No `<AdComponent />`**, breadcrumbs and notFound link to local `/`, **no `Comments` or `LoginComponent`**. |
+| `src/pages/community-prompts.tsx` | Paginated community prompts listing with search, sorting, and `<AdComponent />`. | Paginated community prompts listing, **strictly no `<AdComponent />`**. | **`<OnlineOnlyNotice>`**: Renders placeholder informing users that community prompts require online site. |
+| `src/pages/community-prompt.tsx` | Renders `CommunityPromptDetail` shell. | Renders `CommunityPromptDetail` shell. | Loads local prompt via `loadPrompts()` and renders `CommunityPromptPage`. |
+| `src/components/HomePage.tsx` | Uses `<AdComponent />` via `lazyOptional`. | **No `<AdComponent />`**. | **No `<AdComponent />`**. |
+| `src/components/PromptPage.tsx` | Uses `<AdComponent />` via `lazyOptional`. | **No `<AdComponent />`**. | **No `<AdComponent />`**. |
+| `src/components/user/UserStatus.tsx` | Logged-in/logged-out states, login modal, logout confirm modal, `persistAuthToken(null)`. | Logged-in/logged-out states, login modal, logout confirm modal, `persistAuthToken(null)`. | **Pure local state**: no login/logout modals or tokens; buttons rendered directly. Responsive `<span>` labels kept. |
+| `src/api/auth.ts`, `client.ts`, `comments.ts`, `config.ts` | **Exists** (Axios client, Strapi JWT auth, comment APIs). | **Exists** (identical to `speed`). | **Deleted / Forbidden**: Never add or reintroduce these files into `offline`. |
+| `src/api/localStore.ts` | Not used. | Not used. | **Primary store**: Local browser storage for prompts, favorites, tags, and user space. |
+| `src/api/prompts.ts` | Remote API client with cache/force options. | Remote API client with cache/force options. | Offline implementation backed by `localStore.ts`. Accepts `_options?: { force?: boolean }` for signature parity. |
+| `src/data/community/` | 1400+ static community JSONs. | **None** (omitted). | **None** (omitted). |
+| `plugin-community-pages.js` | **Exists** (generates static routes). | **None** (omitted). | **None** (omitted). |
+| `scripts/genCommunityData.mjs`, `genCommunitySelection.mjs` | **Exists** (corpus fetch & selection). | **None** (omitted). | **None** (omitted). |
+
+---
+
+### 3. Cherry-Pick & Conflict Resolution Rules
+
+#### Step 1: Porting from `speed` to `main`
+`speed` is the primary feature source of truth. When porting commits to `main`:
+1. **Strip all Ad components**:
+   - Remove `import AdComponent` and all `<AdComponent />` JSX nodes from `CommunityPromptPage.tsx`, `HomePage.tsx`, `PromptPage.tsx`, and `community-prompts.tsx`.
+2. **Preserve Dynamic CSR for Community Detail**:
+   - Never port `src/data/community/`, `communityTraffic.json`, `communityStaticIds.json`, `plugin-community-pages.js`, `genCommunityData.mjs`, or `genCommunitySelection.mjs` to `main`.
+   - In `CommunityPromptDetail.tsx`: keep the component prop-free (`export default function CommunityPromptDetail() { return <CommunityPromptDetailInner />; }`). Discard `promptShard`, `staticIds`, `initialPrompt`, `STATIC_PATH_ID`, and `isRefreshOnly`.
+   - In `CommunityPromptPage.tsx`: canonical must always point to `${siteConfig.url}${localePrefix}/community-prompt?id=${prompt.id}`.
+   - Still keep all pure UX fixes (e.g. separating `error` from `notFound`, `onRetry` button, `getUserAuth()` authoritative check, `promptKey` instance reuse guard).
+3. **Card Data Timestamps (`src/data/cards/`)**:
+   - `main` and `speed` run `CodeUpdateHandler.py` independently. When `src/data/cards/` conflict, compare `dateModified` timestamps; `main` often already has the newest timestamp and newly added cards. Keep `main`'s versions if already up to date.
+4. **Validation Gate**:
+   - Run `yarn checks && yarn typecheck` to verify 0 errors before committing.
+
+#### Step 2: Porting from `main` to `offline`
+When porting commits from `main` to `offline`:
+1. **Deleted Files Handling (`git rm`)**:
+   - If incoming commit modifies `src/components/Comments.tsx`, `src/hooks/CommentComponent/usePollForAIReply.ts`, or `src/components/CommunityPromptDetail.tsx`, stage their deletion with `git rm` (they must stay deleted on `offline`).
+2. **Community Listing Placeholder**:
+   - In `src/pages/community-prompts.tsx`, keep the offline `<OnlineOnlyNotice>` implementation.
+3. **Local Community Prompt Detail**:
+   - In `src/components/CommunityPromptPage.tsx`: keep offline breadcrumb links (`onlineCommunityUrl`), empty state back-to-home actions (`/`), and omit `Comments` / `LoginComponent`. Apply UX improvements (`error` vs `notFound`, `onRetry`).
+4. **Offline User Status**:
+   - In `src/components/user/UserStatus.tsx`: keep offline single-state UI (no login/logout modals or session clearing). Adopt responsive button improvements (`<span>` instead of `hideOnSmallScreen`, button label copy).
+5. **Zero Remote Network Imports**:
+   - Never import `src/api/client.ts`, `src/api/auth.ts`, `src/api/comments.ts`, or `src/api/config.ts`.
+   - In `src/api/prompts.ts`, preserve `localStore` loading logic while keeping parameter signature parity (`_options?: { force?: boolean }`).
+6. **Graceful Generator Fallback**:
+   - `scripts/generate.mjs` checks file existence before executing scripts. Keep this intact so missing community/snapshot scripts do not fail builds.
+7. **Validation Gate**:
+   - Run `yarn checks && yarn typecheck` to confirm 0 errors.
+
+---
 
 ## Common Commands
 
@@ -16,12 +100,12 @@ yarn dev            # Alias for start (has its own predev hook — do not add al
 yarn build          # Production build — all 18 locales, memory-safe (6×3 phased)
 yarn typecheck      # Runs the generators + self-checks (clipboard, chunk reload, antd style wiring), then tsc
 yarn gen:snapshot   # Fetch the real community snapshot (dev hooks only write an empty stub)
-yarn gen:community  # Incremental fetch of the full community corpus into src/data/community/ (speedup branch only)
+yarn gen:community  # Incremental fetch of the full community corpus into src/data/community/ (speed branch only)
 yarn serve          # Serve built site locally
 yarn clear          # Clear Docusaurus cache
 ```
 
-**Generated artifacts are gitignored**: `src/css/antd.dark.css`, the 5022 prompt page shells
+**Generated artifacts are gitignored**: `src/css/antd.dark.css`, the generated prompt page shells
 (`src/pages/prompt/` + `i18n/*/docusaurus-plugin-content-pages/prompt/`), and
 `src/data/communitySnapshot.json`. `scripts/generate.mjs` is the **single orchestrator** — every
 `pre*` hook (`prestart`/`predev`/`pretypecheck`/`prebuild`/`predeploy`) is just
@@ -64,18 +148,19 @@ with no false positives. See `handleApiError`'s `: never` in `src/api/client.ts`
   1. `antdThemeFor(mode)` layers universal / lightOnly / darkOnly. **Both sides must spell out `colorBg*` explicitly** — whichever side is left to the algorithm falls back to antd's own white/greys and stops matching the three-tier backgrounds in `custom.css`. That is how the light side first landed — pure-white buttons, Switch and Input on the warm paper page — and nothing catches it but actually switching themes and looking.
   2. The generator emits `html[data-theme="light"] .aishort…` next to every `.aishort-light…` block. SSR bakes the **dark** scope class into the HTML (151 elements on the homepage) because a static build cannot know the visitor's theme, while Docusaurus's pre-paint script has already set `data-theme` from localStorage. Drop that extra selector and light-mode visitors get dark components on a light page from first paint until hydration swaps the class (on the mobile Lighthouse profile that gap runs from FCP at 1.1 s to interactive at 6.2 s). It is a colour change, not a layout shift, so CLS reports 0 and Lighthouse (fresh profile ⇒ always the default theme) never sees it.
   3. The extractor also emits a React `useId`-scoped copy of every variable block (`.css-var-_R_jv_…`, 6 rules / 31.8 KB). Those ids are artefacts of the extraction render and match nothing at runtime, so they are pruned, guarded by an assert that no `css-var-` survives. Prune whole selectors only — a rule may list several and only some are orphans.
-- **Axios** for API calls with JWT auth interceptors
+- **Axios** for API calls with JWT auth interceptors (online branches)
 
 ### Key Contexts
 - **`AuthContext`** (`src/components/AuthContext.tsx`) — User auth state with Stale-While-Revalidate pattern: loads cached user from `lscache`, refreshes silently in background. Mounted **once** at `src/theme/Root.tsx` (not per-page) so SPA navigations don't re-trigger `/myspace`. `enrichMySpaceData` (in `src/utils/myspaceUtils.ts`) is the shared shape-builder used by `fetchUser`. Exposes `syncMySpaceState(patch)` — the **single entry point** for any client-side mutation to update `userAuth` state + `lscache-user_auth` + `lscache-myspace` in lockstep (used by useFavorite delta reconcile, MySpace drag/tag mutations). Adds `ensureAuthReady`-style waits in callers for the rare pending-window race. **`userAuthRef` is the single source of truth and React state is only its projection** — every write goes through `applyAuth`, so the two can't diverge. Read it with the exposed `getUserAuth()`, **never** with your own `const ref = useRef(userAuth); ref.current = userAuth` mirror: that's a render-time snapshot which `startTransition`-published updates lag behind, so computing items from it after `await refreshUserAuth()` writes stale data over fresh. Logout goes through `clearAuth()` (clears session caches + drops to logged-out; in-flight `/myspace` is voided by the token comparison in `fetchOnce`). There is deliberately **no public `setUserAuth`** — the raw setter bypasses the ref and is how the old race bugs got in; the three controlled channels are `clearAuth` / `syncMySpaceState` / internal `applyAuth`.
 - **`ViewModeContext`** (`src/contexts/ViewModeContext.tsx`) — Toggles between "collection" (personal space) and "explore" (public browsing) modes
 
 ### API Layer (`src/api/`)
-Modular barrel-exported API client against Strapi backend:
+Modular barrel-exported API client against Strapi backend (online branches):
 - `config.ts` — API base URLs (must not import other API modules to avoid circular deps)
 - `client.ts` — Axios instance with auth token interceptors, 401 auto-logout
 - `auth.ts`, `user.ts`, `prompts.ts`, `favorites.ts`, `myspace.ts`, `comments.ts` — Domain modules
 - `homepage.ts` — Loads prompt cards from static JSON (not API), with 3-tier cache: Memory → lscache → Dynamic Import
+- `localStore.ts` — Offline storage module used by the `offline` branch
 
 **Mutation patterns** (decision tree by frequency):
 - **High-frequency** (❤️ via `useFavorite`): `patchFavorites({loves:{add,remove}, commLoves:{add,remove}})` → delta `PATCH /favorites/me`. Server merges against current DB state, so concurrent multi-device edits don't lose entries. Response is intentionally delta-shaped (`{favoriteId, loves, commLoves, added}` — NOT `/myspace` shape), keeping payload proportional to ops not state. Flow: *optimistic update → PATCH → reconcile via `applyDeltaResponse`* — ops + `delta.added` are applied to local `items` (server's `updatedAt` replaces optimistic client time), then `syncMySpaceState` writes both lscache layers.
@@ -117,13 +202,13 @@ It does **not** generate the `prompt/{id}.tsx` shells any more — `scripts/genP
   implementation already existed once and has been folded in.
 - **Lazy 组件一律走 `src/utils/lazyRetry.ts`，不要裸用 `React.lazy`**：裸用时 chunk 抖一次
   就永久红框（React.lazy 缓存失败的 promise，root ErrorBoundary 的 "Try again" 不会重新发
-  请求），且调用处都没有局部 error boundary —— 一个广告位没加载出来会把整页 crash 掉。
+  请求），且调用处都没有局部 error boundary —— 装饰性组件或广告没加载出来会把整页 crash 掉。
   两个入口按「缺了它页面还成不成立」选，且都套**可重置外壳**——chunk 层面的最终失败会
   丢弃 lazy 实例，下一次渲染（红框 "Try again"、用户再点一次按钮）换新实例真正重新请求：
   - `lazyWithRetry` — 页面主体功能（`PromptDetailModal`、`MySpace`、`LoginComponent`）。
     重试一次；仍是 chunk 失败先 `reloadOnce`（此时页面反正要被 root ErrorBoundary 整页替换，
     刷新还能自愈发版陈旧），刷新发起则挂起不闪红框，冷却内才抛红框。
-  - `lazyOptional` — 装饰性组件（`AdComponent`、`ShareButtons`、emoji/Giphy 选择器）。
+  - `lazyOptional` — 装饰性组件（`AdComponent` 在 speed 分支、`ShareButtons`、emoji/Giphy 选择器）。
     仍失败降级成空组件 + `console.error`，**永不刷新**（会冲掉用户正在写的评论）。
   模块自身抛错（非 chunk）一律不重试、不重置：重试必抛的模块只会把真错误延后。
 - `React.memo()` on performance-sensitive components
@@ -151,27 +236,14 @@ It does **not** generate the `prompt/{id}.tsx` shells any more — `scripts/genP
 ### Routing (file-based via `src/pages/`)
 - `index.tsx` — Homepage with collection/explore views
 - `community-prompts.tsx` — Paginated community prompt listing with voting
-- `community-prompt.tsx` — Single community prompt page (the `?id=` CSR shell). The default locale's
-  `/community-prompt/<id>` static routes come from `plugin-community-pages.js` instead, and their bodies
-  are handed over **in shards of 16, not one module per page**: every distinct module path costs a
-  registry + routesChunkNames + runtime entry in the `main.js` that *every* page downloads (1400 of them
-  measured 83 KB gz; sharding cut main+runtime by 72 KB gz per page and 1312 files off the host budget).
-  `CommunityPromptDetail` picks its own row out of the shard by the id in `location.pathname` — never
-  `location.search`, which differs between SSR and CSR. If that pick ever breaks, the page still renders
-  (skeleton + client fetch) and the build stays green, so `scripts/buildPhased.mjs` samples 20 built pages
-  and fails when a prompt title is missing from the HTML. Which ids get a static page at all is decided by
-  `scripts/genCommunitySelection.mjs` (EdgeOne's 20000-file budget caps it at 1400; the ranked pick is
-  search traffic first, upvotes to fill). **Its reads of the input fail fast on corruption but allow a
-  missing file.** `src/data/communityTraffic.json` is **tracked** — not a derived artifact; it is the
-  manual Search Console export, and `.gitignore` says outright it must be committed. So a corrupt one is
-  a real data-loss event, not something to regenerate: treating it as "no data" silently drops every
-  traffic-bearing page to upvote order, exit code stays 0 and the deploy succeeds. The log does print
-  `0 有流量`, but nobody watches that number in build output — SEO degrades quietly and only Search
-  Console shows it. A *missing* file is legitimate (no snapshot taken yet) and must keep degrading.
-  Don't unify the two. The **output** `communityStaticIds.json` is gitignored and recomputed in full on
-  every run, so a corrupt one is *rewritten*, not fatal — failing there would turn a transient
-  interrupted write (`fs.writeFileSync` is not atomic) into a build that only a manual delete can fix.
-- `prompt/{id}.tsx` — 279 individual prompt pages. **Not in git**: these shells (279 default-locale + 4743 i18n = 5022) are generated by `scripts/genPromptPages.mjs` from `src/data/cards/` on prestart/predev/pretypecheck/prebuild/predeploy, and are gitignored. Don't hand-edit them; change the template in that script. It fails the build if any locale is missing a card JSON or a `prompt_<locale>.json` (both would otherwise silently ship default-locale content under a localized URL), and prunes orphaned shells.
+- `community-prompt.tsx` — Single community prompt page:
+  - **On `speed` branch**: Dynamic `?id=` shell for search/direct navigation, plus default locale's
+    `/community-prompt/<id>` static routes generated via `plugin-community-pages.js`. Handed over
+    in shards of 16 (`promptShard`). Which ids get a static page is decided by `scripts/genCommunitySelection.mjs`
+    (capped at ~1400 by host file limits; search traffic first, upvotes to fill).
+  - **On `main` branch**: Pure dynamic CSR shell (`/community-prompt?id=...`). Does not use shards or
+    static route generation plugin.
+- `prompt/{id}.tsx` — one shell per (prompt × locale). **Not in git**: these shells (one per default-locale prompt, plus one per prompt in each i18n locale) are generated by `scripts/genPromptPages.mjs` from `src/data/cards/` on prestart/predev/pretypecheck/prebuild/predeploy, and are gitignored. Don't hand-edit them; change the template in that script. It fails the build if any locale is missing a card JSON or a `prompt_<locale>.json` (both would otherwise silently ship default-locale content under a localized URL), and prunes orphaned shells.
 - `user/auth.tsx`, `user/index.tsx` — User account pages
 - `feedback.tsx` — Feedback/comments page
 
@@ -193,6 +265,6 @@ It does **not** generate the `prompt/{id}.tsx` shells any more — `scripts/genP
 
 ## CI/CD
 
-Primary deployment workflow (`.github/workflows/main.yml`): triggers on push to `speedup/data-retrieval` branch, runs `yarn typecheck` then `yarn build` (memory-safe phased build), deploys to GitHub Pages via `gh-pages` branch. Uses Node 24 with yarn cache. The typecheck step also produces the 5022 prompt page shells, so the subsequent build hits the generator's `.genstamp` fast path.
+Primary deployment workflow (`.github/workflows/main.yml`): triggers on push to `speedup/data-retrieval` branch, runs `yarn typecheck` then `yarn build` (memory-safe phased build), deploys to GitHub Pages via `gh-pages` branch. Uses Node 24 with yarn cache. The typecheck step also produces the prompt page shells, so the subsequent build hits the generator's `.genstamp` fast path.
 
 `.github/workflows/azure-static-web-apps-*.yml` is dormant (its trigger branch is prefixed `disabled-`). Action versions are kept current by Dependabot (weekly, `github-actions` ecosystem); note that `uses:` lines inside comments are invisible to it and will not be bumped.
