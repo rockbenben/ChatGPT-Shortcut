@@ -62,6 +62,9 @@
   "action.reply": {
     "message": "回覆"
   },
+  "action.retry": {
+    "message": "重試"
+  },
   "action.save": {
     "message": "儲存"
   },
@@ -151,6 +154,9 @@
   },
   "community.fetchError": {
     "message": "取得資料失敗"
+  },
+  "community.fetchErrorDesc": {
+    "message": "網路或服務暫時無法使用，請稍後重試"
   },
   "community.heading": {
     "message": "AI 提示詞社群"
@@ -296,6 +302,15 @@
   "label.sharePrompt": {
     "message": "分享到社群頁面，其他人可以瀏覽和收藏"
   },
+  "label.shareStatePublic": {
+    "message": "已公開：其他人可在社群頁面瀏覽和收藏（點「編輯」可改為僅自己可見）"
+  },
+  "label.shareStatePublicNoEdit": {
+    "message": "已公開：其他人可在社群頁面瀏覽和收藏"
+  },
+  "label.shareStatePrivate": {
+    "message": "僅自己可見"
+  },
   "level.bronze": {
     "message": "青銅"
   },
@@ -399,7 +414,7 @@
     "message": "提示詞提交失敗，請稍後重試"
   },
   "message.addPrompt.success": {
-    "message": "提示詞已提交"
+    "message": "提示詞已提交，在「我的收藏」最前面"
   },
   "message.cache.cleared": {
     "message": "快取已清除，資料已更新"
@@ -478,9 +493,6 @@
   },
   "message.loadFailed": {
     "message": "載入資料失敗，請稍後重試"
-  },
-  "message.loginRequired": {
-    "message": "請先登入"
   },
   "message.logout.confirm.content": {
     "message": "確定要登出嗎？"

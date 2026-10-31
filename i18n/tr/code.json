@@ -62,6 +62,9 @@
   "action.reply": {
     "message": "Yanıtla"
   },
+  "action.retry": {
+    "message": "Tekrar dene"
+  },
   "action.save": {
     "message": "Kaydet"
   },
@@ -151,6 +154,9 @@
   },
   "community.fetchError": {
     "message": "Veriler alınamadı"
+  },
+  "community.fetchErrorDesc": {
+    "message": "Ağ veya servis geçici olarak kullanılamıyor. Lütfen birazdan tekrar deneyin."
   },
   "community.heading": {
     "message": "AI Prompt Topluluğu"
@@ -296,6 +302,15 @@
   "label.sharePrompt": {
     "message": "Topluluk sayfasında paylaş — diğerleri görebilir ve favorilerine ekleyebilir"
   },
+  "label.shareStatePublic": {
+    "message": "Herkese açık: diğerleri topluluk sayfasında görüp Favoriler'e ekleyebilir (özel yapmak için Düzenle'ye dokun)"
+  },
+  "label.shareStatePublicNoEdit": {
+    "message": "Herkese açık: diğerleri topluluk sayfasında görüp Favoriler'e ekleyebilir"
+  },
+  "label.shareStatePrivate": {
+    "message": "Yalnızca size görünür"
+  },
   "level.bronze": {
     "message": "Bronz"
   },
@@ -399,7 +414,7 @@
     "message": "Prompt gönderilemedi, lütfen daha sonra tekrar deneyin"
   },
   "message.addPrompt.success": {
-    "message": "Prompt gönderildi"
+    "message": "İstem gönderildi — Koleksiyonum'un en üstünde bulabilirsin"
   },
   "message.cache.cleared": {
     "message": "Önbellek temizlendi, veriler yenilendi"
@@ -478,9 +493,6 @@
   },
   "message.loadFailed": {
     "message": "Veriler yüklenemedi, lütfen daha sonra tekrar deneyin"
-  },
-  "message.loginRequired": {
-    "message": "Lütfen önce giriş yapın"
   },
   "message.logout.confirm.content": {
     "message": "Çıkış yapmak istediğinizden emin misiniz?"

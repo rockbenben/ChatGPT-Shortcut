@@ -62,6 +62,9 @@
   "action.reply": {
     "message": "رد"
   },
+  "action.retry": {
+    "message": "إعادة المحاولة"
+  },
   "action.save": {
     "message": "حفظ"
   },
@@ -151,6 +154,9 @@
   },
   "community.fetchError": {
     "message": "فشل في جلب البيانات"
+  },
+  "community.fetchErrorDesc": {
+    "message": "الشبكة أو الخدمة غير متاحة مؤقتًا. يرجى المحاولة مرة أخرى بعد قليل."
   },
   "community.heading": {
     "message": "مجتمع موجّهات الذكاء الاصطناعي"
@@ -296,6 +302,15 @@
   "label.sharePrompt": {
     "message": "المشاركة في صفحة المجتمع — سيتمكن الآخرون من عرضه وحفظه"
   },
+  "label.shareStatePublic": {
+    "message": "عام: يمكن للآخرين عرضه وإضافته إلى المفضلة في صفحة المجتمع (اضغط تعديل لجعله خاصًا)"
+  },
+  "label.shareStatePublicNoEdit": {
+    "message": "عام: يمكن للآخرين عرضه وإضافته إلى المفضلة في صفحة المجتمع"
+  },
+  "label.shareStatePrivate": {
+    "message": "مرئي لك فقط"
+  },
   "level.bronze": {
     "message": "برونزي"
   },
@@ -399,7 +414,7 @@
     "message": "فشل إرسال الموجه، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.addPrompt.success": {
-    "message": "تم إرسال الموجه"
+    "message": "تم إرسال المطالبة — ستجدها في أعلى «مجموعتي»"
   },
   "message.cache.cleared": {
     "message": "تم مسح ذاكرة التخزين المؤقت"
@@ -478,9 +493,6 @@
   },
   "message.loadFailed": {
     "message": "فشل في تحميل البيانات، يرجى المحاولة مرة أخرى لاحقًا"
-  },
-  "message.loginRequired": {
-    "message": "يرجى تسجيل الدخول أولاً"
   },
   "message.logout.confirm.content": {
     "message": "هل أنت متأكد أنك تريد تسجيل الخروج؟"

@@ -62,6 +62,9 @@
   "action.reply": {
     "message": "उत्तर दें"
   },
+  "action.retry": {
+    "message": "फिर से प्रयास करें"
+  },
   "action.save": {
     "message": "सहेजें"
   },
@@ -151,6 +154,9 @@
   },
   "community.fetchError": {
     "message": "डेटा प्राप्त करने में विफल"
+  },
+  "community.fetchErrorDesc": {
+    "message": "नेटवर्क या सेवा अस्थायी रूप से उपलब्ध नहीं है। कृपया कुछ देर बाद फिर से प्रयास करें।"
   },
   "community.heading": {
     "message": "AI प्रॉम्प्ट समुदाय"
@@ -296,6 +302,15 @@
   "label.sharePrompt": {
     "message": "कम्युनिटी पेज पर साझा करें — दूसरे लोग इसे देख और सहेज सकेंगे"
   },
+  "label.shareStatePublic": {
+    "message": "सार्वजनिक: अन्य लोग सामुदायिक पृष्ठ पर इसे देख और पसंदीदा में जोड़ सकते हैं (निजी करने के लिए संपादित करें दबाएँ)"
+  },
+  "label.shareStatePublicNoEdit": {
+    "message": "सार्वजनिक: अन्य लोग सामुदायिक पृष्ठ पर इसे देख और पसंदीदा में जोड़ सकते हैं"
+  },
+  "label.shareStatePrivate": {
+    "message": "केवल आपको दिखाई देता है"
+  },
   "level.bronze": {
     "message": "कांस्य"
   },
@@ -399,7 +414,7 @@
     "message": "प्रॉम्प्ट सबमिट करने में विफल, कृपया बाद में पुनः प्रयास करें"
   },
   "message.addPrompt.success": {
-    "message": "प्रॉम्प्ट सबमिट किया गया"
+    "message": "प्रॉम्प्ट जमा हो गया — यह मेरा संग्रह के सबसे ऊपर मिलेगा"
   },
   "message.cache.cleared": {
     "message": "कैश साफ़ किया गया"
@@ -478,9 +493,6 @@
   },
   "message.loadFailed": {
     "message": "डेटा लोड करने में विफल, कृपया बाद में पुनः प्रयास करें"
-  },
-  "message.loginRequired": {
-    "message": "कृपया पहले लॉगिन करें"
   },
   "message.logout.confirm.content": {
     "message": "क्या आप वाकई लॉगआउट करना चाहते हैं?"
