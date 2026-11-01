@@ -3,6 +3,7 @@ import Translate, { translate } from "@docusaurus/Translate";
 import { voteAlreadyVotedText, voteSuccessText, voteFailedText } from "@site/src/utils/voteMessages";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 
+import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { useLocation } from "@docusaurus/router";
 import SearchBar from "@site/src/components/SearchBar";
 import { NoResults } from "@site/src/components/SearchBar/NoResults";
@@ -20,6 +21,7 @@ import { toJsonLd } from "@site/src/utils/jsonLd";
 import { EmptyState } from "@site/src/components/EmptyState";
 import PromptCard from "@site/src/components/PromptCard";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
+import styles from "@site/src/pages/styles.module.css";
 import { primeCacheFromSnapshot, communitySnapshot, COMMUNITY_PAGE_SIZE, type CommunitySortField, type CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import { lazyWithRetry, lazyOptional } from "@site/src/utils/lazyRetry";
 const PromptDetailModal = lazyWithRetry(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
@@ -91,6 +93,22 @@ const CommunityPrompts = () => {
   // 默认视图（page=1, sort=id, 无搜索）从构建期快照初始化，让 SSG HTML 里就含真实卡片，
   // 把 LCP 元素从「等 API 后渲染的 PromptCard」前移到 HTML 解析阶段
   // useMemo 保证仅初始计算一次：仅 useState 默认值用，subsequent render 不重建 12 项数组
+  // 空闲期预加载详情弹窗组件，大幅消除用户点击卡片时的网络延迟与 INP 交互卡顿
+  useEffect(() => {
+    if (ExecutionEnvironment.canUseDOM) {
+      const preload = () => {
+        import("@site/src/components/PromptDetailModal");
+      };
+      if ("requestIdleCallback" in window) {
+        const handle = (window as any).requestIdleCallback(preload, { timeout: 3000 });
+        return () => (window as any).cancelIdleCallback(handle);
+      } else {
+        const timer = setTimeout(preload, 1500);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, []);
+
   const initialSnapshot = useMemo(() => getSnapshotView(1, "id", ""), []);
   const [open, setOpen] = useState(false);
   const [userprompts, setUserPrompts] = useState<CommunityPrompt[]>(initialSnapshot?.items ?? []);
@@ -425,8 +443,8 @@ const CommunityPrompts = () => {
               </Flex>
             ) : (
               <Row gutter={[16, 16]}>
-                {userprompts.map((commuPrompt) => (
-                  <Col key={commuPrompt.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                {userprompts.map((commuPrompt, index) => (
+                  <Col key={commuPrompt.id} xs={24} sm={12} md={8} lg={6} xl={6} className={index >= 4 ? styles.cardDeferred : undefined}>
                     <PromptCard
                       type="community"
                       data={commuPrompt}

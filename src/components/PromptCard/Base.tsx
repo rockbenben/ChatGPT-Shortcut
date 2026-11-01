@@ -66,6 +66,13 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
         }
       : undefined;
 
+    // 指针移入或手势触摸时即触发详情弹窗预加载，消除点击时的网络与解析延迟（INP 优化）
+    const handlePreload = onCardClick
+      ? () => {
+          import("@site/src/components/PromptDetailModal");
+        }
+      : undefined;
+
     return (
       <Card
         ref={ref}
@@ -76,6 +83,8 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
         role={onCardClick ? "button" : undefined}
         tabIndex={onCardClick ? 0 : undefined}
         onKeyDown={handleCardKeyDown}
+        onPointerEnter={handlePreload}
+        onTouchStart={handlePreload}
         style={{
           height: "100%",
           display: "flex",

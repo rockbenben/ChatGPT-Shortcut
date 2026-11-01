@@ -9,11 +9,10 @@ let adScriptInjected = false;
 const FILL_TIMEOUT_MS = 5000;
 
 /**
- * 广告位三态（设计原则：广告位永远不自我标记，CLS 取舍已确认可接受）：
- *  - pending：隐形等待（无预留高度、无底色边框），页面看不出这里有广告位
- *  - filled：AdSense 注入内容，自然撑开（此时发生一次布局移动，可接受）
- *  - empty：渲染 null。详情页的 transverse 位随之彻底消失；
- *    首页网格的外层 Col 会留一个空槽，已确认可接受（不值得为它引入收起机制）
+ * 广告位三态（设计原则：设置最小预留高度消除 CLS 突刺，未填充或屏蔽时自动收起）：
+ *  - pending：占位等待（预留 90px 横幅 / 200px 网格最小高度），避免 AdSense 填充时下方内容断崖式下移
+ *  - filled：AdSense 注入内容，自然撑开（因已有预留高度，CLS 保持在 0）
+ *  - empty：渲染 null。未填充/被屏蔽超时后收起占位，详情页横幅彻底消失，首页保留网格
  */
 const AdComponent = ({ type = "default", className = "", style = {} }) => {
   const [shouldLoad, setShouldLoad] = useState(false);
@@ -99,7 +98,7 @@ const AdComponent = ({ type = "default", className = "", style = {} }) => {
     // 768px 下 728 溢出 9px、970 溢出 251px。桌面够宽才躲得过。
     // 正常情况（responsive 单元按容器宽度取素材）什么都不裁，只有上面那种病态尺寸才生效 ——
     // 裁掉一条广告边，好过整站在手机上横向滚动。
-    <div ref={containerRef} className={className} style={{ width: "100%", overflow: "hidden", ...style }}>
+    <div ref={containerRef} className={className} style={{ width: "100%", minHeight: type === "transverse" ? 90 : 200, overflow: "hidden", ...style }}>
       {shouldLoad && (
         <ins
           ref={insRef}

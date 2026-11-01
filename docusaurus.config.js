@@ -257,6 +257,15 @@ const config = {
         fetchpriority: "low",
       },
     },
+    // dns-prefetch 第三方资源域，加速外部脚本解析并消除渲染阻塞
+    {
+      tagName: "link",
+      attributes: { rel: "dns-prefetch", href: "https://pagead2.googlesyndication.com" },
+    },
+    {
+      tagName: "link",
+      attributes: { rel: "dns-prefetch", href: "https://www.googletagmanager.com" },
+    },
     // 提前握手 API 域：prompt 详情页（评论）、社区列表/详情页水合后第一件事就是打
     // api.newzone.top，而且是跨域带 preflight。Lighthouse 移动端实测首个 XHR 落在 2.9–4.7 s，
     // DNS + TCP + TLS 那 100–300 ms 可以在解析 HTML 时就付掉。

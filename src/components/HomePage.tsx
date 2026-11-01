@@ -7,7 +7,7 @@
  * locale 拆页的初衷）。切勿在本文件 import 任何 locale 数据，也不要用模板路径动态
  * require（会把 18 份 JSON 全部打进 bundle）。
  */
-import React, { useContext, useState, useMemo, useEffect, useCallback, useRef, Suspense } from "react";
+import React, { useContext, useState, useMemo, useEffect, useCallback, useRef, Suspense, startTransition } from "react";
 import { ViewModeContext, useViewMode, type ViewMode } from "@site/src/contexts/ViewModeContext";
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
@@ -829,8 +829,7 @@ const ShowcaseContent: React.FC<HomeData> = ({ defaultFavorData, defaultOtherDat
 
     return "explore";
   });
-  const [isAnimating, setIsAnimating] = useState(false);
-
+  
   // 用户数据加载后，根据最新数据修正视图模式（处理缓存与实际数据不一致的情况）
   useEffect(() => {
     if (!userAuth || authLoading) return;
@@ -852,8 +851,6 @@ const ShowcaseContent: React.FC<HomeData> = ({ defaultFavorData, defaultOtherDat
   // 切换视图模式的处理函数
   const handleViewModeChange = useCallback(
     (newMode: ViewMode) => {
-      setIsAnimating(true);
-
       // 通过 React Router 更新 URL，确保 useLocation 感知变化并清除筛选状态
       const searchParams = new URLSearchParams(window.location.search);
       searchParams.delete("tags");
@@ -873,11 +870,10 @@ const ShowcaseContent: React.FC<HomeData> = ({ defaultFavorData, defaultOtherDat
         console.error("Failed to save view preference:", error);
       }
 
-      // 延迟切换以配合动画
-      setTimeout(() => {
+      // 走 startTransition 低优调度，避免 setTimeout 人为延迟拖慢交互响应（INP）
+      startTransition(() => {
         setViewMode(newMode);
-        setIsAnimating(false);
-      }, 150);
+      });
     },
     [history],
   );
@@ -902,11 +898,7 @@ const ShowcaseContent: React.FC<HomeData> = ({ defaultFavorData, defaultOtherDat
   return (
     <ViewModeContext.Provider value={{ viewMode, setViewMode: handleViewModeChange }}>
       <ShowcaseHeader />
-      <div
-        style={{
-          opacity: isAnimating ? 0 : 1,
-          transition: "opacity 0.15s ease-in-out",
-        }}>
+      <div>
         {userAuth ? (
           <MyCollectionView onOpenModal={handleOpenModal} defaultFavorData={defaultFavorData} defaultOtherData={defaultOtherData} />
         ) : (
@@ -926,10 +918,21 @@ export default function HomePage({ defaultFavorData, defaultOtherData }: HomeDat
   const [shareUrl, setShareUrl] = useState("");
   const { siteConfig, i18n } = useDocusaurusContext();
 
+  // 空闲期预加载详情弹窗组件，大幅消除用户点击卡片时的网络延迟与 INP 交互卡顿
   useEffect(() => {
     if (ExecutionEnvironment.canUseDOM) {
       setShareUrl(window.location.href);
       cleanupLegacyCache();
+      const preload = () => {
+        import("@site/src/components/PromptDetailModal");
+      };
+      if ("requestIdleCallback" in window) {
+        const handle = (window as any).requestIdleCallback(preload, { timeout: 3000 });
+        return () => (window as any).cancelIdleCallback(handle);
+      } else {
+        const timer = setTimeout(preload, 1500);
+        return () => clearTimeout(timer);
+      }
     }
   }, []);
 
