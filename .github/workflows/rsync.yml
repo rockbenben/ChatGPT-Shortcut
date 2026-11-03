@@ -1,3 +1,14 @@
+# ⚠️ 这个 workflow 是给 **fork 用户**用的,不是给上游仓库用的 —— 别当死代码删掉。
+#
+# fork 会把整个 .github/ 复制过去,`if: github.event.repository.fork` 让它只在 fork 里
+# 真的跑起来:在**上游仓库自己**这里它永远是 skipped,那是设计如此、不是坏了
+# (上游不需要同步自己)。它做的事是每天把上游 main 合并进 fork 的 main。
+#
+# fork 用户要做的第一件事:**fork 里的定时任务默认是禁用的**(GitHub 对公开仓库的 fork
+# 就是这么设的),得去 Actions 页点一次「Enable workflow」,或跑
+# `gh workflow enable rsync.yml`,之后才会每天自动同步。
+#
+# 删掉这个文件 = 以后新建的 fork 再也没有自动同步了。
 name: Upstream Sync
 
 permissions:

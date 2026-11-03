@@ -7,6 +7,11 @@ permissions:
   contents: read
   packages: write
 
+# 同 docker.yml：多架构构建一次要十几分钟，并行跑只会互相抢缓存。
+concurrency:
+  group: docker-offline-${{ github.ref }}
+  cancel-in-progress: false
+
 env:
   IMAGE_NAME: chatgpt-shortcut
 
@@ -25,6 +30,8 @@ jobs:
     name: Build and push offline Docker image
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/offline'
+    # 多架构构建实测 15–18 分钟；默认 360 分钟会让卡死的 buildx 白占一天。
+    timeout-minutes: 60
     steps:
       - name: 🚚 Check out the repo
         uses: actions/checkout@v7
@@ -76,5 +83,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: type=gha,scope=offline
+          cache-to: type=gha,mode=max,scope=offline

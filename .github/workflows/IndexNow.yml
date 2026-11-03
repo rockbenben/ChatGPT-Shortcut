@@ -2,10 +2,14 @@ name: "IndexNow Multi-Language"
 
 on:
   schedule:
-    # 每3天的 北京时间 04:00 运行一次
+    # 每3天跑一次，UTC 20:20 = 北京时间次日 04:20
     - cron: "0 20 */3 * *"
   # 允许手动触发
   workflow_dispatch:
+
+# 只提交 sitemap，不需要读仓库；显式收窄权限。
+permissions:
+  contents: read
 
 jobs:
   submit-root-sitemap:

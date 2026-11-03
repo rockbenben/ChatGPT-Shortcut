@@ -1,14 +1,35 @@
-name: 🚀 Deploy website on push
+# main 分支上的这个 workflow **不部署**——部署在 speedup/data-retrieval 分支的同名文件里
+# （那个才带 JamesIves/github-pages-deploy-action）。这里只做上线前的类型检查与构建校验，
+# 所以名字不再是「Deploy」。两个分支的 workflow 同名不同职责，排查时别混。
+name: "✅ CI: typecheck & build"
 
 on:
   push:
     branches:
       - main
+  # PR 触发：合并前跑同一套检查。**只有配合仓库的分支保护**（required status check
+  # 「✅ Typecheck & Build」）才构成真正的闸门；没有它，这里只是让作者提前看到结果。
+  pull_request:
+    branches:
+      - main
+  # 手动触发：main 不部署，产物也不上传，但排查线上问题时可以随时重跑一次完整构建。
+  workflow_dispatch:
+
+# 构建只需要读仓库。显式声明，避免以后有人加 action 时顺带拿到写权限。
+permissions:
+  contents: read
+
+# 连续 push 时取消上一轮：构建实测 6–9 分钟，连推三次就是三份重复算力。
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   web-deploy:
-    name: 🎉 Deploy
+    name: ✅ Typecheck & Build
     runs-on: ubuntu-latest
+    # 默认超时是 360 分钟，卡死的构建会白占 runner 一天。实测 6–9 分钟，25 分钟足够。
+    timeout-minutes: 25
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v7

@@ -173,7 +173,17 @@ async function main() {
         `(byNewest=${snapshot.byNewest.ids.length}, byUpvoted=${snapshot.byUpvoted.ids.length}, byId=${Object.keys(byId).length})`,
     );
   } catch (err) {
-    ensureFallback(`Failed to refresh community snapshot: ${err?.message || err}`);
+    const reason = `Failed to refresh community snapshot: ${err?.message || err}`;
+    // REQUIRE_SNAPSHOT=1：这条构建链的结果要真上线（生产部署），快照抓不到就必须失败。
+    // 降级写空 stub 会让构建照样是绿的，但发出去的站点社区区块是空的 —— 用户看到的是
+    // 「网站这块怎么没了」，而日志里只有一行 warn，根本想不到是这里断的。
+    // 本地开发与只做校验、不出站的构建保持降级：后端挂了也先把工开起来。
+    if (process.env.REQUIRE_SNAPSHOT === "1") {
+      console.error(`[snapshot] ${reason}`);
+      console.error("[snapshot] REQUIRE_SNAPSHOT=1：本次构建要求真实快照，已中止。");
+      process.exit(1);
+    }
+    ensureFallback(reason);
   }
 }
 

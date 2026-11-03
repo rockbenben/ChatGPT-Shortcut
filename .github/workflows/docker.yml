@@ -1,22 +1,48 @@
 name: 🐳 Build and Push Docker Image
 
 on:
+  push:
+    # 推 v* tag 即构建（之前是 release: published——要去 GitHub 点 Publish release 才触发）。
+    # 版本号取 tag，与 package.json 对不上会在构建前中止。
+    # 非 v* 的 tag（如 backup-before-split）不匹配，不会触发。
+    tags:
+      - "v*"
   workflow_dispatch:
-  release:
-    types: [published]
 
 permissions:
   contents: read
   packages: write
 
+# 同一 ref 只允许一个镜像构建在跑：多架构构建本身要 15–18 分钟，
+# 两个并行的 buildx 会互相抢 gha 缓存，还会对同一批标签各推一遍。
+concurrency:
+  group: docker-${{ github.ref }}
+  cancel-in-progress: false
+
 env:
   IMAGE_NAME: chatgpt-shortcut
 
 jobs:
+  skip_prerelease:
+    name: Skip prerelease
+    runs-on: ubuntu-latest
+    # 预发布 tag 不推镜像：version / major.minor / major / latest 四个标签会被
+    # 预发布构建一起覆盖，正式版的 latest 就此指向预发布内容，而且没有任何地方会提示。
+    # 光有这个提示 job 拦不住推送——真正拦住的是下面两个 job 的 if。
+    if: github.event_name == 'push' && contains(github.ref_name, '-')
+    steps:
+      - run: echo "::notice::预发布 tag (${{ github.ref_name }}) 不推 Docker 镜像。需要镜像请手动 workflow_dispatch。"
+
   push_to_registry:
-    if: github.repository_owner == 'rockbenben' # fork 无对应 secrets，跳过以免 CI 报错
+    # owner guard：fork 无对应 secrets，跳过以免 CI 报错。
+    # 预发布整条跳过（不是只跳 latest 标签）——见上面的说明。
+    # ${{ }} 不能省：YAML 里裸的前导 ! 会被当成标签语法。
+    # 手动触发时第一个分支成立，不看 ref 名（分支名里可能带 -）。
+    if: ${{ github.repository_owner == 'rockbenben' && (github.event_name != 'push' || !contains(github.ref_name, '-')) }}
     name: Push Docker image to Docker Hub and GHCR
     runs-on: ubuntu-latest
+    # 多架构构建实测 15–18 分钟，留足余量；默认 360 分钟会让卡死的 buildx 白占一天。
+    timeout-minutes: 60
     steps:
       - name: 🚚 Check out the repo
         uses: actions/checkout@v7
@@ -49,6 +75,22 @@ jobs:
           echo "version=${VERSION}" >> $GITHUB_OUTPUT
           echo "Read version: ${VERSION}"
 
+      - name: 🔍 Verify tag matches package.json version
+        # Docker 标签取自 package.json，不是 git tag。两者不一致时，metadata-action 会拿
+        # package.json 的版本号去覆盖一个**已经存在**的同名标签 —— 那个标签原本指向
+        # 上一个版本的镜像，覆盖后没有任何提示，pull 下来的是另一个版本的构建。
+        # 这里把它挡在构建之前。手动触发时没有 tag 可比，跳过校验。
+        run: |
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          if [ "${{ github.event_name }}" = "push" ]; then
+            TAG="${GITHUB_REF_NAME#v}"
+            if [ "$TAG" != "$PKG_VERSION" ]; then
+              echo "::error::tag ($GITHUB_REF_NAME) 与 package.json 版本 ($PKG_VERSION) 不一致 —— Docker 标签会覆盖已有镜像，已中止。"
+              exit 1
+            fi
+          fi
+          echo "版本校验通过：$PKG_VERSION (tag=$GITHUB_REF_NAME)"
+
       - name: 🏷️ Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v6
@@ -72,5 +114,81 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: type=gha,scope=online
+          cache-to: type=gha,mode=max,scope=online
+
+  push_offline_image:
+    # 离线镜像跟在线镜像一起出：同一个 tag 触发，构建的是 **offline 分支的代码**
+    # （那份没有远程 API 的离线版），而不是 tag 指向的那份 main 代码。
+    # 两者 Dockerfile 完全一致，差别只在代码与快照脚本。
+    if: ${{ github.repository_owner == 'rockbenben' && (github.event_name != 'push' || !contains(github.ref_name, '-')) }}
+    name: Push offline Docker image
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: 🚚 Check out the offline branch
+        uses: actions/checkout@v7
+        with:
+          # 关键：离线镜像取 offline 分支当前代码，不是 tag 指向的提交
+          ref: offline
+          fetch-depth: 0
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: 🔑 Log in to Docker Hub
+        uses: docker/login-action@v4
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: 🔐 Login to GitHub Container Registry
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Read package.json version
+        id: pkg
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "Read version: ${VERSION}"
+
+      - name: 🔍 Compare offline version with the tag
+        # 只是提醒，不拦：offline 分支可能还没同步到这次发版。
+        # 真拦了会把一次发版卡在另一条分支的进度上。
+        run: |
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          TAG="${GITHUB_REF_NAME#v}"
+          if [ "${{ github.event_name }}" = "push" ] && [ "$TAG" != "$PKG_VERSION" ]; then
+            echo "::warning::offline 分支版本 ($PKG_VERSION) 与 tag ($GITHUB_REF_NAME) 不一致 —— 离线镜像按自己的版本打标签（$PKG_VERSION-offline），内容可能落后于在线版。"
+          else
+            echo "离线版本一致：$PKG_VERSION"
+          fi
+
+      - name: 🏷️ Generate Docker tags
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: |
+            ${{ vars.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}
+            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=offline
+            type=raw,value=${{ steps.pkg.outputs.version }}-offline,enable=${{ steps.pkg.outputs.version != '' }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha,scope=offline
+          cache-to: type=gha,mode=max,scope=offline

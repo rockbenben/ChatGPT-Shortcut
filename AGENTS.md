@@ -265,6 +265,34 @@ It does **not** generate the `prompt/{id}.tsx` shells any more — `scripts/genP
 
 ## CI/CD
 
-Primary deployment workflow (`.github/workflows/main.yml`): triggers on push to `speedup/data-retrieval` branch, runs `yarn typecheck` then `yarn build` (memory-safe phased build), deploys to GitHub Pages via `gh-pages` branch. Uses Node 24 with yarn cache. The typecheck step also produces the prompt page shells, so the subsequent build hits the generator's `.genstamp` fast path.
+**同名的 `main.yml` 在三个分支上职责不同**（同名文件按分支各自生效，改之前先确认当前分支）：
 
-`.github/workflows/azure-static-web-apps-*.yml` is dormant (its trigger branch is prefixed `disabled-`). Action versions are kept current by Dependabot (weekly, `github-actions` ecosystem); note that `uses:` lines inside comments are invisible to it and will not be bumped.
+| 分支 | `main.yml` 行为 |
+| :--- | :--- |
+| `main` | 只跑 `yarn typecheck` + `yarn build`（CI 校验），**不部署**。workflow 名 `✅ CI: typecheck & build`。 |
+| `speedup/data-retrieval` | 同上 + `JamesIves/github-pages-deploy-action` 推到 `gh-pages` 分支 —— **生产环境部署走这条**。 |
+| `offline` | 没有 `main.yml`，只有 Docker 相关 workflow。 |
+
+其它 workflow（都在 `main` 分支上）：
+- `docker.yml` —— **推 `v*` tag 即自动构建**（早先是 `release: published`，得去 GitHub 点 Publish release 才触发；推 tag 本身什么都不触发）。一次跑两个 job：**在线镜像**（取 tag 指向的代码）+ **离线镜像**（取 `offline` 分支当前代码，`ref: offline` checkout）——离线镜像和在线镜像不是同一份代码，这是它不能只靠 tag 的原因。两个 job 并行，都推 Docker Hub + GHCR，多架构（amd64 + arm64）。
+  - **Docker 标签取自 `package.json` 的 version，不是 git tag**：构建前先校验 tag 名与 package.json 版本一致，不一致直接中止（否则会静默覆盖已有标签）。
+  - **预发布 tag（带 `-`）整条跳过**：version / major.minor / major / latest 四个标签会被预发布构建一起覆盖，正式版的 latest 就此指向预发布内容。
+  - 离线分支版本落后于 tag 时**只发 warning 不拦**：真拦了会把一次发版卡在另一条分支的进度上。
+  - **tag 触发用的是 tag 指向的那个 commit 上的 workflow 文件**：所以这次改动合进 main 之前打的 tag，走的仍是旧逻辑（推 tag 不触发、要发 Release 才触发）——不会出错，只是行为没变。反过来，`release` 事件用的是默认分支上的文件，两条触发不要同时开，否则同一个版本会构建两遍（多花 15–18 分钟，还会对同一批标签各推一遍）。
+- `docker-offline.yml` —— 仅手动触发、且必须从 `offline` 分支触发（否则红字报错），推同一镜像仓库的 `offline` 标签。**保留作手动补建入口**（自动那条走 `docker.yml` 的第二个 job）。
+- `IndexNow.yml` —— 定时把 18 份 sitemap 提交给 IndexNow。
+- `dependabot-auto-approve.yml` —— 给 dependabot 的 PR 自动 approve。
+
+**`rsync.yml` 是给 fork 用户的,不是死代码**:fork 会把整个 `.github/` 复制过去,`if: github.event.repository.fork` 让它只在 fork 里真跑——在上游仓库自己这里它永远 skipped,那是设计如此。删掉它 = 以后新建的 fork 再也没有自动同步。⚠️ 但 fork 里的定时任务默认是禁用的(GitHub 对公开仓库的 fork 就是这么设的),fork 用户得在 Actions 页点一次「Enable workflow」,或跑 `gh workflow enable rsync.yml`。
+
+**已删除**：`dependabot-auto-merge.yml`（条件里的 `'my-dependency'` 是模板占位符，**在所有仓库里都不成立**——上游和 fork 都一样,从未合并过任何 PR；而当时也没有 required checks，把它"修好"等于无人审直接上线。现在 main 有了分支保护，想让 fork 用户自动合并依赖的话应该**修好**而不是留着这个占位符）。**依赖升级的实际做法是手工提交**，dependabot PR 开出来后会关掉、提交同样的改动。
+
+CI 的几条硬约束：
+- **类型检查必须单独跑**：Docusaurus 用 swc 剥离类型，构建期不做类型检查（带 TS 错误 `yarn build` 仍以退出码 0 成功）。
+- **`fetch-depth: 0` 不能省**：`showLastUpdateTime` 依赖 git 历史做 blame。Docker 构建走 `SKIP_GIT_INFO=true`，不需要 git（也因此能把 `.git` 排除出构建上下文）。
+- **main 的合并闸门 = 分支保护 + PR 触发的 CI**：`main.yml` 里有 `pull_request` 触发，仓库对 `main` 开了保护，必需检查是 **`✅ Typecheck & Build`**（就是那个 job 的 `name`）。两条要一起成立才有效：
+  - **改 job 的 `name` 会同时废掉闸门** —— 保护里记的是字符串，改名后 PR 会永远等一个不再出现的检查（GitHub 显示 "Expected — Waiting for status to be reported"）。改名必须同步改保护设置：`gh api -X PUT repos/rockbenben/ChatGPT-Shortcut/branches/main/protection --input <json>`。
+  - **远端保护与 workflow 文件必须同时落地** —— 只开保护、不推 workflow，PR 会全部卡死（检查名对不上 / 压根没触发）。反过来也一样。
+  - 保护是 `strict: true`（要跟 main 同步才能合）、**不强制 review、不强制 admin**（管理员仍可直接 push，依赖升级的手工提交习惯不受影响）。
+- **speed / offline 分支没有分支保护，也没有 PR 触发的 CI**（按维护者的选择没同步）。生产部署走 speed 的 push 触发，闸门是那个 workflow 自己的 typecheck 步骤——typecheck 失败则 job 失败，后面的 deploy 步骤根本不会执行。
+- **Actions 产物配额是账号级共用的**（不是每仓各算），给任何 workflow 加 `upload-artifact` 前先算总量，并一律设 `retention-days: 7`。
