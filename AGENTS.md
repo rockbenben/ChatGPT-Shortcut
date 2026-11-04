@@ -285,6 +285,11 @@ It does **not** generate the `prompt/{id}.tsx` shells any more — `scripts/genP
 
 **`rsync.yml` 是给 fork 用户的,不是死代码**:fork 会把整个 `.github/` 复制过去,`if: github.event.repository.fork` 让它只在 fork 里真跑——在上游仓库自己这里它永远 skipped,那是设计如此。删掉它 = 以后新建的 fork 再也没有自动同步。⚠️ 但 fork 里的定时任务默认是禁用的(GitHub 对公开仓库的 fork 就是这么设的),fork 用户得在 Actions 页点一次「Enable workflow」,或跑 `gh workflow enable rsync.yml`。
 
+**它不能把上游 main 原样推下来**：`GITHUB_TOKEN` 永远不能创建/更新 `.github/workflows/` 下的文件(`workflows` 权限不在 GITHUB_TOKEN 的可授予清单里,仓库 Settings → Actions 里勾 "Read and write permissions" 也没用)。上游只要有提交碰了 workflow 文件,整次 push 就被拒(`refusing to allow a GitHub App to create or update workflow ... without workflows permission`),fork 的 main 卡住不动——**这是平台硬边界,换掉哪个 workflow 文件都没用,整次 push 一起拒**。GitHub 判的是**这次 push 的净差异**,不是逐个 commit(实测:先改 workflow 文件再 revert,净差异为零,推得上去),所以现在的做法是：
+- **默认(只有 GITHUB_TOKEN)**:合并上游,但把 `.github/workflows/` 换回 fork 自己的版本 → 净差异里没有 workflow 文件,推得上去。代价: fork 的 workflow 停在最后一次手动同步的版本。
+- **fork 配了 `FORK_SYNC_TOKEN`**(fine-grained PAT:Contents write + Workflows write):连 workflow 一起同步,行为和以前一样。
+- 想更新 fork 的 workflow:去仓库首页点一次 [Sync fork](GitHub 自己的按钮有 workflow 权限),或在 fork 里配 `FORK_SYNC_TOKEN`。
+
 **已删除**：`dependabot-auto-merge.yml`（条件里的 `'my-dependency'` 是模板占位符，**在所有仓库里都不成立**——上游和 fork 都一样,从未合并过任何 PR；而当时也没有 required checks，把它"修好"等于无人审直接上线。现在 main 有了分支保护，想让 fork 用户自动合并依赖的话应该**修好**而不是留着这个占位符）。**依赖升级的实际做法是手工提交**，dependabot PR 开出来后会关掉、提交同样的改动。
 
 CI 的几条硬约束：

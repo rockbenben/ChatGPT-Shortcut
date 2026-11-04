@@ -9,6 +9,27 @@
 # `gh workflow enable rsync.yml`,之后才会每天自动同步。
 #
 # 删掉这个文件 = 以后新建的 fork 再也没有自动同步了。
+#
+# ── 为什么不能把上游 main 原样推下来 ───────────────────────────────────────
+# `GITHUB_TOKEN` **永远不能创建/更新 `.github/workflows/` 下的文件**:GitHub 的硬边界,
+# `workflows` 权限不在 GITHUB_TOKEN 的可授予清单里,仓库 Settings → Actions 里把
+# "Read and write permissions" 勾上也没用。而 GITHUB_TOKEN 恰恰是 fork 唯一能直接
+# 用的令牌。于是只要上游某次提交碰了 workflow 文件,整次 push 就被拒:
+#
+#   ! [remote rejected] main -> main (refusing to allow a GitHub App to create or
+#   update workflow `.github/workflows/xxx.yml` without `workflows` permission)
+#
+# GitHub 判的是**这次 push 的净差异**,不是逐个 commit(实测:先改 workflow 文件再
+# revert,净差异为零,推得上去)。所以下面这套做法成立:
+#
+#   - 默认(只有 GITHUB_TOKEN):合并上游,但把 `.github/workflows/` 换回 fork 自己的
+#     版本 → 净差异里没有 workflow 文件,推得上去。
+#   - fork 自己配了 `FORK_SYNC_TOKEN`(fine-grained PAT:Contents write + Workflows
+#     write):连 workflow 一起同步,行为和以前一样,净差异完整。
+#
+# 代价(默认模式):fork 的 `.github/workflows/` 停在最后一次手动同步的版本。想更新它,
+# 去仓库首页点一次 [Sync fork](GitHub 自己的按钮有 workflow 权限),或者在 fork 里
+# 配好 `FORK_SYNC_TOKEN` 让它自动跟进。
 name: Upstream Sync
 
 permissions:
@@ -26,26 +47,94 @@ jobs:
     if: ${{ github.event.repository.fork }}
 
     steps:
-      # Step 1: run a standard checkout action
       - name: Checkout target repo
         uses: actions/checkout@v7
-
-      # Step 2: run the sync action
-      - name: Sync upstream changes
-        id: sync
-        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
         with:
-          upstream_sync_repo: rockbenben/ChatGPT-Shortcut
-          upstream_sync_branch: main
-          target_sync_branch: main
-          target_repo_token: ${{ secrets.GITHUB_TOKEN }} # automatically generated, no need to set
+          # 要算「上游新增了哪些提交」并做合并,需要完整历史
+          fetch-depth: 0
 
-          # Set test_mode true to run tests instead of the true action!!
-          test_mode: false
+      - name: Sync upstream changes
+        env:
+          # 可选。fork 自备的 fine-grained PAT(Contents: write + Workflows: write)。
+          # 没有它 → 降级为「只同步代码,workflow 保留 fork 自己的」。
+          SYNC_TOKEN: ${{ secrets.FORK_SYNC_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          UPSTREAM_REPO="${UPSTREAM_REPO:-rockbenben/ChatGPT-Shortcut}"
+          UPSTREAM_URL="${UPSTREAM_URL:-https://github.com/${UPSTREAM_REPO}.git}"
+          TARGET_REPO="${TARGET_REPO:-${GITHUB_REPOSITORY:-}}"
+          TARGET_BRANCH="${TARGET_BRANCH:-main}"
+          HAS_PAT="no"
+          if [ -n "${SYNC_TOKEN:-}" ]; then HAS_PAT="yes"; fi
+
+          git config user.name  "GH Action - Upstream Sync"
+          git config user.email "action@github.com"
+
+          if git remote get-url upstream >/dev/null 2>&1; then
+            git remote set-url upstream "$UPSTREAM_URL"
+          else
+            git remote add upstream "$UPSTREAM_URL"
+          fi
+
+          git fetch --no-tags upstream main
+          BEFORE="$(git rev-parse HEAD)"
+          UPSTREAM_SHA="$(git rev-parse FETCH_HEAD)"
+
+          if [ "$BEFORE" = "$UPSTREAM_SHA" ]; then
+            echo "已经是最新的: ${BEFORE}"
+            exit 0
+          fi
+
+          echo "上游新增的提交:"
+          git log --oneline "${BEFORE}..${UPSTREAM_SHA}" || true
+
+          # --no-commit 是必须的:要在提交之前把 .github/workflows 换回 fork 自己的版本。
+          if ! git merge --no-ff --no-commit "$UPSTREAM_SHA"; then
+            echo "::warning::合并冲突,先按各自策略处理 .github/workflows"
+            # ours = fork 的版本,theirs = 上游的版本。逐个文件处理,
+            # 因为 git checkout --ours 对「没有冲突版本」的路径会直接报错。
+            git diff --name-only --diff-filter=U -- .github/workflows | while read -r f; do
+              if [ "$HAS_PAT" = "yes" ]; then
+                git checkout --theirs -- "$f" || true
+              else
+                git checkout --ours -- "$f" || true
+              fi
+              git add -- "$f" || true
+            done
+            if [ -n "$(git ls-files --unmerged)" ]; then
+              git merge --abort || true
+              echo "::error::存在无法自动解决的冲突,请到 ${TARGET_REPO} 手动同步"
+              exit 1
+            fi
+          fi
+
+          if [ "$HAS_PAT" = "no" ]; then
+            # GITHUB_TOKEN 推不动 .github/workflows/**,这一段换回 fork 自己的版本。
+            # `git checkout <commit> -- <path>` 会同时写回索引和工作区,不用再 git add。
+            # 上游新增的 workflow 文件在 BEFORE 里不存在,checkout 不会删掉它们,
+            # 它们会留在工作区(未跟踪)——不会进索引,所以不会被 push 出去。
+            git rm -rq --cached --ignore-unmatch -- .github/workflows
+            git checkout "$BEFORE" -- .github/workflows
+            echo "未配置 FORK_SYNC_TOKEN:已保留 fork 自己的 .github/workflows"
+          fi
+
+          if git diff --cached --quiet; then
+            git merge --abort || true
+            echo "上游没有可同步的代码改动(只有 workflow 文件)"
+          else
+            git commit -q -m "chore(sync): merge upstream main (${UPSTREAM_SHA:0:9})"
+          fi
+
+          if [ "$HAS_PAT" = "yes" ]; then
+            # PAT 带 Workflows 权限,workflow 文件也能推。token 会被 Actions 日志自动打码。
+            git remote set-url origin "https://x-access-token:${SYNC_TOKEN}@github.com/${TARGET_REPO}.git"
+          fi
+          git push origin "HEAD:${TARGET_BRANCH}"
 
       - name: Sync check
         if: failure()
         run: |
-          echo "::error::由于权限不足，导致同步失败（这是预期的行为），请前往仓库首页手动执行[Sync fork]。"
-          echo "::error::Due to insufficient permissions, synchronization failed (as expected). Please go to the repository homepage and manually perform [Sync fork]."
+          echo "::error::同步失败，具体原因见上方日志；也可以到仓库首页手动执行 [Sync fork]。"
+          echo "::error::Sync failed — see the step log above for the reason, or run [Sync fork] manually from the repository home page."
           exit 1
