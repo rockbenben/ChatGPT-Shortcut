@@ -302,12 +302,6 @@
   "label.sharePrompt": {
     "message": "コミュニティページで共有する（他のユーザーが閲覧・お気に入り登録できます）"
   },
-  "label.shareStatePublic": {
-    "message": "公開中：コミュニティページで他のユーザーが閲覧・お気に入り登録できます（「編集」で非公開にできます）"
-  },
-  "label.shareStatePublicNoEdit": {
-    "message": "公開中：コミュニティページで他のユーザーが閲覧・お気に入り登録できます"
-  },
   "label.shareStatePrivate": {
     "message": "自分だけに表示されています"
   },

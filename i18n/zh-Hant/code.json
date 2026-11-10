@@ -302,12 +302,6 @@
   "label.sharePrompt": {
     "message": "分享到社群頁面，其他人可以瀏覽和收藏"
   },
-  "label.shareStatePublic": {
-    "message": "已公開：其他人可在社群頁面瀏覽和收藏（點「編輯」可改為僅自己可見）"
-  },
-  "label.shareStatePublicNoEdit": {
-    "message": "已公開：其他人可在社群頁面瀏覽和收藏"
-  },
   "label.shareStatePrivate": {
     "message": "僅自己可見"
   },

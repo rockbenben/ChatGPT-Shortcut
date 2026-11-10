@@ -302,12 +302,6 @@
   "label.sharePrompt": {
     "message": "Auf der Community-Seite teilen – andere können ihn ansehen und speichern"
   },
-  "label.shareStatePublic": {
-    "message": "Öffentlich: Andere können ihn auf der Community-Seite ansehen und zu Favoriten hinzufügen (mit „Bearbeiten“ auf privat setzen)"
-  },
-  "label.shareStatePublicNoEdit": {
-    "message": "Öffentlich: Andere können ihn auf der Community-Seite ansehen und zu Favoriten hinzufügen"
-  },
   "label.shareStatePrivate": {
     "message": "Nur für Sie sichtbar"
   },
