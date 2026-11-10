@@ -302,12 +302,6 @@
   "label.sharePrompt": {
     "message": "Topluluk sayfasında paylaş — diğerleri görebilir ve favorilerine ekleyebilir"
   },
-  "label.shareStatePublic": {
-    "message": "Herkese açık: diğerleri topluluk sayfasında görüp Favoriler'e ekleyebilir (özel yapmak için Düzenle'ye dokun)"
-  },
-  "label.shareStatePublicNoEdit": {
-    "message": "Herkese açık: diğerleri topluluk sayfasında görüp Favoriler'e ekleyebilir"
-  },
   "label.shareStatePrivate": {
     "message": "Yalnızca size görünür"
   },

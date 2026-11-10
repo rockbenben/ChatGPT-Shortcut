@@ -302,12 +302,6 @@
   "label.sharePrompt": {
     "message": "المشاركة في صفحة المجتمع — سيتمكن الآخرون من عرضه وحفظه"
   },
-  "label.shareStatePublic": {
-    "message": "عام: يمكن للآخرين عرضه وإضافته إلى المفضلة في صفحة المجتمع (اضغط تعديل لجعله خاصًا)"
-  },
-  "label.shareStatePublicNoEdit": {
-    "message": "عام: يمكن للآخرين عرضه وإضافته إلى المفضلة في صفحة المجتمع"
-  },
   "label.shareStatePrivate": {
     "message": "مرئي لك فقط"
   },

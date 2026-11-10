@@ -302,12 +302,6 @@
   "label.sharePrompt": {
     "message": "Share on the community page — others can browse and favorite it"
   },
-  "label.shareStatePublic": {
-    "message": "Public: others can view and favorite it on the community page (use Edit to make it private)"
-  },
-  "label.shareStatePublicNoEdit": {
-    "message": "Public: others can view and favorite it on the community page"
-  },
   "label.shareStatePrivate": {
     "message": "Only visible to you"
   },
