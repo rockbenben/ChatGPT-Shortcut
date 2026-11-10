@@ -302,12 +302,6 @@
   "label.sharePrompt": {
     "message": "커뮤니티 페이지에 공유 (다른 사용자가 보고 즐겨찾기할 수 있습니다"
   },
-  "label.shareStatePublic": {
-    "message": "공개됨: 커뮤니티 페이지에서 다른 사용자가 보고 즐겨찾기할 수 있습니다 ('편집'에서 비공개로 변경)"
-  },
-  "label.shareStatePublicNoEdit": {
-    "message": "공개됨: 커뮤니티 페이지에서 다른 사용자가 보고 즐겨찾기할 수 있습니다"
-  },
   "label.shareStatePrivate": {
     "message": "나만 볼 수 있습니다"
   },

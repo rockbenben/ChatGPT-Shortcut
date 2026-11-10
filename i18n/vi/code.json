@@ -302,12 +302,6 @@
   "label.sharePrompt": {
     "message": "Chia sẻ lên trang cộng đồng — người khác có thể xem và lưu"
   },
-  "label.shareStatePublic": {
-    "message": "Đang công khai: người khác có thể xem và thêm vào Yêu thích trên trang cộng đồng (chọn Chỉnh sửa để chuyển sang riêng tư)"
-  },
-  "label.shareStatePublicNoEdit": {
-    "message": "Đang công khai: người khác có thể xem và thêm vào Yêu thích trên trang cộng đồng"
-  },
   "label.shareStatePrivate": {
     "message": "Chỉ mình bạn nhìn thấy"
   },

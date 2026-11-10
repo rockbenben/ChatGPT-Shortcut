@@ -302,12 +302,6 @@
   "label.sharePrompt": {
     "message": "Bagikan ke halaman komunitas — orang lain bisa melihat dan menyimpannya"
   },
-  "label.shareStatePublic": {
-    "message": "Terbit: orang lain dapat melihat dan menambahkannya ke Favorit di halaman komunitas (gunakan Ubah agar jadi privat)"
-  },
-  "label.shareStatePublicNoEdit": {
-    "message": "Terbit: orang lain dapat melihat dan menambahkannya ke Favorit di halaman komunitas"
-  },
   "label.shareStatePrivate": {
     "message": "Hanya terlihat oleh Anda"
   },
