@@ -5,6 +5,7 @@
  * 自建提示词落 localStorage；社区相关一律返回空 —— 离线版没有社区。
  */
 import { fetchCardsByIds } from "./homepage";
+import { ALL_IDS } from "@site/src/data/constants";
 import { loadPrompts, savePrompts, nextLocalPromptId, type LocalPrompt } from "./localStore";
 
 const nowIso = () => new Date().toISOString();
@@ -26,10 +27,19 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
   return normalized.map((id) => byId.get(id)).filter(Boolean) as LocalPrompt[];
 }
 
-export async function submitPrompt(values: { title: string; description: string; remark?: string; notes?: string; share?: boolean }) {
+export async function submitPrompt(
+  values: { title: string; description: string; remark?: string; notes?: string; share?: boolean },
+  options?: { restoreId?: number },
+) {
   const list = loadPrompts();
+  const restoreId = options?.restoreId;
+  // 同机备份恢复原 ID，让排序、标签和下次导入仍指向同一条提示词。
+  // 兼容旧版的正时间戳 ID，同时避免覆盖现存条目或与精选卡片撞号。
+  if (restoreId !== undefined && (!Number.isSafeInteger(restoreId) || restoreId === 0 || ALL_IDS.includes(restoreId) || list.some((p) => p.id === restoreId))) {
+    throw new Error(`Cannot restore prompt ID ${restoreId}`);
+  }
   const prompt: LocalPrompt = {
-    id: nextLocalPromptId(list),
+    id: restoreId ?? nextLocalPromptId(list),
     title: values.title,
     description: values.description,
     remark: values.remark,

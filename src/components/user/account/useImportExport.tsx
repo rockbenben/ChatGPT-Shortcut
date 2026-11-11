@@ -204,7 +204,7 @@ export function useImportExport({ userAuth, getUserAuth, currentLanguage, refres
          * 靠 instanceId 把这两种情况分开，就不必在「能原地恢复」和「不覆盖别人」之间二选一。
          *
          *  - 本机备份：按 id 原地更新。内容改过也能从备份还原，两条同名的也不会互相吞。
-         *    id 在本地找不到的（已删除的条目）当新建处理。
+         *    已删除的条目恢复原 id，排序、标签引用和重复导入都能沿用原身份。
          *  - 外来文件（含旧版导出、手工拼的、无 instanceId 的）：id 不代表本机身份，一律新建，
          *    按标题去重以免同一份文件导两次多出副本。
          *
@@ -236,13 +236,16 @@ export function useImportExport({ userAuth, getUserAuth, currentLanguage, refres
               });
               return "changed" as const;
             }
-            await submitPrompt({
-              title: prompt.title,
-              description: prompt.prompt,
-              remark: prompt.remark,
-              notes: prompt.notes,
-              share: prompt.share ?? true,
-            });
+            await submitPrompt(
+              {
+                title: prompt.title,
+                description: prompt.prompt,
+                remark: prompt.remark,
+                notes: prompt.notes,
+                share: prompt.share ?? false,
+              },
+              { restoreId: prompt.id },
+            );
             return "changed" as const;
           });
         } else {
