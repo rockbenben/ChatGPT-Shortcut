@@ -66,12 +66,13 @@ export function useImportExport({ userAuth, getUserAuth, currentLanguage, refres
         })),
       ];
 
-      // MySpace 排序和自定义标签（导入时可恢复布局）
+      // 备份排序和标签归属；联网版导入只合并提示词及收藏。
       const items = userAuth?.data?.items || [];
       const myspaceOrder = items.map((item: any) => ({
         id: item.id,
         type: item.type,
         source: item.source,
+        ...(item.tags?.length > 0 && { tags: item.tags }),
       }));
       const customTags = userAuth?.data?.customTags || [];
 
@@ -157,6 +158,11 @@ export function useImportExport({ userAuth, getUserAuth, currentLanguage, refres
         if (!getUserAuth()?.data) {
           await refreshUserAuth();
         }
+        if (!getUserAuth()?.data) {
+          setImporting(false);
+          message.error(<Translate id="message.loadFailed">加载数据失败，请稍后重试</Translate>);
+          return;
+        }
         // 读权威即时值（refreshUserAuth 走 startTransition，await 后 state 未必已 commit，但 ref 已更新）
         const userPromptIds = getUserAuth()?.data?.userprompts?.map((p: any) => p.id) || [];
 
@@ -178,8 +184,8 @@ export function useImportExport({ userAuth, getUserAuth, currentLanguage, refres
         let successCount = 0;
         let errorCount = 0;
 
-        // 处理提示词（并发执行，提升性能）
-        const promptTasks = prompts.map(async (prompt) => {
+        // 最多同时写 4 条，限制大文件导入的瞬时请求量。
+        const importPrompt = async (prompt: any) => {
           if (prompt.id && userPromptIds.includes(prompt.id)) {
             // 检查内容是否相同，相同则跳过
             const existing = existingPromptsMap[prompt.id];
@@ -224,16 +230,18 @@ export function useImportExport({ userAuth, getUserAuth, currentLanguage, refres
             });
             return { status: "success" as const };
           }
-        });
+        };
 
-        const promptResults = await Promise.allSettled(promptTasks);
-        for (const result of promptResults) {
-          if (result.status === "fulfilled") {
-            if (result.value.status !== "skipped") {
-              successCount++;
+        for (let offset = 0; offset < prompts.length; offset += 4) {
+          const promptResults = await Promise.allSettled(prompts.slice(offset, offset + 4).map(importPrompt));
+          for (const result of promptResults) {
+            if (result.status === "fulfilled") {
+              if (result.value.status !== "skipped") {
+                successCount++;
+              }
+            } else {
+              errorCount++;
             }
-          } else {
-            errorCount++;
           }
         }
 
@@ -293,7 +301,7 @@ export function useImportExport({ userAuth, getUserAuth, currentLanguage, refres
         message.error(<Translate id="message.import.parseError">JSON 解析失败，请检查文件格式</Translate>);
       }
     },
-    [userAuth, message, refreshUserAuth],
+    [getUserAuth, message, refreshUserAuth],
   );
 
   return { fileInputRef, importing, handleExportPrompts, handleImportPrompts };
