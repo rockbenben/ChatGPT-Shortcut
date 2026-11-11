@@ -13,6 +13,10 @@ import { getCache, removeCache, PASSWORDLESS_LOCALE_KEY } from "@site/src/utils/
 /** 三种状态都要给用户看得懂的画面（原来一律 return null，白屏） */
 type CallbackState = "working" | "idle" | "failed";
 
+// 语言包等异步 Provider 更新可能重挂载回调页。同一链接在本次页面加载中只验证一次，
+// 重挂载复用完成结果；手动刷新页面后仍可重新验证。
+let passwordlessAttempt: { token: string; promise: ReturnType<typeof loginWithToken> } | undefined;
+
 const CallbackPage = () => {
   const location = useLocation();
   const { i18n } = useDocusaurusContext();
@@ -68,11 +72,14 @@ const CallbackPage = () => {
       console.error("An error occurred while handling the OAuth callback:", error);
       setPhase("failed");
     }
-  }, [location]);
+  }, [location.search, location.hash]);
 
   const loginUserWithToken = async (token: string) => {
     try {
-      await loginWithToken(token);
+      if (passwordlessAttempt?.token !== token) {
+        passwordlessAttempt = { token, promise: loginWithToken(token) };
+      }
+      await passwordlessAttempt.promise;
     } catch (error) {
       console.error("Login failed, token is invalid or expired:", error);
       setPhase("failed");
