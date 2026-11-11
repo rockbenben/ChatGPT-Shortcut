@@ -106,7 +106,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         // 搜索嵌套语言字段（DataCard）
         for (const lang of langKeys) {
           const langData = data?.[lang];
-          if (langData?.title?.toLowerCase().includes(query) || langData?.description?.toLowerCase().includes(query) || langData?.remark?.toLowerCase().includes(query)) {
+          if (langData?.title?.toLowerCase().includes(query) || langData?.description?.toLowerCase().includes(query) || langData?.prompt?.toLowerCase().includes(query) || langData?.remark?.toLowerCase().includes(query)) {
             return true;
           }
         }
@@ -226,12 +226,13 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   // 保存标签管理
   const handleManageTagsSave = async (tags: CustomTag[]) => {
     try {
-      // 构建完整的 itemTags 对象（从当前状态）
+      await saveTagAssignment();
+      // 管理定义时保留最新权威分配，避免旧视图覆盖另一标签页的修改。
       const newItemTags: Record<string, string[]> = {};
 
-      spaceItems.forEach((item) => {
-        if (item.customTags && item.customTags.length > 0) {
-          newItemTags[item.id] = item.customTags;
+      (getUserAuth()?.data?.items || []).forEach((item) => {
+        if (item.tags?.length > 0) {
+          newItemTags[`${item.type}_${item.source}_${item.id}`] = item.tags;
         }
       });
 

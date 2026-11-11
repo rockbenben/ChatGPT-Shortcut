@@ -50,6 +50,10 @@ export const useFavorite = (): UseFavoriteReturn => {
       // 判定 exists=true 直接放弃，用户点心形永远没反应——而发出 PATCH 正是修复分叉的唯一途径。
       const loves: number[] = auth.data.favorites?.[lovesKey] || [];
       const exists = loves.includes(id);
+      const matchesItem = (item: any) => item.id === id && item.type === "favorite" && item.source === source;
+      const originalIndex = items.findIndex(matchesItem);
+      const originalItem = items[originalIndex];
+      const originalLoveIndex = loves.indexOf(id);
 
       // 状态已与目标一致 → 无需发请求
       if (action === "add" && exists) return null;
@@ -81,6 +85,25 @@ export const useFavorite = (): UseFavoriteReturn => {
         const cur = getUserAuth();
         if (!cur?.data) return;
         const inverse = applyForward(cur, action === "add" ? "remove" : "add");
+        if (action === "remove") {
+          // 只恢复本条及其原位置，保留期间新增的收藏和其他条目的修改。
+          const currentItems = cur.data.items || [];
+          if (currentItems.some(matchesItem)) return;
+          inverse.items = [...currentItems];
+          if (originalItem) {
+            const nextItem = items.slice(originalIndex + 1).find((item) =>
+              inverse.items.some((current) => current.id === item.id && current.type === item.type && current.source === item.source),
+            );
+            const nextIndex = nextItem
+              ? inverse.items.findIndex((item) => item.id === nextItem.id && item.type === nextItem.type && item.source === nextItem.source)
+              : inverse.items.length;
+            inverse.items.splice(nextIndex, 0, originalItem);
+          }
+          inverse.loves = (cur.data.favorites?.[lovesKey] || []).filter((value: number) => value !== id);
+          const nextLove = loves.slice(originalLoveIndex + 1).find((value) => inverse.loves.includes(value));
+          const loveIndex = nextLove === undefined ? inverse.loves.length : inverse.loves.indexOf(nextLove);
+          inverse.loves.splice(loveIndex, 0, id);
+        }
         syncMySpaceState({
           items: inverse.items,
           favorites: { [lovesKey]: inverse.loves } as any,
