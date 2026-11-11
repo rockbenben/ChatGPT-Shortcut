@@ -31,22 +31,43 @@ export function useTagAssignment({ spaceItems, customTags, setSpaceItems, getUse
   customTagsRef.current = customTags;
   // 当前打开的 dropdown：itemId + 打开那一刻的 tag 状态（失败回滚 + diff 判断用）
   const dropdownEditRef = useRef<{ itemId: string; originalTags: string[] } | null>(null);
+  const pendingSaveRef = useRef<Promise<void>>(Promise.resolve());
 
-  // 把 spaceItemsRef 当前状态构建成 itemTags payload
-  const buildItemTags = useCallback((): Record<string, string[]> => {
+  // 在最新权威分配上只替换本次编辑的条目。
+  const buildItemTags = useCallback((itemId: string, tags: string[]): Record<string, string[]> => {
     const itemTags: Record<string, string[]> = {};
-    spaceItemsRef.current.forEach((item) => {
-      if (item.customTags && item.customTags.length > 0) {
-        itemTags[item.id] = item.customTags;
+    (getUserAuth()?.data?.items || []).forEach((item) => {
+      if (item.tags?.length > 0) {
+        itemTags[`${item.type}_${item.source}_${item.id}`] = item.tags;
       }
     });
+    if (tags.length > 0) itemTags[itemId] = tags;
+    else delete itemTags[itemId];
     return itemTags;
-  }, []);
+  }, [getUserAuth]);
+
+  // 接口写入整份分配，串行提交才能让后一笔合并前一笔的保存结果。
+  const persistAssignment = useCallback((itemId: string, tags: string[]) => {
+    const save = pendingSaveRef.current.catch(() => {}).then(async () => {
+      const itemTags = buildItemTags(itemId, tags);
+      await updateCustomTags({ definitions: getUserAuth()?.data?.customTags || customTagsRef.current, itemTags });
+      const items = getUserAuth()?.data?.items;
+      if (!items) return;
+      const updated = items.map((item) => {
+        if (`${item.type}_${item.source}_${item.id}` !== itemId) return item;
+        const { tags: _tags, ...rest } = item;
+        return tags.length ? { ...rest, tags } : rest;
+      });
+      syncMySpaceState({ items: updated });
+    });
+    pendingSaveRef.current = save;
+    return save;
+  }, [buildItemTags, getUserAuth, syncMySpaceState]);
 
   // 提交当前编辑会话——dropdown 关闭、点"管理标签"、卸载时调用
   const saveTagAssignment = useCallback(async () => {
     const editing = dropdownEditRef.current;
-    if (!editing) return;
+    if (!editing) return pendingSaveRef.current.catch(() => {});
     dropdownEditRef.current = null;
 
     const currentItem = spaceItemsRef.current.find((i) => i.id === editing.itemId);
@@ -54,27 +75,10 @@ export function useTagAssignment({ spaceItems, customTags, setSpaceItems, getUse
     const currentTags = currentItem.customTags || [];
 
     // 无变化（开了 dropdown 但什么都没改）→ 跳过 API
-    if (tagsEqual(currentTags, editing.originalTags)) return;
+    if (tagsEqual(currentTags, editing.originalTags)) return pendingSaveRef.current.catch(() => {});
 
     try {
-      const itemTagsPayload = buildItemTags();
-      await updateCustomTags({ definitions: customTagsRef.current, itemTags: itemTagsPayload });
-      // 同步 userAuth.data.items[i].tags（之前此路径漏写造成隐性 drift）：
-      // spaceItems 的 composite id 跟 userAuth.items 的 (type, source, id) 一一对应，
-      // 用同一个 itemTags map 重新拼 tags 字段。空 tags 时移除字段，与 /myspace 返回 shape 一致。
-      // 必须在 await 之后重新读权威值：闭包里的渲染期快照可能早于并发的收藏操作，
-      // 拿它重建整份 items 会把刚收藏的条目从 state 和两层缓存里一起抹掉。
-      const auth = getUserAuth();
-      if (auth?.data?.items) {
-        const newItems = (auth.data.items as any[]).map((it) => {
-          const compositeKey = `${it.type}_${it.source}_${it.id}`;
-          const tags = itemTagsPayload[compositeKey];
-          if (tags && tags.length > 0) return { ...it, tags };
-          const { tags: _drop, ...rest } = it;
-          return rest;
-        });
-        syncMySpaceState({ items: newItems });
-      }
+      await persistAssignment(editing.itemId, [...currentTags]);
       // 镜像进模块缓存：spaceItemsRef 已含本次 toggle 结果，definitions 未变
       syncSpaceCache(spaceItemsRef.current, customTagsRef.current);
     } catch (error) {
@@ -83,7 +87,7 @@ export function useTagAssignment({ spaceItems, customTags, setSpaceItems, getUse
       // 回滚到打开 dropdown 那一刻的 originalTags（中间的 toggle 全部撤销）
       setSpaceItems((items) => items.map((i) => (i.id === editing.itemId ? { ...i, customTags: editing.originalTags } : i)));
     }
-  }, [buildItemTags, messageApi, getUserAuth, syncMySpaceState, syncSpaceCache, setSpaceItems]);
+  }, [persistAssignment, messageApi, syncSpaceCache, setSpaceItems]);
 
   // 切换项目标签——纯本地 toggle，不发 API
   // functional updater 防 stale state（rapid click 安全）
@@ -110,11 +114,11 @@ export function useTagAssignment({ spaceItems, customTags, setSpaceItems, getUse
       dropdownEditRef.current = null;
       const currentItem = spaceItemsRef.current.find((i) => i.id === editing.itemId);
       if (!currentItem || tagsEqual(currentItem.customTags || [], editing.originalTags)) return;
-      updateCustomTags({ definitions: customTagsRef.current, itemTags: buildItemTags() }).catch(() => {});
+      persistAssignment(editing.itemId, [...(currentItem.customTags || [])]).catch(() => {});
       // 卸载时也镜像本地最新状态进模块缓存，避免下次 remount 读到旧 tags 并触发全量覆盖
       syncSpaceCache(spaceItemsRef.current, customTagsRef.current);
     };
-  }, [buildItemTags, syncSpaceCache]);
+  }, [persistAssignment, syncSpaceCache]);
 
   return { openTagDropdownItemId, setOpenTagDropdownItemId, dropdownEditRef, saveTagAssignment, handleToggleTag, spaceItemsRef, customTagsRef };
 }

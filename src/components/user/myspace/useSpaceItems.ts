@@ -76,6 +76,30 @@ export function useSpaceItems({ userAuth, currentLanguage, onDataLoaded, message
     _spaceItemsCache = lastLoadedRef.current ? { items, tags, ref: lastLoadedRef.current } : null;
   }, []);
 
+  // 标签变化不需要重新取详情。只同步权威值真正变化的项，保留其他项未提交的草稿。
+  const previousTagsRef = useRef(new Map(initialCacheRef.current.items.map((item) => [item.id, JSON.stringify(item.customTags || [])])));
+  useEffect(() => {
+    const items = userAuth?.data?.items || [];
+    const nextTags = new Map<string, string>(items.map((item) => [`${item.type}_${item.source}_${item.id}`, JSON.stringify(item.tags || [])]));
+    const previousTags = previousTagsRef.current;
+    previousTagsRef.current = nextTags;
+    const tags = userAuth?.data?.customTags || [];
+    setCustomTags(tags);
+    const applyTags = (current: any[]) => {
+      const updated = current.map((item) => {
+        const serialized = nextTags.get(item.id);
+        if (serialized === undefined || serialized === previousTags.get(item.id)) return item;
+        return { ...item, customTags: JSON.parse(serialized) };
+      });
+      return updated.every((item, index) => item === current[index]) ? current : updated;
+    };
+    setSpaceItems(applyTags);
+    // updater 只计算状态；模块缓存独立同步，避免并发渲染重放 updater 时写入旧缓存。
+    if (_spaceItemsCache && _spaceItemsCache.ref.userId === userAuth?.data?.id) {
+      _spaceItemsCache = { ..._spaceItemsCache, items: applyTags(_spaceItemsCache.items), tags };
+    }
+  }, [userAuth]);
+
   // 加载数据 - 直接使用 AuthContext 提供的数据
   useEffect(() => {
     if (!userAuth?.data) {
