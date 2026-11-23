@@ -37,6 +37,12 @@ yarn build
 
 > **ملاحظة**: قد يفشل الإصدار المجاني من Vercel بسبب محدودية الذاكرة. انشر لغة واحدة بدلًا من ذلك — انتقل إلى **Settings → Build & Deployment → Build Command** في المشروع، وانقر **Override**، واضبط أمر لغة واحدة (`yarn build --locale zh-Hans` للصينية، أو `yarn build --locale pt` للبرتغالية، إلخ).
 
+## نشر ZopDay
+
+انقر فوق الزر أدناه للنشر بنقرة واحدة على ZopDay:
+
+[![ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
+
 ## نشر Cloudflare Pages
 
 أولًا 👉 [Fork this project](https://github.com/rockbenben/ChatGPT-Shortcut/fork)، ثم انشر:

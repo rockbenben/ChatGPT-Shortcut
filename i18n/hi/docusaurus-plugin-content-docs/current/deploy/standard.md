@@ -37,6 +37,12 @@ Vercel पर एक क्लिक में तैनात करने क�
 
 > **नोट**: Vercel का मुफ़्त टियर मेमोरी सीमा के कारण विफल हो सकता है। इसके बजाय एकल भाषा तैनात करें — प्रोजेक्ट की **Settings → Build & Deployment → Build Command** पर जाएँ, **Override** क्लिक करें और एकल-भाषा कमांड सेट करें (चीनी के लिए `yarn build --locale zh-Hans`, पुर्तगाली के लिए `yarn build --locale pt`, आदि)।
 
+## ZopDay तैनाती
+
+ZopDay पर एक क्लिक में तैनात करने के लिए नीचे दिए गए बटन पर क्लिक करें:
+
+[![ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
+
 ## Cloudflare Pages तैनाती
 
 पहले 👉 [इस प्रोजेक्ट को Fork करें](https://github.com/rockbenben/ChatGPT-Shortcut/fork), फिर तैनात करें:

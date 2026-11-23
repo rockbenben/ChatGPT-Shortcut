@@ -37,6 +37,12 @@ yarn build
 
 > **Примечание**: бесплатный тарифный план Vercel может завершиться ошибкой из-за ограничений памяти. Вместо этого разверните один язык — откройте **Settings → Build & Deployment → Build Command** в вашем проекте, нажмите **Override** и задайте команду для одного языка (`yarn build --locale zh-Hans` для китайского, `yarn build --locale pt` для португальского и т. д.).
 
+## Развертывание на ZopDay
+
+Нажмите кнопку ниже для развертывания на ZopDay в один клик:
+
+[![ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
+
 ## Развертывание на Cloudflare Pages
 
 Сначала 👉 [сделайте форк этого проекта](https://github.com/rockbenben/ChatGPT-Shortcut/fork), затем выполните развертывание:

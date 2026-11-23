@@ -37,6 +37,12 @@ Nhấp nút bên dưới để triển khai một lần lên Vercel:
 
 > **Lưu ý**: Gói miễn phí của Vercel có thể thất bại do giới hạn bộ nhớ. Hãy triển khai một ngôn ngữ duy nhất — vào **Settings → Build & Deployment → Build Command** của dự án, nhấp **Override** và đặt lệnh cho một ngôn ngữ (`yarn build --locale zh-Hans` cho tiếng Trung, `yarn build --locale pt` cho tiếng Bồ Đào Nha, v.v.).
 
+## Triển khai ZopDay
+
+Nhấp nút bên dưới để triển khai một lần lên ZopDay:
+
+[![ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
+
 ## Triển khai Cloudflare Pages
 
 Trước tiên 👉 [Fork dự án này](https://github.com/rockbenben/ChatGPT-Shortcut/fork), sau đó triển khai:

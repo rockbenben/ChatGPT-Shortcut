@@ -37,6 +37,12 @@ Vercel'e tek tıkla dağıtmak için aşağıdaki düğmeye tıklayın:
 
 > **Not**: Vercel'in ücretsiz katmanı bellek sınırları nedeniyle başarısız olabilir. Bunun yerine tek bir dil dağıtın — projenin **Settings → Build & Deployment → Build Command** bölümüne gidin, **Override**'a tıklayın ve tek dilli bir komut belirleyin (Çince için `yarn build --locale zh-Hans`, Portekizce için `yarn build --locale pt` vb.).
 
+## ZopDay Dağıtımı
+
+ZopDay'e tek tıkla dağıtmak için aşağıdaki düğmeye tıklayın:
+
+[![ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
+
 ## Cloudflare Pages Dağıtımı
 
 Önce 👉 [Bu projeyi fork edin](https://github.com/rockbenben/ChatGPT-Shortcut/fork), ardından dağıtın:

@@ -37,6 +37,12 @@ Clicca il pulsante qui sotto per distribuire su Vercel con un clic:
 
 > **Nota**: il piano gratuito di Vercel potrebbe fallire a causa dei limiti di memoria. In tal caso distribuisci una sola lingua — vai nelle **Settings → Build & Deployment → Build Command** del progetto, clicca su **Override** e imposta un comando per una singola lingua (`yarn build --locale zh-Hans` per il cinese, `yarn build --locale pt` per il portoghese, ecc.).
 
+## Distribuzione su ZopDay
+
+Clicca il pulsante qui sotto per distribuire su ZopDay con un clic:
+
+[![ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
+
 ## Distribuzione su Cloudflare Pages
 
 Prima 👉 [Fai il fork di questo progetto](https://github.com/rockbenben/ChatGPT-Shortcut/fork), poi distribuisci:

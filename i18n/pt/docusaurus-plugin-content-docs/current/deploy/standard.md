@@ -37,6 +37,12 @@ Clique no botão abaixo para implantar na Vercel com um clique:
 
 > **Nota**: O plano gratuito da Vercel pode falhar devido a limites de memória. Implante um único idioma — acesse **Settings → Build & Deployment → Build Command** no projeto, clique em **Override** e defina um comando de idioma único (`yarn build --locale zh-Hans` para Chinês, `yarn build --locale pt` para Português, etc.).
 
+## Implantação ZopDay
+
+Clique no botão abaixo para implantar na ZopDay com um clique:
+
+[![ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
+
 ## Implantação Cloudflare Pages
 
 Primeiro 👉 [Faça um fork deste projeto](https://github.com/rockbenben/ChatGPT-Shortcut/fork) e depois implante:

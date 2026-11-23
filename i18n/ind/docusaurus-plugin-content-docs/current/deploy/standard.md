@@ -37,6 +37,12 @@ Klik tombol di bawah untuk deployment satu klik ke Vercel:
 
 > **Catatan**: tier gratis Vercel mungkin gagal karena batas memori. Deploy satu bahasa saja — buka **Settings → Build & Deployment → Build Command** pada proyek, klik **Override**, dan atur perintah satu bahasa (`yarn build --locale zh-Hans` untuk bahasa Mandarin, `yarn build --locale pt` untuk bahasa Portugis, dll.).
 
+## Deployment ZopDay
+
+Klik tombol di bawah untuk deployment satu klik ke ZopDay:
+
+[![ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
+
 ## Deployment Cloudflare Pages
 
 Pertama 👉 [Fork proyek ini](https://github.com/rockbenben/ChatGPT-Shortcut/fork), lalu deploy:

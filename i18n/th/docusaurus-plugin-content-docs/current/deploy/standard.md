@@ -37,6 +37,12 @@ yarn build
 
 > **หมายเหตุ**: แผนฟรีของ Vercel อาจล้มเหลวเนื่องจากข้อจำกัดด้านหน่วยความจำ ให้ติดตั้งเพียงภาษาเดียวแทน โดยไปที่ **Settings → Build & Deployment → Build Command** ของโปรเจกต์ คลิก **Override** แล้วตั้งคำสั่งภาษาเดียว (เช่น `yarn build --locale zh-Hans` สำหรับภาษาจีน หรือ `yarn build --locale pt` สำหรับโปรตุเกส)
 
+## การติดตั้ง ZopDay
+
+คลิกปุ่มด้านล่างเพื่อติดตั้งบน ZopDay แบบคลิกเดียว:
+
+[![ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
+
 ## การติดตั้ง Cloudflare Pages
 
 ก่อนอื่น 👉 [Fork โปรเจกต์นี้](https://github.com/rockbenben/ChatGPT-Shortcut/fork) จากนั้นติดตั้ง:

@@ -37,6 +37,12 @@ yarn build
 
 > **注意**：Vercel 免費版可能因記憶體不足報錯。改單語言部署即可——進入項目 **Settings → Build & Deployment → Build Command**，點 **Override**，改成單語言命令（中文 `yarn build --locale zh-Hans`，葡萄牙語 `yarn build --locale pt`，其他類推）。
 
+## ZopDay 部署
+
+點下方按鈕一鍵部署到 ZopDay：
+
+[![ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
+
 ## Cloudflare Pages 部署
 
 先 👉 [Fork 本項目](https://github.com/rockbenben/ChatGPT-Shortcut/fork)，再按以下步驟部署：

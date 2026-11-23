@@ -37,6 +37,12 @@ yarn build
 
 > **주의**: Vercel 무료 플랜은 메모리 제한으로 인해 실패할 수 있습니다. 대신 단일 언어를 배포하세요 — 프로젝트의 **Settings → Build & Deployment → Build Command**로 이동하여 **Override**를 클릭하고 단일 언어 명령을 설정하세요 (중국어는 `yarn build --locale zh-Hans`, 포르투갈어는 `yarn build --locale pt` 등).
 
+## ZopDay 배포
+
+아래 버튼을 클릭하여 ZopDay에 원클릭 배포하세요:
+
+[![ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
+
 ## Cloudflare Pages 배포
 
 먼저 👉 [이 프로젝트 포크하기](https://github.com/rockbenben/ChatGPT-Shortcut/fork), 그런 다음 배포하세요:

@@ -37,6 +37,12 @@ yarn build
 
 > **注意**：Vercel の無料プランではメモリ不足によりビルドが失敗する場合があります。その場合は単一言語でデプロイしてください。プロジェクトの **Settings → Build & Deployment → Build Command** で **Override** をクリックし、単一言語コマンドに変更します（中国語の場合は `yarn build --locale zh-Hans`、ポルトガル語の場合は `yarn build --locale pt` など）。
 
+## ZopDay デプロイ
+
+下のボタンをクリックして ZopDay にワンクリックデプロイします：
+
+[![ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
+
 ## Cloudflare Pages デプロイ
 
 まず 👉 [このプロジェクトをフォーク](https://github.com/rockbenben/ChatGPT-Shortcut/fork) してから、以下の手順でデプロイします：

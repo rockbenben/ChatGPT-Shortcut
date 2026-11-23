@@ -37,6 +37,12 @@ Vercel-এ এক ক্লিকে ডিপ্লয় করতে নি�
 
 > **নোট**: মেমোরি সীমার কারণে Vercel-এর বিনামূল্যের স্তর ব্যর্থ হতে পারে। পরিবর্তে একটি একক ভাষা ডিপ্লয় করুন — প্রজেক্টের **Settings → Build & Deployment → Build Command**-এ যান, **Override** ক্লিক করুন, এবং একটি একক-ভাষার কমান্ড সেট করুন (চীনা ভাষার জন্য `yarn build --locale zh-Hans`, পর্তুগিজের জন্য `yarn build --locale pt` ইত্যাদি)।
 
+## ZopDay ডিপ্লয়মেন্ট
+
+ZopDay-এ এক ক্লিকে ডিপ্লয় করতে নিচের বাটনে ক্লিক করুন:
+
+[![ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
+
 ## Cloudflare Pages ডিপ্লয়মেন্ট
 
 প্রথমে 👉 [এই প্রজেক্টটি Fork করুন](https://github.com/rockbenben/ChatGPT-Shortcut/fork), তারপর ডিপ্লয় করুন:

@@ -37,6 +37,12 @@ Haz clic en el botón de abajo para desplegar en Vercel con un solo clic:
 
 > **Nota**: El plan gratuito de Vercel puede fallar por límites de memoria. Despliega un solo idioma en su lugar — ve a **Settings → Build & Deployment → Build Command** del proyecto, haz clic en **Override** y establece un comando de un solo idioma (`yarn build --locale zh-Hans` para chino, `yarn build --locale pt` para portugués, etc.).
 
+## Despliegue en ZopDay
+
+Haz clic en el botón de abajo para desplegar en ZopDay con un solo clic:
+
+[![ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
+
 ## Despliegue en Cloudflare Pages
 
 Primero 👉 [Haz un fork de este proyecto](https://github.com/rockbenben/ChatGPT-Shortcut/fork), luego despliega:

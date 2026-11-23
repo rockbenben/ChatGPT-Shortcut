@@ -37,6 +37,12 @@ Klicken Sie auf die Schaltfläche unten für eine Ein-Klick-Bereitstellung auf V
 
 > **Hinweis**: Das kostenlose Kontingent von Vercel kann aufgrund von Speicherlimits fehlschlagen. Stellen Sie stattdessen eine einzelne Sprache bereit — gehen Sie zu den **Einstellungen → Build & Deployment → Build Command** des Projekts, klicken Sie auf **Override** und setzen Sie einen einzelsprachigen Befehl (`yarn build --locale zh-Hans` für Chinesisch, `yarn build --locale pt` für Portugiesisch usw.).
 
+## ZopDay-Bereitstellung
+
+Klicken Sie auf die Schaltfläche unten für eine Ein-Klick-Bereitstellung auf ZopDay:
+
+[![ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
+
 ## Cloudflare Pages Bereitstellung
 
 Zuerst 👉 [Dieses Projekt forken](https://github.com/rockbenben/ChatGPT-Shortcut/fork), dann bereitstellen:
