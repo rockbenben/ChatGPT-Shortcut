@@ -139,6 +139,7 @@ AiShort 擴充套件讓你隨時呼叫提示詞庫。支援 Chrome、Edge、Fire
 支援透過 Vercel、Cloudflare Pages、Docker 或本機環境部署。詳見[部署指南](https://www.aishort.top/zh-Hant/docs/deploy)。
 
 [![Vercel 部署](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+[![ZopDay 部署](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
 
 > **內網 / 離線部署？** 還有專為企業內網、政務網路等無外網環境打造的[離線部署版](https://www.aishort.top/zh-Hant/docs/deploy/offline)——無需後端和帳號，資料存於瀏覽器本機，保留瀏覽、搜尋、收藏、自訂等核心功能。
 

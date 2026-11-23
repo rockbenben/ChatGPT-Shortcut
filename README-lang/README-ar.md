@@ -139,6 +139,7 @@
 انشر نسختك الخاصة عبر Vercel أو Cloudflare Pages أو Docker أو محلياً. راجع [دليل النشر](https://www.aishort.top/ar/docs/deploy) للتفاصيل الكاملة.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+[![Deploy to ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
 
 > **غير متصل / شبكة داخلية؟** يتوفر [إصدار غير متصل](https://www.aishort.top/ar/docs/deploy/offline) مصمم للشبكات المعزولة في المؤسسات والحكومات — لا يحتاج خادماً أو حساباً، والبيانات مخزّنة محلياً في المتصفح، مع نفس ميزات التصفح والبحث والحفظ والأوامر المخصصة.
 

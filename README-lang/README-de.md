@@ -139,6 +139,7 @@ Oder nutzen Sie das [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/4
 Deployen Sie Ihre eigene Instanz über Vercel, Cloudflare Pages, Docker oder lokal. Vollständige Details in der [Bereitstellungsanleitung](https://www.aishort.top/de/docs/deploy).
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+[![Deploy to ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
 
 > **Offline / Intranet?** Es gibt eine [Offline-Edition](https://www.aishort.top/de/docs/deploy/offline) für luftdicht abgeschirmte Unternehmens- oder Behördennetzwerke — kein Backend oder Konto erforderlich, Daten werden lokal im Browser gespeichert, mit denselben Funktionen zum Durchsuchen, Suchen, Sammeln und Erstellen eigener Prompts.
 

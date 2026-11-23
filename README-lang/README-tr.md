@@ -139,6 +139,7 @@ Ayrıca AiShort kenar çubuğunu herhangi bir web sitesinde çağırmak için [C
 Kendi örneğinizi Vercel, Cloudflare Pages, Docker veya yerel olarak dağıtın. Ayrıntılar için [Dağıtım Kılavuzu](https://www.aishort.top/tr/docs/deploy)'na bakın.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+[![Deploy to ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
 
 > **Çevrimdışı / intranet?** Hava boşluklu kurumsal veya devlet ağları için tasarlanmış bir [Çevrimdışı Sürüm](https://www.aishort.top/tr/docs/deploy/offline) mevcuttur — arka uç veya hesap gerekmez, veriler tarayıcıda yerel olarak saklanır ve aynı göz atma/arama/koleksiyon/özel-prompt özellikleri sunulur.
 

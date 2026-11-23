@@ -139,6 +139,7 @@
 Vercel, Cloudflare Pages, Docker বা স্থানীয়ভাবে আপনার নিজের ইনস্ট্যান্স ডেপ্লয় করুন। বিস্তারিত জানতে [ডেপ্লয়মেন্ট গাইড](https://www.aishort.top/bn/docs/deploy) দেখুন।
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+[![Deploy to ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
 
 > **অফলাইন / ইন্ট্রানেট?** এয়ার-গ্যাপড এন্টারপ্রাইজ বা সরকারি নেটওয়ার্কের জন্য একটি [অফলাইন সংস্করণ](https://www.aishort.top/bn/docs/deploy/offline) রয়েছে — কোনো ব্যাকএন্ড বা অ্যাকাউন্টের প্রয়োজন নেই, ব্রাউজারে স্থানীয়ভাবে ডেটা সংরক্ষিত হয়, একই ব্রাউজ/সার্চ/সংগ্রহ/কাস্টম-প্রম্পট বৈশিষ্ট্য সহ।
 

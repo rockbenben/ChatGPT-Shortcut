@@ -139,6 +139,7 @@ Atau gunakan skrip Tampermonkey [ChatGPT Shortcut Anywhere](https://greasyfork.o
 Deploy instance Anda sendiri melalui Vercel, Cloudflare Pages, Docker, atau secara lokal. Lihat [Panduan Deployment](https://www.aishort.top/ind/docs/deploy) untuk detail lengkap.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+[![Deploy to ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
 
 > **Offline / intranet?** Tersedia [Edisi Offline](https://www.aishort.top/ind/docs/deploy/offline) yang dirancang untuk jaringan enterprise atau pemerintah yang terisolasi — tanpa backend atau akun, data tersimpan secara lokal di browser, dengan fitur telusur/cari/koleksi/prompt-kustom yang sama.
 

@@ -139,6 +139,7 @@ AiShort 扩展让你随时调用提示词库。支持 Chrome、Edge、Firefox，
 支持通过 Vercel、Cloudflare Pages、Docker 或本地环境部署。详见[部署指南](https://www.aishort.top/docs/deploy)。
 
 [![Vercel 部署](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+[![ZopDay 部署](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
 
 > **内网 / 离线部署？** 还有专为企业内网、政务网络等无外网环境打造的[离线部署版](https://www.aishort.top/docs/deploy/offline)——无需后端和账户，数据存浏览器本地，保留浏览、搜索、收藏、自定义等核心功能。
 

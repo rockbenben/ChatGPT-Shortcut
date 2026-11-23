@@ -139,6 +139,7 @@
 Vercel, Cloudflare Pages, Docker 또는 로컬에서 인스턴스를 배포할 수 있습니다. 자세한 내용은 [배포 가이드](https://www.aishort.top/ko/docs/deploy)를 참조하세요.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+[![Deploy to ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
 
 > **오프라인 / 인트라넷 환경?** 에어갭 기업·공공기관 네트워크용 [오프라인 에디션](https://www.aishort.top/ko/docs/deploy/offline)이 있습니다 — 백엔드나 계정 없이 데이터를 브라우저 로컬에 저장하며, 검색·수집·사용자 정의 프롬프트 등 동일한 기능을 제공합니다.
 

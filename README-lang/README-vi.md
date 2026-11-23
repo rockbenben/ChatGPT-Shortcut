@@ -138,6 +138,7 @@ Hoặc sử dụng script Tampermonkey [ChatGPT Shortcut Anywhere](https://greas
 Triển khai instance của riêng bạn qua Vercel, Cloudflare Pages, Docker hoặc cục bộ. Xem [Hướng dẫn triển khai](https://www.aishort.top/vi/docs/deploy) để biết chi tiết đầy đủ.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+[![Deploy to ZopDay](https://zop.dev/deploytozopday-inkhard.svg)](https://zop.dev/zopday/app/deploy?image=ghcr.io/rockbenben/chatgpt-shortcut:latest&port=3000&name=chatgpt-shortcut&utm_source=github&utm_medium=one_click&utm_content=chatgpt-shortcut)
 
 > **Offline / mạng nội bộ?** Có [Phiên bản Offline](https://www.aishort.top/vi/docs/deploy/offline) được xây dựng cho các mạng doanh nghiệp hoặc chính phủ cách ly — không cần backend hay tài khoản, dữ liệu được lưu cục bộ trong trình duyệt, với đầy đủ tính năng duyệt/tìm kiếm/thu thập/prompt tùy chỉnh.
 
