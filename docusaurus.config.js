@@ -354,7 +354,7 @@ const config = {
               },
               {
                 label: "QQ 群",
-                href: "https://img.newzone.top/qrcode/qq1092926837.jpg?imageMogr2/format/webp",
+                href: "https://qm.qq.com/q/xBIoofc52w",
                 className: "header-qq-link",
               },
             ],
