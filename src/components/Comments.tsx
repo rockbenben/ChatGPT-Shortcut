@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useCallback, memo, useRef, Suspense } from "react";
+import React, { useEffect, useState, useCallback, memo, useRef } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { App, Modal, Pagination, Skeleton, Button } from "antd";
+import { App, Button } from "antd";
 import { MessageOutlined, WarningOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
+import { Pagination } from "@site/src/components/Pagination";
 import { useColorMode } from "@docusaurus/theme-common";
 import { CommentSkeleton } from "@site/src/components/CommentComponent/CommentSkeleton";
 import CommentForm, { type PanelType } from "@site/src/components/CommentComponent/CommentForm";
@@ -12,10 +13,7 @@ import CommentThread from "@site/src/components/CommentComponent/CommentThread";
 import { usePollForAIReply, AI_REPLY_POLL_DELAYS_MS } from "@site/src/components/CommentComponent/usePollForAIReply";
 import { getCurrentUserId, nestComments } from "@site/src/components/CommentComponent/commentUtils";
 import { getComments, postComment } from "@site/src/api";
-import { lazyWithRetry } from "@site/src/utils/lazyRetry";
-
-// LoginComponent (520 行 + antd Form/Card/Input) 仅当未登录用户尝试评论触发登录 Modal 才渲染
-const LoginComponent = lazyWithRetry(() => import("@site/src/components/user/login"));
+import { LoginModal } from "@site/src/components/user/LoginModal";
 
 const pageSize = 12;
 
@@ -248,11 +246,7 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
 
   return (
     <>
-      <Modal open={isLoginModalOpen} onCancel={() => setIsLoginModalOpen(false)} footer={null}>
-        <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
-          <LoginComponent />
-        </Suspense>
-      </Modal>
+      <LoginModal open={isLoginModalOpen} onCancel={() => setIsLoginModalOpen(false)} />
       {type !== "author" && (
         <div style={{ marginTop: 12 }}>
           <CommentForm

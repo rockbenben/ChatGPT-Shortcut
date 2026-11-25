@@ -5,40 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* Filter tag row — wraps on desktop, horizontal-scrolls on mobile (so chips don't eat vertical space). */
-.checkboxList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-@media (max-width: 767px) {
-  .showcaseFavorite {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.1rem !important;
-  }
-
-  .checkboxList {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 8px;
-    margin-left: -1rem;
-    margin-right: -1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Hide scrollbar for cleaner look */
-  }
-
-  .checkboxList::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-/* Hero Section — B+ calm editorial
-   bottom padding 大于内部 gap：让 title+subtitle+CTA 形成 hero unit、和下一 section 有明确分隔 */
+/* Hero Section — compact workbench header with breathing room below */
 .heroSection {
-  padding: 48px 0 56px;
+  padding: 36px 0 40px;
   position: relative;
   overflow: hidden;
 }
@@ -46,86 +15,187 @@
 .heroSection::before {
   content: "";
   position: absolute;
-  top: -30%;
+  top: -20%;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  height: 140%;
-  background: radial-gradient(circle, var(--ifm-color-primary-lightest) 0%, transparent 70%);
-  opacity: 0.1;
+  height: 115%;
+  background: radial-gradient(ellipse 65% 65% at 50% 45%, var(--ifm-color-primary-lightest) 0%, transparent 70%);
+  opacity: 0.08;
   z-index: -1;
   pointer-events: none;
 }
 
-/* hero typography 全部走 inline style（antd h1.ant-typography 特异性 0,1,1，class 0,1,0 输）。
-   仅保留移动端 padding 调整。 */
+/* Filter Container */
+.filterSection {
+  padding-top: 20px;
+  margin-bottom: 16px;
+  border-top: 1px solid var(--site-color-hairline);
+}
 
 @media (max-width: 767px) {
-  .heroSection { padding: 24px 0 16px; }
+  .heroSection {
+    padding: 6px 0 14px;
+  }
+  .heroActions {
+    padding-inline: 16px;
+  }
+  .filterSection {
+    padding-top: 14px;
+    margin-bottom: 12px;
+  }
+}
+.filterBar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* Filter Container */
-.filterCheckbox {
+.filterMetaRow {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 0.25rem;
-}
-
-.filterCheckbox,
-.checkboxList {
-  display: flex;
-  align-items: center;
-}
-
-.filterCheckbox > div:first-child {
-  display: flex;
-  flex: 1 1 auto;
-  align-items: center;
-}
-
-.filterCheckbox > div > * {
-  margin-bottom: 0;
-  margin-right: 8px;
-}
-
-.checkboxList {
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 0.5rem;
+  min-height: 24px;
+}
+
+/* Filter tag row — desktop flows inline, mobile scrolls horizontally with pinned "more" button */
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkboxList {
+  display: contents;
+}
+
+.moreTagsWrap {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.moreTagsBtn {
+  font-size: 12.5px;
+  color: var(--site-color-tag-selected-text);
+}
+
+@media (max-width: 767px) {
+  .showcaseFavorite {
+    padding-bottom: 0.1rem;
+  }
+
+  .filterRow:not(.filterRowExpanded) {
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  .checkboxList:not(.checkboxListExpanded) {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+    overflow-x: auto;
+    padding-block: 2px;
+    padding-inline-end: 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
+  }
+
+  :global(html[dir="rtl"]) .checkboxList:not(.checkboxListExpanded) {
+    mask-image: linear-gradient(to left, #000 calc(100% - 24px), transparent);
+    -webkit-mask-image: linear-gradient(to left, #000 calc(100% - 24px), transparent);
+  }
+
+  .checkboxList:not(.checkboxListExpanded)::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filterRowExpanded {
+    flex-wrap: wrap;
+  }
+
+  .moreTagsBtn {
+    height: 34px;
+    padding-inline: 8px;
+  }
 }
 
 .checkboxListItem {
   user-select: none;
   white-space: nowrap;
   height: auto;
-  font-size: 0.8rem;
   margin: 0;
 }
 
-.checkboxListItem:last-child {
-  margin-right: 0;
+/* "All" pill button matching ShowcaseTagSelect pill */
+.allTagPill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  color: var(--ifm-color-content-secondary);
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--site-color-hairline);
+  transition:
+    color 0.14s var(--site-motion-emphasized),
+    background-color 0.14s var(--site-motion-emphasized),
+    border-color 0.14s var(--site-motion-emphasized);
 }
 
-/* B+ favorites section: no background block, no top/bottom border. Just a heading. */
+.allTagPill:hover {
+  color: var(--ifm-color-content);
+  border-color: color-mix(in srgb, var(--ifm-color-content) 22%, transparent);
+  background-color: var(--site-color-preview-bg);
+}
+
+.allTagPillActive {
+  color: var(--site-color-tag-selected-text);
+  background-color: var(--site-color-tag-selected-bg);
+  border-color: var(--site-color-tag-selected-border);
+}
+
+.allTagPillActive:hover {
+  color: var(--site-color-tag-selected-text);
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.16);
+  border-color: var(--site-color-tag-selected-border);
+}
+
+@media (max-width: 767px) {
+  .allTagPill {
+    padding: 6px 14px;
+  }
+}
+
 .showcaseFavorite {
-  padding: 0.5rem 0 0;
+  padding: 0;
 }
 
 .showcaseFavoriteHeader {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
 .showcaseFavoriteHeader > h2,
 .showcaseFavoriteHeader > h3 {
   margin: 0;
-}
-
-.showcaseFavoriteHeader > svg {
-  width: 20px;
-  height: 20px;
 }
 
 .svgIconFavoriteXs,
@@ -142,11 +212,16 @@
   margin-left: 0;
 }
 
-
 /* Card enter animation for newly loaded cards */
 @keyframes cardFadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .cardEnter {
@@ -154,7 +229,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cardEnter { animation-duration: 0.06s; }
+  .cardEnter {
+    animation-duration: 0.06s;
+  }
 }
 
 /* Defer rendering calculations for off-screen cards (Modern Web Guidance) */
@@ -162,4 +239,3 @@
   content-visibility: auto;
   contain-intrinsic-size: auto none auto 220px;
 }
-

@@ -1,17 +1,19 @@
-import React, { useContext, useState, useCallback, useMemo, useEffect, useLayoutEffect, Suspense } from "react";
+import React, { useContext, useState, useCallback, useMemo, useEffect, useLayoutEffect, useRef, useId, Suspense } from "react";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import { Button, Modal, App, Dropdown, Space, Skeleton } from "antd";
-import { useViewMode } from "@site/src/contexts/ViewModeContext";
-import { UserOutlined, EditOutlined, LogoutOutlined, ShareAltOutlined, SettingOutlined, LoginOutlined, BookOutlined, HeartOutlined } from "@ant-design/icons";
+import { Button, App, Dropdown, Space, Skeleton, Segmented } from "antd";
+import type { MenuProps } from "antd";
+import { useViewMode, type ViewMode } from "@site/src/contexts/ViewModeContext";
+import { UserOutlined, PlusOutlined, LogoutOutlined, CompassOutlined, SettingOutlined, BookOutlined, HeartOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import { AuthContext } from "../AuthContext";
 import { persistAuthToken } from "@site/src/api";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import Link from "@docusaurus/Link";
+import { ActionLink } from "@site/src/components/ActionLink";
+import { LoginModal } from "./LoginModal";
 import { lazyWithRetry } from "@site/src/utils/lazyRetry";
+import styles from "./UserStatus.module.css";
 
-// LoginComponent (520 行 + antd Form/Card/Input) 仅在未登录用户点登录按钮时打开 Modal 才渲染
-const LoginComponent = lazyWithRetry(() => import("./login"));
 // 创建提示词表单（antd Form/Switch/Alert 一整套）只有登录用户点「创建提示词」才用；静态 import 会让
 // 首页初始 chunk 组多背 ~15 KB gz。open 时才挂载：Modal 在组件内部，常驻渲染会立刻拉 chunk。
 const PromptFormModal = lazyWithRetry(() => import("./modal/PromptFormModal"));
@@ -23,6 +25,9 @@ const useIsoLayoutEffect = ExecutionEnvironment.canUseDOM ? useLayoutEffect : us
 const UserStatus = () => {
   const { userAuth, clearAuth, refreshUserAuth, authLoading } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
+  const [accountMenuOpen, setAccountMenuOpen] = useState(false);
+  const accountMenuButton = useRef<HTMLButtonElement>(null);
+  const accountMenuId = useId();
   const { modal } = App.useApp();
   const { addPrompt, loading } = useUserPrompt();
 
@@ -34,6 +39,29 @@ const UserStatus = () => {
   useIsoLayoutEffect(() => {
     document.documentElement.setAttribute("data-auth-ready", "");
   }, []);
+
+  useIsoLayoutEffect(() => {
+    if (!accountMenuOpen) return;
+
+    // 菜单经 portal 挂载。Esc 在菜单接管焦点前也要能取消聚焦。
+    const focusFrame = requestAnimationFrame(() => {
+      document.getElementById(accountMenuId)?.querySelector<HTMLElement>('[role="menuitem"]')?.focus({ preventScroll: true });
+    });
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      event.stopPropagation();
+      cancelAnimationFrame(focusFrame);
+      accountMenuButton.current?.focus({ preventScroll: true });
+      setAccountMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", onEscape, true);
+    return () => {
+      cancelAnimationFrame(focusFrame);
+      window.removeEventListener("keydown", onEscape, true);
+    };
+  }, [accountMenuOpen, accountMenuId]);
 
   const onFinish = useCallback(
     async (values) => {
@@ -62,17 +90,22 @@ const UserStatus = () => {
     window.location.reload();
   }, [clearAuth]);
 
-  const menuItems = useMemo(
+  const menuItems = useMemo<MenuProps["items"]>(
     () =>
       [
         {
           key: "account",
           label: (
-            <Link to="/user">
+            <Link to="/user" tabIndex={-1}>
               <Translate id="link.myAccount">我的账户</Translate>
             </Link>
           ),
           icon: <UserOutlined />,
+          onClick: ({ domEvent }) => {
+            // 键盘激活或点击图标时，将操作交给 Docusaurus Link 处理本地化导航。
+            if (domEvent.target instanceof Element && domEvent.target.closest("a")) return;
+            domEvent.currentTarget.querySelector("a")?.click();
+          },
         },
         {
           type: "divider" as const,
@@ -86,6 +119,8 @@ const UserStatus = () => {
             modal.confirm({
               title: <Translate id="message.logout.confirm.title">确认退出</Translate>,
               content: <Translate id="message.logout.confirm.content">确定要退出登录吗？</Translate>,
+              icon: null,
+              width: 400,
               onOk: handleLogout,
               okText: <Translate id="button.confirm">确认</Translate>,
               cancelText: <Translate id="action.cancel">取消</Translate>,
@@ -99,74 +134,107 @@ const UserStatus = () => {
 
   const loggedInButtons = useMemo(
     () => (
-      <Space wrap size="middle">
-        <Button icon={viewMode === "collection" ? <BookOutlined /> : <HeartOutlined />} onClick={() => setViewMode(viewMode === "collection" ? "explore" : "collection")}>
-          <span>{viewMode === "collection" ? <Translate id="nav.explore">提示词库</Translate> : <Translate id="nav.myCollection">我的收藏</Translate>}</span>
-        </Button>
-        <Button icon={<EditOutlined />} onClick={() => setOpen(true)}>
-          <span>
-            <Translate id="link.addprompt">创建提示词</Translate>
-          </span>
-        </Button>
-        <Dropdown menu={{ items: menuItems }} placement="bottomRight">
-          <Button icon={<SettingOutlined />} aria-label={translate({ id: "link.myAccount", message: "我的账户" })} />
-        </Dropdown>
-      </Space>
+      <div className={styles.loggedInBar}>
+        <Segmented<ViewMode>
+          value={viewMode}
+          onChange={(value) => setViewMode(value)}
+          options={[
+            {
+              value: "explore",
+              label: (
+                <span className={styles.segLabel}>
+                  <BookOutlined className={styles.segIcon} />
+                  <span className={styles.segText}>
+                    <Translate id="nav.explore">提示词库</Translate>
+                  </span>
+                </span>
+              ),
+            },
+            {
+              value: "collection",
+              label: (
+                <span className={styles.segLabel}>
+                  <HeartOutlined className={styles.segIcon} />
+                  <span className={styles.segText}>
+                    <Translate id="nav.myCollection">我的收藏</Translate>
+                  </span>
+                </span>
+              ),
+            },
+          ]}
+        />
+        <div className={styles.utilityGroup}>
+          <Button
+            icon={<PlusOutlined />}
+            className={styles.createBtn}
+            aria-label={translate({ id: "link.addprompt", message: "创建提示词" })}
+            onClick={() => setOpen(true)}>
+            <span className={styles.createLabel}>
+              <Translate id="link.addprompt">创建提示词</Translate>
+            </span>
+          </Button>
+          <Dropdown
+            menu={{
+              items: menuItems,
+              id: accountMenuId,
+              "aria-label": translate({ id: "link.myAccount", message: "我的账户" }),
+              onKeyDown: (event) => {
+                if (event.key === "Tab") {
+                  event.stopPropagation();
+                  accountMenuButton.current?.focus({ preventScroll: true });
+                  setAccountMenuOpen(false);
+                  return;
+                }
+                const target = event.target;
+                if (event.key !== " " || !(target instanceof HTMLElement) || target.getAttribute("role") !== "menuitem") return;
+                event.preventDefault();
+                target.click();
+              },
+            }}
+            placement="bottomRight"
+            trigger={["click"]}
+            open={accountMenuOpen}
+            onOpenChange={setAccountMenuOpen}
+            destroyOnHidden>
+            <Button
+              ref={accountMenuButton}
+              icon={<SettingOutlined />}
+              aria-label={translate({ id: "link.myAccount", message: "我的账户" })}
+              aria-haspopup="menu"
+              aria-expanded={accountMenuOpen}
+              aria-controls={accountMenuOpen ? accountMenuId : undefined}
+              onKeyDown={(event) => {
+                if (event.key !== "ArrowDown" || accountMenuOpen) return;
+                event.preventDefault();
+                setAccountMenuOpen(true);
+              }}
+            />
+          </Dropdown>
+        </div>
+      </div>
     ),
-    [menuItems, viewMode, setViewMode]
+    [menuItems, viewMode, setViewMode, accountMenuOpen, accountMenuId]
   );
 
   const loggedOutButtons = useMemo(
     () => (
-      <>
-        {/* Desktop: large CTA, balance hero 40px text。class 挂 wrapper div，避免 display:block !important 干扰 Space 的 inline-flex */}
-        <div className="hideOnSmallScreen">
-          <Space wrap size="middle">
-            <Button type="primary" size="large" icon={<LoginOutlined />} onClick={() => setOpen(true)}>
-              <Translate id="button.signInFree">免费登录</Translate>
-            </Button>
-            <Link to="/community-prompts">
-              <Button size="large" icon={<ShareAltOutlined />}>
-                <Translate id="showcase.header.button">浏览社区分享</Translate>
-              </Button>
-            </Link>
-          </Space>
-        </div>
-        {/* Mobile: keep the community label visible; Space wrap handles narrow screens */}
-        <div className="showOnSmallScreen">
-          <Space wrap size="middle">
-            <Button type="primary" icon={<LoginOutlined />} onClick={() => setOpen(true)}>
-              <Translate id="button.signInFree">免费登录</Translate>
-            </Button>
-            <Link to="/community-prompts">
-              <Button icon={<ShareAltOutlined />}>
-                <Translate id="showcase.header.button">浏览社区分享</Translate>
-              </Button>
-            </Link>
-          </Space>
-        </div>
-      </>
+      <div className={styles.loggedOutBar}>
+        <ActionLink to="/community-prompts" icon={<CompassOutlined />}>
+          <Translate id="link.communityPrompts">社区提示词</Translate>
+        </ActionLink>
+        <Button type="primary" size="middle" icon={<UserOutlined />} onClick={() => setOpen(true)}>
+          <Translate id="button.login">登录</Translate>
+        </Button>
+      </div>
     ),
     []
   );
 
   const authSkeleton = (
-    <>
-      <div className="hideOnSmallScreen">
-        <Space wrap size="middle">
-          <Skeleton.Button active size="large" style={{ width: 96 }} />
-          <Skeleton.Button active size="large" style={{ width: 144 }} />
-        </Space>
-      </div>
-      <div className="showOnSmallScreen">
-        <Space wrap size="middle">
-          {/* antd 6 弃用 size="default"（v7 将移除），等价值为 "medium" */}
-          <Skeleton.Button active size="medium" style={{ width: 80 }} />
-          {/* 占位宽度要跟「浏览社区分享」这颗带文字的按钮走；icon-only 时代的 32px 会让 boot 占位比真实内容窄一大截 */}
-          <Skeleton.Button active size="medium" style={{ width: 120 }} />
-        </Space>
-      </div>
-    </>
+    <Space wrap size="small" align="center">
+      <Skeleton.Button active size="medium" style={{ width: 112 }} />
+      <Skeleton.Button active size="medium" style={{ width: 80 }} />
+    </Space>
   );
 
   if (authLoading) {
@@ -176,7 +244,7 @@ const UserStatus = () => {
   return (
     <>
       {/* boot 占位：仅「已登录且尚未水合」时由 CSS 显示（见 custom.css + auth-boot-flag 内联脚本），
-          避免发版冷缓存下已登录用户首屏几秒看到 SSR 静态 HTML 里的「免费登录」CTA。
+          避免发版冷缓存下已登录用户首屏几秒看到 SSR 静态 HTML 里的「登录」CTA。
           display:contents 包装，不产生布局盒子（零 CLS）。 */}
       <div className="userstatus-boot" aria-hidden>
         {authSkeleton}
@@ -202,11 +270,7 @@ const UserStatus = () => {
         ) : (
           <>
             {loggedOutButtons}
-            <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
-              <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
-                <LoginComponent />
-              </Suspense>
-            </Modal>
+            <LoginModal open={open} onCancel={() => setOpen(false)} />
           </>
         )}
       </div>

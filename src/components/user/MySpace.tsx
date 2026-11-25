@@ -25,11 +25,11 @@ import SpaceItemRow from "./myspace/SpaceItemRow";
 import { useSpaceItems } from "./myspace/useSpaceItems";
 import { useTagAssignment } from "./myspace/useTagAssignment";
 import { useFallbackSearch } from "./myspace/useFallbackSearch";
-import type { CustomTag, FilterType } from "./myspace/types";
+import type { CustomTag, FilterType, MySpaceStats } from "./myspace/types";
 
 interface MySpaceProps {
   onOpenModal?: (data: any) => void;
-  onDataLoaded?: (data: { totalItems: number; totalPrompts: number; totalFavorites: number; totalTags: number }) => void;
+  onDataLoaded?: (data: MySpaceStats) => void;
 }
 
 const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
@@ -40,7 +40,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const { setViewMode } = useViewMode();
 
   const { removeFavorite, confirmRemoveFavorite, toggleFavorite } = useFavorite();
-  const { addPrompt: addUserPrompt, updatePrompt: updateUserPrompt, confirmRemovePrompt } = useUserPrompt();
+  const { addPrompt: addUserPrompt, updatePrompt: updateUserPrompt, confirmRemovePrompt, loading: promptMutationLoading } = useUserPrompt();
 
   const [filter, setFilter] = useState<FilterType>("all");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -445,7 +445,16 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
       <TagManagerModal open={tagManagerOpen} onClose={() => setTagManagerOpen(false)} tags={customTags} onSave={handleManageTagsSave} />
 
-      <PromptFormModal open={editModalOpen} mode="edit" loading={false} initialValues={editingPrompt} onSubmit={handleUpdatePrompt} onClose={() => setEditModalOpen(false)} />
+      <PromptFormModal
+        open={editModalOpen}
+        mode="edit"
+        loading={promptMutationLoading}
+        initialValues={editingPrompt}
+        onSubmit={handleUpdatePrompt}
+        onClose={() => {
+          if (!promptMutationLoading) setEditModalOpen(false);
+        }}
+      />
     </>
   );
 };

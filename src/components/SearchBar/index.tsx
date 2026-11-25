@@ -6,9 +6,10 @@ import { useHistory, useLocation } from "@docusaurus/router";
 import { translate } from "@docusaurus/Translate";
 
 import { Input, Button } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
+import { SearchOutlined, ArrowRightOutlined } from "@ant-design/icons";
 
 import { AuthContext } from "@site/src/components/AuthContext";
+import { InputClearIcon } from "@site/src/components/InputClearIcon";
 
 import { type Operator } from "@site/src/components/ShowcaseFilterToggle";
 import { type TagType, TagList } from "@site/src/data/tags";
@@ -18,6 +19,7 @@ import { searchCardsLocally } from "@site/src/api/homepage";
 import { getWeight } from "@site/src/utils/formatters";
 
 import styles from "./styles.module.css";
+import { SearchShortcutHint } from "./SearchShortcutHint";
 
 type UserState = {
   scrollTopPosition: number;
@@ -366,7 +368,7 @@ function SearchBar({ beforeSearch }: SearchBarProps) {
       <Input
         ref={inputRef}
         id="searchbar"
-        // 只留示例词：`>` 和放大镜已说明是搜索框，加前缀后任何语言都会被截断
+        aria-label={translate({ id: "search.submit", message: "搜索" })}
         placeholder={translate({
           message: "写作、翻译…",
           id: "input.search.placeholder",
@@ -375,23 +377,21 @@ function SearchBar({ beforeSearch }: SearchBarProps) {
         onChange={handleInput}
         onPressEnter={handleSearch}
         onKeyDown={(e) => {
-          // Esc 退出聚焦（终端惯例，与 Ctrl+K 进入对应）。
-          // isComposing 守卫：拼音输入中按 Esc 是取消 IME 候选词，焦点必须留在框内
+          // Esc 退出聚焦（与 Ctrl+K 进入对应）。isComposing 守卫避免打断输入法候选词
           if (e.key === "Escape" && !e.nativeEvent.isComposing) (e.target as HTMLInputElement).blur();
         }}
-        allowClear
-        prefix={
-          <span className={styles.promptChar} aria-hidden>
-            &gt;
-            <span className={styles.fakeCaret} />
-          </span>
-        }
+        allowClear={{ clearIcon: <InputClearIcon /> }}
+        prefix={<SearchOutlined className={styles.searchIcon} aria-hidden />}
         suffix={
           <>
-            <kbd className={`${styles.kbdHint} hideOnSmallScreen`} aria-hidden>
-              CTRL K
-            </kbd>
-            <Button icon={<SearchOutlined />} onClick={handleSearch} type="text" aria-label={translate({ id: "search.submit", message: "搜索" })} />
+            <SearchShortcutHint />
+            <Button
+              icon={<ArrowRightOutlined />}
+              onClick={handleSearch}
+              type="text"
+              size="small"
+              aria-label={translate({ id: "search.submit", message: "搜索" })}
+            />
           </>
         }
       />

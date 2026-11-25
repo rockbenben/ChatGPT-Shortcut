@@ -1,0 +1,120 @@
+.loggedInBar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.utilityGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.createBtn {
+  padding-inline: 12px;
+}
+
+.loggedOutBar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.segLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.segIcon {
+  flex-shrink: 0;
+}
+
+.segText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.loggedInBar :global(.ant-segmented) {
+  min-width: 0;
+  max-width: 100%;
+  flex: 0 1 auto;
+}
+
+.loggedInBar :global(.ant-segmented-group) {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.loggedInBar :global(.ant-segmented-item) {
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+.loggedInBar :global(.ant-segmented-item-label) {
+  min-width: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .loggedInBar {
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  .utilityGroup {
+    gap: 6px;
+  }
+
+  .segLabel {
+    gap: 5px;
+  }
+
+  .loggedInBar :global(.ant-segmented) {
+    padding: 3px;
+  }
+
+  .loggedInBar :global(.ant-segmented-item-label) {
+    min-height: 30px;
+    line-height: 30px;
+    padding-inline: 10px;
+    font-size: 13px;
+  }
+
+  .loggedInBar :global(.ant-btn),
+  .loggedOutBar :global(.ant-btn) {
+    height: 36px;
+    min-width: 36px;
+    padding-inline: 12px;
+  }
+
+  .loggedInBar :global(.ant-btn-icon-only),
+  .loggedInBar .createBtn {
+    width: 36px;
+    padding-inline: 0;
+    gap: 0;
+  }
+
+  .createLabel {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .segIcon {
+    display: none;
+  }
+}

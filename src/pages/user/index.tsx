@@ -4,9 +4,10 @@ import Link from "@docusaurus/Link";
 
 import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { Card, Input, Button, Spin, Space, Row, Col, Typography, App, Avatar, Flex, Breadcrumb } from "antd";
+import { Card, Input, Button, Spin, Space, Row, Col, Typography, App, Avatar, Flex, Breadcrumb, Tooltip } from "antd";
 import { HomeOutlined, EditOutlined, SaveOutlined, MailOutlined, UserOutlined, CloseOutlined, LoginOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
+import { ActionLink } from "@site/src/components/ActionLink";
 
 import { AuthContext } from "@site/src/components/AuthContext";
 import { getUserAllInfo } from "@site/src/api/user";
@@ -110,9 +111,9 @@ const UserProfile = () => {
   if (userLoading) {
     return (
       <Layout title={translate({ id: "link.myAccount", message: "我的账户" })}>
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "60vh" }}>
+        <main aria-busy="true" style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "60vh" }}>
           <Spin size="large" />
-        </div>
+        </main>
       </Layout>
     );
   }
@@ -120,19 +121,19 @@ const UserProfile = () => {
   if (!userInfo) {
     return (
       <Layout title={translate({ id: "link.myAccount", message: "我的账户" })}>
-        <EmptyState
-          fullPage
-          icon={<UserOutlined />}
-          title={<Translate id="account.signInRequired">登录后查看账户</Translate>}
-          description={<Translate id="account.signInRequiredHint">正在带你回首页，也可以直接点下面的按钮</Translate>}
-          action={
-            <Link to="/">
-              <Button type="primary" icon={<LoginOutlined />}>
+        <main>
+          <EmptyState
+            fullPage
+            icon={<UserOutlined />}
+            title={<Translate id="account.signInRequired">登录后查看账户</Translate>}
+            description={<Translate id="account.signInRequiredHint">正在带你回首页，也可以直接点下面的按钮</Translate>}
+            action={
+              <ActionLink to="/" variant="primary" icon={<LoginOutlined />}>
                 <Translate id="auth.callback.backHome">返回首页登录</Translate>
-              </Button>
-            </Link>
-          }
-        />
+              </ActionLink>
+            }
+          />
+        </main>
       </Layout>
     );
   }
@@ -144,7 +145,7 @@ const UserProfile = () => {
       <main
         style={{
           minHeight: "calc(100vh - 60px)",
-          padding: "24px 0",
+          padding: "16px 0 24px",
         }}>
         {/* paddingInline 必须等于下面那个 Row 的 gutter 的一半：antd 的 gutter 是「负 margin +
             子 Col 正 padding」实现的，父级没有这 12px 去抵消时，内层 Row 会左右各溢出 12px。
@@ -195,6 +196,8 @@ const UserProfile = () => {
                     style={{
                       height: "100%",
                       borderRadius: 12,
+                      borderColor: "var(--site-color-hairline)",
+                      boxShadow: "var(--site-shadow-xs)",
                     }}
                     title={
                       <Space>
@@ -239,11 +242,20 @@ const UserProfile = () => {
                                 }}>
                                 {userInfo.username}
                               </Title>
-                              <Button type="text" icon={<EditOutlined />} onClick={handleEditUsernameClick} size="small" style={{ color: "var(--site-color-text-tertiary)", flexShrink: 0 }} />
+                              <Tooltip title={translate({ id: "action.edit", message: "编辑" })}>
+                                <Button
+                                  type="text"
+                                  icon={<EditOutlined />}
+                                  onClick={handleEditUsernameClick}
+                                  size="small"
+                                  aria-label={translate({ id: "action.edit", message: "编辑" })}
+                                  style={{ color: "var(--site-color-text-tertiary)", flexShrink: 0 }}
+                                />
+                              </Tooltip>
                             </Flex>
                           )}
                           <Text style={{ fontSize: 12, color: "var(--site-color-text-tertiary)", marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                            <MailOutlined style={{ marginRight: 4 }} />
+                            <MailOutlined style={{ marginInlineEnd: 4 }} />
                             {userInfo.email}
                           </Text>
                         </Flex>

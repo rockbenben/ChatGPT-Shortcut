@@ -15,7 +15,7 @@ import styles from "./styles.module.css";
 import { prepareUserState } from "@site/src/components/SearchBar/index";
 
 interface Props extends ComponentProps<"input"> {
-  icon: ReactElement<ComponentProps<"svg">> | ReactNode;
+  icon?: ReactElement<ComponentProps<"svg">> | ReactNode;
   label: ReactNode;
   tag: TagType | string;
 }

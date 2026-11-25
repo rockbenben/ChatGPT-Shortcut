@@ -90,6 +90,8 @@ const SecurityCard: React.FC<{ userInfo: any }> = ({ userInfo }) => {
       style={{
         height: "100%",
         borderRadius: 12,
+        borderColor: "var(--site-color-hairline)",
+        boxShadow: "var(--site-shadow-xs)",
       }}
       title={
         <Space>

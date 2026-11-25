@@ -24,74 +24,46 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
 
   const contentDom = (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minWidth: 0 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-        {/* author 为空 = 官方账号回复（内容可能是 AI 也可能是站长人工，所以用"认证对勾"而非 AI 字样——
-            语言中立、18 locale 零 i18n 负担，且不误标人工回复 */}
-        {/* 间距用图标 marginLeft 而非 flex gap：Text strong 内部会再包一层 <strong>，
-            名字和图标在同一 flex 子项里，外层 gap 不生效 */}
-        <Text strong dir="auto" style={{ fontSize: 14, fontWeight: 500 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 6 }}>
+        <Text strong dir="auto" style={{ fontSize: 14, fontWeight: 600, overflowWrap: "anywhere" }}>
           {author || (
             <>
               AI Short
-              <CheckCircleFilled aria-label="official" style={{ fontSize: 13, color: "var(--site-color-tag-selected-text)", marginInlineStart: 8 }} />
+              <CheckCircleFilled aria-label="official" style={{ fontSize: 13, color: "var(--site-color-tag-selected-text)", marginInlineStart: 6 }} />
             </>
           )}
         </Text>
-        <Text type="secondary" style={{ fontSize: 11.5, fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>
+        <Text type="secondary" style={{ fontSize: 11.5, fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums", flexShrink: 0 }}>
           {datetime}
         </Text>
       </div>
       {/* dir="auto"：评论是任意语言的 UGC，不声明方向时阿语混入网址/英文会让行内顺序错乱 */}
-      <div style={{ marginBottom: 8 }}>
-        <Paragraph dir="auto" style={{ margin: 0, wordWrap: "break-word" }}>
+      <div style={{ marginBottom: 6 }}>
+        <Paragraph dir="auto" style={{ margin: 0, fontSize: 13.5, lineHeight: 1.65, overflowWrap: "anywhere" }}>
           {content}
         </Paragraph>
       </div>
-      <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-        {actions &&
-          actions.map((action, index) => (
+      {actions && actions.length > 0 && (
+        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+          {actions.map((action, index) => (
             <span key={index} style={{ display: "inline-flex", alignItems: "center" }}>
               {action}
             </span>
           ))}
-      </div>
-      {children && (
-        <div
-          style={{
-            marginTop: 12,
-            paddingInlineStart: 12,
-            borderInlineStart: "2px solid var(--site-color-hairline)",
-            marginInlineStart: 8,
-          }}>
-          {children}
         </div>
       )}
     </div>
   );
 
-  const cls = clsx(prefixCls, { [`${prefixCls}-rtl`]: direction === "rtl" }, className);
+  const cls = clsx(prefixCls, "comment-item", { [`${prefixCls}-rtl`]: direction === "rtl" }, className);
 
   return (
-    <div
-      className={cls}
-      style={{
-        ...style,
-        marginBottom: 16,
-        padding: 12,
-        borderRadius: 6,
-        transition: "background-color 0.12s var(--site-motion-emphasized)",
-      }}
-      onMouseEnter={(e) => {
-        // family: sage hover wake-up（与卡片 hover 同语言）
-        e.currentTarget.style.backgroundColor = "rgba(var(--ifm-color-primary-rgb), 0.04)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = "transparent";
-      }}>
+    <div className={cls} style={style}>
       <div className={`${prefixCls}-inner`} style={{ display: "flex", gap: 12 }}>
         {avatar && <div className={`${prefixCls}-avatar`}>{avatar}</div>}
         {contentDom}
       </div>
+      {children && <div className={clsx("comment-replies", avatar && "comment-replies-with-avatar")}>{children}</div>}
     </div>
   );
 };

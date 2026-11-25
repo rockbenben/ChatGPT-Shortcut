@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useMemo } from "react";
+import React, { Suspense, useEffect, useId, useMemo } from "react";
 import { translate } from "@docusaurus/Translate";
 import { Form } from "antd";
 import debounce from "lodash/debounce";
@@ -37,6 +37,7 @@ interface CommentFormProps {
 /** 主评论框与回复框的统一实现：草稿持久化、emoji/GIF 插入、校验规则都在这一处 */
 const CommentForm: React.FC<CommentFormProps> = ({ draftKey, requiredMessage, submitting, isLoggedIn, isDarkMode, onLogin, onSubmit, onCancel, activePanel, onTogglePanel }) => {
   const [form] = Form.useForm();
+  const formName = useId();
 
   const debouncedDraftSave = useMemo(
     () =>
@@ -102,7 +103,7 @@ const CommentForm: React.FC<CommentFormProps> = ({ draftKey, requiredMessage, su
 
   return (
     <>
-      <Form form={form} onFinish={handleFinish} onValuesChange={handleValuesChange}>
+      <Form name={formName} form={form} onFinish={handleFinish} onValuesChange={handleValuesChange} scrollToFirstError={{ focus: true }}>
         <Form.Item
           name="content"
           rules={[

@@ -1,5 +1,5 @@
 import React, { Suspense, useContext, useCallback, useMemo, useState } from "react";
-import { Card, Typography, Space, Flex, Row, Col, Button, Modal, Skeleton, Breadcrumb, Popover } from "antd";
+import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, Breadcrumb, Popover } from "antd";
 import { HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined, FileSearchOutlined, WarningOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
@@ -10,6 +10,7 @@ import { CopyButton } from "@site/src/components/CopyButton";
 import { AuthContext } from "./AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
+import { LoginModal } from "@site/src/components/user/LoginModal";
 import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import { EmptyState } from "@site/src/components/EmptyState";
 import { toBcp47 } from "@site/src/utils/i18n";
@@ -19,9 +20,6 @@ const ShareButtons = lazyOptional(() => import("./ShareButtons"));
 // 见 PromptPage 同名注释：静态 import 会把 Pagination + Form + react-markdown
 // 全链拖进 eager common chunk，每个页面都要下载。
 const Comments = lazyWithRetry(() => import("./Comments"));
-// 与社区列表页（pages/community-prompts.tsx）同一份登录表单，同样只在未登录用户点
-// 点赞/收藏时才挂载并拉 chunk。
-const LoginComponent = lazyWithRetry(() => import("./user/login"));
 
 interface CommunityPromptPageProps {
   prompt: CommunityPrompt | null;
@@ -366,11 +364,7 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
         </Col>
       </Row>
       {loginOpen && (
-        <Modal open={loginOpen} footer={null} onCancel={() => setLoginOpen(false)}>
-          <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
-            <LoginComponent />
-          </Suspense>
-        </Modal>
+        <LoginModal open={loginOpen} onCancel={() => setLoginOpen(false)} />
       )}
     </Layout>
   );

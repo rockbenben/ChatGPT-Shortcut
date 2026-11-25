@@ -55,57 +55,71 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
     });
   }, [onOpenModal, user.id, userInfo, user.tags, user.website, copyCount]);
 
-
   const handleToggleFav = useCallback(
     (e: React.MouseEvent) => {
       e.stopPropagation();
       onToggleFavorite?.(user.id, false);
     },
-    [onToggleFavorite, user.id]
+    [onToggleFavorite, user.id],
   );
+
+  const hasRemark = Boolean(userInfo.remark?.trim());
 
   return (
     <BasePromptCard
       title={
-        <Typography.Title level={3} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
+        <Typography.Title level={3} style={{ margin: 0, fontSize: 15.5, fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
           <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
             {userInfo.title}
           </Link>
         </Typography.Title>
       }
       titleExtra={
-        <Statistic
-          value={copyCount}
-          formatter={(value) => formatCompactNumber(value as number)}
-          prefix={<FireOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
-          styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
-        />
-      }
-      actions={[
-        <CopyButton key="copy" text={userInfo.prompt} trackingId={user.id} variant="iconOnly" block />,
-        isLoggedIn && onToggleFavorite && (
-          <IconAction
-            key="fav"
-            label={isFavorite ? translate({ id: "action.removeFavorite", message: "从收藏中移除" }) : translate({ id: "common.favorites", message: "收藏" })}
-            icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />}
-            onClick={handleToggleFav}
-            block
+        copyCount !== undefined && (
+          <Statistic
+            value={copyCount}
+            formatter={(value) => formatCompactNumber(value as number)}
+            prefix={<FireOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
+            styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
           />
-        ),
-      ].filter(Boolean)}
+        )
+      }
+      footer={
+        <>
+          <Flex align="center" gap={4} style={{ flex: 1, minWidth: 0, overflow: "hidden" }}>
+            <PromptCardTag tags={user.tags} muted maxVisible={2} />
+            <PromptSourceLink href={user.website} />
+          </Flex>
+          <Flex align="center" gap={4} style={{ flexShrink: 0 }}>
+            {isLoggedIn && onToggleFavorite && (
+              <IconAction
+                key="fav"
+                size="small"
+                label={isFavorite ? translate({ id: "action.removeFavorite", message: "从收藏中移除" }) : translate({ id: "common.favorites", message: "收藏" })}
+                icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />}
+                onClick={handleToggleFav}
+              />
+            )}
+            <CopyButton key="copy" text={userInfo.prompt} trackingId={user.id} variant="iconOnly" size="small" />
+          </Flex>
+        </>
+      }
       onCardClick={handleCardClick}>
-      <PromptRemark remark={userInfo.remark} style={{ marginBottom: 0 }} />
-      <ClampBox>
-        <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ color: "var(--ifm-color-content-secondary)", fontSize: 13, lineHeight: 1.55, marginBottom: 0 }}>
-          {userInfo.prompt}
-        </Typography.Paragraph>
-      </ClampBox>
-      <Flex justify="space-between" align="center">
-        <div style={{ flex: 1 }}>
-          <PromptCardTag tags={user.tags} muted />
-        </div>
-        <PromptSourceLink href={user.website} />
-      </Flex>
+      <PromptRemark remark={userInfo.remark} />
+      <div className={hasRemark ? styles.promptBodyAfterRemark : undefined}>
+        <ClampBox>
+          <Typography.Paragraph
+            ellipsis={{ rows: hasRemark ? 3 : 4 }}
+            style={{
+              color: hasRemark ? "var(--site-color-text-tertiary)" : "var(--ifm-color-content-secondary)",
+              fontSize: hasRemark ? 12.5 : 13,
+              lineHeight: hasRemark ? 1.68 : 1.7,
+              marginBottom: 0,
+            }}>
+            {userInfo.prompt}
+          </Typography.Paragraph>
+        </ClampBox>
+      </div>
     </BasePromptCard>
   );
 };

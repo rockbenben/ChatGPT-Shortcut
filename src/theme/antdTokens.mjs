@@ -41,8 +41,8 @@ const universalToken = {
   // 图标、type="link" 按钮会漏出蓝色，必须显式对齐到品牌绿。
   // 这里是浅色版；暗色在 darkOnlyToken 里提亮覆盖。
   colorLink: "#2d6454",
-  borderRadius: 6,
-  borderRadiusSM: 4,
+  borderRadius: 8,
+  borderRadiusSM: 6,
   borderRadiusLG: 12,
   fontFamilyCode: 'ui-monospace, SFMono-Regular, "Menlo", "Cascadia Code", monospace',
   motionDurationFast: "0.12s",
@@ -72,6 +72,7 @@ const lightOnlyToken = {
   colorBgLayout: "#f0f1ea",
   colorBgContainer: "#f8f9f3",
   colorBgElevated: "#ffffff",
+  colorBorder: "rgba(0,0,0,0.13)",
   colorBorderSecondary: "rgba(0,0,0,0.08)",
   colorTextSecondary: "rgba(0,0,0,0.6)",
   colorTextTertiary: "rgba(0,0,0,0.45)",
@@ -91,6 +92,7 @@ const darkOnlyToken = {
   colorBgLayout: "#14171a",
   colorBgContainer: "#1d2126",
   colorBgElevated: "#272d33",
+  colorBorder: "rgba(255,255,255,0.13)",
   colorBorderSecondary: "rgba(255,255,255,0.08)",
   colorText: "#ededed",
   colorTextSecondary: "rgba(255,255,255,0.6)",
@@ -102,12 +104,19 @@ const sharedComponents = {
   Card: {
     headerBg: "transparent",
     paddingLG: 16,
+    borderRadiusLG: 12,
   },
   Tag: {
-    borderRadiusSM: 0,
+    borderRadiusSM: 6,
   },
   Button: {
-    borderRadius: 6,
+    borderRadius: 8,
+    primaryShadow: "none",
+    defaultShadow: "none",
+    dangerShadow: "none",
+  },
+  Modal: {
+    borderRadiusLG: 16,
   },
 };
 
@@ -130,6 +139,26 @@ const componentsFor = (mode) => ({
     itemActiveColor: mode === "dark" ? "#57c2a3" : "#2d6454",
     itemActiveColorHover: mode === "dark" ? "#57c2a3" : "#2d6454",
   },
+  Segmented:
+    mode === "dark"
+      ? {
+          trackBg: "#1d2126",
+          itemSelectedBg: "#2e353d",
+          itemColor: "rgba(255,255,255,0.6)",
+          itemHoverColor: "#ededed",
+          itemHoverBg: "rgba(255,255,255,0.04)",
+          itemSelectedColor: "#ededed",
+          trackPadding: 3,
+        }
+      : {
+          trackBg: "#e6e8df",
+          itemSelectedBg: "#ffffff",
+          itemColor: "rgba(0,0,0,0.6)",
+          itemHoverColor: "#1c1e21",
+          itemHoverBg: "rgba(0,0,0,0.04)",
+          itemSelectedColor: "#1c1e21",
+          trackPadding: 3,
+        },
 });
 
 /**

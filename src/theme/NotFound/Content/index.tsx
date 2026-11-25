@@ -10,15 +10,15 @@
  */
 import React, { type ReactNode } from "react";
 import clsx from "clsx";
-import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
-import { Button, Space } from "antd";
-import { HomeOutlined, ShareAltOutlined, CompassOutlined } from "@ant-design/icons";
+import { Space } from "antd";
+import { HomeOutlined, CompassOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
+import { ActionLink } from "@site/src/components/ActionLink";
 
 export default function NotFoundContent({ className }: { className?: string }): ReactNode {
   return (
-    <main className={clsx("container margin-vert--xl", className)}>
+    <main className={clsx("container margin-vert--md", className)}>
       <EmptyState
         fullPage
         icon={<CompassOutlined />}
@@ -34,16 +34,12 @@ export default function NotFoundContent({ className }: { className?: string }): 
         }
         action={
           <Space wrap size="middle">
-            <Link to="/">
-              <Button type="primary" icon={<HomeOutlined />}>
-                <Translate id="link.home">首页</Translate>
-              </Button>
-            </Link>
-            <Link to="/community-prompts">
-              <Button icon={<ShareAltOutlined />}>
-                <Translate id="showcase.header.button">浏览社区分享</Translate>
-              </Button>
-            </Link>
+            <ActionLink to="/" variant="primary" icon={<HomeOutlined />}>
+              <Translate id="link.home">首页</Translate>
+            </ActionLink>
+            <ActionLink to="/community-prompts" icon={<CompassOutlined />}>
+              <Translate id="link.communityPrompts">社区提示词</Translate>
+            </ActionLink>
           </Space>
         }
       />
