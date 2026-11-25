@@ -626,17 +626,107 @@ html[dir="rtl"] {
   white-space: pre-line;
 }
 
-/* Prompt body — 上下 hairline，无外框；这种 pattern antd Card/Divider 都不对 */
+/* Prompt body — 柔和下沉工作台预览区，自然语言正体易读 */
 .comp-sheet-code {
-  padding: 24px 0;
-  border-top: 1px solid var(--site-color-hairline);
-  border-bottom: 1px solid var(--site-color-hairline);
-  font-family: var(--site-font-mono);
-  font-size: 13.5px;
-  line-height: 1.7;
+  padding: 20px 22px;
+  background: var(--site-color-preview-bg);
+  border: 1px solid var(--site-color-hairline);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14.5px;
+  line-height: 1.75;
   color: var(--ifm-color-content);
   white-space: pre-wrap;
   word-break: break-word;
+}
+
+/* Interactive placeholder chips & live fill-in bar */
+.prompt-placeholder-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 7px;
+  margin: 0 1px;
+  border-radius: 6px;
+  background-color: rgba(var(--ifm-color-primary-rgb, 57, 126, 106), 0.12);
+  border: 1px solid rgba(var(--ifm-color-primary-rgb, 57, 126, 106), 0.22);
+  color: var(--site-color-tag-selected-text);
+  font-weight: 500;
+  font-size: 0.94em;
+  line-height: 1.5;
+  font-family: inherit;
+  transition: background-color 0.12s var(--site-motion-emphasized), border-color 0.12s var(--site-motion-emphasized);
+}
+
+button.prompt-placeholder-chip {
+  cursor: pointer;
+}
+
+button.prompt-placeholder-chip:hover {
+  background-color: rgba(var(--ifm-color-primary-rgb, 57, 126, 106), 0.18);
+  border-color: var(--site-color-tag-selected-border);
+}
+
+button.prompt-placeholder-chip:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 1px;
+}
+
+.prompt-placeholder-filled {
+  display: inline;
+  padding: 1px 6px;
+  margin: 0 1px;
+  border-radius: 4px;
+  background-color: rgba(var(--ifm-color-primary-rgb, 57, 126, 106), 0.16);
+  border-bottom: 1.5px solid var(--site-color-tag-selected-border);
+  color: var(--ifm-color-content);
+  font-weight: 500;
+}
+
+button.prompt-placeholder-filled {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.prompt-fill-bar {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--site-color-preview-bg);
+  border: 1px solid var(--site-color-hairline);
+}
+
+.prompt-fill-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.prompt-fill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.prompt-fill-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.prompt-fill-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ifm-color-content-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Vote pill — 三段非对称：▲ 主信号 / hairline 分隔 / ▼ 自适应 icon-only */
@@ -1096,6 +1186,12 @@ html[data-auth-boot="in"]:not([data-auth-ready]) .userstatus-live { display: non
   .footer__link-item,
   .footer__link-separator {
     font-size: 11px;
+  }
+  .prompt-fill-field .ant-input-affix-wrapper {
+    min-height: 36px;
+  }
+  .prompt-fill-field .ant-input {
+    font-size: 16px;
   }
   .comment-editor-toolbar .ant-btn {
     min-width: 34px;

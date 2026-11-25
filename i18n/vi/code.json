@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "Không tìm thấy prompt phù hợp"
   },
+  "placeholder.clear": {
+    "message": "Xóa"
+  },
   "placeholder.comment": {
     "message": "Nhập bình luận tại đây... Hỗ trợ cú pháp Markdown và HTML"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "Email"
+  },
+  "placeholder.fillTitle": {
+    "message": "Điền biến số"
   },
   "placeholder.newPassword": {
     "message": "Mật khẩu mới"

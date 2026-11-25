@@ -822,7 +822,7 @@ const ShowcaseContent: React.FC<HomeData> = ({ defaultFavorData, defaultOtherDat
   const { userAuth, authLoading } = useContext(AuthContext);
   const history = useHistory();
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalData, setModalData] = useState<any>({});
+  const [modalData, setModalData] = useState<any>(null);
   // 同步初始化视图模式（URL > localStorage > 默认值），避免闪烁
   const [viewMode, setViewMode] = useState<ViewMode>(() => {
     if (!ExecutionEnvironment.canUseDOM) return "collection";
@@ -918,9 +918,9 @@ const ShowcaseContent: React.FC<HomeData> = ({ defaultFavorData, defaultOtherDat
           <ExploreView onOpenModal={handleOpenModal} defaultFavorData={defaultFavorData} defaultOtherData={defaultOtherData} />
         )}
       </div>
-      {modalOpen && (
+      {modalData && (
         <Suspense fallback={null}>
-          <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} data={modalData} />
+          <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} afterClose={() => setModalData(null)} data={modalData} />
         </Suspense>
       )}
     </ViewModeContext.Provider>

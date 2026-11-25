@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "일치하는 프롬프트를 찾을 수 없습니다"
   },
+  "placeholder.clear": {
+    "message": "지우기"
+  },
   "placeholder.comment": {
     "message": "여기에 댓글 입력... Markdown 및 HTML 구문 지원"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "이메일"
+  },
+  "placeholder.fillTitle": {
+    "message": "변수 채우기"
   },
   "placeholder.newPassword": {
     "message": "새 비밀번호"

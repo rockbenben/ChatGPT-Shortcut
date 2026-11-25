@@ -36,33 +36,25 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
   return (
     <Modal
       open={open}
-      width={720}
+      centered
+      width={680}
       mask={{ closable: false }}
       confirmLoading={loading}
       onOk={form.submit}
       onCancel={onClose}
       destroyOnHidden
+      styles={{
+        container: { display: "flex", flexDirection: "column", maxHeight: "calc(100dvh - 32px)" },
+        body: { minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", marginInline: -4, paddingInline: 4 },
+      }}
       title={mode === "add" ? <Translate id="action.addPrompt">创建提示词</Translate> : <Translate id="modal.editPrompt.title">编辑提示词</Translate>}
       okText={mode === "add" ? <Translate id="action.addPrompt">创建提示词</Translate> : <Translate id="action.updatePrompt">保存</Translate>}
       cancelText={<Translate id="action.cancel">取消</Translate>}>
-      <Form
-        form={form}
-        layout="vertical"
-        requiredMark="optional"
-        // preserve={false}：字段卸载时把值从 store 移除。useForm() 的 store 活在本组件上，
-        // 不随 destroyOnHidden 一起销毁，光靠下面那个「打开时 resetFields」的 useEffect 会
-        // 和字段重新挂载抢跑（effect 先跑在尚未连接的实例上、静默失效，字段随后又从旧 store
-        // 读回值）——实测提交成功后、以及点「取消」后重开，标题与内容都还是上一条的，
-        // 「创建提示词」弹窗带着刚提交过的内容打开，很容易误提交重复条目。
-        // 提交失败时弹窗不关、字段没卸载，输入照样保留，与下方注释的意图一致。
-        preserve={false}
-        // 不在此 resetFields：onSubmit 内部失败时是 catch 后返回 false（不抛），此处会无条件清空表单，
-        // 而调用方失败时不关弹窗 → 用户输入被清空丢失。表单初始化交给「打开时的 useEffect」+ destroyOnHidden，
-        // 成功时调用方关弹窗、下次打开自然重置；失败时保留输入供用户修正重提。
-        onFinish={onSubmit}>
+      <Form form={form} layout="vertical" requiredMark="optional" preserve={false} onFinish={onSubmit} scrollToFirstError={{ focus: true }} style={{ marginTop: 12 }}>
         <Form.Item
           name="title"
           label={<Translate id="label.promptTitle">提示词名称</Translate>}
+          style={{ marginBottom: 16 }}
           rules={[
             {
               required: true,
@@ -83,6 +75,7 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
         <Form.Item
           name="description"
           label={<Translate id="label.promptContent">提示词内容</Translate>}
+          style={{ marginBottom: 16 }}
           rules={[
             {
               required: true,
@@ -95,7 +88,7 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
           <PromptEditorFormItem />
         </Form.Item>
 
-        <Form.Item name="remark" label={<Translate id="label.promptRemark">作用/用途</Translate>}>
+        <Form.Item name="remark" label={<Translate id="label.promptRemark">作用/用途</Translate>} style={{ marginBottom: 16 }}>
           <Input
             maxLength={100}
             placeholder={translate({
@@ -105,9 +98,9 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
           />
         </Form.Item>
 
-        <Form.Item name="notes" label={<Translate id="label.promptNotes">备注说明</Translate>}>
+        <Form.Item name="notes" label={<Translate id="label.promptNotes">备注说明</Translate>} style={{ marginBottom: 16 }}>
           <Input.TextArea
-            autoSize={{ minRows: 3, maxRows: 8 }}
+            autoSize={{ minRows: 2, maxRows: 6 }}
             maxLength={2000}
             placeholder={translate({
               id: "placeholder.promptNotes",
@@ -116,15 +109,25 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
           />
         </Form.Item>
 
-        <Form.Item>
-          {/* 开关默认开启，标签要说清打开后会发生什么；<label> 包住让整行可点、读屏也有名字 */}
-          <label style={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
-            <Form.Item name="share" valuePropName="checked" noStyle>
-              <Switch checkedChildren={<CheckOutlined />} unCheckedChildren={<CloseOutlined />} aria-label={shareLabel} />
-            </Form.Item>
-            <Typography.Text type="secondary" style={{ marginLeft: 8 }}>
+        <Form.Item style={{ marginBottom: 0 }}>
+          <label
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 12,
+              padding: "12px 14px",
+              borderRadius: 10,
+              background: "var(--site-color-preview-bg)",
+              border: "1px solid var(--site-color-hairline)",
+              cursor: "pointer",
+            }}>
+            <Typography.Text style={{ fontSize: 13.5, color: "var(--ifm-color-content-secondary)", lineHeight: 1.5 }}>
               {shareLabel}
             </Typography.Text>
+            <Form.Item name="share" valuePropName="checked" noStyle>
+              <Switch checkedChildren={<CheckOutlined />} unCheckedChildren={<CloseOutlined />} aria-label={shareLabel} style={{ flexShrink: 0 }} />
+            </Form.Item>
           </label>
         </Form.Item>
       </Form>

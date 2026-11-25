@@ -1,5 +1,5 @@
-import React, { Suspense, useContext, useCallback, useMemo } from "react";
-import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, App, Breadcrumb, Popover } from "antd";
+import React, { Suspense, useContext, useCallback, useMemo, useState, useEffect } from "react";
+import { App, Card, Typography, Space, Flex, Row, Col, Button, Skeleton, Breadcrumb, Popover } from "antd";
 import { HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined, FileSearchOutlined, WarningOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
@@ -7,18 +7,18 @@ import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { CopyButton } from "@site/src/components/CopyButton";
+import { PromptPlaceholderBar } from "@site/src/components/PromptPlaceholderBar";
 import { AuthContext } from "./AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
-import { useOnlineUrl } from "@site/src/utils/onlineUrl";
-import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
+import { extractPlaceholders, applyPlaceholders, getPlaceholderValue, renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
 import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import { EmptyState } from "@site/src/components/EmptyState";
+import { ActionLink } from "@site/src/components/ActionLink";
+import { useOnlineUrl } from "@site/src/utils/onlineUrl";
 import { toBcp47 } from "@site/src/utils/i18n";
 import { lazyOptional } from "@site/src/utils/lazyRetry";
 
 const ShareButtons = lazyOptional(() => import("./ShareButtons"));
-// 见 PromptPage 同名注释：静态 import 会把 Pagination + Form + react-markdown
-// 全链拖进 eager common chunk，每个页面都要下载。
 
 interface CommunityPromptPageProps {
   prompt: CommunityPrompt | null;
@@ -31,9 +31,9 @@ interface CommunityPromptPageProps {
   onVote?: (id: number, action: "upvote" | "downvote") => void;
 }
 
-// Card 容器复用：6px hairline，与 PromptCard 同家族
+// Card 容器复用：12px hairline，与 PromptCard 同家族
 const sheetCardStyle: React.CSSProperties = {
-  borderRadius: 6,
+  borderRadius: 12,
   borderColor: "var(--site-color-hairline)",
   background: "var(--ifm-background-surface-color)",
 };
@@ -69,11 +69,39 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
   // 提示词，因此收藏永远不适用；在线版看别人的社区提示词时照常显示。
   const isOwnPrompt = !!prompt?.id && !!userAuth?.data?.userprompts?.some((p: any) => p.id === prompt.id);
 
-  // 字符/token 统计 + 占位符渲染：放在 early return 之前，避免 loading/error 路径跳过 useMemo 导致 hook 数量变化
-  // renderedPrompt 解析 [xxx] 占位符，prompt 体可能上千字符，每次操作（复制/点赞/收藏）都重渲染会触发 regex 重跑
-  const charCount = (prompt?.description || "").length;
-  const tokenCount = useMemo(() => estimateTokens(prompt?.description || ""), [prompt?.description]);
-  const renderedPrompt = useMemo(() => renderPromptWithPlaceholders(prompt?.description || ""), [prompt?.description]);
+  // 字符/token 统计 + 占位符交互状态：放在 early return 之前，避免 loading/error 路径跳过 hook
+  const rawPrompt = prompt?.description || "";
+  const charCount = rawPrompt.length;
+  const tokenCount = useMemo(() => estimateTokens(rawPrompt), [rawPrompt]);
+
+  const [placeholderValues, setPlaceholderValues] = useState<Record<string, string>>({});
+  const [focusState, setFocusState] = useState<{ key: string | null; nonce: number }>({ key: null, nonce: 0 });
+
+  useEffect(() => {
+    setPlaceholderValues({});
+    setFocusState({ key: null, nonce: 0 });
+  }, [prompt?.id, rawPrompt]);
+
+  const placeholders = useMemo(() => extractPlaceholders(rawPrompt), [rawPrompt]);
+  const hasFilledValues = useMemo(
+    () => placeholders.some((key) => Boolean(getPlaceholderValue(placeholderValues, key)?.trim())),
+    [placeholders, placeholderValues],
+  );
+  const filledPrompt = useMemo(() => applyPlaceholders(rawPrompt, placeholderValues), [rawPrompt, placeholderValues]);
+
+  const handleSelectPlaceholder = useCallback((key: string) => {
+    setFocusState((prev) => ({ key, nonce: prev.nonce + 1 }));
+  }, []);
+  const handlePlaceholderChange = useCallback((key: string, val: string) => {
+    setPlaceholderValues((prev) => ({ ...prev, [key]: val }));
+  }, []);
+  const handleClearPlaceholders = useCallback(() => {
+    setPlaceholderValues({});
+  }, []);
+  const renderedPrompt = useMemo(
+    () => renderPromptWithPlaceholders(rawPrompt, { values: placeholderValues, onSelectPlaceholder: handleSelectPlaceholder }),
+    [rawPrompt, placeholderValues, handleSelectPlaceholder],
+  );
 
   const handleToggleFavorite = useCallback(() => {
     if (!getUserAuth()) {
@@ -102,8 +130,9 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
   // Loading state — 与正常态共用 Card 容器，零跳变
   if (loading) {
     return (
-      <Layout title={translate({ id: "community.loading", message: "加载中..." })}>
-        <Row justify="center" style={{ marginTop: 16, marginBottom: 24 }}>
+      <Layout title={translate({ id: "community.loading", message: "加载中…" })}>
+        <main>
+          <Row justify="center" style={{ marginTop: 16, marginBottom: 24, paddingInline: 12 }}>
           <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
             <div style={{ height: 22, marginBottom: 12 }} aria-hidden="true" />
             <Card variant="outlined" style={sheetCardStyle} styles={{ body: sheetCardBodyStyle }} aria-busy="true">
@@ -117,6 +146,7 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
             </Card>
           </Col>
         </Row>
+        </main>
       </Layout>
     );
   }
@@ -125,22 +155,21 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
   if (error) {
     return (
       <Layout title={translate({ id: "community.fetchError", message: "获取数据失败" })}>
-        <Row justify="center" style={{ marginTop: 24, marginBottom: 24 }}>
-          <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
-            <EmptyState
-              icon={<WarningOutlined />}
-              title={<Translate id="community.fetchError">获取数据失败</Translate>}
-              description={<Translate id="community.fetchErrorDesc">网络或服务暂时不可用，请稍后重试</Translate>}
-              action={
-                onRetry ? (
-                  <Button type="primary" onClick={onRetry}>
-                    <Translate id="action.retry">重试</Translate>
-                  </Button>
-                ) : undefined
-              }
-            />
-          </Col>
-        </Row>
+        <main>
+          <EmptyState
+            fullPage
+            icon={<WarningOutlined />}
+            title={<Translate id="community.fetchError">获取数据失败</Translate>}
+            description={<Translate id="community.fetchErrorDesc">网络或服务暂时不可用，请稍后重试</Translate>}
+            action={
+              onRetry ? (
+                <Button type="primary" onClick={onRetry}>
+                  <Translate id="action.retry">重试</Translate>
+                </Button>
+              ) : undefined
+            }
+          />
+        </main>
       </Layout>
     );
   }
@@ -152,24 +181,19 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
         <Head>
           <meta name="robots" content="noindex" />
         </Head>
-        <Row justify="center" style={{ marginTop: 24, marginBottom: 24 }}>
-          <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
-            <EmptyState
-              icon={<FileSearchOutlined />}
-              title={<Translate id="community.notFound">提示词未找到</Translate>}
-              description={<Translate id="community.notFoundDesc">该提示词可能已被删除或设为私有</Translate>}
-              // 回本地首页而不是主站社区：这个空状态出现在「本地提示词没找到」时
-              // （旧书签、已删条目），用户想回的是自己的列表，把他送去互联网是答非所问。
-              action={
-                <Link to="/">
-                  <Button type="primary">
-                    <Translate id="community.backToList">返回列表</Translate>
-                  </Button>
-                </Link>
-              }
-            />
-          </Col>
-        </Row>
+        <main>
+          <EmptyState
+            fullPage
+            icon={<FileSearchOutlined />}
+            title={<Translate id="community.notFound">提示词未找到</Translate>}
+            description={<Translate id="community.notFoundDesc">该提示词可能已被删除或设为私有</Translate>}
+            action={
+              <ActionLink to="/" variant="primary">
+                <Translate id="community.backToList">返回列表</Translate>
+              </ActionLink>
+            }
+          />
+        </main>
       </Layout>
     );
   }
@@ -197,31 +221,30 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
         <meta name="twitter:title" content={seoTitle} />
         <meta name="twitter:description" content={seoDescription} />
       </Head>
-      <Row justify="center" style={{ marginTop: 16, marginBottom: 24 }}>
-        <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
-          <Breadcrumb
-            items={[
-              {
-                title: (
-                  <Link to="/" style={{ color: "var(--site-color-tag-selected-text)" }}>
-                    <HomeOutlined style={{ marginInlineEnd: 4 }} />
-                    <Translate id="link.home">首页</Translate>
-                  </Link>
-                ),
-              },
-              {
-                title: (
-                  <a href={onlineCommunityUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--site-color-tag-selected-text)" }}>
-                    <Translate id="link.communityPrompts">社区提示词</Translate>
-                  </a>
-                ),
-              },
-              {
-                title: prompt.title,
-              },
-            ]}
-            style={{ marginBottom: 12, fontSize: 13 }}
-          />
+      <main>
+        <Row justify="center" style={{ marginTop: 16, marginBottom: 24, paddingInline: 12 }}>
+          <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
+            <Breadcrumb
+              items={[
+                {
+                  title: (
+                    <Link to="/" style={{ color: "var(--site-color-tag-selected-text)" }}>
+                      <HomeOutlined style={{ marginInlineEnd: 4 }} />
+                      <Translate id="link.home">首页</Translate>
+                    </Link>
+                  ),
+                },
+                {
+                  title: (
+                    <a href={onlineCommunityUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--site-color-tag-selected-text)" }}>
+                      <Translate id="link.communityPrompts">社区提示词</Translate>
+                    </a>
+                  ),
+                },
+                { title: prompt.title },
+              ]}
+              style={{ marginBottom: 12 }}
+            />
 
           <Card variant="outlined" style={sheetCardStyle} styles={{ body: sheetCardBodyStyle }}>
             <Flex vertical gap={24}>
@@ -252,25 +275,35 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
               {/* REMARK: 带背景的左竖线引语 */}
               {prompt.remark && <blockquote className="comp-sheet-remark">{prompt.remark}</blockquote>}
 
-              {/* PROMPT BODY: 上下 hairline，无外框 */}
+              {/* PROMPT BODY: 工作台预览框 + 变量直填 */}
               <Flex vertical gap={14}>
                 <Flex justify="space-between" align="center" wrap gap={12}>
                   <Eyebrow>
                     <Translate id="prompt.content">提示词内容</Translate>
                   </Eyebrow>
-                  <CopyButton text={prompt?.description ?? ""} variant="primary" size="large" />
+                  <CopyButton text={filledPrompt} variant="primary" size="large">
+                    {hasFilledValues ? <Translate id="prompt.copyFilled">复制已填内容</Translate> : undefined}
+                  </CopyButton>
                 </Flex>
+                <PromptPlaceholderBar
+                  placeholders={placeholders}
+                  values={placeholderValues}
+                  onChange={handlePlaceholderChange}
+                  onClear={handleClearPlaceholders}
+                  focusKey={focusState.key}
+                  focusNonce={focusState.nonce}
+                />
                 <div className="comp-sheet-code">{renderedPrompt}</div>
               </Flex>
 
-              {/* AUTHOR'S NOTE: 简易 ghost-border 容器 */}
+              {/* AUTHOR'S NOTE */}
               {prompt.notes && (
                 <div
                   style={{
                     padding: "14px 16px",
-                    background: "var(--site-color-ghost-border)",
-                    borderRadius: 4,
-                    borderInlineStart: "2px solid var(--site-color-hairline)",
+                    background: "var(--site-color-preview-bg)",
+                    borderRadius: 10,
+                    border: "1px solid var(--site-color-hairline)",
                   }}>
                   <Eyebrow>
                     <Translate id="prompt.authorNote">作者备注</Translate>
@@ -346,10 +379,9 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
             </Flex>
           </Card>
 
-            {/* 离线版不嵌讨论区：Comments 依赖后端存取评论，这条线没有后端。
-                在线版这里是 hairline + eyebrow «讨论 · N» + <Comments>。 */}
-        </Col>
-      </Row>
+          </Col>
+        </Row>
+      </main>
     </Layout>
   );
 }

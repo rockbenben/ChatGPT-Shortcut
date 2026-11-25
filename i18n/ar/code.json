@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "لم يتم العثور على موجهات مطابقة"
   },
+  "placeholder.clear": {
+    "message": "مسح"
+  },
   "placeholder.comment": {
     "message": "أدخل التعليق هنا... يدعم Markdown و HTML"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "البريد الإلكتروني"
+  },
+  "placeholder.fillTitle": {
+    "message": "تعبئة المتغيرات"
   },
   "placeholder.newPassword": {
     "message": "كلمة المرور الجديدة"

@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "Nessun prompt corrispondente trovato"
   },
+  "placeholder.clear": {
+    "message": "Cancella"
+  },
   "placeholder.comment": {
     "message": "Inserisci il tuo commento qui... Markdown e sintassi HTML supportati"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "Email"
+  },
+  "placeholder.fillTitle": {
+    "message": "Compila variabili"
   },
   "placeholder.newPassword": {
     "message": "Nuova password"

@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "No se encontraron prompts coincidentes"
   },
+  "placeholder.clear": {
+    "message": "Limpiar"
+  },
   "placeholder.comment": {
     "message": "Ingresa el comentario aquí... Se admite Markdown y sintaxis HTML"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "Correo electrónico"
+  },
+  "placeholder.fillTitle": {
+    "message": "Rellenar variables"
   },
   "placeholder.newPassword": {
     "message": "Nueva contraseña"
