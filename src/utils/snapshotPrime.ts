@@ -2,8 +2,8 @@
  * 社区快照子系统的总入口：
  *   - 类型 + 常量：CommunityPromptSnapshot（snapshot 实际形状）/ CommunityPrompt
  *     （extends 后的 API 全字段形状，卡片用）/ CommunitySnapshotIndex /
- *     COMMUNITY_PAGE_SIZE / CommunitySortField
- *   - 类型化的 snapshot 数据（communitySnapshot 已 cast 为 CommunitySnapshot，消费方无需再 cast）
+ *     CommunitySortField
+ *   - getCommunitySnapshotPage：返回可用于首屏和列表缓存的完整快照页
  *   - primeCacheFromSnapshot：把 snapshot 写进 lscache 两层
  *
  * Prime 行为：
@@ -39,11 +39,7 @@ import {
 } from "@site/src/utils/cache";
 import rawSnapshot from "@site/src/data/communitySnapshot.json";
 import type { TagType } from "@site/src/data/User.d";
-
-// ==================== 共享常量 ====================
-
-// 列表页 + getCommPrompts cache key + snapshot prime 三处共用，必须保持一致
-export const COMMUNITY_PAGE_SIZE = 12;
+import { COMMUNITY_PAGE_SIZE } from "@site/src/utils/communityPagination.mjs";
 
 // sortField 的合法取值；对应后端 /userprompts list 端点的 sort 参数
 // 字面量本身就是 API 契约，直接用字符串比 const-object 包装更直观
@@ -105,7 +101,15 @@ interface CommunitySnapshot {
 // 类型化的 snapshot 数据：消费方直接 import 这个，不必各自做 `as unknown as ...` cast
 // JSON 字面类型对 nullable optional 字段过窄（remark/notes 不存在时 TS 推断为 never），
 // 所以在边界做一次 unknown 断言把它收窄到我们的 schema
-export const communitySnapshot = rawSnapshot as unknown as CommunitySnapshot;
+const communitySnapshot = rawSnapshot as unknown as CommunitySnapshot;
+
+export function getCommunitySnapshotPage(sortField: CommunitySortField) {
+  const index = sortField === "id" ? communitySnapshot.byNewest : communitySnapshot.byUpvoted;
+  const items = index.ids.map((id) => communitySnapshot.byId[String(id)]).filter(Boolean);
+  // 更改每页数量后，旧快照可能还在。缺少条目时走 API，避免翻页跳过缺失条目。
+  if (items.length === 0 || items.length !== Math.min(COMMUNITY_PAGE_SIZE, index.total)) return null;
+  return { items, total: index.total, etag: index.etag };
+}
 
 // ==================== Prime 实现 ====================
 
@@ -121,26 +125,24 @@ export function primeCacheFromSnapshot(): void {
   const { byId } = communitySnapshot;
 
   // 1) 列表层
-  primeListView("id", communitySnapshot.byNewest, byId, generatedAtMs);
-  primeListView("upvoteDifference", communitySnapshot.byUpvoted, byId, generatedAtMs);
+  primeListView("id", generatedAtMs);
+  primeListView("upvoteDifference", generatedAtMs);
 
   // 2) 详情层：byId 全量铺进 pc_commus_<id>
   primeDetailEntries(byId);
 }
 
-function primeListView(sortField: CommunitySortField, idx: CommunitySnapshotIndex, byId: Record<string, CommunityPromptSnapshot>, generatedAtMs: number): void {
-  if (!idx?.ids?.length) return;
-
-  // cl_1_12_id_desc_noTerm / cl_1_12_upvoteDifference_desc_noTerm
+function primeListView(sortField: CommunitySortField, generatedAtMs: number): void {
   const cacheKey = getListCacheKey(CACHE_PREFIX.COMM_LISTS, 1, COMMUNITY_PAGE_SIZE, sortField, "desc", "noTerm");
   if (getCache(cacheKey)) return;
 
-  const items = idx.ids.map((id) => byId[String(id)]).filter(Boolean);
-  if (items.length === 0) return;
+  const snapshotPage = getCommunitySnapshotPage(sortField);
+  if (!snapshotPage) return;
+  const { items, total, etag } = snapshotPage;
 
   // getCommPrompts 把 result 形如 [items, { pagination: { total } }] 写进 cache，对齐这个形状
-  const result = [items, { pagination: { total: idx.total } }];
-  setCacheWithETag(cacheKey, result, CACHE_TTL.COMM_PROMPT_LISTS, idx.etag ?? "");
+  const result = [items, { pagination: { total } }];
+  setCacheWithETag(cacheKey, result, CACHE_TTL.COMM_PROMPT_LISTS, etag ?? "");
   setCache(`${cacheKey}_lastFetch`, generatedAtMs, CACHE_TTL.COMM_PROMPT_LISTS);
 }
 

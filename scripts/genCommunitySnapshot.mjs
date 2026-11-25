@@ -2,8 +2,8 @@
  * 构建期社区提示词快照生成器
  *
  * 产物：src/data/communitySnapshot.json
- *   - 列表页 (/community-prompts) 首屏快照：byNewest/byUpvoted 各存 12 个 ids（含 list
- *     端点 ETag 用于 lscache prime 的 If-None-Match）+ byId 详情（最多 24 条，带真实
+ *   - 列表页 (/community-prompts) 首屏快照：byNewest/byUpvoted 各存一页 ids（含 list
+ *     端点 ETag 用于 lscache prime 的 If-None-Match）+ byId 详情（带真实
  *     updatedAt 用于列表流的 cache 校验）
  *   - 列表页 useState 初始值直接读 → SSG HTML 直出真实卡片，LCP 元素到位
  *   - snapshotPrime.ts 从中拼出 lscache：cl_..._desc_noTerm（列表层）+ pc_commus_<id>
@@ -14,9 +14,9 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { COMMUNITY_PAGE_SIZE } from "../src/utils/communityPagination.mjs";
 
 const API_URL = process.env.SNAPSHOT_API_URL || "https://api.newzone.top/api";
-const PAGE_SIZE = 12;
 const FETCH_TIMEOUT_MS = 20_000;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -65,7 +65,7 @@ async function fetchJson(url, init = {}) {
 async function fetchListIds(sortField) {
   const url =
     `${API_URL}/userprompts?pagination[withCount]=true` +
-    `&pagination[page]=1&pagination[pageSize]=${PAGE_SIZE}` +
+    `&pagination[page]=1&pagination[pageSize]=${COMMUNITY_PAGE_SIZE}` +
     `&sort=${sortField}:desc`;
   const { data, headers } = await fetchJson(url);
   const items = Array.isArray(data?.data) ? data.data : [];
@@ -133,7 +133,7 @@ async function main() {
     return;
   }
   try {
-    console.log(`[snapshot] Fetching newest ${PAGE_SIZE} + most-upvoted ${PAGE_SIZE} in parallel...`);
+    console.log(`[snapshot] Fetching newest ${COMMUNITY_PAGE_SIZE} + most-upvoted ${COMMUNITY_PAGE_SIZE} in parallel...`);
     const [newest, upvoted] = await Promise.all([
       fetchListIds("id"),
       fetchListIds("upvoteDifference"),

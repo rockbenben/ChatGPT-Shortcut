@@ -24,30 +24,12 @@ import { LoginModal } from "@site/src/components/user/LoginModal";
 import PromptCard from "@site/src/components/PromptCard";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
 import styles from "@site/src/pages/styles.module.css";
-import { primeCacheFromSnapshot, communitySnapshot, COMMUNITY_PAGE_SIZE, type CommunitySortField, type CommunityPrompt } from "@site/src/utils/snapshotPrime";
+import { COMMUNITY_PAGE_SIZE } from "@site/src/utils/communityPagination.mjs";
+import { primeCacheFromSnapshot, getCommunitySnapshotPage, type CommunitySortField, type CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import { lazyWithRetry, lazyOptional } from "@site/src/utils/lazyRetry";
 const PromptDetailModal = lazyWithRetry(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 
 const ShareButtons = lazyOptional(() => import("@site/src/components/ShareButtons"));
-
-interface SnapshotView {
-  items: CommunityPrompt[];
-  total: number;
-}
-
-// snapshot 文件里 byNewest/byUpvoted 只存 ids；items 从 byId 拼出，避免 JSON 里同一条 prompt 被存两遍
-// 快照只覆盖首页 + 默认排序，避免分页/搜索/异常排序的旧数据污染
-// 空 stub 兜底：fresh clone 时 ensure-only 写出 ids=[] 的占位 JSON，此时返回 null
-// 让初始渲染走 skeleton + API 兜底，避免闪一下「无结果」
-function getSnapshotView(page: number, sortField: CommunitySortField, searchTerm: string): SnapshotView | null {
-  if (page !== 1 || searchTerm) return null;
-  const index = sortField === "id" ? communitySnapshot.byNewest : sortField === "upvoteDifference" ? communitySnapshot.byUpvoted : null;
-  if (!index || index.ids.length === 0) return null;
-
-  const items = index.ids.map((id) => communitySnapshot.byId[String(id)]).filter(Boolean);
-  if (items.length === 0) return null;
-  return { items, total: index.total };
-}
 
 const CommunityPrompts = () => {
   const { userAuth, getUserAuth } = useContext(AuthContext);
@@ -108,7 +90,7 @@ const CommunityPrompts = () => {
     }
   }, []);
 
-  const initialSnapshot = useMemo(() => getSnapshotView(1, "id", ""), []);
+  const initialSnapshot = useMemo(() => getCommunitySnapshotPage("id"), []);
   const [open, setOpen] = useState(false);
   const [userprompts, setUserPrompts] = useState<CommunityPrompt[]>(initialSnapshot?.items ?? []);
   const [currentPage, setCurrentPage] = useState(1);
@@ -196,7 +178,7 @@ const CommunityPrompts = () => {
     const wasSeeded = skipNextSnapshotFill.current;
     skipNextSnapshotFill.current = false;
 
-    const snapshotView = wasSeeded ? null : getSnapshotView(currentPage, sortField, searchTerm);
+    const snapshotView = !wasSeeded && currentPage === 1 && !searchTerm ? getCommunitySnapshotPage(sortField) : null;
     // 快照只在「屏幕上还没有本次查询的内容」时填：同一次查询的后台刷新（重试、切语言）
     // 再填一遍快照，会拿构建期的旧数据盖掉刚拉到的活数据。
     if (!wasSeeded && snapshotView && contentQueryKeyRef.current !== queryKey) {
