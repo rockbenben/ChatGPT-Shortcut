@@ -20,7 +20,7 @@ The repository is maintained across three primary branches with distinct archite
 | :--- | :--- | :--- | :--- |
 | **Role & Deployment** | Production online deployment branch (auto-deploys to GitHub Pages `gh-pages`). | Canonical open-source baseline on GitHub. Clean of ads and tracking. | Standalone offline / self-hosted Docker edition. No remote backend. |
 | **Ad Components** | **Present**: Uses `AdComponent` (`src/components/AdComponent.js`) via `lazyOptional` in HomePage, CommunityPromptPage, PromptPage, and community-prompts. | **Forbidden**: Completely stripped out. Never introduce `AdComponent` or ad scripts into `main`. | **Forbidden**: Completely stripped out. |
-| **Community Prompts Architecture** | **Full SSG Sharded Prerendering**: Includes `src/data/community/` (1400+ JSONs), `communityTraffic.json`. Uses `plugin-community-pages.js` with 16-prompt shards (`promptShard`, `staticIds`) to prerender `/community-prompt/<id>`. | **Pure Dynamic CSR**: No `src/data/community/`, no static route plugin, no shards. Detail pages dynamically load via `/community-prompt?id=<id>` querying Strapi API. | **Local / Disabled**: No remote community fetch. Detail page loads local prompts via `loadPrompts()`; community listing page shows `<OnlineOnlyNotice>`. |
+| **Community Prompts Architecture** | **Sharded SSG**: Keeps the full `src/data/community/` corpus and prerenders up to 1,400 `/community-prompt/<id>` routes in 16-prompt shards (`promptShard`, `staticIds`). `communityTraffic.json` gives priority to IDs with search impressions. | **Dynamic CSR**: Loads `/community-prompt?id=<id>` from Strapi. | **Local / Disabled**: Detail pages load local prompts via `loadPrompts()`. The listing shows `<OnlineOnlyNotice>`. |
 | **Backend & Auth** | Remote Strapi API with JWT auth and SWR session caching. | Remote Strapi API with JWT auth and SWR session caching. | **No Remote API**: `src/api/auth.ts`, `client.ts`, `comments.ts`, `config.ts` removed. Uses `src/api/localStore.ts` purely in `localStorage`. |
 | **Comments & Polling** | **Present**: `Comments.tsx`, `usePollForAIReply.ts` using Strapi comment endpoints. | **Present**: Identical to `speed`. | **Forbidden / Deleted**: No remote comments or AI comment polling. `Comments.tsx` and `usePollForAIReply.ts` are deleted. |
 | **User Status & Modals** | Dual-state (logged-in dropdown / logged-out button) with login/logout modals & session reset. | Dual-state (identical to `speed`). | **Single Local State**: Direct buttons for collection toggle and prompt creation. No login/logout modals, no remote session reset. |
@@ -42,7 +42,7 @@ When porting or cherry-picking, refer to this exact file-level difference table:
 | `src/hooks/CommentComponent/usePollForAIReply.ts` | **Exists** (polls for AI reply). | **Exists** (identical to `speed`). | **Deleted**. |
 | `src/components/CommunityPromptDetail.tsx` | **Exists with SSG shards**: accepts `promptShard`, `staticIds`, handles static SSR rendering. | **Exists as pure dynamic CSR**: prop-free component (`export default function CommunityPromptDetail() { return <CommunityPromptDetailInner />; }`). | **Deleted**: `src/pages/community-prompt.tsx` renders local prompt data directly. |
 | `src/components/CommunityPromptPage.tsx` | Contains `<AdComponent />`, SSG canonical logic, full `Comments` and `LoginComponent`. | **No `<AdComponent />`**, dynamic CSR canonical, full `Comments` and `LoginComponent`. | **No `<AdComponent />`**, breadcrumbs and notFound link to local `/`, **no `Comments` or `LoginComponent`**. |
-| `src/pages/community-prompts.tsx` | Paginated community prompts listing with search, sorting, and `<AdComponent />`. | Paginated community prompts listing, **strictly no `<AdComponent />`**. | **`<OnlineOnlyNotice>`**: Renders placeholder informing users that community prompts require online site. |
+| `src/pages/community-prompts.tsx` | 16 prompts per page, with search, sorting, and `<AdComponent />`. | 16 prompts per page, with search and sorting. | `<OnlineOnlyNotice>` points users to the online listing. |
 | `src/pages/community-prompt.tsx` | Renders `CommunityPromptDetail` shell. | Renders `CommunityPromptDetail` shell. | Loads local prompt via `loadPrompts()` and renders `CommunityPromptPage`. |
 | `src/components/HomePage.tsx` | Uses `<AdComponent />` via `lazyOptional`. | **No `<AdComponent />`**. | **No `<AdComponent />`**. |
 | `src/components/PromptPage.tsx` | Uses `<AdComponent />` via `lazyOptional`. | **No `<AdComponent />`**. | **No `<AdComponent />`**. |
@@ -50,7 +50,8 @@ When porting or cherry-picking, refer to this exact file-level difference table:
 | `src/api/auth.ts`, `client.ts`, `comments.ts`, `config.ts` | **Exists** (Axios client, Strapi JWT auth, comment APIs). | **Exists** (identical to `speed`). | **Deleted / Forbidden**: Never add or reintroduce these files into `offline`. |
 | `src/api/localStore.ts` | Not used. | Not used. | **Primary store**: Local browser storage for prompts, favorites, tags, and user space. |
 | `src/api/prompts.ts` | Remote API client with cache/force options. | Remote API client with cache/force options. | Offline implementation backed by `localStore.ts`. Accepts `_options?: { force?: boolean }` for signature parity. |
-| `src/data/community/` | 1400+ static community JSONs. | **None** (omitted). | **None** (omitted). |
+| `src/data/community/` | Full community corpus used as input to static selection. | **None** (omitted). | **None** (omitted). |
+| `src/utils/communityPagination.mjs` | Shared page size for the listing, snapshot generator, and client snapshot cache. | Same shared page size. | Absent. |
 | `plugin-community-pages.js` | **Exists** (generates static routes). | **None** (omitted). | **None** (omitted). |
 | `scripts/genCommunityData.mjs`, `genCommunitySelection.mjs` | **Exists** (corpus fetch & selection). | **None** (omitted). | **None** (omitted). |
 
@@ -67,6 +68,7 @@ When porting or cherry-picking, refer to this exact file-level difference table:
    - In `CommunityPromptDetail.tsx`: keep the component prop-free (`export default function CommunityPromptDetail() { return <CommunityPromptDetailInner />; }`). Discard `promptShard`, `staticIds`, `initialPrompt`, `STATIC_PATH_ID`, and `isRefreshOnly`.
    - In `CommunityPromptPage.tsx`: canonical must always point to `${siteConfig.url}${localePrefix}/community-prompt?id=${prompt.id}`.
    - Still keep all pure UX fixes (e.g. separating `error` from `notFound`, `onRetry` button, `getUserAuth()` authoritative check, `promptKey` instance reuse guard).
+   - Port listing pagination, `genCommunitySnapshot.mjs`, and `snapshotPrime.ts` together when the page size changes. All three use `COMMUNITY_PAGE_SIZE` so prefetched items and cache keys match the live request.
 3. **Card Data Timestamps (`src/data/cards/`)**:
    - `main` and `speed` run `CodeUpdateHandler.py` independently. When `src/data/cards/` conflict, compare `dateModified` timestamps; `main` often already has the newest timestamp and newly added cards. Keep `main`'s versions if already up to date.
 4. **Validation Gate**:
@@ -80,6 +82,7 @@ When porting commits from `main` to `offline`:
    - In `src/pages/community-prompts.tsx`, keep the offline `<OnlineOnlyNotice>` implementation.
 3. **Local Community Prompt Detail**:
    - In `src/components/CommunityPromptPage.tsx`: keep offline breadcrumb links (`onlineCommunityUrl`), empty state back-to-home actions (`/`), and omit `Comments` / `LoginComponent`. Apply UX improvements (`error` vs `notFound`, `onRetry`).
+   - Port shared prompt placeholder editing and copying to official and locally stored detail views. Keep per-prompt values in the view and use `applyPlaceholders` for copy output.
 4. **Offline User Status**:
    - In `src/components/user/UserStatus.tsx`: keep offline single-state UI (no login/logout modals or session clearing). Adopt responsive button improvements (`<span>` instead of `hideOnSmallScreen`, button label copy).
 5. **Zero Remote Network Imports**:
@@ -200,6 +203,12 @@ It does **not** generate the `prompt/{id}.tsx` shells any more — `scripts/genP
   `<Empty>` / `<Result>` (fixed-palette cartoon illustrations that ignore the theme and end up the
   loudest thing on the page) and don't add another CSS-only variant — a parallel `.comments-empty`
   implementation already existed once and has been folded in.
+- **Prompt placeholders** use `extractPlaceholders`, `renderPromptWithPlaceholders`, and
+  `applyPlaceholders` in `src/utils/promptRender.tsx`. Detail views supply per-prompt values to
+  `PromptPlaceholderBar` and resolve those values when copying. Keep shared placeholder parsing
+  consistent across official, community, and locally stored prompts.
+- **Accessible controls** reuse `ActionLink` for link-styled actions, the shared `Pagination` for
+  localized pagination labels, and `InputClearIcon` for clear buttons.
 - **Lazy 组件一律走 `src/utils/lazyRetry.ts`，不要裸用 `React.lazy`**：裸用时 chunk 抖一次
   就永久红框（React.lazy 缓存失败的 promise，root ErrorBoundary 的 "Try again" 不会重新发
   请求），且调用处都没有局部 error boundary —— 装饰性组件或广告没加载出来会把整页 crash 掉。
@@ -239,8 +248,12 @@ It does **not** generate the `prompt/{id}.tsx` shells any more — `scripts/genP
 - `community-prompt.tsx` — Single community prompt page:
   - **On `speed` branch**: Dynamic `?id=` shell for search/direct navigation, plus default locale's
     `/community-prompt/<id>` static routes generated via `plugin-community-pages.js`. Handed over
-    in shards of 16 (`promptShard`). Which ids get a static page is decided by `scripts/genCommunitySelection.mjs`
-    (capped at ~1400 by host file limits; search traffic first, upvotes to fill).
+    in shards of 16 (`promptShard`). `scripts/genCommunitySelection.mjs` gives up to 1,400 static pages
+    to distinct IDs with search impressions first, then fills by net upvotes. Refresh the tracked
+    `communityTraffic.json` from the latest 3 months in Google Search Console. Keep detail URLs with
+    impressions greater than zero, normalize `/community-prompt/<id>` and `/community-prompt?id=<id>`
+    (including locale prefixes) to numeric IDs, and deduplicate. Split reports that reach the
+    1,000-row limit. The generator intersects the snapshot with the current corpus before selecting.
   - **On `main` branch**: Pure dynamic CSR shell (`/community-prompt?id=...`). Does not use shards or
     static route generation plugin.
 - `prompt/{id}.tsx` — one shell per (prompt × locale). **Not in git**: these shells (one per default-locale prompt, plus one per prompt in each i18n locale) are generated by `scripts/genPromptPages.mjs` from `src/data/cards/` on prestart/predev/pretypecheck/prebuild/predeploy, and are gitignored. Don't hand-edit them; change the template in that script. It fails the build if any locale is missing a card JSON or a `prompt_<locale>.json` (both would otherwise silently ship default-locale content under a localized URL), and prunes orphaned shells.
