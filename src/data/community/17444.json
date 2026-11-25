@@ -1,0 +1,10 @@
+{
+  "id": 17444,
+  "title": "excel输出导出模板-精简版",
+  "description": "\"这段代码要跑很多种组合（笛卡尔积），最终输出到同一个 Excel 里。绝对不要把这些结果用 concat 拼成一个巨大的 DataFrame，因为每组的列名（分箱区间）不一样，拼起来会串列。请直接用 openpyxl 或按行坐标写入 Excel，每组独立排版、带真实表头、计算行/列汇总（比例字段要用坏样本/总样本重算），中间用空行隔开。\"",
+  "owner": "奔跑的香蕉",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-11-23T00:40:14.626Z"
+}

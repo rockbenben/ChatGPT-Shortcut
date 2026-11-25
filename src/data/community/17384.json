@@ -1,0 +1,10 @@
+{
+  "id": 17384,
+  "title": "spring学习",
+  "description": "“这是 Spring Boot 官方文档中关于 ‘’ 的段落：[粘贴段落]。请：\n\n用中文概括核心意思，加上类比，方便理解；\n\n标出关键词；\n\n给一个最小可运行示例（要求代码完整，复制直接能使用），我运行的时候使用的是idea自带的maven，且使用curl命令会报错；\n\n指出初学者最容易误解的点。”",
+  "owner": "2189817097@qq.com",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-11-24T13:52:47.061Z"
+}

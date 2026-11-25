@@ -1,0 +1,10 @@
+{
+  "id": 17439,
+  "title": "دمج ريموشن مع انتي جرافيتي",
+  "description": "Clone and download the complete official Remotion repository into this empty workspace folder (including all packages, templates, and .agents/skills).\nThen automatically open the terminal and execute the full setup end-to-end:\n1. Install all required dependencies and toolchains (Bun / Node packages) and build the workspace packages.\n2. Load the repository's AGENTS.md rules and Remotion skills, and prepare a clean 60fps vertical (9:16, 1080p & 4K) motion graphics workspace with 3D (@remotion/three) and Google Fonts ready.\n3. Verify zero build errors and automatically launch Remotion Studio on localhost so everything is live and ready for production.",
+  "owner": "mixdream3030",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-11-23T00:39:52.591Z"
+}
