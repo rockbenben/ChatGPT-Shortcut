@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
-import { Button, Spin } from "antd";
+import { Spin } from "antd";
 import { LoginOutlined } from "@ant-design/icons";
 import { loginWithToken } from "@site/src/api";
 import { EmptyState } from "@site/src/components/EmptyState";
+import { ActionLink } from "@site/src/components/ActionLink";
 import { getCache, removeCache, PASSWORDLESS_LOCALE_KEY } from "@site/src/utils/cache";
 
 /** 三种状态都要给用户看得懂的画面（原来一律 return null，白屏） */
@@ -104,32 +104,32 @@ const CallbackPage = () => {
 
   // 登录成功会 location.replace 离开本页，这里只覆盖"处理中"和两种走不下去的情况
   const backHome = (
-    <Link to="/">
-      <Button type="primary" icon={<LoginOutlined />}>
-        <Translate id="auth.callback.backHome">返回首页登录</Translate>
-      </Button>
-    </Link>
+    <ActionLink to="/" variant="primary" icon={<LoginOutlined />}>
+      <Translate id="auth.callback.backHome">返回首页登录</Translate>
+    </ActionLink>
   );
 
   return (
     <Layout title={translate({ id: "auth.callback.title", message: "完成登录" })} noFooter>
-      {phase === "working" ? (
-        <EmptyState fullPage icon={<Spin />} title={<Translate id="auth.callback.working">正在完成登录…</Translate>} description={<Translate id="auth.callback.workingHint">请不要关闭本页，稍后会自动跳回首页</Translate>} />
-      ) : phase === "failed" ? (
-        <EmptyState
-          fullPage
-          title={<Translate id="auth.callback.failed">登录没有完成</Translate>}
-          description={<Translate id="auth.callback.failedHint">登录链接可能已过期或已被使用过。回到首页重新登录即可</Translate>}
-          action={backHome}
-        />
-      ) : (
-        <EmptyState
-          fullPage
-          title={<Translate id="auth.callback.idle">这里没有待处理的登录</Translate>}
-          description={<Translate id="auth.callback.idleHint">本页只用于登录跳转，不需要收藏</Translate>}
-          action={backHome}
-        />
-      )}
+      <main aria-live="polite" aria-busy={phase === "working"}>
+        {phase === "working" ? (
+          <EmptyState fullPage icon={<Spin />} title={<Translate id="auth.callback.working">正在完成登录…</Translate>} description={<Translate id="auth.callback.workingHint">请不要关闭本页，稍后会自动跳回首页</Translate>} />
+        ) : phase === "failed" ? (
+          <EmptyState
+            fullPage
+            title={<Translate id="auth.callback.failed">登录没有完成</Translate>}
+            description={<Translate id="auth.callback.failedHint">登录链接可能已过期或已被使用过。回到首页重新登录即可</Translate>}
+            action={backHome}
+          />
+        ) : (
+          <EmptyState
+            fullPage
+            title={<Translate id="auth.callback.idle">这里没有待处理的登录</Translate>}
+            description={<Translate id="auth.callback.idleHint">本页只用于登录跳转，不需要收藏</Translate>}
+            action={backHome}
+          />
+        )}
+      </main>
     </Layout>
   );
 };

@@ -79,7 +79,7 @@ const ResetPassword = () => {
 
   return (
     <Layout title={translate({ id: "button.resetPassword", message: "重置密码" })}>
-      <div
+      <main
         style={{
           display: "flex",
           justifyContent: "center",
@@ -97,10 +97,18 @@ const ResetPassword = () => {
             boxShadow: "var(--site-shadow-sm)",
           }}
           styles={{ body: { padding: 28 } }}>
-          <Title level={2} style={{ textAlign: "center", marginBottom: 20, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em" }}>
+          <Title level={1} id="reset-password-title" style={{ textAlign: "center", marginBottom: 20, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em" }}>
             <Translate id="button.resetPassword">重置密码</Translate>
           </Title>
-          <Form form={form} layout="vertical" onFinish={onFinishResetPassword} requiredMark={false} initialValues={{ code: resetCode }} size="large">
+          <Form
+            form={form}
+            aria-labelledby="reset-password-title"
+            layout="vertical"
+            onFinish={onFinishResetPassword}
+            scrollToFirstError={{ focus: true }}
+            requiredMark={false}
+            initialValues={{ code: resetCode }}
+            size="large">
             <Form.Item
               name="code"
               label={<Translate id="placeholder.resetPassword.code">重置代码</Translate>}
@@ -113,7 +121,7 @@ const ResetPassword = () => {
                   }),
                 },
               ]}>
-              <Input prefix={<KeyOutlined style={{ color: "var(--site-color-text-tertiary)" }} />} />
+              <Input autoCapitalize="none" autoCorrect="off" spellCheck={false} prefix={<KeyOutlined style={{ color: "var(--site-color-text-tertiary)" }} />} />
             </Form.Item>
 
             <Form.Item name="newPassword" label={<Translate id="placeholder.newPassword">新密码</Translate>} rules={passwordRules} hasFeedback>
@@ -167,7 +175,7 @@ const ResetPassword = () => {
             </Link>
           </div>
         </Card>
-      </div>
+      </main>
     </Layout>
   );
 };

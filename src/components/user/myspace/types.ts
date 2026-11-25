@@ -7,3 +7,9 @@ export interface CustomTag {
 }
 
 export type FilterType = "all" | "prompt" | "favorite";
+
+export interface MySpaceStats {
+  totalItems: number;
+  totalPrompts: number;
+  totalFavorites: number;
+}

@@ -1,8 +1,8 @@
 import React, { useMemo, useState, useEffect, useCallback } from "react";
-import { Modal, Typography, Space, Button, Tooltip, Flex, Statistic } from "antd";
-import { LinkOutlined, InfoCircleOutlined, FireFilled, LikeFilled, UserOutlined, LockOutlined, CloseOutlined } from "@ant-design/icons";
-import Translate from "@docusaurus/Translate";
-import Link from "@docusaurus/Link";
+import { Modal, Typography, Space, Flex, Statistic } from "antd";
+import { LinkOutlined, InfoCircleOutlined, FireFilled, LikeFilled, UserOutlined, LockOutlined } from "@ant-design/icons";
+import Translate, { translate } from "@docusaurus/Translate";
+import { ActionLink } from "@site/src/components/ActionLink";
 import { CopyButton } from "@site/src/components/CopyButton";
 import { PromptPlaceholderBar } from "@site/src/components/PromptPlaceholderBar";
 import { PromptCardTag } from "./PromptCard/PromptCardTag";
@@ -14,6 +14,8 @@ import { TagType } from "@site/src/data/tags";
 interface PromptDetailModalProps {
   open: boolean;
   onCancel: () => void;
+  /** 退场动画和焦点归还完成后，页面才能卸载弹窗。 */
+  afterClose: () => void;
   data: {
     id: string | number;
     title: string;
@@ -36,7 +38,7 @@ const Eyebrow = ({ children }: { children: React.ReactNode }) => (
   </Typography.Text>
 );
 
-const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, onCancel, data }) => {
+const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, onCancel, afterClose, data }) => {
   const [placeholderValues, setPlaceholderValues] = useState<Record<string, string>>({});
   const [focusState, setFocusState] = useState<{ key: string | null; nonce: number }>({ key: null, nonce: 0 });
 
@@ -52,6 +54,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
     [placeholders, placeholderValues],
   );
   const filledPrompt = useMemo(() => applyPlaceholders(rawPrompt, placeholderValues), [rawPrompt, placeholderValues]);
+  const filledTranslation = applyPlaceholders(data?.description || "", placeholderValues);
 
   const handleSelectPlaceholder = useCallback((key: string) => {
     setFocusState((prev) => ({ key, nonce: prev.nonce + 1 }));
@@ -79,86 +82,92 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
     <Modal
       open={open}
       onCancel={onCancel}
+      afterClose={afterClose}
       footer={null}
       width={800}
       key={data?.id}
       destroyOnHidden
       centered
-      title={null}
+      title={
+        <Typography.Title level={2} style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.3, overflowWrap: "anywhere" }}>
+          {data.title}
+        </Typography.Title>
+      }
+      closable={{ "aria-label": translate({ id: "action.close", message: "关闭" }) }}
       styles={{
         container: {
           padding: 0,
           overflow: "hidden",
+          display: "flex",
+          flexDirection: "column",
+          maxHeight: "85dvh",
+        },
+        header: {
+          margin: 0,
+          paddingBlockStart: 20,
+          paddingInline: "24px 72px",
+        },
+        close: {
+          insetBlockStart: 16,
+          insetInlineEnd: 20,
+          width: 36,
+          height: 36,
         },
         body: {
           padding: 0,
+          minHeight: 0,
+          display: "flex",
         },
-      }}
-      closeIcon={null}>
-      <Flex vertical style={{ height: "100%", maxHeight: "85vh" }}>
-        {/* Header Section */}
+      }}>
+      <Flex vertical style={{ flex: 1, minWidth: 0, minHeight: 0 }}>
+        {/* Header metadata */}
         <div
           style={{
-            padding: "20px 24px",
+            padding: "8px 24px 20px",
             borderBottom: "1px solid var(--site-color-hairline)",
           }}>
-          <Flex justify="space-between" align="start" gap={16}>
-            <div style={{ flex: 1 }}>
-              <Typography.Title level={2} style={{ margin: 0, marginBottom: 8, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.3 }}>
-                {data.title}
-              </Typography.Title>
-              <Space separator={<span style={{ color: "var(--site-color-hairline)" }}>|</span>} size="small" wrap>
-                {data.share === false && (
-                  <Space size={4}>
-                    <LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
-                    <Typography.Text style={{ fontSize: 11, color: "var(--site-color-text-tertiary)" }}>
-                      <Translate id="prompt.private">私密</Translate>
-                    </Typography.Text>
-                  </Space>
-                )}
-                {data.owner && (
-                  <Space size={4}>
-                    <UserOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
-                    <Typography.Text style={{ fontSize: 11, color: "var(--site-color-text-tertiary)" }}>
-                      {data.owner}
-                    </Typography.Text>
-                  </Space>
-                )}
-                {data.vote > 0 && (
-                  <Statistic
-                    value={data.vote}
-                    formatter={(value) => formatCompactNumber(value as number)}
-                    prefix={<LikeFilled style={{ color: "var(--site-color-text-tertiary)" }} />}
-                    styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
-                  />
-                )}
-                {data.copyCount > 0 && (
-                  <Statistic
-                    value={data.copyCount}
-                    formatter={(value) => formatCompactNumber(value as number)}
-                    prefix={<FireFilled style={{ color: "var(--site-color-text-tertiary)" }} />}
-                    styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
-                  />
-                )}
-                {data.website && (
-                  <a href={data.website} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 4, color: "var(--site-color-tag-selected-text)" }}>
-                    <LinkOutlined style={{ fontSize: 11 }} />
-                    <Typography.Text style={{ fontSize: 11, color: "inherit" }}>
-                      <Translate id="prompt.source">来源</Translate>
-                    </Typography.Text>
-                  </a>
-                )}
+          <Space separator={<span style={{ color: "var(--site-color-hairline)" }}>|</span>} size="small" wrap>
+            {data.share === false && (
+              <Space size={4}>
+                <LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
+                <Typography.Text style={{ fontSize: 11, color: "var(--site-color-text-tertiary)" }}>
+                  <Translate id="prompt.private">私密</Translate>
+                </Typography.Text>
               </Space>
-            </div>
-            <Tooltip title={<Translate id="action.close">关闭</Translate>}>
-              <Button
-                type="text"
-                icon={<CloseOutlined style={{ fontSize: 16, color: "var(--site-color-text-tertiary)" }} />}
-                onClick={onCancel}
-                style={{ minWidth: 36, height: 36 }}
+            )}
+            {data.owner && (
+              <Space size={4}>
+                <UserOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
+                <Typography.Text style={{ fontSize: 11, color: "var(--site-color-text-tertiary)" }}>
+                  {data.owner}
+                </Typography.Text>
+              </Space>
+            )}
+            {data.vote > 0 && (
+              <Statistic
+                value={data.vote}
+                formatter={(value) => formatCompactNumber(value as number)}
+                prefix={<LikeFilled style={{ color: "var(--site-color-text-tertiary)" }} />}
+                styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
               />
-            </Tooltip>
-          </Flex>
+            )}
+            {data.copyCount > 0 && (
+              <Statistic
+                value={data.copyCount}
+                formatter={(value) => formatCompactNumber(value as number)}
+                prefix={<FireFilled style={{ color: "var(--site-color-text-tertiary)" }} />}
+                styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
+              />
+            )}
+            {data.website && (
+              <a href={data.website} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 4, color: "var(--site-color-tag-selected-text)" }}>
+                <LinkOutlined style={{ fontSize: 11 }} />
+                <Typography.Text style={{ fontSize: 11, color: "inherit" }}>
+                  <Translate id="prompt.source">来源</Translate>
+                </Typography.Text>
+              </a>
+            )}
+          </Space>
         </div>
 
         {/* Content area */}
@@ -167,6 +176,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
             flex: 1,
             minHeight: 0,
             overflowY: "auto",
+            overscrollBehavior: "contain",
             padding: "20px 24px",
           }}>
           <Flex vertical gap={16}>
@@ -240,7 +250,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
                   <Eyebrow>
                     <Translate id="prompt.translation">译文</Translate>
                   </Eyebrow>
-                  <CopyButton text={data.description} variant="iconOnly" size="small" />
+                  <CopyButton text={filledTranslation} variant="iconOnly" size="small" />
                 </Flex>
                 <Typography.Paragraph
                   style={{
@@ -249,8 +259,9 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
                     fontSize: 13.5,
                     color: "var(--ifm-color-content-secondary)",
                     whiteSpace: "pre-wrap",
+                    overflowWrap: "anywhere",
                   }}>
-                  {data.description}
+                  {filledTranslation}
                 </Typography.Paragraph>
               </div>
             )}
@@ -268,11 +279,9 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
               <div style={{ flex: 1, minWidth: 0 }}>{data.tags && <PromptCardTag tags={data.tags} />}</div>
 
               {showViewDetails && (
-                <Link to={`/prompt/${data.id}`}>
-                  <Button type="link" size="small" icon={<InfoCircleOutlined />} style={{ color: "var(--site-color-tag-selected-text)" }}>
-                    <Translate id="action.viewDetails">查看详情</Translate>
-                  </Button>
-                </Link>
+                <ActionLink to={`/prompt/${data.id}`} variant="plain" icon={<InfoCircleOutlined />}>
+                  <Translate id="action.viewDetails">查看详情</Translate>
+                </ActionLink>
               )}
             </Flex>
           </div>

@@ -45,6 +45,8 @@
   --site-color-error-text: #cf1322;
   --site-color-warning-text: #ad4e00;
   --site-color-tag-selected-border: #397e6a;
+  --site-color-action-bg: #397e6a;
+  --site-color-action-text: #fff;
   /* 三级文字承载的是信息不是装饰（复制数、字符/token 数、时间、FILTERS 标签、来源图标），
      11px 下 .45/.40 实测只有 3.32:1 / 3.74:1，AA 小字要 4.5:1。抬到 .56/.50 后
      两个模式都过线，观感仍明显低于正文与次级文字。 */
@@ -495,6 +497,62 @@ article.markdown a:hover {
   color: var(--site-primary-font);
 }
 
+.button.site-action-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-block-size: 32px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: normal;
+}
+
+.button.site-action-link--secondary {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--site-color-hairline);
+  color: var(--ifm-color-content);
+}
+
+.button.site-action-link--primary {
+  background: var(--site-color-action-bg);
+  border-color: transparent;
+  color: var(--site-color-action-text);
+}
+
+.button.site-action-link--primary:hover {
+  background: color-mix(in srgb, var(--site-color-action-bg) 90%, black);
+  color: var(--site-color-action-text);
+}
+
+.button.site-action-link:focus-visible {
+  outline: 2px solid var(--site-color-tag-selected-text);
+  outline-offset: 2px;
+}
+
+.button.site-action-link--plain {
+  min-block-size: 24px;
+  padding-inline: 8px;
+  background: transparent;
+  border-color: transparent;
+  color: var(--site-color-tag-selected-text);
+}
+
+.button.site-action-link--secondary:hover,
+.button.site-action-link--plain:hover {
+  border-color: var(--site-color-tag-selected-border);
+  color: var(--site-color-tag-selected-text);
+}
+
+@media (max-width: 767px) {
+  .button.site-action-link {
+    min-block-size: 36px;
+  }
+}
+
 /* 渐变的排版方向。
    CSS 渐变没有逻辑属性对应物：`linear-gradient(90deg, …)` 在阿拉伯语（dir=rtl）下
    仍然从左往右淡出，于是 remark 引用块的着色会从「强调条那一侧起」变成「从末尾起」，
@@ -887,6 +945,7 @@ button.prompt-placeholder-filled {
 
 /* Comment item — 替代内联 onMouseEnter/Leave，避免嵌套回复双重高亮 */
 .comment-item {
+  container: comment / inline-size;
   margin-bottom: 12px;
   padding: 12px 14px;
   border-radius: 10px;
@@ -894,6 +953,49 @@ button.prompt-placeholder-filled {
 }
 .comment-item:hover:not(:has(.comment-item:hover)) {
   background-color: rgba(var(--ifm-color-primary-rgb), 0.04);
+}
+
+.comment-replies {
+  margin-block-start: 10px;
+  padding-inline-start: 12px;
+  border-inline-start: 2px solid var(--site-color-hairline);
+}
+
+.comment-replies:empty {
+  display: none;
+}
+
+:where(.comment-replies) .comment-replies {
+  padding-inline-start: 0;
+  border-inline-start-width: 0;
+}
+
+.comment-replies > .comment-item {
+  padding-inline: 0;
+}
+
+.comment-replies > .comment-item:last-child {
+  margin-block-end: 0;
+}
+
+.comment-replies > .comment-item:has(> .comment-replies:not(:empty)) {
+  padding-block-end: 0;
+}
+
+/* 仅在当前评论列有足够空间时增加缩进。深层回复共用上一层引导线。 */
+@container comment (min-width: 440px) {
+  .comment-replies {
+    padding-inline-start: 14px;
+    border-inline-start-width: 2px;
+  }
+
+  .comment-replies-with-avatar {
+    margin-inline-start: 52px;
+  }
+
+  .comment-replies > .comment-item {
+    padding-inline: 14px;
+  }
 }
 
 /* ========================================================================== */
@@ -927,6 +1029,13 @@ button.prompt-placeholder-filled {
 
 /* Native Share — sage primary 强调；hover bg 必须 CSS（inline 拿不到 :hover） */
 .share-channel-native { color: var(--ifm-color-primary) !important; }
+@media (max-width: 767px) {
+  .share-trigger.ant-btn {
+    inline-size: 36px;
+    block-size: 36px;
+  }
+}
+
 .share-channel-native:hover {
   color: var(--ifm-color-primary) !important;
   background: rgba(var(--ifm-color-primary-rgb), 0.1) !important;

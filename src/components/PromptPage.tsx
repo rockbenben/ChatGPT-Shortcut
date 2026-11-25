@@ -70,6 +70,7 @@ function PromptPage({ prompt, currentLanguage }) {
     [placeholders, placeholderValues],
   );
   const filledPrompt = useMemo(() => applyPlaceholders(rawPrompt, placeholderValues), [rawPrompt, placeholderValues]);
+  const filledTranslation = applyPlaceholders(promptInfo.description || "", placeholderValues);
 
   const handleSelectPlaceholder = useCallback((key: string) => {
     setFocusState((prev) => ({ key, nonce: prev.nonce + 1 }));
@@ -366,11 +367,11 @@ function PromptPage({ prompt, currentLanguage }) {
                           <Eyebrow>
                             <Translate id="prompt.translation">译文</Translate>
                           </Eyebrow>
-                          <CopyButton text={promptInfo.description} variant="iconOnly" size="small" />
+                          <CopyButton text={filledTranslation} variant="iconOnly" size="small" />
                         </Flex>
                         <Typography.Paragraph
-                          style={{ margin: "6px 0 0", fontSize: 14, lineHeight: 1.6, color: "var(--ifm-color-content-secondary)", whiteSpace: "pre-wrap" }}>
-                          {promptInfo.description}
+                          style={{ margin: "6px 0 0", fontSize: 14, lineHeight: 1.6, color: "var(--ifm-color-content-secondary)", whiteSpace: "pre-wrap", overflowWrap: "anywhere" }}>
+                          {filledTranslation}
                         </Typography.Paragraph>
                       </div>
                     )}

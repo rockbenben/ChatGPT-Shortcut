@@ -43,10 +43,14 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
       onOk={form.submit}
       onCancel={onClose}
       destroyOnHidden
+      styles={{
+        container: { display: "flex", flexDirection: "column", maxHeight: "calc(100dvh - 32px)" },
+        body: { minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", marginInline: -4, paddingInline: 4 },
+      }}
       title={mode === "add" ? <Translate id="action.addPrompt">创建提示词</Translate> : <Translate id="modal.editPrompt.title">编辑提示词</Translate>}
       okText={mode === "add" ? <Translate id="action.addPrompt">创建提示词</Translate> : <Translate id="action.updatePrompt">保存</Translate>}
       cancelText={<Translate id="action.cancel">取消</Translate>}>
-      <Form form={form} layout="vertical" requiredMark="optional" preserve={false} onFinish={onSubmit} style={{ marginTop: 12 }}>
+      <Form form={form} layout="vertical" requiredMark="optional" preserve={false} onFinish={onSubmit} scrollToFirstError={{ focus: true }} style={{ marginTop: 12 }}>
         <Form.Item
           name="title"
           label={<Translate id="label.promptTitle">提示词名称</Translate>}

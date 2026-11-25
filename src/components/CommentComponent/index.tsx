@@ -25,7 +25,7 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
   const contentDom = (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minWidth: 0 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, marginBottom: 6 }}>
-        <Text strong dir="auto" style={{ fontSize: 14, fontWeight: 600 }}>
+        <Text strong dir="auto" style={{ fontSize: 14, fontWeight: 600, overflowWrap: "anywhere" }}>
           {author || (
             <>
               AI Short
@@ -39,7 +39,7 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
       </div>
       {/* dir="auto"：评论是任意语言的 UGC，不声明方向时阿语混入网址/英文会让行内顺序错乱 */}
       <div style={{ marginBottom: 6 }}>
-        <Paragraph dir="auto" style={{ margin: 0, fontSize: 13.5, lineHeight: 1.65, wordWrap: "break-word" }}>
+        <Paragraph dir="auto" style={{ margin: 0, fontSize: 13.5, lineHeight: 1.65, overflowWrap: "anywhere" }}>
           {content}
         </Paragraph>
       </div>
@@ -50,16 +50,6 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
               {action}
             </span>
           ))}
-        </div>
-      )}
-      {children && (
-        <div
-          style={{
-            marginTop: 10,
-            paddingInlineStart: 14,
-            borderInlineStart: "2px solid var(--site-color-hairline)",
-          }}>
-          {children}
         </div>
       )}
     </div>
@@ -73,6 +63,7 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
         {avatar && <div className={`${prefixCls}-avatar`}>{avatar}</div>}
         {contentDom}
       </div>
+      {children && <div className={clsx("comment-replies", avatar && "comment-replies-with-avatar")}>{children}</div>}
     </div>
   );
 };

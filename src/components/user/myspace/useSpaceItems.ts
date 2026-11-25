@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { translate } from "@docusaurus/Translate";
 import { getPrompts } from "@site/src/api";
-import type { CustomTag } from "./types";
+import type { CustomTag, MySpaceStats } from "./types";
 
 interface CacheRef {
   userId: number;
@@ -25,7 +25,7 @@ const EMPTY_TAGS: readonly string[] = Object.freeze([]);
 interface UseSpaceItemsParams {
   userAuth: any;
   currentLanguage: string;
-  onDataLoaded?: (data: { totalItems: number; totalPrompts: number; totalFavorites: number; totalTags: number }) => void;
+  onDataLoaded?: (data: MySpaceStats) => void;
   messageApi: any;
 }
 
@@ -240,7 +240,6 @@ export function useSpaceItems({ userAuth, currentLanguage, onDataLoaded, message
               totalItems: allItems.length,
               totalPrompts: actualPrompts,
               totalFavorites: actualFavorites,
-              totalTags: (tagsArray || []).length,
             });
           }
           // 拉到了就清掉失败标记

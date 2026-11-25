@@ -1,5 +1,5 @@
 import React, { Suspense, useContext, useCallback, useMemo, useState, useEffect } from "react";
-import { Card, Typography, Space, Flex, Row, Col, Button, Modal, Skeleton, Breadcrumb, Popover } from "antd";
+import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, Breadcrumb, Popover } from "antd";
 import { HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined, FileSearchOutlined, WarningOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
@@ -13,6 +13,8 @@ import { useFavorite } from "@site/src/hooks/useFavorite";
 import { extractPlaceholders, applyPlaceholders, renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
 import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import { EmptyState } from "@site/src/components/EmptyState";
+import { ActionLink } from "@site/src/components/ActionLink";
+import { LoginModal } from "@site/src/components/user/LoginModal";
 import { toBcp47 } from "@site/src/utils/i18n";
 import { lazyOptional, lazyWithRetry } from "@site/src/utils/lazyRetry";
 
@@ -23,7 +25,6 @@ const AdComponent = lazyOptional(() => import("@site/src/components/AdComponent"
 const Comments = lazyWithRetry(() => import("./Comments"));
 // 与社区列表页（pages/community-prompts.tsx）同一份登录表单，同样只在未登录用户点
 // 点赞/收藏时才挂载并拉 chunk。
-const LoginComponent = lazyWithRetry(() => import("./user/login"));
 
 interface CommunityPromptPageProps {
   prompt: CommunityPrompt | null;
@@ -182,20 +183,19 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
   if (error) {
     return (
       <Layout title={translate({ id: "community.fetchError", message: "获取数据失败" })}>
-        <Row justify="center" style={{ marginTop: 24, marginBottom: 24, paddingInline: 12 }}>
-          <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
-            <EmptyState
-              icon={<WarningOutlined />}
-              title={<Translate id="community.fetchError">获取数据失败</Translate>}
-              description={<Translate id="community.fetchErrorDesc">网络或服务暂时不可用，请稍后重试</Translate>}
-              action={
-                <Button type="primary" onClick={onRetry}>
-                  <Translate id="action.retry">重试</Translate>
-                </Button>
-              }
-            />
-          </Col>
-        </Row>
+        <main>
+          <EmptyState
+            fullPage
+            icon={<WarningOutlined />}
+            title={<Translate id="community.fetchError">获取数据失败</Translate>}
+            description={<Translate id="community.fetchErrorDesc">网络或服务暂时不可用，请稍后重试</Translate>}
+            action={
+              <Button type="primary" onClick={onRetry}>
+                <Translate id="action.retry">重试</Translate>
+              </Button>
+            }
+          />
+        </main>
       </Layout>
     );
   }
@@ -212,22 +212,19 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
               有效 ?id= 走下方正常分支，靠 per-id canonical/og 被收录。 */}
           <meta name="robots" content="noindex" />
         </Head>
-        <Row justify="center" style={{ marginTop: 24, marginBottom: 24, paddingInline: 12 }}>
-          <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
-            <EmptyState
-              icon={<FileSearchOutlined />}
-              title={<Translate id="community.notFound">提示词未找到</Translate>}
-              description={<Translate id="community.notFoundDesc">该提示词可能已被删除或设为私有</Translate>}
-              action={
-                <Link to="/community-prompts">
-                  <Button type="primary">
-                    <Translate id="community.backToList">返回列表</Translate>
-                  </Button>
-                </Link>
-              }
-            />
-          </Col>
-        </Row>
+        <main>
+          <EmptyState
+            fullPage
+            icon={<FileSearchOutlined />}
+            title={<Translate id="community.notFound">提示词未找到</Translate>}
+            description={<Translate id="community.notFoundDesc">该提示词可能已被删除或设为私有</Translate>}
+            action={
+              <ActionLink to="/community-prompts" variant="primary">
+                <Translate id="community.backToList">返回列表</Translate>
+              </ActionLink>
+            }
+          />
+        </main>
       </Layout>
     );
   }
@@ -433,11 +430,7 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
       </Row>
       </main>
       {loginOpen && (
-        <Modal open={loginOpen} footer={null} onCancel={() => setLoginOpen(false)} centered width={440}>
-          <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
-            <LoginComponent />
-          </Suspense>
-        </Modal>
+        <LoginModal open={loginOpen} onCancel={() => setLoginOpen(false)} />
       )}
     </Layout>
   );

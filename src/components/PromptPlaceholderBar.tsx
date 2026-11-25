@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Button, Input, Typography } from "antd";
 import type { InputRef } from "antd";
 import Translate from "@docusaurus/Translate";
+import { InputClearIcon } from "@site/src/components/InputClearIcon";
 
 interface PromptPlaceholderBarProps {
   placeholders: string[];
@@ -72,7 +73,7 @@ export const PromptPlaceholderBar: React.FC<PromptPlaceholderBarProps> = ({
                 inputRefs.current[key] = el;
               }}
               size="small"
-              allowClear
+              allowClear={{ clearIcon: <InputClearIcon /> }}
               value={values[key] ?? ""}
               placeholder={key}
               onChange={(e) => onChange(key, e.target.value)}

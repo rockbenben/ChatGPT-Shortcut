@@ -13,12 +13,14 @@ import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
-import { Modal, Pagination, App, Flex, Segmented, FloatButton, Row, Col, Breadcrumb, Skeleton, Button } from "antd";
+import { App, Flex, Segmented, FloatButton, Row, Col, Breadcrumb, Button } from "antd";
 import { HomeOutlined, WarningOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION, SITE_NAME } from "@site/src/data/constants";
 import { toBcp47 } from "@site/src/utils/i18n";
 import { toJsonLd } from "@site/src/utils/jsonLd";
 import { EmptyState } from "@site/src/components/EmptyState";
+import { Pagination } from "@site/src/components/Pagination";
+import { LoginModal } from "@site/src/components/user/LoginModal";
 import PromptCard from "@site/src/components/PromptCard";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
 import styles from "@site/src/pages/styles.module.css";
@@ -28,8 +30,6 @@ const PromptDetailModal = lazyWithRetry(() => import("@site/src/components/Promp
 
 const ShareButtons = lazyOptional(() => import("@site/src/components/ShareButtons"));
 const AdComponent = lazyOptional(() => import("@site/src/components/AdComponent"));
-// LoginComponent (520 行 + antd Form/Card/Input) 仅当未登录用户打开登录 Modal 才渲染
-const LoginComponent = lazyWithRetry(() => import("@site/src/components/user/login"));
 
 interface SnapshotView {
   items: CommunityPrompt[];
@@ -398,6 +398,9 @@ const CommunityPrompts = () => {
               <div style={{ flex: 1, minWidth: 240 }}>
                 <SearchBar beforeSearch={handleBeforeSearch} />
               </div>
+              <Suspense fallback={null}>
+                <ShareButtons shareUrl={ShareUrl} title={COMMU_TITLE} />
+              </Suspense>
             </Flex>
 
             {/* 三态按「归属的查询键」在渲染期判定，不用 effect 里写的旗标：
@@ -467,21 +470,13 @@ const CommunityPrompts = () => {
             </Suspense>
 
             {open && (
-              <Modal open={open} footer={null} onCancel={() => setOpen(false)} centered width={440}>
-                <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
-                  <LoginComponent />
-                </Suspense>
-              </Modal>
+              <LoginModal open={open} onCancel={() => setOpen(false)} />
             )}
-            {modalOpen && (
+            {modalData && (
               <Suspense fallback={null}>
-                <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} data={modalData} />
+                <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} afterClose={() => setModalData(null)} data={modalData} />
               </Suspense>
             )}
-            <Suspense fallback={null}>
-              <ShareButtons shareUrl={ShareUrl} title={COMMU_TITLE} popOver={false} />
-            </Suspense>
-            {/* BackTop 上推 60px，避免与 ShareButtons FloatButton.Group（默认 bottom=40）重叠 */}
             <FloatButton.BackTop style={{ bottom: 100 }} />
           </div>
         </section>

@@ -38,8 +38,8 @@ export function applyPlaceholders(text: string, values?: Record<string, string>)
     .map((part) => {
       const key = parsePlaceholderKey(part);
       if (!key) return part;
-      const val = values[key]?.trim();
-      return val ? val : part;
+      const value = values[key];
+      return typeof value === "string" ? value.trim() || part : part;
     })
     .join("");
 }

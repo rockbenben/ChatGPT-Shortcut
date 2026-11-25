@@ -10,11 +10,11 @@
  */
 import React, { type ReactNode } from "react";
 import clsx from "clsx";
-import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
-import { Button, Space } from "antd";
+import { Space } from "antd";
 import { HomeOutlined, CompassOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
+import { ActionLink } from "@site/src/components/ActionLink";
 
 export default function NotFoundContent({ className }: { className?: string }): ReactNode {
   return (
@@ -34,16 +34,12 @@ export default function NotFoundContent({ className }: { className?: string }): 
         }
         action={
           <Space wrap size="middle">
-            <Link to="/">
-              <Button type="primary" icon={<HomeOutlined />}>
-                <Translate id="link.home">首页</Translate>
-              </Button>
-            </Link>
-            <Link to="/community-prompts">
-              <Button icon={<CompassOutlined />}>
-                <Translate id="link.communityPrompts">社区提示词</Translate>
-              </Button>
-            </Link>
+            <ActionLink to="/" variant="primary" icon={<HomeOutlined />}>
+              <Translate id="link.home">首页</Translate>
+            </ActionLink>
+            <ActionLink to="/community-prompts" icon={<CompassOutlined />}>
+              <Translate id="link.communityPrompts">社区提示词</Translate>
+            </ActionLink>
           </Space>
         }
       />

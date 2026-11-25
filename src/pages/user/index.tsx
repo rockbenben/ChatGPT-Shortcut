@@ -7,6 +7,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Card, Input, Button, Spin, Space, Row, Col, Typography, App, Avatar, Flex, Breadcrumb, Tooltip } from "antd";
 import { HomeOutlined, EditOutlined, SaveOutlined, MailOutlined, UserOutlined, CloseOutlined, LoginOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
+import { ActionLink } from "@site/src/components/ActionLink";
 
 import { AuthContext } from "@site/src/components/AuthContext";
 import { getUserAllInfo } from "@site/src/api/user";
@@ -110,9 +111,9 @@ const UserProfile = () => {
   if (userLoading) {
     return (
       <Layout title={translate({ id: "link.myAccount", message: "我的账户" })}>
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "60vh" }}>
+        <main aria-busy="true" style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "60vh" }}>
           <Spin size="large" />
-        </div>
+        </main>
       </Layout>
     );
   }
@@ -120,19 +121,19 @@ const UserProfile = () => {
   if (!userInfo) {
     return (
       <Layout title={translate({ id: "link.myAccount", message: "我的账户" })}>
-        <EmptyState
-          fullPage
-          icon={<UserOutlined />}
-          title={<Translate id="account.signInRequired">登录后查看账户</Translate>}
-          description={<Translate id="account.signInRequiredHint">正在带你回首页，也可以直接点下面的按钮</Translate>}
-          action={
-            <Link to="/">
-              <Button type="primary" icon={<LoginOutlined />}>
+        <main>
+          <EmptyState
+            fullPage
+            icon={<UserOutlined />}
+            title={<Translate id="account.signInRequired">登录后查看账户</Translate>}
+            description={<Translate id="account.signInRequiredHint">正在带你回首页，也可以直接点下面的按钮</Translate>}
+            action={
+              <ActionLink to="/" variant="primary" icon={<LoginOutlined />}>
                 <Translate id="auth.callback.backHome">返回首页登录</Translate>
-              </Button>
-            </Link>
-          }
-        />
+              </ActionLink>
+            }
+          />
+        </main>
       </Layout>
     );
   }

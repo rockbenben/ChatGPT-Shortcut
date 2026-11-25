@@ -3,6 +3,8 @@ import Translate, { translate } from "@docusaurus/Translate";
 import { Segmented, Button, Input, Flex } from "antd";
 import { AppstoreOutlined, EditOutlined, HeartOutlined, TagOutlined, SearchOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import searchStyles from "@site/src/components/SearchBar/styles.module.css";
+import { SearchShortcutHint } from "@site/src/components/SearchBar/SearchShortcutHint";
+import { InputClearIcon } from "@site/src/components/InputClearIcon";
 import type { CustomTag, FilterType } from "./types";
 
 const FilterBar: React.FC<{
@@ -144,6 +146,7 @@ const FilterBar: React.FC<{
 
       <div className={searchStyles.searchInput}>
         <Input
+          aria-label={translate({ id: "search.submit", message: "搜索" })}
           ref={inputRef}
           placeholder={translate({ id: "input.search.placeholder", message: "写作、翻译…" })}
           value={inputValue}
@@ -153,13 +156,11 @@ const FilterBar: React.FC<{
             // Esc 退出聚焦（与 Ctrl+K 进入对应）。isComposing 守卫避免打断输入法候选词
             if (e.key === "Escape" && !e.nativeEvent.isComposing) (e.target as HTMLInputElement).blur();
           }}
-          allowClear
+          allowClear={{ clearIcon: <InputClearIcon /> }}
           prefix={<SearchOutlined className={searchStyles.searchIcon} aria-hidden />}
           suffix={
             <>
-              <kbd className={`${searchStyles.kbdHint} hideOnSmallScreen`} aria-hidden>
-                ⌘K
-              </kbd>
+              <SearchShortcutHint />
               <Button
                 type="text"
                 size="small"

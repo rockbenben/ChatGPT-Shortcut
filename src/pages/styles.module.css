@@ -37,6 +37,9 @@
   .heroSection {
     padding: 6px 0 14px;
   }
+  .heroActions {
+    padding-inline: 16px;
+  }
   .filterSection {
     padding-top: 14px;
     margin-bottom: 12px;

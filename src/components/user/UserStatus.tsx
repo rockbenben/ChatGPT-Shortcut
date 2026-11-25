@@ -1,6 +1,7 @@
-import React, { useContext, useState, useCallback, useMemo, useEffect, useLayoutEffect, Suspense } from "react";
+import React, { useContext, useState, useCallback, useMemo, useEffect, useLayoutEffect, useRef, useId, Suspense } from "react";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import { Button, Modal, App, Dropdown, Space, Skeleton, Segmented } from "antd";
+import { Button, App, Dropdown, Space, Skeleton, Segmented } from "antd";
+import type { MenuProps } from "antd";
 import { useViewMode, type ViewMode } from "@site/src/contexts/ViewModeContext";
 import { UserOutlined, PlusOutlined, LogoutOutlined, CompassOutlined, SettingOutlined, BookOutlined, HeartOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
@@ -8,11 +9,11 @@ import { AuthContext } from "../AuthContext";
 import { persistAuthToken } from "@site/src/api";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import Link from "@docusaurus/Link";
+import { ActionLink } from "@site/src/components/ActionLink";
+import { LoginModal } from "./LoginModal";
 import { lazyWithRetry } from "@site/src/utils/lazyRetry";
 import styles from "./UserStatus.module.css";
 
-// LoginComponent (520 行 + antd Form/Card/Input) 仅在未登录用户点登录按钮时打开 Modal 才渲染
-const LoginComponent = lazyWithRetry(() => import("./login"));
 // 创建提示词表单（antd Form/Switch/Alert 一整套）只有登录用户点「创建提示词」才用；静态 import 会让
 // 首页初始 chunk 组多背 ~15 KB gz。open 时才挂载：Modal 在组件内部，常驻渲染会立刻拉 chunk。
 const PromptFormModal = lazyWithRetry(() => import("./modal/PromptFormModal"));
@@ -24,6 +25,9 @@ const useIsoLayoutEffect = ExecutionEnvironment.canUseDOM ? useLayoutEffect : us
 const UserStatus = () => {
   const { userAuth, clearAuth, refreshUserAuth, authLoading } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
+  const [accountMenuOpen, setAccountMenuOpen] = useState(false);
+  const accountMenuButton = useRef<HTMLButtonElement>(null);
+  const accountMenuId = useId();
   const { modal } = App.useApp();
   const { addPrompt, loading } = useUserPrompt();
 
@@ -35,6 +39,29 @@ const UserStatus = () => {
   useIsoLayoutEffect(() => {
     document.documentElement.setAttribute("data-auth-ready", "");
   }, []);
+
+  useIsoLayoutEffect(() => {
+    if (!accountMenuOpen) return;
+
+    // 菜单经 portal 挂载。Esc 在菜单接管焦点前也要能取消聚焦。
+    const focusFrame = requestAnimationFrame(() => {
+      document.getElementById(accountMenuId)?.querySelector<HTMLElement>('[role="menuitem"]')?.focus({ preventScroll: true });
+    });
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      event.stopPropagation();
+      cancelAnimationFrame(focusFrame);
+      accountMenuButton.current?.focus({ preventScroll: true });
+      setAccountMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", onEscape, true);
+    return () => {
+      cancelAnimationFrame(focusFrame);
+      window.removeEventListener("keydown", onEscape, true);
+    };
+  }, [accountMenuOpen, accountMenuId]);
 
   const onFinish = useCallback(
     async (values) => {
@@ -63,17 +90,22 @@ const UserStatus = () => {
     window.location.reload();
   }, [clearAuth]);
 
-  const menuItems = useMemo(
+  const menuItems = useMemo<MenuProps["items"]>(
     () =>
       [
         {
           key: "account",
           label: (
-            <Link to="/user">
+            <Link to="/user" tabIndex={-1}>
               <Translate id="link.myAccount">我的账户</Translate>
             </Link>
           ),
           icon: <UserOutlined />,
+          onClick: ({ domEvent }) => {
+            // 键盘激活或点击图标时，将操作交给 Docusaurus Link 处理本地化导航。
+            if (domEvent.target instanceof Element && domEvent.target.closest("a")) return;
+            domEvent.currentTarget.querySelector("a")?.click();
+          },
         },
         {
           type: "divider" as const,
@@ -141,23 +173,55 @@ const UserStatus = () => {
               <Translate id="link.addprompt">创建提示词</Translate>
             </span>
           </Button>
-          <Dropdown menu={{ items: menuItems }} placement="bottomRight">
-            <Button icon={<SettingOutlined />} aria-label={translate({ id: "link.myAccount", message: "我的账户" })} />
+          <Dropdown
+            menu={{
+              items: menuItems,
+              id: accountMenuId,
+              "aria-label": translate({ id: "link.myAccount", message: "我的账户" }),
+              onKeyDown: (event) => {
+                if (event.key === "Tab") {
+                  event.stopPropagation();
+                  accountMenuButton.current?.focus({ preventScroll: true });
+                  setAccountMenuOpen(false);
+                  return;
+                }
+                const target = event.target;
+                if (event.key !== " " || !(target instanceof HTMLElement) || target.getAttribute("role") !== "menuitem") return;
+                event.preventDefault();
+                target.click();
+              },
+            }}
+            placement="bottomRight"
+            trigger={["click"]}
+            open={accountMenuOpen}
+            onOpenChange={setAccountMenuOpen}
+            destroyOnHidden>
+            <Button
+              ref={accountMenuButton}
+              icon={<SettingOutlined />}
+              aria-label={translate({ id: "link.myAccount", message: "我的账户" })}
+              aria-haspopup="menu"
+              aria-expanded={accountMenuOpen}
+              aria-controls={accountMenuOpen ? accountMenuId : undefined}
+              onKeyDown={(event) => {
+                if (event.key !== "ArrowDown" || accountMenuOpen) return;
+                event.preventDefault();
+                setAccountMenuOpen(true);
+              }}
+            />
           </Dropdown>
         </div>
       </div>
     ),
-    [menuItems, viewMode, setViewMode]
+    [menuItems, viewMode, setViewMode, accountMenuOpen, accountMenuId]
   );
 
   const loggedOutButtons = useMemo(
     () => (
       <div className={styles.loggedOutBar}>
-        <Link to="/community-prompts">
-          <Button size="middle" icon={<CompassOutlined />}>
-            <Translate id="link.communityPrompts">社区提示词</Translate>
-          </Button>
-        </Link>
+        <ActionLink to="/community-prompts" icon={<CompassOutlined />}>
+          <Translate id="link.communityPrompts">社区提示词</Translate>
+        </ActionLink>
         <Button type="primary" size="middle" icon={<UserOutlined />} onClick={() => setOpen(true)}>
           <Translate id="button.login">登录</Translate>
         </Button>
@@ -206,11 +270,7 @@ const UserStatus = () => {
         ) : (
           <>
             {loggedOutButtons}
-            <Modal open={open} footer={null} onCancel={() => setOpen(false)} centered width={440}>
-              <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
-                <LoginComponent />
-              </Suspense>
-            </Modal>
+            <LoginModal open={open} onCancel={() => setOpen(false)} />
           </>
         )}
       </div>

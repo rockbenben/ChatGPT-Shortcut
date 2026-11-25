@@ -1,5 +1,6 @@
 import { Input, Typography, Alert } from "antd";
 import { useMemo } from "react";
+import type { ComponentPropsWithRef } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { estimateTokens, extractPlaceholders } from "@site/src/utils/promptRender";
@@ -16,12 +17,12 @@ const getStatusColor = (tokens: number) => {
   return "var(--site-color-text-tertiary)";
 };
 
-interface Props {
+interface Props extends Pick<ComponentPropsWithRef<typeof Input.TextArea>, "id" | "ref" | "aria-describedby" | "aria-invalid" | "aria-required"> {
   value?: string;
   onChange?: (v: string) => void;
 }
 
-const PromptEditorFormItem: React.FC<Props> = ({ value = "", onChange }) => {
+const PromptEditorFormItem: React.FC<Props> = ({ value = "", onChange, ...inputProps }) => {
   const { i18n } = useDocusaurusContext();
   const bcp47Locale = toBcp47(i18n.currentLocale, i18n.localeConfigs);
   const tokens = useMemo(() => estimateTokens(value), [value]);
@@ -33,6 +34,7 @@ const PromptEditorFormItem: React.FC<Props> = ({ value = "", onChange }) => {
   return (
     <>
       <Input.TextArea
+        {...inputProps}
         value={value}
         onChange={(e) => onChange?.(e.target.value)}
         autoSize={{ minRows: 5, maxRows: 14 }}

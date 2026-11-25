@@ -22,6 +22,7 @@ interface EmptyStateProps {
 }
 
 export const EmptyState: React.FC<EmptyStateProps> = ({ icon, title, description, action, compact, fullPage }) => {
+  const Heading = fullPage ? "h1" : "h3";
   const content = (
     <div
       style={{
@@ -49,7 +50,7 @@ export const EmptyState: React.FC<EmptyStateProps> = ({ icon, title, description
           {icon}
         </div>
       )}
-      <h3
+      <Heading
         style={{
           fontSize: compact ? 15 : 18,
           fontWeight: 600,
@@ -58,7 +59,7 @@ export const EmptyState: React.FC<EmptyStateProps> = ({ icon, title, description
           margin: "0 0 8px",
         }}>
         {title}
-      </h3>
+      </Heading>
       {description && <p style={{ fontSize: compact ? 13 : 14, color: "var(--ifm-color-content-secondary)", lineHeight: 1.6, margin: 0 }}>{description}</p>}
       {action && <div style={{ marginTop: 20 }}>{action}</div>}
     </div>

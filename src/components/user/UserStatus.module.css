@@ -73,12 +73,6 @@
   .loggedInBar {
     flex-wrap: nowrap;
     gap: 6px;
-    padding-inline: 16px;
-  }
-
-  .loggedOutBar {
-    gap: 8px;
-    padding-inline: 16px;
   }
 
   .utilityGroup {

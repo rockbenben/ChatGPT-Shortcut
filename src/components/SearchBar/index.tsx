@@ -9,6 +9,7 @@ import { Input, Button } from "antd";
 import { SearchOutlined, ArrowRightOutlined } from "@ant-design/icons";
 
 import { AuthContext } from "@site/src/components/AuthContext";
+import { InputClearIcon } from "@site/src/components/InputClearIcon";
 
 import { type Operator } from "@site/src/components/ShowcaseFilterToggle";
 import { type TagType, TagList } from "@site/src/data/tags";
@@ -18,6 +19,7 @@ import { searchCardsLocally } from "@site/src/api/homepage";
 import { getWeight } from "@site/src/utils/formatters";
 
 import styles from "./styles.module.css";
+import { SearchShortcutHint } from "./SearchShortcutHint";
 
 type UserState = {
   scrollTopPosition: number;
@@ -366,6 +368,7 @@ function SearchBar({ beforeSearch }: SearchBarProps) {
       <Input
         ref={inputRef}
         id="searchbar"
+        aria-label={translate({ id: "search.submit", message: "搜索" })}
         placeholder={translate({
           message: "写作、翻译…",
           id: "input.search.placeholder",
@@ -377,13 +380,11 @@ function SearchBar({ beforeSearch }: SearchBarProps) {
           // Esc 退出聚焦（与 Ctrl+K 进入对应）。isComposing 守卫避免打断输入法候选词
           if (e.key === "Escape" && !e.nativeEvent.isComposing) (e.target as HTMLInputElement).blur();
         }}
-        allowClear
+        allowClear={{ clearIcon: <InputClearIcon /> }}
         prefix={<SearchOutlined className={styles.searchIcon} aria-hidden />}
         suffix={
           <>
-            <kbd className={`${styles.kbdHint} hideOnSmallScreen`} aria-hidden>
-              ⌘K
-            </kbd>
+            <SearchShortcutHint />
             <Button
               icon={<ArrowRightOutlined />}
               onClick={handleSearch}

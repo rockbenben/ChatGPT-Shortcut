@@ -6,8 +6,9 @@ import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { login, register, forgotPassword, sendPasswordlessLink, getGoogleAuthUrl, googleLogin, persistAuthToken } from "@site/src/api";
 import { setCache, PASSWORDLESS_LOCALE_KEY } from "@site/src/utils/cache";
+import type { LoginView } from "./LoginModal";
 
-const { Title, Text } = Typography;
+const { Text } = Typography;
 
 // Validation rules
 const rules = {
@@ -75,8 +76,7 @@ const rules = {
   ],
 };
 
-const LoginPage = () => {
-  const [viewState, setViewState] = useState<"login" | "register" | "forgot-password">("login");
+const LoginPage = ({ viewState, setViewState }: { viewState: LoginView; setViewState: (view: LoginView) => void }) => {
   const [loginType, setLoginType] = useState<"password" | "code">("password");
   const { message: messageApi } = App.useApp();
   const { i18n } = useDocusaurusContext();
@@ -90,15 +90,15 @@ const LoginPage = () => {
 
   const handleRegister = useCallback(() => {
     setViewState("register");
-  }, []);
+  }, [setViewState]);
 
   const handleForgotPasswordClick = useCallback(() => {
     setViewState("forgot-password");
-  }, []);
+  }, [setViewState]);
 
   const handleBackToLogin = useCallback(() => {
     setViewState("login");
-  }, []);
+  }, [setViewState]);
 
   // Clear form data when switching views
   useEffect(() => {
@@ -505,12 +505,7 @@ const LoginPage = () => {
   );
 
   return (
-    <div style={{ maxWidth: 360, margin: "0 auto", padding: "8px 4px 4px" }}>
-      <Title level={3} style={{ textAlign: "center", margin: "0 0 6px", fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em" }}>
-        {viewState === "login" && <Translate id="login.title.welcome">欢迎回来</Translate>}
-        {viewState === "register" && <Translate id="login.title.register">加入社区</Translate>}
-        {viewState === "forgot-password" && <Translate id="login.title.forgotPassword">找回密码</Translate>}
-      </Title>
+    <div style={{ maxWidth: 360, margin: "0 auto", padding: "0 4px 4px" }}>
       <p style={{ textAlign: "center", margin: "0 0 20px", fontSize: 13.5, fontWeight: 400, color: "var(--ifm-color-content-secondary)", lineHeight: 1.5 }}>
         {viewState === "login" && <Translate id="login.subtitle.welcome">登录探索更多优质提示词</Translate>}
         {viewState === "register" && <Translate id="login.subtitle.register">发现、分享和创造精彩提示词</Translate>}

@@ -26,6 +26,7 @@ import ShowcaseFilterToggle from "@site/src/components/ShowcaseFilterToggle";
 import { EmptyState } from "@site/src/components/EmptyState";
 
 import UserStatus from "@site/src/components/user/UserStatus";
+import type { MySpaceStats } from "@site/src/components/user/myspace/types";
 import SearchBar, { useFilteredPrompts, useClearFilters, prepareUserState } from "@site/src/components/SearchBar";
 import { NoResults } from "@site/src/components/SearchBar/NoResults";
 
@@ -71,7 +72,7 @@ const MySpace = lazyWithRetry(() => import("@site/src/components/user/MySpace"))
 const { Title, Paragraph } = Typography;
 
 // ==================== 页面头部组件 ====================
-const ShowcaseHeader: React.FC = () => (
+const ShowcaseHeader: React.FC<{ shareUrl: string }> = ({ shareUrl }) => (
   <section className={clsx("text--center", styles.heroSection)}>
     <div className="hideOnSmallScreen">
       <Title
@@ -103,7 +104,12 @@ const ShowcaseHeader: React.FC = () => (
     <p className="showOnSmallScreen" style={{ fontSize: 13, maxWidth: 320, margin: "0 auto 8px", lineHeight: 1.45, color: "var(--ifm-color-content-secondary)" }}>
       {SLOGAN}
     </p>
-    <UserStatus />
+    <Flex align="center" justify="center" wrap gap={8} className={styles.heroActions}>
+      <UserStatus />
+      <Suspense fallback={null}>
+        <ShareButtons shareUrl={shareUrl} title={TITLE} />
+      </Suspense>
+    </Flex>
   </section>
 );
 
@@ -707,13 +713,11 @@ const StatItem: React.FC<{ icon: React.ReactNode; label: React.ReactNode; value:
 
 const StatDivider: React.FC = () => <div style={{ width: 1, height: 40, background: "var(--site-color-hairline)" }} />;
 
-const PageHeader: React.FC<{
+const PageHeader: React.FC<MySpaceStats & {
   userAuth: any;
-  totalItems: number;
-  totalPrompts: number;
-  totalFavorites: number;
-  totalTags: number;
-}> = ({ userAuth, totalItems, totalPrompts, totalFavorites, totalTags }) => {
+}> = ({ userAuth, totalItems, totalPrompts, totalFavorites }) => {
+  // 标签定义直接取会话状态，保存定义时无需重新加载卡片即可更新统计。
+  const totalTags = userAuth?.data?.customTags?.length ?? 0;
   // Level system based on shared prompts count
   const sharedCount = userAuth?.data?.userprompts?.filter((p: any) => p.share)?.length || 0;
   const levelInfo = getLevelInfo(sharedCount);
@@ -807,13 +811,13 @@ const MyCollectionView: React.FC<HomeData & { onOpenModal: (data: any) => void }
   const { viewMode } = useViewMode();
 
   // 从缓存初始化 stats，避免刷新时显示 0；用 lazy initializer 让 getCache 只在 mount 时调用一次
-  const [stats, setStats] = React.useState(() => {
+  const [stats, setStats] = React.useState<MySpaceStats>(() => {
     const cached = typeof window !== "undefined" ? getCache("myspace_stats") : null;
-    return cached || { totalItems: 0, totalPrompts: 0, totalFavorites: 0, totalTags: 0 };
+    return cached || { totalItems: 0, totalPrompts: 0, totalFavorites: 0 };
   });
 
   // 从 MySpace 组件接收数据更新（避免重复请求）
-  const handleDataLoaded = React.useCallback((newStats: { totalItems: number; totalPrompts: number; totalFavorites: number; totalTags: number }) => {
+  const handleDataLoaded = React.useCallback((newStats: MySpaceStats) => {
     setStats(newStats);
     // 缓存 stats
     setCache("myspace_stats", newStats, CACHE_TTL.MYSPACE);
@@ -836,11 +840,11 @@ const MyCollectionView: React.FC<HomeData & { onOpenModal: (data: any) => void }
 };
 
 // ==================== 主内容组件 ====================
-const ShowcaseContent: React.FC<HomeData> = ({ defaultFavorData, defaultOtherData }) => {
+const ShowcaseContent: React.FC<HomeData & { shareUrl: string }> = ({ defaultFavorData, defaultOtherData, shareUrl }) => {
   const { userAuth, authLoading } = useContext(AuthContext);
   const history = useHistory();
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalData, setModalData] = useState<any>({});
+  const [modalData, setModalData] = useState<any>(null);
   // 同步初始化视图模式（URL > localStorage > 默认值），避免闪烁
   const [viewMode, setViewMode] = useState<ViewMode>(() => {
     if (!ExecutionEnvironment.canUseDOM) return "collection";
@@ -918,7 +922,7 @@ const ShowcaseContent: React.FC<HomeData> = ({ defaultFavorData, defaultOtherDat
   if (authLoading) {
     return (
       <>
-        <ShowcaseHeader />
+        <ShowcaseHeader shareUrl={shareUrl} />
         <div className="container margin-top--md">
           <PromptCardSkeleton count={8} />
         </div>
@@ -928,7 +932,7 @@ const ShowcaseContent: React.FC<HomeData> = ({ defaultFavorData, defaultOtherDat
 
   return (
     <ViewModeContext.Provider value={{ viewMode, setViewMode: handleViewModeChange }}>
-      <ShowcaseHeader />
+      <ShowcaseHeader shareUrl={shareUrl} />
       <div>
         {userAuth ? (
           <MyCollectionView onOpenModal={handleOpenModal} defaultFavorData={defaultFavorData} defaultOtherData={defaultOtherData} />
@@ -936,9 +940,9 @@ const ShowcaseContent: React.FC<HomeData> = ({ defaultFavorData, defaultOtherDat
           <ExploreView onOpenModal={handleOpenModal} defaultFavorData={defaultFavorData} defaultOtherData={defaultOtherData} />
         )}
       </div>
-      {modalOpen && (
+      {modalData && (
         <Suspense fallback={null}>
-          <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} data={modalData} />
+          <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} afterClose={() => setModalData(null)} data={modalData} />
         </Suspense>
       )}
     </ViewModeContext.Provider>
@@ -1032,10 +1036,7 @@ export default function HomePage({ defaultFavorData, defaultOtherData }: HomeDat
         <script type="application/ld+json">{toJsonLd(websiteSchema)}</script>
       </Head>
       <main className="margin-vert--md">
-        <ShowcaseContent defaultFavorData={defaultFavorData} defaultOtherData={defaultOtherData} />
-        <Suspense fallback={null}>
-          <ShareButtons shareUrl={shareUrl} title={TITLE} popOver={false} />
-        </Suspense>
+        <ShowcaseContent defaultFavorData={defaultFavorData} defaultOtherData={defaultOtherData} shareUrl={shareUrl} />
       </main>
     </Layout>
   );
