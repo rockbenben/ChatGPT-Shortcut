@@ -3,6 +3,7 @@ import { Button, Input, Typography } from "antd";
 import type { InputRef } from "antd";
 import Translate from "@docusaurus/Translate";
 import { InputClearIcon } from "@site/src/components/InputClearIcon";
+import { getPlaceholderValue } from "@site/src/utils/promptRender";
 
 interface PromptPlaceholderBarProps {
   placeholders: string[];
@@ -24,19 +25,16 @@ export const PromptPlaceholderBar: React.FC<PromptPlaceholderBarProps> = ({
   focusKey,
   focusNonce,
 }) => {
-  const inputRefs = useRef<Record<string, InputRef | null>>({});
+  const inputRefs = useRef(new Map<string, InputRef>());
 
   useEffect(() => {
     if (!focusKey) return;
-    const target = inputRefs.current[focusKey];
-    if (target) {
-      target.focus();
-    }
+    inputRefs.current.get(focusKey)?.focus();
   }, [focusKey, focusNonce]);
 
   if (placeholders.length === 0) return null;
 
-  const filledCount = placeholders.filter((k) => Boolean(values[k]?.trim())).length;
+  const filledCount = placeholders.filter((key) => Boolean(getPlaceholderValue(values, key)?.trim())).length;
 
   return (
     <div className="prompt-fill-bar">
@@ -70,11 +68,12 @@ export const PromptPlaceholderBar: React.FC<PromptPlaceholderBarProps> = ({
             </span>
             <Input
               ref={(el) => {
-                inputRefs.current[key] = el;
+                if (el) inputRefs.current.set(key, el);
+                else inputRefs.current.delete(key);
               }}
               size="small"
               allowClear={{ clearIcon: <InputClearIcon /> }}
-              value={values[key] ?? ""}
+              value={getPlaceholderValue(values, key) ?? ""}
               placeholder={key}
               onChange={(e) => onChange(key, e.target.value)}
             />

@@ -10,7 +10,7 @@ import { CopyButton } from "@site/src/components/CopyButton";
 import { PromptPlaceholderBar } from "@site/src/components/PromptPlaceholderBar";
 import { AuthContext } from "./AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
-import { extractPlaceholders, applyPlaceholders, renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
+import { extractPlaceholders, applyPlaceholders, getPlaceholderValue, renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
 import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import { EmptyState } from "@site/src/components/EmptyState";
 import { ActionLink } from "@site/src/components/ActionLink";
@@ -90,7 +90,7 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
 
   const placeholders = useMemo(() => extractPlaceholders(rawPrompt), [rawPrompt]);
   const hasFilledValues = useMemo(
-    () => placeholders.some((k) => Boolean(placeholderValues[k]?.trim())),
+    () => placeholders.some((key) => Boolean(getPlaceholderValue(placeholderValues, key)?.trim())),
     [placeholders, placeholderValues],
   );
   const filledPrompt = useMemo(() => applyPlaceholders(rawPrompt, placeholderValues), [rawPrompt, placeholderValues]);

@@ -7,7 +7,7 @@ import { CopyButton } from "@site/src/components/CopyButton";
 import { PromptPlaceholderBar } from "@site/src/components/PromptPlaceholderBar";
 import { PromptCardTag } from "./PromptCard/PromptCardTag";
 import { formatCompactNumber } from "@site/src/utils/formatters";
-import { extractPlaceholders, applyPlaceholders, renderPromptWithPlaceholders } from "@site/src/utils/promptRender";
+import { extractPlaceholders, applyPlaceholders, getPlaceholderValue, renderPromptWithPlaceholders } from "@site/src/utils/promptRender";
 
 import { TagType } from "@site/src/data/tags";
 
@@ -50,7 +50,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
   const rawPrompt = data?.prompt || "";
   const placeholders = useMemo(() => extractPlaceholders(rawPrompt), [rawPrompt]);
   const hasFilledValues = useMemo(
-    () => placeholders.some((k) => Boolean(placeholderValues[k]?.trim())),
+    () => placeholders.some((key) => Boolean(getPlaceholderValue(placeholderValues, key)?.trim())),
     [placeholders, placeholderValues],
   );
   const filledPrompt = useMemo(() => applyPlaceholders(rawPrompt, placeholderValues), [rawPrompt, placeholderValues]);

@@ -28,6 +28,10 @@ export function extractPlaceholders(text: string): string[] {
   return result;
 }
 
+export function getPlaceholderValue(values: Record<string, string> | undefined, key: string): string | undefined {
+  return values && Object.hasOwn(values, key) ? values[key] : undefined;
+}
+
 /**
  * 将占位符替换为已填写的值；未填写或仅空白的占位符保留原 `[key]`。
  */
@@ -38,8 +42,7 @@ export function applyPlaceholders(text: string, values?: Record<string, string>)
     .map((part) => {
       const key = parsePlaceholderKey(part);
       if (!key) return part;
-      const value = values[key];
-      return typeof value === "string" ? value.trim() || part : part;
+      return getPlaceholderValue(values, key)?.trim() || part;
     })
     .join("");
 }
@@ -63,7 +66,7 @@ export function renderPromptWithPlaceholders(text: string, options?: RenderPlace
       return <React.Fragment key={i}>{part}</React.Fragment>;
     }
 
-    const filled = values?.[key]?.trim();
+    const filled = getPlaceholderValue(values, key)?.trim();
     const className = filled ? "prompt-placeholder-filled" : "prompt-placeholder-chip";
     const content = filled || part;
 

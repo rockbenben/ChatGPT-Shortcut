@@ -11,7 +11,7 @@ import { PromptPlaceholderBar } from "@site/src/components/PromptPlaceholderBar"
 import { getWeight, formatCompactNumber } from "@site/src/utils/formatters";
 import { SITE_NAME } from "@site/src/data/constants";
 import { Tags, type TagType } from "@site/src/data/tags";
-import { extractPlaceholders, applyPlaceholders, renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
+import { extractPlaceholders, applyPlaceholders, getPlaceholderValue, renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
 import { toBcp47 } from "@site/src/utils/i18n";
 import { toJsonLd } from "@site/src/utils/jsonLd";
 import { lazyOptional, lazyWithRetry } from "@site/src/utils/lazyRetry";
@@ -66,7 +66,7 @@ function PromptPage({ prompt, currentLanguage }) {
 
   const placeholders = useMemo(() => extractPlaceholders(rawPrompt), [rawPrompt]);
   const hasFilledValues = useMemo(
-    () => placeholders.some((k) => Boolean(placeholderValues[k]?.trim())),
+    () => placeholders.some((key) => Boolean(getPlaceholderValue(placeholderValues, key)?.trim())),
     [placeholders, placeholderValues],
   );
   const filledPrompt = useMemo(() => applyPlaceholders(rawPrompt, placeholderValues), [rawPrompt, placeholderValues]);
