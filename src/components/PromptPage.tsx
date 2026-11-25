@@ -1,4 +1,4 @@
-import React, { Suspense, useMemo, useState } from "react";
+import React, { Suspense, useMemo, useState, useEffect, useCallback } from "react";
 import { Card, Typography, Space, Row, Col, Button, Flex, Breadcrumb, Popover } from "antd";
 import { LinkOutlined, FireFilled, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
@@ -7,10 +7,11 @@ import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { CopyButton } from "@site/src/components/CopyButton";
+import { PromptPlaceholderBar } from "@site/src/components/PromptPlaceholderBar";
 import { getWeight, formatCompactNumber } from "@site/src/utils/formatters";
 import { SITE_NAME } from "@site/src/data/constants";
 import { Tags, type TagType } from "@site/src/data/tags";
-import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
+import { extractPlaceholders, applyPlaceholders, renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
 import { toBcp47 } from "@site/src/utils/i18n";
 import { toJsonLd } from "@site/src/utils/jsonLd";
 import { lazyOptional, lazyWithRetry } from "@site/src/utils/lazyRetry";
@@ -24,7 +25,7 @@ const Comments = lazyWithRetry(() => import("./Comments"));
 
 // Composition Sheet 复用样式（与 CommunityPromptPage 保持家族一致）
 const sheetCardStyle: React.CSSProperties = {
-  borderRadius: 6,
+  borderRadius: 12,
   borderColor: "var(--site-color-hairline)",
   background: "var(--ifm-background-surface-color)",
 };
@@ -51,8 +52,38 @@ function PromptPage({ prompt, currentLanguage }) {
     : [];
 
   // Item 8: 字符 / token 统计（useMemo 缓存）
-  const charCount = useMemo(() => (promptInfo.prompt || "").length, [promptInfo.prompt]);
-  const tokenCount = useMemo(() => estimateTokens(promptInfo.prompt || ""), [promptInfo.prompt]);
+  const rawPrompt = promptInfo.prompt || "";
+  const charCount = useMemo(() => rawPrompt.length, [rawPrompt]);
+  const tokenCount = useMemo(() => estimateTokens(rawPrompt), [rawPrompt]);
+
+  const [placeholderValues, setPlaceholderValues] = useState<Record<string, string>>({});
+  const [focusState, setFocusState] = useState<{ key: string | null; nonce: number }>({ key: null, nonce: 0 });
+
+  useEffect(() => {
+    setPlaceholderValues({});
+    setFocusState({ key: null, nonce: 0 });
+  }, [prompt.id, rawPrompt]);
+
+  const placeholders = useMemo(() => extractPlaceholders(rawPrompt), [rawPrompt]);
+  const hasFilledValues = useMemo(
+    () => placeholders.some((k) => Boolean(placeholderValues[k]?.trim())),
+    [placeholders, placeholderValues],
+  );
+  const filledPrompt = useMemo(() => applyPlaceholders(rawPrompt, placeholderValues), [rawPrompt, placeholderValues]);
+
+  const handleSelectPlaceholder = useCallback((key: string) => {
+    setFocusState((prev) => ({ key, nonce: prev.nonce + 1 }));
+  }, []);
+  const handlePlaceholderChange = useCallback((key: string, val: string) => {
+    setPlaceholderValues((prev) => ({ ...prev, [key]: val }));
+  }, []);
+  const handleClearPlaceholders = useCallback(() => {
+    setPlaceholderValues({});
+  }, []);
+  const renderedPrompt = useMemo(
+    () => renderPromptWithPlaceholders(rawPrompt, { values: placeholderValues, onSelectPlaceholder: handleSelectPlaceholder }),
+    [rawPrompt, placeholderValues, handleSelectPlaceholder],
+  );
 
   // 静态值：单语言 JSON 数据在组件生命周期内不会变化
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
@@ -250,7 +281,7 @@ function PromptPage({ prompt, currentLanguage }) {
                     },
                     { title: title },
                   ]}
-                  style={{ marginBottom: 12, paddingLeft: 8, paddingRight: 8 }}
+                  style={{ marginBottom: 12 }}
                 />
 
                 {/* === Composition Sheet === */}
@@ -297,40 +328,48 @@ function PromptPage({ prompt, currentLanguage }) {
                     {/* REMARK */}
                     {remark && <blockquote className="comp-sheet-remark prompt-remark">{remark}</blockquote>}
 
-                    {/* PROMPT BODY: 上下 hairline，schema CreativeWork microdata 保留 */}
+                    {/* PROMPT BODY: 工作台预览框 + 变量直填 + schema CreativeWork microdata */}
                     <Flex vertical gap={14}>
                       <Flex justify="space-between" align="center" wrap gap={12}>
                         <Eyebrow>
                           <Translate id="prompt.content">提示词内容</Translate>
                         </Eyebrow>
-                        <CopyButton text={promptInfo.prompt} trackingId={prompt.id} variant="primary" size="large" />
+                        <CopyButton text={filledPrompt} trackingId={prompt.id} variant="primary" size="large">
+                          {hasFilledValues ? <Translate id="prompt.copyFilled">复制已填内容</Translate> : undefined}
+                        </CopyButton>
                       </Flex>
+                      <PromptPlaceholderBar
+                        placeholders={placeholders}
+                        values={placeholderValues}
+                        onChange={handlePlaceholderChange}
+                        onClear={handleClearPlaceholders}
+                        focusKey={focusState.key}
+                        focusNonce={focusState.nonce}
+                      />
                       <div itemScope itemType="https://schema.org/CreativeWork" className="comp-sheet-code" {...({ itemProp: "text" } as any)}>
                         <meta itemProp="name" content={title} />
                         <meta itemProp="inLanguage" content={bcp47Locale} />
-                        {renderPromptWithPlaceholders(promptInfo.prompt || "")}
+                        {renderedPrompt}
                       </div>
                     </Flex>
 
-                    {/* 译文（双语切换下与 prompt 不同时显示）— 复用 ghost-border 容器 */}
+                    {/* 译文（双语切换下与 prompt 不同时显示） */}
                     {promptInfo.description && promptInfo.description !== promptInfo.prompt && (
                       <div
                         style={{
                           padding: "14px 16px",
-                          background: "var(--site-color-ghost-border)",
-                          borderRadius: 4,
-                          borderInlineStart: "2px solid var(--site-color-hairline)",
+                          background: "var(--site-color-preview-bg)",
+                          borderRadius: 10,
+                          border: "1px solid var(--site-color-hairline)",
                         }}>
-                        <Eyebrow>
-                          <Translate id="prompt.translation">译文</Translate>
-                        </Eyebrow>
+                        <Flex justify="space-between" align="center" gap={8}>
+                          <Eyebrow>
+                            <Translate id="prompt.translation">译文</Translate>
+                          </Eyebrow>
+                          <CopyButton text={promptInfo.description} variant="iconOnly" size="small" />
+                        </Flex>
                         <Typography.Paragraph
-                          copyable={{
-                            text: promptInfo.description,
-                            // 见 PromptDetailModal 同处注释：避免 antd 语言包的「复制成功」与站内文案分叉
-                            tooltips: [translate({ id: "action.copy", message: "复制" }), translate({ id: "message.copied", message: "已复制" })],
-                          }}
-                          style={{ margin: "6px 0 0", fontSize: 14, lineHeight: 1.6, color: "var(--ifm-color-content-secondary)" }}>
+                          style={{ margin: "6px 0 0", fontSize: 14, lineHeight: 1.6, color: "var(--ifm-color-content-secondary)", whiteSpace: "pre-wrap" }}>
                           {promptInfo.description}
                         </Typography.Paragraph>
                       </div>
@@ -401,7 +440,7 @@ function PromptPage({ prompt, currentLanguage }) {
               <Col xs={24} sm={24} md={24} lg={18} xl={18} className="full-width-col">
                 {/* 广告 — speedup 分支专属，置于讨论区上方（hairline 之外） */}
                 <Suspense fallback={null}>
-                  <AdComponent type="transverse" />
+                  <AdComponent type="transverse" style={{ marginBottom: 16 }} />
                 </Suspense>
 
                 <Flex vertical gap={14} style={{ marginTop: 8, paddingTop: 22, borderTop: "1px solid var(--site-color-hairline)" }}>

@@ -352,15 +352,15 @@ const CommunityPrompts = () => {
         <script type="application/ld+json">{collectionSchemaJson}</script>
       </Head>
       <main className="margin-vert--md">
-        <section className="margin-top--sm margin-bottom--sm">
-          <div className="container padding-vert--md">
+        <section className="margin-bottom--sm">
+          <div className="container">
             {/* Breadcrumb — plain, matches community-prompt detail page style */}
             <Breadcrumb
               items={[
                 {
                   title: (
                     <Link to="/" style={{ color: "var(--site-color-tag-selected-text)" }}>
-                      <HomeOutlined style={{ marginRight: 4 }} />
+                      <HomeOutlined style={{ marginInlineEnd: 4 }} />
                       <Translate id="link.home">首页</Translate>
                     </Link>
                   ),
@@ -369,11 +369,11 @@ const CommunityPrompts = () => {
                   title: <Translate id="link.communityPrompts">社区提示词</Translate>,
                 },
               ]}
-              style={{ marginBottom: 12, paddingLeft: 8, paddingRight: 8 }}
+              style={{ marginBottom: 12 }}
             />
 
             {/* H1 + tagline — 给 AI 引擎主标题 chunk 入口；视觉上简洁不抢主体 */}
-            <div style={{ marginBottom: 24, paddingLeft: 8, paddingRight: 8 }}>
+            <div style={{ marginBottom: 18 }}>
               <h1 style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-0.02em", margin: 0, color: "var(--ifm-color-content)" }}>
                 <Translate id="community.heading">AI 提示词社区</Translate>
               </h1>
@@ -382,10 +382,8 @@ const CommunityPrompts = () => {
               </h2>
             </div>
 
-            {/* H2 — Sort + Search 区段标题，给 AI 引擎第二个 chunk 入口 */}
-
             {/* Sort + Search — same row; search fills remaining space via flex: 1 */}
-            <Flex wrap="wrap" gap="middle" align="center" style={{ marginBottom: 24 }}>
+            <Flex wrap="wrap" gap="middle" align="center" style={{ marginBottom: 20 }}>
               <Segmented
                 options={[
                   { value: "id", label: translate({ id: "sort.newest", message: "最新发布" }) },
@@ -465,11 +463,11 @@ const CommunityPrompts = () => {
 
             {/* 广告 — speedup 分支专属（disclaimer 已挪到 site footer） */}
             <Suspense fallback={null}>
-              <AdComponent type="transverse" />
+              <AdComponent type="transverse" style={{ marginTop: 24 }} />
             </Suspense>
 
             {open && (
-              <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
+              <Modal open={open} footer={null} onCancel={() => setOpen(false)} centered width={440}>
                 <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
                   <LoginComponent />
                 </Suspense>
