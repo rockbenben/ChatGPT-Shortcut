@@ -28,7 +28,6 @@ const COMMUNITY_STATIC_PAGES = true;
 // 两个条件与在一起，安全的那一侧永远是默认值。
 const communityStaticActive = COMMUNITY_STATIC_PAGES && fs.existsSync("./src/data/community");
 
-
 // 构建日期取 HEAD commit 时间而非 new Date()：
 // Docusaurus 对每个 locale 构建都会重新求值本 config，new Date() 会让 18 个 locale 的
 // schema.org datePublished/dateModified 各不相同（同一篇文档 18 个语言版本宣称 18 个发布时间），
@@ -167,8 +166,7 @@ const config = {
       const extra = prismConfig?.additionalLanguages ?? [];
       if (extra.length > 0) {
         throw new Error(
-          `themeConfig.prism.additionalLanguages 配了 [${extra}]，但注册它们的 client module 被本插件去掉了，` +
-            `代码块会静默退化成纯文本。要么清空该配置，要么删掉本插件（每页多背 ~109 KB）。`,
+          `themeConfig.prism.additionalLanguages 配了 [${extra}]，但注册它们的 client module 被本插件去掉了，` + `代码块会静默退化成纯文本。要么清空该配置，要么删掉本插件（每页多背 ~109 KB）。`,
         );
       }
       return {
@@ -394,7 +392,7 @@ const config = {
               },
               {
                 label: "QQ 群",
-                href: "https://img.newzone.top/qrcode/qq1092926837.jpg?imageMogr2/format/webp",
+                href: "https://qm.qq.com/q/xBIoofc52w",
                 className: "header-qq-link",
               },
             ],
