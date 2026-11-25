@@ -1,27 +1,79 @@
 import React, { useEffect, useState, useRef } from "react";
 
-let adScriptInjected = false;
+const AD_CLIENT = "ca-pub-7585955822109216";
+const AD_SCRIPT_SRC = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${AD_CLIENT}`;
 
 // 填充判定唯一权威信号是 AdSense 落在 ins 上的 data-ad-status（"filled"/"unfilled"），
 // 用 MutationObserver 等它落定。不要用 ins 高度做启发式——AdSense 尝试填充期间会先给
 // ins 一个临时高度（~280px），会把"高度>0 即已填充"骗过。
-// 超时仅兜底 status 永不落定的场景（adblock 屏蔽脚本 / 脚本加载失败）。
+// 脚本级失败（onerror，如 adblock 拦截）会立即通知所有等待中的实例收起；
+// 超时仅兜底 status 永不落定的场景（脚本被静默吞掉或请求挂起）。
 const FILL_TIMEOUT_MS = 5000;
+
+/** @type {"idle" | "loading" | "loaded" | "failed"} */
+let adScriptStatus = "idle";
+/** @type {Set<() => void>} */
+const scriptFailListeners = new Set();
+
+function ensureAdScript() {
+  if (adScriptStatus === "failed") return false;
+  if (adScriptStatus !== "idle") return true;
+
+  if (document.querySelector(`script[src="${AD_SCRIPT_SRC}"]`)) {
+    adScriptStatus = "loaded";
+    return true;
+  }
+
+  adScriptStatus = "loading";
+  const script = document.createElement("script");
+  script.src = AD_SCRIPT_SRC;
+  script.async = true;
+  script.crossOrigin = "anonymous";
+  script.onload = () => {
+    adScriptStatus = "loaded";
+    scriptFailListeners.clear();
+  };
+  script.onerror = () => {
+    adScriptStatus = "failed";
+    scriptFailListeners.forEach((cb) => cb());
+    scriptFailListeners.clear();
+  };
+  document.body.appendChild(script);
+  return true;
+}
 
 /**
  * 广告位三态（设计原则：设置最小预留高度消除 CLS 突刺，未填充或屏蔽时自动收起）：
  *  - pending：占位等待（预留 90px 横幅 / 200px 网格最小高度），避免 AdSense 填充时下方内容断崖式下移
- *  - filled：AdSense 注入内容，自然撑开（因已有预留高度，CLS 保持在 0）
- *  - empty：渲染 null。未填充/被屏蔽超时后收起占位，详情页横幅彻底消失，首页保留网格
+ *  - filled：AdSense 注入内容，自然撑开（因已有预留高度，CLS 保持在 0）。横幅用 horizontal，
+ *    首页网格用 rectangle + 关闭 full-width-responsive，避免窄列塞进高竖版素材拉扯行高
+ *  - empty：渲染 null 并触发 onEmpty。脚本 onerror 立即收起，否则超时后收起；
+ *    详情页/列表页横幅彻底消失，首页由外层 AdCardSlot 连同 Col 一并收起不留空槽
+ *
+ * @param {{ type?: "default" | "transverse"; className?: string; style?: React.CSSProperties; onEmpty?: () => void }} props
  */
-const AdComponent = ({ type = "default", className = "", style = {} }) => {
+const AdComponent = ({ type = "default", className = "", style = {}, onEmpty }) => {
+  const isTransverse = type === "transverse";
   const [shouldLoad, setShouldLoad] = useState(false);
-  const [empty, setEmpty] = useState(false);
+  const [empty, setEmpty] = useState(() => adScriptStatus === "failed");
   const containerRef = useRef(null);
   const insRef = useRef(null);
-  const adSlot = type === "transverse" ? "3744254915" : "7438073448";
+  const pushedRef = useRef(false);
+  const onEmptyRef = useRef(onEmpty);
+  onEmptyRef.current = onEmpty;
+  const adSlot = isTransverse ? "3744254915" : "7438073448";
 
   useEffect(() => {
+    if (empty) onEmptyRef.current?.();
+  }, [empty]);
+
+  useEffect(() => {
+    if (empty) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setShouldLoad(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -39,32 +91,38 @@ const AdComponent = ({ type = "default", className = "", style = {} }) => {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [empty]);
 
   useEffect(() => {
-    if (!shouldLoad) return;
+    if (!shouldLoad || empty) return;
 
-    try {
-      if (!adScriptInjected) {
-        adScriptInjected = true;
-        const script = document.createElement("script");
-        script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7585955822109216";
-        script.async = true;
-        script.crossOrigin = "anonymous";
-        document.body.appendChild(script);
-      }
-      window.adsbygoogle = window.adsbygoogle || [];
-      window.adsbygoogle.push({});
-    } catch (error) {
-      console.error("AdSense push failed", error);
+    if (!ensureAdScript()) {
       setEmpty(true);
       return;
     }
 
+    const onScriptFail = () => setEmpty(true);
+    if (adScriptStatus === "loading") {
+      scriptFailListeners.add(onScriptFail);
+    }
+
     const ins = insRef.current;
+    try {
+      if (!pushedRef.current && !ins?.getAttribute("data-adsbygoogle-status")) {
+        pushedRef.current = true;
+        window.adsbygoogle = window.adsbygoogle || [];
+        window.adsbygoogle.push({});
+      }
+    } catch (error) {
+      console.error("AdSense push failed", error);
+      scriptFailListeners.delete(onScriptFail);
+      setEmpty(true);
+      return;
+    }
+
     let observer;
     const timer = setTimeout(() => {
-      // status 始终未落定 = 脚本被屏蔽或加载失败，按空位收起
+      // status 始终未落定 = 脚本被静默吞掉或加载超时，按空位收起
       if (insRef.current && insRef.current.getAttribute("data-ad-status") !== "filled") setEmpty(true);
     }, FILL_TIMEOUT_MS);
 
@@ -84,8 +142,9 @@ const AdComponent = ({ type = "default", className = "", style = {} }) => {
     return () => {
       clearTimeout(timer);
       if (observer) observer.disconnect();
+      scriptFailListeners.delete(onScriptFail);
     };
-  }, [shouldLoad]);
+  }, [shouldLoad, empty]);
 
   if (empty) {
     return null;
@@ -98,16 +157,16 @@ const AdComponent = ({ type = "default", className = "", style = {} }) => {
     // 768px 下 728 溢出 9px、970 溢出 251px。桌面够宽才躲得过。
     // 正常情况（responsive 单元按容器宽度取素材）什么都不裁，只有上面那种病态尺寸才生效 ——
     // 裁掉一条广告边，好过整站在手机上横向滚动。
-    <div ref={containerRef} className={className} style={{ width: "100%", minHeight: type === "transverse" ? 90 : 200, overflow: "hidden", ...style }}>
+    <div ref={containerRef} className={className} style={{ width: "100%", minHeight: isTransverse ? 90 : 200, overflow: "hidden", ...style }}>
       {shouldLoad && (
         <ins
           ref={insRef}
           className="adsbygoogle"
           style={{ display: "block", width: "100%" }}
-          data-ad-client="ca-pub-7585955822109216"
+          data-ad-client={AD_CLIENT}
           data-ad-slot={adSlot}
-          data-ad-format="auto"
-          data-full-width-responsive="true"
+          data-ad-format={isTransverse ? "horizontal" : "rectangle"}
+          data-full-width-responsive={isTransverse ? "true" : "false"}
         />
       )}
     </div>
