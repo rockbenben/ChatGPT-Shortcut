@@ -1,4 +1,10 @@
 {
+  "account.signInRequired": {
+    "message": "Accedi per vedere il tuo account"
+  },
+  "account.signInRequiredHint": {
+    "message": "Ti stiamo riportando alla home, oppure usa il pulsante qui sotto."
+  },
   "action.add": {
     "message": "Aggiungi"
   },
@@ -89,6 +95,30 @@
   "action.viewDetails": {
     "message": "Visualizza dettagli"
   },
+  "auth.callback.backHome": {
+    "message": "Torna alla home per accedere"
+  },
+  "auth.callback.failed": {
+    "message": "Accesso non completato"
+  },
+  "auth.callback.failedHint": {
+    "message": "Il link di accesso potrebbe essere scaduto o già utilizzato. Torna alla home e accedi di nuovo."
+  },
+  "auth.callback.idle": {
+    "message": "Nessun accesso in sospeso qui"
+  },
+  "auth.callback.idleHint": {
+    "message": "Questa pagina gestisce solo i reindirizzamenti di accesso: non serve salvarla nei preferiti."
+  },
+  "auth.callback.title": {
+    "message": "Completa l'accesso"
+  },
+  "auth.callback.working": {
+    "message": "Accesso in corso…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Non chiudere questa pagina: tornerai alla home tra poco."
+  },
   "button.clearAllCache": {
     "message": "Svuota tutta la cache"
   },
@@ -139,6 +169,9 @@
   },
   "comments.gif.label": {
     "message": "Inserisci GIF"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "Cerca GIF"
   },
   "comments.heading": {
     "message": "Discussione"
@@ -238,6 +271,12 @@
   },
   "feedback.welcome": {
     "message": "Feedback e Suggerimenti"
+  },
+  "filter.lessTags": {
+    "message": "Mostra meno"
+  },
+  "filter.moreTags": {
+    "message": "Altri ({count})"
   },
   "filter.operator.all.tip": {
     "message": "Mostra i prompt che corrispondono a tutti i tag selezionati"
@@ -410,11 +449,11 @@
   "message.addPrompt.success": {
     "message": "Prompt inviato — lo troverai in cima a La Mia Collezione"
   },
-  "message.cache.cleared": {
-    "message": "Cache svuotata"
-  },
   "message.cache.clearError": {
     "message": "Pulizia cache fallita, riprova più tardi"
+  },
+  "message.cache.cleared": {
+    "message": "Cache svuotata"
   },
   "message.cannotFavorOwn": {
     "message": "Non puoi aggiungere il tuo prompt ai preferiti"
@@ -506,11 +545,11 @@
   "message.noSpaceItems": {
     "message": "Ancora niente qui: crea un prompt o aggiungine ai preferiti"
   },
-  "message.orderSaved": {
-    "message": "Disposizione salvata"
-  },
   "message.orderSaveFailed": {
     "message": "Salvataggio della disposizione fallito, riprova più tardi"
+  },
+  "message.orderSaved": {
+    "message": "Disposizione salvata"
   },
   "message.postComment.error": {
     "message": "Invio del commento non riuscito. Riprova più tardi."
@@ -526,6 +565,9 @@
   },
   "message.removeFavorite.success": {
     "message": "Rimosso dai preferiti"
+  },
+  "message.requestTimeout": {
+    "message": "Richiesta scaduta. Riprova."
   },
   "message.resetPassword.error": {
     "message": "Impossibile reimpostare la password, riprova più tardi"
@@ -548,17 +590,26 @@
   "message.success.register": {
     "message": "Account creato"
   },
+  "message.tagsUpdateFailed": {
+    "message": "Aggiornamento tag fallito, riprova più tardi"
+  },
   "message.tagsUpdated": {
     "message": "Tag aggiornati"
   },
-  "message.tagsUpdateFailed": {
-    "message": "Aggiornamento tag fallito, riprova più tardi"
+  "message.tooManyRequests": {
+    "message": "Troppi tentativi. Riprova tra poco."
   },
   "message.updatePrompt.error": {
     "message": "Impossibile aggiornare il prompt, riprova più tardi"
   },
   "message.updatePrompt.success": {
     "message": "Prompt aggiornato"
+  },
+  "message.username.updateError": {
+    "message": "Impossibile aggiornare il nome utente. Riprova tra poco."
+  },
+  "message.username.updated": {
+    "message": "Nome utente aggiornato"
   },
   "modal.clearCache.title": {
     "message": "Pulire la cache?"
@@ -608,8 +659,14 @@
   "myspace.manageTags": {
     "message": "Gestisci Tag"
   },
+  "myspace.tagManager.color": {
+    "message": "Colore del tag"
+  },
   "myspace.tagManager.empty": {
     "message": "Nessun tag personalizzato"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Scrivi un nome qui sopra, scegli un colore e il primo tag è pronto."
   },
   "myspace.tagManager.namePlaceholder": {
     "message": "Nome Tag"
@@ -629,6 +686,9 @@
   "noResults.title": {
     "message": "Nessun prompt corrispondente trovato"
   },
+  "placeholder.clear": {
+    "message": "Cancella"
+  },
   "placeholder.comment": {
     "message": "Inserisci il tuo commento qui... Markdown e sintassi HTML supportati"
   },
@@ -640,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "Email"
+  },
+  "placeholder.fillTitle": {
+    "message": "Compila variabili"
   },
   "placeholder.newPassword": {
     "message": "Nuova password"
@@ -677,6 +740,9 @@
   "prompt.content": {
     "message": "Contenuto del prompt"
   },
+  "prompt.copyFilled": {
+    "message": "Copia compilato"
+  },
   "prompt.private": {
     "message": "Privato"
   },
@@ -701,11 +767,11 @@
   "share.native": {
     "message": "Sistema"
   },
-  "share.shareTo": {
-    "message": "Condividi su"
-  },
   "share.shareOn": {
     "message": "Condividi su {channel}"
+  },
+  "share.shareTo": {
+    "message": "Condividi su"
   },
   "showcase.header.button": {
     "message": "Esplora la community"
@@ -878,6 +944,70 @@
   "sort.newest": {
     "message": "Più recenti"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Chiudi",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Torna all'inizio",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copiato",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copia",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copia il codice negli appunti",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Attiva/disattiva il ritorno a capo automatico",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Comprimi categoria della barra laterale '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Espandi categoria della barra laterale '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "Si è verificato un errore in questa pagina.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Riprova",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(si apre in una nuova scheda)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Principale",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "Non siamo riusciti a trovare ciò che stavi cercando.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Contatta il proprietario del sito che ti ha reindirizzato all’URL originale e segnalagli che il link non funziona.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "Pagina non trovata",
+    "description": "The title of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "In questa pagina",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
   "theme.admonition.caution": {
     "message": "attenzione",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -901,14 +1031,6 @@
   "theme.admonition.warning": {
     "message": "avviso",
     "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Chiudi",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Torna all'inizio",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "Archivio",
@@ -962,10 +1084,6 @@
     "message": "1 post|{count} post",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "1 minuto di lettura|{readingTime} minuti di lettura",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.post.readMore": {
     "message": "Leggi di più",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -974,6 +1092,10 @@
     "message": "Leggi di più su {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "1 minuto di lettura|{readingTime} minuti di lettura",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "Navigazione ai post recenti del blog",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -981,22 +1103,6 @@
   "theme.blog.tagTitle": {
     "message": "{nPosts} con tag \"{tagName}\"",
     "description": "The title of the page for a blog tag"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "Copiato",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "Copia",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copia il codice negli appunti",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Attiva/disattiva il ritorno a capo automatico",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Passa dalla modalità scura a quella chiara (modalità attuale: {mode})",
@@ -1042,6 +1148,10 @@
     "message": "Pagina non indicizzata",
     "description": "The unlisted content banner title"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 elemento|{count} elementi",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "Home page",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1049,10 +1159,6 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "Briciole di pane",
     "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 elemento|{count} elementi",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Pagina del documento",
@@ -1121,26 +1227,6 @@
     "message": "Questa è una documentazione inedita per {siteTitle}, versione {versionLabel}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Comprimi categoria della barra laterale '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Espandi categoria della barra laterale '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "Si è verificato un errore in questa pagina.",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Riprova",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(si apre in una nuova scheda)",
-    "description": "The ARIA label for the external link icon"
-  },
   "theme.lastUpdated.atDate": {
     "message": "il {date}",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1173,22 +1259,6 @@
     "message": "Versioni",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Principale",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "Non siamo riusciti a trovare ciò che stavi cercando.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "Contatta il proprietario del sito che ti ha reindirizzato all’URL originale e segnalagli che il link non funziona.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "Pagina non trovata",
-    "description": "The title of the 404 page"
-  },
   "theme.tags.tagsListLabel": {
     "message": "Tag:",
     "description": "The label alongside a tag list"
@@ -1200,10 +1270,6 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tag",
     "description": "The title of the tag list page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "In questa pagina",
-    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "Gestione Dati"
@@ -1271,6 +1337,9 @@
   "validation.replyRequired": {
     "message": "Inserisci il contenuto della risposta"
   },
+  "validation.username.empty": {
+    "message": "Il nome utente non può essere vuoto"
+  },
   "validation.username.required": {
     "message": "Inserisci un nome utente o un'email registrata"
   },
@@ -1294,59 +1363,5 @@
   },
   "vote.upvote.success": {
     "message": "«Mi piace» registrato"
-  },
-  "auth.callback.title": {
-    "message": "Completa l'accesso"
-  },
-  "auth.callback.working": {
-    "message": "Accesso in corso…"
-  },
-  "auth.callback.workingHint": {
-    "message": "Non chiudere questa pagina: tornerai alla home tra poco."
-  },
-  "auth.callback.failed": {
-    "message": "Accesso non completato"
-  },
-  "auth.callback.failedHint": {
-    "message": "Il link di accesso potrebbe essere scaduto o già utilizzato. Torna alla home e accedi di nuovo."
-  },
-  "auth.callback.idle": {
-    "message": "Nessun accesso in sospeso qui"
-  },
-  "auth.callback.idleHint": {
-    "message": "Questa pagina gestisce solo i reindirizzamenti di accesso: non serve salvarla nei preferiti."
-  },
-  "auth.callback.backHome": {
-    "message": "Torna alla home per accedere"
-  },
-  "myspace.tagManager.emptyHint": {
-    "message": "Scrivi un nome qui sopra, scegli un colore e il primo tag è pronto."
-  },
-  "validation.username.empty": {
-    "message": "Il nome utente non può essere vuoto"
-  },
-  "message.username.updated": {
-    "message": "Nome utente aggiornato"
-  },
-  "message.username.updateError": {
-    "message": "Impossibile aggiornare il nome utente. Riprova tra poco."
-  },
-  "message.requestTimeout": {
-    "message": "Richiesta scaduta. Riprova."
-  },
-  "message.tooManyRequests": {
-    "message": "Troppi tentativi. Riprova tra poco."
-  },
-  "account.signInRequired": {
-    "message": "Accedi per vedere il tuo account"
-  },
-  "account.signInRequiredHint": {
-    "message": "Ti stiamo riportando alla home, oppure usa il pulsante qui sotto."
-  },
-  "myspace.tagManager.color": {
-    "message": "Colore del tag"
-  },
-  "comments.gif.searchPlaceholder": {
-    "message": "Cerca GIF"
   }
 }

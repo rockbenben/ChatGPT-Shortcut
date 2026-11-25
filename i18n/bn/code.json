@@ -1,4 +1,10 @@
 {
+  "account.signInRequired": {
+    "message": "আপনার অ্যাকাউন্ট দেখতে সাইন ইন করুন"
+  },
+  "account.signInRequiredHint": {
+    "message": "আপনাকে হোম পেজে নিয়ে যাওয়া হচ্ছে — অথবা নিচের বোতামটি ব্যবহার করুন।"
+  },
   "action.add": {
     "message": "যোগ করুন"
   },
@@ -89,6 +95,30 @@
   "action.viewDetails": {
     "message": "বিস্তারিত দেখুন"
   },
+  "auth.callback.backHome": {
+    "message": "সাইন ইন করতে হোম পেজে ফিরুন"
+  },
+  "auth.callback.failed": {
+    "message": "সাইন ইন সম্পূর্ণ হয়নি"
+  },
+  "auth.callback.failedHint": {
+    "message": "সাইন ইন লিঙ্কের মেয়াদ শেষ হয়ে থাকতে পারে বা এটি আগেই ব্যবহার হয়েছে। হোম পেজে ফিরে আবার সাইন ইন করুন।"
+  },
+  "auth.callback.idle": {
+    "message": "এখানে সম্পূর্ণ করার মতো কোনো সাইন ইন নেই"
+  },
+  "auth.callback.idleHint": {
+    "message": "এই পৃষ্ঠাটি কেবল সাইন ইন রিডাইরেক্টের জন্য — বুকমার্ক করার দরকার নেই।"
+  },
+  "auth.callback.title": {
+    "message": "সাইন ইন সম্পূর্ণ করুন"
+  },
+  "auth.callback.working": {
+    "message": "সাইন ইন করা হচ্ছে…"
+  },
+  "auth.callback.workingHint": {
+    "message": "এই পৃষ্ঠাটি বন্ধ করবেন না — একটু পরেই আপনাকে হোম পেজে ফিরিয়ে নেওয়া হবে।"
+  },
   "button.clearAllCache": {
     "message": "সমস্ত ক্যাশ সাফ করুন"
   },
@@ -139,6 +169,9 @@
   },
   "comments.gif.label": {
     "message": "GIF যোগ করুন"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "GIF খুঁজুন"
   },
   "comments.heading": {
     "message": "আলোচনা"
@@ -238,6 +271,12 @@
   },
   "feedback.welcome": {
     "message": "প্রতিক্রিয়া ও পরামর্শ"
+  },
+  "filter.lessTags": {
+    "message": "কম দেখান"
+  },
+  "filter.moreTags": {
+    "message": "আরও ({count})"
   },
   "filter.operator.all.tip": {
     "message": "সব নির্বাচিত ট্যাগের সাথে মিলে এমন প্রম্পট দেখান"
@@ -410,11 +449,11 @@
   "message.addPrompt.success": {
     "message": "প্রম্পট জমা হয়েছে — একদম আমার সংগ্রহ-এর উপরে এটি পাবেন"
   },
-  "message.cache.cleared": {
-    "message": "ক্যাশ সাফ করা হয়েছে"
-  },
   "message.cache.clearError": {
     "message": "ক্যাশ সাফ করতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
+  },
+  "message.cache.cleared": {
+    "message": "ক্যাশ সাফ করা হয়েছে"
   },
   "message.cannotFavorOwn": {
     "message": "নিজের প্রম্পট পছন্দের তালিকায় যোগ করা যাবে না"
@@ -506,11 +545,11 @@
   "message.noSpaceItems": {
     "message": "এখনও কিছু নেই — একটি প্রম্পট তৈরি করুন বা পছন্দ করুন"
   },
-  "message.orderSaved": {
-    "message": "বিন্যাস সংরক্ষিত হয়েছে"
-  },
   "message.orderSaveFailed": {
     "message": "বিন্যাস সংরক্ষণে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
+  },
+  "message.orderSaved": {
+    "message": "বিন্যাস সংরক্ষিত হয়েছে"
   },
   "message.postComment.error": {
     "message": "মন্তব্য পাঠাতে ব্যর্থ হয়েছে। অনুগ্রহ করে পরে আবার চেষ্টা করুন।"
@@ -526,6 +565,9 @@
   },
   "message.removeFavorite.success": {
     "message": "পছন্দ থেকে সরানো হয়েছে"
+  },
+  "message.requestTimeout": {
+    "message": "অনুরোধের সময় শেষ হয়ে গেছে। আবার চেষ্টা করুন।"
   },
   "message.resetPassword.error": {
     "message": "পাসওয়ার্ড রিসেট করতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
@@ -548,17 +590,26 @@
   "message.success.register": {
     "message": "অ্যাকাউন্ট তৈরি করা হয়েছে"
   },
+  "message.tagsUpdateFailed": {
+    "message": "ট্যাগ আপডেট করতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
+  },
   "message.tagsUpdated": {
     "message": "ট্যাগ আপডেট করা হয়েছে"
   },
-  "message.tagsUpdateFailed": {
-    "message": "ট্যাগ আপডেট করতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
+  "message.tooManyRequests": {
+    "message": "অনেক বেশি চেষ্টা হয়েছে। একটু পরে আবার চেষ্টা করুন।"
   },
   "message.updatePrompt.error": {
     "message": "প্রম্পট আপডেট করতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
   "message.updatePrompt.success": {
     "message": "প্রম্পট আপডেট করা হয়েছে"
+  },
+  "message.username.updateError": {
+    "message": "ব্যবহারকারীর নাম আপডেট করা যায়নি। একটু পরে আবার চেষ্টা করুন।"
+  },
+  "message.username.updated": {
+    "message": "ব্যবহারকারীর নাম আপডেট হয়েছে"
   },
   "modal.clearCache.title": {
     "message": "ক্যাশ সাফ করবেন?"
@@ -608,8 +659,14 @@
   "myspace.manageTags": {
     "message": "ট্যাগ পরিচালনা"
   },
+  "myspace.tagManager.color": {
+    "message": "ট্যাগের রং"
+  },
   "myspace.tagManager.empty": {
     "message": "কোনো কাস্টম ট্যাগ নেই"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "উপরে একটি নাম লিখুন, রং বেছে নিন — আপনার প্রথম ট্যাগ তৈরি করুন।"
   },
   "myspace.tagManager.namePlaceholder": {
     "message": "ট্যাগের নাম"
@@ -629,6 +686,9 @@
   "noResults.title": {
     "message": "মিলিত প্রম্পট পাওয়া যায়নি"
   },
+  "placeholder.clear": {
+    "message": "মুছুন"
+  },
   "placeholder.comment": {
     "message": "এখানে মন্তব্য লিখুন... মার্কডাউন এবং HTML সিনট্যাক্স সমর্থিত"
   },
@@ -640,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "ইমেইল"
+  },
+  "placeholder.fillTitle": {
+    "message": "ভেরিয়েবল পূরণ করুন"
   },
   "placeholder.newPassword": {
     "message": "নতুন পাসওয়ার্ড"
@@ -677,6 +740,9 @@
   "prompt.content": {
     "message": "প্রম্পট বিষয়বস্তু"
   },
+  "prompt.copyFilled": {
+    "message": "পূরণকৃত কপি করুন"
+  },
   "prompt.private": {
     "message": "ব্যক্তিগত"
   },
@@ -701,11 +767,11 @@
   "share.native": {
     "message": "সিস্টেম"
   },
-  "share.shareTo": {
-    "message": "শেয়ার করুন"
-  },
   "share.shareOn": {
     "message": "{channel}-এ শেয়ার করুন"
+  },
+  "share.shareTo": {
+    "message": "শেয়ার করুন"
   },
   "showcase.header.button": {
     "message": "কমিউনিটি দেখুন"
@@ -878,6 +944,70 @@
   "sort.newest": {
     "message": "সর্বশেষ"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "বন্ধ করুন",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "শীর্ষে ফিরে যান",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "কপি করা হয়েছে",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "কপি করুন",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "ক্লিপবোর্ডে কোড কপি করুন",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "ওয়ার্ড র‍্যাপ টগল করুন",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "সাইডবার বিভাগ '{label}' সঙ্কুচিত করুন",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "সাইডবার বিভাগ '{label}' প্রসারিত করুন",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "এই পৃষ্ঠা ক্র্যাশ করেছে।",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "আবার চেষ্টা করুন",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(নতুন ট্যাবে খোলে)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "প্রধান",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "আমরা আপনি যা খুঁজছিলেন তা খুঁজে পাইনি।",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "অনুগ্রহ করে যে সাইটের লিঙ্ক থেকে এসেছেন তার মালিকের সাথে যোগাযোগ করুন এবং লিঙ্কটি ভাঙা আছে জানাতে বলুন।",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "পেজটি খুঁজে পাওয়া যায়নি",
+    "description": "The title of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "এই পৃষ্ঠায়",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
   "theme.admonition.caution": {
     "message": "সতর্কতা",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -901,14 +1031,6 @@
   "theme.admonition.warning": {
     "message": "সতর্কবার্তা",
     "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "বন্ধ করুন",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "শীর্ষে ফিরে যান",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "সংরক্ষণাগার",
@@ -962,10 +1084,6 @@
     "message": "একটি পোস্ট|{count}টি পোস্ট",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "এক মিনিট পড়া|{readingTime} মিনিট পড়া",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.post.readMore": {
     "message": "আরও পড়ুন",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -974,6 +1092,10 @@
     "message": "{title} সম্পর্কে আরও পড়ুন",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "এক মিনিট পড়া|{readingTime} মিনিট পড়া",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "ব্লগের সাম্প্রতিক পোস্ট নেভিগেশন",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -981,22 +1103,6 @@
   "theme.blog.tagTitle": {
     "message": "\"{tagName}\" ট্যাগসহ {nPosts}টি পোস্ট",
     "description": "The title of the page for a blog tag"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "কপি করা হয়েছে",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "কপি করুন",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "ক্লিপবোর্ডে কোড কপি করুন",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "ওয়ার্ড র‍্যাপ টগল করুন",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "ডার্ক এবং লাইট মোডের মধ্যে পরিবর্তন করুন (বর্তমানে {mode})",
@@ -1042,6 +1148,10 @@
     "message": "তালিকাভুক্ত নয় এমন পৃষ্ঠা",
     "description": "The unlisted content banner title"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "১টি আইটেম|{count}টি আইটেম",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "হোম পৃষ্ঠা",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1049,10 +1159,6 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "ব্রেডক্রাম্বস",
     "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "১টি আইটেম|{count}টি আইটেম",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "ডক্স পেজ",
@@ -1121,26 +1227,6 @@
     "message": "এটি {siteTitle} {versionLabel} এর জন্যে অপ্রকাশিত ডকুমেন্টেশন।",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "সাইডবার বিভাগ '{label}' সঙ্কুচিত করুন",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "সাইডবার বিভাগ '{label}' প্রসারিত করুন",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "এই পৃষ্ঠা ক্র্যাশ করেছে।",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "আবার চেষ্টা করুন",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(নতুন ট্যাবে খোলে)",
-    "description": "The ARIA label for the external link icon"
-  },
   "theme.lastUpdated.atDate": {
     "message": "{date} তারিখে",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1173,22 +1259,6 @@
     "message": "সংস্করণসমূহ",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
-  "theme.NavBar.navAriaLabel": {
-    "message": "প্রধান",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "আমরা আপনি যা খুঁজছিলেন তা খুঁজে পাইনি।",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "অনুগ্রহ করে যে সাইটের লিঙ্ক থেকে এসেছেন তার মালিকের সাথে যোগাযোগ করুন এবং লিঙ্কটি ভাঙা আছে জানাতে বলুন।",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "পেজটি খুঁজে পাওয়া যায়নি",
-    "description": "The title of the 404 page"
-  },
   "theme.tags.tagsListLabel": {
     "message": "ট্যাগ:",
     "description": "The label alongside a tag list"
@@ -1200,10 +1270,6 @@
   "theme.tags.tagsPageTitle": {
     "message": "ট্যাগসমূহ",
     "description": "The title of the tag list page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "এই পৃষ্ঠায়",
-    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "ডেটা ম্যানেজমেন্ট"
@@ -1271,6 +1337,9 @@
   "validation.replyRequired": {
     "message": "অনুগ্রহ করে উত্তরের বিষয়বস্তু লিখুন"
   },
+  "validation.username.empty": {
+    "message": "ব্যবহারকারীর নাম খালি রাখা যাবে না"
+  },
   "validation.username.required": {
     "message": "অনুগ্রহ করে ব্যবহারকারীর নাম বা নিবন্ধিত ইমেল লিখুন"
   },
@@ -1294,59 +1363,5 @@
   },
   "vote.upvote.success": {
     "message": "লাইক করা হয়েছে"
-  },
-  "auth.callback.title": {
-    "message": "সাইন ইন সম্পূর্ণ করুন"
-  },
-  "auth.callback.working": {
-    "message": "সাইন ইন করা হচ্ছে…"
-  },
-  "auth.callback.workingHint": {
-    "message": "এই পৃষ্ঠাটি বন্ধ করবেন না — একটু পরেই আপনাকে হোম পেজে ফিরিয়ে নেওয়া হবে।"
-  },
-  "auth.callback.failed": {
-    "message": "সাইন ইন সম্পূর্ণ হয়নি"
-  },
-  "auth.callback.failedHint": {
-    "message": "সাইন ইন লিঙ্কের মেয়াদ শেষ হয়ে থাকতে পারে বা এটি আগেই ব্যবহার হয়েছে। হোম পেজে ফিরে আবার সাইন ইন করুন।"
-  },
-  "auth.callback.idle": {
-    "message": "এখানে সম্পূর্ণ করার মতো কোনো সাইন ইন নেই"
-  },
-  "auth.callback.idleHint": {
-    "message": "এই পৃষ্ঠাটি কেবল সাইন ইন রিডাইরেক্টের জন্য — বুকমার্ক করার দরকার নেই।"
-  },
-  "auth.callback.backHome": {
-    "message": "সাইন ইন করতে হোম পেজে ফিরুন"
-  },
-  "myspace.tagManager.emptyHint": {
-    "message": "উপরে একটি নাম লিখুন, রং বেছে নিন — আপনার প্রথম ট্যাগ তৈরি করুন।"
-  },
-  "validation.username.empty": {
-    "message": "ব্যবহারকারীর নাম খালি রাখা যাবে না"
-  },
-  "message.username.updated": {
-    "message": "ব্যবহারকারীর নাম আপডেট হয়েছে"
-  },
-  "message.username.updateError": {
-    "message": "ব্যবহারকারীর নাম আপডেট করা যায়নি। একটু পরে আবার চেষ্টা করুন।"
-  },
-  "message.requestTimeout": {
-    "message": "অনুরোধের সময় শেষ হয়ে গেছে। আবার চেষ্টা করুন।"
-  },
-  "message.tooManyRequests": {
-    "message": "অনেক বেশি চেষ্টা হয়েছে। একটু পরে আবার চেষ্টা করুন।"
-  },
-  "account.signInRequired": {
-    "message": "আপনার অ্যাকাউন্ট দেখতে সাইন ইন করুন"
-  },
-  "account.signInRequiredHint": {
-    "message": "আপনাকে হোম পেজে নিয়ে যাওয়া হচ্ছে — অথবা নিচের বোতামটি ব্যবহার করুন।"
-  },
-  "myspace.tagManager.color": {
-    "message": "ট্যাগের রং"
-  },
-  "comments.gif.searchPlaceholder": {
-    "message": "GIF খুঁজুন"
   }
 }

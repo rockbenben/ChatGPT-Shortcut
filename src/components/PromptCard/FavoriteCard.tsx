@@ -19,14 +19,13 @@ interface FavoriteCardProps {
 
   onRemoveFavorite?: (id: number, isComm?: boolean) => void;
   onOpenModal?: (data: any) => void;
-  onConvertToPrivate?: (data: any) => void; // New: convert unavailable prompt to private
+  onConvertToPrivate?: (data: any) => void;
   extraActions?: ReactNode;
 }
 
 const FavoriteCardComponent = ({ data: user, sortable, onRemoveFavorite, onOpenModal, onConvertToPrivate, extraActions }: FavoriteCardProps) => {
   const { i18n } = useDocusaurusContext();
 
-  // Check if prompt is unavailable (unshared by author)
   const isUnavailable = user._unavailable === true;
   const hasCache = !user._noCache;
 
@@ -34,9 +33,7 @@ const FavoriteCardComponent = ({ data: user, sortable, onRemoveFavorite, onOpenM
   const itemData = user[currentLanguage] || user["zh-Hans"] || user["en"];
   const isDataCard = !!(itemData && itemData.title);
 
-  // Map data based on card type
   const title = isDataCard ? itemData.title : user.title;
-  // For Community Cards: description field is prompt, notes field is description
   const prompt = isDataCard ? itemData.prompt : user.description;
   const description = isDataCard ? itemData.description : user.notes || user.description;
   const remark = isDataCard ? itemData.remark : user.remark;
@@ -44,7 +41,6 @@ const FavoriteCardComponent = ({ data: user, sortable, onRemoveFavorite, onOpenM
   const website = user.website;
   const owner = user.owner;
   const copyCount = getWeight(user);
-
 
   const handleRemoveFavorite = useCallback(
     (e: React.MouseEvent) => {
@@ -78,9 +74,8 @@ const FavoriteCardComponent = ({ data: user, sortable, onRemoveFavorite, onOpenM
         vote: user.upvoteDifference,
       });
     }
-  }, [onOpenModal, isDataCard, user, title, prompt, description, remark, tags, website, owner]);
+  }, [onOpenModal, isDataCard, user, title, prompt, description, remark, tags, website, owner, copyCount]);
 
-  // Render unavailable warning banner
   const renderUnavailableBanner = () => {
     if (!isUnavailable) return null;
 
@@ -97,16 +92,15 @@ const FavoriteCardComponent = ({ data: user, sortable, onRemoveFavorite, onOpenM
     return (
       <div
         style={{
-          padding: "12px 16px",
+          padding: "10px 12px",
           background: hasCache ? "rgba(250, 173, 20, 0.1)" : "rgba(255, 77, 79, 0.1)",
           border: `1px solid ${hasCache ? "rgba(250, 173, 20, 0.35)" : "rgba(255, 77, 79, 0.35)"}`,
           borderRadius: 8,
-          marginBottom: 12,
         }}>
         <Flex vertical gap="small">
           <Flex align="center" gap="small">
-            {hasCache ? <ExclamationCircleOutlined style={{ color: "#faad14", fontSize: 18, flexShrink: 0 }} /> : <StopOutlined style={{ color: "#ff4d4f", fontSize: 18, flexShrink: 0 }} />}
-            <Typography.Text style={{ fontSize: 14, color: "var(--ifm-color-content)", flex: 1 }}>
+            {hasCache ? <ExclamationCircleOutlined style={{ color: "#faad14", fontSize: 16, flexShrink: 0 }} /> : <StopOutlined style={{ color: "#ff4d4f", fontSize: 16, flexShrink: 0 }} />}
+            <Typography.Text style={{ fontSize: 13, color: "var(--ifm-color-content)", flex: 1 }}>
               {hasCache ? <Translate id="unavailable.unshared">原作者已取消分享</Translate> : <Translate id="unavailable.unsharedNoCache">原作者已取消分享且无本地缓存</Translate>}
             </Typography.Text>
           </Flex>
@@ -125,6 +119,9 @@ const FavoriteCardComponent = ({ data: user, sortable, onRemoveFavorite, onOpenM
     );
   };
 
+  const hasRemark = Boolean(remark?.trim());
+  const promptRows = hasRemark ? 3 : 4;
+
   return (
     <BasePromptCard
       ref={sortable?.setNodeRef}
@@ -133,12 +130,12 @@ const FavoriteCardComponent = ({ data: user, sortable, onRemoveFavorite, onOpenM
       title={
         <Flex align="start" style={{ overflow: "hidden" }}>
           {sortable && (
-            <div {...sortable.listeners} style={{ cursor: "grab", marginInlineEnd: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
+            <div {...sortable.listeners} style={{ cursor: "grab", marginInlineEnd: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 4 }}>
               <HolderOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
             </div>
           )}
           <ClampBox>
-            <Typography.Title level={3} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
+            <Typography.Title level={3} style={{ margin: 0, fontSize: 15.5, fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
               {isDataCard ? (
                 <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
                   {title}
@@ -172,38 +169,52 @@ const FavoriteCardComponent = ({ data: user, sortable, onRemoveFavorite, onOpenM
           )}
         </>
       }
-      actions={[
-        <CopyButton key="copy" text={prompt} trackingId={isDataCard ? user.id : undefined} variant="iconOnly" block />,
-        <IconAction
-          key="remove"
-          label={translate({ id: "action.removeFavorite", message: "从收藏中移除" })}
-          icon={<HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} />}
-          onClick={handleRemoveFavorite}
-          block
-        />,
-        extraActions && <React.Fragment key="extra">{extraActions}</React.Fragment>,
-      ].filter(Boolean)}
+      footer={
+        <>
+          <Flex align="center" gap={4} style={{ minWidth: 0 }}>
+            {extraActions}
+            <PromptSourceLink href={website} />
+          </Flex>
+          <Flex align="center" gap={4} style={{ flexShrink: 0 }}>
+            <IconAction
+              key="remove"
+              size="small"
+              label={translate({ id: "action.removeFavorite", message: "从收藏中移除" })}
+              icon={<HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} />}
+              onClick={handleRemoveFavorite}
+            />
+            <CopyButton text={prompt} trackingId={isDataCard ? user.id : undefined} variant="iconOnly" size="small" />
+          </Flex>
+        </>
+      }
       onCardClick={handleCardClick}>
       {renderUnavailableBanner()}
       <PromptRemark remark={remark} />
-      <ClampBox>
-        <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ marginBottom: 0, color: "var(--ifm-color-content-secondary)", fontSize: 13, lineHeight: 1.55 }}>
-          {prompt}
-        </Typography.Paragraph>
-      </ClampBox>
-      <Flex justify="space-between" align="center">
-        <div style={{ flex: 1, overflow: "hidden" }}>
+      <div className={hasRemark ? styles.promptBodyAfterRemark : undefined}>
+        <ClampBox>
+          <Typography.Paragraph
+            ellipsis={{ rows: promptRows }}
+            style={{
+              marginBottom: 0,
+              color: hasRemark ? "var(--site-color-text-tertiary)" : "var(--ifm-color-content-secondary)",
+              fontSize: hasRemark ? 12.5 : 13,
+              lineHeight: hasRemark ? 1.68 : 1.7,
+            }}>
+            {prompt}
+          </Typography.Paragraph>
+        </ClampBox>
+      </div>
+      {(owner || Boolean(tags?.length)) && (
+        <Flex align="center" gap={8} wrap="wrap" style={{ marginTop: "auto" }}>
           {owner && (
-            <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
+            <Typography.Text type="secondary" style={{ fontSize: 11.5, display: "inline-flex", alignItems: "center", maxWidth: 80 }} ellipsis={{ tooltip: true }}>
               <UserOutlined style={{ marginInlineEnd: 4 }} />
               {owner}
             </Typography.Text>
           )}
-          <PromptCardTag tags={tags} muted clickable={false} />
-        </div>
-
-        <PromptSourceLink href={website} />
-      </Flex>
+          {Boolean(tags?.length) && <PromptCardTag tags={tags} muted clickable={false} maxVisible={2} />}
+        </Flex>
+      )}
     </BasePromptCard>
   );
 };

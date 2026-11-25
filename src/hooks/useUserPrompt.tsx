@@ -93,6 +93,8 @@ export const useUserPrompt = (): UseUserPromptReturn => {
       modal.confirm({
         title: <Translate id="message.deletePrompt.confirm.title">确认删除</Translate>,
         content: <Translate id="message.deletePrompt.confirm.content">确定要删除该提示词吗？</Translate>,
+        icon: null,
+        width: 400,
         onOk: async () => {
           await removePrompt(id);
         },

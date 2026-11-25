@@ -34,16 +34,16 @@ const FeedbackPage = () => {
         message: "你的反馈对我们很重要！",
       })}>
       <main className="margin-vert--md">
-        <section className="margin-top--sm margin-bottom--sm">
+        <section className="margin-bottom--sm">
           {/* docusaurus container = 主页同款 ~1320px max；内层 Col xl={18} ≈ 990px 阅读宽度,
               比详情页 (~880px) 宽一档（discussion 流不应该太窄），又比主页 (1320px) 窄留呼吸 */}
-          <div className="container padding-vert--md">
+          <div className="container">
             <Row justify="center">
               <Col xs={24} sm={22} md={20} lg={20} xl={18} className="full-width-col">
                 {/* Hero — eyebrow + title + subtitle + 响应承诺/维护者署名 meta line */}
                 <Flex vertical gap={10} style={{ marginBottom: 20 }}>
                   <span className="comp-sheet-eyebrow">
-                    FEEDBACK · <Translate id="feedback.spec_label">公开反馈</Translate>
+                    <Translate id="feedback.spec_label">公开反馈</Translate>
                   </span>
                   <Typography.Title level={1} className="comp-sheet-title">
                     <Translate id="feedback.welcome">反馈与建议</Translate>
@@ -69,10 +69,22 @@ const FeedbackPage = () => {
                 <Flex wrap gap={8} align="center">
                   {TYPE_CHIPS.map(({ label, labelQuery }) => (
                     <a key={label} href={`${ISSUES_BASE}?q=is%3Aissue+label%3A${labelQuery}`} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
-                      <Tag style={{ borderRadius: 999, padding: "2px 12px", margin: 0, fontSize: 13, cursor: "pointer" }}>{label}</Tag>
+                      <Tag
+                        style={{
+                          borderRadius: 999,
+                          padding: "4px 14px",
+                          margin: 0,
+                          fontSize: 13,
+                          lineHeight: 1.5,
+                          backgroundColor: "var(--ifm-background-surface-color)",
+                          borderColor: "var(--site-color-hairline)",
+                          cursor: "pointer",
+                        }}>
+                        {label}
+                      </Tag>
                     </a>
                   ))}
-                  <Button type="primary" size="small" icon={<GithubOutlined />} href={`${ISSUES_BASE}/new`} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 4 }}>
+                  <Button type="primary" size="middle" icon={<GithubOutlined />} href={`${ISSUES_BASE}/new`} target="_blank" rel="noopener noreferrer" style={{ marginInlineStart: 4 }}>
                     <Translate id="feedback.newIssue">新建 Issue</Translate>
                   </Button>
                 </Flex>

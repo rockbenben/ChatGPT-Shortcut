@@ -5,36 +5,29 @@ import { getLevelInfo, LevelName, LevelIcon, MAX_LEVEL, type LevelInfo } from "@
 
 const { Title } = Typography;
 
-/** Level spec card — editorial / mineral specimen style（用户中心左栏，等级 + 升级进度） */
+/** Level spec card — calm workbench specimen card（用户中心左栏，等级 + 升级进度） */
 const LevelSpecCard: React.FC<{ sharedCount: number }> = ({ sharedCount }) => {
   const levelInfo = getLevelInfo(sharedCount);
   const progressPercent = levelInfo.next ? Math.min(100, Math.round((sharedCount / levelInfo.next) * 100)) : 100;
   const nextLevelInfo: LevelInfo | null = levelInfo.next ? getLevelInfo(levelInfo.next) : null;
 
   return (
-    <div style={{ position: "relative", paddingTop: 28, borderTop: "1px solid var(--site-color-hairline)" }}>
-      {/* level-tinted hairline accent at top */}
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          top: -1,
-          left: "20%",
-          right: "20%",
-          height: 1,
-          background: `linear-gradient(90deg, transparent, ${levelInfo.accentColor}, transparent)`,
-          opacity: 0.7,
-        }}
-      />
-
-      <Flex vertical align="center" gap={14}>
+    <div
+      style={{
+        position: "relative",
+        padding: "20px 16px",
+        borderRadius: 10,
+        background: "var(--site-color-preview-bg)",
+        border: "1px solid var(--site-color-hairline)",
+      }}>
+      <Flex vertical align="center" gap={12}>
         {/* Spec line: LEVEL + index */}
         <Flex justify="space-between" align="baseline" style={{ width: "100%" }}>
           <span
             style={{
-              fontSize: 10,
-              fontFamily: "var(--site-font-mono)",
-              letterSpacing: "0.18em",
+              fontSize: 11.5,
+              fontWeight: 500,
+              letterSpacing: "0.06em",
               textTransform: "uppercase",
               color: "var(--site-color-text-tertiary)",
             }}>
@@ -42,19 +35,19 @@ const LevelSpecCard: React.FC<{ sharedCount: number }> = ({ sharedCount }) => {
           </span>
           <span
             style={{
-              fontSize: 10,
+              fontSize: 11.5,
               fontFamily: "var(--site-font-mono)",
-              letterSpacing: "0.08em",
+              letterSpacing: "0.04em",
               color: "var(--site-color-text-tertiary)",
               fontVariantNumeric: "tabular-nums",
             }}>
-            <span style={{ color: levelInfo.accentColor }}>{String(levelInfo.level).padStart(2, "0")}</span>
+            <span style={{ color: levelInfo.accentColor, fontWeight: 600 }}>{String(levelInfo.level).padStart(2, "0")}</span>
             <span style={{ opacity: 0.5 }}> / {String(MAX_LEVEL).padStart(2, "0")}</span>
           </span>
         </Flex>
 
         {/* Geometric icon with level-tinted radial halo */}
-        <div style={{ position: "relative", display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 14, color: levelInfo.accentColor }}>
+        <div style={{ position: "relative", display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 12, color: levelInfo.accentColor }}>
           <div
             aria-hidden
             style={{
@@ -65,43 +58,41 @@ const LevelSpecCard: React.FC<{ sharedCount: number }> = ({ sharedCount }) => {
               filter: "blur(2px)",
             }}
           />
-          {/* 颜色由外层 color 继承（见 style），不走 SVG 属性 —— presentation attribute 不解析 var() */}
-          <LevelIcon level={levelInfo.level} size={64} strokeWidth={1.5} />
+          <LevelIcon level={levelInfo.level} size={60} strokeWidth={1.5} />
         </div>
 
-        {/* Level name — display weight, no emoji */}
+        {/* Level name */}
         <div style={{ textAlign: "center" }}>
-          <Title level={3} style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.2 }}>
+          <Title level={3} style={{ margin: 0, fontSize: 20, fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.25 }}>
             <LevelName level={levelInfo.level} />
           </Title>
         </div>
 
         {/* Progress / Max-state */}
         {levelInfo.next ? (
-          <Flex vertical gap={8} style={{ width: "100%", marginTop: 6 }}>
-            <div style={{ height: 3, background: "var(--site-color-hairline)", borderRadius: 2, overflow: "hidden" }}>
+          <Flex vertical gap={8} style={{ width: "100%", marginTop: 4 }}>
+            <div style={{ height: 6, background: "var(--site-color-hairline)", borderRadius: 999, overflow: "hidden" }}>
               <div
                 style={{
                   height: "100%",
                   width: `${progressPercent}%`,
+                  borderRadius: 999,
                   background: levelInfo.accentColor,
                   transition: "width 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
-                  boxShadow: `0 0 8px color-mix(in srgb, ${levelInfo.accentColor} 40%, transparent)`,
                 }}
               />
             </div>
             <Flex justify="space-between" align="center" style={{ width: "100%" }}>
               <span
                 style={{
-                  fontSize: 11,
+                  fontSize: 11.5,
                   fontFamily: "var(--site-font-mono)",
                   fontVariantNumeric: "tabular-nums",
                   color: "var(--ifm-color-content-secondary)",
-                  letterSpacing: "0.04em",
                 }}>
                 {sharedCount} / {levelInfo.next}
               </span>
-              <span style={{ fontSize: 11, color: "var(--site-color-text-tertiary)", letterSpacing: "0.04em" }}>
+              <span style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)" }}>
                 <Translate id="userPage.level.toNext" values={{ next: <LevelName level={(nextLevelInfo as LevelInfo).level} /> }}>
                   {"距「{next}」"}
                 </Translate>
@@ -109,19 +100,19 @@ const LevelSpecCard: React.FC<{ sharedCount: number }> = ({ sharedCount }) => {
             </Flex>
           </Flex>
         ) : (
-          <Flex vertical align="center" gap={4} style={{ marginTop: 6 }}>
+          <Flex vertical align="center" gap={4} style={{ marginTop: 4 }}>
             <span
               style={{
-                fontSize: 10,
+                fontSize: 11,
                 fontFamily: "var(--site-font-mono)",
-                letterSpacing: "0.18em",
+                letterSpacing: "0.1em",
                 textTransform: "uppercase",
                 color: levelInfo.accentColor,
-                fontWeight: 500,
+                fontWeight: 600,
               }}>
               <Translate id="userPage.level.maxReached">MAX REACHED</Translate>
             </span>
-            <span style={{ fontSize: 11, fontFamily: "var(--site-font-mono)", color: "var(--site-color-text-tertiary)", letterSpacing: "0.04em" }}>
+            <span style={{ fontSize: 11.5, fontFamily: "var(--site-font-mono)", color: "var(--site-color-text-tertiary)" }}>
               <span style={{ fontVariantNumeric: "tabular-nums" }}>{sharedCount}</span> <Translate id="userPage.level.sharedSuffix">shared</Translate>
             </span>
           </Flex>

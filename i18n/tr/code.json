@@ -1,4 +1,10 @@
 {
+  "account.signInRequired": {
+    "message": "Hesabınızı görmek için giriş yapın"
+  },
+  "account.signInRequiredHint": {
+    "message": "Sizi ana sayfaya götürüyoruz; aşağıdaki düğmeyi de kullanabilirsiniz."
+  },
   "action.add": {
     "message": "Ekle"
   },
@@ -89,6 +95,30 @@
   "action.viewDetails": {
     "message": "Ayrıntıları Görüntüle"
   },
+  "auth.callback.backHome": {
+    "message": "Giriş için ana sayfaya dön"
+  },
+  "auth.callback.failed": {
+    "message": "Giriş tamamlanmadı"
+  },
+  "auth.callback.failedHint": {
+    "message": "Giriş bağlantısının süresi dolmuş ya da daha önce kullanılmış olabilir. Ana sayfaya dönüp tekrar giriş yapın."
+  },
+  "auth.callback.idle": {
+    "message": "Burada bekleyen bir giriş yok"
+  },
+  "auth.callback.idleHint": {
+    "message": "Bu sayfa yalnızca giriş yönlendirmeleri için kullanılır; yer imlerine eklemeye gerek yok."
+  },
+  "auth.callback.title": {
+    "message": "Girişi tamamla"
+  },
+  "auth.callback.working": {
+    "message": "Giriş yapılıyor…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Bu sayfayı kapatmayın, birazdan ana sayfaya döneceksiniz."
+  },
   "button.clearAllCache": {
     "message": "Tüm Önbelleği Temizle"
   },
@@ -139,6 +169,9 @@
   },
   "comments.gif.label": {
     "message": "GIF ekle"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "GIF ara"
   },
   "comments.heading": {
     "message": "Tartışma"
@@ -238,6 +271,12 @@
   },
   "feedback.welcome": {
     "message": "Geri Bildirim ve Öneriler"
+  },
+  "filter.lessTags": {
+    "message": "Daha az"
+  },
+  "filter.moreTags": {
+    "message": "Diğer ({count})"
   },
   "filter.operator.all.tip": {
     "message": "Seçilen tüm etiketlerle eşleşen prompt'ları göster"
@@ -410,11 +449,11 @@
   "message.addPrompt.success": {
     "message": "İstem gönderildi — Koleksiyonum'un en üstünde bulabilirsin"
   },
-  "message.cache.cleared": {
-    "message": "Önbellek temizlendi, veriler yenilendi"
-  },
   "message.cache.clearError": {
     "message": "Önbellek temizlenemedi, lütfen daha sonra tekrar deneyin"
+  },
+  "message.cache.cleared": {
+    "message": "Önbellek temizlendi, veriler yenilendi"
   },
   "message.cannotFavorOwn": {
     "message": "Kendi promptunuzu favorilere ekleyemezsiniz"
@@ -506,11 +545,11 @@
   "message.noSpaceItems": {
     "message": "Henüz bir şey yok — bir prompt oluştur veya favorilere ekle"
   },
-  "message.orderSaved": {
-    "message": "Sıralama kaydedildi"
-  },
   "message.orderSaveFailed": {
     "message": "Sıralama kaydedilemedi, lütfen daha sonra tekrar deneyin"
+  },
+  "message.orderSaved": {
+    "message": "Sıralama kaydedildi"
   },
   "message.postComment.error": {
     "message": "Yorum gönderilemedi. Lütfen daha sonra tekrar deneyin."
@@ -526,6 +565,9 @@
   },
   "message.removeFavorite.success": {
     "message": "Favorilerden kaldırıldı"
+  },
+  "message.requestTimeout": {
+    "message": "İstek zaman aşımına uğradı. Tekrar deneyin."
   },
   "message.resetPassword.error": {
     "message": "Şifre sıfırlanamadı, lütfen daha sonra tekrar deneyin"
@@ -548,17 +590,26 @@
   "message.success.register": {
     "message": "Hesap oluşturuldu"
   },
+  "message.tagsUpdateFailed": {
+    "message": "Etiket güncellenemedi, lütfen daha sonra tekrar deneyin"
+  },
   "message.tagsUpdated": {
     "message": "Etiketler güncellendi"
   },
-  "message.tagsUpdateFailed": {
-    "message": "Etiket güncellenemedi, lütfen daha sonra tekrar deneyin"
+  "message.tooManyRequests": {
+    "message": "Çok fazla deneme yapıldı. Birazdan tekrar deneyin."
   },
   "message.updatePrompt.error": {
     "message": "Prompt güncellenemedi, lütfen daha sonra tekrar deneyin"
   },
   "message.updatePrompt.success": {
     "message": "Prompt güncellendi"
+  },
+  "message.username.updateError": {
+    "message": "Kullanıcı adı güncellenemedi. Birazdan tekrar deneyin."
+  },
+  "message.username.updated": {
+    "message": "Kullanıcı adı güncellendi"
   },
   "modal.clearCache.title": {
     "message": "Önbelleği temizlemek istediğinize emin misiniz?"
@@ -608,8 +659,14 @@
   "myspace.manageTags": {
     "message": "Etiketleri Yönet"
   },
+  "myspace.tagManager.color": {
+    "message": "Etiket rengi"
+  },
   "myspace.tagManager.empty": {
     "message": "Henüz özel etiket yok"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Yukarıya bir ad yazın, renk seçin; ilk etiketiniz hazır."
   },
   "myspace.tagManager.namePlaceholder": {
     "message": "Etiket adı"
@@ -629,6 +686,9 @@
   "noResults.title": {
     "message": "Eşleşen prompt bulunamadı"
   },
+  "placeholder.clear": {
+    "message": "Temizle"
+  },
   "placeholder.comment": {
     "message": "Yorumunuzu buraya girin... Markdown ve HTML sözdizimi desteklenir"
   },
@@ -640,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "E-posta"
+  },
+  "placeholder.fillTitle": {
+    "message": "Değişkenleri doldur"
   },
   "placeholder.newPassword": {
     "message": "Yeni şifre"
@@ -677,6 +740,9 @@
   "prompt.content": {
     "message": "Prompt İçeriği"
   },
+  "prompt.copyFilled": {
+    "message": "Doldurulmuşu kopyala"
+  },
   "prompt.private": {
     "message": "Özel"
   },
@@ -701,11 +767,11 @@
   "share.native": {
     "message": "Sistem ile Paylaş"
   },
-  "share.shareTo": {
-    "message": "Şununla paylaş"
-  },
   "share.shareOn": {
     "message": "{channel} üzerinden paylaş"
+  },
+  "share.shareTo": {
+    "message": "Şununla paylaş"
   },
   "showcase.header.button": {
     "message": "Topluluğu Keşfet"
@@ -878,6 +944,70 @@
   "sort.newest": {
     "message": "En yeni"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Kapat",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Yukarı kaydır",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Kopyalandı",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Kopyala",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Kodu panoya kopyala",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Kelime kaydırmayı değiştir",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "'{label}' kenar çubuğu kategorisini daralt",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "'{label}' kenar çubuğu kategorisini genişlet",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "Bu sayfada bir hata oluştu.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Tekrar dene",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(yeni sekmede açılır)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Ana",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "Aradığınızı bulamadık.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Lütfen sizi orijinal URL'ye yönlendiren site sahibiyle iletişime geçin ve bağlantılarının bozuk olduğunu bildirin.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "Sayfa Bulunamadı",
+    "description": "The title of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "Bu sayfada",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
   "theme.admonition.caution": {
     "message": "dikkat",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -901,14 +1031,6 @@
   "theme.admonition.warning": {
     "message": "uyarı",
     "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Kapat",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Yukarı kaydır",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "Arşiv",
@@ -962,10 +1084,6 @@
     "message": "Bir gönderi|{count} gönderi",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "1 dk okuma|{readingTime} dk okuma",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.post.readMore": {
     "message": "Devamını oku",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -974,6 +1092,10 @@
     "message": "{title} hakkında daha fazla oku",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "1 dk okuma|{readingTime} dk okuma",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "Blog kenar çubuğu son gönderi navigasyonu",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -981,22 +1103,6 @@
   "theme.blog.tagTitle": {
     "message": "\"{tagName}\" etiketli {nPosts}",
     "description": "The title of the page for a blog tag"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "Kopyalandı",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "Kopyala",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Kodu panoya kopyala",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Kelime kaydırmayı değiştir",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Koyu ve açık mod arasında geçiş yap (şu anda {mode})",
@@ -1042,6 +1148,10 @@
     "message": "Listelenmemiş sayfa",
     "description": "The unlisted content banner title"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 öğe|{count} öğe",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "Ana sayfa",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1049,10 +1159,6 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "İçerik yolu",
     "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 öğe|{count} öğe",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Doküman sayfası",
@@ -1121,26 +1227,6 @@
     "message": "Bu {siteTitle} {versionLabel} sürümü için yayınlanmamış dokümantasyondur.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "'{label}' kenar çubuğu kategorisini daralt",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "'{label}' kenar çubuğu kategorisini genişlet",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "Bu sayfada bir hata oluştu.",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Tekrar dene",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(yeni sekmede açılır)",
-    "description": "The ARIA label for the external link icon"
-  },
   "theme.lastUpdated.atDate": {
     "message": "{date} tarihinde",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1173,22 +1259,6 @@
     "message": "Sürümler",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Ana",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "Aradığınızı bulamadık.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "Lütfen sizi orijinal URL'ye yönlendiren site sahibiyle iletişime geçin ve bağlantılarının bozuk olduğunu bildirin.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "Sayfa Bulunamadı",
-    "description": "The title of the 404 page"
-  },
   "theme.tags.tagsListLabel": {
     "message": "Etiketler:",
     "description": "The label alongside a tag list"
@@ -1200,10 +1270,6 @@
   "theme.tags.tagsPageTitle": {
     "message": "Etiketler",
     "description": "The title of the tag list page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "Bu sayfada",
-    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "Veri Yönetimi"
@@ -1271,6 +1337,9 @@
   "validation.replyRequired": {
     "message": "Lütfen yanıt içeriği girin"
   },
+  "validation.username.empty": {
+    "message": "Kullanıcı adı boş olamaz"
+  },
   "validation.username.required": {
     "message": "Lütfen kullanıcı adı veya kayıtlı e-posta girin"
   },
@@ -1294,59 +1363,5 @@
   },
   "vote.upvote.success": {
     "message": "Beğeni kaydedildi"
-  },
-  "auth.callback.title": {
-    "message": "Girişi tamamla"
-  },
-  "auth.callback.working": {
-    "message": "Giriş yapılıyor…"
-  },
-  "auth.callback.workingHint": {
-    "message": "Bu sayfayı kapatmayın, birazdan ana sayfaya döneceksiniz."
-  },
-  "auth.callback.failed": {
-    "message": "Giriş tamamlanmadı"
-  },
-  "auth.callback.failedHint": {
-    "message": "Giriş bağlantısının süresi dolmuş ya da daha önce kullanılmış olabilir. Ana sayfaya dönüp tekrar giriş yapın."
-  },
-  "auth.callback.idle": {
-    "message": "Burada bekleyen bir giriş yok"
-  },
-  "auth.callback.idleHint": {
-    "message": "Bu sayfa yalnızca giriş yönlendirmeleri için kullanılır; yer imlerine eklemeye gerek yok."
-  },
-  "auth.callback.backHome": {
-    "message": "Giriş için ana sayfaya dön"
-  },
-  "myspace.tagManager.emptyHint": {
-    "message": "Yukarıya bir ad yazın, renk seçin; ilk etiketiniz hazır."
-  },
-  "validation.username.empty": {
-    "message": "Kullanıcı adı boş olamaz"
-  },
-  "message.username.updated": {
-    "message": "Kullanıcı adı güncellendi"
-  },
-  "message.username.updateError": {
-    "message": "Kullanıcı adı güncellenemedi. Birazdan tekrar deneyin."
-  },
-  "message.requestTimeout": {
-    "message": "İstek zaman aşımına uğradı. Tekrar deneyin."
-  },
-  "message.tooManyRequests": {
-    "message": "Çok fazla deneme yapıldı. Birazdan tekrar deneyin."
-  },
-  "account.signInRequired": {
-    "message": "Hesabınızı görmek için giriş yapın"
-  },
-  "account.signInRequiredHint": {
-    "message": "Sizi ana sayfaya götürüyoruz; aşağıdaki düğmeyi de kullanabilirsiniz."
-  },
-  "myspace.tagManager.color": {
-    "message": "Etiket rengi"
-  },
-  "comments.gif.searchPlaceholder": {
-    "message": "GIF ara"
   }
 }

@@ -30,7 +30,25 @@ export const EmptyState: React.FC<EmptyStateProps> = ({ icon, title, description
         maxWidth: 420,
         margin: "0 auto",
       }}>
-      {icon && <div style={{ fontSize: compact ? 28 : 40, color: "var(--site-color-text-tertiary)", marginBottom: compact ? 14 : 20, lineHeight: 1 }}>{icon}</div>}
+      {icon && (
+        <div
+          aria-hidden
+          style={{
+            width: compact ? 44 : 56,
+            height: compact ? 44 : 56,
+            borderRadius: compact ? 12 : 16,
+            background: "var(--site-color-preview-bg)",
+            border: "1px solid var(--site-color-hairline)",
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: compact ? 20 : 26,
+            color: "var(--site-color-text-tertiary)",
+            marginBottom: compact ? 12 : 16,
+          }}>
+          {icon}
+        </div>
+      )}
       <h3
         style={{
           fontSize: compact ? 15 : 18,

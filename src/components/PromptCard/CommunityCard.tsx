@@ -25,7 +25,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, isLoggedIn, onToggleFa
       e.stopPropagation();
       onToggleFavorite?.(user.id, true);
     },
-    [onToggleFavorite, user.id]
+    [onToggleFavorite, user.id],
   );
 
   const handleUpvote = useCallback(
@@ -33,7 +33,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, isLoggedIn, onToggleFa
       e.stopPropagation();
       onVote?.(user.id, "upvote");
     },
-    [onVote, user.id]
+    [onVote, user.id],
   );
 
   const handleDownvote = useCallback(
@@ -41,7 +41,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, isLoggedIn, onToggleFa
       e.stopPropagation();
       onVote?.(user.id, "downvote");
     },
-    [onVote, user.id]
+    [onVote, user.id],
   );
 
   const handleCardClick = useCallback(() => {
@@ -58,63 +58,84 @@ const CommunityCardComponent = ({ data: user, isFavorite, isLoggedIn, onToggleFa
     });
   }, [onOpenModal, user]);
 
+  const hasRemark = Boolean(user.remark?.trim());
+  const promptRows = hasRemark ? 3 : 4;
+
   return (
     <BasePromptCard
       title={
-        <Typography.Title level={3} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
+        <Typography.Title level={3} style={{ margin: 0, fontSize: 15.5, fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
           <Link href={`/community-prompt?id=${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
             {user.title}
           </Link>
         </Typography.Title>
       }
       titleExtra={
-        <Typography.Text style={{ fontSize: 11, color: "var(--site-color-text-tertiary)", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
-          <UserOutlined style={{ marginInlineEnd: 4 }} />
-          {user.owner}
-        </Typography.Text>
+        <span style={{ fontSize: 11, color: "var(--site-color-text-tertiary)", display: "inline-flex", alignItems: "center", gap: 4, maxWidth: 96, minWidth: 0 }}>
+          <UserOutlined style={{ flexShrink: 0 }} />
+          <Typography.Text style={{ fontSize: "inherit", color: "inherit", minWidth: 0 }} ellipsis={{ tooltip: true }}>
+            {user.owner}
+          </Typography.Text>
+        </span>
       }
-      actions={[
-        <CopyButton key="copy" text={user.description} variant="iconOnly" block />,
-        isLoggedIn && onToggleFavorite && (
-          <IconAction
-            key="fav"
-            label={isFavorite ? translate({ id: "action.removeFavorite", message: "从收藏中移除" }) : translate({ id: "common.favorites", message: "收藏" })}
-            icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />}
-            onClick={handleToggleFavorite}
-            block
-          />
-        ),
-        onVote && (
-          <IconAction key="up" label={translate({ id: "action.upvote", message: "赞" })} icon={<UpOutlined />} onClick={handleUpvote} block>
-            <span style={{ fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>{user.upvotes || 0}</span>
-          </IconAction>
-        ),
-        // 非对称：downvotes === 0 时 icon-only + 弱化（opacity 0.6），> 0 时显示数字与 ▲ 对称
-        onVote && (
-          <IconAction
-            key="down"
-            label={translate({ id: "action.downvote", message: "踩" })}
-            icon={<DownOutlined />}
-            onClick={handleDownvote}
-            block
-            className={(user.downvotes ?? 0) > 0 ? undefined : styles.cardVoteIconOnly}>
-            {(user.downvotes ?? 0) > 0 && <span style={{ fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>{user.downvotes}</span>}
-          </IconAction>
-        ),
-      ].filter(Boolean)}
+      footer={
+        <>
+          <Flex align="center" gap={4} style={{ minWidth: 0 }}>
+            {onVote && (
+              <>
+                <IconAction size="small" label={translate({ id: "action.upvote", message: "赞" })} icon={<UpOutlined />} onClick={handleUpvote}>
+                  <span style={{ fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums", fontSize: 12 }}>{user.upvotes || 0}</span>
+                </IconAction>
+                <IconAction
+                  size="small"
+                  label={translate({ id: "action.downvote", message: "踩" })}
+                  icon={<DownOutlined />}
+                  onClick={handleDownvote}
+                  className={(user.downvotes ?? 0) > 0 ? undefined : styles.cardVoteIconOnly}>
+                  {(user.downvotes ?? 0) > 0 && (
+                    <span style={{ fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums", fontSize: 12 }}>{user.downvotes}</span>
+                  )}
+                </IconAction>
+              </>
+            )}
+          </Flex>
+          <Flex align="center" gap={4} style={{ flexShrink: 0 }}>
+            {isLoggedIn && onToggleFavorite && (
+              <IconAction
+                size="small"
+                label={isFavorite ? translate({ id: "action.removeFavorite", message: "从收藏中移除" }) : translate({ id: "common.favorites", message: "收藏" })}
+                icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />}
+                onClick={handleToggleFavorite}
+              />
+            )}
+            <CopyButton text={user.description} variant="iconOnly" size="small" />
+          </Flex>
+        </>
+      }
       onCardClick={handleCardClick}>
       <PromptRemark remark={user.remark} />
-      <ClampBox>
-        <Typography.Paragraph ellipsis={{ rows: 5 }} style={{ marginBottom: 0, color: "var(--ifm-color-content-secondary)", fontSize: 13, lineHeight: 1.55 }}>
-          {user.description}
-        </Typography.Paragraph>
-      </ClampBox>
-      <Flex justify="space-between" align="center">
-        <div style={{ flex: 1, overflow: "hidden" }}>
-          <PromptCardTag tags={user.tags} />
-        </div>
-        <PromptSourceLink href={user.website} />
-      </Flex>
+      <div className={hasRemark ? styles.promptBodyAfterRemark : undefined}>
+        <ClampBox>
+          <Typography.Paragraph
+            ellipsis={{ rows: promptRows }}
+            style={{
+              marginBottom: 0,
+              color: hasRemark ? "var(--site-color-text-tertiary)" : "var(--ifm-color-content-secondary)",
+              fontSize: hasRemark ? 12.5 : 13,
+              lineHeight: hasRemark ? 1.68 : 1.7,
+            }}>
+            {user.description}
+          </Typography.Paragraph>
+        </ClampBox>
+      </div>
+      {(Boolean(user.tags?.length) || user.website) && (
+        <Flex justify="space-between" align="center" gap={8} style={{ marginTop: "auto" }}>
+          <div style={{ flex: 1, minWidth: 0, overflow: "hidden" }}>
+            {user.tags && <PromptCardTag tags={user.tags} maxVisible={2} />}
+          </div>
+          <PromptSourceLink href={user.website} />
+        </Flex>
+      )}
     </BasePromptCard>
   );
 };

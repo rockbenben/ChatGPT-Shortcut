@@ -54,9 +54,8 @@ const CHANNELS: Channel[] = [
 const tertiary: React.CSSProperties = { color: "var(--site-color-text-tertiary)" };
 const monoFont: React.CSSProperties = { fontFamily: "var(--site-font-mono)" };
 const channelLabelStyle: React.CSSProperties = {
-  fontSize: 11,
-  fontFamily: "var(--site-font-mono)",
-  letterSpacing: "0.02em",
+  fontSize: 11.5,
+  fontFamily: "inherit",
   whiteSpace: "nowrap",
 };
 
@@ -71,8 +70,8 @@ function CopyLinkBar({ url }: { url: string }) {
       style={{
         padding: "6px 6px 6px 10px",
         border: "1px solid var(--site-color-hairline)",
-        borderRadius: 6,
-        background: "var(--site-color-ghost-border)",
+        borderRadius: 8,
+        background: "var(--site-color-preview-bg)",
       }}>
       <LinkOutlined style={{ ...tertiary, flexShrink: 0, fontSize: 13 }} />
       <Typography.Text ellipsis style={{ ...tertiary, ...monoFont, flex: 1, fontSize: 12, minWidth: 0 }}>
@@ -84,8 +83,13 @@ function CopyLinkBar({ url }: { url: string }) {
         icon={copied ? <CheckOutlined /> : null}
         onClick={() => copyText(url)}
         aria-label={translate({ id: "share.copy", message: "复制" })}
-        style={{ ...monoFont, flexShrink: 0, height: 24, fontSize: 12 }}>
-        {copied ? null : <Translate id="share.copy">复制</Translate>}
+        style={{
+          flexShrink: 0,
+          height: 26,
+          fontSize: 12,
+          color: copied ? "var(--site-color-tag-selected-text)" : undefined,
+        }}>
+        {copied ? <Translate id="message.copied">已复制</Translate> : <Translate id="share.copy">复制</Translate>}
       </Button>
     </Flex>
   );

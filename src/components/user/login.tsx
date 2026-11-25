@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Button, Card, Form, Input, Checkbox, Typography, App, Flex, Divider, Segmented } from "antd";
+import { Button, Form, Input, Checkbox, Typography, App, Flex, Divider, Segmented } from "antd";
 import { GoogleOutlined, MailOutlined, LockOutlined, UserOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
@@ -338,7 +338,7 @@ const LoginPage = () => {
   };
 
   const renderLoginForm = () => (
-    <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <Segmented
         block
         size="large"
@@ -352,7 +352,7 @@ const LoginPage = () => {
 
       {loginType === "password" ? (
         <Form form={form} onFinish={onFinishLogin} layout="vertical" size="large">
-          <Form.Item name="username" rules={rules.username} style={{ marginBottom: 16 }}>
+          <Form.Item name="username" rules={rules.username} style={{ marginBottom: 14 }}>
             <Input
               autoComplete="username"
               prefix={<UserOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
@@ -360,7 +360,7 @@ const LoginPage = () => {
               size="large"
             />
           </Form.Item>
-          <Form.Item name="password" rules={rules.password} style={{ marginBottom: 8 }}>
+          <Form.Item name="password" rules={rules.password} style={{ marginBottom: 6 }}>
             <Input.Password
               autoComplete="current-password"
               prefix={<LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
@@ -369,7 +369,7 @@ const LoginPage = () => {
             />
           </Form.Item>
 
-          <Flex justify="flex-end" style={{ marginBottom: 24 }}>
+          <Flex justify="flex-end" style={{ marginBottom: 16 }}>
             <Button type="link" onClick={handleForgotPasswordClick} style={{ padding: 0, height: "auto", color: "var(--site-color-text-tertiary)", fontSize: 12 }}>
               <Translate id="action.forgotPassword">忘记密码</Translate>
             </Button>
@@ -383,21 +383,21 @@ const LoginPage = () => {
         <Form form={form} onFinish={handleSendPasswordlessLink} layout="vertical" size="large">
           <div
             style={{
-              marginBottom: 24,
-              padding: "12px 16px",
+              marginBottom: 16,
+              padding: "12px 14px",
               background: "rgba(var(--ifm-color-primary-rgb),0.06)",
               border: "1px solid rgba(var(--ifm-color-primary-rgb),0.2)",
-              borderRadius: 6,
+              borderRadius: 10,
               display: "flex",
-              gap: 12,
+              gap: 10,
               alignItems: "flex-start",
             }}>
-            <InfoCircleOutlined style={{ color: "var(--site-color-tag-selected-text)", marginTop: 4 }} />
+            <InfoCircleOutlined style={{ color: "var(--site-color-tag-selected-text)", marginTop: 3 }} />
             <Text style={{ fontSize: 13, color: "var(--ifm-color-content-secondary)", lineHeight: 1.55 }}>
               <Translate id="login.passwordless.info">登录链接将发送至你的邮箱，点击即可登录</Translate>
             </Text>
           </div>
-          <Form.Item name="email" rules={rules.username} style={{ marginBottom: 24 }}>
+          <Form.Item name="email" rules={rules.username} style={{ marginBottom: 16 }}>
             <Input
               autoComplete="username"
               prefix={<MailOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
@@ -412,11 +412,11 @@ const LoginPage = () => {
       )}
 
       <div>
-        <Divider plain style={{ margin: "24px 0", color: "var(--site-color-text-tertiary)", fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", borderColor: "var(--site-color-hairline)" }}>
+        <Divider plain style={{ margin: "16px 0", color: "var(--site-color-text-tertiary)", fontSize: 12, fontFamily: "inherit", letterSpacing: "0.04em", borderColor: "var(--site-color-hairline)" }}>
           Or
         </Divider>
 
-        <Button block size="large" onClick={handleGoogleLogin} icon={<GoogleOutlined />} style={{ marginBottom: 24 }}>
+        <Button block size="large" onClick={handleGoogleLogin} icon={<GoogleOutlined />} style={{ marginBottom: 16 }}>
           <Translate id="login.google.button">通过 Google 登录</Translate>
         </Button>
 
@@ -505,32 +505,23 @@ const LoginPage = () => {
   );
 
   return (
-    <Card
-      variant="borderless"
-      title={
-        <>
-          <Title level={3} style={{ textAlign: "center", marginTop: 12, marginBottom: 8, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em" }}>
-            {viewState === "login" && <Translate id="login.title.welcome">欢迎回来</Translate>}
-            {viewState === "register" && <Translate id="login.title.register">加入社区</Translate>}
-            {viewState === "forgot-password" && <Translate id="login.title.forgotPassword">找回密码</Translate>}
-          </Title>
-          <div style={{ textAlign: "center", marginBottom: 16 }}>
-            <Text style={{ fontSize: 13, color: "var(--ifm-color-content-secondary)" }}>
-              {viewState === "login" && <Translate id="login.subtitle.welcome">登录探索更多优质提示词</Translate>}
-              {viewState === "register" && <Translate id="login.subtitle.register">发现、分享和创造精彩提示词</Translate>}
-              {viewState === "forgot-password" && <Translate id="login.subtitle.forgotPassword">重置链接将发送至你的邮箱</Translate>}
-            </Text>
-          </div>
-        </>
-      }
-      style={{ maxWidth: 440, margin: "0 auto", background: "transparent" }}
-      styles={{ header: { borderBottom: "none" }, body: { padding: "0 24px 16px" } }}>
-      <div key={formKey} style={{ marginTop: 24 }}>
+    <div style={{ maxWidth: 360, margin: "0 auto", padding: "8px 4px 4px" }}>
+      <Title level={3} style={{ textAlign: "center", margin: "0 0 6px", fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em" }}>
+        {viewState === "login" && <Translate id="login.title.welcome">欢迎回来</Translate>}
+        {viewState === "register" && <Translate id="login.title.register">加入社区</Translate>}
+        {viewState === "forgot-password" && <Translate id="login.title.forgotPassword">找回密码</Translate>}
+      </Title>
+      <p style={{ textAlign: "center", margin: "0 0 20px", fontSize: 13.5, fontWeight: 400, color: "var(--ifm-color-content-secondary)", lineHeight: 1.5 }}>
+        {viewState === "login" && <Translate id="login.subtitle.welcome">登录探索更多优质提示词</Translate>}
+        {viewState === "register" && <Translate id="login.subtitle.register">发现、分享和创造精彩提示词</Translate>}
+        {viewState === "forgot-password" && <Translate id="login.subtitle.forgotPassword">重置链接将发送至你的邮箱</Translate>}
+      </p>
+      <div key={formKey}>
         {viewState === "login" && renderLoginForm()}
         {viewState === "register" && renderRegisterForm()}
         {viewState === "forgot-password" && renderForgotPasswordForm()}
       </div>
-    </Card>
+    </div>
   );
 };
 

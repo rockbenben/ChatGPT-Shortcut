@@ -248,7 +248,7 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
 
   return (
     <>
-      <Modal open={isLoginModalOpen} onCancel={() => setIsLoginModalOpen(false)} footer={null}>
+      <Modal open={isLoginModalOpen} onCancel={() => setIsLoginModalOpen(false)} footer={null} centered width={440}>
         <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
           <LoginComponent />
         </Suspense>

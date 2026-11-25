@@ -1,4 +1,10 @@
 {
+  "account.signInRequired": {
+    "message": "Đăng nhập để xem tài khoản"
+  },
+  "account.signInRequiredHint": {
+    "message": "Đang đưa bạn về trang chủ, hoặc dùng nút bên dưới."
+  },
   "action.add": {
     "message": "Thêm"
   },
@@ -89,6 +95,30 @@
   "action.viewDetails": {
     "message": "Xem chi tiết"
   },
+  "auth.callback.backHome": {
+    "message": "Về trang chủ để đăng nhập"
+  },
+  "auth.callback.failed": {
+    "message": "Đăng nhập chưa hoàn tất"
+  },
+  "auth.callback.failedHint": {
+    "message": "Liên kết đăng nhập có thể đã hết hạn hoặc đã được dùng. Hãy quay lại trang chủ và đăng nhập lại."
+  },
+  "auth.callback.idle": {
+    "message": "Không có đăng nhập nào cần xử lý ở đây"
+  },
+  "auth.callback.idleHint": {
+    "message": "Trang này chỉ dùng để chuyển hướng đăng nhập, không cần lưu trang này."
+  },
+  "auth.callback.title": {
+    "message": "Hoàn tất đăng nhập"
+  },
+  "auth.callback.working": {
+    "message": "Đang đăng nhập…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Đừng đóng trang này, bạn sẽ quay lại trang chủ ngay."
+  },
   "button.clearAllCache": {
     "message": "Xóa Tất cả Cache"
   },
@@ -139,6 +169,9 @@
   },
   "comments.gif.label": {
     "message": "Chèn GIF"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "Tìm GIF"
   },
   "comments.heading": {
     "message": "Thảo luận"
@@ -238,6 +271,12 @@
   },
   "feedback.welcome": {
     "message": "Phản hồi & Góp ý"
+  },
+  "filter.lessTags": {
+    "message": "Thu gọn"
+  },
+  "filter.moreTags": {
+    "message": "Thêm ({count})"
   },
   "filter.operator.all.tip": {
     "message": "Hiển thị prompt khớp với tất cả tag được chọn"
@@ -410,11 +449,11 @@
   "message.addPrompt.success": {
     "message": "Đã gửi prompt — bạn sẽ thấy nó ở đầu Bộ sưu tập của tôi"
   },
-  "message.cache.cleared": {
-    "message": "Đã xóa bộ nhớ cache"
-  },
   "message.cache.clearError": {
     "message": "Không thể xóa cache, vui lòng thử lại sau"
+  },
+  "message.cache.cleared": {
+    "message": "Đã xóa bộ nhớ cache"
   },
   "message.cannotFavorOwn": {
     "message": "Không thể yêu thích prompt của chính bạn"
@@ -506,11 +545,11 @@
   "message.noSpaceItems": {
     "message": "Chưa có gì — tạo prompt hoặc đánh dấu yêu thích"
   },
-  "message.orderSaved": {
-    "message": "Đã lưu bố cục"
-  },
   "message.orderSaveFailed": {
     "message": "Không thể lưu bố cục, vui lòng thử lại sau"
+  },
+  "message.orderSaved": {
+    "message": "Đã lưu bố cục"
   },
   "message.postComment.error": {
     "message": "Gửi bình luận thất bại. Vui lòng thử lại sau."
@@ -526,6 +565,9 @@
   },
   "message.removeFavorite.success": {
     "message": "Đã xóa khỏi yêu thích"
+  },
+  "message.requestTimeout": {
+    "message": "Yêu cầu đã hết thời gian chờ. Hãy thử lại."
   },
   "message.resetPassword.error": {
     "message": "Không thể đặt lại mật khẩu, vui lòng thử lại sau"
@@ -548,17 +590,26 @@
   "message.success.register": {
     "message": "Đã tạo tài khoản"
   },
+  "message.tagsUpdateFailed": {
+    "message": "Không thể cập nhật thẻ, vui lòng thử lại sau"
+  },
   "message.tagsUpdated": {
     "message": "Đã cập nhật thẻ"
   },
-  "message.tagsUpdateFailed": {
-    "message": "Không thể cập nhật thẻ, vui lòng thử lại sau"
+  "message.tooManyRequests": {
+    "message": "Bạn thao tác quá nhanh. Hãy thử lại sau giây lát."
   },
   "message.updatePrompt.error": {
     "message": "Không thể cập nhật prompt, vui lòng thử lại sau"
   },
   "message.updatePrompt.success": {
     "message": "Đã cập nhật prompt"
+  },
+  "message.username.updateError": {
+    "message": "Không cập nhật được tên người dùng. Hãy thử lại sau giây lát."
+  },
+  "message.username.updated": {
+    "message": "Đã cập nhật tên người dùng"
   },
   "modal.clearCache.title": {
     "message": "Xóa Cache?"
@@ -608,8 +659,14 @@
   "myspace.manageTags": {
     "message": "Quản lý thẻ"
   },
+  "myspace.tagManager.color": {
+    "message": "Màu thẻ"
+  },
   "myspace.tagManager.empty": {
     "message": "Không có thẻ tùy chỉnh"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Nhập tên ở trên, chọn một màu là bạn có thẻ đầu tiên."
   },
   "myspace.tagManager.namePlaceholder": {
     "message": "Tên thẻ"
@@ -629,6 +686,9 @@
   "noResults.title": {
     "message": "Không tìm thấy prompt phù hợp"
   },
+  "placeholder.clear": {
+    "message": "Xóa"
+  },
   "placeholder.comment": {
     "message": "Nhập bình luận tại đây... Hỗ trợ cú pháp Markdown và HTML"
   },
@@ -640,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "Email"
+  },
+  "placeholder.fillTitle": {
+    "message": "Điền biến số"
   },
   "placeholder.newPassword": {
     "message": "Mật khẩu mới"
@@ -677,6 +740,9 @@
   "prompt.content": {
     "message": "Nội dung Prompt"
   },
+  "prompt.copyFilled": {
+    "message": "Sao chép đã điền"
+  },
   "prompt.private": {
     "message": "Riêng tư"
   },
@@ -701,11 +767,11 @@
   "share.native": {
     "message": "Hệ thống"
   },
-  "share.shareTo": {
-    "message": "Chia sẻ lên"
-  },
   "share.shareOn": {
     "message": "Chia sẻ lên {channel}"
+  },
+  "share.shareTo": {
+    "message": "Chia sẻ lên"
   },
   "showcase.header.button": {
     "message": "Khám phá cộng đồng"
@@ -878,6 +944,70 @@
   "sort.newest": {
     "message": "Mới nhất"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Đóng",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Cuộn lên đầu trang",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Đã sao chép",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Sao chép",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Sao chép mã vào clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Bật/tắt xuống dòng",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Thu gọn danh mục thanh bên '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Mở rộng danh mục thanh bên '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "Trang này đã bị lỗi.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Thử lại",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(mở trong tab mới)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Điều hướng chính",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "Chúng tôi không thể tìm thấy những gì bạn đang tìm kiếm.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Vui lòng liên hệ quản trị trang đã dẫn bạn đến đây và báo cho họ biết liên kết đã hỏng.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "Không tìm thấy trang",
+    "description": "The title of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "Trên trang này",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
   "theme.admonition.caution": {
     "message": "cẩn thận",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -901,14 +1031,6 @@
   "theme.admonition.warning": {
     "message": "cảnh báo",
     "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Đóng",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Cuộn lên đầu trang",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "Lưu trữ",
@@ -962,10 +1084,6 @@
     "message": "Một bài viết|{count} bài viết",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "1 phút đọc|{readingTime} phút đọc",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.post.readMore": {
     "message": "Đọc thêm",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -974,6 +1092,10 @@
     "message": "Đọc thêm về {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "1 phút đọc|{readingTime} phút đọc",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "Điều hướng bài viết gần đây trong blog",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -981,22 +1103,6 @@
   "theme.blog.tagTitle": {
     "message": "{nPosts} được gắn thẻ \"{tagName}\"",
     "description": "The title of the page for a blog tag"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "Đã sao chép",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "Sao chép",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Sao chép mã vào clipboard",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Bật/tắt xuống dòng",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Chuyển đổi giữa chế độ tối và sáng (hiện tại {mode})",
@@ -1042,6 +1148,10 @@
     "message": "Trang không công khai",
     "description": "The unlisted content banner title"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 mục|{count} mục",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "Trang chủ",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1049,10 +1159,6 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "Đường dẫn",
     "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 mục|{count} mục",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Trang tài liệu",
@@ -1121,26 +1227,6 @@
     "message": "Đây là tài liệu chưa phát hành cho {siteTitle} phiên bản {versionLabel}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Thu gọn danh mục thanh bên '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Mở rộng danh mục thanh bên '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "Trang này đã bị lỗi.",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Thử lại",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(mở trong tab mới)",
-    "description": "The ARIA label for the external link icon"
-  },
   "theme.lastUpdated.atDate": {
     "message": "vào {date}",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1173,22 +1259,6 @@
     "message": "Phiên bản",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Điều hướng chính",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "Chúng tôi không thể tìm thấy những gì bạn đang tìm kiếm.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "Vui lòng liên hệ quản trị trang đã dẫn bạn đến đây và báo cho họ biết liên kết đã hỏng.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "Không tìm thấy trang",
-    "description": "The title of the 404 page"
-  },
   "theme.tags.tagsListLabel": {
     "message": "Thẻ:",
     "description": "The label alongside a tag list"
@@ -1200,10 +1270,6 @@
   "theme.tags.tagsPageTitle": {
     "message": "Thẻ",
     "description": "The title of the tag list page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "Trên trang này",
-    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "Quản lý dữ liệu"
@@ -1271,6 +1337,9 @@
   "validation.replyRequired": {
     "message": "Vui lòng nhập nội dung trả lời"
   },
+  "validation.username.empty": {
+    "message": "Tên người dùng không được để trống"
+  },
   "validation.username.required": {
     "message": "Vui lòng nhập tên người dùng hoặc email đã đăng ký"
   },
@@ -1294,59 +1363,5 @@
   },
   "vote.upvote.success": {
     "message": "Đã thích prompt này"
-  },
-  "auth.callback.title": {
-    "message": "Hoàn tất đăng nhập"
-  },
-  "auth.callback.working": {
-    "message": "Đang đăng nhập…"
-  },
-  "auth.callback.workingHint": {
-    "message": "Đừng đóng trang này, bạn sẽ quay lại trang chủ ngay."
-  },
-  "auth.callback.failed": {
-    "message": "Đăng nhập chưa hoàn tất"
-  },
-  "auth.callback.failedHint": {
-    "message": "Liên kết đăng nhập có thể đã hết hạn hoặc đã được dùng. Hãy quay lại trang chủ và đăng nhập lại."
-  },
-  "auth.callback.idle": {
-    "message": "Không có đăng nhập nào cần xử lý ở đây"
-  },
-  "auth.callback.idleHint": {
-    "message": "Trang này chỉ dùng để chuyển hướng đăng nhập, không cần lưu trang này."
-  },
-  "auth.callback.backHome": {
-    "message": "Về trang chủ để đăng nhập"
-  },
-  "myspace.tagManager.emptyHint": {
-    "message": "Nhập tên ở trên, chọn một màu là bạn có thẻ đầu tiên."
-  },
-  "validation.username.empty": {
-    "message": "Tên người dùng không được để trống"
-  },
-  "message.username.updated": {
-    "message": "Đã cập nhật tên người dùng"
-  },
-  "message.username.updateError": {
-    "message": "Không cập nhật được tên người dùng. Hãy thử lại sau giây lát."
-  },
-  "message.requestTimeout": {
-    "message": "Yêu cầu đã hết thời gian chờ. Hãy thử lại."
-  },
-  "message.tooManyRequests": {
-    "message": "Bạn thao tác quá nhanh. Hãy thử lại sau giây lát."
-  },
-  "account.signInRequired": {
-    "message": "Đăng nhập để xem tài khoản"
-  },
-  "account.signInRequiredHint": {
-    "message": "Đang đưa bạn về trang chủ, hoặc dùng nút bên dưới."
-  },
-  "myspace.tagManager.color": {
-    "message": "Màu thẻ"
-  },
-  "comments.gif.searchPlaceholder": {
-    "message": "Tìm GIF"
   }
 }

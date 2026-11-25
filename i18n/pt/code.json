@@ -1,4 +1,10 @@
 {
+  "account.signInRequired": {
+    "message": "Entre para ver sua conta"
+  },
+  "account.signInRequiredHint": {
+    "message": "Levando você para a página inicial — ou use o botão abaixo."
+  },
   "action.add": {
     "message": "Adicionar"
   },
@@ -89,6 +95,30 @@
   "action.viewDetails": {
     "message": "Ver Detalhes"
   },
+  "auth.callback.backHome": {
+    "message": "Voltar ao início para entrar"
+  },
+  "auth.callback.failed": {
+    "message": "O login não foi concluído"
+  },
+  "auth.callback.failedHint": {
+    "message": "O link de login pode ter expirado ou já ter sido usado. Volte à página inicial e entre novamente."
+  },
+  "auth.callback.idle": {
+    "message": "Não há login pendente aqui"
+  },
+  "auth.callback.idleHint": {
+    "message": "Esta página só trata dos redirecionamentos de login — não precisa salvá-la."
+  },
+  "auth.callback.title": {
+    "message": "Concluir o login"
+  },
+  "auth.callback.working": {
+    "message": "Entrando…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Não feche esta página: você voltará à página inicial em instantes."
+  },
   "button.clearAllCache": {
     "message": "Limpar Todo o Cache"
   },
@@ -139,6 +169,9 @@
   },
   "comments.gif.label": {
     "message": "Inserir GIF"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "Buscar GIFs"
   },
   "comments.heading": {
     "message": "Discussão"
@@ -238,6 +271,12 @@
   },
   "feedback.welcome": {
     "message": "Feedback e Sugestões"
+  },
+  "filter.lessTags": {
+    "message": "Ver menos"
+  },
+  "filter.moreTags": {
+    "message": "Mais ({count})"
   },
   "filter.operator.all.tip": {
     "message": "Mostrar prompts que correspondam a todas as tags selecionadas"
@@ -410,11 +449,11 @@
   "message.addPrompt.success": {
     "message": "Prompt enviado — você o encontrará no início da Minha Coleção"
   },
-  "message.cache.cleared": {
-    "message": "Cache limpo"
-  },
   "message.cache.clearError": {
     "message": "Falha ao limpar cache, tente novamente mais tarde"
+  },
+  "message.cache.cleared": {
+    "message": "Cache limpo"
   },
   "message.cannotFavorOwn": {
     "message": "Não é possível favoritar seu próprio prompt"
@@ -506,11 +545,11 @@
   "message.noSpaceItems": {
     "message": "Nada aqui ainda — crie um prompt ou favorite algum"
   },
-  "message.orderSaved": {
-    "message": "Ordenação salva"
-  },
   "message.orderSaveFailed": {
     "message": "Falha ao salvar a ordenação, tente novamente mais tarde"
+  },
+  "message.orderSaved": {
+    "message": "Ordenação salva"
   },
   "message.postComment.error": {
     "message": "Falha ao enviar o comentário. Tente novamente mais tarde."
@@ -526,6 +565,9 @@
   },
   "message.removeFavorite.success": {
     "message": "Removido dos favoritos"
+  },
+  "message.requestTimeout": {
+    "message": "A solicitação expirou. Tente novamente."
   },
   "message.resetPassword.error": {
     "message": "Falha ao redefinir a senha, tente novamente mais tarde"
@@ -548,17 +590,26 @@
   "message.success.register": {
     "message": "Conta criada"
   },
+  "message.tagsUpdateFailed": {
+    "message": "Falha ao atualizar tags, tente novamente mais tarde"
+  },
   "message.tagsUpdated": {
     "message": "Tags atualizadas"
   },
-  "message.tagsUpdateFailed": {
-    "message": "Falha ao atualizar tags, tente novamente mais tarde"
+  "message.tooManyRequests": {
+    "message": "Tentativas em excesso. Tente novamente em instantes."
   },
   "message.updatePrompt.error": {
     "message": "Falha ao atualizar o prompt, tente novamente mais tarde"
   },
   "message.updatePrompt.success": {
     "message": "Prompt atualizado"
+  },
+  "message.username.updateError": {
+    "message": "Não foi possível atualizar o nome de usuário. Tente novamente em instantes."
+  },
+  "message.username.updated": {
+    "message": "Nome de usuário atualizado"
   },
   "modal.clearCache.title": {
     "message": "Limpar Cache?"
@@ -608,8 +659,14 @@
   "myspace.manageTags": {
     "message": "Gerenciar Tags"
   },
+  "myspace.tagManager.color": {
+    "message": "Cor da tag"
+  },
   "myspace.tagManager.empty": {
     "message": "Nenhuma tag personalizada"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Digite um nome acima, escolha uma cor e sua primeira tag estará pronta."
   },
   "myspace.tagManager.namePlaceholder": {
     "message": "Nome da Tag"
@@ -629,6 +686,9 @@
   "noResults.title": {
     "message": "Nenhum prompt correspondente encontrado"
   },
+  "placeholder.clear": {
+    "message": "Limpar"
+  },
   "placeholder.comment": {
     "message": "Insira o comentário aqui... Suporta sintaxe Markdown e HTML"
   },
@@ -640,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "E-mail"
+  },
+  "placeholder.fillTitle": {
+    "message": "Preencher variáveis"
   },
   "placeholder.newPassword": {
     "message": "Nova senha"
@@ -677,6 +740,9 @@
   "prompt.content": {
     "message": "Conteúdo do Prompt"
   },
+  "prompt.copyFilled": {
+    "message": "Copiar preenchido"
+  },
   "prompt.private": {
     "message": "Privado"
   },
@@ -701,11 +767,11 @@
   "share.native": {
     "message": "Sistema"
   },
-  "share.shareTo": {
-    "message": "Compartilhar em"
-  },
   "share.shareOn": {
     "message": "Compartilhar em {channel}"
+  },
+  "share.shareTo": {
+    "message": "Compartilhar em"
   },
   "showcase.header.button": {
     "message": "Explorar comunidade"
@@ -878,6 +944,70 @@
   "sort.newest": {
     "message": "Mais recentes"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Fechar",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Voltar para o topo",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copiado",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copiar",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copiar código para a área de transferência",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Alternar quebra automática de linha",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Recolher categoria da barra lateral '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expandir categoria da barra lateral '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "Esta página apresentou um erro.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Tentar novamente",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(abre em uma nova aba)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Navegação principal",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "Não foi possível encontrar o que você procurava.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Entre em contato com o proprietário do site que o direcionou para a URL original e informe-o de que o link está quebrado.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "Página não encontrada",
+    "description": "The title of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "Nesta página",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
   "theme.admonition.caution": {
     "message": "cuidado",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -901,14 +1031,6 @@
   "theme.admonition.warning": {
     "message": "aviso",
     "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Fechar",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Voltar para o topo",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "Arquivo",
@@ -962,10 +1084,6 @@
     "message": "Uma publicação|{count} publicações",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "1 min de leitura|{readingTime} min de leitura",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.post.readMore": {
     "message": "Leia mais",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -974,6 +1092,10 @@
     "message": "Leia mais sobre {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "1 min de leitura|{readingTime} min de leitura",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "Navegação das publicações recentes do blog",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -981,22 +1103,6 @@
   "theme.blog.tagTitle": {
     "message": "{nPosts} publicações com a tag \"{tagName}\"",
     "description": "The title of the page for a blog tag"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "Copiado",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "Copiar",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copiar código para a área de transferência",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Alternar quebra automática de linha",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Mudar entre modo claro e escuro ({mode} está ativo)",
@@ -1042,6 +1148,10 @@
     "message": "Página não listada",
     "description": "The unlisted content banner title"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 item|{count} itens",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "Página inicial",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1049,10 +1159,6 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "Trilha de navegação",
     "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 item|{count} itens",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Páginas de documento",
@@ -1121,26 +1227,6 @@
     "message": "Esta é uma documentação não lançada da versão {versionLabel} para {siteTitle}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Recolher categoria da barra lateral '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expandir categoria da barra lateral '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "Esta página apresentou um erro.",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Tentar novamente",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(abre em uma nova aba)",
-    "description": "The ARIA label for the external link icon"
-  },
   "theme.lastUpdated.atDate": {
     "message": "em {date}",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1173,22 +1259,6 @@
     "message": "Versões",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Navegação principal",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "Não foi possível encontrar o que você procurava.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "Entre em contato com o proprietário do site que o direcionou para a URL original e informe-o de que o link está quebrado.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "Página não encontrada",
-    "description": "The title of the 404 page"
-  },
   "theme.tags.tagsListLabel": {
     "message": "Tags:",
     "description": "The label alongside a tag list"
@@ -1200,10 +1270,6 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "Nesta página",
-    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "Gerenciamento de Dados"
@@ -1271,6 +1337,9 @@
   "validation.replyRequired": {
     "message": "Por favor, insira o conteúdo da resposta"
   },
+  "validation.username.empty": {
+    "message": "O nome de usuário não pode ficar vazio"
+  },
   "validation.username.required": {
     "message": "Por favor, insira o nome de usuário ou e-mail registrado"
   },
@@ -1294,59 +1363,5 @@
   },
   "vote.upvote.success": {
     "message": "Prompt curtido"
-  },
-  "auth.callback.title": {
-    "message": "Concluir o login"
-  },
-  "auth.callback.working": {
-    "message": "Entrando…"
-  },
-  "auth.callback.workingHint": {
-    "message": "Não feche esta página: você voltará à página inicial em instantes."
-  },
-  "auth.callback.failed": {
-    "message": "O login não foi concluído"
-  },
-  "auth.callback.failedHint": {
-    "message": "O link de login pode ter expirado ou já ter sido usado. Volte à página inicial e entre novamente."
-  },
-  "auth.callback.idle": {
-    "message": "Não há login pendente aqui"
-  },
-  "auth.callback.idleHint": {
-    "message": "Esta página só trata dos redirecionamentos de login — não precisa salvá-la."
-  },
-  "auth.callback.backHome": {
-    "message": "Voltar ao início para entrar"
-  },
-  "myspace.tagManager.emptyHint": {
-    "message": "Digite um nome acima, escolha uma cor e sua primeira tag estará pronta."
-  },
-  "validation.username.empty": {
-    "message": "O nome de usuário não pode ficar vazio"
-  },
-  "message.username.updated": {
-    "message": "Nome de usuário atualizado"
-  },
-  "message.username.updateError": {
-    "message": "Não foi possível atualizar o nome de usuário. Tente novamente em instantes."
-  },
-  "message.requestTimeout": {
-    "message": "A solicitação expirou. Tente novamente."
-  },
-  "message.tooManyRequests": {
-    "message": "Tentativas em excesso. Tente novamente em instantes."
-  },
-  "account.signInRequired": {
-    "message": "Entre para ver sua conta"
-  },
-  "account.signInRequiredHint": {
-    "message": "Levando você para a página inicial — ou use o botão abaixo."
-  },
-  "myspace.tagManager.color": {
-    "message": "Cor da tag"
-  },
-  "comments.gif.searchPlaceholder": {
-    "message": "Buscar GIFs"
   }
 }

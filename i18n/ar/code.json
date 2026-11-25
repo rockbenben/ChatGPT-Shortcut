@@ -1,4 +1,10 @@
 {
+  "account.signInRequired": {
+    "message": "سجّل الدخول لعرض حسابك"
+  },
+  "account.signInRequiredHint": {
+    "message": "جارٍ إعادتك إلى الصفحة الرئيسية، أو استخدم الزر أدناه."
+  },
   "action.add": {
     "message": "إضافة"
   },
@@ -89,6 +95,30 @@
   "action.viewDetails": {
     "message": "عرض التفاصيل"
   },
+  "auth.callback.backHome": {
+    "message": "العودة إلى الصفحة الرئيسية لتسجيل الدخول"
+  },
+  "auth.callback.failed": {
+    "message": "لم يكتمل تسجيل الدخول"
+  },
+  "auth.callback.failedHint": {
+    "message": "قد يكون رابط تسجيل الدخول منتهي الصلاحية أو مستخدَمًا من قبل. عد إلى الصفحة الرئيسية وسجّل الدخول مرة أخرى."
+  },
+  "auth.callback.idle": {
+    "message": "لا يوجد تسجيل دخول قيد الانتظار هنا"
+  },
+  "auth.callback.idleHint": {
+    "message": "هذه الصفحة مخصّصة لإعادة توجيه تسجيل الدخول فقط، ولا حاجة لحفظها في المفضلة."
+  },
+  "auth.callback.title": {
+    "message": "إكمال تسجيل الدخول"
+  },
+  "auth.callback.working": {
+    "message": "جارٍ تسجيل الدخول…"
+  },
+  "auth.callback.workingHint": {
+    "message": "لا تغلق هذه الصفحة، سنعيدك إلى الصفحة الرئيسية بعد قليل."
+  },
   "button.clearAllCache": {
     "message": "مسح كل التخزين المؤقت"
   },
@@ -139,6 +169,9 @@
   },
   "comments.gif.label": {
     "message": "إدراج GIF"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "البحث عن صور GIF"
   },
   "comments.heading": {
     "message": "النقاش"
@@ -238,6 +271,12 @@
   },
   "feedback.welcome": {
     "message": "الملاحظات والاقتراحات"
+  },
+  "filter.lessTags": {
+    "message": "عرض أقل"
+  },
+  "filter.moreTags": {
+    "message": "المزيد ({count})"
   },
   "filter.operator.all.tip": {
     "message": "عرض الموجهات المطابقة لجميع الوسوم المحددة"
@@ -410,11 +449,11 @@
   "message.addPrompt.success": {
     "message": "تم إرسال المطالبة — ستجدها في أعلى «مجموعتي»"
   },
-  "message.cache.cleared": {
-    "message": "تم مسح ذاكرة التخزين المؤقت"
-  },
   "message.cache.clearError": {
     "message": "فشل مسح ذاكرة التخزين المؤقت، يرجى المحاولة مرة أخرى لاحقًا"
+  },
+  "message.cache.cleared": {
+    "message": "تم مسح ذاكرة التخزين المؤقت"
   },
   "message.cannotFavorOwn": {
     "message": "لا يمكنك إضافة موجهك الخاص إلى المفضلة"
@@ -506,11 +545,11 @@
   "message.noSpaceItems": {
     "message": "لا يوجد شيء بعد — أنشئ موجه أو أضف إلى المفضلة"
   },
-  "message.orderSaved": {
-    "message": "تم حفظ الترتيب"
-  },
   "message.orderSaveFailed": {
     "message": "فشل في حفظ الترتيب، يرجى المحاولة مرة أخرى لاحقًا"
+  },
+  "message.orderSaved": {
+    "message": "تم حفظ الترتيب"
   },
   "message.postComment.error": {
     "message": "فشل إرسال التعليق. يرجى المحاولة مرة أخرى لاحقًا."
@@ -526,6 +565,9 @@
   },
   "message.removeFavorite.success": {
     "message": "تمت الإزالة من المفضلة"
+  },
+  "message.requestTimeout": {
+    "message": "انتهت مهلة الطلب. حاول مرة أخرى."
   },
   "message.resetPassword.error": {
     "message": "فشل إعادة تعيين كلمة المرور، يرجى المحاولة مرة أخرى لاحقًا"
@@ -548,17 +590,26 @@
   "message.success.register": {
     "message": "تم التسجيل"
   },
+  "message.tagsUpdateFailed": {
+    "message": "فشل تحديث الوسوم، يرجى المحاولة مرة أخرى لاحقًا"
+  },
   "message.tagsUpdated": {
     "message": "تم تحديث الوسوم"
   },
-  "message.tagsUpdateFailed": {
-    "message": "فشل تحديث الوسوم، يرجى المحاولة مرة أخرى لاحقًا"
+  "message.tooManyRequests": {
+    "message": "محاولات كثيرة جدًا. حاول مرة أخرى بعد قليل."
   },
   "message.updatePrompt.error": {
     "message": "فشل تحديث الموجه، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.updatePrompt.success": {
     "message": "تم تحديث الموجه"
+  },
+  "message.username.updateError": {
+    "message": "تعذّر تحديث اسم المستخدم. حاول مرة أخرى بعد قليل."
+  },
+  "message.username.updated": {
+    "message": "تم تحديث اسم المستخدم"
   },
   "modal.clearCache.title": {
     "message": "مسح ذاكرة التخزين المؤقت؟"
@@ -608,8 +659,14 @@
   "myspace.manageTags": {
     "message": "إدارة الوسوم"
   },
+  "myspace.tagManager.color": {
+    "message": "لون الوسم"
+  },
   "myspace.tagManager.empty": {
     "message": "لا توجد وسوم مخصصة"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "اكتب اسمًا في الأعلى واختر لونًا، وسيصبح أول وسم لديك جاهزًا."
   },
   "myspace.tagManager.namePlaceholder": {
     "message": "اسم الوسم"
@@ -629,6 +686,9 @@
   "noResults.title": {
     "message": "لم يتم العثور على موجهات مطابقة"
   },
+  "placeholder.clear": {
+    "message": "مسح"
+  },
   "placeholder.comment": {
     "message": "أدخل التعليق هنا... يدعم Markdown و HTML"
   },
@@ -640,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "البريد الإلكتروني"
+  },
+  "placeholder.fillTitle": {
+    "message": "تعبئة المتغيرات"
   },
   "placeholder.newPassword": {
     "message": "كلمة المرور الجديدة"
@@ -677,6 +740,9 @@
   "prompt.content": {
     "message": "محتوى الموجه"
   },
+  "prompt.copyFilled": {
+    "message": "نسخ النص المكتمل"
+  },
   "prompt.private": {
     "message": "خاص"
   },
@@ -701,11 +767,11 @@
   "share.native": {
     "message": "مشاركة النظام"
   },
-  "share.shareTo": {
-    "message": "مشاركة عبر"
-  },
   "share.shareOn": {
     "message": "مشاركة عبر {channel}"
+  },
+  "share.shareTo": {
+    "message": "مشاركة عبر"
   },
   "showcase.header.button": {
     "message": "استكشاف المجتمع"
@@ -878,6 +944,70 @@
   "sort.newest": {
     "message": "الأحدث"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "إغلاق",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "انتقل إلى الأعلى",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "تم النسخ",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "نسخ",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "نسخ الكود إلى الحافظة",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "التبديل بين التفاف النص",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "طي فئة الشريط الجانبي «{label}»",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "توسيع فئة الشريط الجانبي «{label}»",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "هذه الصفحة لا تستجيب.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "حاول مرة أخرى",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(يفتح في علامة تبويب جديدة)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "الرئيسية",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "لم نتمكن من العثور على ما كنت تبحث عنه.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "يرجى الاتصال بمالك الموقع الذي قادك إلى عنوان URL الأصلي وإبلاغه بأن الرابط معطل.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "الصفحة غير موجودة",
+    "description": "The title of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "في هذه الصفحة",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
   "theme.admonition.caution": {
     "message": "حذر",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -901,14 +1031,6 @@
   "theme.admonition.warning": {
     "message": "تحذير",
     "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "إغلاق",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "انتقل إلى الأعلى",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "أرشيف",
@@ -962,10 +1084,6 @@
     "message": "مقال واحد|{count} مقالات",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "دقيقة واحدة للقراءة|{readingTime} دقائق للقراءة",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.post.readMore": {
     "message": "اقرأ المزيد",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -974,6 +1092,10 @@
     "message": "اقرأ المزيد عن {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "دقيقة واحدة للقراءة|{readingTime} دقائق للقراءة",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "التنقل بين أحدث مقالات المدونة",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -981,22 +1103,6 @@
   "theme.blog.tagTitle": {
     "message": "{nPosts} مقالات بوسم \"{tagName}\"",
     "description": "The title of the page for a blog tag"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "تم النسخ",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "نسخ",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "نسخ الكود إلى الحافظة",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "التبديل بين التفاف النص",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "التبديل بين الوضع الداكن والفاتح (الحالي {mode})",
@@ -1042,6 +1148,10 @@
     "message": "صفحة غير مدرجة",
     "description": "The unlisted content banner title"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} عناصر",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "الصفحة الرئيسية",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1049,10 +1159,6 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "مسار التنقل",
     "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "{count} عناصر",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "التنقل بين الوثائق",
@@ -1121,26 +1227,6 @@
     "message": "هذه الوثائق لم يتم طرحها بعد للإصدار {siteTitle} {versionLabel}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "طي فئة الشريط الجانبي «{label}»",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "توسيع فئة الشريط الجانبي «{label}»",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "هذه الصفحة لا تستجيب.",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "حاول مرة أخرى",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(يفتح في علامة تبويب جديدة)",
-    "description": "The ARIA label for the external link icon"
-  },
   "theme.lastUpdated.atDate": {
     "message": "في {date}",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1173,22 +1259,6 @@
     "message": "الإصدارات",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
-  "theme.NavBar.navAriaLabel": {
-    "message": "الرئيسية",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "لم نتمكن من العثور على ما كنت تبحث عنه.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "يرجى الاتصال بمالك الموقع الذي قادك إلى عنوان URL الأصلي وإبلاغه بأن الرابط معطل.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "الصفحة غير موجودة",
-    "description": "The title of the 404 page"
-  },
   "theme.tags.tagsListLabel": {
     "message": "الوسوم:",
     "description": "The label alongside a tag list"
@@ -1200,10 +1270,6 @@
   "theme.tags.tagsPageTitle": {
     "message": "الوسوم",
     "description": "The title of the tag list page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "في هذه الصفحة",
-    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "إدارة البيانات"
@@ -1271,6 +1337,9 @@
   "validation.replyRequired": {
     "message": "يرجى إدخال محتوى الرد"
   },
+  "validation.username.empty": {
+    "message": "لا يمكن ترك اسم المستخدم فارغًا"
+  },
   "validation.username.required": {
     "message": "يرجى إدخال اسم المستخدم أو البريد الإلكتروني المسجل"
   },
@@ -1294,59 +1363,5 @@
   },
   "vote.upvote.success": {
     "message": "تم تسجيل الإعجاب"
-  },
-  "auth.callback.title": {
-    "message": "إكمال تسجيل الدخول"
-  },
-  "auth.callback.working": {
-    "message": "جارٍ تسجيل الدخول…"
-  },
-  "auth.callback.workingHint": {
-    "message": "لا تغلق هذه الصفحة، سنعيدك إلى الصفحة الرئيسية بعد قليل."
-  },
-  "auth.callback.failed": {
-    "message": "لم يكتمل تسجيل الدخول"
-  },
-  "auth.callback.failedHint": {
-    "message": "قد يكون رابط تسجيل الدخول منتهي الصلاحية أو مستخدَمًا من قبل. عد إلى الصفحة الرئيسية وسجّل الدخول مرة أخرى."
-  },
-  "auth.callback.idle": {
-    "message": "لا يوجد تسجيل دخول قيد الانتظار هنا"
-  },
-  "auth.callback.idleHint": {
-    "message": "هذه الصفحة مخصّصة لإعادة توجيه تسجيل الدخول فقط، ولا حاجة لحفظها في المفضلة."
-  },
-  "auth.callback.backHome": {
-    "message": "العودة إلى الصفحة الرئيسية لتسجيل الدخول"
-  },
-  "myspace.tagManager.emptyHint": {
-    "message": "اكتب اسمًا في الأعلى واختر لونًا، وسيصبح أول وسم لديك جاهزًا."
-  },
-  "validation.username.empty": {
-    "message": "لا يمكن ترك اسم المستخدم فارغًا"
-  },
-  "message.username.updated": {
-    "message": "تم تحديث اسم المستخدم"
-  },
-  "message.username.updateError": {
-    "message": "تعذّر تحديث اسم المستخدم. حاول مرة أخرى بعد قليل."
-  },
-  "message.requestTimeout": {
-    "message": "انتهت مهلة الطلب. حاول مرة أخرى."
-  },
-  "message.tooManyRequests": {
-    "message": "محاولات كثيرة جدًا. حاول مرة أخرى بعد قليل."
-  },
-  "account.signInRequired": {
-    "message": "سجّل الدخول لعرض حسابك"
-  },
-  "account.signInRequiredHint": {
-    "message": "جارٍ إعادتك إلى الصفحة الرئيسية، أو استخدم الزر أدناه."
-  },
-  "myspace.tagManager.color": {
-    "message": "لون الوسم"
-  },
-  "comments.gif.searchPlaceholder": {
-    "message": "البحث عن صور GIF"
   }
 }

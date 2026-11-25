@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
-import { Button, Space, Modal, Input, Flex, Dropdown } from "antd";
+import { Button, Space, Modal, Input, Flex, Popover } from "antd";
 import { PlusOutlined, DeleteOutlined, TagOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
 import type { CustomTag } from "./types";
@@ -16,7 +16,7 @@ const TagManagerModal: React.FC<{
 }> = ({ open, onClose, tags, onSave }) => {
   const [localTags, setLocalTags] = useState<CustomTag[]>(tags);
   const [newTagName, setNewTagName] = useState("");
-  const [newTagColor, setNewTagColor] = useState(PRESET_COLORS[4]); // gold as default
+  const [newTagColor, setNewTagColor] = useState(PRESET_COLORS[4]);
   const colorLabel = translate({ id: "myspace.tagManager.color", message: "标签颜色" });
 
   useEffect(() => {
@@ -34,7 +34,6 @@ const TagManagerModal: React.FC<{
     };
     setLocalTags([...localTags, newTag]);
     setNewTagName("");
-    // 自动切换到下一个颜色
     const currentIndex = PRESET_COLORS.indexOf(newTagColor);
     setNewTagColor(PRESET_COLORS[(currentIndex + 1) % PRESET_COLORS.length]);
   };
@@ -56,54 +55,93 @@ const TagManagerModal: React.FC<{
     onClose();
   };
 
-  // 色块即标签。原来直接显示 antd 调色板的 key（"gold"/"geekblue"）——实现细节，且 18 种
-  // 语言全是英文。填充用调色板原色而非 <Tag color>：暗色模式下 Tag 底色太重，抽掉文字后
-  // gold 和 lime 分辨不出。
-  const Swatch = ({ color }: { color: string }) => (
+  const Swatch = ({ color, active = false, size = 18 }: { color: string; active?: boolean; size?: number }) => (
     <span
-      aria-label={color}
+      aria-hidden
       style={{
         display: "inline-block",
-        width: 28,
-        height: 22,
-        borderRadius: 4,
-        // 用 CSS 变量而不是 @ant-design/colors 的 presetPrimaryColors：后者是固定 hex，
-        // 只有浅色那一份值。暗色下色块会显示 #eb2f96，可选完渲染出来的 <Tag> 是 #cb2b83
-        // （antd 的暗色调色板），色块和实际结果对不上。CSS 变量两个主题各有一份，
-        // 与下面 <Tag color={...}> 和 FilterBar 的圆点同源。
+        width: size,
+        height: size,
+        borderRadius: "50%",
         background: `var(--ant-${color}-6)`,
-        border: "1px solid var(--site-color-hairline)",
+        border: active ? "2px solid var(--ifm-color-content)" : "1px solid var(--site-color-hairline)",
+        boxShadow: active ? "0 0 0 2px var(--ant-color-bg-elevated, #272d33)" : undefined,
+        flexShrink: 0,
       }}
     />
   );
 
-  // 触发器用真 <button>：原来的 <Tag>（span）无法聚焦，键盘用户改不了颜色
-  const ColorSelector = ({ value, onChange }: { value: string; onChange: (color: string) => void }) => (
-    <Dropdown
-      trigger={["click"]}
-      menu={{
-        items: PRESET_COLORS.map((color) => ({
-          key: color,
-          label: <Swatch color={color} />,
-          onClick: () => onChange(color),
-        })),
-      }}>
-      <button type="button" aria-label={colorLabel} style={{ background: "none", border: 0, padding: 0, lineHeight: 0, cursor: "pointer" }}>
-        <Swatch color={value} />
-      </button>
-    </Dropdown>
-  );
+  const ColorSelector = ({ value, onChange }: { value: string; onChange: (color: string) => void }) => {
+    const [popoverOpen, setPopoverOpen] = useState(false);
+
+    return (
+      <Popover
+        trigger="click"
+        open={popoverOpen}
+        onOpenChange={setPopoverOpen}
+        placement="bottomLeft"
+        content={
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 8, padding: 2 }}>
+            {PRESET_COLORS.map((color) => (
+              <button
+                key={color}
+                type="button"
+                aria-label={color}
+                aria-pressed={value === color}
+                onClick={() => {
+                  onChange(color);
+                  setPopoverOpen(false);
+                }}
+                style={{
+                  background: "none",
+                  border: 0,
+                  padding: 2,
+                  lineHeight: 0,
+                  cursor: "pointer",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  borderRadius: "50%",
+                }}>
+                <Swatch color={color} active={value === color} size={22} />
+              </button>
+            ))}
+          </div>
+        }>
+        <button
+          type="button"
+          aria-label={colorLabel}
+          style={{
+            background: "transparent",
+            border: "1px solid var(--site-color-hairline)",
+            borderRadius: 8,
+            width: 32,
+            height: 32,
+            padding: 0,
+            cursor: "pointer",
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+          }}>
+          <Swatch color={value} size={16} />
+        </button>
+      </Popover>
+    );
+  };
 
   return (
     <Modal
+      centered
       title={<Translate id="myspace.tagManager.title">管理自定义标签</Translate>}
       open={open}
       onCancel={onClose}
       onOk={handleSave}
       okText={<Translate id="action.save">保存</Translate>}
       cancelText={<Translate id="action.cancel">取消</Translate>}>
-      <Space orientation="vertical" style={{ width: "100%" }}>
-        <Flex gap="small">
+      <Space orientation="vertical" size="middle" style={{ width: "100%", marginTop: 12 }}>
+        <Flex gap="small" align="center">
+          <ColorSelector value={newTagColor} onChange={setNewTagColor} />
           <Input
             aria-label={translate({ id: "myspace.tagManager.namePlaceholder", message: "标签名称" })}
             placeholder={translate({ id: "myspace.tagManager.namePlaceholder", message: "标签名称" })}
@@ -112,27 +150,48 @@ const TagManagerModal: React.FC<{
             onPressEnter={handleAddTag}
             style={{ flex: 1 }}
           />
-          <ColorSelector value={newTagColor} onChange={setNewTagColor} />
-          <Button icon={<PlusOutlined />} onClick={handleAddTag}>
+          <Button type="primary" icon={<PlusOutlined />} onClick={handleAddTag} disabled={!newTagName.trim()}>
             <Translate id="action.add">添加</Translate>
           </Button>
         </Flex>
 
-        <div style={{ marginTop: 16 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           {localTags.map((tag) => (
-            <Flex key={tag.id} align="center" gap="small" style={{ marginBottom: 8 }}>
+            <Flex
+              key={tag.id}
+              align="center"
+              gap="small"
+              style={{
+                padding: "4px 8px",
+                borderRadius: 10,
+                background: "var(--site-color-preview-bg)",
+                border: "1px solid var(--site-color-hairline)",
+              }}>
+              <ColorSelector value={tag.color} onChange={(color) => handleUpdateTagColor(tag.id, color)} />
               <Input
+                variant="borderless"
                 value={tag.name}
                 onChange={(e) => handleUpdateTagName(tag.id, e.target.value)}
                 aria-label={translate({ id: "myspace.tagManager.namePlaceholder", message: "标签名称" })}
-                style={{ flex: 1 }}
+                style={{ flex: 1, paddingInline: 4 }}
               />
-              <ColorSelector value={tag.color} onChange={(color) => handleUpdateTagColor(tag.id, color)} />
-              <Button icon={<DeleteOutlined />} danger size="small" aria-label={translate({ id: "action.delete", message: "删除" })} onClick={() => handleDeleteTag(tag.id)} />
+              <Button
+                type="text"
+                icon={<DeleteOutlined />}
+                size="small"
+                aria-label={translate({ id: "action.delete", message: "删除" })}
+                onClick={() => handleDeleteTag(tag.id)}
+                style={{ color: "var(--site-color-text-tertiary)" }}
+              />
             </Flex>
           ))}
           {localTags.length === 0 && (
-            <EmptyState compact icon={<TagOutlined />} title={<Translate id="myspace.tagManager.empty">暂无自定义标签</Translate>} description={<Translate id="myspace.tagManager.emptyHint">在上面输入名称、选个颜色，就能建第一个标签</Translate>} />
+            <EmptyState
+              compact
+              icon={<TagOutlined />}
+              title={<Translate id="myspace.tagManager.empty">暂无自定义标签</Translate>}
+              description={<Translate id="myspace.tagManager.emptyHint">在上面输入名称、选个颜色，就能建第一个标签</Translate>}
+            />
           )}
         </div>
       </Space>

@@ -1,4 +1,10 @@
 {
+  "account.signInRequired": {
+    "message": "로그인하면 계정을 볼 수 있습니다"
+  },
+  "account.signInRequiredHint": {
+    "message": "홈으로 돌아갑니다. 아래 버튼을 눌러도 됩니다."
+  },
   "action.add": {
     "message": "추가"
   },
@@ -89,6 +95,30 @@
   "action.viewDetails": {
     "message": "상세 보기"
   },
+  "auth.callback.backHome": {
+    "message": "홈으로 돌아가 로그인"
+  },
+  "auth.callback.failed": {
+    "message": "로그인이 완료되지 않았습니다"
+  },
+  "auth.callback.failedHint": {
+    "message": "로그인 링크가 만료되었거나 이미 사용되었을 수 있습니다. 홈으로 돌아가 다시 로그인하세요."
+  },
+  "auth.callback.idle": {
+    "message": "처리할 로그인이 없습니다"
+  },
+  "auth.callback.idleHint": {
+    "message": "이 페이지는 로그인 리디렉션 전용입니다. 즐겨찾기에 추가할 필요가 없습니다."
+  },
+  "auth.callback.title": {
+    "message": "로그인 완료"
+  },
+  "auth.callback.working": {
+    "message": "로그인하는 중…"
+  },
+  "auth.callback.workingHint": {
+    "message": "이 페이지를 닫지 마세요. 곧 홈으로 돌아갑니다."
+  },
   "button.clearAllCache": {
     "message": "모든 캐시 지우기"
   },
@@ -139,6 +169,9 @@
   },
   "comments.gif.label": {
     "message": "GIF 삽입"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "GIF 검색"
   },
   "comments.heading": {
     "message": "댓글"
@@ -238,6 +271,12 @@
   },
   "feedback.welcome": {
     "message": "피드백 및 제안"
+  },
+  "filter.lessTags": {
+    "message": "접기"
+  },
+  "filter.moreTags": {
+    "message": "더보기 ({count})"
   },
   "filter.operator.all.tip": {
     "message": "선택한 모든 태그에 일치"
@@ -410,11 +449,11 @@
   "message.addPrompt.success": {
     "message": "프롬프트를 작성했습니다. 내 컬렉션 맨 위에서 찾을 수 있습니다"
   },
-  "message.cache.cleared": {
-    "message": "캐시가 지워졌습니다"
-  },
   "message.cache.clearError": {
     "message": "캐시 지우기 실패, 나중에 다시 시도해 주세요."
+  },
+  "message.cache.cleared": {
+    "message": "캐시가 지워졌습니다"
   },
   "message.cannotFavorOwn": {
     "message": "내가 작성한 프롬프트는 즐겨찾기에 추가할 수 없습니다"
@@ -506,11 +545,11 @@
   "message.noSpaceItems": {
     "message": "콘텐츠가 없습니다. 프롬프트를 만들거나 즐겨찾기에 추가해보세요"
   },
-  "message.orderSaved": {
-    "message": "정렬 순서가 저장되었습니다"
-  },
   "message.orderSaveFailed": {
     "message": "정렬 순서 저장 실패, 나중에 다시 시도하십시오."
+  },
+  "message.orderSaved": {
+    "message": "정렬 순서가 저장되었습니다"
   },
   "message.postComment.error": {
     "message": "댓글 전송에 실패했습니다. 잠시 후 다시 시도해 주세요."
@@ -526,6 +565,9 @@
   },
   "message.removeFavorite.success": {
     "message": "즐겨찾기에서 제거됨"
+  },
+  "message.requestTimeout": {
+    "message": "요청 시간이 초과되었습니다. 다시 시도하세요."
   },
   "message.resetPassword.error": {
     "message": "비밀번호 재설정 실패, 나중에 다시 시도해 주세요."
@@ -548,17 +590,26 @@
   "message.success.register": {
     "message": "계정이 생성되었습니다"
   },
+  "message.tagsUpdateFailed": {
+    "message": "태그 업데이트 실패, 나중에 다시 시도해 주세요."
+  },
   "message.tagsUpdated": {
     "message": "태그가 업데이트되었습니다"
   },
-  "message.tagsUpdateFailed": {
-    "message": "태그 업데이트 실패, 나중에 다시 시도해 주세요."
+  "message.tooManyRequests": {
+    "message": "요청이 너무 잦습니다. 잠시 후 다시 시도하세요."
   },
   "message.updatePrompt.error": {
     "message": "프롬프트 업데이트 실패, 나중에 다시 시도해 주세요."
   },
   "message.updatePrompt.success": {
     "message": "프롬프트가 업데이트되었습니다"
+  },
+  "message.username.updateError": {
+    "message": "사용자 이름을 변경하지 못했습니다. 잠시 후 다시 시도하세요."
+  },
+  "message.username.updated": {
+    "message": "사용자 이름을 변경했습니다"
   },
   "modal.clearCache.title": {
     "message": "캐시를 지우시겠습니까?"
@@ -608,8 +659,14 @@
   "myspace.manageTags": {
     "message": "태그 관리"
   },
+  "myspace.tagManager.color": {
+    "message": "태그 색상"
+  },
   "myspace.tagManager.empty": {
     "message": "사용자 지정 태그 없음"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "위에 이름을 입력하고 색을 고르면 첫 태그가 만들어집니다."
   },
   "myspace.tagManager.namePlaceholder": {
     "message": "태그 이름"
@@ -629,6 +686,9 @@
   "noResults.title": {
     "message": "일치하는 프롬프트를 찾을 수 없습니다"
   },
+  "placeholder.clear": {
+    "message": "지우기"
+  },
   "placeholder.comment": {
     "message": "여기에 댓글 입력... Markdown 및 HTML 구문 지원"
   },
@@ -640,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "이메일"
+  },
+  "placeholder.fillTitle": {
+    "message": "변수 채우기"
   },
   "placeholder.newPassword": {
     "message": "새 비밀번호"
@@ -677,6 +740,9 @@
   "prompt.content": {
     "message": "프롬프트 내용"
   },
+  "prompt.copyFilled": {
+    "message": "채운 내용 복사"
+  },
   "prompt.private": {
     "message": "비공개"
   },
@@ -701,11 +767,11 @@
   "share.native": {
     "message": "시스템"
   },
-  "share.shareTo": {
-    "message": "공유 대상"
-  },
   "share.shareOn": {
     "message": "{channel}에 공유"
+  },
+  "share.shareTo": {
+    "message": "공유 대상"
   },
   "showcase.header.button": {
     "message": "커뮤니티 둘러보기"
@@ -878,6 +944,70 @@
   "sort.newest": {
     "message": "최신순"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "닫기",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "맨 위로 스크롤하기",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "복사됨",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "복사",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "코드를 클립보드에 복사",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "줄 바꿈 토글",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "사이드바 카테고리 '{label}' 접기",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "사이드바 카테고리 '{label}' 펼치기",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "페이지에 오류가 발생하였습니다.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "다시 시도",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(새 탭에서 열림)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "메인",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "찾으시는 내용을 찾을 수 없습니다.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "원본 URL로 연결해 준 사이트의 관리자에게 연락하여 링크가 끊어졌음을 알려 주십시오.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "페이지를 찾을 수 없습니다.",
+    "description": "The title of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "이 페이지에서",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
   "theme.admonition.caution": {
     "message": "주의",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -901,14 +1031,6 @@
   "theme.admonition.warning": {
     "message": "경고",
     "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "닫기",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "맨 위로 스크롤하기",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "게시물 목록",
@@ -962,10 +1084,6 @@
     "message": "1개의 게시물|{count}개의 게시물",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "1분 소요|{readingTime}분 소요",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.post.readMore": {
     "message": "더 읽기",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -974,6 +1092,10 @@
     "message": "{title} 전체 글 보기",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "1분 소요|{readingTime}분 소요",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "블로그 최근 게시물 탐색",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -981,22 +1103,6 @@
   "theme.blog.tagTitle": {
     "message": "\"{tagName}\" 태그가 지정된 게시물 {nPosts}개",
     "description": "The title of the page for a blog tag"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "복사됨",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "복사",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "코드를 클립보드에 복사",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "줄 바꿈 토글",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "다크 모드와 라이트 모드 전환하기 (현재 {mode})",
@@ -1042,6 +1148,10 @@
     "message": "비공개 페이지",
     "description": "The unlisted content banner title"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} 항목",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "홈 페이지",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1049,10 +1159,6 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "탐색 경로",
     "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "{count} 항목",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "문서 페이지",
@@ -1121,26 +1227,6 @@
     "message": "{siteTitle} {versionLabel} 문서는 아직 정식 공개되지 않았습니다.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "사이드바 카테고리 '{label}' 접기",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "사이드바 카테고리 '{label}' 펼치기",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "페이지에 오류가 발생하였습니다.",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "다시 시도",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(새 탭에서 열림)",
-    "description": "The ARIA label for the external link icon"
-  },
   "theme.lastUpdated.atDate": {
     "message": "{date}에",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1173,22 +1259,6 @@
     "message": "버전",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
-  "theme.NavBar.navAriaLabel": {
-    "message": "메인",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "찾으시는 내용을 찾을 수 없습니다.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "원본 URL로 연결해 준 사이트의 관리자에게 연락하여 링크가 끊어졌음을 알려 주십시오.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "페이지를 찾을 수 없습니다.",
-    "description": "The title of the 404 page"
-  },
   "theme.tags.tagsListLabel": {
     "message": "태그:",
     "description": "The label alongside a tag list"
@@ -1200,10 +1270,6 @@
   "theme.tags.tagsPageTitle": {
     "message": "태그",
     "description": "The title of the tag list page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "이 페이지에서",
-    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "데이터 관리"
@@ -1271,6 +1337,9 @@
   "validation.replyRequired": {
     "message": "답글 내용을 입력해 주세요"
   },
+  "validation.username.empty": {
+    "message": "사용자 이름을 입력하세요"
+  },
   "validation.username.required": {
     "message": "사용자 이름 또는 가입 이메일을 입력하십시오"
   },
@@ -1294,59 +1363,5 @@
   },
   "vote.upvote.success": {
     "message": "추천했습니다"
-  },
-  "auth.callback.title": {
-    "message": "로그인 완료"
-  },
-  "auth.callback.working": {
-    "message": "로그인하는 중…"
-  },
-  "auth.callback.workingHint": {
-    "message": "이 페이지를 닫지 마세요. 곧 홈으로 돌아갑니다."
-  },
-  "auth.callback.failed": {
-    "message": "로그인이 완료되지 않았습니다"
-  },
-  "auth.callback.failedHint": {
-    "message": "로그인 링크가 만료되었거나 이미 사용되었을 수 있습니다. 홈으로 돌아가 다시 로그인하세요."
-  },
-  "auth.callback.idle": {
-    "message": "처리할 로그인이 없습니다"
-  },
-  "auth.callback.idleHint": {
-    "message": "이 페이지는 로그인 리디렉션 전용입니다. 즐겨찾기에 추가할 필요가 없습니다."
-  },
-  "auth.callback.backHome": {
-    "message": "홈으로 돌아가 로그인"
-  },
-  "myspace.tagManager.emptyHint": {
-    "message": "위에 이름을 입력하고 색을 고르면 첫 태그가 만들어집니다."
-  },
-  "validation.username.empty": {
-    "message": "사용자 이름을 입력하세요"
-  },
-  "message.username.updated": {
-    "message": "사용자 이름을 변경했습니다"
-  },
-  "message.username.updateError": {
-    "message": "사용자 이름을 변경하지 못했습니다. 잠시 후 다시 시도하세요."
-  },
-  "message.requestTimeout": {
-    "message": "요청 시간이 초과되었습니다. 다시 시도하세요."
-  },
-  "message.tooManyRequests": {
-    "message": "요청이 너무 잦습니다. 잠시 후 다시 시도하세요."
-  },
-  "account.signInRequired": {
-    "message": "로그인하면 계정을 볼 수 있습니다"
-  },
-  "account.signInRequiredHint": {
-    "message": "홈으로 돌아갑니다. 아래 버튼을 눌러도 됩니다."
-  },
-  "myspace.tagManager.color": {
-    "message": "태그 색상"
-  },
-  "comments.gif.searchPlaceholder": {
-    "message": "GIF 검색"
   }
 }

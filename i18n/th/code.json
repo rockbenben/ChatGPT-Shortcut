@@ -1,4 +1,10 @@
 {
+  "account.signInRequired": {
+    "message": "เข้าสู่ระบบเพื่อดูบัญชีของคุณ"
+  },
+  "account.signInRequiredHint": {
+    "message": "กำลังพากลับไปหน้าแรก หรือกดปุ่มด้านล่างก็ได้"
+  },
   "action.add": {
     "message": "เพิ่ม"
   },
@@ -89,6 +95,30 @@
   "action.viewDetails": {
     "message": "ดูรายละเอียด"
   },
+  "auth.callback.backHome": {
+    "message": "กลับหน้าแรกเพื่อเข้าสู่ระบบ"
+  },
+  "auth.callback.failed": {
+    "message": "เข้าสู่ระบบไม่สำเร็จ"
+  },
+  "auth.callback.failedHint": {
+    "message": "ลิงก์เข้าสู่ระบบอาจหมดอายุหรือถูกใช้ไปแล้ว กลับไปหน้าแรกแล้วเข้าสู่ระบบใหม่"
+  },
+  "auth.callback.idle": {
+    "message": "ไม่มีการเข้าสู่ระบบที่ค้างอยู่ที่นี่"
+  },
+  "auth.callback.idleHint": {
+    "message": "หน้านี้ใช้สำหรับเปลี่ยนเส้นทางตอนเข้าสู่ระบบเท่านั้น ไม่ต้องบุ๊กมาร์ก"
+  },
+  "auth.callback.title": {
+    "message": "เสร็จสิ้นการเข้าสู่ระบบ"
+  },
+  "auth.callback.working": {
+    "message": "กำลังเข้าสู่ระบบ…"
+  },
+  "auth.callback.workingHint": {
+    "message": "อย่าปิดหน้านี้ ระบบจะพากลับไปหน้าแรกในอีกสักครู่"
+  },
   "button.clearAllCache": {
     "message": "ล้างแคชทั้งหมด"
   },
@@ -139,6 +169,9 @@
   },
   "comments.gif.label": {
     "message": "แทรก GIF"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "ค้นหา GIF"
   },
   "comments.heading": {
     "message": "การสนทนา"
@@ -238,6 +271,12 @@
   },
   "feedback.welcome": {
     "message": "คำติชมและข้อเสนอแนะ"
+  },
+  "filter.lessTags": {
+    "message": "ย่อลง"
+  },
+  "filter.moreTags": {
+    "message": "เพิ่มเติม ({count})"
   },
   "filter.operator.all.tip": {
     "message": "แสดงพรอมต์ที่ตรงกับแท็กทั้งหมดที่เลือก"
@@ -410,11 +449,11 @@
   "message.addPrompt.success": {
     "message": "ส่งพรอมต์แล้ว คุณจะพบรายการนี้ที่ด้านบนสุดของ คอลเลกชันของฉัน"
   },
-  "message.cache.cleared": {
-    "message": "ล้างแคชแล้ว รีเฟรชข้อมูลใหม่แล้ว"
-  },
   "message.cache.clearError": {
     "message": "ล้างแคชล้มเหลว โปรดลองอีกครั้ง"
+  },
+  "message.cache.cleared": {
+    "message": "ล้างแคชแล้ว รีเฟรชข้อมูลใหม่แล้ว"
   },
   "message.cannotFavorOwn": {
     "message": "ไม่สามารถบันทึกพรอมต์ของตัวเองเป็นรายการโปรดได้"
@@ -506,11 +545,11 @@
   "message.noSpaceItems": {
     "message": "ยังไม่มีอะไร — สร้างพรอมต์หรือทำเครื่องหมายเป็นรายการโปรด"
   },
-  "message.orderSaved": {
-    "message": "บันทึกการจัดเรียงแล้ว"
-  },
   "message.orderSaveFailed": {
     "message": "บันทึกการจัดเรียงล้มเหลว โปรดลองอีกครั้ง"
+  },
+  "message.orderSaved": {
+    "message": "บันทึกการจัดเรียงแล้ว"
   },
   "message.postComment.error": {
     "message": "ส่งความคิดเห็นไม่สำเร็จ โปรดลองอีกครั้งในภายหลัง"
@@ -526,6 +565,9 @@
   },
   "message.removeFavorite.success": {
     "message": "ลบออกจากรายการโปรดแล้ว"
+  },
+  "message.requestTimeout": {
+    "message": "คำขอหมดเวลา กรุณาลองใหม่"
   },
   "message.resetPassword.error": {
     "message": "รีเซ็ตรหัสผ่านล้มเหลว กรุณาลองอีกครั้ง"
@@ -548,17 +590,26 @@
   "message.success.register": {
     "message": "ลงทะเบียนแล้ว"
   },
+  "message.tagsUpdateFailed": {
+    "message": "อัปเดตแท็กล้มเหลว โปรดลองอีกครั้ง"
+  },
   "message.tagsUpdated": {
     "message": "อัปเดตแท็กแล้ว"
   },
-  "message.tagsUpdateFailed": {
-    "message": "อัปเดตแท็กล้มเหลว โปรดลองอีกครั้ง"
+  "message.tooManyRequests": {
+    "message": "ทำรายการถี่เกินไป กรุณาลองใหม่อีกครั้ง"
   },
   "message.updatePrompt.error": {
     "message": "ไม่สามารถอัปเดตพรอมต์ได้ โปรดลองอีกครั้ง"
   },
   "message.updatePrompt.success": {
     "message": "อัปเดตพรอมต์แล้ว"
+  },
+  "message.username.updateError": {
+    "message": "อัปเดตชื่อผู้ใช้ไม่สำเร็จ กรุณาลองใหม่อีกครั้ง"
+  },
+  "message.username.updated": {
+    "message": "อัปเดตชื่อผู้ใช้แล้ว"
   },
   "modal.clearCache.title": {
     "message": "ยืนยันล้างแคช?"
@@ -608,8 +659,14 @@
   "myspace.manageTags": {
     "message": "จัดการแท็ก"
   },
+  "myspace.tagManager.color": {
+    "message": "สีของแท็ก"
+  },
   "myspace.tagManager.empty": {
     "message": "ยังไม่มีแท็กที่กำหนดเอง"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "พิมพ์ชื่อด้านบน เลือกสี แล้วแท็กแรกของคุณก็พร้อมใช้งาน"
   },
   "myspace.tagManager.namePlaceholder": {
     "message": "ชื่อแท็ก"
@@ -629,6 +686,9 @@
   "noResults.title": {
     "message": "ไม่พบพรอมต์ที่ตรงกัน"
   },
+  "placeholder.clear": {
+    "message": "ล้าง"
+  },
   "placeholder.comment": {
     "message": "พิมพ์ความคิดเห็นที่นี่... รองรับไวยากรณ์ Markdown และ HTML"
   },
@@ -640,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "อีเมล"
+  },
+  "placeholder.fillTitle": {
+    "message": "กรอกตัวแปร"
   },
   "placeholder.newPassword": {
     "message": "รหัสผ่านใหม่"
@@ -677,6 +740,9 @@
   "prompt.content": {
     "message": "เนื้อหาพรอมต์"
   },
+  "prompt.copyFilled": {
+    "message": "คัดลอกที่กรอกแล้ว"
+  },
   "prompt.private": {
     "message": "ส่วนตัว"
   },
@@ -701,11 +767,11 @@
   "share.native": {
     "message": "ระบบ"
   },
-  "share.shareTo": {
-    "message": "แชร์ไปที่"
-  },
   "share.shareOn": {
     "message": "แชร์ไปที่ {channel}"
+  },
+  "share.shareTo": {
+    "message": "แชร์ไปที่"
   },
   "showcase.header.button": {
     "message": "ดูชุมชน"
@@ -878,6 +944,70 @@
   "sort.newest": {
     "message": "ล่าสุด"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "ปิด",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "เลื่อนกลับไปด้านบน",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "คัดลอกแล้ว",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "คัดลอก",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "คัดลอกโค้ดไปยังคลิปบอร์ด",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "สลับการห่อคำ",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "ยุบหมวดหมู่แถบด้านข้าง '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "ขยายหมวดหมู่แถบด้านข้าง '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "หน้านี้ขัดข้อง",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "ลองอีกครั้ง",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(เปิดในแท็บใหม่)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "หลัก",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "เราไม่พบสิ่งที่คุณกำลังมองหา",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "กรุณาติดต่อเจ้าของเว็บไซต์ที่ลิงก์มายังหน้านี้ แล้วแจ้งทราบว่าลิงก์เสีย",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "ไม่พบหน้า",
+    "description": "The title of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "ในหน้านี้",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
   "theme.admonition.caution": {
     "message": "ระวัง",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -901,14 +1031,6 @@
   "theme.admonition.warning": {
     "message": "คำเตือน",
     "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "ปิด",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "เลื่อนกลับไปด้านบน",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "คลังเก็บ",
@@ -962,10 +1084,6 @@
     "message": "1 โพสต์|{count} โพสต์",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "อ่าน 1 นาที|อ่าน {readingTime} นาที",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.post.readMore": {
     "message": "อ่านเพิ่มเติม",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -974,6 +1092,10 @@
     "message": "อ่านเพิ่มเติมเกี่ยวกับ {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "อ่าน 1 นาที|อ่าน {readingTime} นาที",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "การนำทางโพสต์ล่าสุดในบล็อก",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -981,22 +1103,6 @@
   "theme.blog.tagTitle": {
     "message": "{nPosts} ที่ติดแท็ก \"{tagName}\"",
     "description": "The title of the page for a blog tag"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "คัดลอกแล้ว",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "คัดลอก",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "คัดลอกโค้ดไปยังคลิปบอร์ด",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "สลับการห่อคำ",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "สลับระหว่างโหมดมืดและสว่าง (ขณะนี้ {mode})",
@@ -1042,6 +1148,10 @@
     "message": "หน้าที่ไม่ได้ลงรายการ",
     "description": "The unlisted content banner title"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 รายการ|{count} รายการ",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "หน้าแรก",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1049,10 +1159,6 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "เส้นทาง",
     "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 รายการ|{count} รายการ",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "หน้าเอกสาร",
@@ -1121,26 +1227,6 @@
     "message": "นี่คือเอกสารที่ยังไม่ได้เผยแพร่สำหรับ {siteTitle} เวอร์ชัน {versionLabel}",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "ยุบหมวดหมู่แถบด้านข้าง '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "ขยายหมวดหมู่แถบด้านข้าง '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "หน้านี้ขัดข้อง",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "ลองอีกครั้ง",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(เปิดในแท็บใหม่)",
-    "description": "The ARIA label for the external link icon"
-  },
   "theme.lastUpdated.atDate": {
     "message": "เมื่อ {date}",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1173,22 +1259,6 @@
     "message": "เวอร์ชัน",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
-  "theme.NavBar.navAriaLabel": {
-    "message": "หลัก",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "เราไม่พบสิ่งที่คุณกำลังมองหา",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "กรุณาติดต่อเจ้าของเว็บไซต์ที่ลิงก์มายังหน้านี้ แล้วแจ้งทราบว่าลิงก์เสีย",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "ไม่พบหน้า",
-    "description": "The title of the 404 page"
-  },
   "theme.tags.tagsListLabel": {
     "message": "แท็ก:",
     "description": "The label alongside a tag list"
@@ -1200,10 +1270,6 @@
   "theme.tags.tagsPageTitle": {
     "message": "แท็ก",
     "description": "The title of the tag list page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "ในหน้านี้",
-    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "การจัดการข้อมูล"
@@ -1271,6 +1337,9 @@
   "validation.replyRequired": {
     "message": "กรุณากรอกเนื้อหาตอบกลับ"
   },
+  "validation.username.empty": {
+    "message": "ชื่อผู้ใช้ต้องไม่เว้นว่าง"
+  },
   "validation.username.required": {
     "message": "กรุณากรอกชื่อผู้ใช้หรืออีเมลที่ลงทะเบียน"
   },
@@ -1294,59 +1363,5 @@
   },
   "vote.upvote.success": {
     "message": "บันทึกการกดชอบแล้ว"
-  },
-  "auth.callback.title": {
-    "message": "เสร็จสิ้นการเข้าสู่ระบบ"
-  },
-  "auth.callback.working": {
-    "message": "กำลังเข้าสู่ระบบ…"
-  },
-  "auth.callback.workingHint": {
-    "message": "อย่าปิดหน้านี้ ระบบจะพากลับไปหน้าแรกในอีกสักครู่"
-  },
-  "auth.callback.failed": {
-    "message": "เข้าสู่ระบบไม่สำเร็จ"
-  },
-  "auth.callback.failedHint": {
-    "message": "ลิงก์เข้าสู่ระบบอาจหมดอายุหรือถูกใช้ไปแล้ว กลับไปหน้าแรกแล้วเข้าสู่ระบบใหม่"
-  },
-  "auth.callback.idle": {
-    "message": "ไม่มีการเข้าสู่ระบบที่ค้างอยู่ที่นี่"
-  },
-  "auth.callback.idleHint": {
-    "message": "หน้านี้ใช้สำหรับเปลี่ยนเส้นทางตอนเข้าสู่ระบบเท่านั้น ไม่ต้องบุ๊กมาร์ก"
-  },
-  "auth.callback.backHome": {
-    "message": "กลับหน้าแรกเพื่อเข้าสู่ระบบ"
-  },
-  "myspace.tagManager.emptyHint": {
-    "message": "พิมพ์ชื่อด้านบน เลือกสี แล้วแท็กแรกของคุณก็พร้อมใช้งาน"
-  },
-  "validation.username.empty": {
-    "message": "ชื่อผู้ใช้ต้องไม่เว้นว่าง"
-  },
-  "message.username.updated": {
-    "message": "อัปเดตชื่อผู้ใช้แล้ว"
-  },
-  "message.username.updateError": {
-    "message": "อัปเดตชื่อผู้ใช้ไม่สำเร็จ กรุณาลองใหม่อีกครั้ง"
-  },
-  "message.requestTimeout": {
-    "message": "คำขอหมดเวลา กรุณาลองใหม่"
-  },
-  "message.tooManyRequests": {
-    "message": "ทำรายการถี่เกินไป กรุณาลองใหม่อีกครั้ง"
-  },
-  "account.signInRequired": {
-    "message": "เข้าสู่ระบบเพื่อดูบัญชีของคุณ"
-  },
-  "account.signInRequiredHint": {
-    "message": "กำลังพากลับไปหน้าแรก หรือกดปุ่มด้านล่างก็ได้"
-  },
-  "myspace.tagManager.color": {
-    "message": "สีของแท็ก"
-  },
-  "comments.gif.searchPlaceholder": {
-    "message": "ค้นหา GIF"
   }
 }

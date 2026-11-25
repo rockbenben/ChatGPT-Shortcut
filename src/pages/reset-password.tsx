@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import { Form, Input, Button, Typography, Card, App } from "antd";
+import { LockOutlined, KeyOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { resetPassword } from "@site/src/api";
@@ -92,9 +93,11 @@ const ResetPassword = () => {
             maxWidth: 440,
             width: "100%",
             borderRadius: 12,
+            borderColor: "var(--site-color-hairline)",
+            boxShadow: "var(--site-shadow-sm)",
           }}
-          styles={{ body: { padding: 32 } }}>
-          <Title level={2} style={{ textAlign: "center", marginBottom: 24, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em" }}>
+          styles={{ body: { padding: 28 } }}>
+          <Title level={2} style={{ textAlign: "center", marginBottom: 20, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em" }}>
             <Translate id="button.resetPassword">重置密码</Translate>
           </Title>
           <Form form={form} layout="vertical" onFinish={onFinishResetPassword} requiredMark={false} initialValues={{ code: resetCode }} size="large">
@@ -110,11 +113,11 @@ const ResetPassword = () => {
                   }),
                 },
               ]}>
-              <Input />
+              <Input prefix={<KeyOutlined style={{ color: "var(--site-color-text-tertiary)" }} />} />
             </Form.Item>
 
             <Form.Item name="newPassword" label={<Translate id="placeholder.newPassword">新密码</Translate>} rules={passwordRules} hasFeedback>
-              <Input.Password autoComplete="new-password" />
+              <Input.Password prefix={<LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />} autoComplete="new-password" />
             </Form.Item>
 
             <Form.Item
@@ -146,7 +149,7 @@ const ResetPassword = () => {
                   },
                 }),
               ]}>
-              <Input.Password autoComplete="new-password" />
+              <Input.Password prefix={<LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />} autoComplete="new-password" />
             </Form.Item>
 
             <Form.Item style={{ marginBottom: 0 }}>

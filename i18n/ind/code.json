@@ -1,4 +1,10 @@
 {
+  "account.signInRequired": {
+    "message": "Masuk untuk melihat akun Anda"
+  },
+  "account.signInRequiredHint": {
+    "message": "Anda sedang diarahkan ke beranda — atau gunakan tombol di bawah."
+  },
   "action.add": {
     "message": "Tambah"
   },
@@ -89,6 +95,30 @@
   "action.viewDetails": {
     "message": "Lihat Detail"
   },
+  "auth.callback.backHome": {
+    "message": "Kembali ke beranda untuk masuk"
+  },
+  "auth.callback.failed": {
+    "message": "Proses masuk belum selesai"
+  },
+  "auth.callback.failedHint": {
+    "message": "Tautan masuk mungkin sudah kedaluwarsa atau pernah dipakai. Kembali ke beranda dan masuk lagi."
+  },
+  "auth.callback.idle": {
+    "message": "Tidak ada proses masuk yang tertunda di sini"
+  },
+  "auth.callback.idleHint": {
+    "message": "Halaman ini hanya menangani pengalihan saat masuk — tidak perlu ditandai."
+  },
+  "auth.callback.title": {
+    "message": "Menyelesaikan masuk"
+  },
+  "auth.callback.working": {
+    "message": "Sedang masuk…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Jangan tutup halaman ini, Anda akan kembali ke beranda sebentar lagi."
+  },
   "button.clearAllCache": {
     "message": "Hapus Semua Cache"
   },
@@ -139,6 +169,9 @@
   },
   "comments.gif.label": {
     "message": "Sisipkan GIF"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "Cari GIF"
   },
   "comments.heading": {
     "message": "Diskusi"
@@ -238,6 +271,12 @@
   },
   "feedback.welcome": {
     "message": "Umpan Balik & Saran"
+  },
+  "filter.lessTags": {
+    "message": "Tampilkan lebih sedikit"
+  },
+  "filter.moreTags": {
+    "message": "Lainnya ({count})"
   },
   "filter.operator.all.tip": {
     "message": "Tampilkan prompt yang cocok dengan semua tag yang dipilih"
@@ -410,11 +449,11 @@
   "message.addPrompt.success": {
     "message": "Prompt terkirim — ada di bagian paling atas Koleksi Saya"
   },
-  "message.cache.cleared": {
-    "message": "Cache dihapus, data disegarkan"
-  },
   "message.cache.clearError": {
     "message": "Gagal menghapus cache, silakan coba lagi nanti"
+  },
+  "message.cache.cleared": {
+    "message": "Cache dihapus, data disegarkan"
   },
   "message.cannotFavorOwn": {
     "message": "Tidak dapat menambahkan prompt Anda sendiri ke favorit"
@@ -506,11 +545,11 @@
   "message.noSpaceItems": {
     "message": "Belum ada — buat prompt atau tandai favorit"
   },
-  "message.orderSaved": {
-    "message": "Urutan disimpan"
-  },
   "message.orderSaveFailed": {
     "message": "Gagal menyimpan urutan, silakan coba lagi nanti"
+  },
+  "message.orderSaved": {
+    "message": "Urutan disimpan"
   },
   "message.postComment.error": {
     "message": "Gagal mengirim komentar. Silakan coba lagi nanti."
@@ -526,6 +565,9 @@
   },
   "message.removeFavorite.success": {
     "message": "Dihapus dari favorit"
+  },
+  "message.requestTimeout": {
+    "message": "Waktu permintaan habis. Coba lagi."
   },
   "message.resetPassword.error": {
     "message": "Reset kata sandi gagal, silakan coba lagi nanti"
@@ -548,17 +590,26 @@
   "message.success.register": {
     "message": "Akun dibuat"
   },
+  "message.tagsUpdateFailed": {
+    "message": "Gagal memperbarui tag, silakan coba lagi nanti"
+  },
   "message.tagsUpdated": {
     "message": "Tag diperbarui"
   },
-  "message.tagsUpdateFailed": {
-    "message": "Gagal memperbarui tag, silakan coba lagi nanti"
+  "message.tooManyRequests": {
+    "message": "Terlalu sering mencoba. Coba lagi sebentar."
   },
   "message.updatePrompt.error": {
     "message": "Gagal memperbarui prompt, silakan coba lagi nanti"
   },
   "message.updatePrompt.success": {
     "message": "Prompt diperbarui"
+  },
+  "message.username.updateError": {
+    "message": "Nama pengguna gagal diperbarui. Coba lagi sebentar."
+  },
+  "message.username.updated": {
+    "message": "Nama pengguna diperbarui"
   },
   "modal.clearCache.title": {
     "message": "Hapus Cache?"
@@ -608,8 +659,14 @@
   "myspace.manageTags": {
     "message": "Kelola Tag"
   },
+  "myspace.tagManager.color": {
+    "message": "Warna tag"
+  },
   "myspace.tagManager.empty": {
     "message": "Belum ada tag kustom"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Ketik nama di atas, pilih warna, dan tag pertama Anda siap."
   },
   "myspace.tagManager.namePlaceholder": {
     "message": "Nama tag"
@@ -629,6 +686,9 @@
   "noResults.title": {
     "message": "Tidak ada prompt yang cocok"
   },
+  "placeholder.clear": {
+    "message": "Hapus"
+  },
   "placeholder.comment": {
     "message": "Masukkan komentar di sini... Mendukung sintaks Markdown dan HTML"
   },
@@ -640,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "Email"
+  },
+  "placeholder.fillTitle": {
+    "message": "Isi variabel"
   },
   "placeholder.newPassword": {
     "message": "Kata sandi baru"
@@ -677,6 +740,9 @@
   "prompt.content": {
     "message": "Konten Prompt"
   },
+  "prompt.copyFilled": {
+    "message": "Salin yang terisi"
+  },
   "prompt.private": {
     "message": "Pribadi"
   },
@@ -701,11 +767,11 @@
   "share.native": {
     "message": "Sistem"
   },
-  "share.shareTo": {
-    "message": "Bagikan ke"
-  },
   "share.shareOn": {
     "message": "Bagikan ke {channel}"
+  },
+  "share.shareTo": {
+    "message": "Bagikan ke"
   },
   "showcase.header.button": {
     "message": "Jelajahi Komunitas"
@@ -878,6 +944,70 @@
   "sort.newest": {
     "message": "Terbaru"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Tutup",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Gulir ke atas",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Disalin",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Salin",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Salin kode ke clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Alihkan pembungkusan kata",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Ciutkan kategori sidebar '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Perluas kategori sidebar '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "Terjadi kesalahan.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Coba lagi",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(buka di tab baru)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Utama",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "Kami tidak dapat menemukan halaman yang Anda cari.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Silakan hubungi pemilik situs yang menautkan Anda ke URL asli dan beri tahu mereka bahwa tautan mereka rusak.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "Halaman Tidak Ditemukan",
+    "description": "The title of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "Di halaman ini",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
   "theme.admonition.caution": {
     "message": "hati-hati",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -901,14 +1031,6 @@
   "theme.admonition.warning": {
     "message": "peringatan",
     "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Tutup",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Gulir ke atas",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "Arsip",
@@ -962,10 +1084,6 @@
     "message": "Satu artikel|{count} artikel",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "1 menit baca|{readingTime} menit baca",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.post.readMore": {
     "message": "Baca selengkapnya",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -974,6 +1092,10 @@
     "message": "Baca selengkapnya tentang {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "1 menit baca|{readingTime} menit baca",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "Navigasi posting terbaru sidebar blog",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -981,22 +1103,6 @@
   "theme.blog.tagTitle": {
     "message": "{nPosts} dengan tag \"{tagName}\"",
     "description": "The title of the page for a blog tag"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "Disalin",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "Salin",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Salin kode ke clipboard",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Alihkan pembungkusan kata",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Beralih antara mode gelap dan terang (saat ini {mode})",
@@ -1042,6 +1148,10 @@
     "message": "Halaman tidak terdaftar",
     "description": "The unlisted content banner title"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 item|{count} item",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "Beranda",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1049,10 +1159,6 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "Jejak navigasi",
     "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 item|{count} item",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Halaman dokumen",
@@ -1121,26 +1227,6 @@
     "message": "Ini adalah dokumentasi yang belum dirilis untuk {siteTitle} versi {versionLabel}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Ciutkan kategori sidebar '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Perluas kategori sidebar '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "Terjadi kesalahan.",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Coba lagi",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(buka di tab baru)",
-    "description": "The ARIA label for the external link icon"
-  },
   "theme.lastUpdated.atDate": {
     "message": "pada {date}",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1173,22 +1259,6 @@
     "message": "Versi",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Utama",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "Kami tidak dapat menemukan halaman yang Anda cari.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "Silakan hubungi pemilik situs yang menautkan Anda ke URL asli dan beri tahu mereka bahwa tautan mereka rusak.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "Halaman Tidak Ditemukan",
-    "description": "The title of the 404 page"
-  },
   "theme.tags.tagsListLabel": {
     "message": "Tag:",
     "description": "The label alongside a tag list"
@@ -1200,10 +1270,6 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tag",
     "description": "The title of the tag list page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "Di halaman ini",
-    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "Manajemen Data"
@@ -1271,6 +1337,9 @@
   "validation.replyRequired": {
     "message": "Silakan masukkan konten balasan"
   },
+  "validation.username.empty": {
+    "message": "Nama pengguna tidak boleh kosong"
+  },
   "validation.username.required": {
     "message": "Silakan masukkan nama pengguna atau email terdaftar"
   },
@@ -1294,59 +1363,5 @@
   },
   "vote.upvote.success": {
     "message": "Berhasil menyukai prompt ini"
-  },
-  "auth.callback.title": {
-    "message": "Menyelesaikan masuk"
-  },
-  "auth.callback.working": {
-    "message": "Sedang masuk…"
-  },
-  "auth.callback.workingHint": {
-    "message": "Jangan tutup halaman ini, Anda akan kembali ke beranda sebentar lagi."
-  },
-  "auth.callback.failed": {
-    "message": "Proses masuk belum selesai"
-  },
-  "auth.callback.failedHint": {
-    "message": "Tautan masuk mungkin sudah kedaluwarsa atau pernah dipakai. Kembali ke beranda dan masuk lagi."
-  },
-  "auth.callback.idle": {
-    "message": "Tidak ada proses masuk yang tertunda di sini"
-  },
-  "auth.callback.idleHint": {
-    "message": "Halaman ini hanya menangani pengalihan saat masuk — tidak perlu ditandai."
-  },
-  "auth.callback.backHome": {
-    "message": "Kembali ke beranda untuk masuk"
-  },
-  "myspace.tagManager.emptyHint": {
-    "message": "Ketik nama di atas, pilih warna, dan tag pertama Anda siap."
-  },
-  "validation.username.empty": {
-    "message": "Nama pengguna tidak boleh kosong"
-  },
-  "message.username.updated": {
-    "message": "Nama pengguna diperbarui"
-  },
-  "message.username.updateError": {
-    "message": "Nama pengguna gagal diperbarui. Coba lagi sebentar."
-  },
-  "message.requestTimeout": {
-    "message": "Waktu permintaan habis. Coba lagi."
-  },
-  "message.tooManyRequests": {
-    "message": "Terlalu sering mencoba. Coba lagi sebentar."
-  },
-  "account.signInRequired": {
-    "message": "Masuk untuk melihat akun Anda"
-  },
-  "account.signInRequiredHint": {
-    "message": "Anda sedang diarahkan ke beranda — atau gunakan tombol di bawah."
-  },
-  "myspace.tagManager.color": {
-    "message": "Warna tag"
-  },
-  "comments.gif.searchPlaceholder": {
-    "message": "Cari GIF"
   }
 }

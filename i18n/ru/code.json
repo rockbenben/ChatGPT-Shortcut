@@ -1,4 +1,10 @@
 {
+  "account.signInRequired": {
+    "message": "Войдите, чтобы перейти в аккаунт"
+  },
+  "account.signInRequiredHint": {
+    "message": "Возвращаем вас на главную — или нажмите кнопку ниже."
+  },
   "action.add": {
     "message": "Добавить"
   },
@@ -89,6 +95,30 @@
   "action.viewDetails": {
     "message": "Посмотреть детали"
   },
+  "auth.callback.backHome": {
+    "message": "На главную, чтобы войти"
+  },
+  "auth.callback.failed": {
+    "message": "Вход не завершён"
+  },
+  "auth.callback.failedHint": {
+    "message": "Ссылка для входа могла истечь или уже была использована. Вернитесь на главную и войдите снова."
+  },
+  "auth.callback.idle": {
+    "message": "Здесь нет незавершённого входа"
+  },
+  "auth.callback.idleHint": {
+    "message": "Эта страница нужна только для перенаправления при входе — добавлять её в закладки не нужно."
+  },
+  "auth.callback.title": {
+    "message": "Завершение входа"
+  },
+  "auth.callback.working": {
+    "message": "Выполняется вход…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Не закрывайте эту страницу — скоро вы вернётесь на главную."
+  },
   "button.clearAllCache": {
     "message": "Очистить весь кэш"
   },
@@ -139,6 +169,9 @@
   },
   "comments.gif.label": {
     "message": "Вставить GIF"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "Поиск GIF"
   },
   "comments.heading": {
     "message": "Обсуждение"
@@ -238,6 +271,12 @@
   },
   "feedback.welcome": {
     "message": "Отзывы и предложения"
+  },
+  "filter.lessTags": {
+    "message": "Свернуть"
+  },
+  "filter.moreTags": {
+    "message": "Ещё ({count})"
   },
   "filter.operator.all.tip": {
     "message": "Показать промпты, соответствующие всем выбранным тегам"
@@ -410,11 +449,11 @@
   "message.addPrompt.success": {
     "message": "Промпт отправлен — вы найдёте его в самом верху раздела «Моя коллекция»"
   },
-  "message.cache.cleared": {
-    "message": "Кэш очищен"
-  },
   "message.cache.clearError": {
     "message": "Ошибка очистки кэша, попробуйте позже"
+  },
+  "message.cache.cleared": {
+    "message": "Кэш очищен"
   },
   "message.cannotFavorOwn": {
     "message": "Нельзя добавить собственный промпт в избранное"
@@ -506,11 +545,11 @@
   "message.noSpaceItems": {
     "message": "Пока пусто — создайте промпт или добавьте в избранное"
   },
-  "message.orderSaved": {
-    "message": "Расположение сохранено"
-  },
   "message.orderSaveFailed": {
     "message": "Не удалось сохранить расположение, попробуйте позже"
+  },
+  "message.orderSaved": {
+    "message": "Расположение сохранено"
   },
   "message.postComment.error": {
     "message": "Не удалось отправить комментарий. Повторите попытку позже."
@@ -526,6 +565,9 @@
   },
   "message.removeFavorite.success": {
     "message": "Удалено из избранного"
+  },
+  "message.requestTimeout": {
+    "message": "Превышено время ожидания запроса. Повторите попытку."
   },
   "message.resetPassword.error": {
     "message": "Не удалось сбросить пароль, попробуйте позже"
@@ -548,17 +590,26 @@
   "message.success.register": {
     "message": "Аккаунт создан"
   },
+  "message.tagsUpdateFailed": {
+    "message": "Не удалось обновить теги, попробуйте позже"
+  },
   "message.tagsUpdated": {
     "message": "Теги обновлены"
   },
-  "message.tagsUpdateFailed": {
-    "message": "Не удалось обновить теги, попробуйте позже"
+  "message.tooManyRequests": {
+    "message": "Слишком много попыток. Повторите чуть позже."
   },
   "message.updatePrompt.error": {
     "message": "Не удалось обновить промпт, попробуйте позже"
   },
   "message.updatePrompt.success": {
     "message": "Промпт обновлен"
+  },
+  "message.username.updateError": {
+    "message": "Не удалось обновить имя пользователя. Повторите попытку чуть позже."
+  },
+  "message.username.updated": {
+    "message": "Имя пользователя обновлено"
   },
   "modal.clearCache.title": {
     "message": "Очистить кэш?"
@@ -608,8 +659,14 @@
   "myspace.manageTags": {
     "message": "Управление тегами"
   },
+  "myspace.tagManager.color": {
+    "message": "Цвет тега"
+  },
   "myspace.tagManager.empty": {
     "message": "Нет пользовательских тегов"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Введите название выше, выберите цвет — и первый тег готов."
   },
   "myspace.tagManager.namePlaceholder": {
     "message": "Название тега"
@@ -629,6 +686,9 @@
   "noResults.title": {
     "message": "Подходящих промптов не найдено"
   },
+  "placeholder.clear": {
+    "message": "Очистить"
+  },
   "placeholder.comment": {
     "message": "Введите комментарий здесь... Поддерживается синтаксис Markdown и HTML"
   },
@@ -640,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "Электронная почта"
+  },
+  "placeholder.fillTitle": {
+    "message": "Заполнить поля"
   },
   "placeholder.newPassword": {
     "message": "Новый пароль"
@@ -677,6 +740,9 @@
   "prompt.content": {
     "message": "Содержание промпта"
   },
+  "prompt.copyFilled": {
+    "message": "Копировать готовый"
+  },
   "prompt.private": {
     "message": "Приватный"
   },
@@ -701,11 +767,11 @@
   "share.native": {
     "message": "Система"
   },
-  "share.shareTo": {
-    "message": "Поделиться ссылкой"
-  },
   "share.shareOn": {
     "message": "Поделиться в {channel}"
+  },
+  "share.shareTo": {
+    "message": "Поделиться ссылкой"
   },
   "showcase.header.button": {
     "message": "Обзор сообщества"
@@ -878,6 +944,70 @@
   "sort.newest": {
     "message": "Новые"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Закрыть",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Прокрутка к началу",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Скопировано",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Копировать",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Копировать код в буфер обмена",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Включить/выключить перенос слов",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Свернуть категорию боковой панели «{label}»",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Развернуть категорию боковой панели «{label}»",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "На странице произошёл сбой.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Попробовать ещё раз",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(откроется в новой вкладке)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Главная",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "Мы не смогли найти то, что вы искали.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Пожалуйста, свяжитесь с владельцем сайта, который перенаправил вас по исходному URL, и сообщите ему, что ссылка не работает.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "Страница не найдена",
+    "description": "The title of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "На этой странице",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
   "theme.admonition.caution": {
     "message": "предупреждение",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -901,14 +1031,6 @@
   "theme.admonition.warning": {
     "message": "предупреждение",
     "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Закрыть",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Прокрутка к началу",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "Архив",
@@ -962,10 +1084,6 @@
     "message": "Один пост|{count} поста|{count} постов",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "Одна минута чтения|{readingTime} минуты чтения|{readingTime} минут чтения",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.post.readMore": {
     "message": "Читать далее",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -974,6 +1092,10 @@
     "message": "Подробнее о «{title}»",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "Одна минута чтения|{readingTime} минуты чтения|{readingTime} минут чтения",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "Навигация по последним записям блога",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -981,22 +1103,6 @@
   "theme.blog.tagTitle": {
     "message": "{nPosts} с тегом «{tagName}»",
     "description": "The title of the page for a blog tag"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "Скопировано",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "Копировать",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Копировать код в буфер обмена",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Включить/выключить перенос слов",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Переключение между тёмным и светлым режимом (сейчас используется {mode})",
@@ -1042,6 +1148,10 @@
     "message": "Непубличная страница",
     "description": "The unlisted content banner title"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} элемент|{count} элемента|{count} элементов",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "Главная страница",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1049,10 +1159,6 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "Навигационная цепочка текущей страницы",
     "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "{count} элемент|{count} элемента|{count} элементов",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Навигация по страницам документации",
@@ -1121,26 +1227,6 @@
     "message": "Это ещё не опубликованная документация {siteTitle} версии {versionLabel}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Свернуть категорию боковой панели «{label}»",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Развернуть категорию боковой панели «{label}»",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "На странице произошёл сбой.",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Попробовать ещё раз",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(откроется в новой вкладке)",
-    "description": "The ARIA label for the external link icon"
-  },
   "theme.lastUpdated.atDate": {
     "message": "{date}",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1173,22 +1259,6 @@
     "message": "Версии",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Главная",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "Мы не смогли найти то, что вы искали.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "Пожалуйста, свяжитесь с владельцем сайта, который перенаправил вас по исходному URL, и сообщите ему, что ссылка не работает.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "Страница не найдена",
-    "description": "The title of the 404 page"
-  },
   "theme.tags.tagsListLabel": {
     "message": "Теги:",
     "description": "The label alongside a tag list"
@@ -1200,10 +1270,6 @@
   "theme.tags.tagsPageTitle": {
     "message": "Теги",
     "description": "The title of the tag list page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "На этой странице",
-    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "Управление данными"
@@ -1271,6 +1337,9 @@
   "validation.replyRequired": {
     "message": "Пожалуйста, введите содержание ответа"
   },
+  "validation.username.empty": {
+    "message": "Имя пользователя не может быть пустым"
+  },
   "validation.username.required": {
     "message": "Пожалуйста, введите имя пользователя или зарегистрированный email"
   },
@@ -1294,59 +1363,5 @@
   },
   "vote.upvote.success": {
     "message": "Отметка «Нравится» сохранена"
-  },
-  "auth.callback.title": {
-    "message": "Завершение входа"
-  },
-  "auth.callback.working": {
-    "message": "Выполняется вход…"
-  },
-  "auth.callback.workingHint": {
-    "message": "Не закрывайте эту страницу — скоро вы вернётесь на главную."
-  },
-  "auth.callback.failed": {
-    "message": "Вход не завершён"
-  },
-  "auth.callback.failedHint": {
-    "message": "Ссылка для входа могла истечь или уже была использована. Вернитесь на главную и войдите снова."
-  },
-  "auth.callback.idle": {
-    "message": "Здесь нет незавершённого входа"
-  },
-  "auth.callback.idleHint": {
-    "message": "Эта страница нужна только для перенаправления при входе — добавлять её в закладки не нужно."
-  },
-  "auth.callback.backHome": {
-    "message": "На главную, чтобы войти"
-  },
-  "myspace.tagManager.emptyHint": {
-    "message": "Введите название выше, выберите цвет — и первый тег готов."
-  },
-  "validation.username.empty": {
-    "message": "Имя пользователя не может быть пустым"
-  },
-  "message.username.updated": {
-    "message": "Имя пользователя обновлено"
-  },
-  "message.username.updateError": {
-    "message": "Не удалось обновить имя пользователя. Повторите попытку чуть позже."
-  },
-  "message.requestTimeout": {
-    "message": "Превышено время ожидания запроса. Повторите попытку."
-  },
-  "message.tooManyRequests": {
-    "message": "Слишком много попыток. Повторите чуть позже."
-  },
-  "account.signInRequired": {
-    "message": "Войдите, чтобы перейти в аккаунт"
-  },
-  "account.signInRequiredHint": {
-    "message": "Возвращаем вас на главную — или нажмите кнопку ниже."
-  },
-  "myspace.tagManager.color": {
-    "message": "Цвет тега"
-  },
-  "comments.gif.searchPlaceholder": {
-    "message": "Поиск GIF"
   }
 }

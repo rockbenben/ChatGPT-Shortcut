@@ -13,12 +13,12 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { Button, Space } from "antd";
-import { HomeOutlined, ShareAltOutlined, CompassOutlined } from "@ant-design/icons";
+import { HomeOutlined, CompassOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
 
 export default function NotFoundContent({ className }: { className?: string }): ReactNode {
   return (
-    <main className={clsx("container margin-vert--xl", className)}>
+    <main className={clsx("container margin-vert--md", className)}>
       <EmptyState
         fullPage
         icon={<CompassOutlined />}
@@ -40,8 +40,8 @@ export default function NotFoundContent({ className }: { className?: string }): 
               </Button>
             </Link>
             <Link to="/community-prompts">
-              <Button icon={<ShareAltOutlined />}>
-                <Translate id="showcase.header.button">浏览社区分享</Translate>
+              <Button icon={<CompassOutlined />}>
+                <Translate id="link.communityPrompts">社区提示词</Translate>
               </Button>
             </Link>
           </Space>

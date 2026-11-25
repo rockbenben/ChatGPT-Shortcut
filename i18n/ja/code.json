@@ -1,4 +1,10 @@
 {
+  "account.signInRequired": {
+    "message": "ログインするとアカウントを表示できます"
+  },
+  "account.signInRequiredHint": {
+    "message": "ホームに戻ります。下のボタンからも移動できます。"
+  },
   "action.add": {
     "message": "追加"
   },
@@ -89,6 +95,30 @@
   "action.viewDetails": {
     "message": "詳細を見る"
   },
+  "auth.callback.backHome": {
+    "message": "ホームに戻ってログイン"
+  },
+  "auth.callback.failed": {
+    "message": "ログインが完了しませんでした"
+  },
+  "auth.callback.failedHint": {
+    "message": "ログインリンクの有効期限が切れているか、すでに使用済みの可能性があります。ホームに戻って再度ログインしてください。"
+  },
+  "auth.callback.idle": {
+    "message": "処理中のログインはありません"
+  },
+  "auth.callback.idleHint": {
+    "message": "このページはログインのリダイレクト専用です。ブックマークの必要はありません。"
+  },
+  "auth.callback.title": {
+    "message": "ログインの完了"
+  },
+  "auth.callback.working": {
+    "message": "ログイン処理中…"
+  },
+  "auth.callback.workingHint": {
+    "message": "このページを閉じないでください。まもなくホームに戻ります。"
+  },
   "button.clearAllCache": {
     "message": "すべてのキャッシュを削除"
   },
@@ -139,6 +169,9 @@
   },
   "comments.gif.label": {
     "message": "GIF を挿入"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "GIF を検索"
   },
   "comments.heading": {
     "message": "ディスカッション"
@@ -238,6 +271,12 @@
   },
   "feedback.welcome": {
     "message": "フィードバックと提案"
+  },
+  "filter.lessTags": {
+    "message": "閉じる"
+  },
+  "filter.moreTags": {
+    "message": "その他 ({count})"
   },
   "filter.operator.all.tip": {
     "message": "選択したすべてのタグに一致"
@@ -410,11 +449,11 @@
   "message.addPrompt.success": {
     "message": "プロンプトを送信しました。マイコレクションの一番上に表示されます"
   },
-  "message.cache.cleared": {
-    "message": "キャッシュをクリアしました"
-  },
   "message.cache.clearError": {
     "message": "キャッシュの削除に失敗しました。後でもう一度お試しください"
+  },
+  "message.cache.cleared": {
+    "message": "キャッシュをクリアしました"
   },
   "message.cannotFavorOwn": {
     "message": "自分のプロンプトはお気に入りに登録できません"
@@ -506,11 +545,11 @@
   "message.noSpaceItems": {
     "message": "コンテンツがありません。 プロンプトを作成するか、お気に入り登録しましょう"
   },
-  "message.orderSaved": {
-    "message": "並び順を保存しました"
-  },
   "message.orderSaveFailed": {
     "message": "並び順の保存に失敗しました。後でもう一度お試しください"
+  },
+  "message.orderSaved": {
+    "message": "並び順を保存しました"
   },
   "message.postComment.error": {
     "message": "コメントの送信に失敗しました。しばらくしてからもう一度お試しください。"
@@ -526,6 +565,9 @@
   },
   "message.removeFavorite.success": {
     "message": "お気に入りから削除しました"
+  },
+  "message.requestTimeout": {
+    "message": "リクエストがタイムアウトしました。もう一度お試しください。"
   },
   "message.resetPassword.error": {
     "message": "パスワードのリセットに失敗しました。後でもう一度お試しください"
@@ -548,17 +590,26 @@
   "message.success.register": {
     "message": "アカウントを作成しました"
   },
+  "message.tagsUpdateFailed": {
+    "message": "タグの更新に失敗しました。後でもう一度お試しください"
+  },
   "message.tagsUpdated": {
     "message": "タグを更新しました"
   },
-  "message.tagsUpdateFailed": {
-    "message": "タグの更新に失敗しました。後でもう一度お試しください"
+  "message.tooManyRequests": {
+    "message": "操作が頻繁すぎます。しばらくしてからお試しください。"
   },
   "message.updatePrompt.error": {
     "message": "プロンプトの更新に失敗しました。後でもう一度お試しください"
   },
   "message.updatePrompt.success": {
     "message": "プロンプトを更新しました"
+  },
+  "message.username.updateError": {
+    "message": "ユーザー名を更新できませんでした。しばらくしてからもう一度お試しください。"
+  },
+  "message.username.updated": {
+    "message": "ユーザー名を更新しました"
   },
   "modal.clearCache.title": {
     "message": "キャッシュを削除しますか？"
@@ -608,8 +659,14 @@
   "myspace.manageTags": {
     "message": "タグ管理"
   },
+  "myspace.tagManager.color": {
+    "message": "タグの色"
+  },
   "myspace.tagManager.empty": {
     "message": "カスタムタグはありません"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "上で名前を入力して色を選ぶと、最初のタグができます。"
   },
   "myspace.tagManager.namePlaceholder": {
     "message": "タグ名"
@@ -629,6 +686,9 @@
   "noResults.title": {
     "message": "一致するプロンプトが見つかりません"
   },
+  "placeholder.clear": {
+    "message": "クリア"
+  },
   "placeholder.comment": {
     "message": "ここにコメントを入力... MarkdownとHTML構文をサポート"
   },
@@ -640,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "メールアドレス"
+  },
+  "placeholder.fillTitle": {
+    "message": "変数を入力"
   },
   "placeholder.newPassword": {
     "message": "新しいパスワード"
@@ -677,6 +740,9 @@
   "prompt.content": {
     "message": "プロンプトの内容"
   },
+  "prompt.copyFilled": {
+    "message": "入力済みをコピー"
+  },
   "prompt.private": {
     "message": "非公開"
   },
@@ -701,11 +767,11 @@
   "share.native": {
     "message": "システムで共有"
   },
-  "share.shareTo": {
-    "message": "共有先"
-  },
   "share.shareOn": {
     "message": "{channel} で共有"
+  },
+  "share.shareTo": {
+    "message": "共有先"
   },
   "showcase.header.button": {
     "message": "コミュニティ投稿を見る"
@@ -878,6 +944,70 @@
   "sort.newest": {
     "message": "新着順"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "閉じる",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "先頭へ戻る",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "コピーしました",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "コピー",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "コードをクリップボードにコピー",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "行の折り返しを切り替え",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "サイドバーのカテゴリ「{label}」を折りたたむ",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "サイドバーのカテゴリ「{label}」を展開する",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "エラーが発生しました",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "再試行",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "（新しいタブで開きます）",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "メインナビゲーション",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "お探しのコンテンツが見つかりませんでした。",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "元のURLにリンクしているサイトの管理者に連絡し、リンクが切れていることをお知らせください。",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "ページが見つかりません",
+    "description": "The title of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "このページの目次",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
   "theme.admonition.caution": {
     "message": "注意",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -901,14 +1031,6 @@
   "theme.admonition.warning": {
     "message": "警告",
     "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "閉じる",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "先頭へ戻る",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "アーカイブ",
@@ -962,10 +1084,6 @@
     "message": "1件の記事|{count}件の記事",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "1分で読了|{readingTime}分で読了",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.post.readMore": {
     "message": "続きを読む",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -974,6 +1092,10 @@
     "message": "{title}について続きを読む",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "1分で読了|{readingTime}分で読了",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "最近の記事のナビゲーション",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -981,22 +1103,6 @@
   "theme.blog.tagTitle": {
     "message": "「{tagName}」タグの記事 {nPosts} 件",
     "description": "The title of the page for a blog tag"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "コピーしました",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "コピー",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "コードをクリップボードにコピー",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "行の折り返しを切り替え",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "ダークモードを切り替える(現在は{mode})",
@@ -1042,6 +1148,10 @@
     "message": "非公開ページ",
     "description": "The unlisted content banner title"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count}項目",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "ホームページ",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1049,10 +1159,6 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "パンくずリストのナビゲーション",
     "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "{count}項目",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "ドキュメントページ",
@@ -1121,26 +1227,6 @@
     "message": "これはリリース前のバージョン{versionLabel}の{siteTitle}のドキュメントです。",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "サイドバーのカテゴリ「{label}」を折りたたむ",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "サイドバーのカテゴリ「{label}」を展開する",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "エラーが発生しました",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "再試行",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "（新しいタブで開きます）",
-    "description": "The ARIA label for the external link icon"
-  },
   "theme.lastUpdated.atDate": {
     "message": "{date}に",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1173,22 +1259,6 @@
     "message": "他のバージョン",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
-  "theme.NavBar.navAriaLabel": {
-    "message": "メインナビゲーション",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "お探しのコンテンツが見つかりませんでした。",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "元のURLにリンクしているサイトの管理者に連絡し、リンクが切れていることをお知らせください。",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "ページが見つかりません",
-    "description": "The title of the 404 page"
-  },
   "theme.tags.tagsListLabel": {
     "message": "タグ:",
     "description": "The label alongside a tag list"
@@ -1200,10 +1270,6 @@
   "theme.tags.tagsPageTitle": {
     "message": "タグ",
     "description": "The title of the tag list page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "このページの目次",
-    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "データ管理"
@@ -1271,6 +1337,9 @@
   "validation.replyRequired": {
     "message": "返信の内容を入力してください"
   },
+  "validation.username.empty": {
+    "message": "ユーザー名を入力してください"
+  },
   "validation.username.required": {
     "message": "ユーザー名または登録メールアドレスを入力してください"
   },
@@ -1294,59 +1363,5 @@
   },
   "vote.upvote.success": {
     "message": "高評価しました"
-  },
-  "auth.callback.title": {
-    "message": "ログインの完了"
-  },
-  "auth.callback.working": {
-    "message": "ログイン処理中…"
-  },
-  "auth.callback.workingHint": {
-    "message": "このページを閉じないでください。まもなくホームに戻ります。"
-  },
-  "auth.callback.failed": {
-    "message": "ログインが完了しませんでした"
-  },
-  "auth.callback.failedHint": {
-    "message": "ログインリンクの有効期限が切れているか、すでに使用済みの可能性があります。ホームに戻って再度ログインしてください。"
-  },
-  "auth.callback.idle": {
-    "message": "処理中のログインはありません"
-  },
-  "auth.callback.idleHint": {
-    "message": "このページはログインのリダイレクト専用です。ブックマークの必要はありません。"
-  },
-  "auth.callback.backHome": {
-    "message": "ホームに戻ってログイン"
-  },
-  "myspace.tagManager.emptyHint": {
-    "message": "上で名前を入力して色を選ぶと、最初のタグができます。"
-  },
-  "validation.username.empty": {
-    "message": "ユーザー名を入力してください"
-  },
-  "message.username.updated": {
-    "message": "ユーザー名を更新しました"
-  },
-  "message.username.updateError": {
-    "message": "ユーザー名を更新できませんでした。しばらくしてからもう一度お試しください。"
-  },
-  "message.requestTimeout": {
-    "message": "リクエストがタイムアウトしました。もう一度お試しください。"
-  },
-  "message.tooManyRequests": {
-    "message": "操作が頻繁すぎます。しばらくしてからお試しください。"
-  },
-  "account.signInRequired": {
-    "message": "ログインするとアカウントを表示できます"
-  },
-  "account.signInRequiredHint": {
-    "message": "ホームに戻ります。下のボタンからも移動できます。"
-  },
-  "myspace.tagManager.color": {
-    "message": "タグの色"
-  },
-  "comments.gif.searchPlaceholder": {
-    "message": "GIF を検索"
   }
 }

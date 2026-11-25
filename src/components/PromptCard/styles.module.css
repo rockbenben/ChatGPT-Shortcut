@@ -1,41 +1,24 @@
-/* New Card Container Style — B+ design system
-   Card uses hairline border (rgba 0.06) instead of "ghost shadow" for visible definition
-   on the deeper #14171a page background. */
+/* Prompt Card — 柔和工作台卡片体系 */
 .showcaseCard {
-  border-radius: 6px;
+  border-radius: 12px;
   border: 1px solid var(--site-color-hairline);
   background-color: var(--ifm-background-surface-color);
+  box-shadow: var(--site-shadow-xs);
   display: flex;
   flex-direction: column;
   contain: layout paint;
   position: relative;
   overflow: hidden;
-  transition: border-color 0.12s var(--site-motion-emphasized), box-shadow 0.12s var(--site-motion-emphasized);
-}
-
-/* Top gradient hairline — only on hover. Replaces the old left-edge inset + bloom. */
-.showcaseCard::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, var(--site-color-tag-selected-text) 50%, transparent 100%);
-  opacity: 0;
-  transition: opacity 0.12s var(--site-motion-emphasized);
-  pointer-events: none;
-  z-index: 1;
+  transition:
+    transform 0.16s var(--site-motion-emphasized),
+    border-color 0.16s var(--site-motion-emphasized),
+    box-shadow 0.16s var(--site-motion-emphasized);
 }
 
 .showcaseCard:hover {
-  border-color: rgba(var(--ifm-color-primary-rgb), 0.4);
-  /* 写死的 rgba(0,0,0,.4) 在浅色模式下是一圈过重的黑影；--site-shadow-lg 两个模式各有值 */
-  box-shadow: var(--site-shadow-lg);
-}
-
-.showcaseCard:hover::before {
-  opacity: 0.7;
+  transform: translateY(-2px);
+  border-color: rgba(var(--ifm-color-primary-rgb), 0.45);
+  box-shadow: var(--site-shadow-md);
 }
 
 .showcaseCard:focus-visible {
@@ -43,28 +26,76 @@
   outline-offset: 2px;
 }
 
-.showcaseCardBody {
-  line-height: 1.55;
-  color: var(--ifm-color-content-secondary);
-  font-size: 13px;
-  flex: 1;
-}
-
-@media (max-width: 767px) {
-  .showcaseCardBody {
-    margin-bottom: 5px;
+@media (prefers-reduced-motion: reduce) {
+  .showcaseCard,
+  .showcaseCard:hover {
+    transform: none;
+    transition: none;
   }
 }
 
-/* Title link cascade — B+ keeps card hover quiet:
-   - dormant: colorText (white)
-   - card hovered, link not directly hovered: still colorText (no card-wide tint)
-   - link itself hovered: primary-hi + underline */
+/* 卡片主内容区（与全宽 footer 分离，避免双层 padding 导致分隔线悬空） */
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 18px 14px;
+  gap: 8px;
+  min-height: 0;
+}
+
+/* 有 remark 时正文与摘要之间以极淡虚线分隔，保持卡片通透可读 */
+.promptBodyAfterRemark {
+  min-height: 0;
+  margin-top: 2px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--site-color-hairline);
+}
+
+/* 卡片底部全宽单行操作栏 */
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 16px;
+  min-height: 44px;
+  border-top: 1px solid var(--site-color-hairline);
+  background-color: transparent;
+}
+
+.cardFooter :global(.ant-btn) {
+  border-radius: 8px;
+  min-width: 30px;
+  height: 30px;
+  color: var(--ifm-color-content-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.14s var(--site-motion-emphasized),
+    color 0.14s var(--site-motion-emphasized);
+}
+
+.cardFooter :global(.ant-btn:hover) {
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.08);
+  color: var(--site-color-tag-selected-text);
+}
+
+.cardFooter :global(.ant-btn-dangerous) {
+  color: var(--site-color-text-tertiary);
+}
+
+.cardFooter :global(.ant-btn-dangerous:hover) {
+  background-color: rgba(255, 77, 79, 0.08);
+  color: var(--site-color-error-text);
+}
+
+/* Title link cascade */
 .showcaseCardLink {
-  color: var(--ifm-color-content) !important;
+  color: var(--site-color-card-title, var(--ifm-color-content)) !important;
   text-decoration: none;
   transition: color 0.12s var(--site-motion-emphasized);
-  /* WCAG 2.2 target-size (>=24px): 垂直内边距扩大点击热区，保持 display:inline 避免破坏 line-clamp */
   padding: 3px 0;
 }
 
@@ -78,63 +109,23 @@
   color: var(--site-color-svg-icon-favorite);
 }
 
-/* Card Actions - Expand clickable area */
-.showcaseCard :global(.ant-card-actions) {
-  display: flex;
-  background-color: transparent;
-}
-
-.showcaseCard :global(.ant-card-actions > li) {
-  flex: 1;
-  margin: 0 !important;
-  display: flex;
-  align-items: stretch;
-}
-
-.showcaseCard :global(.ant-card-actions > li > span) {
-  display: flex;
-  flex: 1;
-  align-items: stretch;
-}
-
-.showcaseCard :global(.ant-card-actions .ant-btn) {
-  width: 100%;
-  height: 100%;
-  min-height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0;
-  transition: background-color 0.12s var(--site-motion-emphasized), color 0.12s var(--site-motion-emphasized);
-}
-
-.showcaseCard :global(.ant-card-actions .ant-btn):hover {
-  background-color: rgba(var(--ifm-color-primary-rgb), 0.08);
-  color: var(--site-color-tag-selected-text);
-}
-
-/* Top-right stats: tabular mono for numbers */
+/* Tabular mono for numbers */
 .showcaseCard :global(.ant-statistic-content) {
   font-family: var(--site-font-mono);
   font-variant-numeric: tabular-nums;
+}
+
+/* Card hover subtle wake-up for source link & passive icons inside card content */
+.cardContent :global(.anticon) {
   transition: color 0.12s var(--site-motion-emphasized);
 }
 
-/* Card hover "wake-up": all passive icons in card body — lock, drag handle, website link,
-   stat icons (fire/like) and stat numbers — lift to primary-hi together with the card.
-   Excludes .ant-card-actions buttons which have their own per-button hover.
-   HeartFilled (favorite) inline-colored pink in actions stays pink (not in body). */
-.showcaseCard :global(.ant-card-body .anticon) {
-  transition: color 0.12s var(--site-motion-emphasized);
-}
-
-.showcaseCard:hover :global(.ant-card-body .anticon),
-.showcaseCard:hover :global(.ant-statistic-content) {
+.showcaseCard:hover .cardContent :global(.anticon),
+.showcaseCard:hover .cardContent :global(.ant-statistic-content) {
   color: var(--site-color-tag-selected-text) !important;
 }
 
-/* ▼ 在 downvotes === 0 时弱化为 icon-only：opacity 0.6, hover 时恢复 1.
-   与详情页 .comp-sheet-vote-icon-only 同语义。 */
+/* ▼ 在 downvotes === 0 时弱化为 icon-only */
 .cardVoteIconOnly {
   opacity: 0.6;
   transition: opacity 0.12s var(--site-motion-emphasized);
@@ -142,4 +133,17 @@
 
 .cardVoteIconOnly:hover {
   opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .cardFooter {
+    padding: 6px 12px;
+    min-height: 48px;
+  }
+
+  .cardFooter :global(.ant-btn) {
+    min-width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
 }

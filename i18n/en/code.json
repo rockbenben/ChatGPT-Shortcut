@@ -1,4 +1,10 @@
 {
+  "account.signInRequired": {
+    "message": "Sign in to view your account"
+  },
+  "account.signInRequiredHint": {
+    "message": "Taking you back to the home page — or use the button below."
+  },
   "action.add": {
     "message": "Add"
   },
@@ -89,6 +95,30 @@
   "action.viewDetails": {
     "message": "View details"
   },
+  "auth.callback.backHome": {
+    "message": "Back to home to sign in"
+  },
+  "auth.callback.failed": {
+    "message": "Sign-in didn't complete"
+  },
+  "auth.callback.failedHint": {
+    "message": "The sign-in link may have expired or already been used. Head back home and sign in again."
+  },
+  "auth.callback.idle": {
+    "message": "No sign-in to finish here"
+  },
+  "auth.callback.idleHint": {
+    "message": "This page only handles sign-in redirects — no need to bookmark it."
+  },
+  "auth.callback.title": {
+    "message": "Finish signing in"
+  },
+  "auth.callback.working": {
+    "message": "Signing you in…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Keep this page open — you'll be sent back to the home page shortly."
+  },
   "button.clearAllCache": {
     "message": "Clear all cache"
   },
@@ -139,6 +169,9 @@
   },
   "comments.gif.label": {
     "message": "Insert GIF"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "Search GIFs"
   },
   "comments.heading": {
     "message": "Discussion"
@@ -238,6 +271,12 @@
   },
   "feedback.welcome": {
     "message": "Feedback & suggestions"
+  },
+  "filter.lessTags": {
+    "message": "Show less"
+  },
+  "filter.moreTags": {
+    "message": "More ({count})"
   },
   "filter.operator.all.tip": {
     "message": "Show prompts matching all selected tags"
@@ -410,11 +449,11 @@
   "message.addPrompt.success": {
     "message": "Prompt submitted — you'll find it at the top of My collection"
   },
-  "message.cache.cleared": {
-    "message": "Cache cleared"
-  },
   "message.cache.clearError": {
     "message": "Couldn't clear the cache. Try again in a moment."
+  },
+  "message.cache.cleared": {
+    "message": "Cache cleared"
   },
   "message.cannotFavorOwn": {
     "message": "You can't favorite your own prompt"
@@ -506,11 +545,11 @@
   "message.noSpaceItems": {
     "message": "Nothing here yet — create a prompt or favorite some"
   },
-  "message.orderSaved": {
-    "message": "Layout saved"
-  },
   "message.orderSaveFailed": {
     "message": "Couldn't save the layout. Try again in a moment."
+  },
+  "message.orderSaved": {
+    "message": "Layout saved"
   },
   "message.postComment.error": {
     "message": "Couldn't post the comment. Try again in a moment."
@@ -526,6 +565,9 @@
   },
   "message.removeFavorite.success": {
     "message": "Removed from favorites"
+  },
+  "message.requestTimeout": {
+    "message": "The request timed out. Try again."
   },
   "message.resetPassword.error": {
     "message": "Couldn't reset the password. Try again in a moment."
@@ -548,17 +590,26 @@
   "message.success.register": {
     "message": "Account created"
   },
+  "message.tagsUpdateFailed": {
+    "message": "Couldn't update the tags. Try again in a moment."
+  },
   "message.tagsUpdated": {
     "message": "Tags updated"
   },
-  "message.tagsUpdateFailed": {
-    "message": "Couldn't update the tags. Try again in a moment."
+  "message.tooManyRequests": {
+    "message": "Too many attempts. Try again in a moment."
   },
   "message.updatePrompt.error": {
     "message": "Couldn't update the prompt. Try again in a moment."
   },
   "message.updatePrompt.success": {
     "message": "Prompt updated"
+  },
+  "message.username.updateError": {
+    "message": "Couldn't update the username. Try again in a moment."
+  },
+  "message.username.updated": {
+    "message": "Username updated"
   },
   "modal.clearCache.title": {
     "message": "Clear cache?"
@@ -608,8 +659,14 @@
   "myspace.manageTags": {
     "message": "Manage tags"
   },
+  "myspace.tagManager.color": {
+    "message": "Tag color"
+  },
   "myspace.tagManager.empty": {
     "message": "No custom tags"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Type a name above, pick a color, and your first tag is ready."
   },
   "myspace.tagManager.namePlaceholder": {
     "message": "Tag name"
@@ -629,6 +686,9 @@
   "noResults.title": {
     "message": "No matching prompts found"
   },
+  "placeholder.clear": {
+    "message": "Clear"
+  },
   "placeholder.comment": {
     "message": "Write a comment… Markdown and HTML supported"
   },
@@ -640,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "Email"
+  },
+  "placeholder.fillTitle": {
+    "message": "Fill placeholders"
   },
   "placeholder.newPassword": {
     "message": "New password"
@@ -677,6 +740,9 @@
   "prompt.content": {
     "message": "Prompt content"
   },
+  "prompt.copyFilled": {
+    "message": "Copy filled prompt"
+  },
   "prompt.private": {
     "message": "Private"
   },
@@ -701,11 +767,11 @@
   "share.native": {
     "message": "System"
   },
-  "share.shareTo": {
-    "message": "Share via"
-  },
   "share.shareOn": {
     "message": "Share on {channel}"
+  },
+  "share.shareTo": {
+    "message": "Share via"
   },
   "showcase.header.button": {
     "message": "Browse community"
@@ -878,6 +944,70 @@
   "sort.newest": {
     "message": "Newest"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Close",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Scroll back to top",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "This page crashed.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Try again",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "We could not find what you were looking for.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "Page Not Found",
+    "description": "The title of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "On this page",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
   "theme.admonition.caution": {
     "message": "caution",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -901,14 +1031,6 @@
   "theme.admonition.warning": {
     "message": "warning",
     "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Close",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Scroll back to top",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "Archive",
@@ -962,10 +1084,6 @@
     "message": "One post|{count} posts",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.post.readMore": {
     "message": "Read more",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -974,6 +1092,10 @@
     "message": "Read more about {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "Blog recent posts navigation",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -981,22 +1103,6 @@
   "theme.blog.tagTitle": {
     "message": "{nPosts} tagged with \"{tagName}\"",
     "description": "The title of the page for a blog tag"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "Copied",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "Copy",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copy code to clipboard",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Switch between dark and light mode (currently {mode})",
@@ -1042,6 +1148,10 @@
     "message": "Unlisted page",
     "description": "The unlisted content banner title"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 item|{count} items",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "Home page",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1049,10 +1159,6 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "Breadcrumbs",
     "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 item|{count} items",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Docs pages",
@@ -1121,26 +1227,6 @@
     "message": "This is unreleased documentation for {siteTitle} {versionLabel} version.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "This page crashed.",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(opens in new tab)",
-    "description": "The ARIA label for the external link icon"
-  },
   "theme.lastUpdated.atDate": {
     "message": "on {date}",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1173,22 +1259,6 @@
     "message": "Versions",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Main",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "We could not find what you were looking for.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "Page Not Found",
-    "description": "The title of the 404 page"
-  },
   "theme.tags.tagsListLabel": {
     "message": "Tags:",
     "description": "The label alongside a tag list"
@@ -1200,10 +1270,6 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
-    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "Data management"
@@ -1271,6 +1337,9 @@
   "validation.replyRequired": {
     "message": "Enter a reply"
   },
+  "validation.username.empty": {
+    "message": "Username can't be empty"
+  },
   "validation.username.required": {
     "message": "Enter your username or registered email"
   },
@@ -1294,59 +1363,5 @@
   },
   "vote.upvote.success": {
     "message": "Liked"
-  },
-  "auth.callback.title": {
-    "message": "Finish signing in"
-  },
-  "auth.callback.working": {
-    "message": "Signing you in…"
-  },
-  "auth.callback.workingHint": {
-    "message": "Keep this page open — you'll be sent back to the home page shortly."
-  },
-  "auth.callback.failed": {
-    "message": "Sign-in didn't complete"
-  },
-  "auth.callback.failedHint": {
-    "message": "The sign-in link may have expired or already been used. Head back home and sign in again."
-  },
-  "auth.callback.idle": {
-    "message": "No sign-in to finish here"
-  },
-  "auth.callback.idleHint": {
-    "message": "This page only handles sign-in redirects — no need to bookmark it."
-  },
-  "auth.callback.backHome": {
-    "message": "Back to home to sign in"
-  },
-  "myspace.tagManager.emptyHint": {
-    "message": "Type a name above, pick a color, and your first tag is ready."
-  },
-  "validation.username.empty": {
-    "message": "Username can't be empty"
-  },
-  "message.username.updated": {
-    "message": "Username updated"
-  },
-  "message.username.updateError": {
-    "message": "Couldn't update the username. Try again in a moment."
-  },
-  "message.requestTimeout": {
-    "message": "The request timed out. Try again."
-  },
-  "message.tooManyRequests": {
-    "message": "Too many attempts. Try again in a moment."
-  },
-  "account.signInRequired": {
-    "message": "Sign in to view your account"
-  },
-  "account.signInRequiredHint": {
-    "message": "Taking you back to the home page — or use the button below."
-  },
-  "myspace.tagManager.color": {
-    "message": "Tag color"
-  },
-  "comments.gif.searchPlaceholder": {
-    "message": "Search GIFs"
   }
 }
