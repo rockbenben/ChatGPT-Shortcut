@@ -11,15 +11,14 @@
  *   实测基线 14224（18 locale 全量构建，不含社区页）。余量 5776 → 天花板 2888 页。
  *   取 MAX_PAGES=1400（产物 17024，占上限 85%）：2000 页时产物 18224 已到 91%，
  *   护栏每次构建都告警，那种噪音很快会被无视，等于没有护栏。
- *   注意结构性张力：光是覆盖有流量的 933 条就已占到 80%，这条路本来就没多少余地。
  *
  * ── 选品顺序 ──
- *  1. src/data/communityTraffic.json：Search Console 实测有搜索流量的 id（90 天）。
- *     这批是问题本身 —— CrUX 判「欠佳」的 URL 就在里面，必须全部覆盖。
+ *  1. src/data/communityTraffic.json：Search Console 最近 3 个月有搜索曝光的提示词 ID。
+ *     按名单顺序优先覆盖，同一提示词的不同网址只占一个名额。
  *  2. 剩余名额按 upvoteDifference 降序补足，同分按 id 降序（新的优先）。
  *     赞数在尾部区分度很差（第 2000 名 4 分、第 2892 名 3 分，大片并列），
  *     所以它只用来填空位，不作为主依据。补位时跳过净踩（upvoteDifference < 0）的；
- *     但第 1 步不看赞数 —— 有流量就说明真有人在看，被踩过也一样有 LCP 问题。
+ *     第 1 步只看搜索曝光，净踩的提示词也可以入选。
  *
  * 选中的 id 集合还会被 src/pages/community-prompt.tsx 读走：?id= 壳靠它判断
  * canonical 该不该指向静态页（指向不存在的静态页 = canonical 到 404）。
@@ -89,11 +88,10 @@ export function run() {
     if (item && Number.isInteger(item.id)) corpus.set(item.id, item);
   }
 
-  // 1) 有搜索流量的先进 —— 不看赞数。净踩与否是 sitemap 的收录取舍
-  //    （见 scripts/sitemapCommunityItems.mjs），不该决定要不要预渲染：
-  //    一个被踩过的页面同样有 LCP 问题，而它有流量就说明真有人在看。
-  const traffic = readJson(trafficPath, [], true).filter((id) => corpus.has(id));
-  const selected = new Set(traffic);
+  // 1) 有搜索曝光的先进。净踩与否只影响 sitemap 收录（见 scripts/sitemapCommunityItems.mjs）。
+  const traffic = new Set(readJson(trafficPath, [], true).filter((id) => corpus.has(id)));
+  const selected = new Set([...traffic].slice(0, MAX_PAGES));
+  const trafficCount = selected.size;
 
   // 2) 剩余名额按赞数补足。这里才用赞数：没有流量数据时它是仅有的质量信号，
   //    补进来的是「将来可能来流量」的候选，宁可挑口碑好的。
@@ -119,10 +117,10 @@ export function run() {
     fs.writeFileSync(outPath, next, "utf-8");
   }
 
-  const truncated = traffic.length > MAX_PAGES;
+  const truncated = traffic.size > MAX_PAGES;
   console.log(
-    `[community-select] ${ids.length} pages = ${Math.min(traffic.length, MAX_PAGES)} 有流量 + ${ids.length - Math.min(traffic.length, MAX_PAGES)} 高赞补足` +
-      ` (语料 ${corpus.size}, 上限 ${MAX_PAGES}${truncated ? " —— ⚠ 有流量的条目已超上限，被截断" : ""})`,
+    `[community-select] ${ids.length} pages = ${trafficCount} 有搜索曝光 + ${ids.length - trafficCount} 高赞补足` +
+      ` (语料 ${corpus.size}, 上限 ${MAX_PAGES}${truncated ? ` —— ⚠ ${traffic.size - trafficCount} 个有搜索曝光的提示词超过上限` : ""})`,
   );
 }
 
