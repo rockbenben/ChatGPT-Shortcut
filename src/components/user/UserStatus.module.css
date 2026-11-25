@@ -1,0 +1,35 @@
+.localBar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.utilityGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 767px) {
+  .localBar {
+    gap: 6px;
+  }
+
+  .localBar :global(.ant-btn) {
+    min-height: 36px;
+    min-width: 36px;
+  }
+
+  .utilityGroup .createBtn {
+    width: 36px;
+    padding-inline: 0;
+    gap: 0;
+  }
+
+  .createLabel {
+    display: none;
+  }
+}

@@ -45,12 +45,18 @@
   --site-color-error-text: #cf1322;
   --site-color-warning-text: #ad4e00;
   --site-color-tag-selected-border: #397e6a;
+  --site-color-action-bg: #397e6a;
+  --site-color-action-text: #fff;
   /* 三级文字承载的是信息不是装饰（复制数、字符/token 数、时间、FILTERS 标签、来源图标），
      11px 下 .45/.40 实测只有 3.32:1 / 3.74:1，AA 小字要 4.5:1。抬到 .56/.50 后
      两个模式都过线，观感仍明显低于正文与次级文字。 */
   --site-color-text-tertiary: rgba(0, 0, 0, 0.56);
   --site-color-hairline: rgba(0, 0, 0, 0.08);
   --site-color-ghost-border: rgba(0, 0, 0, 0.04);
+  --site-color-preview-bg: rgba(0, 0, 0, 0.028);
+  --site-color-remark-text: rgba(0, 0, 0, 0.68);
+  --site-color-card-title: var(--ifm-color-content);
+  --site-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
   /* 页脚底色。不设的话落回 Infima 的 --ifm-color-emphasis-100：浅色是 #f5f6f7 的冷灰，
      撞在这套微暖纸底（page #f0f1ea）上就是一条发白发冷的带子，明显不属于同一个色系。
      此前只写过 .footer--dark，而 docusaurus.config 的 footer 没有 style:"dark"，
@@ -113,6 +119,10 @@ html[data-theme="dark"] {
   --site-color-text-tertiary: rgba(255, 255, 255, 0.5);
   --site-color-hairline: rgba(255, 255, 255, 0.08);
   --site-color-ghost-border: rgba(255, 255, 255, 0.04);
+  --site-color-preview-bg: rgba(255, 255, 255, 0.03);
+  --site-color-remark-text: rgba(255, 255, 255, 0.68);
+  --site-color-card-title: rgba(255, 255, 255, 0.86);
+  --site-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
   --ifm-footer-background-color: var(--ifm-background-surface-color);
   --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 70%);
   --ifm-background-color: #14171a;
@@ -487,6 +497,62 @@ article.markdown a:hover {
   color: var(--site-primary-font);
 }
 
+.button.site-action-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-block-size: 32px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: normal;
+}
+
+.button.site-action-link--secondary {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--site-color-hairline);
+  color: var(--ifm-color-content);
+}
+
+.button.site-action-link--primary {
+  background: var(--site-color-action-bg);
+  border-color: transparent;
+  color: var(--site-color-action-text);
+}
+
+.button.site-action-link--primary:hover {
+  background: color-mix(in srgb, var(--site-color-action-bg) 90%, black);
+  color: var(--site-color-action-text);
+}
+
+.button.site-action-link:focus-visible {
+  outline: 2px solid var(--site-color-tag-selected-text);
+  outline-offset: 2px;
+}
+
+.button.site-action-link--plain {
+  min-block-size: 24px;
+  padding-inline: 8px;
+  background: transparent;
+  border-color: transparent;
+  color: var(--site-color-tag-selected-text);
+}
+
+.button.site-action-link--secondary:hover,
+.button.site-action-link--plain:hover {
+  border-color: var(--site-color-tag-selected-border);
+  color: var(--site-color-tag-selected-text);
+}
+
+@media (max-width: 767px) {
+  .button.site-action-link {
+    min-block-size: 36px;
+  }
+}
+
 /* 渐变的排版方向。
    CSS 渐变没有逻辑属性对应物：`linear-gradient(90deg, …)` 在阿拉伯语（dir=rtl）下
    仍然从左往右淡出，于是 remark 引用块的着色会从「强调条那一侧起」变成「从末尾起」，
@@ -578,7 +644,7 @@ html[dir="rtl"] {
   display: inline-flex;
   align-items: stretch;
   border: 1px solid var(--site-color-hairline);
-  border-radius: 6px;
+  border-radius: 8px;
   background: var(--site-color-ghost-border);
   overflow: hidden;
   transition: border-color 0.12s var(--site-motion-emphasized), background 0.12s var(--site-motion-emphasized);
@@ -641,9 +707,9 @@ html[dir="rtl"] {
   color: var(--site-color-tag-selected-text);
 }
 
-/* Mobile — 仅 code body 字号微调，其他 Flex/Card 自适应 */
+/* Mobile — 仅 code body 字号与内边距微调，其他 Flex/Card 自适应 */
 @media (max-width: 600px) {
-  .comp-sheet-code { padding: 18px 0; font-size: 13px; }
+  .comp-sheet-code { padding: 14px 16px; font-size: 13.5px; }
 }
 
 /* ========================================================================== */
@@ -787,6 +853,61 @@ html[dir="rtl"] {
   100% { background-position: -100% 0; }
 }
 
+/* Comment item — 替代内联 onMouseEnter/Leave，避免嵌套回复双重高亮 */
+.comment-item {
+  container: comment / inline-size;
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  transition: background-color 0.12s var(--site-motion-emphasized);
+}
+.comment-item:hover:not(:has(.comment-item:hover)) {
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.04);
+}
+
+.comment-replies {
+  margin-block-start: 10px;
+  padding-inline-start: 12px;
+  border-inline-start: 2px solid var(--site-color-hairline);
+}
+
+.comment-replies:empty {
+  display: none;
+}
+
+:where(.comment-replies) .comment-replies {
+  padding-inline-start: 0;
+  border-inline-start-width: 0;
+}
+
+.comment-replies > .comment-item {
+  padding-inline: 0;
+}
+
+.comment-replies > .comment-item:last-child {
+  margin-block-end: 0;
+}
+
+.comment-replies > .comment-item:has(> .comment-replies:not(:empty)) {
+  padding-block-end: 0;
+}
+
+/* 仅在当前评论列有足够空间时增加缩进。深层回复共用上一层引导线。 */
+@container comment (min-width: 440px) {
+  .comment-replies {
+    padding-inline-start: 14px;
+    border-inline-start-width: 2px;
+  }
+
+  .comment-replies-with-avatar {
+    margin-inline-start: 52px;
+  }
+
+  .comment-replies > .comment-item {
+    padding-inline: 14px;
+  }
+}
+
 /* ========================================================================== */
 /* === Share UI — Stretch URL + Compact Channels + Native First            ==
 /*    去掉 react-share 默认彩色 round 32px icons，用 antd outlined + label
@@ -803,7 +924,7 @@ html[dir="rtl"] {
   gap: 4px;
   padding: 8px 4px !important;
   border: none !important;
-  border-radius: 6px !important;
+  border-radius: 8px !important;
   background: transparent !important;
   color: var(--site-color-text-tertiary) !important;
   text-decoration: none !important;
@@ -818,6 +939,7 @@ html[dir="rtl"] {
 
 /* Native Share — sage primary 强调；hover bg 必须 CSS（inline 拿不到 :hover） */
 .share-channel-native { color: var(--ifm-color-primary) !important; }
+
 .share-channel-native:hover {
   color: var(--ifm-color-primary) !important;
   background: rgba(var(--ifm-color-primary-rgb), 0.1) !important;
@@ -936,6 +1058,7 @@ html[data-auth-boot="in"]:not([data-auth-ready]) .userstatus-live { display: non
   order: 2;
   margin: 0 !important;
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
@@ -954,6 +1077,7 @@ html[data-auth-boot="in"]:not([data-auth-ready]) .userstatus-live { display: non
 }
 
 .footer__link-separator {
+  display: inline !important;
   margin: 0 8px;
   color: var(--site-color-text-tertiary);
   opacity: 0.4;
@@ -973,4 +1097,38 @@ html[data-auth-boot="in"]:not([data-auth-ready]) .userstatus-live { display: non
   .footer__link-separator {
     font-size: 11px;
   }
+  .comment-editor-toolbar .ant-btn {
+    min-width: 34px;
+    height: 34px;
+  }
+  .comment-item .ant-btn-sm {
+    min-height: 32px;
+    padding-inline: 8px;
+  }
+}
+
+/* Segmented track & Modal container / confirm dialog polish */
+.ant-segmented {
+  box-shadow: inset 0 0 0 1px var(--site-color-hairline);
+}
+
+.ant-modal-container {
+  border: 1px solid var(--site-color-hairline);
+}
+
+.ant-modal-confirm .ant-modal-confirm-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ifm-color-content);
+}
+
+.ant-modal-confirm .ant-modal-confirm-content {
+  color: var(--ifm-color-content-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+.ant-modal-confirm .ant-modal-confirm-btns {
+  margin-top: 20px;
 }

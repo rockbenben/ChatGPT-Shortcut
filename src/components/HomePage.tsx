@@ -11,7 +11,7 @@ import React, { useContext, useState, useMemo, useEffect, useCallback, useRef, S
 import { ViewModeContext, useViewMode, type ViewMode } from "@site/src/contexts/ViewModeContext";
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import { useHistory } from "@docusaurus/router";
+import { useHistory, useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate, { translate } from "@docusaurus/Translate";
 import { voteLoginRequiredText, voteAlreadyVotedText, voteSuccessText, voteFailedText } from "@site/src/utils/voteMessages";
@@ -19,14 +19,15 @@ import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 
 import { App, Button, Typography, Flex, Row, Col, Card, Tooltip } from "antd";
-import { FilterOutlined, CaretDownOutlined, CaretUpOutlined, AppstoreOutlined, HeartOutlined, HeartFilled, EditOutlined, TagOutlined, CloseOutlined, WarningOutlined, StarFilled } from "@ant-design/icons";
+import { DownOutlined, UpOutlined, AppstoreOutlined, HeartOutlined, HeartFilled, EditOutlined, TagOutlined, CloseOutlined, WarningOutlined, StarFilled } from "@ant-design/icons";
 
 import ShowcaseTagSelect from "@site/src/components/ShowcaseTagSelect";
 import ShowcaseFilterToggle from "@site/src/components/ShowcaseFilterToggle";
 import { EmptyState } from "@site/src/components/EmptyState";
 
 import UserStatus from "@site/src/components/user/UserStatus";
-import SearchBar, { useFilteredPrompts, useClearFilters } from "@site/src/components/SearchBar";
+import type { MySpaceStats } from "@site/src/components/user/myspace/types";
+import SearchBar, { useFilteredPrompts, useClearFilters, prepareUserState } from "@site/src/components/SearchBar";
 import { NoResults } from "@site/src/components/SearchBar/NoResults";
 
 import styles from "@site/src/pages/styles.module.css";
@@ -38,7 +39,7 @@ import { AuthContext } from "@site/src/components/AuthContext";
 import { voteOnUserPrompt } from "@site/src/api";
 import { fetchCardsByIds, fetchNextCards } from "@site/src/api/homepage";
 
-import { Tags, TagList } from "@site/src/data/tags";
+import { Tags, TagList, type TagType } from "@site/src/data/tags";
 import { SLOGAN, SUPPORTED_AI_TOOLS, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS, SITE_NAME } from "@site/src/data/constants";
 import { toBcp47 } from "@site/src/utils/i18n";
 import { toJsonLd } from "@site/src/utils/jsonLd";
@@ -55,111 +56,159 @@ const MySpace = lazyWithRetry(() => import("@site/src/components/user/MySpace"))
 const { Title, Paragraph } = Typography;
 
 // ==================== 页面头部组件 ====================
-const ShowcaseHeader: React.FC = () => (
+const ShowcaseHeader = () => (
   <section className={clsx("text--center", styles.heroSection)}>
     <div className="hideOnSmallScreen">
-      {/* inline style 必须，因为 antd 的 h1.ant-typography 选择器特异性 0,1,1 会赢过纯类 */}
       <Title
         level={1}
         style={{
-          fontSize: 40,
-          fontWeight: 300,
-          letterSpacing: "-0.04em",
-          lineHeight: 1.05,
-          marginBottom: 8,
+          fontSize: 32,
+          fontWeight: 600,
+          letterSpacing: "-0.03em",
+          lineHeight: 1.15,
+          marginBottom: 6,
           color: "var(--ifm-color-content)",
         }}>
         AI Short
       </Title>
-      <p style={{ fontSize: 18, maxWidth: 560, margin: "0 auto 4px", lineHeight: 1.55, color: "var(--ifm-color-content-secondary)" }}>{SLOGAN}</p>
+      <p style={{ fontSize: 16, maxWidth: 560, margin: "0 auto 4px", lineHeight: 1.5, color: "var(--ifm-color-content-secondary)" }}>{SLOGAN}</p>
       <div
         aria-label="Supported AI tools"
         style={{
-          fontSize: 13,
+          fontSize: 12.5,
           color: "var(--site-color-text-tertiary)",
-          letterSpacing: "0.04em",
-          marginBottom: 20,
-          fontFamily: "var(--site-font-mono)",
+          letterSpacing: "0.02em",
+          marginBottom: 14,
         }}>
-        {/* All locales follow the minimal '{tools} <native etc>' pattern — no 'Works with' prefix */}
         <Translate id="hero.supportedAiTools" values={{ tools: SUPPORTED_AI_TOOLS.join(" · ") }}>
           {"{tools} 等"}
         </Translate>
       </div>
     </div>
-    {/* slogan 单独一行给移动端：桌面那一行在 hideOnSmallScreen 块里（连同 h1、工具行一起藏），
-        移动端整块藏掉后就没有 tagline 了。此前这句只补在 UserStatus 的「未登录」分支里，
-        登录态移动端依然没有——同一位置两种登录态长得不一样。挪到这里两种登录态共用同一句。 */}
-    <p className="showOnSmallScreen" style={{ fontSize: 14, maxWidth: 320, margin: "0 auto 12px", lineHeight: 1.5, color: "var(--ifm-color-content-secondary)" }}>
+    <p className="showOnSmallScreen" style={{ fontSize: 13, maxWidth: 320, margin: "0 auto 8px", lineHeight: 1.45, color: "var(--ifm-color-content-secondary)" }}>
       {SLOGAN}
     </p>
-    <UserStatus />
+    <Flex align="center" justify="center" wrap gap={8} className={styles.heroActions}>
+      <UserStatus />
+    </Flex>
   </section>
 );
 
+// 高频核心分类（默认单行显示，其余可点击展开）
+const PRIMARY_TAGS: TagType[] = ["write", "article", "code", "ai", "language", "tool", "pedagogy", "company"];
+
 // ==================== 筛选组件 ====================
 const ShowcaseFilters: React.FC = React.memo(() => {
-  const [showTagsOnMobile, setShowTagsOnMobile] = useState(false);
-  const toggleTagsOnMobile = useCallback(() => {
-    setShowTagsOnMobile((prev) => !prev);
+  const [showAllTags, setShowAllTags] = useState(false);
+  const location = useLocation();
+  const history = useHistory();
+
+  const toggleAllTags = useCallback(() => {
+    setShowAllTags((prev) => !prev);
   }, []);
 
   const modifiedTagList = useMemo(() => {
     return TagList.filter((tag) => tag !== "contribute");
   }, []);
 
+  const modifiedTagSet = useMemo(() => new Set<string>(modifiedTagList), [modifiedTagList]);
+
+  const selectedTags = useMemo(() => {
+    const params = new URLSearchParams(location.search);
+    return params.getAll("tags").filter((tag) => modifiedTagSet.has(tag)) as TagType[];
+  }, [location.search, modifiedTagSet]);
+
+  const visibleTags = useMemo(() => {
+    if (showAllTags) return modifiedTagList;
+    const primarySet = new Set<TagType>(PRIMARY_TAGS);
+    const primary = PRIMARY_TAGS.filter((t) => modifiedTagSet.has(t));
+    const activeExtras = selectedTags.filter((t) => !primarySet.has(t));
+    return [...primary, ...activeExtras];
+  }, [showAllTags, modifiedTagList, modifiedTagSet, selectedTags]);
+
+  const extraCount = modifiedTagList.length - visibleTags.length;
+
+  const handleSelectAllTags = useCallback(() => {
+    const params = new URLSearchParams(location.search);
+    if (!params.has("tags")) return;
+    params.delete("tags");
+    params.delete("operator");
+    history.push({
+      ...location,
+      search: params.toString(),
+      state: prepareUserState(),
+    });
+  }, [location, history]);
+
   // 与无结果空状态共用同一份定义：同屏两个「清除筛选」必须清同样的东西、显示同样的数字
   const { activeFilterCount, clearFilters } = useClearFilters();
 
   return (
-    <section className="container">
-      <Flex justify="space-between" align="center" className={styles.filterCheckbox}>
-        <Button type="text" onClick={toggleTagsOnMobile} className="showOnSmallScreen" icon={<FilterOutlined />}>
-          {showTagsOnMobile ? <Translate id="action.hideTags">隐藏标签</Translate> : <Translate id="action.showTags">显示标签</Translate>}
-          {showTagsOnMobile ? <CaretUpOutlined /> : <CaretDownOutlined />}
-        </Button>
-        <Flex align="center" gap="small">
-          {/* 「Filters」刻意保持英文、不走 <Translate>：这是与 AI Short 品牌字同源的
-              排版性微标签（11px/uppercase/0.08em 字距），全语言统一字形才压得住这套
-              calm-editorial 视觉系统。i18n 检查若再报为缺失，属预期，勿"修"。 */}
-          <span
-            className="hideOnSmallScreen"
-            style={{
-              fontSize: 11,
-              fontWeight: 500,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              color: "var(--site-color-text-tertiary)",
-              margin: 0,
-            }}>
-            Filters
-          </span>
-          {activeFilterCount > 0 && (
-            <Button type="link" size="small" icon={<CloseOutlined />} onClick={clearFilters} style={{ padding: 0, height: "auto", fontSize: 11, color: "var(--site-color-tag-selected-text)" }}>
-              <Translate id="action.clearFilters" values={{ count: activeFilterCount }}>
-                {"清除筛选 ({count})"}
-              </Translate>
-            </Button>
-          )}
-        </Flex>
-        <Flex gap="small" align="center">
-          <ShowcaseFilterToggle />
-        </Flex>
-      </Flex>
-      <div className={clsx(styles.checkboxList, !showTagsOnMobile && "hideOnSmallScreen")} style={{ marginTop: "1rem" }}>
-        {modifiedTagList.map((tag, i) => {
-          const { label, description } = Tags[tag];
-          const id = `showcase_checkbox_id_${tag}`;
-
-          return (
-            <div key={i} className={`${styles.checkboxListItem} ${!showTagsOnMobile ? "hideOnSmallScreen" : ""}`}>
-              <Tooltip title={description} mouseEnterDelay={0.4}>
-                {/* 圆点收敛为中性灰、选中时点亮 accent（单 accent 体系）——样式见 ShowcaseTagSelect/styles.module.css */}
-                <ShowcaseTagSelect tag={tag} id={id} label={label} icon={<span className="tagFilterDot" />} />
-              </Tooltip>
+    <section className={clsx("container", styles.filterSection)}>
+      <div className={styles.filterBar}>
+        <div className={clsx(styles.filterRow, showAllTags && styles.filterRowExpanded)}>
+          <div className={clsx(styles.checkboxList, showAllTags && styles.checkboxListExpanded)}>
+            <div className={styles.checkboxListItem}>
+              <button
+                type="button"
+                className={clsx(styles.allTagPill, selectedTags.length === 0 && styles.allTagPillActive)}
+                aria-pressed={selectedTags.length === 0}
+                onClick={handleSelectAllTags}>
+                <Translate id="myspace.filter.all">全部</Translate>
+              </button>
             </div>
-          );
-        })}
+            {visibleTags.map((tag) => {
+              const { label, description } = Tags[tag];
+              const id = `showcase_checkbox_id_${tag}`;
+
+              return (
+                <div key={tag} className={styles.checkboxListItem}>
+                  <Tooltip title={description} mouseEnterDelay={0.4}>
+                    <ShowcaseTagSelect tag={tag} id={id} label={label} />
+                  </Tooltip>
+                </div>
+              );
+            })}
+          </div>
+          {(extraCount > 0 || showAllTags) && (
+            <div className={styles.moreTagsWrap}>
+              <Button
+                type="text"
+                size="small"
+                onClick={toggleAllTags}
+                icon={showAllTags ? <UpOutlined /> : <DownOutlined />}
+                className={styles.moreTagsBtn}>
+                {showAllTags ? (
+                  <Translate id="filter.lessTags">收起</Translate>
+                ) : (
+                  <Translate id="filter.moreTags" values={{ count: extraCount }}>
+                    {"更多分类 ({count})"}
+                  </Translate>
+                )}
+              </Button>
+            </div>
+          )}
+        </div>
+
+        {(selectedTags.length >= 2 || activeFilterCount > 0) && (
+          <div className={styles.filterMetaRow}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              {activeFilterCount > 0 && (
+                <Button
+                  type="link"
+                  size="small"
+                  icon={<CloseOutlined />}
+                  onClick={clearFilters}
+                  style={{ padding: 0, height: "auto", fontSize: 12, color: "var(--site-color-tag-selected-text)" }}>
+                  <Translate id="action.clearFilters" values={{ count: activeFilterCount }}>
+                    {"清除筛选 ({count})"}
+                  </Translate>
+                </Button>
+              )}
+            </div>
+            {selectedTags.length >= 2 && <ShowcaseFilterToggle />}
+          </div>
+        )}
       </div>
     </section>
   );
@@ -175,17 +224,6 @@ interface HomeData {
 interface ShowcaseCardsProps extends HomeData {
   onOpenModal: (data: any) => void;
 }
-
-/**
- * 占位符说明：卡片正文里的 [xxx] 是待替换的占位符（卡片列表不做高亮，高亮只在详情弹窗与详情页）。
- * 挂在搜索框正下方 = 紧贴它描述的那一列表顶部；早前它挂在筛选行与搜索框之间，两头都不靠，
- * 读起来像句多余的副标题。
- */
-const PlaceholderHint: React.FC = () => (
-  <Typography.Text style={{ display: "block", marginBottom: 12, fontSize: 12, color: "var(--site-color-text-tertiary)" }}>
-    <Translate id="howto.step2.text">用你的具体内容替换方括号 [占位符] 部分。</Translate>
-  </Typography.Text>
-);
 
 const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, defaultFavorData, defaultOtherData }) => {
   const { userAuth, getUserAuth, authLoading } = useContext(AuthContext);
@@ -463,18 +501,19 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
               <div className="container">
                 <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
                   {/* 未登录时这里是编辑精选（DEFAULT_FAVORITE_IDS），不是用户的收藏；英文区块标题沿用品牌样式。 */}
-                  <Title level={2} className="hideOnSmallScreen" style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", display: "inline-flex", alignItems: "center", gap: 10 }}>
-                    {/* 图标要跟标题走：未登录时这块是编辑精选，配爱心会让「Featured」继续读成收藏列表 */}
+                  <Title
+                    level={2}
+                    className="hideOnSmallScreen"
+                    style={{ margin: 0, fontSize: 20, fontWeight: 600, letterSpacing: "-0.02em", display: "inline-flex", alignItems: "center", gap: 8 }}>
                     {isLoggedIn ? (
-                      <HeartFilled aria-hidden style={{ color: "var(--site-color-svg-icon-favorite)", fontSize: 18 }} />
+                      <HeartFilled aria-hidden style={{ color: "var(--site-color-svg-icon-favorite)", fontSize: 16 }} />
                     ) : (
-                      <StarFilled aria-hidden style={{ color: "var(--ifm-color-primary)", fontSize: 18 }} />
+                      <StarFilled aria-hidden style={{ color: "var(--ifm-color-primary)", fontSize: 16 }} />
                     )}
                     {isLoggedIn ? "Favorites" : "Featured"}
                   </Title>
                   <SearchBar />
                 </div>
-                <PlaceholderHint />
                 <Row gutter={[16, 16]}>
                   {favoritePrompts.map((user, index) => (
                     <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6} className={index >= 4 ? styles.cardDeferred : undefined}>
@@ -497,13 +536,12 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
               <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
                 <SearchBar />
               </div>
-              <PlaceholderHint />
             </div>
           )}
           <div className="container margin-top--md">
-            <div className="hideOnSmallScreen" style={{ paddingBottom: 12, marginBottom: 16, borderBottom: "1px solid var(--site-color-hairline)" }}>
-              {/* 「All Prompts」同 Filters / Favorites，英文区块标题，刻意不译 */}
-              <Title level={2} style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em" }}>
+            <div style={{ paddingBottom: 10, marginBottom: 16, borderBottom: "1px solid var(--site-color-hairline)" }}>
+              {/* 「All Prompts」同 Favorites，英文区块标题，刻意不译 */}
+              <Title level={2} style={{ margin: 0, fontSize: 20, fontWeight: 600, letterSpacing: "-0.02em" }}>
                 All Prompts
               </Title>
             </div>
@@ -622,28 +660,26 @@ const ExploreView: React.FC<HomeData & { onOpenModal: (data: any) => void }> = (
 // Stat bar — 单 accent 体系：图标/数字全中性（原 cyan/green/red/blue 四色已收敛），
 // 数字用 content 主色 + mono，和卡片统计同语言；区分靠图标形状 + label。
 const StatItem: React.FC<{ icon: React.ReactNode; label: React.ReactNode; value: number }> = ({ icon, label, value }) => (
-  <div style={{ textAlign: "center", minWidth: 72 }}>
+  <div style={{ textAlign: "center", minWidth: 80 }}>
     <div
       style={{
-        fontSize: 10,
+        fontSize: 12,
         color: "var(--site-color-text-tertiary)",
         marginBottom: 6,
-        letterSpacing: "0.12em",
-        textTransform: "uppercase",
         display: "inline-flex",
         alignItems: "center",
-        gap: 4,
+        gap: 6,
       }}>
-      <span aria-hidden style={{ fontSize: 11 }}>
+      <span aria-hidden style={{ fontSize: 12 }}>
         {icon}
       </span>
       <span>{label}</span>
     </div>
     <div
       style={{
-        fontSize: 28,
+        fontSize: 24,
         fontWeight: 600,
-        lineHeight: 1,
+        lineHeight: 1.1,
         fontFamily: "var(--site-font-mono)",
         fontVariantNumeric: "tabular-nums",
         color: "var(--ifm-color-content)",
@@ -655,13 +691,11 @@ const StatItem: React.FC<{ icon: React.ReactNode; label: React.ReactNode; value:
 
 const StatDivider: React.FC = () => <div style={{ width: 1, height: 40, background: "var(--site-color-hairline)" }} />;
 
-const PageHeader: React.FC<{
+const PageHeader: React.FC<MySpaceStats & {
   userAuth: any;
-  totalItems: number;
-  totalPrompts: number;
-  totalFavorites: number;
-  totalTags: number;
-}> = ({ userAuth, totalItems, totalPrompts, totalFavorites, totalTags }) => {
+}> = ({ userAuth, totalItems, totalPrompts, totalFavorites }) => {
+  // 标签定义直接取会话状态，保存定义时无需重新加载卡片即可更新统计。
+  const totalTags = userAuth?.data?.customTags?.length ?? 0;
   // Level system based on shared prompts count
   const sharedCount = userAuth?.data?.userprompts?.filter((p: any) => p.share)?.length || 0;
   const levelInfo = getLevelInfo(sharedCount);
@@ -732,6 +766,7 @@ const PageHeader: React.FC<{
             borderRadius: 12,
             border: "1px solid var(--site-color-hairline)",
             background: "var(--ifm-background-surface-color)",
+            boxShadow: "var(--site-shadow-xs)",
           }}
           styles={{ body: { padding: "16px 24px" } }}>
           <Flex justify="space-around" align="center" wrap="wrap" gap={16}>
@@ -754,13 +789,13 @@ const MyCollectionView: React.FC<HomeData & { onOpenModal: (data: any) => void }
   const { viewMode } = useViewMode();
 
   // 从缓存初始化 stats，避免刷新时显示 0；用 lazy initializer 让 getCache 只在 mount 时调用一次
-  const [stats, setStats] = React.useState(() => {
+  const [stats, setStats] = React.useState<MySpaceStats>(() => {
     const cached = typeof window !== "undefined" ? getCache("myspace_stats") : null;
-    return cached || { totalItems: 0, totalPrompts: 0, totalFavorites: 0, totalTags: 0 };
+    return cached || { totalItems: 0, totalPrompts: 0, totalFavorites: 0 };
   });
 
   // 从 MySpace 组件接收数据更新（避免重复请求）
-  const handleDataLoaded = React.useCallback((newStats: { totalItems: number; totalPrompts: number; totalFavorites: number; totalTags: number }) => {
+  const handleDataLoaded = React.useCallback((newStats: MySpaceStats) => {
     setStats(newStats);
     // 缓存 stats
     setCache("myspace_stats", newStats, CACHE_TTL.MYSPACE);
@@ -980,10 +1015,12 @@ export default function HomePage({ defaultFavorData, defaultOtherData }: HomeDat
       </Head>
       <main className="margin-vert--md">
         <ShowcaseContent defaultFavorData={defaultFavorData} defaultOtherData={defaultOtherData} />
-        <Suspense fallback={null}>
-          <ShareButtons shareUrl={shareUrl} title={TITLE} popOver={false} />
-        </Suspense>
       </main>
+      {shareUrl && (
+        <Suspense fallback={null}>
+          <ShareButtons shareUrl={shareUrl} title={TITLE} />
+        </Suspense>
+      )}
     </Layout>
   );
 }

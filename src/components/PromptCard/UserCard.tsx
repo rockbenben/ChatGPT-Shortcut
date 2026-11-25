@@ -22,14 +22,9 @@ interface UserCardProps {
   extraActions?: ReactNode;
 }
 
-// 文案提到模块作用域：translate() 每次都要查一遍构建期生成的词表再插值，
-// 这条每张卡片每次渲染都要用一次（列表几十张卡，投票/收藏各触发一次全量重渲）。
-// 模块作用域是安全的：@generated/codeTranslations 是**按 locale 在构建期生成**的，
-// 每个 locale 一份独立 bundle，切语言会换一整套模块，模块里的常量跟着重新求值。
 const PRIVATE_LABEL = translate({ id: "label.shareStatePrivate", message: "仅自己可见" });
 
 const UserCardComponent = ({ data: user, sortable, onEdit, onDelete, onOpenModal, extraActions }: UserCardProps) => {
-
   const handleEdit = useCallback(
     (e: React.MouseEvent) => {
       e.stopPropagation();
@@ -61,6 +56,9 @@ const UserCardComponent = ({ data: user, sortable, onEdit, onDelete, onOpenModal
     });
   }, [onOpenModal, user]);
 
+  const hasRemark = Boolean(user.remark?.trim());
+  const promptRows = hasRemark ? 3 : 4;
+
   return (
     <BasePromptCard
       ref={sortable?.setNodeRef}
@@ -69,12 +67,12 @@ const UserCardComponent = ({ data: user, sortable, onEdit, onDelete, onOpenModal
       title={
         <Flex align="start" style={{ overflow: "hidden" }}>
           {sortable && (
-            <div {...sortable.listeners} style={{ cursor: "grab", marginInlineEnd: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
+            <div {...sortable.listeners} style={{ cursor: "grab", marginInlineEnd: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 4 }}>
               <HolderOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
             </div>
           )}
           <ClampBox>
-            <Typography.Title level={3} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
+            <Typography.Title level={3} style={{ margin: 0, fontSize: 15.5, fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
               {user.share ? (
                 <Link href={`/community-prompt?id=${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
                   {user.title}
@@ -103,31 +101,42 @@ const UserCardComponent = ({ data: user, sortable, onEdit, onDelete, onOpenModal
           )}
         </>
       }
-      actions={[
-        <CopyButton key="copy" text={user.description} variant="iconOnly" block />,
-        // 仅在传入 handler 时渲染编辑/删除：explore/搜索视图复用 UserCard 但不接 onEdit/onDelete，
-        // 此时不应显示点击无反应的「编辑/删除」按钮（真正入口在 MySpace 收藏页）。
-        onEdit && (
-          <IconAction key="edit" label={translate({ id: "action.edit", message: "编辑" })} icon={<EditOutlined />} onClick={handleEdit} block />
-        ),
-        onDelete && (
-          <IconAction key="delete" label={translate({ id: "action.delete", message: "删除" })} icon={<DeleteOutlined />} onClick={handleDelete} danger block />
-        ),
-        extraActions && <React.Fragment key="extra">{extraActions}</React.Fragment>,
-      ].filter(Boolean)}
+      footer={
+        <>
+          <Flex align="center" gap={4} style={{ minWidth: 0 }}>
+            {onEdit && (
+              <IconAction size="small" label={translate({ id: "action.edit", message: "编辑" })} icon={<EditOutlined />} onClick={handleEdit} />
+            )}
+            {onDelete && (
+              <IconAction size="small" label={translate({ id: "action.delete", message: "删除" })} icon={<DeleteOutlined />} onClick={handleDelete} danger />
+            )}
+            {extraActions}
+            <PromptSourceLink href={user.website} />
+          </Flex>
+          <CopyButton text={user.description} variant="iconOnly" size="small" />
+        </>
+      }
       onCardClick={handleCardClick}>
       <PromptRemark remark={user.remark} />
-      <ClampBox>
-        <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ marginBottom: 0, color: "var(--ifm-color-content-secondary)", fontSize: 13, lineHeight: 1.55 }}>
-          {user.description}
-        </Typography.Paragraph>
-      </ClampBox>
-      <Flex justify="space-between" align="center">
-        <div style={{ flex: 1, overflow: "hidden" }}>
-          <PromptCardTag tags={user.tags} clickable={false} />
+      <div className={hasRemark ? styles.promptBodyAfterRemark : undefined}>
+        <ClampBox>
+          <Typography.Paragraph
+            ellipsis={{ rows: promptRows }}
+            style={{
+              marginBottom: 0,
+              color: hasRemark ? "var(--site-color-text-tertiary)" : "var(--ifm-color-content-secondary)",
+              fontSize: hasRemark ? 12.5 : 13,
+              lineHeight: hasRemark ? 1.68 : 1.7,
+            }}>
+            {user.description}
+          </Typography.Paragraph>
+        </ClampBox>
+      </div>
+      {Boolean(user.tags?.length) && (
+        <div style={{ marginTop: "auto" }}>
+          <PromptCardTag tags={user.tags} clickable={false} maxVisible={2} />
         </div>
-        <PromptSourceLink href={user.website} />
-      </Flex>
+      )}
     </BasePromptCard>
   );
 };

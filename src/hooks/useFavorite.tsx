@@ -246,6 +246,8 @@ export const useFavorite = (): UseFavoriteReturn => {
       modal.confirm({
         title: <Translate id="message.removeFavorite.confirm.title">移除收藏</Translate>,
         content: <Translate id="message.removeFavorite.confirm.content">确定要取消收藏这个提示词吗？</Translate>,
+        icon: null,
+        width: 400,
         onOk: async () => {
           await removeFavorite(id, isComm);
         },

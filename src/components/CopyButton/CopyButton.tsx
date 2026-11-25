@@ -96,7 +96,7 @@ export const CopyButton: React.FC<CopyButtonProps> = ({
 
   const composedClassName = [styles.button, styles[variant], copied && styles.copied, className].filter(Boolean).join(" ");
 
-  const icon = copied ? <CheckOutlined /> : <CopyOutlined />;
+  const icon = copied ? <CheckOutlined aria-hidden /> : <CopyOutlined aria-hidden />;
 
   // iconOnly 没有文本子节点：不显式给 aria-label，读屏只能念 @ant-design/icons 写在
   // <span role="img"> 上的英文图标名 "copy"（18 个 locale 全都念英文），触屏还完全看不到

@@ -14,19 +14,6 @@ export const ClampBox: React.FC<{ children: ReactNode; style?: React.CSSProperti
   <div style={{ flex: 1, minWidth: 0, minHeight: 0, ...style }}>{children}</div>
 );
 
-/**
- * 卡片角落的原文链接。DataCard / CommunityCard / FavoriteCard / UserCard 曾各写一份
- * 逐字相同的裸 `<a><LinkOutlined/></a>`，四份一起带着两个缺陷：
- *
- *   1. 命中区只有 12×22 —— 图标 12px、外层 `<a>` 无内边距。WCAG 2.2 AA(2.5.8) 要求
- *      24×24，手机上实测很容易点空。这里把 `<a>` 撑成 24×24 的 inline-flex 盒子，
- *      图标视觉尺寸不变，纯粹加大命中区。
- *   2. 没有可访问名称 —— 图标链接无文本、无 aria-label，读屏只念「链接」。复用已在
- *      17 个 locale 里译好的 `prompt.source`，不必为此新增 id（新增就得同步改 17 份
- *      code.json，漏一份那门语言就回落中文）。
- *
- * marginLeft 从 8 收到 4：新盒子自带 6px 内边距，视觉间距与改动前保持一致。
- */
 export const PromptSourceLink: React.FC<{ href?: string }> = ({ href }) =>
   href ? (
     <a
@@ -34,7 +21,7 @@ export const PromptSourceLink: React.FC<{ href?: string }> = ({ href }) =>
       target="_blank"
       rel="noopener noreferrer"
       aria-label={translate({ id: "prompt.source", message: "来源" })}
-      style={{ marginInlineStart: 4, display: "inline-flex", alignItems: "center", justifyContent: "center", minWidth: 24, minHeight: 24 }}>
+      style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minWidth: 26, minHeight: 26, borderRadius: 6 }}>
       <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
     </a>
   ) : null;
@@ -43,6 +30,7 @@ interface BasePromptCardProps {
   title?: ReactNode;
   titleExtra?: ReactNode;
   actions?: ReactNode[];
+  footer?: ReactNode;
   children?: ReactNode;
   className?: string;
   style?: React.CSSProperties;
@@ -52,10 +40,7 @@ interface BasePromptCardProps {
 }
 
 export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardProps>(
-  ({ title, titleExtra, actions, children, className, style, loading, id, onCardClick, ...rest }, ref) => {
-    // 整卡可点开详情弹窗，但 antd Card 渲染的是裸 <div>：不给 role/tabIndex/键盘处理，
-    // 键盘与读屏用户就完全够不到这个入口（styles 里的 :focus-visible 规则也永远不触发）。
-    // 卡内还有标题链接与操作按钮，所以只在事件源就是卡片本身时响应，避免 Enter 双触发。
+  ({ title, titleExtra, actions, footer, children, className, style, loading, id, onCardClick, ...rest }, ref) => {
     const handleCardKeyDown = onCardClick
       ? (e: React.KeyboardEvent<HTMLDivElement>) => {
           if (e.target !== e.currentTarget) return;
@@ -66,7 +51,6 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
         }
       : undefined;
 
-    // 指针移入或手势触摸时即触发详情弹窗预加载，消除点击时的网络与解析延迟（INP 优化）
     const handlePreload = onCardClick
       ? () => {
           import("@site/src/components/PromptDetailModal");
@@ -98,8 +82,7 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
             flex: 1,
             display: "flex",
             flexDirection: "column",
-            padding: 16,
-            gap: 8,
+            padding: 0,
           },
           actions: {
             borderTop: "1px solid var(--site-color-hairline)",
@@ -110,17 +93,23 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
         actions={actions}
         onClick={onCardClick}
         {...rest}>
-        {(title || titleExtra) && (
-          <Flex justify="space-between" align="start" style={{ marginBottom: 12, minHeight: 32 }}>
-            <div style={{ flex: 1, overflow: "hidden", marginInlineEnd: 8 }}>{title}</div>
-            {/* flexShrink:0：角标是定宽信息，标题再长也不该压扁它 */}
-            {titleExtra && <Flex align="center" gap={8} style={{ flexShrink: 0 }}>{titleExtra}</Flex>}
-          </Flex>
+        <div className={styles.cardContent}>
+          {(title || titleExtra) && (
+            <Flex justify="space-between" align="start" style={{ marginBottom: 0, minHeight: 24 }}>
+              <div style={{ flex: 1, overflow: "hidden", marginInlineEnd: 8 }}>{title}</div>
+              {titleExtra && <Flex align="center" gap={8} style={{ flexShrink: 0 }}>{titleExtra}</Flex>}
+            </Flex>
+          )}
+          {children}
+        </div>
+        {footer && (
+          <div className={styles.cardFooter} onClick={(e) => e.stopPropagation()}>
+            {footer}
+          </div>
         )}
-        {children}
       </Card>
     );
-  }
+  },
 );
 
 BasePromptCard.displayName = "BasePromptCard";

@@ -22,6 +22,7 @@ interface EmptyStateProps {
 }
 
 export const EmptyState: React.FC<EmptyStateProps> = ({ icon, title, description, action, compact, fullPage }) => {
+  const Heading = fullPage ? "h1" : "h3";
   const content = (
     <div
       style={{
@@ -30,8 +31,26 @@ export const EmptyState: React.FC<EmptyStateProps> = ({ icon, title, description
         maxWidth: 420,
         margin: "0 auto",
       }}>
-      {icon && <div style={{ fontSize: compact ? 28 : 40, color: "var(--site-color-text-tertiary)", marginBottom: compact ? 14 : 20, lineHeight: 1 }}>{icon}</div>}
-      <h3
+      {icon && (
+        <div
+          aria-hidden
+          style={{
+            width: compact ? 44 : 56,
+            height: compact ? 44 : 56,
+            borderRadius: compact ? 12 : 16,
+            background: "var(--site-color-preview-bg)",
+            border: "1px solid var(--site-color-hairline)",
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: compact ? 20 : 26,
+            color: "var(--site-color-text-tertiary)",
+            marginBottom: compact ? 12 : 16,
+          }}>
+          {icon}
+        </div>
+      )}
+      <Heading
         style={{
           fontSize: compact ? 15 : 18,
           fontWeight: 600,
@@ -40,7 +59,7 @@ export const EmptyState: React.FC<EmptyStateProps> = ({ icon, title, description
           margin: "0 0 8px",
         }}>
         {title}
-      </h3>
+      </Heading>
       {description && <p style={{ fontSize: compact ? 13 : 14, color: "var(--ifm-color-content-secondary)", lineHeight: 1.6, margin: 0 }}>{description}</p>}
       {action && <div style={{ marginTop: 20 }}>{action}</div>}
     </div>

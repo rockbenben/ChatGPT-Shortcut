@@ -10,17 +10,17 @@
  */
 import React, { type ReactNode } from "react";
 import clsx from "clsx";
-import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { useOnlineUrl } from "@site/src/utils/onlineUrl";
 import { Button, Space } from "antd";
-import { HomeOutlined, ShareAltOutlined, CompassOutlined } from "@ant-design/icons";
+import { HomeOutlined, CompassOutlined, ShareAltOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
+import { ActionLink } from "@site/src/components/ActionLink";
 
 export default function NotFoundContent({ className }: { className?: string }): ReactNode {
   const onlineCommunityUrl = useOnlineUrl("/community-prompts");
   return (
-    <main className={clsx("container margin-vert--xl", className)}>
+    <main className={clsx("container margin-vert--md", className)}>
       <EmptyState
         fullPage
         icon={<CompassOutlined />}
@@ -36,11 +36,9 @@ export default function NotFoundContent({ className }: { className?: string }): 
         }
         action={
           <Space wrap size="middle">
-            <Link to="/">
-              <Button type="primary" icon={<HomeOutlined />}>
-                <Translate id="link.home">首页</Translate>
-              </Button>
-            </Link>
+            <ActionLink to="/" variant="primary" icon={<HomeOutlined />}>
+              <Translate id="link.home">首页</Translate>
+            </ActionLink>
             {/* 直接给主站外链：离线版没有社区，本地 /community-prompts 只是个提示页，
                 让已经迷路的用户再多点一次没意义。target=_blank 不抛弃他当前的本地页。 */}
             <Button icon={<ShareAltOutlined />} href={onlineCommunityUrl} target="_blank" rel="noopener noreferrer">

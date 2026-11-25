@@ -1,6 +1,6 @@
 import React from "react";
 import Translate from "@docusaurus/Translate";
-import { Card, Button, Space, Typography, Avatar, Popconfirm, Flex } from "antd";
+import { Card, Button, Space, Typography, Popconfirm, Flex } from "antd";
 import { DownloadOutlined, ImportOutlined, DatabaseOutlined, DeleteOutlined } from "@ant-design/icons";
 
 const { Text } = Typography;
@@ -13,11 +13,26 @@ interface DataManagementCardProps {
   onClearCache: () => void;
 }
 
+const badgeStyle: React.CSSProperties = {
+  width: 38,
+  height: 38,
+  borderRadius: 10,
+  backgroundColor: "var(--site-color-preview-bg)",
+  border: "1px solid var(--site-color-hairline)",
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  fontSize: 16,
+  flexShrink: 0,
+};
+
 /** 数据管理卡片：导出 / 导入 / 清缓存三行（纯展示，动作由 useImportExport 与页面提供） */
 const DataManagementCard: React.FC<DataManagementCardProps> = ({ canExport, importing, onExport, onImportClick, onClearCache }) => (
   <Card
     style={{
       borderRadius: 12,
+      borderColor: "var(--site-color-hairline)",
+      boxShadow: "var(--site-shadow-xs)",
     }}
     title={
       <Space>
@@ -27,17 +42,12 @@ const DataManagementCard: React.FC<DataManagementCardProps> = ({ canExport, impo
     }>
     <Space orientation="vertical" size="middle" style={{ width: "100%" }}>
       {/* Export Prompts */}
-      <Flex justify="space-between" align="center" style={{ padding: "12px 0", borderBottom: "1px solid var(--site-color-hairline)" }}>
-        <Flex align="center" gap={20}>
-          <Avatar
-            icon={<DownloadOutlined />}
-            style={{
-              backgroundColor: "var(--ifm-background-surface-color)",
-              color: "var(--site-color-tag-selected-text)",
-              border: "1px solid var(--site-color-hairline)",
-            }}
-          />
-          <div>
+      <Flex justify="space-between" align="center" wrap="wrap" gap={12} style={{ padding: "12px 0", borderBottom: "1px solid var(--site-color-hairline)" }}>
+        <Flex align="center" gap={14} style={{ minWidth: 0, flex: "1 1 220px" }}>
+          <span aria-hidden style={{ ...badgeStyle, color: "var(--site-color-tag-selected-text)" }}>
+            <DownloadOutlined />
+          </span>
+          <div style={{ minWidth: 0 }}>
             <Text strong>
               <Translate id="button.exportPrompts">导出提示词</Translate>
             </Text>
@@ -53,17 +63,12 @@ const DataManagementCard: React.FC<DataManagementCardProps> = ({ canExport, impo
       </Flex>
 
       {/* Import Prompts */}
-      <Flex justify="space-between" align="center" style={{ padding: "12px 0", borderBottom: "1px solid var(--site-color-hairline)" }}>
-        <Flex align="center" gap={20}>
-          <Avatar
-            icon={<ImportOutlined />}
-            style={{
-              backgroundColor: "var(--ifm-background-surface-color)",
-              color: "var(--site-color-tag-selected-text)",
-              border: "1px solid var(--site-color-hairline)",
-            }}
-          />
-          <div>
+      <Flex justify="space-between" align="center" wrap="wrap" gap={12} style={{ padding: "12px 0", borderBottom: "1px solid var(--site-color-hairline)" }}>
+        <Flex align="center" gap={14} style={{ minWidth: 0, flex: "1 1 220px" }}>
+          <span aria-hidden style={{ ...badgeStyle, color: "var(--site-color-tag-selected-text)" }}>
+            <ImportOutlined />
+          </span>
+          <div style={{ minWidth: 0 }}>
             <Text strong>
               <Translate id="button.importPrompts">导入提示词</Translate>
             </Text>
@@ -79,23 +84,12 @@ const DataManagementCard: React.FC<DataManagementCardProps> = ({ canExport, impo
       </Flex>
 
       {/* Clear Cache */}
-      <Flex justify="space-between" align="center" style={{ padding: "12px 0" }}>
-        <Flex align="center" gap={20}>
-          <Avatar
-            icon={<DeleteOutlined />}
-            style={{
-              backgroundColor: "var(--ifm-background-surface-color)",
-              color: "var(--site-color-text-tertiary)",
-              border: "1px solid var(--site-color-hairline)",
-            }}
-          />
-          {/* 这段文案**刻意硬编码英文、不走 i18n**，不要改回 <Translate>：
-              在线版这个按钮只清客户端缓存，清完从服务端重取，原译文「清除后将重新加载所有数据」是准确的；
-              离线版的 localStorage 就是数据库，同一个按钮是永久删掉收藏 / 自建提示词 / 标签 / 排序，
-              没有任何备份也无法撤销 —— 沿用那套译文会让用户以为数据还能回来。
-              不新增 i18n key：同一句话要铺 17 个 locale，而这里语义的正确性比本地化要紧。
-              cancelText 保留译文：“取消”是安全选项，用母语看懂更重要，也不会误导。 */}
-          <div>
+      <Flex justify="space-between" align="center" wrap="wrap" gap={12} style={{ padding: "12px 0 4px" }}>
+        <Flex align="center" gap={14} style={{ minWidth: 0, flex: "1 1 220px" }}>
+          <span aria-hidden style={{ ...badgeStyle, color: "var(--site-color-text-tertiary)" }}>
+            <DeleteOutlined />
+          </span>
+          <div style={{ minWidth: 0 }}>
             <Text strong>Clear local data</Text>
             <br />
             <Text type="secondary" style={{ fontSize: 12 }}>

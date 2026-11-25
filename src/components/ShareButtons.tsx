@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { Button, FloatButton, Flex, Typography, Tooltip } from "antd";
+import React, { useState, useEffect, useCallback, useId, useRef } from "react";
+import { Button, FloatButton, Flex, Popover, Typography } from "antd";
 import {
   ShareAltOutlined,
   LinkOutlined,
@@ -32,7 +32,6 @@ const useWebShareSupport = () => {
 };
 
 // Channel 定义：视觉用 antd outlined icon + label；分享链接由下方 SHARE_URL_BUILDERS 构造。
-// 两条渲染路径（浮动按钮组 / 面板网格）共用同一份定义，避免渠道列表两处漂移。
 type Channel = {
   key: keyof typeof SHARE_URL_BUILDERS;
   Icon: React.ElementType;
@@ -54,9 +53,8 @@ const CHANNELS: Channel[] = [
 const tertiary: React.CSSProperties = { color: "var(--site-color-text-tertiary)" };
 const monoFont: React.CSSProperties = { fontFamily: "var(--site-font-mono)" };
 const channelLabelStyle: React.CSSProperties = {
-  fontSize: 11,
-  fontFamily: "var(--site-font-mono)",
-  letterSpacing: "0.02em",
+  fontSize: 11.5,
+  fontFamily: "inherit",
   whiteSpace: "nowrap",
 };
 
@@ -71,8 +69,8 @@ function CopyLinkBar({ url }: { url: string }) {
       style={{
         padding: "6px 6px 6px 10px",
         border: "1px solid var(--site-color-hairline)",
-        borderRadius: 6,
-        background: "var(--site-color-ghost-border)",
+        borderRadius: 8,
+        background: "var(--site-color-preview-bg)",
       }}>
       <LinkOutlined style={{ ...tertiary, flexShrink: 0, fontSize: 13 }} />
       <Typography.Text ellipsis style={{ ...tertiary, ...monoFont, flex: 1, fontSize: 12, minWidth: 0 }}>
@@ -84,8 +82,13 @@ function CopyLinkBar({ url }: { url: string }) {
         icon={copied ? <CheckOutlined /> : null}
         onClick={() => copyText(url)}
         aria-label={translate({ id: "share.copy", message: "复制" })}
-        style={{ ...monoFont, flexShrink: 0, height: 24, fontSize: 12 }}>
-        {copied ? null : <Translate id="share.copy">复制</Translate>}
+        style={{
+          flexShrink: 0,
+          height: 26,
+          fontSize: 12,
+          color: copied ? "var(--site-color-tag-selected-text)" : undefined,
+        }}>
+        {copied ? <Translate id="message.copied">已复制</Translate> : <Translate id="share.copy">复制</Translate>}
       </Button>
     </Flex>
   );
@@ -155,48 +158,61 @@ const openShareWindow = (key: Channel["key"], url: string, title: string) => {
   window.open(SHARE_URL_BUILDERS[key](url, title), "_blank", "noopener,noreferrer,width=600,height=500");
 };
 
-// === popOver=false 子组件（FloatButton.Group） === //
+function SharePopover({ children }: { children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+  const triggerRef = useRef<React.ComponentRef<typeof FloatButton>>(null);
+  const panelId = useId();
 
-function ShareFloatGroup({ shareUrl, title }: { shareUrl: string; title: string }) {
+  useEffect(() => {
+    if (!open) return;
+
+    const dismissOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape" || event.defaultPrevented) return;
+      if (document.getElementById(panelId)?.contains(document.activeElement)) {
+        triggerRef.current?.focus();
+      }
+      setOpen(false);
+    };
+    document.addEventListener("keydown", dismissOnEscape);
+    return () => document.removeEventListener("keydown", dismissOnEscape);
+  }, [open, panelId]);
+
   return (
-    <FloatButton.Group
-      trigger="hover"
-      type="primary"
-      style={{ right: 24 }}
-      className="hideOnSmallScreen"
-      icon={<ShareAltOutlined />}
-      // 不给名字的话读屏念的是 @ant-design/icons 的英文图标名 "share-alt"
-      aria-label={translate({ id: "share.shareTo", message: "分享到" })}>
-      {CHANNELS.map(({ key, Icon, label }) => (
-        <Tooltip key={key} title={label} placement="left">
-          <FloatButton
-            icon={<Icon />}
-            aria-label={translate({ id: "share.shareOn", message: "分享到 {channel}" }, { channel: label })}
-            onClick={() => openShareWindow(key, shareUrl, title)}
-          />
-        </Tooltip>
-      ))}
-    </FloatButton.Group>
+    <div>
+      <Popover
+        trigger={["hover", "click"]}
+        mouseLeaveDelay={0.2}
+        placement="top"
+        open={open}
+        onOpenChange={setOpen}
+        getPopupContainer={(trigger) => trigger.parentElement ?? document.body}
+        content={<div id={panelId}>{children}</div>}>
+        <FloatButton
+          ref={triggerRef}
+          type="primary"
+          icon={<ShareAltOutlined />}
+          aria-label={translate({ id: "action.share", message: "分享" })}
+          aria-expanded={open}
+          aria-controls={open ? panelId : undefined}
+        />
+      </Popover>
+    </div>
   );
 }
 
-// === 入口 === //
-
 function ShareButtons({ shareUrl, title, popOver }: ShareButtonsProps) {
-  if (popOver) {
-    return (
-      <Flex vertical gap={6} style={{ minWidth: 240, maxWidth: 300 }}>
-        <span className="comp-sheet-eyebrow">URL</span>
-        <CopyLinkBar url={shareUrl} />
-        <span className="comp-sheet-eyebrow" style={{ marginTop: 8 }}>
-          <Translate id="share.shareTo">分享到</Translate>
-        </span>
-        <ChannelsGrid shareUrl={shareUrl} title={title} />
-      </Flex>
-    );
-  }
+  const panel = (
+    <Flex vertical gap={6} style={{ minWidth: 240, maxWidth: "min(300px, calc(100vw - 48px))" }}>
+      <span className="comp-sheet-eyebrow">URL</span>
+      <CopyLinkBar url={shareUrl} />
+      <span className="comp-sheet-eyebrow" style={{ marginTop: 8 }}>
+        <Translate id="share.shareTo">分享到</Translate>
+      </span>
+      <ChannelsGrid shareUrl={shareUrl} title={title} />
+    </Flex>
+  );
 
-  return <ShareFloatGroup shareUrl={shareUrl} title={title} />;
+  return popOver ? panel : <SharePopover>{panel}</SharePopover>;
 }
 
 export default ShareButtons;

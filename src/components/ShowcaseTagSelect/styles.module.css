@@ -1,94 +1,44 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-/* Legacy checkbox-based label — kept for backward compatibility but unused on homepage now */
-.checkboxLabel:hover {
-  border-color: var(--ifm-color-primary);
-  color: var(--ifm-color-primary);
-  background-color: var(--site-color-checkbox-checked-bg);
-}
-
-input[type='checkbox'] + .checkboxLabel {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  line-height: 1.5;
-  border-radius: 0;
-  padding: 4px 10px;
-  transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid var(--site-color-hairline);
-  background-color: transparent;
-  font-size: 12px;
-  font-weight: 500;
-  user-select: none;
-  white-space: nowrap;
-  color: var(--ifm-color-content-secondary);
-}
-
-input:focus-visible + .checkboxLabel {
-  outline: 2px solid var(--ifm-color-primary);
-}
-
-input:checked + .checkboxLabel {
-  background-color: rgba(var(--ifm-color-primary-rgb), 0.1);
-  color: var(--site-color-tag-selected-text);
-  border-color: rgba(var(--ifm-color-primary-rgb), 0.4);
-}
-
-/* Ant Design Tag.CheckableTag — B+ filter chips: square, transparent ground, fill on selected */
+/* Ant Design Tag.CheckableTag — soft rounded workbench pills */
 .tagSelect {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 4px 10px;
-  border-radius: 0;
-  font-size: 12px;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
   cursor: pointer;
   user-select: none;
-  transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    color 0.14s var(--site-motion-emphasized),
+    background-color 0.14s var(--site-motion-emphasized),
+    border-color 0.14s var(--site-motion-emphasized);
   color: var(--ifm-color-content-secondary);
-  background-color: transparent;
+  background-color: var(--ifm-background-surface-color);
   border: 1px solid var(--site-color-hairline);
-  letter-spacing: 0.02em;
 }
 
 .tagSelect:hover {
   color: var(--ifm-color-content) !important;
-  border-color: color-mix(in srgb, var(--ifm-color-content) 18%, transparent) !important;
-  background-color: color-mix(in srgb, var(--ifm-color-content) 3%, transparent) !important;
-}
-
-/* 分类圆点：默认中性灰，选中时点亮为 accent 并带微光。
-   原 tags.tsx 的 24 色彩虹圆点与单 accent 体系冲突（稀释品牌绿的信号价值），
-   颜色数据保留在 tags.tsx，仅渲染层收敛。 */
-.tagSelect :global(.tagFilterDot) {
-  width: 6px;
-  height: 6px;
-  border-radius: 1px;
-  margin-inline-start: 8px;
-  display: inline-block;
-  flex-shrink: 0;
-  background-color: var(--site-color-neutral-marker);
-  transition: background-color 0.12s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.12s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.tagSelectChecked :global(.tagFilterDot) {
-  background-color: var(--site-color-tag-selected-text);
-  box-shadow: 0 0 6px color-mix(in srgb, var(--site-color-tag-selected-text) 50%, transparent);
+  border-color: color-mix(in srgb, var(--ifm-color-content) 22%, transparent) !important;
+  background-color: var(--site-color-preview-bg) !important;
 }
 
 .tagSelectChecked {
   color: var(--site-color-tag-selected-text);
-  background-color: rgba(var(--ifm-color-primary-rgb), 0.1);
-  border-color: rgba(var(--ifm-color-primary-rgb), 0.4);
+  background-color: var(--site-color-tag-selected-bg);
+  border-color: var(--site-color-tag-selected-border);
 }
 
 .tagSelectChecked:hover {
   color: var(--site-color-tag-selected-text) !important;
-  background-color: rgba(var(--ifm-color-primary-rgb), 0.14) !important;
-  border-color: rgba(var(--ifm-color-primary-rgb), 0.6) !important;
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.16) !important;
+  border-color: var(--site-color-tag-selected-border) !important;
+}
+
+@media (max-width: 767px) {
+  .tagSelect {
+    padding: 6px 14px;
+  }
 }
