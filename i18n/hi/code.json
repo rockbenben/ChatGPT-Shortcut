@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "कोई मेल खाता प्रॉम्प्ट नहीं मिला"
   },
+  "placeholder.clear": {
+    "message": "साफ़ करें"
+  },
   "placeholder.comment": {
     "message": "यहाँ टिप्पणी दर्ज करें... मार्कडाउन और HTML सिंटैक्स समर्थित"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "ईमेल"
+  },
+  "placeholder.fillTitle": {
+    "message": "फ़ील्ड भरें"
   },
   "placeholder.newPassword": {
     "message": "नया पासवर्ड"

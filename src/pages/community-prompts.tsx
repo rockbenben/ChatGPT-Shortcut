@@ -466,9 +466,9 @@ const CommunityPrompts = () => {
             {open && (
               <LoginModal open={open} onCancel={() => setOpen(false)} />
             )}
-            {modalOpen && (
+            {modalData && (
               <Suspense fallback={null}>
-                <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} data={modalData} />
+                <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} afterClose={() => setModalData(null)} data={modalData} />
               </Suspense>
             )}
             <FloatButton.BackTop style={{ bottom: 100 }} />

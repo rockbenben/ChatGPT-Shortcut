@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "Подходящих промптов не найдено"
   },
+  "placeholder.clear": {
+    "message": "Очистить"
+  },
   "placeholder.comment": {
     "message": "Введите комментарий здесь... Поддерживается синтаксис Markdown и HTML"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "Электронная почта"
+  },
+  "placeholder.fillTitle": {
+    "message": "Заполнить поля"
   },
   "placeholder.newPassword": {
     "message": "Новый пароль"

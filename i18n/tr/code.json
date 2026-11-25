@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "Eşleşen prompt bulunamadı"
   },
+  "placeholder.clear": {
+    "message": "Temizle"
+  },
   "placeholder.comment": {
     "message": "Yorumunuzu buraya girin... Markdown ve HTML sözdizimi desteklenir"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "E-posta"
+  },
+  "placeholder.fillTitle": {
+    "message": "Değişkenleri doldur"
   },
   "placeholder.newPassword": {
     "message": "Yeni şifre"

@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "No matching prompts found"
   },
+  "placeholder.clear": {
+    "message": "Clear"
+  },
   "placeholder.comment": {
     "message": "Write a comment… Markdown and HTML supported"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "Email"
+  },
+  "placeholder.fillTitle": {
+    "message": "Fill placeholders"
   },
   "placeholder.newPassword": {
     "message": "New password"

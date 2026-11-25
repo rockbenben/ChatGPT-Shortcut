@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "মিলিত প্রম্পট পাওয়া যায়নি"
   },
+  "placeholder.clear": {
+    "message": "মুছুন"
+  },
   "placeholder.comment": {
     "message": "এখানে মন্তব্য লিখুন... মার্কডাউন এবং HTML সিনট্যাক্স সমর্থিত"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "ইমেইল"
+  },
+  "placeholder.fillTitle": {
+    "message": "ভেরিয়েবল পূরণ করুন"
   },
   "placeholder.newPassword": {
     "message": "নতুন পাসওয়ার্ড"

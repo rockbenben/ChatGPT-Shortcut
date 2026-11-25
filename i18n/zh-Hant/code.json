@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "沒有找到匹配的提示詞"
   },
+  "placeholder.clear": {
+    "message": "清空"
+  },
   "placeholder.comment": {
     "message": "在此輸入評論… 支援使用 Markdown 和 HTML 語法"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "電子信箱"
+  },
+  "placeholder.fillTitle": {
+    "message": "快速填寫變數"
   },
   "placeholder.newPassword": {
     "message": "新密碼"

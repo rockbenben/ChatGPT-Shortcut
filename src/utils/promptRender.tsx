@@ -1,37 +1,96 @@
 import React from "react";
 
+const PLACEHOLDER_SPLIT_RE = /(\[[^\[\]\n]{1,60}\](?!\())/g;
+const PLACEHOLDER_EXACT_RE = /^\[([^\[\]\n]{1,60})\]$/;
+const NUMERIC_FOOTNOTE_RE = /^\[\d+\]$/;
+
+function parsePlaceholderKey(part: string): string | null {
+  if (NUMERIC_FOOTNOTE_RE.test(part)) return null;
+  const match = PLACEHOLDER_EXACT_RE.exec(part);
+  return match ? match[1] : null;
+}
+
 /**
- * 占位符高亮 — 把 [xxx] 包装成视觉 tag，让用户一眼看到要改哪
- * 用正则拆 [xxx] 段，其余文本保持空白字符和换行（配合 whitespace: pre-wrap）
+ * 提取提示词中所有唯一占位符名称（按首次出现顺序），跳过 Markdown 链接与纯数字脚注。
  */
-export function renderPromptWithPlaceholders(text: string): React.ReactNode {
+export function extractPlaceholders(text: string): string[] {
+  if (!text) return [];
+  const seen = new Set<string>();
+  const result: string[] = [];
+  const parts = text.split(PLACEHOLDER_SPLIT_RE);
+  for (const part of parts) {
+    const key = parsePlaceholderKey(part);
+    if (key && !seen.has(key)) {
+      seen.add(key);
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+export function getPlaceholderValue(values: Record<string, string> | undefined, key: string): string | undefined {
+  return values && Object.hasOwn(values, key) ? values[key] : undefined;
+}
+
+/**
+ * 将占位符替换为已填写的值；未填写或仅空白的占位符保留原 `[key]`。
+ */
+export function applyPlaceholders(text: string, values?: Record<string, string>): string {
+  if (!text || !values) return text;
+  const parts = text.split(PLACEHOLDER_SPLIT_RE);
+  return parts
+    .map((part) => {
+      const key = parsePlaceholderKey(part);
+      if (!key) return part;
+      return getPlaceholderValue(values, key)?.trim() || part;
+    })
+    .join("");
+}
+
+export interface RenderPlaceholderOptions {
+  values?: Record<string, string>;
+  onSelectPlaceholder?: (key: string) => void;
+}
+
+/**
+ * 占位符高亮与实时预览 —— 把 `[xxx]` 包装为交互式胶囊，已填值时原地高亮显示替换后的成品。
+ */
+export function renderPromptWithPlaceholders(text: string, options?: RenderPlaceholderOptions): React.ReactNode {
   if (!text) return null;
-  const parts = text.split(/(\[[^\[\]\n]+\])/g);
+  const { values, onSelectPlaceholder } = options ?? {};
+  const parts = text.split(PLACEHOLDER_SPLIT_RE);
+
   return parts.map((part, i) => {
-    if (/^\[[^\[\]\n]+\]$/.test(part)) {
+    const key = parsePlaceholderKey(part);
+    if (!key) {
+      return <React.Fragment key={i}>{part}</React.Fragment>;
+    }
+
+    const filled = getPlaceholderValue(values, key)?.trim();
+    const className = filled ? "prompt-placeholder-filled" : "prompt-placeholder-chip";
+    const content = filled || part;
+
+    if (onSelectPlaceholder) {
       return (
-        <span
+        <button
           key={i}
-          style={{
-            display: "inline-block",
-            padding: "0 6px",
-            margin: "0 1px",
-            borderRadius: 4,
-            backgroundColor: "rgba(var(--ifm-color-primary-rgb, 24 144 255), 0.12)",
-            // 文字不用 --ifm-color-primary：底色就是同一个颜色的 12% 叠加，等于让底
-            // 朝着文字自己的色相染过去，对比度天然被压住。实测 13.5px 下浅色 3.87、
-            // 暗色 4.23，两边都低于 4.5（WCAG 1.4.3）。这不是装饰字 —— 它告诉用户
-            // 该替换哪一段，是要读的。
-            // 改用站内已有的 --site-color-tag-selected-text（强调色文字配强调色淡底，
-            // 语义正对得上，49 处在用）：浅色 5.59、暗色 6.28。
-            color: "var(--site-color-tag-selected-text)",
-            fontWeight: 500,
-          }}>
-          {part}
-        </span>
+          type="button"
+          className={className}
+          onClick={(e) => {
+            e.stopPropagation();
+            onSelectPlaceholder(key);
+          }}
+          title={key}>
+          {content}
+        </button>
       );
     }
-    return <React.Fragment key={i}>{part}</React.Fragment>;
+
+    return (
+      <span key={i} className={className}>
+        {content}
+      </span>
+    );
   });
 }
 

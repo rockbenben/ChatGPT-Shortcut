@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "Aucun prompt correspondant trouvé"
   },
+  "placeholder.clear": {
+    "message": "Effacer"
+  },
   "placeholder.comment": {
     "message": "Saisissez votre commentaire ici… Markdown et syntaxe HTML pris en charge"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "E-mail"
+  },
+  "placeholder.fillTitle": {
+    "message": "Remplir les variables"
   },
   "placeholder.newPassword": {
     "message": "Nouveau mot de passe"

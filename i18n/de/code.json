@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "Keine passenden Prompts gefunden"
   },
+  "placeholder.clear": {
+    "message": "Leeren"
+  },
   "placeholder.comment": {
     "message": "Kommentar hier eingeben... Markdown und HTML-Syntax werden unterstützt"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "E-Mail"
+  },
+  "placeholder.fillTitle": {
+    "message": "Platzhalter ausfüllen"
   },
   "placeholder.newPassword": {
     "message": "Neues Passwort"

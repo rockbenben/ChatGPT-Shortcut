@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "一致するプロンプトが見つかりません"
   },
+  "placeholder.clear": {
+    "message": "クリア"
+  },
   "placeholder.comment": {
     "message": "ここにコメントを入力... MarkdownとHTML構文をサポート"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "メールアドレス"
+  },
+  "placeholder.fillTitle": {
+    "message": "変数を入力"
   },
   "placeholder.newPassword": {
     "message": "新しいパスワード"

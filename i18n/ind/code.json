@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "Tidak ada prompt yang cocok"
   },
+  "placeholder.clear": {
+    "message": "Hapus"
+  },
   "placeholder.comment": {
     "message": "Masukkan komentar di sini... Mendukung sintaks Markdown dan HTML"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "Email"
+  },
+  "placeholder.fillTitle": {
+    "message": "Isi variabel"
   },
   "placeholder.newPassword": {
     "message": "Kata sandi baru"

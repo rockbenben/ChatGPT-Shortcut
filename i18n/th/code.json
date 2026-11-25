@@ -686,6 +686,9 @@
   "noResults.title": {
     "message": "ไม่พบพรอมต์ที่ตรงกัน"
   },
+  "placeholder.clear": {
+    "message": "ล้าง"
+  },
   "placeholder.comment": {
     "message": "พิมพ์ความคิดเห็นที่นี่... รองรับไวยากรณ์ Markdown และ HTML"
   },
@@ -697,6 +700,9 @@
   },
   "placeholder.email": {
     "message": "อีเมล"
+  },
+  "placeholder.fillTitle": {
+    "message": "กรอกตัวแปร"
   },
   "placeholder.newPassword": {
     "message": "รหัสผ่านใหม่"
