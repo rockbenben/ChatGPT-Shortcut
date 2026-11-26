@@ -182,7 +182,7 @@ function SharePopover({ children }: { children: React.ReactNode }) {
       <Popover
         trigger={["hover", "click"]}
         mouseLeaveDelay={0.2}
-        placement="top"
+        placement="topRight"
         open={open}
         onOpenChange={setOpen}
         getPopupContainer={(trigger) => trigger.parentElement ?? document.body}
@@ -190,6 +190,7 @@ function SharePopover({ children }: { children: React.ReactNode }) {
         <FloatButton
           ref={triggerRef}
           type="primary"
+          className="share-float-btn"
           icon={<ShareAltOutlined />}
           aria-label={translate({ id: "action.share", message: "分享" })}
           aria-expanded={open}

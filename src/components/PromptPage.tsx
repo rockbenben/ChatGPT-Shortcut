@@ -28,7 +28,7 @@ const sheetCardStyle: React.CSSProperties = {
   borderColor: "var(--site-color-hairline)",
   background: "var(--ifm-background-surface-color)",
 };
-const sheetCardBodyStyle: React.CSSProperties = { padding: "clamp(20px, 3vw, 32px)" };
+const sheetCardBodyStyle: React.CSSProperties = { padding: "clamp(16px, 3vw, 32px)" };
 const monoNum: React.CSSProperties = { fontVariantNumeric: "tabular-nums" };
 
 // 提升为 <h2> 给 AI 引擎按 H2 chunk 抓取（详情页 6 个 section 各自一个 H2 入口）；

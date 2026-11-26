@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
+import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
-import { Segmented, Button, Input, Flex } from "antd";
+import { Segmented, Button, Input } from "antd";
 import { AppstoreOutlined, EditOutlined, HeartOutlined, TagOutlined, SearchOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import searchStyles from "@site/src/components/SearchBar/styles.module.css";
 import { SearchShortcutHint } from "@site/src/components/SearchBar/SearchShortcutHint";
 import { InputClearIcon } from "@site/src/components/InputClearIcon";
+import styles from "./FilterBar.module.css";
 import type { CustomTag, FilterType } from "./types";
 
 const FilterBar: React.FC<{
@@ -57,25 +59,34 @@ const FilterBar: React.FC<{
   const filterOptions = [
     {
       label: (
-        <>
-          <AppstoreOutlined /> <Translate id="myspace.filter.all">全部</Translate>
-        </>
+        <span className={styles.segLabel}>
+          <AppstoreOutlined className={styles.segIcon} />
+          <span className={styles.segText}>
+            <Translate id="myspace.filter.all">全部</Translate>
+          </span>
+        </span>
       ),
       value: "all",
     },
     {
       label: (
-        <>
-          <EditOutlined /> <Translate id="myspace.filter.prompts">提示词</Translate>
-        </>
+        <span className={styles.segLabel}>
+          <EditOutlined className={styles.segIcon} />
+          <span className={styles.segText}>
+            <Translate id="myspace.filter.prompts">提示词</Translate>
+          </span>
+        </span>
       ),
       value: "prompt",
     },
     {
       label: (
-        <>
-          <HeartOutlined /> <Translate id="myspace.filter.favorites">收藏</Translate>
-        </>
+        <span className={styles.segLabel}>
+          <HeartOutlined className={styles.segIcon} />
+          <span className={styles.segText}>
+            <Translate id="myspace.filter.favorites">收藏</Translate>
+          </span>
+        </span>
       ),
       value: "favorite",
     },
@@ -92,59 +103,35 @@ const FilterBar: React.FC<{
   };
 
   return (
-    <Flex wrap="wrap" gap="small" align="center" style={{ marginBottom: 16 }}>
-      <Segmented options={filterOptions} value={filter} onChange={(value) => setFilter(value as FilterType)} />
+    <div className={styles.filterBar}>
+      <Segmented className={styles.typeSegmented} options={filterOptions} value={filter} onChange={(value) => setFilter(value as FilterType)} />
 
-      {customTags.length > 0 && (
-        <Flex wrap="wrap" gap="small" style={{ marginInlineStart: 4 }}>
-          {customTags.map((tag) => {
-            const isSelected = selectedTags.includes(tag.id);
-            return (
-              <button
-                key={tag.id}
-                type="button"
-                aria-pressed={isSelected}
-                onClick={() => toggleTag(tag.id)}
-                style={{
-                  cursor: "pointer",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  margin: 0,
-                  padding: "4px 12px",
-                  borderRadius: 999,
-                  fontFamily: "inherit",
-                  fontSize: 12.5,
-                  fontWeight: 500,
-                  lineHeight: 1.5,
-                  border: `1px solid ${isSelected ? "var(--site-color-tag-selected-border)" : "var(--site-color-hairline)"}`,
-                  background: isSelected ? "var(--site-color-tag-selected-bg)" : "var(--ifm-background-surface-color)",
-                  color: isSelected ? "var(--site-color-tag-selected-text)" : "var(--ifm-color-content-secondary)",
-                  transition: "all 0.14s var(--site-motion-emphasized)",
-                }}>
-                <span
-                  aria-hidden
-                  style={{
-                    width: 7,
-                    height: 7,
-                    borderRadius: "50%",
-                    marginInlineEnd: 7,
-                    display: "inline-block",
-                    flexShrink: 0,
-                    background: `var(--ant-${tag.color}-6)`,
-                  }}
-                />
-                {tag.name}
-              </button>
-            );
-          })}
-        </Flex>
-      )}
+      <div className={clsx(styles.tagRow, customTags.length === 0 && styles.tagRowEmpty)}>
+        {customTags.length > 0 && (
+          <div className={styles.tagList}>
+            {customTags.map((tag) => {
+              const isSelected = selectedTags.includes(tag.id);
+              return (
+                <button
+                  key={tag.id}
+                  type="button"
+                  aria-pressed={isSelected}
+                  onClick={() => toggleTag(tag.id)}
+                  className={clsx(styles.tagPill, isSelected && styles.tagPillSelected)}>
+                  <span aria-hidden className={styles.tagDot} style={{ background: `var(--ant-${tag.color}-6)` }} />
+                  {tag.name}
+                </button>
+              );
+            })}
+          </div>
+        )}
 
-      <Button type="text" icon={<TagOutlined />} onClick={onManageTags} size="small">
-        <Translate id="myspace.manageTags">管理标签</Translate>
-      </Button>
+        <Button type="text" icon={<TagOutlined />} onClick={onManageTags} size="small" className={styles.manageTagsBtn}>
+          <Translate id="myspace.manageTags">管理标签</Translate>
+        </Button>
+      </div>
 
-      <div className={searchStyles.searchInput}>
+      <div className={clsx(searchStyles.searchInput, styles.searchWrap)}>
         <Input
           aria-label={translate({ id: "search.submit", message: "搜索" })}
           ref={inputRef}
@@ -172,7 +159,7 @@ const FilterBar: React.FC<{
           }
         />
       </div>
-    </Flex>
+    </div>
   );
 };
 
