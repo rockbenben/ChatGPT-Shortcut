@@ -14,12 +14,14 @@ import { extractPlaceholders, applyPlaceholders, getPlaceholderValue, renderProm
 import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import { EmptyState } from "@site/src/components/EmptyState";
 import { ActionLink } from "@site/src/components/ActionLink";
-import { LoginModal } from "@site/src/components/user/LoginModal";
 import { toBcp47 } from "@site/src/utils/i18n";
 import { lazyOptional, lazyWithRetry } from "@site/src/utils/lazyRetry";
 
 const ShareButtons = lazyOptional(() => import("./ShareButtons"));
 const AdComponent = lazyOptional(() => import("@site/src/components/AdComponent"));
+const LoginModal = lazyWithRetry(() =>
+  import("@site/src/components/user/LoginModal").then((m) => ({ default: m.LoginModal })),
+);
 // 见 PromptPage 同名注释：静态 import 会把 Pagination + Form + react-markdown
 // 全链拖进 eager common chunk，每个页面都要下载。
 const Comments = lazyWithRetry(() => import("./Comments"));
@@ -142,7 +144,7 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
   if (loading) {
     return (
       <Layout title={translate({ id: "community.loading", message: "加载中…" })}>
-        <main>
+        <main style={{ minHeight: "100vh" }}>
           <Row justify="center" style={{ marginTop: 16, marginBottom: 24, paddingInline: 12 }}>
           <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
             <div style={{ height: 22, marginBottom: 12 }} aria-hidden="true" />
@@ -430,7 +432,9 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
       </Row>
       </main>
       {loginOpen && (
-        <LoginModal open={loginOpen} onCancel={() => setLoginOpen(false)} />
+        <Suspense fallback={null}>
+          <LoginModal open={loginOpen} onCancel={() => setLoginOpen(false)} />
+        </Suspense>
       )}
     </Layout>
   );
