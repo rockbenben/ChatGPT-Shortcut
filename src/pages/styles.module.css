@@ -7,7 +7,7 @@
 
 /* Hero Section — compact workbench header with breathing room below */
 .heroSection {
-  padding: 36px 0 40px;
+  padding: 28px 0 24px;
   position: relative;
   overflow: hidden;
 }
@@ -28,9 +28,8 @@
 
 /* Filter Container */
 .filterSection {
-  padding-top: 20px;
+  padding-top: 8px;
   margin-bottom: 16px;
-  border-top: 1px solid var(--site-color-hairline);
 }
 
 .collectionSection {
@@ -54,13 +53,12 @@
     padding-inline: 16px;
   }
   .filterSection {
-    padding-top: 14px;
+    padding-top: 6px;
     margin-bottom: 12px;
   }
   .collectionSection {
     margin-top: 0;
-    padding-top: 14px;
-    border-top: 1px solid var(--site-color-hairline);
+    padding-top: 6px;
   }
   .homeMain {
     margin-top: 8px !important;
