@@ -1029,12 +1029,6 @@ button.prompt-placeholder-filled {
 
 /* Native Share — sage primary 强调；hover bg 必须 CSS（inline 拿不到 :hover） */
 .share-channel-native { color: var(--ifm-color-primary) !important; }
-@media (max-width: 767px) {
-  .share-trigger.ant-btn {
-    inline-size: 36px;
-    block-size: 36px;
-  }
-}
 
 .share-channel-native:hover {
   color: var(--ifm-color-primary) !important;

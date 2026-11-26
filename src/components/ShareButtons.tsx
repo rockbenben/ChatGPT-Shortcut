@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { Button, Flex, Popover, Typography } from "antd";
+import React, { useState, useEffect, useCallback, useId, useRef } from "react";
+import { Button, FloatButton, Flex, Popover, Typography } from "antd";
 import {
   ShareAltOutlined,
   LinkOutlined,
@@ -158,6 +158,48 @@ const openShareWindow = (key: Channel["key"], url: string, title: string) => {
   window.open(SHARE_URL_BUILDERS[key](url, title), "_blank", "noopener,noreferrer,width=600,height=500");
 };
 
+function SharePopover({ children }: { children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+  const triggerRef = useRef<React.ComponentRef<typeof FloatButton>>(null);
+  const panelId = useId();
+
+  useEffect(() => {
+    if (!open) return;
+
+    const dismissOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape" || event.defaultPrevented) return;
+      if (document.getElementById(panelId)?.contains(document.activeElement)) {
+        triggerRef.current?.focus();
+      }
+      setOpen(false);
+    };
+    document.addEventListener("keydown", dismissOnEscape);
+    return () => document.removeEventListener("keydown", dismissOnEscape);
+  }, [open, panelId]);
+
+  return (
+    <div>
+      <Popover
+        trigger={["hover", "click"]}
+        mouseLeaveDelay={0.2}
+        placement="top"
+        open={open}
+        onOpenChange={setOpen}
+        getPopupContainer={(trigger) => trigger.parentElement ?? document.body}
+        content={<div id={panelId}>{children}</div>}>
+        <FloatButton
+          ref={triggerRef}
+          type="primary"
+          icon={<ShareAltOutlined />}
+          aria-label={translate({ id: "action.share", message: "分享" })}
+          aria-expanded={open}
+          aria-controls={open ? panelId : undefined}
+        />
+      </Popover>
+    </div>
+  );
+}
+
 function ShareButtons({ shareUrl, title, popOver }: ShareButtonsProps) {
   const panel = (
     <Flex vertical gap={6} style={{ minWidth: 240, maxWidth: "min(300px, calc(100vw - 48px))" }}>
@@ -170,17 +212,7 @@ function ShareButtons({ shareUrl, title, popOver }: ShareButtonsProps) {
     </Flex>
   );
 
-  if (popOver) return panel;
-
-  return (
-    <Popover trigger="click" content={panel}>
-      <Button
-        className="share-trigger"
-        icon={<ShareAltOutlined />}
-        aria-label={translate({ id: "action.share", message: "分享" })}
-      />
-    </Popover>
-  );
+  return popOver ? panel : <SharePopover>{panel}</SharePopover>;
 }
 
 export default ShareButtons;

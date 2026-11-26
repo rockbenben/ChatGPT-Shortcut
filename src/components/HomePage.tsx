@@ -72,7 +72,7 @@ const MySpace = lazyWithRetry(() => import("@site/src/components/user/MySpace"))
 const { Title, Paragraph } = Typography;
 
 // ==================== 页面头部组件 ====================
-const ShowcaseHeader: React.FC<{ shareUrl: string }> = ({ shareUrl }) => (
+const ShowcaseHeader = () => (
   <section className={clsx("text--center", styles.heroSection)}>
     <div className="hideOnSmallScreen">
       <Title
@@ -106,9 +106,6 @@ const ShowcaseHeader: React.FC<{ shareUrl: string }> = ({ shareUrl }) => (
     </p>
     <Flex align="center" justify="center" wrap gap={8} className={styles.heroActions}>
       <UserStatus />
-      <Suspense fallback={null}>
-        <ShareButtons shareUrl={shareUrl} title={TITLE} />
-      </Suspense>
     </Flex>
   </section>
 );
@@ -840,7 +837,7 @@ const MyCollectionView: React.FC<HomeData & { onOpenModal: (data: any) => void }
 };
 
 // ==================== 主内容组件 ====================
-const ShowcaseContent: React.FC<HomeData & { shareUrl: string }> = ({ defaultFavorData, defaultOtherData, shareUrl }) => {
+const ShowcaseContent: React.FC<HomeData> = ({ defaultFavorData, defaultOtherData }) => {
   const { userAuth, authLoading } = useContext(AuthContext);
   const history = useHistory();
   const [modalOpen, setModalOpen] = useState(false);
@@ -922,7 +919,7 @@ const ShowcaseContent: React.FC<HomeData & { shareUrl: string }> = ({ defaultFav
   if (authLoading) {
     return (
       <>
-        <ShowcaseHeader shareUrl={shareUrl} />
+        <ShowcaseHeader />
         <div className="container margin-top--md">
           <PromptCardSkeleton count={8} />
         </div>
@@ -932,7 +929,7 @@ const ShowcaseContent: React.FC<HomeData & { shareUrl: string }> = ({ defaultFav
 
   return (
     <ViewModeContext.Provider value={{ viewMode, setViewMode: handleViewModeChange }}>
-      <ShowcaseHeader shareUrl={shareUrl} />
+      <ShowcaseHeader />
       <div>
         {userAuth ? (
           <MyCollectionView onOpenModal={handleOpenModal} defaultFavorData={defaultFavorData} defaultOtherData={defaultOtherData} />
@@ -1036,8 +1033,13 @@ export default function HomePage({ defaultFavorData, defaultOtherData }: HomeDat
         <script type="application/ld+json">{toJsonLd(websiteSchema)}</script>
       </Head>
       <main className="margin-vert--md">
-        <ShowcaseContent defaultFavorData={defaultFavorData} defaultOtherData={defaultOtherData} shareUrl={shareUrl} />
+        <ShowcaseContent defaultFavorData={defaultFavorData} defaultOtherData={defaultOtherData} />
       </main>
+      {shareUrl && (
+        <Suspense fallback={null}>
+          <ShareButtons shareUrl={shareUrl} title={TITLE} />
+        </Suspense>
+      )}
     </Layout>
   );
 }
