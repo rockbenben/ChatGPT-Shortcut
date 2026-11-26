@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { useCallback, useState, useEffect, type ComponentProps, type ReactNode, type ReactElement } from "react";
+import React, { useCallback, useState, useEffect, startTransition, type ComponentProps, type ReactNode, type ReactElement } from "react";
 import { useHistory, useLocation } from "@docusaurus/router";
 import { Tag } from "antd";
 import { toggleListItem } from "@site/src/utils/jsUtils";
@@ -49,13 +49,16 @@ function ShowcaseTagSelect({ id, icon, label, tag, checked: propChecked, ...rest
   }, [tag, location, propChecked]);
 
   const toggleTag = useCallback(() => {
+    setSelected((prev) => !prev);
     const tags = readSearchTags(location.search);
     const newTags = toggleListItem(tags, tag);
     const newSearch = replaceSearchTags(location.search, newTags);
-    history.push({
-      ...location,
-      search: newSearch,
-      state: prepareUserState(),
+    startTransition(() => {
+      history.push({
+        ...location,
+        search: newSearch,
+        state: prepareUserState(),
+      });
     });
   }, [tag, location, history]);
 

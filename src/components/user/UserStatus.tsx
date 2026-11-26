@@ -10,9 +10,10 @@ import { persistAuthToken } from "@site/src/api";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import Link from "@docusaurus/Link";
 import { ActionLink } from "@site/src/components/ActionLink";
-import { LoginModal } from "./LoginModal";
 import { lazyWithRetry } from "@site/src/utils/lazyRetry";
 import styles from "./UserStatus.module.css";
+
+const LoginModal = lazyWithRetry(() => import("./LoginModal").then((m) => ({ default: m.LoginModal })));
 
 // 创建提示词表单（antd Form/Switch/Alert 一整套）只有登录用户点「创建提示词」才用；静态 import 会让
 // 首页初始 chunk 组多背 ~15 KB gz。open 时才挂载：Modal 在组件内部，常驻渲染会立刻拉 chunk。
@@ -270,7 +271,11 @@ const UserStatus = () => {
         ) : (
           <>
             {loggedOutButtons}
-            <LoginModal open={open} onCancel={() => setOpen(false)} />
+            {open && (
+              <Suspense fallback={null}>
+                <LoginModal open={open} onCancel={() => setOpen(false)} />
+              </Suspense>
+            )}
           </>
         )}
       </div>

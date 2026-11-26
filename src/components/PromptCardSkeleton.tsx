@@ -4,6 +4,8 @@ import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
 interface PromptCardSkeletonProps {
   count?: number;
+  /** 固定渲染 count 个骨架卡片，避免桌面端“加载更多”撑出多行引发大跳变 CLS */
+  fixedCount?: boolean;
 }
 
 const calculateVisibleCount = (fallbackCount: number): number => {
@@ -23,8 +25,8 @@ const calculateVisibleCount = (fallbackCount: number): number => {
   return Math.min(Math.max(columns * visibleRows, fallbackCount), 12);
 };
 
-export const PromptCardSkeleton: React.FC<PromptCardSkeletonProps> = ({ count = 4 }) => {
-  const visibleCount = useMemo(() => calculateVisibleCount(count), [count]);
+export const PromptCardSkeleton: React.FC<PromptCardSkeletonProps> = ({ count = 4, fixedCount = false }) => {
+  const visibleCount = useMemo(() => (fixedCount ? Math.max(1, count) : calculateVisibleCount(count)), [count, fixedCount]);
 
   return (
     <Row gutter={[16, 16]} style={{ contain: "layout style" }}>
