@@ -15,10 +15,29 @@
     box-shadow 0.16s var(--site-motion-emphasized);
 }
 
-.showcaseCard:hover {
-  transform: translateY(-2px);
-  border-color: rgba(var(--ifm-color-primary-rgb), 0.45);
-  box-shadow: var(--site-shadow-md);
+@media (hover: hover) {
+  .showcaseCard:hover {
+    transform: translateY(-2px);
+    border-color: rgba(var(--ifm-color-primary-rgb), 0.45);
+    box-shadow: var(--site-shadow-md);
+  }
+}
+
+.dragHandle {
+  cursor: grab;
+  touch-action: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--site-color-text-tertiary);
+  padding: 4px 6px 4px 2px;
+  margin: 0 2px 0 -2px;
+  border-radius: 6px;
+}
+
+.dragHandle:active {
+  cursor: grabbing;
 }
 
 .showcaseCard:focus-visible {
@@ -136,14 +155,24 @@
 }
 
 @media (max-width: 767px) {
+  .cardContent {
+    padding: 14px 14px 12px;
+    gap: 6px;
+  }
+
+  .dragHandle {
+    padding: 6px 8px 6px 4px;
+    margin: -2px 2px -2px -4px;
+  }
+
   .cardFooter {
-    padding: 6px 12px;
-    min-height: 48px;
+    padding: 4px 8px;
+    min-height: 44px;
   }
 
   .cardFooter :global(.ant-btn) {
-    min-width: 40px;
-    height: 40px;
-    font-size: 16px;
+    min-width: 38px;
+    height: 38px;
+    font-size: 15px;
   }
 }

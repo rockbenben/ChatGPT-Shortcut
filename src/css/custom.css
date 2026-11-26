@@ -709,7 +709,7 @@ button.prompt-placeholder-filled {
 
 .prompt-fill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   gap: 10px;
 }
 
@@ -1029,6 +1029,24 @@ button.prompt-placeholder-filled {
 
 /* Native Share — sage primary 强调；hover bg 必须 CSS（inline 拿不到 :hover） */
 .share-channel-native { color: var(--ifm-color-primary) !important; }
+.community-back-top.ant-float-btn {
+  bottom: 100px;
+}
+@media (max-width: 767px) {
+  .share-float-btn.ant-float-btn {
+    inset-inline-end: 14px;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    opacity: 0.92;
+  }
+  .share-float-btn.ant-float-btn:active,
+  .share-float-btn.ant-float-btn:focus-visible {
+    opacity: 1;
+  }
+  .community-back-top.ant-float-btn {
+    inset-inline-end: 14px;
+    bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+  }
+}
 
 .share-channel-native:hover {
   color: var(--ifm-color-primary) !important;
