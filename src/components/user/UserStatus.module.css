@@ -15,12 +15,21 @@
 
 @media (max-width: 767px) {
   .localBar {
-    gap: 6px;
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 8px;
   }
 
   .localBar :global(.ant-btn) {
     min-height: 36px;
     min-width: 36px;
+  }
+
+  .localBar > :global(.ant-btn) {
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .utilityGroup .createBtn {

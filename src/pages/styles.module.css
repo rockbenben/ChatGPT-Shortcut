@@ -47,7 +47,7 @@
 
 @media (max-width: 767px) {
   .heroSection {
-    padding: 6px 0 14px;
+    padding: 6px 0 10px;
   }
   .heroActions {
     padding-inline: 16px;
@@ -58,7 +58,7 @@
   }
   .collectionSection {
     margin-top: 0;
-    padding-top: 6px;
+    padding-top: 2px;
   }
   .homeMain {
     margin-top: 8px !important;
