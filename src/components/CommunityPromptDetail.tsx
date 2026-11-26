@@ -1,11 +1,13 @@
-import React, { useEffect, useState, useCallback, useRef, useContext, useMemo } from "react";
+import React, { useEffect, useLayoutEffect, useState, useCallback, useRef, useContext, useMemo } from "react";
 import { useLocation } from "@docusaurus/router";
 import { voteLoginRequiredText, voteAlreadyVotedText, voteSuccessText, voteFailedText } from "@site/src/utils/voteMessages";
 import { App } from "antd";
 import { AuthContext } from "@site/src/components/AuthContext";
 import CommunityPromptPage from "@site/src/components/CommunityPromptPage";
 import { getSingleCommPrompt, voteOnUserPrompt } from "@site/src/api";
-import { primeCacheFromSnapshot, type CommunityPrompt } from "@site/src/utils/snapshotPrime";
+import { setCache, getPromptCacheKey, getPromptTTL } from "@site/src/utils/cache";
+import { dismissEarlyCommunityPrompt } from "@site/src/utils/communityPromptBoot";
+import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 
 /**
  * 本轮请求的结论：pending（还没拿到）/ ready（拿到了）/ notFound（确实不存在）/ error（拉取失败）。
@@ -63,11 +65,31 @@ function CommunityPromptDetailInner() {
   // 拿它冒充当前这条就是显示别人的提示词。
   const shownPrompt = prompt && String(prompt.id) === promptKey ? prompt : null;
 
-  // 列表页进来时已 prime 过（snapshotPrime 内部 module-level flag 保证整 SPA session 只跑一次）；
-  // 直接命中详情页（搜索引擎/外链）也 prime 一次让后续 getSingleCommPrompt 走 cache 命中
+  // 列表页进来时已 prime 过；详情页首次打开仅在空闲期动态导入 snapshotPrime，
+  // 避免把 54KB communitySnapshot.json 塞进首屏关键路由 chunk。
   useEffect(() => {
-    primeCacheFromSnapshot();
+    if (typeof window === "undefined") return;
+    const prime = () => {
+      import("@site/src/utils/snapshotPrime")
+        .then((m) => m.primeCacheFromSnapshot())
+        .catch(() => {});
+    };
+    if ("requestIdleCallback" in window) {
+      const id = (window as any).requestIdleCallback(prime, { timeout: 3000 });
+      return () => (window as any).cancelIdleCallback(id);
+    }
+    const timer = setTimeout(prime, 1500);
+    return () => clearTimeout(timer);
   }, []);
+
+  // React 提交完正文 / notFound / error 后，在浏览器绘制前同步撤掉 <head> 预渲染层，避免闪烁与 CLS。
+  useLayoutEffect(() => {
+    if (!loading) {
+      dismissEarlyCommunityPrompt();
+    }
+  }, [loading]);
+
+  useEffect(() => () => dismissEarlyCommunityPrompt(), []);
 
   useEffect(() => {
     if (!promptId) {
@@ -83,6 +105,23 @@ function CommunityPromptDetailInner() {
     let cancelled = false;
     (async () => {
       try {
+        if (retryNonce === 0) {
+          const early = typeof window !== "undefined" ? window.__AISHORT_EARLY_PROMPT__ : undefined;
+          if (early && early.id === promptId) {
+            window.__AISHORT_EARLY_PROMPT__ = undefined;
+            const earlyData = early.data ?? (await early.promise);
+            if (cancelled) return;
+            if (earlyData && !earlyData._unavailable) {
+              if (!early.fromCache) {
+                setCache(getPromptCacheKey("commus", promptId), earlyData, getPromptTTL("commus"));
+              }
+              setPrompt(earlyData);
+              setLoadState({ key: promptKey, status: "ready" });
+              return;
+            }
+          }
+        }
+
         // getSingleCommPrompt 内部走 lscache（已被 snapshotPrime 或上次列表流 prime/写入），
         // 多数场景命中 cache，无网络往返
         const data = await getSingleCommPrompt(promptId);

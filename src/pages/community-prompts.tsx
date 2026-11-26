@@ -21,7 +21,6 @@ import { toBcp47 } from "@site/src/utils/i18n";
 import { toJsonLd } from "@site/src/utils/jsonLd";
 import { EmptyState } from "@site/src/components/EmptyState";
 import { Pagination } from "@site/src/components/Pagination";
-import { LoginModal } from "@site/src/components/user/LoginModal";
 import PromptCard from "@site/src/components/PromptCard";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
 import styles from "@site/src/pages/styles.module.css";
@@ -29,6 +28,7 @@ import { COMMUNITY_PAGE_SIZE } from "@site/src/utils/communityPagination.mjs";
 import { primeCacheFromSnapshot, getCommunitySnapshotPage, type CommunitySortField, type CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import { lazyWithRetry, lazyOptional } from "@site/src/utils/lazyRetry";
 const PromptDetailModal = lazyWithRetry(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
+const LoginModal = lazyWithRetry(() => import("@site/src/components/user/LoginModal").then((m) => ({ default: m.LoginModal })));
 
 const ShareButtons = lazyOptional(() => import("@site/src/components/ShareButtons"));
 
@@ -444,7 +444,9 @@ const CommunityPrompts = () => {
             </div>
 
             {open && (
-              <LoginModal open={open} onCancel={() => setOpen(false)} />
+              <Suspense fallback={null}>
+                <LoginModal open={open} onCancel={() => setOpen(false)} />
+              </Suspense>
             )}
             {modalData && (
               <Suspense fallback={null}>

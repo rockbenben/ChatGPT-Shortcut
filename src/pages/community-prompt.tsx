@@ -1,5 +1,7 @@
 import React from "react";
+import Head from "@docusaurus/Head";
 import CommunityPromptDetail from "@site/src/components/CommunityPromptDetail";
+import { COMMUNITY_PROMPT_BOOT_SCRIPT } from "@site/src/utils/communityPromptBoot";
 
 // 动态入口：URL 形如 /community-prompt?id=123
 // 故意只做最薄的包装：URL 解析 + snapshot 查找放在 CommunityPromptDetail 的 useEffect 里
@@ -11,5 +13,12 @@ import CommunityPromptDetail from "@site/src/components/CommunityPromptDetail";
 // 里 CSR 注入的 per-id canonical/og/title 永远不生效 → 所有 ?id= 页被排除收录。
 // 裸路径（无 id / 无效 id）的 noindex 由 CommunityPromptPage 的错误分支客户端注入。
 export default function CommunityPromptDetailPage() {
-  return <CommunityPromptDetail />;
+  return (
+    <>
+      <Head>
+        <script id="aishort-cp-boot">{COMMUNITY_PROMPT_BOOT_SCRIPT}</script>
+      </Head>
+      <CommunityPromptDetail />
+    </>
+  );
 }
