@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState, useCallback, useMemo, useRef, Suspense } from "react";
+import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import { voteAlreadyVotedText, voteSuccessText, voteFailedText } from "@site/src/utils/voteMessages";
 import { useFavorite } from "@site/src/hooks/useFavorite";
@@ -333,7 +334,7 @@ const CommunityPrompts = () => {
         <meta name="twitter:description" content={COMMU_DESCRIPTION} />
         <script type="application/ld+json">{collectionSchemaJson}</script>
       </Head>
-      <main className="margin-vert--md">
+      <main className={clsx("margin-vert--md", styles.homeMain)}>
         <section className="margin-bottom--sm">
           <div className="container">
             {/* Breadcrumb — plain, matches community-prompt detail page style */}
@@ -356,7 +357,7 @@ const CommunityPrompts = () => {
 
             {/* H1 + tagline — 给 AI 引擎主标题 chunk 入口；视觉上简洁不抢主体 */}
             <div style={{ marginBottom: 18 }}>
-              <h1 style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-0.02em", margin: 0, color: "var(--ifm-color-content)" }}>
+              <h1 style={{ fontSize: "clamp(22px, 4vw, 28px)", fontWeight: 600, letterSpacing: "-0.02em", margin: 0, color: "var(--ifm-color-content)" }}>
                 <Translate id="community.heading">AI 提示词社区</Translate>
               </h1>
               <h2 style={{ marginTop: 6, marginBottom: 0, fontSize: 14, fontWeight: 500, color: "var(--site-color-text-tertiary)", lineHeight: 1.55 }}>
@@ -365,7 +366,7 @@ const CommunityPrompts = () => {
             </div>
 
             {/* Sort + Search — same row; search fills remaining space via flex: 1 */}
-            <Flex wrap="wrap" gap="middle" align="center" style={{ marginBottom: 20 }}>
+            <Flex wrap="wrap" gap={12} align="center" className={styles.communityToolbar}>
               <Segmented
                 options={[
                   { value: "id", label: translate({ id: "sort.newest", message: "最新发布" }) },
@@ -377,12 +378,9 @@ const CommunityPrompts = () => {
                   setCurrentPage(1);
                 }}
               />
-              <div style={{ flex: 1, minWidth: 240 }}>
+              <div className={styles.communitySearchWrap}>
                 <SearchBar beforeSearch={handleBeforeSearch} />
               </div>
-              <Suspense fallback={null}>
-                <ShareButtons shareUrl={ShareUrl} title={COMMU_TITLE} />
-              </Suspense>
             </Flex>
 
             {/* 三态按「归属的查询键」在渲染期判定，不用 effect 里写的旗标：
@@ -459,10 +457,15 @@ const CommunityPrompts = () => {
                 <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} afterClose={() => setModalData(null)} data={modalData} />
               </Suspense>
             )}
-            <FloatButton.BackTop style={{ bottom: 100 }} />
+            <FloatButton.BackTop className="community-back-top" />
           </div>
         </section>
       </main>
+      {ShareUrl && (
+        <Suspense fallback={null}>
+          <ShareButtons shareUrl={ShareUrl} title={COMMU_TITLE} />
+        </Suspense>
+      )}
     </Layout>
   );
 };

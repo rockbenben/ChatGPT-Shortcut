@@ -827,7 +827,7 @@ const MyCollectionView: React.FC<HomeData & { onOpenModal: (data: any) => void }
 
   // 仅在 collection 模式才显示 MySpace（避免不必要的 API 调用）
   return (
-    <div className="container margin-top--md">
+    <div className={clsx("container", styles.collectionSection)}>
       <PageHeader userAuth={userAuth} {...stats} />
       <Suspense fallback={null}>
         <MySpace onOpenModal={onOpenModal} onDataLoaded={handleDataLoaded} />
@@ -1032,7 +1032,7 @@ export default function HomePage({ defaultFavorData, defaultOtherData }: HomeDat
         <link rel="llms-txt" href="/llms.txt" />
         <script type="application/ld+json">{toJsonLd(websiteSchema)}</script>
       </Head>
-      <main className="margin-vert--md">
+      <main className={clsx("margin-vert--md", styles.homeMain)}>
         <ShowcaseContent defaultFavorData={defaultFavorData} defaultOtherData={defaultOtherData} />
       </main>
       {shareUrl && (

@@ -46,7 +46,7 @@ const sheetCardStyle: React.CSSProperties = {
   background: "var(--ifm-background-surface-color)",
 };
 const sheetCardBodyStyle: React.CSSProperties = {
-  padding: "clamp(20px, 3vw, 32px)",
+  padding: "clamp(16px, 3vw, 32px)",
 };
 const monoNum: React.CSSProperties = { fontVariantNumeric: "tabular-nums" };
 

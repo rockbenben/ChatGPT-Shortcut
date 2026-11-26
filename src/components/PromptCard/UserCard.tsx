@@ -67,8 +67,8 @@ const UserCardComponent = ({ data: user, sortable, onEdit, onDelete, onOpenModal
       title={
         <Flex align="start" style={{ overflow: "hidden" }}>
           {sortable && (
-            <div {...sortable.listeners} style={{ cursor: "grab", marginInlineEnd: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 4 }}>
-              <HolderOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
+            <div {...sortable.listeners} className={styles.dragHandle} onClick={(e) => e.stopPropagation()}>
+              <HolderOutlined />
             </div>
           )}
           <ClampBox>

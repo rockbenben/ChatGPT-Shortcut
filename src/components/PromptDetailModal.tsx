@@ -8,6 +8,7 @@ import { PromptPlaceholderBar } from "@site/src/components/PromptPlaceholderBar"
 import { PromptCardTag } from "./PromptCard/PromptCardTag";
 import { formatCompactNumber } from "@site/src/utils/formatters";
 import { extractPlaceholders, applyPlaceholders, getPlaceholderValue, renderPromptWithPlaceholders } from "@site/src/utils/promptRender";
+import modalStyles from "./PromptDetailModal.module.css";
 
 import { TagType } from "@site/src/data/tags";
 
@@ -89,11 +90,16 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
       destroyOnHidden
       centered
       title={
-        <Typography.Title level={2} style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.3, overflowWrap: "anywhere" }}>
+        <Typography.Title level={2} className={modalStyles.modalTitle}>
           {data.title}
         </Typography.Title>
       }
       closable={{ "aria-label": translate({ id: "action.close", message: "关闭" }) }}
+      classNames={{
+        root: modalStyles.modalRoot,
+        header: modalStyles.modalHeader,
+        close: modalStyles.modalClose,
+      }}
       styles={{
         container: {
           padding: 0,
@@ -104,14 +110,6 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
         },
         header: {
           margin: 0,
-          paddingBlockStart: 20,
-          paddingInline: "24px 72px",
-        },
-        close: {
-          insetBlockStart: 16,
-          insetInlineEnd: 20,
-          width: 36,
-          height: 36,
         },
         body: {
           padding: 0,
@@ -121,11 +119,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
       }}>
       <Flex vertical style={{ flex: 1, minWidth: 0, minHeight: 0 }}>
         {/* Header metadata */}
-        <div
-          style={{
-            padding: "8px 24px 20px",
-            borderBottom: "1px solid var(--site-color-hairline)",
-          }}>
+        <div className={modalStyles.metaStrip}>
           <Space separator={<span style={{ color: "var(--site-color-hairline)" }}>|</span>} size="small" wrap>
             {data.share === false && (
               <Space size={4}>
@@ -171,14 +165,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
         </div>
 
         {/* Content area */}
-        <div
-          style={{
-            flex: 1,
-            minHeight: 0,
-            overflowY: "auto",
-            overscrollBehavior: "contain",
-            padding: "20px 24px",
-          }}>
+        <div className={modalStyles.scrollBody}>
           <Flex vertical gap={16}>
             {data.remark && (
               <div
@@ -214,22 +201,8 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
                 focusNonce={focusState.nonce}
               />
 
-              <div
-                style={{
-                  backgroundColor: "var(--site-color-preview-bg)",
-                  borderRadius: 10,
-                  padding: "18px 20px",
-                  border: "1px solid var(--site-color-hairline)",
-                }}>
-                <div
-                  style={{
-                    fontFamily: "inherit",
-                    fontSize: 14.5,
-                    lineHeight: 1.75,
-                    color: "var(--ifm-color-content)",
-                    whiteSpace: "pre-wrap",
-                    wordBreak: "break-word",
-                  }}>
+              <div className={modalStyles.promptBox}>
+                <div className={modalStyles.promptText}>
                   {renderedPrompt}
                 </div>
               </div>
@@ -237,15 +210,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
 
             {/* Translation */}
             {data.description && data.description !== data.prompt && (
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  padding: "14px 16px",
-                  backgroundColor: "var(--site-color-preview-bg)",
-                  borderRadius: 10,
-                  border: "1px solid var(--site-color-hairline)",
-                }}>
+              <div className={modalStyles.translationBox}>
                 <Flex justify="space-between" align="center" gap={8}>
                   <Eyebrow>
                     <Translate id="prompt.translation">译文</Translate>
@@ -270,11 +235,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
 
         {/* Footer Section */}
         {(Boolean(data.tags?.length) || showViewDetails) && (
-          <div
-            style={{
-              padding: "16px 24px",
-              borderTop: "1px solid var(--site-color-hairline)",
-            }}>
+          <div className={modalStyles.modalFooter}>
             <Flex justify="space-between" align="center" wrap="wrap" gap={12}>
               <div style={{ flex: 1, minWidth: 0 }}>{data.tags && <PromptCardTag tags={data.tags} />}</div>
 
