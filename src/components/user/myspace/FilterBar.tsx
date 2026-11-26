@@ -126,8 +126,16 @@ const FilterBar: React.FC<{
           </div>
         )}
 
-        <Button type="text" icon={<TagOutlined />} onClick={onManageTags} size="small" className={styles.manageTagsBtn}>
-          <Translate id="myspace.manageTags">管理标签</Translate>
+        <Button
+          type="text"
+          icon={<TagOutlined />}
+          onClick={onManageTags}
+          size="small"
+          className={styles.manageTagsBtn}
+          aria-label={translate({ id: "myspace.manageTags", message: "管理标签" })}>
+          <span className={styles.manageTagsLabel}>
+            <Translate id="myspace.manageTags">管理标签</Translate>
+          </span>
         </Button>
       </div>
 

@@ -101,7 +101,7 @@ const ShowcaseHeader = () => (
         </Translate>
       </div>
     </div>
-    <p className="showOnSmallScreen" style={{ fontSize: 13, maxWidth: 320, margin: "0 auto 8px", lineHeight: 1.45, color: "var(--ifm-color-content-secondary)" }}>
+    <p className="showOnSmallScreen mobile-hero-slogan" style={{ fontSize: 13, maxWidth: 320, margin: "0 auto 8px", lineHeight: 1.45, color: "var(--ifm-color-content-secondary)" }}>
       {SLOGAN}
     </p>
     <Flex align="center" justify="center" wrap gap={8} className={styles.heroActions}>
