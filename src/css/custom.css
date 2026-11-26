@@ -1063,6 +1063,10 @@ button.prompt-placeholder-filled {
 .userstatus-live { display: contents; }
 html[data-auth-boot="in"]:not([data-auth-ready]) .userstatus-boot { display: contents; }
 html[data-auth-boot="in"]:not([data-auth-ready]) .userstatus-live { display: none; }
+html[data-auth-boot="in"]:not([data-auth-ready]) .mobile-hero-slogan,
+html[data-auth-state="in"] .mobile-hero-slogan {
+  display: none !important;
+}
 
 /* Pagination — 允许换行。窄屏下 9 个页码（prev + 1..7 + next）总跨度 352px，超出
    313px 的容器，而 antd 的 .ant-pagination 是 flex-wrap:nowrap + overflow:visible，

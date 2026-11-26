@@ -71,8 +71,11 @@
 
 @media (max-width: 767px) {
   .loggedInBar {
+    display: flex;
+    width: 100%;
     flex-wrap: nowrap;
-    gap: 6px;
+    justify-content: space-between;
+    gap: 8px;
   }
 
   .utilityGroup {
@@ -84,7 +87,17 @@
   }
 
   .loggedInBar :global(.ant-segmented) {
+    flex: 1 1 auto;
     padding: 3px;
+  }
+
+  .loggedInBar :global(.ant-segmented-group) {
+    width: 100%;
+  }
+
+  .loggedInBar :global(.ant-segmented-item) {
+    flex: 1;
+    min-width: 0;
   }
 
   .loggedInBar :global(.ant-segmented-item-label) {

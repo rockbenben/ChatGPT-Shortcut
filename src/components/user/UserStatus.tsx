@@ -38,8 +38,9 @@ const UserStatus = () => {
   // 水合/挂载后给 <html> 加 data-auth-ready：撤掉内联脚本（auth-boot-flag）设的 boot 占位，
   // 露出 React 渲染的真实按钮。此后 data-auth-boot 残留也无害（CSS 仅在 :not([data-auth-ready]) 时生效）。
   useIsoLayoutEffect(() => {
+    document.documentElement.setAttribute("data-auth-state", userAuth ? "in" : "out");
     document.documentElement.setAttribute("data-auth-ready", "");
-  }, []);
+  }, [userAuth]);
 
   useIsoLayoutEffect(() => {
     if (!accountMenuOpen) return;
