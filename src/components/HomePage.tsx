@@ -390,6 +390,35 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
 
   const { filteredCommus, filteredCards, isFiltered, isSearching, searchFailed, retry: retrySearch } = useFilteredPrompts();
 
+  const FILTERED_BATCH_SIZE = 24;
+  const [filteredVisibleCount, setFilteredVisibleCount] = useState(FILTERED_BATCH_SIZE);
+  const filteredMoreRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setFilteredVisibleCount(FILTERED_BATCH_SIZE);
+  }, [filteredCards, filteredCommus]);
+
+  const visibleFilteredCards = useMemo(() => filteredCards.slice(0, filteredVisibleCount), [filteredCards, filteredVisibleCount]);
+  const hasMoreFiltered = filteredVisibleCount < filteredCards.length;
+
+  useEffect(() => {
+    if (!isFiltered || isSearching || !hasMoreFiltered || !filteredMoreRef.current) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          startTransition(() => setFilteredVisibleCount((n) => n + FILTERED_BATCH_SIZE));
+        }
+      },
+      { root: null, rootMargin: "400px", threshold: 0.1 },
+    );
+
+    observer.observe(filteredMoreRef.current);
+    return () => observer.disconnect();
+  }, [isFiltered, isSearching, hasMoreFiltered]);
+
   // Intersection Observer for auto-loading more cards
   const loadMoreTriggerRef = useRef<HTMLDivElement>(null);
 
@@ -409,7 +438,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
       },
       {
         root: null,
-        rootMargin: "0px",
+        rootMargin: "400px",
         threshold: 0.1,
       },
     );
@@ -586,7 +615,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
             {/* 加载指示器 */}
             {isLoadingMore && (
               <div style={{ textAlign: "center", marginTop: 24 }}>
-                <PromptCardSkeleton count={4} />
+                <PromptCardSkeleton count={4} fixedCount />
               </div>
             )}
           </div>
@@ -602,43 +631,46 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
             // 同一原则）。用骨架屏占位，等新一轮结果到了再换回卡片。
             <PromptCardSkeleton count={8} />
           ) : (
-            <Row gutter={[16, 16]}>
-            {filteredCommusWithDeltas.map((user, index) => {
-              const isUserPrompt = userPromptIdSet.has(user.id);
-              const isFavorite = commFavoriteIdSet.has(user.id);
+            <>
+              <Row gutter={[16, 16]}>
+              {filteredCommusWithDeltas.map((user, index) => {
+                const isUserPrompt = userPromptIdSet.has(user.id);
+                const isFavorite = commFavoriteIdSet.has(user.id);
 
-              return (
+                return (
+                  <React.Fragment key={user.id}>
+                    <Col xs={24} sm={12} md={8} lg={6} xl={6} className={index >= 4 ? styles.cardDeferred : undefined}>
+                      <PromptCard
+                        type={isUserPrompt ? "user" : "community"}
+                        data={user}
+                        isFavorite={isFavorite}
+                        isLoggedIn={isLoggedIn}
+                        onToggleFavorite={isUserPrompt ? undefined : handleCommToggleFavorite}
+                        onVote={isUserPrompt ? undefined : vote}
+                        onOpenModal={onOpenModal}
+                      />
+                    </Col>
+                  </React.Fragment>
+                );
+              })}
+              {visibleFilteredCards.map((user, index) => (
                 <React.Fragment key={user.id}>
-                  <Col xs={24} sm={12} md={8} lg={6} xl={6} className={index >= 4 ? styles.cardDeferred : undefined}>
+                  <Col xs={24} sm={12} md={8} lg={6} xl={6} className={(filteredCommus.length + index) >= 4 ? styles.cardDeferred : undefined}>
                     <PromptCard
-                      type={isUserPrompt ? "user" : "community"}
+                      type="data"
                       data={user}
-                      isFavorite={isFavorite}
+                      copyCount={getWeight(user)}
+                      isFavorite={favoriteIdSet.has(user.id)}
                       isLoggedIn={isLoggedIn}
-                      onToggleFavorite={isUserPrompt ? undefined : handleCommToggleFavorite}
-                      onVote={isUserPrompt ? undefined : vote}
+                      onToggleFavorite={handleToggleFavorite}
                       onOpenModal={onOpenModal}
                     />
                   </Col>
                 </React.Fragment>
-              );
-            })}
-            {filteredCards.map((user, index) => (
-              <React.Fragment key={user.id}>
-                <Col xs={24} sm={12} md={8} lg={6} xl={6} className={(filteredCommus.length + index) >= 4 ? styles.cardDeferred : undefined}>
-                  <PromptCard
-                    type="data"
-                    data={user}
-                    copyCount={getWeight(user)}
-                    isFavorite={favoriteIdSet.has(user.id)}
-                    isLoggedIn={isLoggedIn}
-                    onToggleFavorite={handleToggleFavorite}
-                    onOpenModal={onOpenModal}
-                  />
-                </Col>
-              </React.Fragment>
-            ))}
-          </Row>
+              ))}
+            </Row>
+              {hasMoreFiltered && <div ref={filteredMoreRef} style={{ height: 1, marginTop: 24 }} />}
+            </>
           )}
         </div>
       )}
@@ -810,7 +842,7 @@ const MyCollectionView: React.FC<HomeData & { onOpenModal: (data: any) => void }
   return (
     <div className={clsx("container", styles.collectionSection)}>
       <PageHeader userAuth={userAuth} {...stats} />
-      <Suspense fallback={null}>
+      <Suspense fallback={<PromptCardSkeleton count={8} />}>
         <MySpace onOpenModal={onOpenModal} onDataLoaded={handleDataLoaded} />
       </Suspense>
     </div>
