@@ -16,15 +16,13 @@ import { EmptyState } from "@site/src/components/EmptyState";
 import { ActionLink } from "@site/src/components/ActionLink";
 import { toBcp47 } from "@site/src/utils/i18n";
 import { lazyOptional, lazyWithRetry } from "@site/src/utils/lazyRetry";
+import { DeferredComments } from "./DeferredComments";
 
 const ShareButtons = lazyOptional(() => import("./ShareButtons"));
 const AdComponent = lazyOptional(() => import("@site/src/components/AdComponent"));
 const LoginModal = lazyWithRetry(() =>
   import("@site/src/components/user/LoginModal").then((m) => ({ default: m.LoginModal })),
 );
-// 见 PromptPage 同名注释：静态 import 会把 Pagination + Form + react-markdown
-// 全链拖进 eager common chunk，每个页面都要下载。
-const Comments = lazyWithRetry(() => import("./Comments"));
 // 与社区列表页（pages/community-prompts.tsx）同一份登录表单，同样只在未登录用户点
 // 点赞/收藏时才挂载并拉 chunk。
 
@@ -424,9 +422,7 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
                 </>
               )}
             </Eyebrow>
-            <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
-              <Comments pageId={prompt.id} type="userprompt" onCountChange={setCommentCount} />
-            </Suspense>
+            <DeferredComments pageId={prompt.id} type="userprompt" onCountChange={setCommentCount} />
           </Flex>
         </Col>
       </Row>

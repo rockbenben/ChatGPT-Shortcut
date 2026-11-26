@@ -113,9 +113,6 @@ const config = {
         theme: {
           customCss: ["./src/css/antd.dark.css", "./src/css/custom.css"],
         },
-        googleTagManager: {
-          containerId: "GTM-MX524GTT",
-        },
         // 裸 /community-prompt（无 ?id=）和各 locale 同名路径只渲染 Invalid prompt ID，
         // 没有索引价值；从 sitemap 排除，避免搜索引擎抓取无效页
         // 私有页（feedback/reset-password/user/）已在 robots.txt Disallow，
@@ -224,6 +221,30 @@ const config = {
               {
                 tagName: "script",
                 innerHTML: "(function(){try{if(localStorage.getItem('auth_token'))document.documentElement.setAttribute('data-auth-boot','in')}catch(e){}})();",
+              },
+            ],
+          };
+        },
+      };
+    },
+    // 延迟加载 GTM：先在 <head> 同步建好 dataLayer 队列保留 aiReferralTracker 等早期打点，
+    // 真实脚本放到首次交互或 window load 空闲后再注入，避免在移动端水合窗口争抢带宽和主线程（~365ms 阻塞）。
+    function deferredGtmPlugin() {
+      const containerId = "GTM-MX524GTT";
+      return {
+        name: "deferred-gtm",
+        injectHtmlTags() {
+          return {
+            headTags: [
+              {
+                tagName: "script",
+                innerHTML: `(function(w,d,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':Date.now(),event:'gtm.js'});var loaded=false;function load(){if(loaded)return;loaded=true;var s=d.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id='+i;d.head.appendChild(s);}['pointerdown','keydown','touchstart','scroll'].forEach(function(ev){w.addEventListener(ev,load,{passive:true,once:true});});function onLoad(){if('requestIdleCallback' in w){w.requestIdleCallback(load,{timeout:4000});}else{setTimeout(load,3000);}}if(d.readyState==='complete'){onLoad();}else{w.addEventListener('load',onLoad,{once:true});}})(window,document,'dataLayer','${containerId}');`,
+              },
+            ],
+            preBodyTags: [
+              {
+                tagName: "noscript",
+                innerHTML: `<iframe src="https://www.googletagmanager.com/ns.html?id=${containerId}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
               },
             ],
           };

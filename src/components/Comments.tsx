@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, memo, useRef } from "react";
+import React, { Suspense, useEffect, useState, useCallback, memo, useRef } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
@@ -13,7 +13,9 @@ import CommentThread from "@site/src/components/CommentComponent/CommentThread";
 import { usePollForAIReply, AI_REPLY_POLL_DELAYS_MS } from "@site/src/components/CommentComponent/usePollForAIReply";
 import { getCurrentUserId, nestComments } from "@site/src/components/CommentComponent/commentUtils";
 import { getComments, postComment } from "@site/src/api";
-import { LoginModal } from "@site/src/components/user/LoginModal";
+import { lazyWithRetry } from "@site/src/utils/lazyRetry";
+
+const LoginModal = lazyWithRetry(() => import("@site/src/components/user/LoginModal").then((m) => ({ default: m.LoginModal })));
 
 const pageSize = 12;
 
@@ -246,7 +248,11 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
 
   return (
     <>
-      <LoginModal open={isLoginModalOpen} onCancel={() => setIsLoginModalOpen(false)} />
+      {isLoginModalOpen && (
+        <Suspense fallback={null}>
+          <LoginModal open={isLoginModalOpen} onCancel={() => setIsLoginModalOpen(false)} />
+        </Suspense>
+      )}
       {type !== "author" && (
         <div style={{ marginTop: 12 }}>
           <CommentForm
