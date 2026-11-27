@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkchatgpt_shortcut=self.webpackChunkchatgpt_shortcut||[]).push([["1292"],{85431(e,t,s){s.r(t),s.d(t,{default:()=>h});var a=s(74848),u=s(96540),c=s(12229),r=s(19931);let h=({onReady:e})=>{let[t,s]=c.Ay.useMessage(),[h,l]=r.A.useModal();return(0,u.useLayoutEffect)(()=>{e({message:t,modal:h})},[t,h,e]),(0,a.jsxs)(a.Fragment,{children:[s,l]})}}}]);
