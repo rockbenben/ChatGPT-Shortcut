@@ -85,11 +85,14 @@ export const useCopyToClipboard = (timeout: number = 2000) => {
   );
 
   const updateCopy = useCallback(
-    // updateCopyCount 内部已吞掉失败并返回 null，这里无需再包一层 try/catch
     async (text: string, id: number | string) => {
       copyText(text);
-      const { updateCopyCount } = await import("@site/src/api/prompts");
-      await updateCopyCount(Number(id));
+      try {
+        const { updateCopyCount } = await import("@site/src/api/prompts");
+        await updateCopyCount(Number(id));
+      } catch (error) {
+        console.error("Failed to load copy tracking:", error);
+      }
     },
     [copyText]
   );

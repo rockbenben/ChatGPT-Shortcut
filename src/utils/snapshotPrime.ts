@@ -128,13 +128,8 @@ export function primeCacheFromSnapshot(): void {
   primeListView("id", generatedAtMs);
   primeListView("upvoteDifference", generatedAtMs);
 
-  // 2) 详情层：~64 条 localStorage 写入推迟到空闲期，避免阻塞 /community-prompts 首屏水合
-  const runDetailPrime = () => primeDetailEntries(byId);
-  if (typeof window !== "undefined" && "requestIdleCallback" in window) {
-    (window as any).requestIdleCallback(runDetailPrime, { timeout: 2000 });
-  } else {
-    setTimeout(runDetailPrime, 1000);
-  }
+  // 2) 详情层必须先于列表校验写入，让服务端 updatedAt 能淘汰旧快照。
+  primeDetailEntries(byId);
 }
 
 function primeListView(sortField: CommunitySortField, generatedAtMs: number): void {

@@ -260,6 +260,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
 
   const [hasMoreData, setHasMoreData] = useState(true);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const [loadMoreFailed, setLoadMoreFailed] = useState(false);
   const BATCH_SIZE = 12;
 
   // Refs 用于稳定 loadMoreData 回调（避免 IntersectionObserver 反复重建）
@@ -375,6 +376,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
 
     setIsLoadingMore(true);
     isLoadingMoreRef.current = true;
+    setLoadMoreFailed(false);
 
     try {
       // 从 ref 读取最新数据，避免回调因 state 变化而重建
@@ -395,6 +397,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
       }
     } catch (error) {
       console.error("Error loading more prompts:", error);
+      setLoadMoreFailed(true);
     } finally {
       setIsLoadingMore(false);
       isLoadingMoreRef.current = false;
@@ -434,16 +437,15 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
 
     observer.observe(filteredMoreRef.current);
     return () => observer.disconnect();
-  }, [isFiltered, isSearching, hasMoreFiltered]);
+  }, [isFiltered, isSearching, hasMoreFiltered, filteredVisibleCount]);
 
   // Intersection Observer for auto-loading more cards
   const loadMoreTriggerRef = useRef<HTMLDivElement>(null);
 
-  // isFiltered 必须在依赖里：过滤视图与非过滤视图是两棵不同子树，触发器 <div ref> 在切到
-  // 过滤视图时卸载、切回时以【新 DOM 节点】重挂载。ref 重挂载不触发 effect，若依赖不含 isFiltered，
-  // observer 会继续盯着已脱离文档的旧节点 → 清除筛选后无限滚动彻底失效（滚到底也不再加载）。
+  // 每批提交或个性化数据替换后重新观察：触发器若一直在预加载范围内，不会产生第二次相交事件。
+  // 切回未筛选视图也要重新观察新节点。加载失败时等待用户重试，避免连续请求同一个失败的 chunk。
   useEffect(() => {
-    if (!loadMoreTriggerRef.current || !hasMoreDataRef.current) {
+    if (isFiltered || isLoadingMore || loadMoreFailed || !hasMoreData || !loadMoreTriggerRef.current) {
       return;
     }
 
@@ -465,7 +467,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
     return () => {
       observer.disconnect();
     };
-  }, [hasMoreData, loadMoreData, isFiltered]);
+  }, [favoritePrompts, otherPrompts, hasMoreData, isLoadingMore, loadMoreFailed, loadMoreData, isFiltered]);
 
   // 注意：不要把卡片 map 成 {...user, _cachedWeight} 新对象——无限滚动每追加一批，
   // useMemo 会为数组中【全部】元素（含已渲染卡片）生成新引用，使 PromptCard 的 React.memo
@@ -630,7 +632,19 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
                 }}
               />
             )}
-            {/* 加载指示器 */}
+            {loadMoreFailed && !isLoadingMore && (
+              <div role="status">
+                <EmptyState
+                  compact
+                  title={<Translate id="message.loadFailed">加载数据失败，请稍后重试</Translate>}
+                  action={
+                    <Button onClick={() => void loadMoreData()}>
+                      <Translate id="action.retry">重试</Translate>
+                    </Button>
+                  }
+                />
+              </div>
+            )}
             {isLoadingMore && (
               <div style={{ textAlign: "center", marginTop: 24 }}>
                 <PromptCardSkeleton count={4} fixedCount />

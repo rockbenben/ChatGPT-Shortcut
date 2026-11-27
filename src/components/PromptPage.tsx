@@ -122,45 +122,47 @@ function PromptPage({ prompt, currentLanguage }) {
   //   第 3 条：通用"使用步骤"，所有 prompt 共享（包括在哪些 AI 模型里用）
   // master 在 src/data/meta_faqs.json 编辑，CodeUpdateHandler.py 按 (id, lang) 嵌入到对应 card；
   // 该 prompt 在当前语言下无 FAQ 时回退为通用模板。
-  const customFaqItems: { q: string; a: string }[] = Array.isArray((prompt as any).faq) ? (prompt as any).faq.slice(0, 2) : [];
+  const customFaq = (prompt as any).faq;
+  const faqList = useMemo(() => {
+    const customFaqItems: { q: string; a: string }[] = Array.isArray(customFaq) ? customFaq.slice(0, 2) : [];
 
-  const fallbackCustomFaq = [
-    {
-      q: translate({ id: "faq.scenario.q", message: "这个 prompt 适合什么场景使用？" }),
+    const fallbackCustomFaq = [
+      {
+        q: translate({ id: "faq.scenario.q", message: "这个 prompt 适合什么场景使用？" }),
+        a: translate({
+          id: "faq.scenario.a",
+          message: "适合完成与本页标题和说明相关的任务。若首次尝试效果不够理想，可以在占位符处提供更多上下文细节，或追加「请分步骤回答」「请举例说明」等约束词。",
+        }),
+      },
+      {
+        q: translate({ id: "faq.tips.q", message: "怎么优化输出质量？" }),
+        a: translate({
+          id: "faq.tips.a",
+          message: "一是把 [占位符] 改得更具体（加风格、长度、领域等细节）；二是对不满意的回复追问「请改得更 X」；三是切换 Claude / ChatGPT / Gemini 等不同模型对比效果。",
+        }),
+      },
+    ];
+
+    const genericUsageFaq = {
+      q: translate({ id: "faq.usage.q", message: "如何使用这个提示词？" }),
       a: translate({
-        id: "faq.scenario.a",
-        message: "适合完成与本页标题和说明相关的任务。若首次尝试效果不够理想，可以在占位符处提供更多上下文细节，或追加「请分步骤回答」「请举例说明」等约束词。",
+        id: "faq.usage.a",
+        message: "复制提示词，把方括号 [占位符] 替换成你的输入，然后粘贴到 ChatGPT、Claude、Gemini、DeepSeek、Qwen 或任意支持自然语言的对话式 AI 界面发送即可。",
       }),
-    },
-    {
-      q: translate({ id: "faq.tips.q", message: "怎么优化输出质量？" }),
-      a: translate({
-        id: "faq.tips.a",
-        message: "一是把 [占位符] 改得更具体（加风格、长度、领域等细节）；二是对不满意的回复追问「请改得更 X」；三是切换 Claude / ChatGPT / Gemini 等不同模型对比效果。",
-      }),
-    },
-  ];
+    };
 
-  const genericUsageFaq = {
-    q: translate({ id: "faq.usage.q", message: "如何使用这个提示词？" }),
-    a: translate({
-      id: "faq.usage.a",
-      message: "复制提示词，把方括号 [占位符] 替换成你的输入，然后粘贴到 ChatGPT、Claude、Gemini、DeepSeek、Qwen 或任意支持自然语言的对话式 AI 界面发送即可。",
-    }),
-  };
-
-  const faqList = [
-    ...(customFaqItems.length >= 2 ? customFaqItems : fallbackCustomFaq),
-    genericUsageFaq,
-  ];
-
-  const howToSteps = [
-    { name: translate({ id: "howto.step1.name", message: "复制提示词" }), text: translate({ id: "howto.step1.text", message: "将提示词模板复制到剪贴板。" }) },
-    { name: translate({ id: "howto.step2.name", message: "自定义占位符" }), text: translate({ id: "howto.step2.text", message: "用你的具体内容替换方括号 [占位符] 部分。" }) },
-    { name: translate({ id: "howto.step3.name", message: "发送给 AI" }), text: translate({ id: "howto.step3.text", message: "粘贴到 ChatGPT、Claude、Gemini、DeepSeek 等对话式 AI 界面执行。" }) },
-  ];
+    return [
+      ...(customFaqItems.length >= 2 ? customFaqItems : fallbackCustomFaq),
+      genericUsageFaq,
+    ];
+  }, [customFaq, currentLanguage]);
 
   const articleSchemaJson = useMemo(() => {
+    const howToSteps = [
+      { name: translate({ id: "howto.step1.name", message: "复制提示词" }), text: translate({ id: "howto.step1.text", message: "将提示词模板复制到剪贴板。" }) },
+      { name: translate({ id: "howto.step2.name", message: "自定义占位符" }), text: translate({ id: "howto.step2.text", message: "用你的具体内容替换方括号 [占位符] 部分。" }) },
+      { name: translate({ id: "howto.step3.name", message: "发送给 AI" }), text: translate({ id: "howto.step3.text", message: "粘贴到 ChatGPT、Claude、Gemini、DeepSeek 等对话式 AI 界面执行。" }) },
+    ];
     const articleSchema = {
       "@context": "https://schema.org",
       "@graph": [
@@ -235,7 +237,7 @@ function PromptPage({ prompt, currentLanguage }) {
       ],
     };
     return toJsonLd(articleSchema);
-  }, [seoTitle, seoDescription, canonicalUrl, bcp47Locale, datePublished, dateModified, siteConfig.url, tags, orgId, websiteId, howToSteps, promptInfo.prompt, title, localePrefix, faqList, homeUrl]);
+  }, [seoTitle, seoDescription, canonicalUrl, bcp47Locale, datePublished, dateModified, siteConfig.url, tags, orgId, websiteId, currentLanguage, promptInfo.prompt, title, localePrefix, faqList, homeUrl]);
 
   return (
     <Layout title={seoTitle} description={seoDescription}>
