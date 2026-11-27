@@ -251,6 +251,22 @@ const config = {
         },
       };
     },
+    // 延迟加载 Umami 统计脚本：放到首次交互或 window load 空闲后再注入，避免在首屏带宽/主线程水合窗口争抢资源。
+    function deferredUmamiPlugin() {
+      return {
+        name: "deferred-umami",
+        injectHtmlTags() {
+          return {
+            headTags: [
+              {
+                tagName: "script",
+                innerHTML: `(function(w,d){var loaded=false;function load(){if(loaded)return;loaded=true;var s=d.createElement('script');s.defer=true;s.src='https://s.newzone.top/tracker.js';s.setAttribute('data-website-id','680f4413-ce21-4754-a7d5-45e180e8cf69');d.head.appendChild(s);}['pointerdown','keydown','touchstart','scroll'].forEach(function(ev){w.addEventListener(ev,load,{passive:true,once:true});});function onLoad(){if('requestIdleCallback' in w){w.requestIdleCallback(load,{timeout:2000});}else{setTimeout(load,1500);}}if(d.readyState==='complete'){onLoad();}else{w.addEventListener('load',onLoad,{once:true});}})(window,document);`,
+              },
+            ],
+          };
+        },
+      };
+    },
     /*
     [
       "@docusaurus/plugin-client-redirects",
@@ -267,16 +283,11 @@ const config = {
   ],
 
   headTags: [
-    {
-      tagName: "script",
-      attributes: {
-        defer: "true",
-        src: "https://s.newzone.top/tracker.js",
-        "data-website-id": "680f4413-ce21-4754-a7d5-45e180e8cf69",
-        fetchpriority: "low",
-      },
-    },
     // dns-prefetch 第三方资源域，加速外部脚本解析并消除渲染阻塞
+    {
+      tagName: "link",
+      attributes: { rel: "dns-prefetch", href: "https://s.newzone.top" },
+    },
     {
       tagName: "link",
       attributes: { rel: "dns-prefetch", href: "https://pagead2.googlesyndication.com" },

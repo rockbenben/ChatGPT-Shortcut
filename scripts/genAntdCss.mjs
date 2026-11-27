@@ -147,6 +147,49 @@ function pruneOrphanCssVarScopes(css) {
   return out;
 }
 
+/**
+ * 剔除项目中未使用的 antd 子特性 CSS（仍由源码静态扫描自动判定，不手工写死）：
+ *  - Grid <Col> 的 push / pull / offset / order（仅用栅格列宽时这 33 KB 全是死规则）
+ *  - Grid <Col> 的 xxl 断点（最大用到 xl）
+ *  - Input.OTP（.ant-otp）与 Result（.ant-result，提取 Input/App 链时附带吐出）
+ */
+function pruneUnusedAntdRules(css) {
+  const allSrc = collectSourceFiles(SRC)
+    .map((file) => fs.readFileSync(file, "utf8"))
+    .join("\n");
+
+  const dropPatterns = [];
+  if (!/<Col\b[^>]*\b(?:push|pull|offset|order)\s*=/.test(allSrc)) {
+    dropPatterns.push(/ant-col-(?:(?:xs|sm|md|lg|xl|xxl)-)?(?:push|pull|offset|order)-/);
+  }
+  if (!/<Col\b[^>]*\bxxl\s*=/.test(allSrc)) {
+    dropPatterns.push(/ant-col-xxl-/);
+  }
+  if (!/\bInput\.OTP\b/.test(allSrc)) {
+    dropPatterns.push(/\.ant-otp\b/);
+  }
+  if (!/\bResult\b/.test(allSrc)) {
+    dropPatterns.push(/\.ant-result\b/);
+  }
+  if (dropPatterns.length === 0) return css;
+
+  const RULE = /[^{}]+\{[^{}]*\}/g;
+  let removed = 0;
+  let out = css.replace(RULE, (rule) => {
+    const sel = rule.slice(0, rule.indexOf("{"));
+    const parts = sel.split(",").map((s) => s.trim()).filter(Boolean);
+    if (parts.length > 0 && parts.every((p) => dropPatterns.some((re) => re.test(p)))) {
+      removed += rule.length;
+      return "";
+    }
+    return rule;
+  });
+  // 清理被掏空的 @media 包装块（如 xxl 断点媒体查询）
+  out = out.replace(/@media[^{]+\{\s*\}/g, "");
+  if (removed) console.log(`[antd-css] 剔除未使用特性规则 ${(removed / 1024).toFixed(1)} KB`);
+  return out;
+}
+
 const components = collectAntdComponents();
 const antdVersion = JSON.parse(fs.readFileSync(path.join(root, "node_modules", "antd", "package.json"), "utf8")).version;
 const tokensHash = createHash("sha256").update(JSON.stringify(antdTokenFingerprint)).digest("hex").slice(0, 12);
@@ -211,7 +254,7 @@ export async function run({ force = false } = {}) {
       includes: components,
     });
 
-  const darkCss = pruneOrphanCssVarScopes(extract("dark", antdTheme.darkAlgorithm));
+  const darkCss = pruneUnusedAntdRules(pruneOrphanCssVarScopes(extract("dark", antdTheme.darkAlgorithm)));
 
   // 浅色只追加「scope 到 light key 的变量块」：组件规则引用的是 var(--ant-*)，
   // 与算法无关（实测两套算法下逐字相同 2518 条），复用暗色那份即可。

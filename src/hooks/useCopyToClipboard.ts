@@ -1,6 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import copy from "copy-text-to-clipboard";
-import { updateCopyCount } from "@site/src/api";
 
 /**
  * 复制到剪贴板：原生优先，copy-text-to-clipboard（execCommand）兜底。
@@ -89,6 +88,7 @@ export const useCopyToClipboard = (timeout: number = 2000) => {
     // updateCopyCount 内部已吞掉失败并返回 null，这里无需再包一层 try/catch
     async (text: string, id: number | string) => {
       copyText(text);
+      const { updateCopyCount } = await import("@site/src/api/prompts");
       await updateCopyCount(Number(id));
     },
     [copyText]

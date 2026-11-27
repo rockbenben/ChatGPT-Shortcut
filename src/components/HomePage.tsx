@@ -18,7 +18,8 @@ import { voteLoginRequiredText, voteAlreadyVotedText, voteSuccessText, voteFaile
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 
-import { App, Button, Typography, Flex, Row, Col, Card, Tooltip } from "antd";
+import { Button, Typography, Flex, Row, Col, Card, Tooltip } from "antd";
+import { useAppFeedback } from "@site/src/contexts/AppFeedbackContext";
 import { DownOutlined, UpOutlined, AppstoreOutlined, HeartOutlined, HeartFilled, EditOutlined, TagOutlined, CloseOutlined, WarningOutlined, StarFilled } from "@ant-design/icons";
 
 import ShowcaseTagSelect from "@site/src/components/ShowcaseTagSelect";
@@ -36,7 +37,6 @@ import { getCache, setCache, CACHE_TTL, cleanupLegacyCache } from "@site/src/uti
 import { getLevelInfo, LevelName, LevelIcon } from "@site/src/components/LevelSystem";
 
 import { AuthContext } from "@site/src/components/AuthContext";
-import { voteOnUserPrompt } from "@site/src/api";
 import { fetchCardsByIds, fetchNextCards } from "@site/src/api/homepage";
 
 import { Tags, TagList, type TagType } from "@site/src/data/tags";
@@ -47,9 +47,9 @@ import PromptCard from "@site/src/components/PromptCard";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
 import { lazyWithRetry, lazyOptional } from "@site/src/utils/lazyRetry";
+import { DeferredFloatingShare } from "@site/src/components/DeferredFloatingShare";
 
 const PromptDetailModal = lazyWithRetry(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
-const ShareButtons = lazyOptional(() => import("@site/src/components/ShareButtons"));
 const AdComponent = lazyOptional(() => import("@site/src/components/AdComponent"));
 
 // 广告卡片位 — speedup 分支专属：未填充或脚本被屏蔽时连同外层 Col 一起收起，
@@ -244,7 +244,7 @@ interface ShowcaseCardsProps extends HomeData {
 const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, defaultFavorData, defaultOtherData }) => {
   const { userAuth, getUserAuth, authLoading } = useContext(AuthContext);
   const { toggleFavorite } = useFavorite();
-  const { message: messageApi } = App.useApp();
+  const { message: messageApi } = useAppFeedback();
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale;
 
@@ -298,6 +298,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
       }));
 
       try {
+        const { voteOnUserPrompt } = await import("@site/src/api/prompts");
         await voteOnUserPrompt(Number(promptId), action);
         messageApi.success(voteSuccessText(action));
       } catch (err) {
@@ -979,80 +980,78 @@ const ShowcaseContent: React.FC<HomeData> = ({ defaultFavorData, defaultOtherDat
 };
 
 export default function HomePage({ defaultFavorData, defaultOtherData }: HomeData): React.ReactElement {
-  const [shareUrl, setShareUrl] = useState("");
   const { siteConfig, i18n } = useDocusaurusContext();
 
-  // 空闲期预加载详情弹窗组件，大幅消除用户点击卡片时的网络延迟与 INP 交互卡顿
+  // 空闲期预加载详情弹窗组件并清理过期缓存，避免 mount 阶段阻塞主线程
   useEffect(() => {
-    if (ExecutionEnvironment.canUseDOM) {
-      setShareUrl(window.location.href);
+    if (!ExecutionEnvironment.canUseDOM) return;
+    const idleTask = () => {
       cleanupLegacyCache();
-      const preload = () => {
-        import("@site/src/components/PromptDetailModal");
-      };
-      if ("requestIdleCallback" in window) {
-        const handle = (window as any).requestIdleCallback(preload, { timeout: 3000 });
-        return () => (window as any).cancelIdleCallback(handle);
-      } else {
-        const timer = setTimeout(preload, 1500);
-        return () => clearTimeout(timer);
-      }
+      import("@site/src/components/PromptDetailModal");
+    };
+    if ("requestIdleCallback" in window) {
+      const handle = (window as any).requestIdleCallback(idleTask, { timeout: 3000 });
+      return () => (window as any).cancelIdleCallback(handle);
     }
+    const timer = setTimeout(idleTask, 1500);
+    return () => clearTimeout(timer);
   }, []);
 
   // SSR 安全的站点级 schema.org
   // - WebSite + SearchAction：让 ChatGPT/Perplexity/Google 在 SERP 直接激活站内搜索框
   // - Organization + sameAs：建立知识图谱实体关联（GitHub repo）
   // - SoftwareApplication：让 LLM 在"工具推荐"答案中考虑 AiShort
-  const localePrefix = i18n.currentLocale === i18n.defaultLocale ? "" : `/${i18n.currentLocale}`;
-  // schema.org 要 BCP-47：读 docusaurus.config.js localeConfigs[locale].htmlLang（覆盖 ind→id 这种历史命名）
-  const bcp47Locale = toBcp47(i18n.currentLocale, i18n.localeConfigs);
-  const homeUrl = `${siteConfig.url}${localePrefix}/`;
-  const orgId = `${siteConfig.url}/#organization`;
+  const websiteSchemaJson = useMemo(() => {
+    const localePrefix = i18n.currentLocale === i18n.defaultLocale ? "" : `/${i18n.currentLocale}`;
+    // schema.org 要 BCP-47：读 docusaurus.config.js localeConfigs[locale].htmlLang（覆盖 ind→id 这种历史命名）
+    const bcp47Locale = toBcp47(i18n.currentLocale, i18n.localeConfigs);
+    const homeUrl = `${siteConfig.url}${localePrefix}/`;
+    const orgId = `${siteConfig.url}/#organization`;
 
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": `${siteConfig.url}/#website`,
-        url: homeUrl,
-        name: SITE_NAME,
-        description: DESCRIPTION,
-        inLanguage: bcp47Locale,
-        publisher: { "@id": orgId },
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${siteConfig.url}${localePrefix}/?name={search_term_string}`,
+    return toJsonLd({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": `${siteConfig.url}/#website`,
+          url: homeUrl,
+          name: SITE_NAME,
+          description: DESCRIPTION,
+          inLanguage: bcp47Locale,
+          publisher: { "@id": orgId },
+          potentialAction: {
+            "@type": "SearchAction",
+            target: {
+              "@type": "EntryPoint",
+              urlTemplate: `${siteConfig.url}${localePrefix}/?name={search_term_string}`,
+            },
+            "query-input": "required name=search_term_string",
           },
-          "query-input": "required name=search_term_string",
         },
-      },
-      {
-        "@type": "Organization",
-        "@id": orgId,
-        url: siteConfig.url,
-        name: SITE_NAME,
-        alternateName: ["ChatGPT Shortcut", "AI Short"],
-        logo: { "@type": "ImageObject", url: `${siteConfig.url}/img/logo.png`, width: 200, height: 200 },
-        sameAs: ["https://github.com/rockbenben/ChatGPT-Shortcut"],
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": `${siteConfig.url}/#softwareapplication`,
-        name: SITE_NAME,
-        url: homeUrl,
-        description: DESCRIPTION,
-        applicationCategory: "ProductivityApplication",
-        operatingSystem: "Web, Chrome, Edge, Firefox",
-        inLanguage: bcp47Locale,
-        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-        publisher: { "@id": orgId },
-      },
-    ],
-  };
+        {
+          "@type": "Organization",
+          "@id": orgId,
+          url: siteConfig.url,
+          name: SITE_NAME,
+          alternateName: ["ChatGPT Shortcut", "AI Short"],
+          logo: { "@type": "ImageObject", url: `${siteConfig.url}/img/logo.png`, width: 200, height: 200 },
+          sameAs: ["https://github.com/rockbenben/ChatGPT-Shortcut"],
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": `${siteConfig.url}/#softwareapplication`,
+          name: SITE_NAME,
+          url: homeUrl,
+          description: DESCRIPTION,
+          applicationCategory: "ProductivityApplication",
+          operatingSystem: "Web, Chrome, Edge, Firefox",
+          inLanguage: bcp47Locale,
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          publisher: { "@id": orgId },
+        },
+      ],
+    });
+  }, [i18n.currentLocale, i18n.defaultLocale, i18n.localeConfigs, siteConfig.url]);
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
@@ -1062,16 +1061,12 @@ export default function HomePage({ defaultFavorData, defaultOtherData }: HomeDat
         <meta name="twitter:description" content={DESCRIPTION} />
         <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title={SITE_NAME} />
         <link rel="llms-txt" href="/llms.txt" />
-        <script type="application/ld+json">{toJsonLd(websiteSchema)}</script>
+        <script type="application/ld+json">{websiteSchemaJson}</script>
       </Head>
       <main className={clsx("margin-vert--md", styles.homeMain)}>
         <ShowcaseContent defaultFavorData={defaultFavorData} defaultOtherData={defaultOtherData} />
       </main>
-      {shareUrl && (
-        <Suspense fallback={null}>
-          <ShareButtons shareUrl={shareUrl} title={TITLE} />
-        </Suspense>
-      )}
+      <DeferredFloatingShare title={TITLE} />
     </Layout>
   );
 }

@@ -407,7 +407,7 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
           </Card>
 
           {/* 广告 — speedup 分支专属，置于主卡片与讨论区之间 */}
-          <Suspense fallback={null}>
+          <Suspense fallback={<div style={{ minHeight: 90, marginTop: 24 }} aria-hidden="true" />}>
             <AdComponent type="transverse" style={{ marginTop: 24 }} />
           </Suspense>
 

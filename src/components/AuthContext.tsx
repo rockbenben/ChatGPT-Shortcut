@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect, useMemo, useCallback, useRef, startTransition } from "react";
-import { getMySpace, clearMySpaceCache, getPrompts, persistAuthToken } from "@site/src/api";
-import { clearUserSessionCaches } from "@site/src/api/sessionCache";
+import { persistAuthToken } from "@site/src/api/token";
+import { clearMySpaceCache, clearUserSessionCaches } from "@site/src/api/sessionCache";
 import { AUTH_EXPIRED_EVENT } from "@site/src/api/config";
 import { enrichMySpaceData } from "@site/src/utils/myspaceUtils";
 import { getCache, setCache, CACHE_PREFIX, CACHE_TTL } from "@site/src/utils/cache";
@@ -171,6 +171,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         clearAuth();
         return;
       }
+
+      // 仅对已登录用户动态导入 API 模块（含 axios），未登录访客不下载 axios
+      const [{ getMySpace }, { getPrompts }] = await Promise.all([
+        import("@site/src/api/myspace"),
+        import("@site/src/api/prompts"),
+      ]);
 
       // 强制刷新时先清除 MySpace 缓存 + 显示 loading
       if (forceRefresh) {

@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
-import { App } from "antd";
+import { useAppFeedback } from "@site/src/contexts/AppFeedbackContext";
 import { submitPrompt, updatePrompt, patchFavorites, getPrompts } from "@site/src/api";
 import { deriveLoves, deriveCommLoves } from "@site/src/utils/myspaceUtils";
 
@@ -13,7 +13,7 @@ interface UseImportExportParams {
 
 /** 用户中心的提示词导出（JSON 下载）与导入（更新/新建/合并收藏）流程 */
 export function useImportExport({ userAuth, getUserAuth, currentLanguage, refreshUserAuth }: UseImportExportParams) {
-  const { message } = App.useApp();
+  const { message } = useAppFeedback();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [importing, setImporting] = useState(false);
 

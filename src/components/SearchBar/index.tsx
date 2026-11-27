@@ -13,8 +13,6 @@ import { InputClearIcon } from "@site/src/components/InputClearIcon";
 
 import { type Operator } from "@site/src/components/ShowcaseFilterToggle";
 import { type TagType, TagList } from "@site/src/data/tags";
-import { getPrompts } from "@site/src/api";
-import { getCommPrompts } from "@site/src/api/prompts";
 import { searchCardsLocally } from "@site/src/api/homepage";
 import { getWeight } from "@site/src/utils/formatters";
 
@@ -137,10 +135,13 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
           let localLookupFailed = false;
           const commusPromise =
             userAuth?.data && selectedTags.length === 0
-              ? Promise.all([
-                  userAuth.data.userprompts ? getPrompts("userprompts", userAuth.data.userprompts) : Promise.resolve([]),
-                  userAuth.data.favorites && userAuth.data.favorites.commLoves ? getPrompts("commus", userAuth.data.favorites.commLoves) : Promise.resolve([]),
-                ])
+              ? import("@site/src/api/prompts")
+                  .then(({ getPrompts }) =>
+                    Promise.all([
+                      userAuth.data.userprompts ? getPrompts("userprompts", userAuth.data.userprompts) : Promise.resolve([]),
+                      userAuth.data.favorites && userAuth.data.favorites.commLoves ? getPrompts("commus", userAuth.data.favorites.commLoves) : Promise.resolve([]),
+                    ]),
+                  )
                   .then(([userprompts, commus]) => [...userprompts, ...commus].filter((prompt) => matchesSearch(prompt, searchLower)))
                   .catch((err) => {
                     localLookupFailed = true;
@@ -170,6 +171,7 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
               // 同查询的无关重跑（点 ❤️、后台 /myspace 刷新）走的就是这条路——
               // 查询一变时旗标由读 URL 的 effect 立，这里只补「要出网络」这一段。
               setIsSearching(true);
+              const { getCommPrompts } = await import("@site/src/api/prompts");
               const result = await getCommPrompts(1, 12, "upvoteDifference", "desc", searchName, { force });
               if (cancelled) return;
               const communityPrompts = Array.isArray(result) ? result[0] : [];
@@ -203,6 +205,7 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
 
             let commus: any[] = [];
             if (userAuth.data.favorites.commLoves) {
+              const { getPrompts } = await import("@site/src/api/prompts");
               commus = await getPrompts("commus", userAuth.data.favorites.commLoves);
               if (cancelled) return;
             }
@@ -218,6 +221,7 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
           }
         } else if (searchMode === "myprompts") {
           if (userAuth?.data?.userprompts) {
+            const { getPrompts } = await import("@site/src/api/prompts");
             const userprompts = await getPrompts("userprompts", userAuth.data.userprompts);
             if (cancelled) return;
             const filtered = userprompts.filter((prompt) => matchesSearch(prompt, searchLower));

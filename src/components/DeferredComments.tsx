@@ -11,15 +11,46 @@ interface DeferredCommentsProps {
 }
 
 /**
- * 视口懒挂载评论区：等用户滚动接近讨论区（300px）再加载与挂载 react-markdown/Form/Pagination，
- * 避免详情页首屏水合阶段触发长帧阻塞移动端 INP。
+ * 视口懒挂载评论区：等首次交互或短暂空闲后再激活 IntersectionObserver，
+ * 使短详情页（如 /community-prompt/10017）不会在首屏水合阶段抢跑下载 react-markdown/Pagination chunk。
  */
 export const DeferredComments: React.FC<DeferredCommentsProps> = ({ pageId, type, onCountChange }) => {
   const hostRef = useRef<HTMLDivElement>(null);
+  const [armed, setArmed] = useState(false);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (visible) return;
+    if (armed || typeof window === "undefined") return;
+    let done = false;
+    const arm = () => {
+      if (done) return;
+      done = true;
+      setArmed(true);
+    };
+
+    const events: Array<keyof WindowEventMap> = ["scroll", "pointerdown", "touchstart", "keydown"];
+    events.forEach((ev) => window.addEventListener(ev, arm, { passive: true, once: true }));
+
+    let idleId: number | undefined;
+    let timerId: ReturnType<typeof setTimeout> | undefined;
+    if ("requestIdleCallback" in window) {
+      idleId = (window as any).requestIdleCallback(arm, { timeout: 1200 });
+    } else {
+      timerId = setTimeout(arm, 900);
+    }
+
+    return () => {
+      done = true;
+      events.forEach((ev) => window.removeEventListener(ev, arm));
+      if (idleId !== undefined && "cancelIdleCallback" in window) {
+        (window as any).cancelIdleCallback(idleId);
+      }
+      if (timerId !== undefined) clearTimeout(timerId);
+    };
+  }, [armed]);
+
+  useEffect(() => {
+    if (!armed || visible) return;
     if (typeof IntersectionObserver === "undefined") {
       setVisible(true);
       return;
@@ -32,7 +63,7 @@ export const DeferredComments: React.FC<DeferredCommentsProps> = ({ pageId, type
           observer.disconnect();
         }
       },
-      { rootMargin: "300px" },
+      { rootMargin: "150px" },
     );
 
     if (hostRef.current) {
@@ -40,7 +71,7 @@ export const DeferredComments: React.FC<DeferredCommentsProps> = ({ pageId, type
     }
 
     return () => observer.disconnect();
-  }, [visible]);
+  }, [armed, visible]);
 
   return (
     <div ref={hostRef} style={{ minHeight: 220 }}>

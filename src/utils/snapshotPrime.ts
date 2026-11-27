@@ -124,12 +124,17 @@ export function primeCacheFromSnapshot(): void {
 
   const { byId } = communitySnapshot;
 
-  // 1) 列表层
+  // 1) 列表层（体积很小且首屏 SWR 前即刻需要，保持同步）
   primeListView("id", generatedAtMs);
   primeListView("upvoteDifference", generatedAtMs);
 
-  // 2) 详情层：byId 全量铺进 pc_commus_<id>
-  primeDetailEntries(byId);
+  // 2) 详情层：~64 条 localStorage 写入推迟到空闲期，避免阻塞 /community-prompts 首屏水合
+  const runDetailPrime = () => primeDetailEntries(byId);
+  if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+    (window as any).requestIdleCallback(runDetailPrime, { timeout: 2000 });
+  } else {
+    setTimeout(runDetailPrime, 1000);
+  }
 }
 
 function primeListView(sortField: CommunitySortField, generatedAtMs: number): void {

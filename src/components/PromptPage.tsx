@@ -160,79 +160,82 @@ function PromptPage({ prompt, currentLanguage }) {
     { name: translate({ id: "howto.step3.name", message: "发送给 AI" }), text: translate({ id: "howto.step3.text", message: "粘贴到 ChatGPT、Claude、Gemini、DeepSeek 等对话式 AI 界面执行。" }) },
   ];
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": ["Article", "HowTo"],
-        headline: seoTitle,
-        description: seoDescription,
-        url: canonicalUrl,
-        inLanguage: bcp47Locale,
-        datePublished,
-        dateModified,
-        image: { "@type": "ImageObject", url: `${siteConfig.url}/img/social-card.png`, width: 1280, height: 640 },
-        keywords: Array.isArray(tags) ? tags.join(", ") : undefined,
-        author: { "@id": orgId },
-        publisher: { "@id": orgId },
-        isPartOf: { "@id": websiteId },
-        mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
-        about: Array.isArray(tags) ? tags.map((t) => ({ "@type": "Thing", name: t })) : undefined,
-        audience: {
-          "@type": "Audience",
-          audienceType: "AI practitioners, content creators, developers, students",
-        },
-        learningResourceType: "Prompt Template",
-        educationalUse: "Prompt Engineering",
-        genre: "AI Prompt",
-        license: "https://creativecommons.org/licenses/by-sa/4.0/",
-        copyrightHolder: { "@id": orgId },
-        copyrightYear: new Date(datePublished).getFullYear(),
-        speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".prompt-remark"] },
-        totalTime: "PT1M",
-        step: howToSteps.map((s, i) => ({
-          "@type": "HowToStep",
-          position: i + 1,
-          name: s.name,
-          text: s.text,
-        })),
-        // prompt body 作为可复用 CreativeWork（SoftwareSourceCode/CodeSnippet 语义）
-        hasPart: {
-          "@type": "CreativeWork",
-          additionalType: "https://schema.org/SoftwareSourceCode",
-          text: promptInfo.prompt,
-          encodingFormat: "text/plain",
+  const articleSchemaJson = useMemo(() => {
+    const articleSchema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["Article", "HowTo"],
+          headline: seoTitle,
+          description: seoDescription,
+          url: canonicalUrl,
           inLanguage: bcp47Locale,
-          name: title,
-        },
-        // tags 作为 schema.org Thing 实体，关联知识图谱
-        mentions: Array.isArray(tags)
-          ? tags.map((t) => ({
-              "@type": "Thing",
-              name: t,
-              url: `${siteConfig.url}${localePrefix}/?tags=${encodeURIComponent(t)}`,
-            }))
-          : undefined,
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: [
-          ...faqList.map((item) => ({
-            "@type": "Question" as const,
-            name: item.q,
-            acceptedAnswer: { "@type": "Answer" as const, text: item.a },
+          datePublished,
+          dateModified,
+          image: { "@type": "ImageObject", url: `${siteConfig.url}/img/social-card.png`, width: 1280, height: 640 },
+          keywords: Array.isArray(tags) ? tags.join(", ") : undefined,
+          author: { "@id": orgId },
+          publisher: { "@id": orgId },
+          isPartOf: { "@id": websiteId },
+          mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+          about: Array.isArray(tags) ? tags.map((t) => ({ "@type": "Thing", name: t })) : undefined,
+          audience: {
+            "@type": "Audience",
+            audienceType: "AI practitioners, content creators, developers, students",
+          },
+          learningResourceType: "Prompt Template",
+          educationalUse: "Prompt Engineering",
+          genre: "AI Prompt",
+          license: "https://creativecommons.org/licenses/by-sa/4.0/",
+          copyrightHolder: { "@id": orgId },
+          copyrightYear: new Date(datePublished).getFullYear(),
+          speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".prompt-remark"] },
+          totalTime: "PT1M",
+          step: howToSteps.map((s, i) => ({
+            "@type": "HowToStep",
+            position: i + 1,
+            name: s.name,
+            text: s.text,
           })),
-        ],
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: SITE_NAME, item: homeUrl },
-          { "@type": "ListItem", position: 2, name: title, item: canonicalUrl },
-        ],
-      },
-    ],
-  };
+          // prompt body 作为可复用 CreativeWork（SoftwareSourceCode/CodeSnippet 语义）
+          hasPart: {
+            "@type": "CreativeWork",
+            additionalType: "https://schema.org/SoftwareSourceCode",
+            text: promptInfo.prompt,
+            encodingFormat: "text/plain",
+            inLanguage: bcp47Locale,
+            name: title,
+          },
+          // tags 作为 schema.org Thing 实体，关联知识图谱
+          mentions: Array.isArray(tags)
+            ? tags.map((t) => ({
+                "@type": "Thing",
+                name: t,
+                url: `${siteConfig.url}${localePrefix}/?tags=${encodeURIComponent(t)}`,
+              }))
+            : undefined,
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: [
+            ...faqList.map((item) => ({
+              "@type": "Question" as const,
+              name: item.q,
+              acceptedAnswer: { "@type": "Answer" as const, text: item.a },
+            })),
+          ],
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: SITE_NAME, item: homeUrl },
+            { "@type": "ListItem", position: 2, name: title, item: canonicalUrl },
+          ],
+        },
+      ],
+    };
+    return toJsonLd(articleSchema);
+  }, [seoTitle, seoDescription, canonicalUrl, bcp47Locale, datePublished, dateModified, siteConfig.url, tags, orgId, websiteId, howToSteps, promptInfo.prompt, title, localePrefix, faqList, homeUrl]);
 
   return (
     <Layout title={seoTitle} description={seoDescription}>
@@ -250,7 +253,7 @@ function PromptPage({ prompt, currentLanguage }) {
           <link key={h.hreflang} rel="alternate" hrefLang={h.hreflang} href={h.href} />
         ))}
         <link rel="alternate" hrefLang="x-default" href={`${siteConfig.url}/prompt/${prompt.id}`} />
-        <script type="application/ld+json">{toJsonLd(articleSchema)}</script>
+        <script type="application/ld+json">{articleSchemaJson}</script>
       </Head>
       {/* 外层 Row：保持原有的居中 + 最大宽度约束（xl 约 66% container 宽度）。
           paddingInline 必须等于内层 gutter 的一半：antd 的 Row gutter 是「负 margin +
@@ -437,7 +440,7 @@ function PromptPage({ prompt, currentLanguage }) {
               {/* DISCUSSION: hairline + eyebrow 续接，count 由内层 Comments 回传 */}
               <Col xs={24} sm={24} md={24} lg={18} xl={18} className="full-width-col">
                 {/* 广告 — speedup 分支专属，置于讨论区上方（hairline 之外） */}
-                <Suspense fallback={null}>
+                <Suspense fallback={<div style={{ minHeight: 90, marginBottom: 16 }} aria-hidden="true" />}>
                   <AdComponent type="transverse" style={{ marginBottom: 16 }} />
                 </Suspense>
 

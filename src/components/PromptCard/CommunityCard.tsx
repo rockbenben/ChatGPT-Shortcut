@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
-import { Typography, Flex } from "antd";
+import { Flex } from "antd";
+import clsx from "clsx";
 import { BasePromptCard, ClampBox, PromptSourceLink } from "./Base";
 import { translate } from "@docusaurus/Translate";
 import { IconAction } from "@site/src/components/IconAction";
@@ -59,23 +60,20 @@ const CommunityCardComponent = ({ data: user, isFavorite, isLoggedIn, onToggleFa
   }, [onOpenModal, user]);
 
   const hasRemark = Boolean(user.remark?.trim());
-  const promptRows = hasRemark ? 3 : 4;
 
   return (
     <BasePromptCard
       title={
-        <Typography.Title level={3} style={{ margin: 0, fontSize: 15.5, fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
+        <h3 className={clsx(styles.cardTitle, styles.clampLines, styles.clamp2)}>
           <Link href={`/community-prompt?id=${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
             {user.title}
           </Link>
-        </Typography.Title>
+        </h3>
       }
       titleExtra={
-        <span style={{ fontSize: 11, color: "var(--site-color-text-tertiary)", display: "inline-flex", alignItems: "center", gap: 4, maxWidth: 96, minWidth: 0 }}>
+        <span style={{ fontSize: 11, color: "var(--site-color-text-tertiary)", display: "inline-flex", alignItems: "center", gap: 4, maxWidth: 96, minWidth: 0 }} title={user.owner}>
           <UserOutlined style={{ flexShrink: 0 }} />
-          <Typography.Text style={{ fontSize: "inherit", color: "inherit", minWidth: 0 }} ellipsis={{ tooltip: true }}>
-            {user.owner}
-          </Typography.Text>
+          <span className={styles.cardOwnerName}>{user.owner}</span>
         </span>
       }
       footer={
@@ -116,16 +114,9 @@ const CommunityCardComponent = ({ data: user, isFavorite, isLoggedIn, onToggleFa
       <PromptRemark remark={user.remark} />
       <div className={hasRemark ? styles.promptBodyAfterRemark : undefined}>
         <ClampBox>
-          <Typography.Paragraph
-            ellipsis={{ rows: promptRows }}
-            style={{
-              marginBottom: 0,
-              color: hasRemark ? "var(--site-color-text-tertiary)" : "var(--ifm-color-content-secondary)",
-              fontSize: hasRemark ? 12.5 : 13,
-              lineHeight: hasRemark ? 1.68 : 1.7,
-            }}>
+          <p className={clsx(styles.cardBody, hasRemark ? styles.cardBodyMuted : styles.cardBodyPrimary, styles.clampLines, hasRemark ? styles.clamp3 : styles.clamp4)}>
             {user.description}
-          </Typography.Paragraph>
+          </p>
         </ClampBox>
       </div>
       {(Boolean(user.tags?.length) || user.website) && (

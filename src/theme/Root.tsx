@@ -1,8 +1,8 @@
 import React, { useLayoutEffect, useMemo, useState } from "react";
-import { ConfigProvider, theme, App } from "antd";
+import { ConfigProvider, theme } from "antd";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { AuthProvider } from "@site/src/components/AuthContext";
-import { useAntdLocale } from "./useAntdLocale";
+import { AppFeedbackProvider } from "@site/src/contexts/AppFeedbackContext";
 import { antdThemeFor } from "./antdTokens.mjs";
 
 // 明暗双主题 + zero-runtime 静态样式。
@@ -27,7 +27,6 @@ function getInitialDark(): boolean {
 
 export default function Root({ children }) {
   const [isDarkMode, setIsDarkMode] = useState(getInitialDark);
-  const locale = useAntdLocale();
 
   useLayoutEffect(() => {
     if (!ExecutionEnvironment.canUseDOM) return;
@@ -53,10 +52,10 @@ export default function Root({ children }) {
   );
 
   return (
-    <ConfigProvider theme={themeConfig} locale={locale}>
-      <App className="app-root">
+    <ConfigProvider theme={themeConfig}>
+      <AppFeedbackProvider>
         <AuthProvider>{children}</AuthProvider>
-      </App>
+      </AppFeedbackProvider>
     </ConfigProvider>
   );
 }
