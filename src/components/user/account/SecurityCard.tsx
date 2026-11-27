@@ -43,7 +43,7 @@ const SecurityCard: React.FC<{ userInfo: any }> = ({ userInfo }) => {
   };
 
   const openForgotPasswordModal = () => {
-    modal.confirm({
+    modal.confirm("forgot-password", {
       title: (
         <Space>
           <MailOutlined style={{ color: "var(--ifm-color-primary)" }} />

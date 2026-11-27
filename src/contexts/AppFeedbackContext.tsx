@@ -9,7 +9,7 @@ type MessageMethod = "success" | "error" | "warning" | "info" | "loading" | "ope
 
 export interface AppFeedbackValue {
   message: Pick<MessageInstance, MessageMethod>;
-  modal: Pick<HookAPI, "confirm">;
+  modal: { confirm: (key: string, config: Parameters<HookAPI["confirm"]>[0]) => void };
 }
 
 type PendingCall = (api: FeedbackBridgeApi) => void;
@@ -24,6 +24,7 @@ export const AppFeedbackProvider: React.FC<{ children: React.ReactNode }> = ({ c
   const bridgeRequestedRef = useRef(false);
   const liveApiRef = useRef<FeedbackBridgeApi | null>(null);
   const pendingQueueRef = useRef<PendingCall[]>([]);
+  const confirmationKeysRef = useRef(new Set<string>());
 
   const enqueueOrRun = useCallback((fn: PendingCall) => {
     if (liveApiRef.current) {
@@ -37,6 +38,7 @@ export const AppFeedbackProvider: React.FC<{ children: React.ReactNode }> = ({ c
         (error) => {
           console.error("Failed to load feedback:", error);
           pendingQueueRef.current = [];
+          confirmationKeysRef.current.clear();
           bridgeRequestedRef.current = false;
           setLoadFailed(true);
         },
@@ -72,8 +74,19 @@ export const AppFeedbackProvider: React.FC<{ children: React.ReactNode }> = ({ c
         destroy: callMessage("destroy"),
       },
       modal: {
-        confirm: (...args: Parameters<HookAPI["confirm"]>) =>
-          enqueueOrRun((api) => api.modal.confirm(...args)),
+        confirm: (key, config) => {
+          // 同一操作在等待加载和弹窗打开期间只接受一次。
+          const keys = confirmationKeysRef.current;
+          if (keys.has(key)) return;
+          keys.add(key);
+          enqueueOrRun((api) => api.modal.confirm({
+            ...config,
+            afterClose: () => {
+              keys.delete(key);
+              config.afterClose?.();
+            },
+          }));
+        },
       },
     };
   }, [enqueueOrRun]);

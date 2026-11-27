@@ -99,7 +99,7 @@ const LoggedInUserStatus: React.FC = () => {
         icon: <LogoutOutlined />,
         danger: true,
         onClick: () => {
-          modal.confirm({
+          modal.confirm("logout", {
             title: <Translate id="message.logout.confirm.title">确认退出</Translate>,
             content: <Translate id="message.logout.confirm.content">确定要退出登录吗？</Translate>,
             icon: null,

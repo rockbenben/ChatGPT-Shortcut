@@ -331,46 +331,43 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
 
   // 使用 ref 跟踪已初始化的用户 ID，避免收藏操作后重复加载
   const initializedUserIdRef = useRef<number | null>(null);
+  const initializingRef = useRef<{ userId: number; work: Promise<void> } | null>(null);
+  const signedInUserId = userAuth?.data?.id;
 
-  // 初始化数据加载 - 已登录用户立即加载个性化数据
-  // prompt_*.json 有缓存机制，首次加载后不会重复请求
+  // 初始化、自动续载和手动重试共享请求，成功后才标记完成。
   const initializeData = useCallback(async () => {
-    // 未登录或正在加载认证状态时，使用 SSG 默认数据
-    if (authLoading || !userAuth) {
-      return;
-    }
+    const user = getUserAuth()?.data;
+    const userId = user?.id;
+    if (userId == null || initializedUserIdRef.current === userId) return;
+    if (initializingRef.current?.userId === userId) return initializingRef.current.work;
 
-    // 如果已为当前用户初始化过，跳过（避免收藏操作后重复加载）
-    const currentUserId = userAuth?.data?.id;
-    if (initializedUserIdRef.current === currentUserId) {
-      return;
-    }
-    initializedUserIdRef.current = currentUserId;
+    const favorIds: number[] = user.favorites?.loves ?? DEFAULT_FAVORITE_IDS;
+    const defaultIds = DEFAULT_IDS.filter((id) => !favorIds.includes(id));
+    const work = Promise.all([fetchCardsByIds(favorIds, currentLanguage), fetchCardsByIds(defaultIds, currentLanguage)])
+      .then(([favorData, otherData]) => {
+        if (getUserAuth()?.data?.id !== userId) return;
 
-    // 已登录用户：立即加载个性化收藏数据
-    // 注意：prompt_*.json 有缓存机制（promptDataCache），首次加载后后续操作直接使用缓存
+        // 续载可能在 React 提交前继续执行，直接读取本次初始化的数据。
+        favoritePromptsRef.current = favorData;
+        otherPromptsRef.current = otherData;
+        setFavoritePrompts(favorData);
+        setOtherPrompts(otherData);
+        hasMoreDataRef.current = true;
+        setHasMoreData(true);
+        initializedUserIdRef.current = userId;
+      });
+
+    initializingRef.current = { userId, work };
     try {
-      const favorIds = userAuth?.data?.favorites?.loves || DEFAULT_FAVORITE_IDS;
-
-      const favorData = await fetchCardsByIds(favorIds, currentLanguage);
-
-      // 加载默认的 other 卡片（从 DEFAULT_IDS 中排除收藏）
-      const defaultIds = DEFAULT_IDS.filter((id) => !favorIds.includes(id));
-      const otherData = await fetchCardsByIds(defaultIds, currentLanguage);
-
-      setFavoritePrompts(favorData as any);
-      setOtherPrompts(otherData as any);
-      setHasMoreData(true);
-      hasMoreDataRef.current = true;
-    } catch (error) {
-      console.error("Error loading user prompts:", error);
-      // 加载失败时保持 SSG 默认数据
+      await work;
+    } finally {
+      if (initializingRef.current?.work === work) initializingRef.current = null;
     }
-  }, [userAuth, authLoading, currentLanguage]);
+  }, [currentLanguage, getUserAuth]);
 
-  // 加载更多数据（滚动触发）- 使用 ref 读取数据，依赖数组仅 [currentLanguage]
+  // 加载更多数据（滚动触发），也用于失败后的页尾重试。
   const loadMoreData = useCallback(async () => {
-    if (isLoadingMoreRef.current || !hasMoreDataRef.current) {
+    if (isLoadingMoreRef.current) {
       return;
     }
 
@@ -379,6 +376,9 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
     setLoadMoreFailed(false);
 
     try {
+      await initializeData();
+      if (!hasMoreDataRef.current) return;
+
       // 从 ref 读取最新数据，避免回调因 state 变化而重建
       const displayedIds = [...favoritePromptsRef.current.map((p: any) => p.id), ...otherPromptsRef.current.map((p: any) => p.id)];
 
@@ -402,11 +402,18 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
       setIsLoadingMore(false);
       isLoadingMoreRef.current = false;
     }
-  }, [currentLanguage]);
+  }, [currentLanguage, initializeData]);
 
   useEffect(() => {
-    initializeData();
-  }, [initializeData]);
+    if (authLoading || signedInUserId == null) return;
+    let active = true;
+    void initializeData().catch((error) => {
+      if (!active) return;
+      console.error("Error loading user prompts:", error);
+      setLoadMoreFailed(true);
+    });
+    return () => { active = false; };
+  }, [authLoading, signedInUserId, initializeData]);
 
   const { filteredCommus, filteredCards, isFiltered, isSearching, searchFailed, retry: retrySearch } = useFilteredPrompts();
 

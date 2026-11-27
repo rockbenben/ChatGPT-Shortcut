@@ -92,7 +92,7 @@ export const useUserPrompt = (): UseUserPromptReturn => {
 
   const confirmRemovePrompt = useCallback(
     (id: number) => {
-      modal.confirm({
+      modal.confirm(`delete-prompt:${id}`, {
         title: <Translate id="message.deletePrompt.confirm.title">确认删除</Translate>,
         content: <Translate id="message.deletePrompt.confirm.content">确定要删除该提示词吗？</Translate>,
         icon: null,
