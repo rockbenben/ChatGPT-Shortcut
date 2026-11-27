@@ -37,10 +37,10 @@ import { getCache, setCache, CACHE_TTL, cleanupLegacyCache } from "@site/src/uti
 import { getLevelInfo, LevelName, LevelIcon } from "@site/src/components/LevelSystem";
 
 import { AuthContext } from "@site/src/components/AuthContext";
-import { fetchCardsByIds, fetchNextCards } from "@site/src/api/homepage";
+import { fetchCardsByIds, fetchNextCards, type CardData } from "@site/src/api/homepage";
 
 import { Tags, TagList, type TagType } from "@site/src/data/tags";
-import { SLOGAN, SUPPORTED_AI_TOOLS, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS, SITE_NAME } from "@site/src/data/constants";
+import { SLOGAN, SUPPORTED_AI_TOOLS, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, ALL_IDS, SITE_NAME } from "@site/src/data/constants";
 import { toBcp47 } from "@site/src/utils/i18n";
 import { toJsonLd } from "@site/src/utils/jsonLd";
 import PromptCard from "@site/src/components/PromptCard";
@@ -232,10 +232,14 @@ const ShowcaseFilters: React.FC = React.memo(() => {
 
 // ==================== 卡片列表组件 ====================
 // SSG 数据经 props 注入：各 locale 页面静态导入自己的默认数据后传入（构建时嵌入，避免首屏 CLS）
+type HomepageCard = Pick<CardData, "id" | "count" | "weight">;
+
 interface HomeData {
-  defaultFavorData: any[];
-  defaultOtherData: any[];
+  defaultFavorData: HomepageCard[];
+  defaultOtherData: HomepageCard[];
 }
+
+const cardOrder = new Map(ALL_IDS.map((id, index) => [id, index]));
 
 interface ShowcaseCardsProps extends HomeData {
   onOpenModal: (data: any) => void;
@@ -254,20 +258,37 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
   // 直接多打一发 PATCH /favorites/me 和一次投票请求。
   const isLoggedIn = !!userAuth;
 
-  // SSG: 使用静态导入的数据作为初始值，避免首屏 CLS
-  const [favoritePrompts, setFavoritePrompts] = useState<any[]>(defaultFavorData);
-  const [otherPrompts, setOtherPrompts] = useState<any[]>(defaultOtherData);
+  // SSG 卡片、续载和收藏详情共用一份数据，分组始终从当前收藏状态推导。
+  const [loadedCards, setLoadedCards] = useState(() => new Map(
+    [...defaultFavorData, ...defaultOtherData].map((card) => [card.id, card]),
+  ));
+  const loadedCardsRef = useRef(loadedCards);
+  const addLoadedCards = useCallback((cards: HomepageCard[]) => {
+    const current = loadedCardsRef.current;
+    const missing = cards.filter((card) => !current.has(card.id));
+    if (missing.length === 0) return;
+    const next = new Map(current);
+    for (const card of missing) next.set(card.id, card);
+    loadedCardsRef.current = next;
+    setLoadedCards(next);
+  }, []);
+
+  const signedInFavoriteIds: number[] | undefined = userAuth?.data?.favorites?.loves;
+  const showcaseFavoriteIds = signedInFavoriteIds ?? DEFAULT_FAVORITE_IDS;
+  const favoriteIdSet = useMemo(() => new Set(signedInFavoriteIds), [signedInFavoriteIds]);
+  const { favoritePrompts, otherPrompts } = useMemo(() => {
+    const favoritePrompts = showcaseFavoriteIds.map((id) => loadedCards.get(id)).filter((card) => card !== undefined);
+    const favoriteIds = new Set(showcaseFavoriteIds);
+    const otherPrompts = [...loadedCards.values()].filter((card) => !favoriteIds.has(card.id));
+    otherPrompts.sort((a, b) => (cardOrder.get(a.id) ?? ALL_IDS.length) - (cardOrder.get(b.id) ?? ALL_IDS.length));
+    return { favoritePrompts, otherPrompts };
+  }, [loadedCards, showcaseFavoriteIds]);
 
   const [hasMoreData, setHasMoreData] = useState(true);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [loadMoreFailed, setLoadMoreFailed] = useState(false);
   const BATCH_SIZE = 12;
 
-  // Refs 用于稳定 loadMoreData 回调（避免 IntersectionObserver 反复重建）
-  const favoritePromptsRef = useRef(favoritePrompts);
-  favoritePromptsRef.current = favoritePrompts;
-  const otherPromptsRef = useRef(otherPrompts);
-  otherPromptsRef.current = otherPrompts;
   const hasMoreDataRef = useRef(hasMoreData);
   const isLoadingMoreRef = useRef(isLoadingMore);
 
@@ -329,41 +350,18 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
     };
   }, []);
 
-  // 使用 ref 跟踪已初始化的用户 ID，避免收藏操作后重复加载
-  const initializedUserIdRef = useRef<number | null>(null);
-  const initializingRef = useRef<{ userId: number; work: Promise<void> } | null>(null);
-  const signedInUserId = userAuth?.data?.id;
-
-  // 初始化、自动续载和手动重试共享请求，成功后才标记完成。
-  const initializeData = useCallback(async () => {
+  const loadFavoriteCards = useCallback(async () => {
     const user = getUserAuth()?.data;
-    const userId = user?.id;
-    if (userId == null || initializedUserIdRef.current === userId) return;
-    if (initializingRef.current?.userId === userId) return initializingRef.current.work;
+    const favoriteIds: number[] = user?.favorites?.loves ?? [];
+    const missing = favoriteIds.filter((id) => !loadedCardsRef.current.has(id));
+    if (missing.length === 0) return;
 
-    const favorIds: number[] = user.favorites?.loves ?? DEFAULT_FAVORITE_IDS;
-    const defaultIds = DEFAULT_IDS.filter((id) => !favorIds.includes(id));
-    const work = Promise.all([fetchCardsByIds(favorIds, currentLanguage), fetchCardsByIds(defaultIds, currentLanguage)])
-      .then(([favorData, otherData]) => {
-        if (getUserAuth()?.data?.id !== userId) return;
-
-        // 续载可能在 React 提交前继续执行，直接读取本次初始化的数据。
-        favoritePromptsRef.current = favorData;
-        otherPromptsRef.current = otherData;
-        setFavoritePrompts(favorData);
-        setOtherPrompts(otherData);
-        hasMoreDataRef.current = true;
-        setHasMoreData(true);
-        initializedUserIdRef.current = userId;
-      });
-
-    initializingRef.current = { userId, work };
-    try {
-      await work;
-    } finally {
-      if (initializingRef.current?.work === work) initializingRef.current = null;
-    }
-  }, [currentLanguage, getUserAuth]);
+    const cards = await fetchCardsByIds(missing, currentLanguage);
+    const currentUser = getUserAuth()?.data;
+    if (currentUser?.id !== user?.id) return;
+    const currentFavorites = new Set<number>(currentUser?.favorites?.loves);
+    addLoadedCards(cards.filter((card) => currentFavorites.has(card.id)));
+  }, [addLoadedCards, currentLanguage, getUserAuth]);
 
   // 加载更多数据（滚动触发），也用于失败后的页尾重试。
   const loadMoreData = useCallback(async () => {
@@ -376,24 +374,16 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
     setLoadMoreFailed(false);
 
     try {
-      await initializeData();
+      await loadFavoriteCards();
       if (!hasMoreDataRef.current) return;
 
-      // 从 ref 读取最新数据，避免回调因 state 变化而重建
-      const displayedIds = [...favoritePromptsRef.current.map((p: any) => p.id), ...otherPromptsRef.current.map((p: any) => p.id)];
-
-      const nextCards = await fetchNextCards(displayedIds, BATCH_SIZE, currentLanguage);
+      const nextCards = await fetchNextCards([...loadedCardsRef.current.keys()], BATCH_SIZE, currentLanguage);
 
       if (nextCards.length === 0) {
         setHasMoreData(false);
         hasMoreDataRef.current = false;
       } else {
-        // 去重：防止并发加载导致重复
-        setOtherPrompts((prev) => {
-          const existingIds = new Set(prev.map((p: any) => p.id));
-          const uniqueNewCards = nextCards.filter((card: any) => !existingIds.has(card.id));
-          return [...prev, ...uniqueNewCards];
-        });
+        addLoadedCards(nextCards);
       }
     } catch (error) {
       console.error("Error loading more prompts:", error);
@@ -402,18 +392,18 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
       setIsLoadingMore(false);
       isLoadingMoreRef.current = false;
     }
-  }, [currentLanguage, initializeData]);
+  }, [addLoadedCards, currentLanguage, loadFavoriteCards]);
 
   useEffect(() => {
-    if (authLoading || signedInUserId == null) return;
+    if (authLoading || !signedInFavoriteIds?.length) return;
     let active = true;
-    void initializeData().catch((error) => {
+    void loadFavoriteCards().catch((error) => {
       if (!active) return;
       console.error("Error loading user prompts:", error);
       setLoadMoreFailed(true);
     });
     return () => { active = false; };
-  }, [authLoading, signedInUserId, initializeData]);
+  }, [authLoading, signedInFavoriteIds, loadFavoriteCards]);
 
   const { filteredCommus, filteredCards, isFiltered, isSearching, searchFailed, retry: retrySearch } = useFilteredPrompts();
 
@@ -482,7 +472,6 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
   // 直接在渲染处内联即可（与下方 filteredCards 分支一致），data 沿用原始稳定引用以保住 memo。
 
   // 预计算收藏 ID 集合，O(1) 查找代替 O(n) includes
-  const favoriteIdSet = useMemo(() => new Set<number>(userAuth?.data?.favorites?.loves || []), [userAuth?.data?.favorites?.loves]);
   const userPromptIdSet = useMemo(() => new Set<number>(userAuth?.data?.userprompts?.map((p: any) => p.id) || []), [userAuth?.data?.userprompts]);
   const commFavoriteIdSet = useMemo(() => new Set<number>(userAuth?.data?.favorites?.commLoves || []), [userAuth?.data?.favorites?.commLoves]);
 
