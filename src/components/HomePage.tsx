@@ -425,7 +425,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
 
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
+        if (entries.at(-1)?.isIntersecting) {
           startTransition(() => setFilteredVisibleCount((n) => n + FILTERED_BATCH_SIZE));
         }
       },
@@ -448,7 +448,8 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
 
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && !isLoadingMoreRef.current) {
+        // Chrome may deliver the initial and post-scroll entries for this target together.
+        if (entries.at(-1)?.isIntersecting && !isLoadingMoreRef.current) {
           loadMoreData();
         }
       },
