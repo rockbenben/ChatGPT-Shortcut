@@ -1,5 +1,6 @@
 import React, { useCallback, ReactNode } from "react";
-import { Typography, Flex, Statistic, Tooltip } from "antd";
+import { Flex, Tooltip } from "antd";
+import clsx from "clsx";
 import { BasePromptCard, ClampBox, PromptSourceLink } from "./Base";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
@@ -57,7 +58,6 @@ const UserCardComponent = ({ data: user, sortable, onEdit, onDelete, onOpenModal
   }, [onOpenModal, user]);
 
   const hasRemark = Boolean(user.remark?.trim());
-  const promptRows = hasRemark ? 3 : 4;
 
   return (
     <BasePromptCard
@@ -72,7 +72,7 @@ const UserCardComponent = ({ data: user, sortable, onEdit, onDelete, onOpenModal
             </div>
           )}
           <ClampBox>
-            <Typography.Title level={3} style={{ margin: 0, fontSize: 15.5, fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
+            <h3 className={clsx(styles.cardTitle, styles.clampLines, styles.clamp2)}>
               {user.share ? (
                 <Link href={`/community-prompt?id=${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
                   {user.title}
@@ -80,7 +80,7 @@ const UserCardComponent = ({ data: user, sortable, onEdit, onDelete, onOpenModal
               ) : (
                 <span className={styles.showcaseCardLink}>{user.title}</span>
               )}
-            </Typography.Title>
+            </h3>
           </ClampBox>
         </Flex>
       }
@@ -92,12 +92,10 @@ const UserCardComponent = ({ data: user, sortable, onEdit, onDelete, onOpenModal
             </Tooltip>
           )}
           {user.upvoteDifference > 0 && (
-            <Statistic
-              value={user.upvoteDifference}
-              formatter={(value) => formatCompactNumber(value as number)}
-              prefix={<LikeFilled style={{ color: "var(--site-color-text-tertiary)" }} />}
-              styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
-            />
+            <span className={styles.cardStat}>
+              <LikeFilled aria-hidden />
+              <span>{formatCompactNumber(user.upvoteDifference)}</span>
+            </span>
           )}
         </>
       }
@@ -120,16 +118,9 @@ const UserCardComponent = ({ data: user, sortable, onEdit, onDelete, onOpenModal
       <PromptRemark remark={user.remark} />
       <div className={hasRemark ? styles.promptBodyAfterRemark : undefined}>
         <ClampBox>
-          <Typography.Paragraph
-            ellipsis={{ rows: promptRows }}
-            style={{
-              marginBottom: 0,
-              color: hasRemark ? "var(--site-color-text-tertiary)" : "var(--ifm-color-content-secondary)",
-              fontSize: hasRemark ? 12.5 : 13,
-              lineHeight: hasRemark ? 1.68 : 1.7,
-            }}>
+          <p className={clsx(styles.cardBody, hasRemark ? styles.cardBodyMuted : styles.cardBodyPrimary, styles.clampLines, hasRemark ? styles.clamp3 : styles.clamp4)}>
             {user.description}
-          </Typography.Paragraph>
+          </p>
         </ClampBox>
       </div>
       {Boolean(user.tags?.length) && (

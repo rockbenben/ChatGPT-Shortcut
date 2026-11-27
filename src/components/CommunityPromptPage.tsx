@@ -1,5 +1,6 @@
+import { useAppFeedback } from "@site/src/contexts/AppFeedbackContext";
 import React, { Suspense, useContext, useCallback, useMemo, useState, useEffect } from "react";
-import { App, Card, Typography, Space, Flex, Row, Col, Button, Skeleton, Breadcrumb, Popover } from "antd";
+import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, Breadcrumb, Popover } from "antd";
 import { HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined, FileSearchOutlined, WarningOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
@@ -48,7 +49,7 @@ const Dot = () => <span style={{ opacity: 0.5 }}>·</span>;
 
 function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote }: CommunityPromptPageProps) {
   const { userAuth, getUserAuth } = useContext(AuthContext);
-  const { message: messageApi } = App.useApp();
+  const { message: messageApi } = useAppFeedback();
   const { siteConfig, i18n } = useDocusaurusContext();
   const { toggleFavorite } = useFavorite();
 

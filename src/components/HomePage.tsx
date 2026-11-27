@@ -18,7 +18,8 @@ import { voteLoginRequiredText, voteAlreadyVotedText, voteSuccessText, voteFaile
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 
-import { App, Button, Typography, Flex, Row, Col, Card, Tooltip } from "antd";
+import { Button, Typography, Flex, Row, Col, Card, Tooltip } from "antd";
+import { useAppFeedback } from "@site/src/contexts/AppFeedbackContext";
 import { DownOutlined, UpOutlined, AppstoreOutlined, HeartOutlined, HeartFilled, EditOutlined, TagOutlined, CloseOutlined, WarningOutlined, StarFilled } from "@ant-design/icons";
 
 import ShowcaseTagSelect from "@site/src/components/ShowcaseTagSelect";
@@ -36,20 +37,19 @@ import { getCache, setCache, CACHE_TTL, cleanupLegacyCache } from "@site/src/uti
 import { getLevelInfo, LevelName, LevelIcon } from "@site/src/components/LevelSystem";
 
 import { AuthContext } from "@site/src/components/AuthContext";
-import { voteOnUserPrompt } from "@site/src/api";
-import { fetchCardsByIds, fetchNextCards } from "@site/src/api/homepage";
+import { fetchCardsByIds, fetchNextCards, type CardData } from "@site/src/api/homepage";
 
 import { Tags, TagList, type TagType } from "@site/src/data/tags";
-import { SLOGAN, SUPPORTED_AI_TOOLS, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS, SITE_NAME } from "@site/src/data/constants";
+import { SLOGAN, SUPPORTED_AI_TOOLS, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, ALL_IDS, SITE_NAME } from "@site/src/data/constants";
 import { toBcp47 } from "@site/src/utils/i18n";
 import { toJsonLd } from "@site/src/utils/jsonLd";
 import PromptCard from "@site/src/components/PromptCard";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
-import { lazyWithRetry, lazyOptional } from "@site/src/utils/lazyRetry";
+import { lazyWithRetry } from "@site/src/utils/lazyRetry";
+import { DeferredFloatingShare } from "@site/src/components/DeferredFloatingShare";
 
 const PromptDetailModal = lazyWithRetry(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
-const ShareButtons = lazyOptional(() => import("@site/src/components/ShareButtons"));
 // MySpace 仅在 collection 视图 + 登录态下渲染，未登录访客（占大多数流量）不需要
 const MySpace = lazyWithRetry(() => import("@site/src/components/user/MySpace"));
 
@@ -216,10 +216,14 @@ const ShowcaseFilters: React.FC = React.memo(() => {
 
 // ==================== 卡片列表组件 ====================
 // SSG 数据经 props 注入：各 locale 页面静态导入自己的默认数据后传入（构建时嵌入，避免首屏 CLS）
+type HomepageCard = Pick<CardData, "id" | "count" | "weight">;
+
 interface HomeData {
-  defaultFavorData: any[];
-  defaultOtherData: any[];
+  defaultFavorData: HomepageCard[];
+  defaultOtherData: HomepageCard[];
 }
+
+const cardOrder = new Map(ALL_IDS.map((id, index) => [id, index]));
 
 interface ShowcaseCardsProps extends HomeData {
   onOpenModal: (data: any) => void;
@@ -228,7 +232,7 @@ interface ShowcaseCardsProps extends HomeData {
 const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, defaultFavorData, defaultOtherData }) => {
   const { userAuth, getUserAuth, authLoading } = useContext(AuthContext);
   const { toggleFavorite } = useFavorite();
-  const { message: messageApi } = App.useApp();
+  const { message: messageApi } = useAppFeedback();
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale;
 
@@ -238,19 +242,37 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
   // 直接多打一发 PATCH /favorites/me 和一次投票请求。
   const isLoggedIn = !!userAuth;
 
-  // SSG: 使用静态导入的数据作为初始值，避免首屏 CLS
-  const [favoritePrompts, setFavoritePrompts] = useState<any[]>(defaultFavorData);
-  const [otherPrompts, setOtherPrompts] = useState<any[]>(defaultOtherData);
+  // SSG 卡片、续载和收藏详情共用一份数据，分组始终从当前收藏状态推导。
+  const [loadedCards, setLoadedCards] = useState(() => new Map(
+    [...defaultFavorData, ...defaultOtherData].map((card) => [card.id, card]),
+  ));
+  const loadedCardsRef = useRef(loadedCards);
+  const addLoadedCards = useCallback((cards: HomepageCard[]) => {
+    const current = loadedCardsRef.current;
+    const missing = cards.filter((card) => !current.has(card.id));
+    if (missing.length === 0) return;
+    const next = new Map(current);
+    for (const card of missing) next.set(card.id, card);
+    loadedCardsRef.current = next;
+    setLoadedCards(next);
+  }, []);
+
+  const signedInFavoriteIds: number[] | undefined = userAuth?.data?.favorites?.loves;
+  const showcaseFavoriteIds = signedInFavoriteIds ?? DEFAULT_FAVORITE_IDS;
+  const favoriteIdSet = useMemo(() => new Set(signedInFavoriteIds), [signedInFavoriteIds]);
+  const { favoritePrompts, otherPrompts } = useMemo(() => {
+    const favoritePrompts = showcaseFavoriteIds.map((id) => loadedCards.get(id)).filter((card) => card !== undefined);
+    const favoriteIds = new Set(showcaseFavoriteIds);
+    const otherPrompts = [...loadedCards.values()].filter((card) => !favoriteIds.has(card.id));
+    otherPrompts.sort((a, b) => (cardOrder.get(a.id) ?? ALL_IDS.length) - (cardOrder.get(b.id) ?? ALL_IDS.length));
+    return { favoritePrompts, otherPrompts };
+  }, [loadedCards, showcaseFavoriteIds]);
 
   const [hasMoreData, setHasMoreData] = useState(true);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const [loadMoreFailed, setLoadMoreFailed] = useState(false);
   const BATCH_SIZE = 12;
 
-  // Refs 用于稳定 loadMoreData 回调（避免 IntersectionObserver 反复重建）
-  const favoritePromptsRef = useRef(favoritePrompts);
-  favoritePromptsRef.current = favoritePrompts;
-  const otherPromptsRef = useRef(otherPrompts);
-  otherPromptsRef.current = otherPrompts;
   const hasMoreDataRef = useRef(hasMoreData);
   const isLoadingMoreRef = useRef(isLoadingMore);
 
@@ -282,6 +304,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
       }));
 
       try {
+        const { voteOnUserPrompt } = await import("@site/src/api/prompts");
         await voteOnUserPrompt(Number(promptId), action);
         messageApi.success(voteSuccessText(action));
       } catch (err) {
@@ -311,82 +334,60 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
     };
   }, []);
 
-  // 使用 ref 跟踪已初始化的用户 ID，避免收藏操作后重复加载
-  const initializedUserIdRef = useRef<number | null>(null);
+  const loadFavoriteCards = useCallback(async () => {
+    const user = getUserAuth()?.data;
+    const favoriteIds: number[] = user?.favorites?.loves ?? [];
+    const missing = favoriteIds.filter((id) => !loadedCardsRef.current.has(id));
+    if (missing.length === 0) return;
 
-  // 初始化数据加载 - 已登录用户立即加载个性化数据
-  // prompt_*.json 有缓存机制，首次加载后不会重复请求
-  const initializeData = useCallback(async () => {
-    // 未登录或正在加载认证状态时，使用 SSG 默认数据
-    if (authLoading || !userAuth) {
-      return;
-    }
+    const cards = await fetchCardsByIds(missing, currentLanguage);
+    const currentUser = getUserAuth()?.data;
+    if (currentUser?.id !== user?.id) return;
+    const currentFavorites = new Set<number>(currentUser?.favorites?.loves);
+    addLoadedCards(cards.filter((card) => currentFavorites.has(card.id)));
+  }, [addLoadedCards, currentLanguage, getUserAuth]);
 
-    // 如果已为当前用户初始化过，跳过（避免收藏操作后重复加载）
-    const currentUserId = userAuth?.data?.id;
-    if (initializedUserIdRef.current === currentUserId) {
-      return;
-    }
-    initializedUserIdRef.current = currentUserId;
-
-    // 已登录用户：立即加载个性化收藏数据
-    // 注意：prompt_*.json 有缓存机制（promptDataCache），首次加载后后续操作直接使用缓存
-    try {
-      const favorIds = userAuth?.data?.favorites?.loves || DEFAULT_FAVORITE_IDS;
-
-      const favorData = await fetchCardsByIds(favorIds, currentLanguage);
-
-      // 加载默认的 other 卡片（从 DEFAULT_IDS 中排除收藏）
-      const defaultIds = DEFAULT_IDS.filter((id) => !favorIds.includes(id));
-      const otherData = await fetchCardsByIds(defaultIds, currentLanguage);
-
-      setFavoritePrompts(favorData as any);
-      setOtherPrompts(otherData as any);
-      setHasMoreData(true);
-      hasMoreDataRef.current = true;
-    } catch (error) {
-      console.error("Error loading user prompts:", error);
-      // 加载失败时保持 SSG 默认数据
-    }
-  }, [userAuth, authLoading, currentLanguage]);
-
-  // 加载更多数据（滚动触发）- 使用 ref 读取数据，依赖数组仅 [currentLanguage]
+  // 加载更多数据（滚动触发），也用于失败后的页尾重试。
   const loadMoreData = useCallback(async () => {
-    if (isLoadingMoreRef.current || !hasMoreDataRef.current) {
+    if (isLoadingMoreRef.current) {
       return;
     }
 
     setIsLoadingMore(true);
     isLoadingMoreRef.current = true;
+    setLoadMoreFailed(false);
 
     try {
-      // 从 ref 读取最新数据，避免回调因 state 变化而重建
-      const displayedIds = [...favoritePromptsRef.current.map((p: any) => p.id), ...otherPromptsRef.current.map((p: any) => p.id)];
+      await loadFavoriteCards();
+      if (!hasMoreDataRef.current) return;
 
-      const nextCards = await fetchNextCards(displayedIds, BATCH_SIZE, currentLanguage);
+      const nextCards = await fetchNextCards([...loadedCardsRef.current.keys()], BATCH_SIZE, currentLanguage);
 
       if (nextCards.length === 0) {
         setHasMoreData(false);
         hasMoreDataRef.current = false;
       } else {
-        // 去重：防止并发加载导致重复
-        setOtherPrompts((prev) => {
-          const existingIds = new Set(prev.map((p: any) => p.id));
-          const uniqueNewCards = nextCards.filter((card: any) => !existingIds.has(card.id));
-          return [...prev, ...uniqueNewCards];
-        });
+        addLoadedCards(nextCards);
       }
     } catch (error) {
       console.error("Error loading more prompts:", error);
+      setLoadMoreFailed(true);
     } finally {
       setIsLoadingMore(false);
       isLoadingMoreRef.current = false;
     }
-  }, [currentLanguage]);
+  }, [addLoadedCards, currentLanguage, loadFavoriteCards]);
 
   useEffect(() => {
-    initializeData();
-  }, [initializeData]);
+    if (authLoading || !signedInFavoriteIds?.length) return;
+    let active = true;
+    void loadFavoriteCards().catch((error) => {
+      if (!active) return;
+      console.error("Error loading user prompts:", error);
+      setLoadMoreFailed(true);
+    });
+    return () => { active = false; };
+  }, [authLoading, signedInFavoriteIds, loadFavoriteCards]);
 
   const { filteredCommus, filteredCards, isFiltered, isSearching, searchFailed, retry: retrySearch } = useFilteredPrompts();
 
@@ -408,7 +409,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
 
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
+        if (entries.at(-1)?.isIntersecting) {
           startTransition(() => setFilteredVisibleCount((n) => n + FILTERED_BATCH_SIZE));
         }
       },
@@ -417,22 +418,22 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
 
     observer.observe(filteredMoreRef.current);
     return () => observer.disconnect();
-  }, [isFiltered, isSearching, hasMoreFiltered]);
+  }, [isFiltered, isSearching, hasMoreFiltered, filteredVisibleCount]);
 
   // Intersection Observer for auto-loading more cards
   const loadMoreTriggerRef = useRef<HTMLDivElement>(null);
 
-  // isFiltered 必须在依赖里：过滤视图与非过滤视图是两棵不同子树，触发器 <div ref> 在切到
-  // 过滤视图时卸载、切回时以【新 DOM 节点】重挂载。ref 重挂载不触发 effect，若依赖不含 isFiltered，
-  // observer 会继续盯着已脱离文档的旧节点 → 清除筛选后无限滚动彻底失效（滚到底也不再加载）。
+  // 每批提交或个性化数据替换后重新观察：触发器若一直在预加载范围内，不会产生第二次相交事件。
+  // 切回未筛选视图也要重新观察新节点。加载失败时等待用户重试，避免连续请求同一个失败的 chunk。
   useEffect(() => {
-    if (!loadMoreTriggerRef.current || !hasMoreDataRef.current) {
+    if (isFiltered || isLoadingMore || loadMoreFailed || !hasMoreData || !loadMoreTriggerRef.current) {
       return;
     }
 
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && !isLoadingMoreRef.current) {
+        // Chrome may deliver the initial and post-scroll entries for this target together.
+        if (entries.at(-1)?.isIntersecting && !isLoadingMoreRef.current) {
           loadMoreData();
         }
       },
@@ -448,7 +449,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
     return () => {
       observer.disconnect();
     };
-  }, [hasMoreData, loadMoreData, isFiltered]);
+  }, [favoritePrompts, otherPrompts, hasMoreData, isLoadingMore, loadMoreFailed, loadMoreData, isFiltered]);
 
   // 注意：不要把卡片 map 成 {...user, _cachedWeight} 新对象——无限滚动每追加一批，
   // useMemo 会为数组中【全部】元素（含已渲染卡片）生成新引用，使 PromptCard 的 React.memo
@@ -456,7 +457,6 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
   // 直接在渲染处内联即可（与下方 filteredCards 分支一致），data 沿用原始稳定引用以保住 memo。
 
   // 预计算收藏 ID 集合，O(1) 查找代替 O(n) includes
-  const favoriteIdSet = useMemo(() => new Set<number>(userAuth?.data?.favorites?.loves || []), [userAuth?.data?.favorites?.loves]);
   const userPromptIdSet = useMemo(() => new Set<number>(userAuth?.data?.userprompts?.map((p: any) => p.id) || []), [userAuth?.data?.userprompts]);
   const commFavoriteIdSet = useMemo(() => new Set<number>(userAuth?.data?.favorites?.commLoves || []), [userAuth?.data?.favorites?.commLoves]);
 
@@ -612,7 +612,19 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
                 }}
               />
             )}
-            {/* 加载指示器 */}
+            {loadMoreFailed && !isLoadingMore && (
+              <div role="status">
+                <EmptyState
+                  compact
+                  title={<Translate id="message.loadFailed">加载数据失败，请稍后重试</Translate>}
+                  action={
+                    <Button onClick={() => void loadMoreData()}>
+                      <Translate id="action.retry">重试</Translate>
+                    </Button>
+                  }
+                />
+              </div>
+            )}
             {isLoadingMore && (
               <div style={{ textAlign: "center", marginTop: 24 }}>
                 <PromptCardSkeleton count={4} fixedCount />
@@ -960,80 +972,78 @@ const ShowcaseContent: React.FC<HomeData> = ({ defaultFavorData, defaultOtherDat
 };
 
 export default function HomePage({ defaultFavorData, defaultOtherData }: HomeData): React.ReactElement {
-  const [shareUrl, setShareUrl] = useState("");
   const { siteConfig, i18n } = useDocusaurusContext();
 
-  // 空闲期预加载详情弹窗组件，大幅消除用户点击卡片时的网络延迟与 INP 交互卡顿
+  // 空闲期预加载详情弹窗组件并清理过期缓存，避免 mount 阶段阻塞主线程
   useEffect(() => {
-    if (ExecutionEnvironment.canUseDOM) {
-      setShareUrl(window.location.href);
+    if (!ExecutionEnvironment.canUseDOM) return;
+    const idleTask = () => {
       cleanupLegacyCache();
-      const preload = () => {
-        import("@site/src/components/PromptDetailModal");
-      };
-      if ("requestIdleCallback" in window) {
-        const handle = (window as any).requestIdleCallback(preload, { timeout: 3000 });
-        return () => (window as any).cancelIdleCallback(handle);
-      } else {
-        const timer = setTimeout(preload, 1500);
-        return () => clearTimeout(timer);
-      }
+      import("@site/src/components/PromptDetailModal");
+    };
+    if ("requestIdleCallback" in window) {
+      const handle = (window as any).requestIdleCallback(idleTask, { timeout: 3000 });
+      return () => (window as any).cancelIdleCallback(handle);
     }
+    const timer = setTimeout(idleTask, 1500);
+    return () => clearTimeout(timer);
   }, []);
 
   // SSR 安全的站点级 schema.org
   // - WebSite + SearchAction：让 ChatGPT/Perplexity/Google 在 SERP 直接激活站内搜索框
   // - Organization + sameAs：建立知识图谱实体关联（GitHub repo）
   // - SoftwareApplication：让 LLM 在"工具推荐"答案中考虑 AiShort
-  const localePrefix = i18n.currentLocale === i18n.defaultLocale ? "" : `/${i18n.currentLocale}`;
-  // schema.org 要 BCP-47：读 docusaurus.config.js localeConfigs[locale].htmlLang（覆盖 ind→id 这种历史命名）
-  const bcp47Locale = toBcp47(i18n.currentLocale, i18n.localeConfigs);
-  const homeUrl = `${siteConfig.url}${localePrefix}/`;
-  const orgId = `${siteConfig.url}/#organization`;
+  const websiteSchemaJson = useMemo(() => {
+    const localePrefix = i18n.currentLocale === i18n.defaultLocale ? "" : `/${i18n.currentLocale}`;
+    // schema.org 要 BCP-47：读 docusaurus.config.js localeConfigs[locale].htmlLang（覆盖 ind→id 这种历史命名）
+    const bcp47Locale = toBcp47(i18n.currentLocale, i18n.localeConfigs);
+    const homeUrl = `${siteConfig.url}${localePrefix}/`;
+    const orgId = `${siteConfig.url}/#organization`;
 
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": `${siteConfig.url}/#website`,
-        url: homeUrl,
-        name: SITE_NAME,
-        description: DESCRIPTION,
-        inLanguage: bcp47Locale,
-        publisher: { "@id": orgId },
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${siteConfig.url}${localePrefix}/?name={search_term_string}`,
+    return toJsonLd({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": `${siteConfig.url}/#website`,
+          url: homeUrl,
+          name: SITE_NAME,
+          description: DESCRIPTION,
+          inLanguage: bcp47Locale,
+          publisher: { "@id": orgId },
+          potentialAction: {
+            "@type": "SearchAction",
+            target: {
+              "@type": "EntryPoint",
+              urlTemplate: `${siteConfig.url}${localePrefix}/?name={search_term_string}`,
+            },
+            "query-input": "required name=search_term_string",
           },
-          "query-input": "required name=search_term_string",
         },
-      },
-      {
-        "@type": "Organization",
-        "@id": orgId,
-        url: siteConfig.url,
-        name: SITE_NAME,
-        alternateName: ["ChatGPT Shortcut", "AI Short"],
-        logo: { "@type": "ImageObject", url: `${siteConfig.url}/img/logo.png`, width: 200, height: 200 },
-        sameAs: ["https://github.com/rockbenben/ChatGPT-Shortcut"],
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": `${siteConfig.url}/#softwareapplication`,
-        name: SITE_NAME,
-        url: homeUrl,
-        description: DESCRIPTION,
-        applicationCategory: "ProductivityApplication",
-        operatingSystem: "Web, Chrome, Edge, Firefox",
-        inLanguage: bcp47Locale,
-        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-        publisher: { "@id": orgId },
-      },
-    ],
-  };
+        {
+          "@type": "Organization",
+          "@id": orgId,
+          url: siteConfig.url,
+          name: SITE_NAME,
+          alternateName: ["ChatGPT Shortcut", "AI Short"],
+          logo: { "@type": "ImageObject", url: `${siteConfig.url}/img/logo.png`, width: 200, height: 200 },
+          sameAs: ["https://github.com/rockbenben/ChatGPT-Shortcut"],
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": `${siteConfig.url}/#softwareapplication`,
+          name: SITE_NAME,
+          url: homeUrl,
+          description: DESCRIPTION,
+          applicationCategory: "ProductivityApplication",
+          operatingSystem: "Web, Chrome, Edge, Firefox",
+          inLanguage: bcp47Locale,
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          publisher: { "@id": orgId },
+        },
+      ],
+    });
+  }, [i18n.currentLocale, i18n.defaultLocale, i18n.localeConfigs, siteConfig.url]);
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
@@ -1043,16 +1053,12 @@ export default function HomePage({ defaultFavorData, defaultOtherData }: HomeDat
         <meta name="twitter:description" content={DESCRIPTION} />
         <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title={SITE_NAME} />
         <link rel="llms-txt" href="/llms.txt" />
-        <script type="application/ld+json">{toJsonLd(websiteSchema)}</script>
+        <script type="application/ld+json">{websiteSchemaJson}</script>
       </Head>
       <main className={clsx("margin-vert--md", styles.homeMain)}>
         <ShowcaseContent defaultFavorData={defaultFavorData} defaultOtherData={defaultOtherData} />
       </main>
-      {shareUrl && (
-        <Suspense fallback={null}>
-          <ShareButtons shareUrl={shareUrl} title={TITLE} />
-        </Suspense>
-      )}
+      <DeferredFloatingShare title={TITLE} />
     </Layout>
   );
 }

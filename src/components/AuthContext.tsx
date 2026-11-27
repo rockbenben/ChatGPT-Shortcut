@@ -40,8 +40,7 @@ export const AuthContext = createContext<{
 /**
  * data.id 每次都取新值（Date.now）是**有意的**，不要改成常量。
  *
- * HomePage 与 MySpace 用 data.id 的变化作为「需要重新加载」的哨兵
- * （HomePage:initializedUserIdRef、useSpaceItems:currentUserId）。在线版那里是真实用户 id，
+ * MySpace 的 useSpaceItems 用 data.id 的变化判断是否需要重新加载。在线版那里是真实用户 id，
  * 换用户才变；离线版没有用户，改用「每次重建都变」来驱动同一套刷新逻辑。
  * 固定成常量会让哨兵判定「没变」而跳过加载 —— 表现为收藏之后 UI 不刷新。
  */

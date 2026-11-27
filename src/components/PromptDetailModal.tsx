@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect, useCallback } from "react";
-import { Modal, Typography, Space, Flex, Statistic } from "antd";
+import { Modal, Typography, Space, Flex } from "antd";
 import { LinkOutlined, InfoCircleOutlined, FireFilled, LikeFilled, UserOutlined, LockOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import { ActionLink } from "@site/src/components/ActionLink";
@@ -138,20 +138,16 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
               </Space>
             )}
             {data.vote > 0 && (
-              <Statistic
-                value={data.vote}
-                formatter={(value) => formatCompactNumber(value as number)}
-                prefix={<LikeFilled style={{ color: "var(--site-color-text-tertiary)" }} />}
-                styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
-              />
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>
+                <LikeFilled aria-hidden style={{ color: "var(--site-color-text-tertiary)" }} />
+                <span>{formatCompactNumber(data.vote)}</span>
+              </span>
             )}
             {data.copyCount > 0 && (
-              <Statistic
-                value={data.copyCount}
-                formatter={(value) => formatCompactNumber(value as number)}
-                prefix={<FireFilled style={{ color: "var(--site-color-text-tertiary)" }} />}
-                styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
-              />
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>
+                <FireFilled aria-hidden style={{ color: "var(--site-color-text-tertiary)" }} />
+                <span>{formatCompactNumber(data.copyCount)}</span>
+              </span>
             )}
             {data.website && (
               <a href={data.website} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 4, color: "var(--site-color-tag-selected-text)" }}>

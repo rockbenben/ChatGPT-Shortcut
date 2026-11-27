@@ -20,7 +20,7 @@ import { isChunkError, reloadOnce } from "./chunkReloadGuard";
  */
 const RETRY_DELAY_MS = 500;
 
-function retryImport<T>(factory: () => Promise<T>): Promise<T> {
+export function retryImport<T>(factory: () => Promise<T>): Promise<T> {
   return factory().catch((err) => {
     if (!isChunkError(err)) throw err;
     return new Promise<void>((resolve) => setTimeout(resolve, RETRY_DELAY_MS)).then(factory);
