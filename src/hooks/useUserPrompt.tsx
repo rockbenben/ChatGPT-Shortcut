@@ -1,8 +1,7 @@
 import React, { useState, useCallback, useContext } from "react";
-import { App } from "antd";
+import { useAppFeedback } from "../contexts/AppFeedbackContext";
 import Translate from "@docusaurus/Translate";
 import { AuthContext } from "../components/AuthContext";
-import { submitPrompt, updatePrompt as apiUpdatePrompt, deletePrompt as apiDeletePrompt } from "../api";
 
 interface UseUserPromptReturn {
   loading: boolean;
@@ -14,13 +13,14 @@ interface UseUserPromptReturn {
 
 export const useUserPrompt = (): UseUserPromptReturn => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
-  const { message, modal } = App.useApp();
+  const { message, modal } = useAppFeedback();
   const [loading, setLoading] = useState(false);
 
   const addPrompt = useCallback(
     async (values: any, onSuccess?: () => void) => {
       setLoading(true);
       try {
+        const { submitPrompt } = await import("../api/prompts");
         await submitPrompt(values);
 
         // 强制刷新，确保获取最新数据
@@ -52,6 +52,7 @@ export const useUserPrompt = (): UseUserPromptReturn => {
     async (id: number, values: any) => {
       setLoading(true);
       try {
+        const { updatePrompt: apiUpdatePrompt } = await import("../api/prompts");
         await apiUpdatePrompt(id, values);
         await refreshUserAuth();
 
@@ -74,6 +75,7 @@ export const useUserPrompt = (): UseUserPromptReturn => {
     async (id: number) => {
       setLoading(true);
       try {
+        const { deletePrompt: apiDeletePrompt } = await import("../api/prompts");
         await apiDeletePrompt(id);
         await refreshUserAuth();
         message.success(<Translate id="message.deletePrompt.success">提示词已删除</Translate>);
@@ -90,7 +92,7 @@ export const useUserPrompt = (): UseUserPromptReturn => {
 
   const confirmRemovePrompt = useCallback(
     (id: number) => {
-      modal.confirm({
+      modal.confirm(`delete-prompt:${id}`, {
         title: <Translate id="message.deletePrompt.confirm.title">确认删除</Translate>,
         content: <Translate id="message.deletePrompt.confirm.content">确定要删除该提示词吗？</Translate>,
         icon: null,

@@ -1,7 +1,8 @@
 import React, { useContext, useState, useCallback, useMemo, useRef } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate from "@docusaurus/Translate";
-import { App, Button, Row, Col } from "antd";
+import { Button, Row, Col } from "antd";
+import { useAppFeedback } from "@site/src/contexts/AppFeedbackContext";
 import { SearchOutlined, EditOutlined, AppstoreOutlined, HeartOutlined, WarningOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
 import PromptCard from "@site/src/components/PromptCard";
@@ -36,7 +37,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale;
   const { userAuth, getUserAuth, syncMySpaceState, authLoading } = useContext(AuthContext);
-  const { message: messageApi } = App.useApp();
+  const { message: messageApi } = useAppFeedback();
   const { setViewMode } = useViewMode();
 
   const { removeFavorite, confirmRemoveFavorite, toggleFavorite } = useFavorite();

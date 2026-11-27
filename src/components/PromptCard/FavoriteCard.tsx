@@ -1,5 +1,6 @@
 import React, { useCallback, ReactNode } from "react";
-import { Button, Typography, Flex, Statistic } from "antd";
+import { Button, Typography, Flex } from "antd";
+import clsx from "clsx";
 import { BasePromptCard, ClampBox, PromptSourceLink } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
@@ -120,7 +121,6 @@ const FavoriteCardComponent = ({ data: user, sortable, onRemoveFavorite, onOpenM
   };
 
   const hasRemark = Boolean(remark?.trim());
-  const promptRows = hasRemark ? 3 : 4;
 
   return (
     <BasePromptCard
@@ -135,7 +135,7 @@ const FavoriteCardComponent = ({ data: user, sortable, onRemoveFavorite, onOpenM
             </div>
           )}
           <ClampBox>
-            <Typography.Title level={3} style={{ margin: 0, fontSize: 15.5, fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
+            <h3 className={clsx(styles.cardTitle, styles.clampLines, styles.clamp2)}>
               {isDataCard ? (
                 <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
                   {title}
@@ -145,27 +145,23 @@ const FavoriteCardComponent = ({ data: user, sortable, onRemoveFavorite, onOpenM
                   {title}
                 </Link>
               )}
-            </Typography.Title>
+            </h3>
           </ClampBox>
         </Flex>
       }
       titleExtra={
         <>
           {copyCount > 0 && (
-            <Statistic
-              value={copyCount}
-              formatter={(value) => formatCompactNumber(value as number)}
-              prefix={<FireOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
-              styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
-            />
+            <span className={styles.cardStat}>
+              <FireOutlined aria-hidden />
+              <span>{formatCompactNumber(copyCount)}</span>
+            </span>
           )}
           {user.upvoteDifference > 0 && (
-            <Statistic
-              value={user.upvoteDifference}
-              formatter={(value) => formatCompactNumber(value as number)}
-              prefix={<LikeFilled style={{ color: "var(--site-color-text-tertiary)" }} />}
-              styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
-            />
+            <span className={styles.cardStat}>
+              <LikeFilled aria-hidden />
+              <span>{formatCompactNumber(user.upvoteDifference)}</span>
+            </span>
           )}
         </>
       }
@@ -192,25 +188,18 @@ const FavoriteCardComponent = ({ data: user, sortable, onRemoveFavorite, onOpenM
       <PromptRemark remark={remark} />
       <div className={hasRemark ? styles.promptBodyAfterRemark : undefined}>
         <ClampBox>
-          <Typography.Paragraph
-            ellipsis={{ rows: promptRows }}
-            style={{
-              marginBottom: 0,
-              color: hasRemark ? "var(--site-color-text-tertiary)" : "var(--ifm-color-content-secondary)",
-              fontSize: hasRemark ? 12.5 : 13,
-              lineHeight: hasRemark ? 1.68 : 1.7,
-            }}>
+          <p className={clsx(styles.cardBody, hasRemark ? styles.cardBodyMuted : styles.cardBodyPrimary, styles.clampLines, hasRemark ? styles.clamp3 : styles.clamp4)}>
             {prompt}
-          </Typography.Paragraph>
+          </p>
         </ClampBox>
       </div>
       {(owner || Boolean(tags?.length)) && (
         <Flex align="center" gap={8} wrap="wrap" style={{ marginTop: "auto" }}>
           {owner && (
-            <Typography.Text type="secondary" style={{ fontSize: 11.5, display: "inline-flex", alignItems: "center", maxWidth: 80 }} ellipsis={{ tooltip: true }}>
-              <UserOutlined style={{ marginInlineEnd: 4 }} />
-              {owner}
-            </Typography.Text>
+            <span style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", display: "inline-flex", alignItems: "center", maxWidth: 80, minWidth: 0 }} title={owner}>
+              <UserOutlined style={{ marginInlineEnd: 4, flexShrink: 0 }} />
+              <span className={styles.cardOwnerName}>{owner}</span>
+            </span>
           )}
           {Boolean(tags?.length) && <PromptCardTag tags={tags} muted clickable={false} maxVisible={2} />}
         </Flex>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useCallback, useMemo, useRef, Suspense } from "react";
+import React, { useContext, useEffect, useState, useCallback, useMemo, useRef, Suspense, startTransition } from "react";
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import { voteAlreadyVotedText, voteSuccessText, voteFailedText } from "@site/src/utils/voteMessages";
@@ -14,7 +14,8 @@ import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
-import { App, Flex, Segmented, FloatButton, Row, Col, Breadcrumb, Button } from "antd";
+import { Flex, Segmented, FloatButton, Row, Col, Breadcrumb, Button } from "antd";
+import { useAppFeedback } from "@site/src/contexts/AppFeedbackContext";
 import { HomeOutlined, WarningOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION, SITE_NAME } from "@site/src/data/constants";
 import { toBcp47 } from "@site/src/utils/i18n";
@@ -26,15 +27,15 @@ import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
 import styles from "@site/src/pages/styles.module.css";
 import { COMMUNITY_PAGE_SIZE } from "@site/src/utils/communityPagination.mjs";
 import { primeCacheFromSnapshot, getCommunitySnapshotPage, type CommunitySortField, type CommunityPrompt } from "@site/src/utils/snapshotPrime";
-import { lazyWithRetry, lazyOptional } from "@site/src/utils/lazyRetry";
+import { lazyWithRetry } from "@site/src/utils/lazyRetry";
+import { DeferredFloatingShare } from "@site/src/components/DeferredFloatingShare";
 const PromptDetailModal = lazyWithRetry(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 const LoginModal = lazyWithRetry(() => import("@site/src/components/user/LoginModal").then((m) => ({ default: m.LoginModal })));
 
-const ShareButtons = lazyOptional(() => import("@site/src/components/ShareButtons"));
 
 const CommunityPrompts = () => {
   const { userAuth, getUserAuth } = useContext(AuthContext);
-  const { message: messageApi } = App.useApp();
+  const { message: messageApi } = useAppFeedback();
   const { toggleFavorite } = useFavorite();
   const location = useLocation();
   const { siteConfig, i18n } = useDocusaurusContext();
@@ -132,9 +133,6 @@ const CommunityPrompts = () => {
     setRetrying(true);
     setRetryNonce((n) => n + 1);
   }, []);
-  // 直接读 window.location.href，随路由变化自然更新；避免旧方案的 useMemo 空依赖导致 share link 停留在初次 URL
-  const ShareUrl = typeof window !== "undefined" ? window.location.href : "";
-
   // useState 已经直接用 initialSnapshot seed 进 state；数据 useEffect 第一次跑时
   // state 跟 snapshot 完全一致，重复 setUserPrompts 只会触发一次无意义的 parent re-render
   // （byId items refs 稳定 → PromptCard 全 bail，但 reconciliation 仍跑一次）
@@ -310,7 +308,9 @@ const CommunityPrompts = () => {
   const bookmark = useCallback(async (promptId) => toggleFavorite(promptId, true), [toggleFavorite]);
 
   const onChangePage = useCallback((page) => {
-    setCurrentPage(page);
+    startTransition(() => {
+      setCurrentPage(page);
+    });
   }, []);
 
   const onOpenModal = useCallback((data: any) => {
@@ -373,8 +373,10 @@ const CommunityPrompts = () => {
                 ]}
                 value={sortField}
                 onChange={(value) => {
-                  setSortField(value as CommunitySortField);
-                  setCurrentPage(1);
+                  startTransition(() => {
+                    setSortField(value as CommunitySortField);
+                    setCurrentPage(1);
+                  });
                 }}
               />
               <div className={styles.communitySearchWrap}>
@@ -457,11 +459,7 @@ const CommunityPrompts = () => {
           </div>
         </section>
       </main>
-      {ShareUrl && (
-        <Suspense fallback={null}>
-          <ShareButtons shareUrl={ShareUrl} title={COMMU_TITLE} />
-        </Suspense>
-      )}
+      <DeferredFloatingShare title={COMMU_TITLE} />
     </Layout>
   );
 };

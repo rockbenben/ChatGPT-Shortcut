@@ -7,16 +7,9 @@ import axios from "axios";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { clearUserSessionCaches } from "./sessionCache";
 import { API_URL, AUTH_EXPIRED_EVENT } from "./config";
+import { getAuthToken, persistAuthToken } from "./token";
 
-// Token Management
-// 约定：对 auth_token 的**写入**统一走 persistAuthToken，不直接调用 localStorage.setItem/removeItem。
-// 注意这只是一致性约定，不是正确性依赖 —— getAuthToken() 在浏览器分支直读 localStorage，
-// 下面这个模块级变量实际只在 SSR 分支被读到（那里恒为 null）。别围绕它设计运行期逻辑。
-let authToken: string | null = null;
-
-if (ExecutionEnvironment.canUseDOM) {
-  authToken = localStorage.getItem("auth_token");
-}
+export { getAuthToken, persistAuthToken };
 
 /**
  * Handle API errors uniformly
@@ -44,34 +37,6 @@ const handleApiError = (error: any): never => {
   }
 
   throw error;
-};
-
-/**
- * Get current auth token
- */
-export const getAuthToken = (): string | null => {
-  if (ExecutionEnvironment.canUseDOM) {
-    return localStorage.getItem("auth_token");
-  }
-  return authToken;
-};
-
-/**
- * Persist auth token to storage
- */
-export const persistAuthToken = (token: string | null): string | null => {
-  authToken = token || null;
-  if (!ExecutionEnvironment.canUseDOM) {
-    return authToken;
-  }
-
-  if (token) {
-    localStorage.setItem("auth_token", token);
-  } else {
-    localStorage.removeItem("auth_token");
-  }
-
-  return authToken;
 };
 
 // Create axios instance

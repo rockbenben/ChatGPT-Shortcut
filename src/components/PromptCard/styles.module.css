@@ -128,6 +128,84 @@
   color: var(--site-color-svg-icon-favorite);
 }
 
+/* 纯 CSS 多行省略（替代 antd Typography ellipsis 的 ResizeObserver + getBoundingClientRect 重排） */
+.clampLines {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
+.clamp2 {
+  -webkit-line-clamp: 2;
+}
+
+.clamp3 {
+  -webkit-line-clamp: 3;
+}
+
+.clamp4 {
+  -webkit-line-clamp: 4;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  color: var(--site-color-card-title, var(--ifm-color-content));
+}
+
+/* 普通块级包装：隔离外层 flex 容器，防止 -webkit-box 被 blockify 导致 line-clamp 失效 */
+.remarkWrap {
+  display: block;
+  min-width: 0;
+}
+
+.cardRemark {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--site-color-remark-text);
+}
+
+.cardBody {
+  margin: 0;
+}
+
+.cardBodyMuted {
+  color: var(--site-color-text-tertiary);
+  font-size: 12.5px;
+  line-height: 1.68;
+}
+
+.cardBodyPrimary {
+  color: var(--ifm-color-content-secondary);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.cardStat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--site-color-text-tertiary);
+  font-family: var(--site-font-mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  transition: color 0.12s var(--site-motion-emphasized);
+}
+
+.cardOwnerName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
 /* Tabular mono for numbers */
 .showcaseCard :global(.ant-statistic-content) {
   font-family: var(--site-font-mono);
@@ -140,7 +218,7 @@
 }
 
 .showcaseCard:hover .cardContent :global(.anticon),
-.showcaseCard:hover .cardContent :global(.ant-statistic-content) {
+.showcaseCard:hover .cardStat {
   color: var(--site-color-tag-selected-text) !important;
 }
 

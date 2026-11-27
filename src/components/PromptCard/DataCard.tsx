@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo } from "react";
-import { Typography, Flex, Statistic } from "antd";
+import { Flex } from "antd";
+import clsx from "clsx";
 import { HeartOutlined, HeartFilled, FireOutlined } from "@ant-design/icons";
 import { BasePromptCard, ClampBox, PromptSourceLink } from "./Base";
 import Link from "@docusaurus/Link";
@@ -68,20 +69,18 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
   return (
     <BasePromptCard
       title={
-        <Typography.Title level={3} style={{ margin: 0, fontSize: 15.5, fontWeight: 600, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
+        <h3 className={clsx(styles.cardTitle, styles.clampLines, styles.clamp2)}>
           <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
             {userInfo.title}
           </Link>
-        </Typography.Title>
+        </h3>
       }
       titleExtra={
         copyCount !== undefined && (
-          <Statistic
-            value={copyCount}
-            formatter={(value) => formatCompactNumber(value as number)}
-            prefix={<FireOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
-            styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
-          />
+          <span className={styles.cardStat}>
+            <FireOutlined aria-hidden />
+            <span>{formatCompactNumber(copyCount)}</span>
+          </span>
         )
       }
       footer={
@@ -108,16 +107,9 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
       <PromptRemark remark={userInfo.remark} />
       <div className={hasRemark ? styles.promptBodyAfterRemark : undefined}>
         <ClampBox>
-          <Typography.Paragraph
-            ellipsis={{ rows: hasRemark ? 3 : 4 }}
-            style={{
-              color: hasRemark ? "var(--site-color-text-tertiary)" : "var(--ifm-color-content-secondary)",
-              fontSize: hasRemark ? 12.5 : 13,
-              lineHeight: hasRemark ? 1.68 : 1.7,
-              marginBottom: 0,
-            }}>
+          <p className={clsx(styles.cardBody, hasRemark ? styles.cardBodyMuted : styles.cardBodyPrimary, styles.clampLines, hasRemark ? styles.clamp3 : styles.clamp4)}>
             {userInfo.prompt}
-          </Typography.Paragraph>
+          </p>
         </ClampBox>
       </div>
     </BasePromptCard>

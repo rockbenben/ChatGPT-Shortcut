@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
-import { Form, Input, Button, Typography, Card, App } from "antd";
+import { Form, Input, Button, Typography, Card } from "antd";
+import { useAppFeedback } from "@site/src/contexts/AppFeedbackContext";
 import { LockOutlined, KeyOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -13,7 +14,7 @@ const ResetPassword = () => {
   const [form] = Form.useForm();
   const [resetCode, setResetCode] = useState("");
   const [loading, setLoading] = useState(false);
-  const { message: messageApi } = App.useApp();
+  const { message: messageApi } = useAppFeedback();
   const { i18n } = useDocusaurusContext();
 
   useEffect(() => {

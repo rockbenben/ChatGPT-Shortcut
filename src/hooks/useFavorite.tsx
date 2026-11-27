@@ -1,8 +1,8 @@
 import React, { useCallback, useContext, useRef } from "react";
-import { App } from "antd";
+import { useAppFeedback } from "../contexts/AppFeedbackContext";
 import Translate from "@docusaurus/Translate";
 import { AuthContext } from "../components/AuthContext";
-import { patchFavorites, voteOnUserPrompt, type FavoriteDeltaResponse, type FavoriteDeltaOps } from "../api";
+import type { FavoriteDeltaResponse, FavoriteDeltaOps } from "../api/favorites";
 
 interface UseFavoriteReturn {
   addFavorite: (id: number, isComm?: boolean) => Promise<void>;
@@ -18,7 +18,7 @@ interface UseFavoriteReturn {
 
 export const useFavorite = (): UseFavoriteReturn => {
   const { getUserAuth, refreshUserAuth, syncMySpaceState } = useContext(AuthContext);
-  const { message, modal } = App.useApp();
+  const { message, modal } = useAppFeedback();
 
   // 读 userAuth 一律走 context 的 getUserAuth()，不再自己 useRef(userAuth) 存渲染期快照。
   // 两个原因：① 回调保持稳定引用，避免每次后台 SWR 刷新都重建、级联 re-render 所有卡片；
@@ -182,6 +182,7 @@ export const useFavorite = (): UseFavoriteReturn => {
       const seq = ++patchSeqRef.current;
 
       try {
+        const { patchFavorites } = await import("../api/favorites");
         const delta = await patchFavorites(ops);
         // 仅最新一次操作的响应可写本地：避免乱序的旧响应覆盖更新的收藏态
         if (patchSeqRef.current === seq) {
@@ -190,7 +191,7 @@ export const useFavorite = (): UseFavoriteReturn => {
 
         // 社区提示词：异步投赞成票（不阻塞）
         if (isComm) {
-          voteOnUserPrompt(id, "upvote").catch(() => {});
+          import("../api/prompts").then(({ voteOnUserPrompt }) => voteOnUserPrompt(id, "upvote")).catch(() => {});
         }
 
         message.success(<Translate id="message.addFavorite.success">已添加到收藏</Translate>);
@@ -223,6 +224,7 @@ export const useFavorite = (): UseFavoriteReturn => {
       const seq = ++patchSeqRef.current;
 
       try {
+        const { patchFavorites } = await import("../api/favorites");
         const delta = await patchFavorites(ops);
         // 仅最新一次操作的响应可写本地：避免乱序的旧响应覆盖更新的收藏态
         if (patchSeqRef.current === seq) {
@@ -243,7 +245,7 @@ export const useFavorite = (): UseFavoriteReturn => {
 
   const confirmRemoveFavorite = useCallback(
     (id: number, isComm: boolean = false) => {
-      modal.confirm({
+      modal.confirm(`remove-favorite:${isComm ? "community" : "official"}:${id}`, {
         title: <Translate id="message.removeFavorite.confirm.title">移除收藏</Translate>,
         content: <Translate id="message.removeFavorite.confirm.content">确定要取消收藏这个提示词吗？</Translate>,
         icon: null,

@@ -1,26 +1,17 @@
 import React from "react";
-import { Typography } from "antd";
+import clsx from "clsx";
+import styles from "./styles.module.css";
 
-export const PromptRemark = ({ remark, ...props }: { remark?: string } & React.HTMLAttributes<HTMLElement>) => {
+export const PromptRemark = ({ remark, className, ...props }: { remark?: string } & React.HTMLAttributes<HTMLParagraphElement>) => {
   if (!remark?.trim()) {
     return null;
   }
 
   return (
-    <Typography.Paragraph
-      {...props}
-      style={{
-        fontSize: 13,
-        lineHeight: 1.55,
-        color: "var(--site-color-remark-text)",
-        marginBottom: 0,
-        ...props.style,
-      }}
-      ellipsis={{
-        rows: 2,
-        expandable: false,
-      }}>
-      {remark}
-    </Typography.Paragraph>
+    <div className={styles.remarkWrap}>
+      <p {...props} className={clsx(styles.cardRemark, styles.clampLines, styles.clamp2, className)}>
+        {remark}
+      </p>
+    </div>
   );
 };

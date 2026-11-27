@@ -2,7 +2,8 @@ import React, { Suspense, useEffect, useState, useCallback, memo, useRef } from 
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { App, Button } from "antd";
+import { Button } from "antd";
+import { useAppFeedback } from "@site/src/contexts/AppFeedbackContext";
 import { MessageOutlined, WarningOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
 import { Pagination } from "@site/src/components/Pagination";
@@ -25,7 +26,7 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
   const isDarkMode = colorMode === "dark";
   const { i18n } = useDocusaurusContext();
   const currentLocale = i18n.currentLocale;
-  const { message } = App.useApp();
+  const { message } = useAppFeedback();
 
   const [currentUserId, setCurrentUserId] = useState(0);
   // 防双击重复提交：ref 即时拦截（state 重渲染前的窗口期），state 驱动按钮 loading

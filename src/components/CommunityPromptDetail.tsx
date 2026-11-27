@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState, useCallback, useRef, useContext, useMemo } from "react";
 import { useLocation } from "@docusaurus/router";
 import { voteLoginRequiredText, voteAlreadyVotedText, voteSuccessText, voteFailedText } from "@site/src/utils/voteMessages";
-import { App } from "antd";
+import { useAppFeedback } from "@site/src/contexts/AppFeedbackContext";
 import { AuthContext } from "@site/src/components/AuthContext";
 import CommunityPromptPage from "@site/src/components/CommunityPromptPage";
 import { getSingleCommPrompt, voteOnUserPrompt } from "@site/src/api";
@@ -24,7 +24,7 @@ type LoadState = {
 
 function CommunityPromptDetailInner() {
   const location = useLocation();
-  const { message: messageApi } = App.useApp();
+  const { message: messageApi } = useAppFeedback();
   // 判登录用权威即时值 getUserAuth()，不用渲染期的 userAuth：
   // applyAuth 经 startTransition 发布，state 会滞后一帧。CommunityPromptPage 里的
   // 外层守卫已经改读 getUserAuth()，这里若还用 userAuth，两层会在那一帧里不一致 ——

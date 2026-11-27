@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
-import { Card, Form, Input, Button, Space, Typography, App } from "antd";
+import { Card, Form, Input, Button, Space, Typography } from "antd";
+import { useAppFeedback } from "@site/src/contexts/AppFeedbackContext";
 import { LockOutlined, MailOutlined, SafetyCertificateOutlined } from "@ant-design/icons";
 import { changePassword, forgotPassword } from "@site/src/api";
 
@@ -8,7 +9,7 @@ const { Text } = Typography;
 
 /** 安全设置卡片：改密表单 + 忘记密码（重置邮件）modal，API 调用自包含 */
 const SecurityCard: React.FC<{ userInfo: any }> = ({ userInfo }) => {
-  const { message, modal } = App.useApp();
+  const { message, modal } = useAppFeedback();
   const [loading, setLoading] = useState(false);
   const [changePasswordForm] = Form.useForm();
   const [forgotPasswordForm] = Form.useForm();
@@ -42,7 +43,7 @@ const SecurityCard: React.FC<{ userInfo: any }> = ({ userInfo }) => {
   };
 
   const openForgotPasswordModal = () => {
-    modal.confirm({
+    modal.confirm("forgot-password", {
       title: (
         <Space>
           <MailOutlined style={{ color: "var(--ifm-color-primary)" }} />

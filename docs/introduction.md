@@ -58,11 +58,11 @@ AI Short (ChatGPT Shortcut) 是一个按场景分类的 AI 提示词库，复制
 欢迎加入我们的社群，交流想法与反馈：
 
 <a href="https://t.me/aishort_top">
-   <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="join Telegram group" />
+   <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="join Telegram group" height="28" loading="lazy" decoding="async" />
 </a>
 
 <a href="https://discord.gg/PZTQfJ4GjX">
-   <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
+   <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" height="28" loading="lazy" decoding="async" />
 </a>
 
-![](https://img.newzone.top/qrcode/qq1092926837.jpg?imageMogr2/thumbnail/300x/format/webp)
+<img src="https://img.newzone.top/qrcode/qq1092926837.jpg?imageMogr2/thumbnail/300x/format/webp" alt="QQ Group QR Code" width="300" height="300" loading="lazy" decoding="async" />

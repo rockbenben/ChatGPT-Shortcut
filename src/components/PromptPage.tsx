@@ -121,117 +121,122 @@ function PromptPage({ prompt, currentLanguage }) {
   //   第 3 条：通用"使用步骤"，所有 prompt 共享（包括在哪些 AI 模型里用）
   // master 在 src/data/meta_faqs.json 编辑，CodeUpdateHandler.py 按 (id, lang) 嵌入到对应 card；
   // 该 prompt 在当前语言下无 FAQ 时回退为通用模板。
-  const customFaqItems: { q: string; a: string }[] = Array.isArray((prompt as any).faq) ? (prompt as any).faq.slice(0, 2) : [];
+  const customFaq = (prompt as any).faq;
+  const faqList = useMemo(() => {
+    const customFaqItems: { q: string; a: string }[] = Array.isArray(customFaq) ? customFaq.slice(0, 2) : [];
 
-  const fallbackCustomFaq = [
-    {
-      q: translate({ id: "faq.scenario.q", message: "这个 prompt 适合什么场景使用？" }),
-      a: translate({
-        id: "faq.scenario.a",
-        message: "适合完成与本页标题和说明相关的任务。若首次尝试效果不够理想，可以在占位符处提供更多上下文细节，或追加「请分步骤回答」「请举例说明」等约束词。",
-      }),
-    },
-    {
-      q: translate({ id: "faq.tips.q", message: "怎么优化输出质量？" }),
-      a: translate({
-        id: "faq.tips.a",
-        message: "一是把 [占位符] 改得更具体（加风格、长度、领域等细节）；二是对不满意的回复追问「请改得更 X」；三是切换 Claude / ChatGPT / Gemini 等不同模型对比效果。",
-      }),
-    },
-  ];
-
-  const genericUsageFaq = {
-    q: translate({ id: "faq.usage.q", message: "如何使用这个提示词？" }),
-    a: translate({
-      id: "faq.usage.a",
-      message: "复制提示词，把方括号 [占位符] 替换成你的输入，然后粘贴到 ChatGPT、Claude、Gemini、DeepSeek、Qwen 或任意支持自然语言的对话式 AI 界面发送即可。",
-    }),
-  };
-
-  const faqList = [
-    ...(customFaqItems.length >= 2 ? customFaqItems : fallbackCustomFaq),
-    genericUsageFaq,
-  ];
-
-  const howToSteps = [
-    { name: translate({ id: "howto.step1.name", message: "复制提示词" }), text: translate({ id: "howto.step1.text", message: "将提示词模板复制到剪贴板。" }) },
-    { name: translate({ id: "howto.step2.name", message: "自定义占位符" }), text: translate({ id: "howto.step2.text", message: "用你的具体内容替换方括号 [占位符] 部分。" }) },
-    { name: translate({ id: "howto.step3.name", message: "发送给 AI" }), text: translate({ id: "howto.step3.text", message: "粘贴到 ChatGPT、Claude、Gemini、DeepSeek 等对话式 AI 界面执行。" }) },
-  ];
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
+    const fallbackCustomFaq = [
       {
-        "@type": ["Article", "HowTo"],
-        headline: seoTitle,
-        description: seoDescription,
-        url: canonicalUrl,
-        inLanguage: bcp47Locale,
-        datePublished,
-        dateModified,
-        image: { "@type": "ImageObject", url: `${siteConfig.url}/img/social-card.png`, width: 1280, height: 640 },
-        keywords: Array.isArray(tags) ? tags.join(", ") : undefined,
-        author: { "@id": orgId },
-        publisher: { "@id": orgId },
-        isPartOf: { "@id": websiteId },
-        mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
-        about: Array.isArray(tags) ? tags.map((t) => ({ "@type": "Thing", name: t })) : undefined,
-        audience: {
-          "@type": "Audience",
-          audienceType: "AI practitioners, content creators, developers, students",
-        },
-        learningResourceType: "Prompt Template",
-        educationalUse: "Prompt Engineering",
-        genre: "AI Prompt",
-        license: "https://creativecommons.org/licenses/by-sa/4.0/",
-        copyrightHolder: { "@id": orgId },
-        copyrightYear: new Date(datePublished).getFullYear(),
-        speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".prompt-remark"] },
-        totalTime: "PT1M",
-        step: howToSteps.map((s, i) => ({
-          "@type": "HowToStep",
-          position: i + 1,
-          name: s.name,
-          text: s.text,
-        })),
-        // prompt body 作为可复用 CreativeWork（SoftwareSourceCode/CodeSnippet 语义）
-        hasPart: {
-          "@type": "CreativeWork",
-          additionalType: "https://schema.org/SoftwareSourceCode",
-          text: promptInfo.prompt,
-          encodingFormat: "text/plain",
+        q: translate({ id: "faq.scenario.q", message: "这个 prompt 适合什么场景使用？" }),
+        a: translate({
+          id: "faq.scenario.a",
+          message: "适合完成与本页标题和说明相关的任务。若首次尝试效果不够理想，可以在占位符处提供更多上下文细节，或追加「请分步骤回答」「请举例说明」等约束词。",
+        }),
+      },
+      {
+        q: translate({ id: "faq.tips.q", message: "怎么优化输出质量？" }),
+        a: translate({
+          id: "faq.tips.a",
+          message: "一是把 [占位符] 改得更具体（加风格、长度、领域等细节）；二是对不满意的回复追问「请改得更 X」；三是切换 Claude / ChatGPT / Gemini 等不同模型对比效果。",
+        }),
+      },
+    ];
+
+    const genericUsageFaq = {
+      q: translate({ id: "faq.usage.q", message: "如何使用这个提示词？" }),
+      a: translate({
+        id: "faq.usage.a",
+        message: "复制提示词，把方括号 [占位符] 替换成你的输入，然后粘贴到 ChatGPT、Claude、Gemini、DeepSeek、Qwen 或任意支持自然语言的对话式 AI 界面发送即可。",
+      }),
+    };
+
+    return [
+      ...(customFaqItems.length >= 2 ? customFaqItems : fallbackCustomFaq),
+      genericUsageFaq,
+    ];
+  }, [customFaq, currentLanguage]);
+
+  const articleSchemaJson = useMemo(() => {
+    const howToSteps = [
+      { name: translate({ id: "howto.step1.name", message: "复制提示词" }), text: translate({ id: "howto.step1.text", message: "将提示词模板复制到剪贴板。" }) },
+      { name: translate({ id: "howto.step2.name", message: "自定义占位符" }), text: translate({ id: "howto.step2.text", message: "用你的具体内容替换方括号 [占位符] 部分。" }) },
+      { name: translate({ id: "howto.step3.name", message: "发送给 AI" }), text: translate({ id: "howto.step3.text", message: "粘贴到 ChatGPT、Claude、Gemini、DeepSeek 等对话式 AI 界面执行。" }) },
+    ];
+    const articleSchema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["Article", "HowTo"],
+          headline: seoTitle,
+          description: seoDescription,
+          url: canonicalUrl,
           inLanguage: bcp47Locale,
-          name: title,
-        },
-        // tags 作为 schema.org Thing 实体，关联知识图谱
-        mentions: Array.isArray(tags)
-          ? tags.map((t) => ({
-              "@type": "Thing",
-              name: t,
-              url: `${siteConfig.url}${localePrefix}/?tags=${encodeURIComponent(t)}`,
-            }))
-          : undefined,
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: [
-          ...faqList.map((item) => ({
-            "@type": "Question" as const,
-            name: item.q,
-            acceptedAnswer: { "@type": "Answer" as const, text: item.a },
+          datePublished,
+          dateModified,
+          image: { "@type": "ImageObject", url: `${siteConfig.url}/img/social-card.png`, width: 1280, height: 640 },
+          keywords: Array.isArray(tags) ? tags.join(", ") : undefined,
+          author: { "@id": orgId },
+          publisher: { "@id": orgId },
+          isPartOf: { "@id": websiteId },
+          mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+          about: Array.isArray(tags) ? tags.map((t) => ({ "@type": "Thing", name: t })) : undefined,
+          audience: {
+            "@type": "Audience",
+            audienceType: "AI practitioners, content creators, developers, students",
+          },
+          learningResourceType: "Prompt Template",
+          educationalUse: "Prompt Engineering",
+          genre: "AI Prompt",
+          license: "https://creativecommons.org/licenses/by-sa/4.0/",
+          copyrightHolder: { "@id": orgId },
+          copyrightYear: new Date(datePublished).getFullYear(),
+          speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".prompt-remark"] },
+          totalTime: "PT1M",
+          step: howToSteps.map((s, i) => ({
+            "@type": "HowToStep",
+            position: i + 1,
+            name: s.name,
+            text: s.text,
           })),
-        ],
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: SITE_NAME, item: homeUrl },
-          { "@type": "ListItem", position: 2, name: title, item: canonicalUrl },
-        ],
-      },
-    ],
-  };
+          // prompt body 作为可复用 CreativeWork（SoftwareSourceCode/CodeSnippet 语义）
+          hasPart: {
+            "@type": "CreativeWork",
+            additionalType: "https://schema.org/SoftwareSourceCode",
+            text: promptInfo.prompt,
+            encodingFormat: "text/plain",
+            inLanguage: bcp47Locale,
+            name: title,
+          },
+          // tags 作为 schema.org Thing 实体，关联知识图谱
+          mentions: Array.isArray(tags)
+            ? tags.map((t) => ({
+                "@type": "Thing",
+                name: t,
+                url: `${siteConfig.url}${localePrefix}/?tags=${encodeURIComponent(t)}`,
+              }))
+            : undefined,
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: [
+            ...faqList.map((item) => ({
+              "@type": "Question" as const,
+              name: item.q,
+              acceptedAnswer: { "@type": "Answer" as const, text: item.a },
+            })),
+          ],
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: SITE_NAME, item: homeUrl },
+            { "@type": "ListItem", position: 2, name: title, item: canonicalUrl },
+          ],
+        },
+      ],
+    };
+    return toJsonLd(articleSchema);
+  }, [seoTitle, seoDescription, canonicalUrl, bcp47Locale, datePublished, dateModified, siteConfig.url, tags, orgId, websiteId, currentLanguage, promptInfo.prompt, title, localePrefix, faqList, homeUrl]);
 
   return (
     <Layout title={seoTitle} description={seoDescription}>
@@ -249,7 +254,7 @@ function PromptPage({ prompt, currentLanguage }) {
           <link key={h.hreflang} rel="alternate" hrefLang={h.hreflang} href={h.href} />
         ))}
         <link rel="alternate" hrefLang="x-default" href={`${siteConfig.url}/prompt/${prompt.id}`} />
-        <script type="application/ld+json">{toJsonLd(articleSchema)}</script>
+        <script type="application/ld+json">{articleSchemaJson}</script>
       </Head>
       {/* 外层 Row：保持原有的居中 + 最大宽度约束（xl 约 66% container 宽度）。
           paddingInline 必须等于内层 gutter 的一半：antd 的 Row gutter 是「负 margin +

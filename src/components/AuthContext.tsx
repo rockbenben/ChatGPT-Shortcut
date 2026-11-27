@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect, useMemo, useCallback, useRef, startTransition } from "react";
-import { getMySpace, clearMySpaceCache, getPrompts, persistAuthToken } from "@site/src/api";
-import { clearUserSessionCaches } from "@site/src/api/sessionCache";
+import { persistAuthToken } from "@site/src/api/token";
+import { clearMySpaceCache, clearUserSessionCaches } from "@site/src/api/sessionCache";
 import { AUTH_EXPIRED_EVENT } from "@site/src/api/config";
 import { enrichMySpaceData } from "@site/src/utils/myspaceUtils";
 import { getCache, setCache, CACHE_PREFIX, CACHE_TTL } from "@site/src/utils/cache";
@@ -172,20 +172,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         return;
       }
 
-      // 强制刷新时先清除 MySpace 缓存 + 显示 loading
       if (forceRefresh) {
-        clearMySpaceCache();
         startTransition(() => setAuthLoading(true));
       }
-      const hadCachedAuth = initialAuthRef.current!.hadCachedAuth;
 
       const fetchOnce = async () => {
+        // chunk 也可能加载失败，和请求一起走重试及缓存回退。
+        const { getMySpace } = await withTimeout(import("@site/src/api/myspace"), 12_000, "import myspace");
+        const requestToken = readValidToken();
+        if (requestToken !== token) {
+          if (!requestToken) clearAuth();
+          return null;
+        }
+        if (forceRefresh) clearMySpaceCache();
+
         // 记录发起时刻的 mutation 代际，用于下方竞态保护
         const genAtStart = mutationGenRef.current;
         // 记录发起时刻的 token 本身。写回前比对的是**同一个 token 吗**，
         // 而不只是"还有 token 吗"——后者漏掉"换号"：A 的请求在飞时 B 登录成功，
         // token 非空于是守卫放行，A 的 items 被写进 B 的会话缓存（串号）。
-        const tokenAtStart = token;
+        const tokenAtStart = requestToken;
 
         // Avoid being stuck in loading forever if the request stalls.
         // getMySpace() itself catches and may return cache/null, but it cannot resolve if the underlying request never completes.
@@ -234,7 +240,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const commuIds = validItems.filter((i) => i.source === "community").map((i) => i.id);
         if (promptIds.length > 0 || commuIds.length > 0) {
           withTimeout(
-            Promise.all([promptIds.length > 0 ? getPrompts("userprompts", promptIds) : null, commuIds.length > 0 ? getPrompts("commus", commuIds) : null]),
+            import("@site/src/api/prompts").then(({ getPrompts }) => {
+              if (readValidToken() !== tokenAtStart) return;
+              return Promise.all([promptIds.length > 0 ? getPrompts("userprompts", promptIds) : null, commuIds.length > 0 ? getPrompts("commus", commuIds) : null]);
+            }),
             8_000,
             "prefetch",
           ).catch(() => {
@@ -275,9 +284,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         // token 已没了（401 吊销 / 本地过期）才是确定性登出，此时必须连缓存一起清。
         // 反之只是网络抖动 / 5xx：保留缓存与登录态，绝不能因为一次瞬时失败就把
         // 用户的 MySpace 缓存销毁——那会逼出一次完整的重新拉取。
-        if (!readValidToken()) {
+        const currentToken = readValidToken();
+        if (!currentToken) {
           clearAuth();
-        } else if (!getCache("user_auth")) {
+        } else if (currentToken === token && !getCache("user_auth")) {
           // 此刻确实没有可回退的快照，才降到登出态。
           // 注意要查**当前**缓存而非挂载时的一次性快照——否则"登录时没有缓存"的会话
           // 会在之后任何一次瞬时失败中被强制登出，尽管 token 和快照都还在。

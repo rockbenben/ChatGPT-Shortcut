@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Button, Form, Input, Checkbox, Typography, App, Flex, Divider, Segmented } from "antd";
+import { Button, Form, Input, Checkbox, Typography, Flex, Divider, Segmented } from "antd";
+import { useAppFeedback } from "@site/src/contexts/AppFeedbackContext";
 import { GoogleOutlined, MailOutlined, LockOutlined, UserOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
@@ -78,7 +79,7 @@ const rules = {
 
 const LoginPage = ({ viewState, setViewState }: { viewState: LoginView; setViewState: (view: LoginView) => void }) => {
   const [loginType, setLoginType] = useState<"password" | "code">("password");
-  const { message: messageApi } = App.useApp();
+  const { message: messageApi } = useAppFeedback();
   const { i18n } = useDocusaurusContext();
   const [formKey, setFormKey] = useState(Date.now()); // For resetting forms
   const [loading, setLoading] = useState(false);

@@ -4,7 +4,8 @@ import Link from "@docusaurus/Link";
 
 import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { Card, Input, Button, Spin, Space, Row, Col, Typography, App, Avatar, Flex, Breadcrumb, Tooltip } from "antd";
+import { Card, Input, Button, Spin, Space, Row, Col, Typography, Avatar, Flex, Breadcrumb, Tooltip } from "antd";
+import { useAppFeedback } from "@site/src/contexts/AppFeedbackContext";
 import { HomeOutlined, EditOutlined, SaveOutlined, MailOutlined, UserOutlined, CloseOutlined, LoginOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
 import { ActionLink } from "@site/src/components/ActionLink";
@@ -21,7 +22,7 @@ const { Title, Text } = Typography;
 
 const UserProfile = () => {
   const { userAuth, getUserAuth, refreshUserAuth } = useContext(AuthContext); // 用于获取 userprompts share 信息
-  const { message } = App.useApp();
+  const { message } = useAppFeedback();
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale;
 
