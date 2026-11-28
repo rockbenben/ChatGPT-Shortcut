@@ -1152,6 +1152,9 @@
     "message": "1 artículo|{count} artículos",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
+  "aria.breadcrumb": {
+    "message": "Rastro de navegación"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "Página de inicio",
     "description": "The ARIA label for the home page in the breadcrumbs"

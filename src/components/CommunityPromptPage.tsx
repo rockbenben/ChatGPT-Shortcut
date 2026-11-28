@@ -1,13 +1,15 @@
 import React, { Suspense, useContext, useCallback, useMemo, useState, useEffect } from "react";
-import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, Breadcrumb, Popover } from "antd";
-import { HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined, FileSearchOutlined, WarningOutlined } from "@ant-design/icons";
+import { Space, Flex, Row, Col, Button, Skeleton } from "antd";
+import { HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, FileSearchOutlined, WarningOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
-import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { CopyButton } from "@site/src/components/CopyButton";
 import { PromptPlaceholderBar } from "@site/src/components/PromptPlaceholderBar";
+import { SiteBreadcrumb } from "@site/src/components/SiteBreadcrumb";
+import { TransverseAdSlot } from "@site/src/components/TransverseAdSlot";
+import { SharePopoverButton } from "@site/src/components/SharePopoverButton";
 import { AuthContext } from "./AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { extractPlaceholders, applyPlaceholders, getPlaceholderValue, renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
@@ -15,11 +17,9 @@ import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import { EmptyState } from "@site/src/components/EmptyState";
 import { ActionLink } from "@site/src/components/ActionLink";
 import { toBcp47 } from "@site/src/utils/i18n";
-import { lazyOptional, lazyWithRetry } from "@site/src/utils/lazyRetry";
+import { lazyWithRetry } from "@site/src/utils/lazyRetry";
 import { DeferredComments } from "./DeferredComments";
 
-const ShareButtons = lazyOptional(() => import("./ShareButtons"));
-const AdComponent = lazyOptional(() => import("@site/src/components/AdComponent"));
 const LoginModal = lazyWithRetry(() =>
   import("@site/src/components/user/LoginModal").then((m) => ({ default: m.LoginModal })),
 );
@@ -39,15 +39,6 @@ interface CommunityPromptPageProps {
   hasStaticPage?: boolean;
 }
 
-// Card 容器复用：12px hairline，与 PromptCard 同家族
-const sheetCardStyle: React.CSSProperties = {
-  borderRadius: 12,
-  borderColor: "var(--site-color-hairline)",
-  background: "var(--ifm-background-surface-color)",
-};
-const sheetCardBodyStyle: React.CSSProperties = {
-  padding: "clamp(16px, 3vw, 32px)",
-};
 const monoNum: React.CSSProperties = { fontVariantNumeric: "tabular-nums" };
 
 // Eyebrow caption (mono uppercase tertiary) — 4 处复用
@@ -146,7 +137,7 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
           <Row justify="center" style={{ marginTop: 16, marginBottom: 24, paddingInline: 12 }}>
           <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
             <div style={{ height: 22, marginBottom: 12 }} aria-hidden="true" />
-            <Card variant="outlined" style={sheetCardStyle} styles={{ body: sheetCardBodyStyle }} aria-busy="true">
+            <div className="comp-sheet-card" aria-busy="true">
               <Flex vertical gap={24}>
                 <Flex vertical gap={10}>
                   <Skeleton.Input active size="large" style={{ width: "min(80%, 360px)", height: 30 }} />
@@ -170,7 +161,7 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
                   <Skeleton.Button active style={{ width: 90, height: 36 }} />
                 </Flex>
               </Flex>
-            </Card>
+            </div>
           </Col>
         </Row>
         </main>
@@ -265,35 +256,33 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
       <main>
         <Row justify="center" style={{ marginTop: 16, marginBottom: 24, paddingInline: 12 }}>
           <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
-            <Breadcrumb
+            <SiteBreadcrumb
               items={[
                 {
+                  to: "/",
                   title: (
-                    <Link to="/" style={{ color: "var(--site-color-tag-selected-text)" }}>
-                      <HomeOutlined style={{ marginInlineEnd: 4 }} />
-                      <Translate id="link.home">首页</Translate>
-                    </Link>
+                    <>
+                      <HomeOutlined />
+                      <span>
+                        <Translate id="link.home">首页</Translate>
+                      </span>
+                    </>
                   ),
                 },
                 {
-                  title: (
-                    <Link to="/community-prompts" style={{ color: "var(--site-color-tag-selected-text)" }}>
-                      <Translate id="link.communityPrompts">社区提示词</Translate>
-                    </Link>
-                  ),
+                  to: "/community-prompts",
+                  title: <Translate id="link.communityPrompts">社区提示词</Translate>,
                 },
                 { title: prompt.title },
               ]}
               style={{ marginBottom: 12 }}
             />
 
-          <Card variant="outlined" style={sheetCardStyle} styles={{ body: sheetCardBodyStyle }}>
+          <div className="comp-sheet-card">
             <Flex vertical gap={24}>
               {/* HERO: title + meta line（owner · chars · tokens 用 Space split 串起来） */}
               <Flex vertical gap={10}>
-                <Typography.Title level={1} className="comp-sheet-title">
-                  {prompt.title}
-                </Typography.Title>
+                <h1 className="comp-sheet-title">{prompt.title}</h1>
                 <Space separator={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
                   {prompt.owner && (
                     <span>
@@ -345,9 +334,9 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
                   <Eyebrow>
                     <Translate id="prompt.authorNote">作者备注</Translate>
                   </Eyebrow>
-                  <Typography.Paragraph style={{ margin: "6px 0 0", fontSize: 14, lineHeight: 1.6, color: "var(--ifm-color-content-secondary)" }}>
+                  <p style={{ margin: "6px 0 0", fontSize: 14, lineHeight: 1.6, color: "var(--ifm-color-content-secondary)" }}>
                     {prompt.notes}
-                  </Typography.Paragraph>
+                  </p>
                 </div>
               )}
 
@@ -390,26 +379,13 @@ function CommunityPromptPage({ prompt, loading, error, notFound, onRetry, onVote
                   </Button>
                 </Space>
 
-                <Popover
-                  trigger="click"
-                  placement="topRight"
-                  content={
-                    <Suspense fallback={null}>
-                      <ShareButtons shareUrl={shareUrl} title={`${prompt.title}: ${prompt.remark || ""}`} popOver={true} />
-                    </Suspense>
-                  }>
-                  <Button icon={<ShareAltOutlined />} className="comp-sheet-share-btn">
-                    <Translate id="action.share">分享</Translate>
-                  </Button>
-                </Popover>
+                <SharePopoverButton shareUrl={shareUrl} title={`${prompt.title}: ${prompt.remark || ""}`} placement="topRight" />
               </Flex>
             </Flex>
-          </Card>
+          </div>
 
           {/* 广告 — speedup 分支专属，置于主卡片与讨论区之间 */}
-          <Suspense fallback={<div style={{ minHeight: 90, marginTop: 24 }} aria-hidden="true" />}>
-            <AdComponent type="transverse" style={{ marginTop: 24 }} />
-          </Suspense>
+          <TransverseAdSlot style={{ marginTop: 24 }} />
 
           {/* DISCUSSION: 一条 hairline + eyebrow，count 由内层 Comments 回传 */}
           <Flex vertical gap={14} style={{ marginTop: 24, paddingTop: 22, borderTop: "1px solid var(--site-color-hairline)" }}>

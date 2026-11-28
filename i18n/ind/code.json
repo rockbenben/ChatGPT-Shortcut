@@ -1152,6 +1152,9 @@
     "message": "1 item|{count} item",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
+  "aria.breadcrumb": {
+    "message": "Jejak navigasi"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "Beranda",
     "description": "The ARIA label for the home page in the breadcrumbs"

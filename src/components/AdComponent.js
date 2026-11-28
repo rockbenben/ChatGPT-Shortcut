@@ -43,12 +43,12 @@ function ensureAdScript() {
 }
 
 /**
- * 广告位三态（设计原则：设置最小预留高度消除 CLS 突刺，未填充或屏蔽时自动收起）：
+ * 广告位三态：横幅尺寸由 TransverseAdSlot 预留，首页广告在未填充或被屏蔽时收起。
  *  - pending：占位等待（预留 90px 横幅 / 200px 网格最小高度），避免 AdSense 填充时下方内容断崖式下移
- *  - filled：AdSense 注入内容，自然撑开（因已有预留高度，CLS 保持在 0）。横幅用 horizontal，
+ *  - filled：AdSense 注入内容，超过预留高度时自然撑开。横幅用 horizontal，
  *    首页网格用 rectangle + 关闭 full-width-responsive，避免窄列塞进高竖版素材拉扯行高
  *  - empty：渲染 null 并触发 onEmpty。脚本 onerror 立即收起，否则超时后收起；
- *    详情页/列表页横幅彻底消失，首页由外层 AdCardSlot 连同 Col 一并收起不留空槽
+ *    横幅保留外层占位，首页由 AdCardSlot 连同 Col 一并收起。
  *
  * @param {{ type?: "default" | "transverse"; className?: string; style?: React.CSSProperties; onEmpty?: () => void }} props
  */
@@ -157,7 +157,10 @@ const AdComponent = ({ type = "default", className = "", style = {}, onEmpty }) 
     // 768px 下 728 溢出 9px、970 溢出 251px。桌面够宽才躲得过。
     // 正常情况（responsive 单元按容器宽度取素材）什么都不裁，只有上面那种病态尺寸才生效 ——
     // 裁掉一条广告边，好过整站在手机上横向滚动。
-    <div ref={containerRef} className={className} style={{ width: "100%", minHeight: isTransverse ? 90 : 200, overflow: "hidden", ...style }}>
+    <div
+      ref={containerRef}
+      className={[isTransverse ? "ad-slot-transverse-content" : "", className].filter(Boolean).join(" ")}
+      style={{ width: "100%", minHeight: isTransverse ? undefined : 200, overflow: "hidden", ...style }}>
       {shouldLoad && (
         <ins
           ref={insRef}
@@ -166,7 +169,7 @@ const AdComponent = ({ type = "default", className = "", style = {}, onEmpty }) 
           data-ad-client={AD_CLIENT}
           data-ad-slot={adSlot}
           data-ad-format={isTransverse ? "horizontal" : "rectangle"}
-          data-full-width-responsive={isTransverse ? "true" : "false"}
+          data-full-width-responsive="false"
         />
       )}
     </div>

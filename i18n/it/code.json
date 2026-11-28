@@ -1152,6 +1152,9 @@
     "message": "1 elemento|{count} elementi",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
+  "aria.breadcrumb": {
+    "message": "Briciole di pane"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "Home page",
     "description": "The ARIA label for the home page in the breadcrumbs"

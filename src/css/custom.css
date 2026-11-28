@@ -480,7 +480,7 @@ html[dir="rtl"] {
 /* ========================================================================== */
 
 /* Hero title — 详情页 hierarchy（覆盖 antd Title 默认 size/weight） */
-.comp-sheet-title.ant-typography {
+h1.comp-sheet-title {
   margin: 0 !important;
   font-size: clamp(22px, 2.4vw, 28px) !important;
   font-weight: 500 !important;
@@ -1135,4 +1135,76 @@ html[data-auth-state="in"] .mobile-hero-slogan {
 
 .ant-modal-confirm .ant-modal-confirm-btns {
   margin-top: 20px;
+}
+
+/* Lightweight semantic breadcrumb (replaces antd Breadcrumb + rc-dropdown/rc-menu overhead) */
+.site-breadcrumb {
+  font-size: 14px;
+  line-height: 1.5715;
+  color: var(--site-color-text-tertiary);
+}
+.site-breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+.site-breadcrumb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--site-color-tag-selected-text);
+  text-decoration: none;
+  border-radius: 4px;
+  padding-inline: 2px;
+  transition: color 0.15s ease;
+}
+.site-breadcrumb-link:hover {
+  color: var(--ifm-link-hover-color);
+  text-decoration: none;
+}
+.site-breadcrumb-current {
+  color: var(--ifm-color-content);
+}
+.site-breadcrumb-sep {
+  margin-inline: 8px;
+  color: var(--site-color-text-tertiary);
+  user-select: none;
+}
+
+.comp-sheet-card {
+  border: 1px solid var(--site-color-hairline);
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color);
+  padding: clamp(16px, 3vw, 32px);
+}
+
+/* Transverse ad slot responsive min-height (matches mobile AdSense 100px / desktop 90px) */
+.ad-slot-transverse {
+  width: 100%;
+  min-height: 90px;
+}
+@media (max-width: 767px) {
+  .ad-slot-transverse {
+    min-height: 100px;
+  }
+}
+
+/* 状态落定前，AdSense 的临时素材高度不进入文档流。 */
+.ad-slot-transverse-content {
+  position: relative;
+  min-height: inherit;
+}
+
+.ad-slot-transverse-content > .adsbygoogle:not([data-ad-status="filled"]) {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
 }

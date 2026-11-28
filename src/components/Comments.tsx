@@ -20,7 +20,14 @@ const LoginModal = lazyWithRetry(() => import("@site/src/components/user/LoginMo
 
 const pageSize = 12;
 
-const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onCountChange?: (count: number) => void }) => {
+interface CommentsProps {
+  pageId: any;
+  type: any;
+  onCountChange?: (count: number) => void;
+  loadingSkeletonRows?: number;
+}
+
+const Comments = ({ pageId, type, onCountChange, loadingSkeletonRows = 10 }: CommentsProps) => {
   const logoUrl = useBaseUrl("/img/logo.svg");
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
@@ -291,7 +298,7 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
       <div style={{ minHeight: 200, marginTop: 16 }}>
         {/* Internal "{N} 评论" header 已移除：count 通过 onCountChange 暴露给外层 eyebrow «讨论 · N» */}
         {isLoading ? (
-          <CommentSkeleton count={10} />
+          <CommentSkeleton count={loadingSkeletonRows} />
         ) : fetchFailed ? (
           // 加载失败 ≠ 没有评论：分开渲染，别让「暂无评论」顶替失败
           <EmptyState

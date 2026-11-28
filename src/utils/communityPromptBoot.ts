@@ -4,6 +4,7 @@ import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 export interface EarlyCommunityPromptHandle {
   id: number;
   fromCache: boolean;
+  consumed?: boolean;
   data: CommunityPrompt | null;
   promise: Promise<CommunityPrompt | null>;
   dismiss: () => void;
@@ -16,6 +17,27 @@ declare global {
   }
 }
 
+/** Give the preview one rendering opportunity before React replaces it. */
+export function waitForEarlyPromptPaint(): Promise<void> {
+  if (!document.getElementById("aishort-early-cp") || document.visibilityState === "hidden") {
+    return Promise.resolve();
+  }
+
+  return new Promise<void>((resolve) => {
+    let frame = requestAnimationFrame(() => {
+      frame = requestAnimationFrame(finish);
+    });
+    // A backgrounded tab can pause animation frames after the visibility check.
+    const timeout = setTimeout(finish, 100);
+
+    function finish() {
+      cancelAnimationFrame(frame);
+      clearTimeout(timeout);
+      resolve();
+    }
+  });
+}
+
 /**
  * Remove the pre-hydration early prompt preview overlay and its style tag.
  * Always cleans up by DOM ID as a fallback in case the handle was already cleared.
@@ -24,6 +46,7 @@ export function dismissEarlyCommunityPrompt(): void {
   if (typeof window === "undefined") return;
   try {
     window.__AISHORT_EARLY_PROMPT__?.dismiss?.();
+    window.__AISHORT_EARLY_PROMPT__ = undefined;
   } catch {
     // ignore
   }
@@ -82,6 +105,7 @@ export const COMMUNITY_PROMPT_BOOT_SCRIPT = `(function(){
       ? Promise.resolve(cached)
       : fetch(${BULK_ENDPOINT}, {
           method: "POST",
+          priority: "high",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ ids: [id] })
         })
@@ -92,13 +116,14 @@ export const COMMUNITY_PROMPT_BOOT_SCRIPT = `(function(){
           })
           .catch(function() { return null; });
 
-    window.__AISHORT_EARLY_PROMPT__ = {
+    var handle = {
       id: id,
       fromCache: fromCache,
       data: cached,
       promise: promise,
       dismiss: dismiss
     };
+    window.__AISHORT_EARLY_PROMPT__ = handle;
 
     function buildCodeBody(container, text) {
       var parts = text.split(/(\\[[^\\[\\]\\n]{1,60}\\](?!\\())/g);
@@ -120,7 +145,7 @@ export const COMMUNITY_PROMPT_BOOT_SCRIPT = `(function(){
     }
 
     function mount(item) {
-      if (claimed || root.getAttribute("data-has-hydrated") === "true" || !document.body) return;
+      if (claimed || !document.body) return;
       if (document.getElementById("aishort-early-cp")) return;
 
       var style = document.createElement("style");
@@ -132,6 +157,7 @@ export const COMMUNITY_PROMPT_BOOT_SCRIPT = `(function(){
       wrap.id = "aishort-early-cp";
       wrap.className = "aishort";
       wrap.setAttribute("aria-hidden", "true");
+      wrap.setAttribute("inert", "");
 
       var row = document.createElement("div");
       row.className = "ant-row ant-row-center";
@@ -145,12 +171,7 @@ export const COMMUNITY_PROMPT_BOOT_SCRIPT = `(function(){
       col.appendChild(bcSpacer);
 
       var card = document.createElement("div");
-      card.className = "ant-card ant-card-bordered";
-      card.style.cssText = "border-radius:12px;border-color:var(--site-color-hairline);background:var(--ifm-background-surface-color)";
-
-      var cardBody = document.createElement("div");
-      cardBody.className = "ant-card-body";
-      cardBody.style.cssText = "padding:clamp(16px, 3vw, 32px)";
+      card.className = "comp-sheet-card";
 
       var outerFlex = document.createElement("div");
       outerFlex.style.cssText = "display:flex;flex-direction:column;gap:24px";
@@ -159,7 +180,7 @@ export const COMMUNITY_PROMPT_BOOT_SCRIPT = `(function(){
       hero.style.cssText = "display:flex;flex-direction:column;gap:10px";
 
       var h1 = document.createElement("h1");
-      h1.className = "ant-typography comp-sheet-title";
+      h1.className = "comp-sheet-title";
       h1.textContent = item.title;
       hero.appendChild(h1);
 
@@ -190,8 +211,7 @@ export const COMMUNITY_PROMPT_BOOT_SCRIPT = `(function(){
       bodySec.appendChild(codeBox);
 
       outerFlex.appendChild(bodySec);
-      cardBody.appendChild(outerFlex);
-      card.appendChild(cardBody);
+      card.appendChild(outerFlex);
       col.appendChild(card);
       row.appendChild(col);
       wrap.appendChild(row);
@@ -201,7 +221,8 @@ export const COMMUNITY_PROMPT_BOOT_SCRIPT = `(function(){
     }
 
     promise.then(function(item) {
-      if (!item || claimed || root.getAttribute("data-has-hydrated") === "true") return;
+      handle.data = item;
+      if (!item || claimed) return;
       if (document.body) {
         mount(item);
       } else {

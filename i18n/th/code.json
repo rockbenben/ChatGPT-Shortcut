@@ -1152,6 +1152,9 @@
     "message": "1 รายการ|{count} รายการ",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
+  "aria.breadcrumb": {
+    "message": "เส้นทาง"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "หน้าแรก",
     "description": "The ARIA label for the home page in the breadcrumbs"

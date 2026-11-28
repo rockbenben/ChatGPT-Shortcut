@@ -1152,6 +1152,9 @@
     "message": "{count} عناصر",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
+  "aria.breadcrumb": {
+    "message": "مسار التنقل"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "الصفحة الرئيسية",
     "description": "The ARIA label for the home page in the breadcrumbs"

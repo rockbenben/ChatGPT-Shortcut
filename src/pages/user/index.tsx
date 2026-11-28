@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState, useCallback } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
-import Link from "@docusaurus/Link";
 
 import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { Card, Input, Button, Spin, Space, Row, Col, Typography, Avatar, Flex, Breadcrumb, Tooltip } from "antd";
+import { Card, Input, Button, Spin, Space, Row, Col, Typography, Avatar, Flex, Tooltip } from "antd";
+import { SiteBreadcrumb } from "@site/src/components/SiteBreadcrumb";
 import { useAppFeedback } from "@site/src/contexts/AppFeedbackContext";
 import { HomeOutlined, EditOutlined, SaveOutlined, MailOutlined, UserOutlined, CloseOutlined, LoginOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
@@ -157,27 +157,17 @@ const UserProfile = () => {
           <Col xs={24} sm={22} md={20} lg={16} xl={14} className="full-width-col">
             <Space orientation="vertical" size="large" style={{ width: "100%" }}>
               {/* Breadcrumb Navigation — plain, no Card wrapper */}
-              <Breadcrumb
-                itemRender={(item, params, items, paths) => {
-                  const isLast = items.indexOf(item) === items.length - 1;
-                  return isLast || !item.path ? (
-                    <span>{item.title}</span>
-                  ) : (
-                    <Link to={item.path} style={{ color: "var(--site-color-tag-selected-text)" }}>
-                      {item.title}
-                    </Link>
-                  );
-                }}
+              <SiteBreadcrumb
                 items={[
                   {
-                    path: "/",
+                    to: "/",
                     title: (
-                      <Flex align="center" gap={4}>
+                      <>
                         <HomeOutlined />
                         <span>
                           <Translate id="link.home">首页</Translate>
                         </span>
-                      </Flex>
+                      </>
                     ),
                   },
                   {

@@ -1,6 +1,6 @@
-import React, { Suspense, useMemo, useState, useEffect, useCallback } from "react";
-import { Card, Typography, Space, Row, Col, Button, Flex, Breadcrumb, Popover } from "antd";
-import { LinkOutlined, FireFilled, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
+import React, { useMemo, useState, useEffect, useCallback } from "react";
+import { Space, Row, Col, Button, Flex } from "antd";
+import { LinkOutlined, FireFilled, HomeOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
@@ -8,25 +8,18 @@ import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { CopyButton } from "@site/src/components/CopyButton";
 import { PromptPlaceholderBar } from "@site/src/components/PromptPlaceholderBar";
+import { SiteBreadcrumb } from "@site/src/components/SiteBreadcrumb";
+import { TransverseAdSlot } from "@site/src/components/TransverseAdSlot";
+import { SharePopoverButton } from "@site/src/components/SharePopoverButton";
 import { getWeight, formatCompactNumber } from "@site/src/utils/formatters";
 import { SITE_NAME } from "@site/src/data/constants";
 import { Tags, type TagType } from "@site/src/data/tags";
 import { extractPlaceholders, applyPlaceholders, getPlaceholderValue, renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
 import { toBcp47 } from "@site/src/utils/i18n";
 import { toJsonLd } from "@site/src/utils/jsonLd";
-import { lazyOptional } from "@site/src/utils/lazyRetry";
 import { DeferredComments } from "./DeferredComments";
 
-const ShareButtons = lazyOptional(() => import("./ShareButtons"));
-const AdComponent = lazyOptional(() => import("@site/src/components/AdComponent"));
-
 // Composition Sheet 复用样式（与 CommunityPromptPage 保持家族一致）
-const sheetCardStyle: React.CSSProperties = {
-  borderRadius: 12,
-  borderColor: "var(--site-color-hairline)",
-  background: "var(--ifm-background-surface-color)",
-};
-const sheetCardBodyStyle: React.CSSProperties = { padding: "clamp(16px, 3vw, 32px)" };
 const monoNum: React.CSSProperties = { fontVariantNumeric: "tabular-nums" };
 
 // 提升为 <h2> 给 AI 引擎按 H2 chunk 抓取（详情页 6 个 section 各自一个 H2 入口）；
@@ -272,14 +265,17 @@ function PromptPage({ prompt, currentLanguage }) {
             <Row gutter={[24, 24]}>
               {/* 主内容列（75%） */}
               <Col xs={24} sm={24} md={24} lg={18} xl={18} className="full-width-col">
-                <Breadcrumb
+                <SiteBreadcrumb
                   items={[
                     {
+                      to: "/",
                       title: (
-                        <Link to="/" style={{ color: "var(--site-color-tag-selected-text)" }}>
-                          <HomeOutlined style={{ marginInlineEnd: 4 }} />
-                          <Translate id="link.home">首页</Translate>
-                        </Link>
+                        <>
+                          <HomeOutlined />
+                          <span>
+                            <Translate id="link.home">首页</Translate>
+                          </span>
+                        </>
                       ),
                     },
                     { title: title },
@@ -288,16 +284,16 @@ function PromptPage({ prompt, currentLanguage }) {
                 />
 
                 {/* === Composition Sheet === */}
-                <Card variant="outlined" style={sheetCardStyle} styles={{ body: sheetCardBodyStyle }}>
+                <div className="comp-sheet-card">
                   <Flex vertical gap={24}>
                     {/* HERO: 双层 meta 按语义拆分
                           Layer 1（同行）: title 左 / tags 右上角对齐 — tags 是分类 metadata，与 title 同语义层
                           Layer 2（下行）: 🔥 weight · chars · tokens · 来源 — 数值 + 链接 metadata，独立 mono 行 */}
                     <Flex vertical gap={10}>
                       <Flex justify="space-between" align="flex-start" wrap gap={12}>
-                        <Typography.Title level={1} className="comp-sheet-title" style={{ flex: 1, minWidth: 0 }}>
+                        <h1 className="comp-sheet-title" style={{ flex: 1, minWidth: 0 }}>
                           {title}
-                        </Typography.Title>
+                        </h1>
                         {Array.isArray(tags) && tags.length > 0 && (
                           <Space size={4} wrap style={{ paddingTop: 6 }}>
                             {tags.map((tag) => (
@@ -371,14 +367,14 @@ function PromptPage({ prompt, currentLanguage }) {
                           </Eyebrow>
                           <CopyButton text={filledTranslation} variant="iconOnly" size="small" />
                         </Flex>
-                        <Typography.Paragraph
+                        <p
                           style={{ margin: "6px 0 0", fontSize: 14, lineHeight: 1.6, color: "var(--ifm-color-content-secondary)", whiteSpace: "pre-wrap", overflowWrap: "anywhere" }}>
                           {filledTranslation}
-                        </Typography.Paragraph>
+                        </p>
                       </div>
                     )}
                   </Flex>
-                </Card>
+                </div>
               </Col>
 
               {/* === Sidebar Strip === 不用独立 Card，sections 用 hairline + eyebrow 区分
@@ -422,18 +418,7 @@ function PromptPage({ prompt, currentLanguage }) {
                       <Translate id="action.share">分享</Translate>
                     </Eyebrow>
                     <div style={{ marginTop: 10 }}>
-                      <Popover
-                        trigger="click"
-                        placement="topLeft"
-                        content={
-                          <Suspense fallback={null}>
-                            <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark || ""}`} popOver={true} />
-                          </Suspense>
-                        }>
-                        <Button icon={<ShareAltOutlined />} className="comp-sheet-share-btn" block>
-                          <Translate id="action.share">分享</Translate>
-                        </Button>
-                      </Popover>
+                      <SharePopoverButton shareUrl={shareUrl} title={`${title}: ${remark || ""}`} placement="topLeft" block />
                     </div>
                   </section>
                 </div>
@@ -442,9 +427,7 @@ function PromptPage({ prompt, currentLanguage }) {
               {/* DISCUSSION: hairline + eyebrow 续接，count 由内层 Comments 回传 */}
               <Col xs={24} sm={24} md={24} lg={18} xl={18} className="full-width-col">
                 {/* 广告 — speedup 分支专属，置于讨论区上方（hairline 之外） */}
-                <Suspense fallback={<div style={{ minHeight: 90, marginBottom: 16 }} aria-hidden="true" />}>
-                  <AdComponent type="transverse" style={{ marginBottom: 16 }} />
-                </Suspense>
+                <TransverseAdSlot style={{ marginBottom: 16 }} />
 
                 <Flex vertical gap={14} style={{ marginTop: 8, paddingTop: 22, borderTop: "1px solid var(--site-color-hairline)" }}>
                   <Eyebrow>

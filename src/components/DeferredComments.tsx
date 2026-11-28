@@ -74,10 +74,11 @@ export const DeferredComments: React.FC<DeferredCommentsProps> = ({ pageId, type
   }, [armed, visible]);
 
   return (
-    <div ref={hostRef} style={{ minHeight: 220 }}>
+    // 留出评论编辑器、间距和空态的高度，避免快速滚到底时页脚被推走。
+    <div ref={hostRef} style={{ minHeight: 380 }}>
       {visible ? (
         <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
-          <Comments pageId={pageId} type={type} onCountChange={onCountChange} />
+          <Comments pageId={pageId} type={type} onCountChange={onCountChange} loadingSkeletonRows={1} />
         </Suspense>
       ) : (
         <Skeleton active paragraph={{ rows: 4 }} />

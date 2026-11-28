@@ -1152,6 +1152,9 @@
     "message": "{count}項目",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
+  "aria.breadcrumb": {
+    "message": "パンくずリストのナビゲーション"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "ホームページ",
     "description": "The ARIA label for the home page in the breadcrumbs"

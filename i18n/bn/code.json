@@ -1152,6 +1152,9 @@
     "message": "১টি আইটেম|{count}টি আইটেম",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
+  "aria.breadcrumb": {
+    "message": "ব্রেডক্রাম্বস"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "হোম পৃষ্ঠা",
     "description": "The ARIA label for the home page in the breadcrumbs"

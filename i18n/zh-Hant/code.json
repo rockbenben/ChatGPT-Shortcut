@@ -1152,6 +1152,9 @@
     "message": "{count} 個項目",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
+  "aria.breadcrumb": {
+    "message": "頁面路徑"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "主頁面",
     "description": "The ARIA label for the home page in the breadcrumbs"

@@ -4,9 +4,8 @@ import { voteLoginRequiredText, voteAlreadyVotedText, voteSuccessText, voteFaile
 import { useAppFeedback } from "@site/src/contexts/AppFeedbackContext";
 import { AuthContext } from "@site/src/components/AuthContext";
 import CommunityPromptPage from "@site/src/components/CommunityPromptPage";
-import { getSingleCommPrompt, voteOnUserPrompt } from "@site/src/api";
 import { setCache, getPromptCacheKey, getPromptTTL } from "@site/src/utils/cache";
-import { dismissEarlyCommunityPrompt } from "@site/src/utils/communityPromptBoot";
+import { dismissEarlyCommunityPrompt, waitForEarlyPromptPaint } from "@site/src/utils/communityPromptBoot";
 import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 
 interface CommunityPromptDetailProps {
@@ -142,18 +141,23 @@ function CommunityPromptDetailInner({ initialPrompt, staticIds }: InnerProps) {
     }
 
     let cancelled = false;
-    (async () => {
+    let idleHandle: number | null = null;
+    let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
+
+    const loadPrompt = async () => {
       try {
         if (!isRefreshOnly && retryNonce === 0) {
           const early = typeof window !== "undefined" ? window.__AISHORT_EARLY_PROMPT__ : undefined;
-          if (early && early.id === promptId) {
-            window.__AISHORT_EARLY_PROMPT__ = undefined;
+          if (early && early.id === promptId && !early.consumed) {
+            early.consumed = true;
             const earlyData = early.data ?? (await early.promise);
             if (cancelled) return;
             if (earlyData && !earlyData._unavailable) {
               if (!early.fromCache) {
                 setCache(getPromptCacheKey("commus", promptId), earlyData, getPromptTTL("commus"));
               }
+              await waitForEarlyPromptPaint();
+              if (cancelled) return;
               setPrompt(earlyData);
               setLoadState({ key: promptKey, status: "ready" });
               return;
@@ -163,6 +167,7 @@ function CommunityPromptDetailInner({ initialPrompt, staticIds }: InnerProps) {
 
         // getSingleCommPrompt 内部走 lscache（已被 snapshotPrime 或上次列表流 prime/写入），
         // 多数场景命中 cache，无网络往返
+        const { getSingleCommPrompt } = await import("@site/src/api/prompts");
         const data = await getSingleCommPrompt(promptId);
         if (cancelled) return;
         // getPrompts 对已取消分享/删除的 id 不返回 null，而是打了 _unavailable 的占位对象
@@ -183,10 +188,29 @@ function CommunityPromptDetailInner({ initialPrompt, staticIds }: InnerProps) {
         // 加载失败，不是「内容不存在」：走独立的失败态（可重试），不要冒充未找到
         setLoadState({ key: promptKey, status: "error", error: err instanceof Error ? err : new Error("Failed to fetch prompt") });
       }
-    })();
+    };
+
+    if (isRefreshOnly && typeof window !== "undefined") {
+      const startRefresh = () => {
+        if (!cancelled) void loadPrompt();
+      };
+      if ("requestIdleCallback" in window) {
+        idleHandle = (window as any).requestIdleCallback(startRefresh, { timeout: 3000 });
+      } else {
+        fallbackTimer = setTimeout(startRefresh, 1500);
+      }
+    } else {
+      void loadPrompt();
+    }
 
     return () => {
       cancelled = true;
+      if (idleHandle !== null && typeof window !== "undefined" && "cancelIdleCallback" in window) {
+        (window as any).cancelIdleCallback(idleHandle);
+      }
+      if (fallbackTimer !== null) {
+        clearTimeout(fallbackTimer);
+      }
     };
   }, [promptId, promptKey, isRefreshOnly, retryNonce]);
 
@@ -227,6 +251,7 @@ function CommunityPromptDetailInner({ initialPrompt, staticIds }: InnerProps) {
       );
 
       try {
+        const { voteOnUserPrompt } = await import("@site/src/api/prompts");
         const response = await voteOnUserPrompt(id, action);
         if (response?.data?.counts) {
           const { upvotes, downvotes } = response.data.counts;

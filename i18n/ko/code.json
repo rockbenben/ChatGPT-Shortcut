@@ -1152,6 +1152,9 @@
     "message": "{count} 항목",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
+  "aria.breadcrumb": {
+    "message": "탐색 경로"
+  },
   "theme.docs.breadcrumbs.home": {
     "message": "홈 페이지",
     "description": "The ARIA label for the home page in the breadcrumbs"

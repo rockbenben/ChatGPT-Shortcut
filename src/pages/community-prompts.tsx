@@ -13,8 +13,9 @@ import { AuthContext } from "@site/src/components/AuthContext";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Link from "@docusaurus/Link";
-import { Flex, Segmented, FloatButton, Row, Col, Breadcrumb, Button } from "antd";
+import { Flex, Segmented, FloatButton, Row, Col, Button } from "antd";
+import { SiteBreadcrumb } from "@site/src/components/SiteBreadcrumb";
+import { TransverseAdSlot } from "@site/src/components/TransverseAdSlot";
 import { useAppFeedback } from "@site/src/contexts/AppFeedbackContext";
 import { HomeOutlined, WarningOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION, SITE_NAME } from "@site/src/data/constants";
@@ -27,12 +28,10 @@ import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
 import styles from "@site/src/pages/styles.module.css";
 import { COMMUNITY_PAGE_SIZE } from "@site/src/utils/communityPagination.mjs";
 import { primeCacheFromSnapshot, getCommunitySnapshotPage, type CommunitySortField, type CommunityPrompt } from "@site/src/utils/snapshotPrime";
-import { lazyWithRetry, lazyOptional } from "@site/src/utils/lazyRetry";
+import { lazyWithRetry } from "@site/src/utils/lazyRetry";
 import { DeferredFloatingShare } from "@site/src/components/DeferredFloatingShare";
 const PromptDetailModal = lazyWithRetry(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 const LoginModal = lazyWithRetry(() => import("@site/src/components/user/LoginModal").then((m) => ({ default: m.LoginModal })));
-
-const AdComponent = lazyOptional(() => import("@site/src/components/AdComponent"));
 
 const CommunityPrompts = () => {
   const { userAuth, getUserAuth } = useContext(AuthContext);
@@ -338,14 +337,17 @@ const CommunityPrompts = () => {
         <section className="margin-bottom--sm">
           <div className="container">
             {/* Breadcrumb — plain, matches community-prompt detail page style */}
-            <Breadcrumb
+            <SiteBreadcrumb
               items={[
                 {
+                  to: "/",
                   title: (
-                    <Link to="/" style={{ color: "var(--site-color-tag-selected-text)" }}>
-                      <HomeOutlined style={{ marginInlineEnd: 4 }} />
-                      <Translate id="link.home">首页</Translate>
-                    </Link>
+                    <>
+                      <HomeOutlined />
+                      <span>
+                        <Translate id="link.home">首页</Translate>
+                      </span>
+                    </>
                   ),
                 },
                 {
@@ -447,9 +449,7 @@ const CommunityPrompts = () => {
             </div>
 
             {/* 广告 — speedup 分支专属（disclaimer 已挪到 site footer） */}
-            <Suspense fallback={null}>
-              <AdComponent type="transverse" style={{ marginTop: 24 }} />
-            </Suspense>
+            <TransverseAdSlot style={{ marginTop: 24 }} />
 
             {open && (
               <Suspense fallback={null}>
